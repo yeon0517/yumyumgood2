@@ -1,0 +1,975 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+#main-header {
+  background-color: #aca4a4;
+  position: fixed;
+  height: 25px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+#main-body {
+  /* background-color: red; */
+  width: 100%;
+  height: 1190px;
+}
+
+.main-top {
+  /* background-color: brown; */
+  width: 830px;
+  height: 300px;
+  margin: auto;
+}
+
+.profile-picture {
+  /* background-color: antiquewhite; */
+  width: 520px;
+  height: 215px;
+  margin: 25px auto;
+  display: flex;
+}
+
+.img-box {
+  /* background-color: aqua; */
+  width: 230px;
+  height: 215px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  /* margin: auto; */
+}
+
+.aaa {
+  /* background-color: tomato; */
+  width: 290px;
+  height: 215px;
+}
+
+.name-box {
+  /* background-color: rgb(213, 167, 167); */
+  width: 290px;
+  height: 60px;
+  display: flex;
+}
+
+.nickname-box {
+  /* background-color: springgreen; */
+  height: 60px;
+  width: 160px;
+  display: flex;
+  align-items: center;
+}
+
+.nickname {
+  line-height: 100%;
+  font-size: 18px;
+}
+
+.profile-btn {
+  height: 60px;
+  width: 115px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-btn2 {
+  display: inline-block;
+  padding: 5px 9px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(189, 189, 189);
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+.profile-btn2:hover {
+  background-color: rgb(109, 106, 106);
+}
+/* .profile-btn2n:active {
+  background-color: #414448;
+} */
+
+/* .setting {
+  background-color: chartreuse;
+  height: 60px;
+  width: 62px;
+  display: flex;
+  align-items: center;
+} */
+
+.follow-box {
+  /* background-color: yellow; */
+  width: 290px;
+  height: 60px;
+  display: flex;
+}
+
+.post,
+.follower,
+.following {
+  font-size: 15px;
+  /* font-weight: bolder; */
+}
+
+.cnt {
+  font-weight: bolder;
+}
+
+.post-cnt {
+  /* background-color: snow; */
+  height: 50px;
+  width: 85px;
+  display: flex;
+  align-items: center;
+}
+
+.follower-cnt {
+  /* background-color: chartreuse; */
+  height: 50px;
+  width: 110px;
+  display: flex;
+  align-items: center;
+}
+
+.following-cnt {
+  /* background-color: gold; */
+  height: 50px;
+  width: 101px;
+  display: flex;
+  align-items: center;
+}
+
+.real-name {
+  /* background-color: violet; */
+  width: 290px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 13px;
+}
+
+.introduce {
+  /* background-color: aqua; */
+  width: 290px;
+  height: 130px;
+  margin-top: 10px;
+}
+
+.introduce-txt {
+  font-size: 11px;
+}
+
+.main-banner {
+  /* background-color: violet; */
+  width: 830px;
+  height: 45px;
+  margin: auto;
+  border-top: solid 1px rgb(157, 153, 153);
+}
+
+.banner-box {
+  /* background-color: aqua; */
+  width: 177px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+}
+
+.banner1 {
+  /* background-color: red; */
+  width: 39px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* border-top: solid 2px #7f8184; */
+  margin: 0 75px 0 63px;
+}
+/* .banner-name:hover {
+  background-color: #414448;
+} */
+
+.post-thumbnail {
+  color: #7f8184;
+  font-size: 13px;
+  margin: auto;
+}
+
+/* 상대방 페이지라 게시물만 표시 */
+/* .banner2 {
+  background-color: orange;
+  width: 30px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-top: solid 2px #7f8184;
+} */
+.post-thumbnail2 {
+  color: #7f8184;
+  font-size: 13px;
+  margin: auto;
+}
+
+/* 상대방 페이지라 게시물만 표시 */
+/* .banner3 {
+  background-color: yellow;
+  width: 35px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-top: solid 2px #7f8184;
+  margin-left: 75px;
+} */
+.post-thumbnail3 {
+  color: #7f8184;
+  font-size: 13px;
+  margin: auto;
+}
+
+.main-bottom {
+  /* background-color: chartreuse; */
+  width: 830px;
+  height: 800px;
+  margin: auto;
+}
+
+.ccc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnail-img {
+  width: 260px;
+  height: 260px;
+  margin: 2px 7px;
+}
+.go-post {
+  font: none;
+}
+
+/* 사이드바 시작 */
+.body-side-bar {
+  background-color: white;
+  float: left;
+  width: 15%;
+  height: 100%;
+  position: fixed;
+  border-right: 1px solid #dbdbdb;
+}
+
+@media screen and (max-width: 768px) {
+  .body-side-bar {
+    font-size: 0px;
+    width: 80px;
+  }
+}
+
+.sidebar-menu {
+  margin-top: 20px;
+  display: block;
+}
+
+.sidebar-name {
+  list-style: none;
+  margin-top: 70px;
+  margin-left: 30px;
+  font-size: 30px;
+  display: block;
+  cursor: pointer;
+  font-family: "Josefin Slab", serif;
+}
+
+.sidebar-ul {
+  list-style: none;
+
+  margin-top: 50px;
+  margin-left: 30px;
+  font-size: 17px;
+  height: 700px;
+}
+
+/* .sidebar-li {
+  margin-bottom: 50px;
+  display: flex;
+    align-items: center;
+} */
+
+/* .sidebar-img {
+  vertical-align: bottom;
+  padding-right: 10px;
+  width: 25px;
+  height: 25px;
+} */
+/* 사이드바 수정 */
+.sidebar-li {
+  margin-bottom: 35px;
+  /* height: 40px; */
+  display: flex;
+  align-items: center;
+}
+
+.li-box {
+  /* background-color: #44bae8; */
+  width: 165px;
+  height: 45px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+.li-box:hover {
+  background-color: #e7e9eb88;
+}
+
+.sidebar-img {
+  vertical-align: bottom;
+  padding-right: 10px;
+  margin-left: 12px;
+  width: 30px;
+  height: 30px;
+}
+
+.sidebar-login {
+  margin-left: 30px;
+  list-style: none;
+  margin-bottom: 20px;
+}
+/* 사이드바 끝 */
+
+.body-main-page {
+  /* background-color: antiquewhite; */
+  /* margin-left: 250px; */
+  float: right;
+  height: 100%;
+  width: 85%;
+}
+
+.next-page {
+  /* background-color: violet; */
+  width: 830px;
+  height: 40px;
+  margin: auto;
+}
+
+/* 페이징 스타일 */
+.paging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 50px; */
+}
+
+.paging > p {
+  display: flex;
+  list-style: none;
+}
+
+.paging a {
+  color: #888;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0 5px;
+  /* border-radius: 5px;
+  border: 1px solid #888; */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.paging a:hover {
+  /* background-color: #937062; */
+  /* border-color: #937062; */
+  color: #937062;
+}
+
+.paging .active {
+  /* background-color: #333; */
+  /* border-color: #333; */
+  color: #fff;
+}
+
+.category-box .recipe-category a:hover {
+  color: #937062;
+  border-color: #937062;
+}
+
+footer {
+  background: #aca4a4;
+  margin-top: 30px;
+  color: #fff;
+  display: flex;
+  width: 100%;
+  height: 220px;
+  align-items: center;
+  flex-direction: column;
+}
+
+footer > div {
+  /* width: 100%; */
+  margin-left: 217px;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+  color: #cacdd2;
+}
+
+.footer-bottom {
+  /* background: #746b6b; */
+  /* width: 100%; */
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-bottom p {
+  float: left;
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+  margin-right: 49px;
+}
+.footer-bottom p a {
+  color: #44bae8;
+  font-size: 16px;
+  text-decoration: none;
+}
+.footer-bottom span {
+  text-transform: uppercase;
+  opacity: 0.4;
+  font-weight: 200;
+}
+.footer-menu {
+  float: right;
+}
+
+.footer-menu ul {
+  display: flex;
+}
+
+.footer-menu ul li {
+  padding-right: 10px;
+  display: block;
+}
+
+.footer-menu ul li a {
+  color: #cfd2d6;
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+  color: #27bcda;
+}
+/* @media (max-width:500px) {
+  .footer-menu ul{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  } */
+
+/* 팔로워 모달창 시작 */
+
+/* 모달 창 스타일 */
+.modal {
+  display: none; /* 기본적으로 모달 창을 숨김 */
+  position: fixed; /* 화면에 고정 */
+  z-index: 1; /* 다른 요소 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 908px;
+  overflow: auto; /* 스크롤 가능 */
+  background-color: rgba(0, 0, 0, 0.4); /* 배경 어둡게 */
+}
+
+/* 모달 내용 스타일 */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 25px;
+  width: 420px;
+  /* display: flex; */
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+.follower-cnt {
+  /* background-color: chartreuse; */
+  height: 50px;
+  width: 110px;
+  display: flex;
+  align-items: center;
+}
+.follow-box {
+  /* background-color: yellow; */
+  width: 290px;
+  height: 60px;
+  display: flex;
+}
+
+.follower {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cnt {
+  font-weight: bolder;
+}
+
+.modal-header {
+  /* background-color: blue; */
+  width: 443px;
+  height: 40px;
+  display: flex;
+}
+
+.follower-name {
+  font-weight: bolder;
+  display: flex;
+  text-align: center;
+  width: 360px;
+  margin-left: 21px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.follower-name2 {
+  font-size: 20px;
+  font: inherit;
+}
+
+/* 닫기 버튼 스타일 */
+.close2,
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close2:hover,
+.close2:focus,
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.main {
+  /* background-color: violet; */
+  width: 418px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  border: 1px solid #bcaeae;
+  border-radius: 5px;
+}
+
+/* .main-page-box {
+  width: 400px;
+  height: 350px;
+  border: 1px;
+} */
+
+.main-page-box {
+  overflow-y: scroll; /* 세로 스크롤바 표시 */
+  height: 348px; /* 높이 지정 */
+}
+
+.main-page {
+  /* background-color: seashell; */
+  width: 400px;
+  height: auto;
+  overflow: hidden auto;
+  margin: auto;
+}
+
+.follower-box1 {
+  /* background-color: red; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.follower-img {
+  /* background-color: aqua; */
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.follower-img2 {
+  width: 50px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.follower-nickname {
+  /* background-color: rgb(125, 22, 65); */
+  width: 240px;
+  height: 100%;
+}
+
+.follower-nickname-box {
+  /* background-color: rgb(227, 17, 104); */
+  width: 240px;
+  height: 50%;
+}
+
+.follower-realname-box {
+  /* background-color: rgb(26, 208, 13); */
+  width: 240px;
+  height: 50%;
+  color: rgb(136, 129, 129);
+}
+
+.follower-cancel {
+  /* background-color: rgb(201, 34, 181); */
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.cancel-button {
+  background-color: #e4d7d7;
+  font-weight: bolder;
+  width: 61px;
+  height: 33px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.cancel-button:hover {
+  background-color: #a89f9f;
+}
+
+.follower-box2 {
+  /* background-color: orange; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.follower-box3 {
+  /* background-color: yellow; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.follower-box4 {
+  /* background-color: green; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.follower-box5 {
+  background-color: blue;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.follower-box6 {
+  background-color: darkblue;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.follower-box7 {
+  background-color: blueviolet;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+/* 팔로워 모달창 끝 */
+
+/* 팔로잉 모달창 시작 */
+/* 모달 창 스타일 */
+.modal2 {
+  display: none; /* 기본적으로 모달 창을 숨김 */
+  position: fixed; /* 화면에 고정 */
+  z-index: 1; /* 다른 요소 위에 표시 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 908px;
+  overflow: auto; /* 스크롤 가능 */
+  background-color: rgba(0, 0, 0, 0.4); /* 배경 어둡게 */
+}
+
+/* 모달 내용 스타일 */
+.modal-content2 {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 25px;
+  width: 420px;
+  /* display: flex; */
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+.following-cnt {
+  /* background-color: chartreuse; */
+  height: 50px;
+  width: 110px;
+  display: flex;
+  align-items: center;
+}
+.following-box {
+  /* background-color: yellow; */
+  width: 290px;
+  height: 60px;
+  display: flex;
+}
+
+.following {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cnt {
+  font-weight: bolder;
+}
+
+.modal-header2 {
+  /* background-color: blue; */
+  width: 443px;
+  height: 40px;
+  display: flex;
+}
+
+.following-name {
+  font-weight: bolder;
+  display: flex;
+  text-align: center;
+  width: 360px;
+  margin-left: 21px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.following-name2 {
+  font-size: 20px;
+  font: inherit;
+}
+
+/* 닫기 버튼 스타일 */
+/* .close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+.main2 {
+  /* background-color: violet; */
+  width: 418px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  border: 1px solid #bcaeae;
+  border-radius: 5px;
+}
+
+/* .main-page-box {
+  width: 400px;
+  height: 350px;
+  border: 1px;
+} */
+
+.main-page-box2 {
+  overflow-y: scroll; /* 세로 스크롤바 표시 */
+  height: 348px; /* 높이 지정 */
+}
+
+.main-page2 {
+  /* background-color: seashell; */
+  width: 400px;
+  height: auto;
+  overflow: hidden auto;
+  margin: auto;
+}
+
+.following-box1 {
+  /* background-color: red; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.following-img {
+  /* background-color: aqua; */
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.following-img2 {
+  width: 50px;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.following-nickname {
+  /* background-color: rgb(125, 22, 65); */
+  width: 240px;
+  height: 100%;
+}
+
+.following-nickname-box {
+  /* background-color: rgb(227, 17, 104); */
+  width: 240px;
+  height: 50%;
+}
+
+.following-realname-box {
+  /* background-color: rgb(26, 208, 13); */
+  width: 240px;
+  height: 50%;
+  color: rgb(136, 129, 129);
+}
+
+.following-cancel {
+  /* background-color: rgb(201, 34, 181); */
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.cancel-button2 {
+  background-color: #e4d7d7;
+  font-weight: bolder;
+  width: 61px;
+  height: 33px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+}
+.cancel-button2:hover {
+  background-color: #a89f9f;
+}
+
+.following-box2 {
+  /* background-color: orange; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.following-box3 {
+  /* background-color: yellow; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.following-box4 {
+  /* background-color: green; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.following-box5 {
+  background-color: blue;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.following-box6 {
+  background-color: darkblue;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.following-box7 {
+  background-color: blueviolet;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+/* 팔로잉 모달창 끝 */

@@ -1,0 +1,320 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; 
+
+}
+
+body{
+  background-color: rgb(255, 255, 255);
+}
+.Payment-main{
+  background-color: rgba(53, 53, 53, 0.1);
+  width: 100%;
+  height: 1600px;
+  display: block;
+  position: absolute;
+}
+
+.Payment-body{
+  width: 30%;
+  height: 100%;
+  margin: 0px auto;
+}
+.Payment-bodytools{
+  height: 100%;
+  background-color: rgb(189, 189, 189);
+}
+
+/*=========header==========*/
+.Payment-body-header{
+  /* background-color:  rgb(193, 193, 193,0.9); */
+  /* width: 30%; */
+  font-family: 'Josefin Slab', serif;/*----로고글씨체----*/
+
+  height: 10%;
+  margin: 0px auto;
+}
+
+.pay-logo{
+  
+  text-align: center;
+  display: block;
+  padding-top: 70px;
+ 
+}
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  margin-top: 50px;
+}
+h3{
+  font-size: small;
+  font-weight: 400; 
+  color: rgb(172, 163, 163);
+}
+/*==========main==========*/
+.Payment-body-main{
+  background-color: rgb(255, 255, 255);
+  /* width: 30%; */
+  height: 60%;
+  margin: 0px auto; 
+  padding: 0px 30px 0px 30px;
+} 
+
+
+
+                  /*아코디언메뉴*/
+                  .que:first-child{
+                    border-top: 1px solid black;
+                  }
+                  
+                .que{
+                  position: relative;
+                  padding: 20px 0;
+                  cursor: pointer;
+                  font-size: 14px;
+                  border-bottom: 1px solid #2a2a2a;  
+                }
+                .que2{
+                  position: relative;
+                  padding: 20px 0;
+                  cursor: pointer;
+                  font-size: 14px;
+                  border-bottom: 1px solid #2a2a2a;  
+                }
+                   .anw2{
+                  /* display: none; */
+                    /* overflow: hidden; */
+                  font-size: 14px;
+                  background-color: #f4f4f2;
+                  padding: 27px 0;
+                }
+                  [id^="anw1-"]{/*input버튼 내부 스타일*/
+                  display: flex;
+                  width: 80%;
+                  padding-top:13px;
+                  padding-bottom:13px; 
+                  padding-left: 10px;
+                  background-color: rgba(255, 255, 255, 0.9); 
+                  border-radius: 2px; 
+                  border:10px; 
+                  border-color: rgb(9, 8, 8);
+                  margin: 3px 10px 10px 10px;
+                  font-size: 3px;
+                  border:1px solid #c4c4c4;
+                 } 
+                 h3{
+                  font-size:3px; margin: 0px 13px; color: black; border: 1px;
+                 }
+
+                 [id^="anw2-"]{ /*input버튼 내부 스타일*/
+                  display: flex;
+                  width: 80%;
+                  padding-top:13px;
+                  padding-bottom:13px; 
+                  padding-left: 10px;
+                  background-color: rgba(255, 255, 255, 0.9); 
+                  border-radius: 2px; 
+                  border:10px; 
+                  border-color: rgb(9, 8, 8);
+                  margin: 3px 10px 10px 10px;
+                  font-size: 3px;
+                  border:1px solid #c4c4c4;
+                 }
+                 
+                 .anw2-2{
+                  display: flex;
+                  width: 80%;
+                  padding-top:13px;
+                  padding-bottom:13px; 
+                  padding-left: 10px;
+                  background-color: rgba(255, 255, 255, 0.9); 
+                  border-radius: 2px; 
+                  border:10px; 
+                  border-color: rgb(9, 8, 8);
+                  margin: 3px 10px 10px 10px;
+                  font-size: 3px;
+                  border:1px solid #c4c4c4;
+                 }
+
+                .que::before{
+                  display: inline-block;
+                  font-size: 14px;
+                  margin: 0 5px;
+                }
+                
+                .que.on>span{
+                  font-weight: bold;
+                  /* color: #006633;  */
+                }
+                  
+                .anw{
+                  display: none;
+                    overflow: hidden;
+                  font-size: 14px;
+                  background-color: #f4f4f2;
+                  padding: 27px 0;
+                }
+                
+             
+
+                .anw::before {
+                  display: inline-block;
+                  font-size: 14px;
+                  font-weight: bold;
+                  color: #e9e9e9;
+                  margin: 0 5px;
+                  padding: 0px 30px 0px 30px;
+                }
+  
+  .anw2{
+    /* display: none; */
+      /* overflow: hidden; */
+    font-size: 14px;
+    background-color: #f4f4f2;
+    padding: 27px 0;
+  }
+            .productName{
+              font-size:3px;  color: rgb(88, 88, 88); border: 1px;      
+            }
+            li{
+              font-size:1px; padding-left:10px; color:black; border: 1px; list-style: none; 
+            }
+           
+
+/*--------구매목록------------*/
+
+.checkoutProductMainSection{
+ height: 30%;
+ margin: 0px auto; 
+  padding: 5px 5px;
+} 
+
+.pmt{
+  position: relative;
+  padding: 20px 0;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #2a2a2a;  
+
+}
+
+.que::before{
+  display: inline-block;
+  /* content: 'Q'; */
+  font-size: 14px;
+  /* color: #006633; */
+  margin: 0 5px;
+}
+
+.que.on>span{
+  font-weight: bold;
+  /* color: #006633;  */
+}
+
+.amt::before {
+  display: inline-block;
+  /* content: 'A'; */
+  font-size: 14px;
+  font-weight: bold;
+  color: #e9e9e9;
+  margin: 0 5px;
+  padding: 0px 30px 0px 30px;
+}
+
+.amt{
+  display: none;
+    overflow: hidden;
+  font-size: 14px;
+  background-color: #f4f4f2;
+  padding: 27px 0;
+}
+
+
+
+
+/*==========footer==========*/
+.Payment-body-footer{
+  
+  height: 30%;
+  margin: 0px auto;
+  padding: 0px 30px 0px 30px;
+}
+
+    /*-------결제 금액------*/
+    .amount{
+      position: relative;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 14px;
+      border-bottom: 1px solid #2a2a2a; 
+      display: flex; 
+      justify-content: space-between;
+    }
+    .amount-tag{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px 16px;
+      -webkit-box-align: center;
+      align-items: center;
+      padding: 16px 0px 40px;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      letter-spacing: -0.5px;
+      color: rgb(0, 0, 0);
+    }
+   .pay-method{
+    position: relative;
+      padding: 20px 0;
+      cursor: pointer;
+      font-size: 14px;
+      border-bottom: 1px solid #2a2a2a; 
+      display: flex; 
+      gap: 8px 8px;
+   }
+    .pay-mtd{
+      border-left: 1px double grey ;
+    padding-left: 4px;
+    font-size: 12px;
+    }
+    .pay-radio{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      row-gap: 8px;
+      margin: 8px 0px;
+    }
+    .radioButton{
+      position: relative;
+    }
+
+    .card{
+      position: absolute;
+      width: 3px;
+      height: 1px;
+      padding: 0px;
+      margin: -1px;
+      /* overflow: hidden; */
+      clip: rect(0px, 0px, 0px, 0px);
+      border: 0px;
+    }
+    
+    /* .pay-last-button{
+    
+    } */
+    
+      .pay-button-style{
+        width: 90%;
+        height: 30px;
+      display: block;
+      margin: 20px auto;
+      border-style: none;
+      border-radius: 3px;
+      font-size: 10px;
+      color: rgb(62, 62, 62);
+      background-color: #f4f4f2;
+      }
+    

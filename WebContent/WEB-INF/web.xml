@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>cookpang</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file><!-- 메인 페이지 jsp파일 경로 넣기 --></welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+     <servlet-name>User</servlet-name>
+     <servlet-class>com.cookpang.app.user.UserFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>User</servlet-name>
+     <url-pattern>*.us</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Follow</servlet-name>
+     <servlet-class>com.cookpang.app.follow.FollowFrontController</servlet-class>
+     
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Follow</servlet-name>
+     
+     <url-pattern>*.fo</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+     <servlet-name>Post</servlet-name>
+     <servlet-class>com.cookpang.app.post.PostFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Post</servlet-name>
+     <url-pattern>*.po</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+     <servlet-name>ProfileImage</servlet-name>
+     <servlet-class>com.cookpang.app.user.profileImage.ProfileImageFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>ProfileImage</servlet-name>
+     <url-pattern>*.pr</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Ingredient</servlet-name>
+     <servlet-class>com.cookpang.app.ingredient.IngredientFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Ingredient</servlet-name>
+     <url-pattern>*.in</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>PostLike</servlet-name>
+     <servlet-class>com.cookpang.app.post.like.LikeFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>PostLike</servlet-name>
+     <url-pattern>*.pl</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>PostFile</servlet-name>
+     <servlet-class>com.cookpang.app.post.file.FileFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>PostFile</servlet-name>
+     <url-pattern>*.pf</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Comment</servlet-name>
+     <servlet-class>com.cookpang.app.comment.CommentFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Comment</servlet-name>
+     <url-pattern>*.co</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Category</servlet-name>
+     <servlet-class>com.cookpang.app.category.CategoryFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Category</servlet-name>
+     <url-pattern>*.ca</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>RecipeIngredient</servlet-name>
+     <servlet-class>com.cookpang.app.recipe.ingredient.RecipeIngredientFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>RecipeIngredient</servlet-name>
+     <url-pattern>*.ri</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>IngredientImage</servlet-name>
+     <servlet-class>com.cookpang.app.ingredient.image.IngredientImageFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>IngredientImage</servlet-name>
+     <url-pattern>*.ii</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>RecipeCategory</servlet-name>
+     <servlet-class>com.cookpang.app.recipe.category.RecipeCategoryFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>RecipeCategory</servlet-name>
+     <url-pattern>*.rc</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>PostSave</servlet-name>
+     <servlet-class>com.cookpang.app.post.save.SaveFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>PostSave</servlet-name>
+     <url-pattern>*.ps</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Order</servlet-name>
+     <servlet-class>com.cookpang.app.order.OrderFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Order</servlet-name>
+     <url-pattern>*.or</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>OrderItem</servlet-name>
+     <servlet-class>com.cookpang.app.order.item.OrderItemFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>OrderItem</servlet-name>
+     <url-pattern>*.oi</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+     <servlet-name>Payment</servlet-name>
+     <servlet-class>com.cookpang.app.payment.PaymentFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Payment</servlet-name>
+     <url-pattern>*.pa</url-pattern>
+  </servlet-mapping>
+  
+  
+</web-app>

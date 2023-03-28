@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.cookpang.app.user.dto.UserDTO" alias="UserDTO"/>
+		<typeAlias type="com.cookpang.app.cart.dto.CartDTO" alias="CartDTO"/>
+		<typeAlias type="com.cookpang.app.category.dto.CategoryDTO" alias="CategoryDTO"/>
+		<typeAlias type="com.cookpang.app.comment.dto.CommentDTO" alias="CommentDTO"/>
+		<typeAlias type="com.cookpang.app.follow.dto.FollowDTO" alias="FollowDTO"/>
+		<typeAlias type="com.cookpang.app.ingredient.dto.IngredientDTO" alias="IngredientDTO"/>
+		<typeAlias type="com.cookpang.app.ingredient.image.dto.IngredientImageDTO" alias="IngredientImageDTO"/>
+		<typeAlias type="com.cookpang.app.order.dto.OrderDTO" alias="OrderDTO"/>
+		<typeAlias type="com.cookpang.app.order.item.dto.OrderItemDTO" alias="OrderItemDTO"/>
+		<typeAlias type="com.cookpang.app.payment.dto.PaymentDTO" alias="PaymentDTO"/>
+		<typeAlias type="com.cookpang.app.post.dto.PostDTO" alias="PostDTO"/>
+		<typeAlias type="com.cookpang.app.post.file.dto.PostFileDTO" alias="PostFileDTO"/>
+		<typeAlias type="com.cookpang.app.post.like.dto.PostLikeDTO" alias="PostLikeDTO"/>
+		<typeAlias type="com.cookpang.app.post.save.dto.PostSaveDTO" alias="PostSaveDTO"/>
+		<typeAlias type="com.cookpang.app.recipe.category.dto.RecipeCategoryDTO" alias="RecipeCategoryDTO"/>
+		<typeAlias type="com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO" alias="RecipeIngredientDTO"/>
+		<typeAlias type="com.cookpang.app.user.profileImage.dto.ProfileImageDTO" alias="ProfileImageDTO"/>
+
+		
+		
+	</typeAliases>
+	
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/cookpang"/>   <!--jsp_am에 팀 프로젝트 적으면 됨  -->
+				<property name="username" value="root"/>
+				<property name="password" value="1234"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/mybatis/mapper/CategoryMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/CommentMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/FollowMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/IngredientImageMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/IngredientMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/OrderItemMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/OrderMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/PaymentMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/PostFileMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/PostLikeMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/PostMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/PostSaveMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/RecipeCategoryMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/RecipeIngredientMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/UserMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/UserProfileImageMapper.xml"/>
+	</mappers>
+	
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
