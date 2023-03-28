@@ -1,0 +1,408 @@
+@charset "UTF-8";
+
+
+
+
+html, body {
+  overflow-x: hidden;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.write-box-globar-wrap{
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+}
+
+
+.wirte-box-wrap {
+  width: 1200px;
+  height: 640px;
+  border: 23px solid white;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+  .write-box-header{
+    height: 6%;
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+
+  .cancel-btn{
+    /* padding-right: 300px; */
+    width: 10%;
+    height: 100%;
+  }
+  
+  .fa-arrow-left{
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+  }
+  
+  .write-box-header-content{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .write-box-header-share{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  
+  .share-button{
+    background-color: white;
+    color: #937062;
+    border-style: none;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .write-box-content{
+    height: 94%;
+    width: 100%;
+    display: flex;
+    border-top: 1px solid rgba(120, 119, 119, 0.674);
+  }
+
+.image-upload-wrap{
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  border-right: 1px solid rgba(120, 119, 119, 0.674);
+}
+
+
+.img-upload-section{
+  width: 100%;
+  height: 100%;
+}
+
+.image-upload-guide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.fa-image{
+  font-size: 100px;
+  color: #937062;
+}
+
+.file-input{
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+
+}
+
+.file-input-msg{
+  color: #937062;
+}
+
+
+
+
+/* 사용자작성 게시물 부분 */
+.write-box-content-wrap{
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: auto;
+}
+
+.wirte-box-main-user-info{
+  width: 100%;
+  height: 8%;
+  display: flex;
+  padding: 8px;
+  /* border-bottom: 1px solid rgba(120, 119, 119, 0.674); */
+}
+
+.write-box-user-profile-img{
+  height: 50px;
+  width: 50px;
+}
+
+.write-box-user-profile-img .profile-img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.write-box-user-id{
+  height: 100%;
+  width: 86.48%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+/* 레시피에 필요한 재료, 체크박스 */
+
+.write-box-main-content{
+  height: 92%;
+  width: 100%;
+  color: rgb(52, 52, 52);
+  font-weight: bold;
+  max-height: 2000px;
+  padding-left: 15px;
+  
+}
+
+.write-box-main-content input{
+  background-color: #fffbf6;
+  border: 1px solid #aeaeae;
+  border-radius: 5px;
+  margin: 3px 0;
+  width: auto;
+}
+
+.content-wrap{
+  margin: 15px 5px 15px 0px;
+}
+
+.content-title{
+  width: 74%;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.category{
+  display: none;
+  cursor: auto;
+}
+
+.category-list{
+  color: #937062;
+  background-color: white;
+  border: 2px solid #937062;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: bolder;
+  margin-right: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.categories-wrap{
+  display: flex;
+  width: 100%;
+  margin: 7px 0;
+}
+
+ul{
+  list-style: none;
+}
+
+.categories{
+  display: flex;
+}
+
+
+/* 미리보기 */
+/* 파일이 추가되면 display가 바뀐다. */
+.image-preview-wrap{
+  height: 100%;
+    width: 60%;
+    display: none;
+}
+
+.preview-img-controller-box{
+  height: 100%;
+  width: 100%;
+}
+
+.preview-list{
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.wirte-box-imgs-prev{
+  width: 100%;
+  height: 10%;
+  position: absolute;
+}
+
+.wirte-box-imgs-next{
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  left: 685px;
+}
+
+button{
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+
+
+.img-prev-next-button{
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+}
+
+.img-prev-next-button>i{
+  font-size: 35px;
+  color: rgba(88, 88, 88, 0.789);
+}
+
+
+.preview-img-controller-box,
+.preview-image{
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.preview-list>li{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+
+.img-cancel-btn{
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  position: absolute;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgba(88, 88, 88, 0.789);
+  left: 691px;
+}
+
+
+/* 내용 스타일 */
+textarea {
+  resize: none;
+  height: 294px;
+  width: 94%;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px;
+}
+/*  */
+
+.ingredient-wrap{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-items-container {
+  flex: 1;
+}
+
+.ingredient-item{
+  margin-top: 10px;
+}
+
+
+.ingredient-title{
+  padding: 5px;
+  width: 157px;
+  font-size: 16px;
+  width: auto;
+}
+
+.ingredient-element{
+  display: flex;
+}
+
+
+.ingredient-wrap .ingredient-name,
+.ingredient-wrap .ingredient-quantity{
+  padding: 5px;
+  width: 150px;
+  font-size: 16px;
+}
+
+.ingredient-quantity-li{
+  margin: 0px 15px;
+}
+
+.element-edit-buttons{
+  display: flex;
+  width: 20%;
+  /* justify-content: space-around; */
+  align-items: center;
+}
+
+.element-minus{
+  margin: 0px 5px;
+}
+
+.item-edit-buttons{
+  width: 100%;
+  display: flex;
+}
+
+.item-plus{
+  margin: 0px 5px;
+}
+
+.ingredient-guide-msg{
+  display: inline;
+}
+
+.msg1{
+  margin-left: 120px;
+}
+
+
+
+
+
+
