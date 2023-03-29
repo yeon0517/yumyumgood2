@@ -10,6 +10,22 @@
     <title>cookpang</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/main.css" />
     <link rel="icon" href="${pageContext.request.contextPath}/assets/img/main/cookpang.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@1&display=swap"
+      rel="stylesheet"
+    />
+     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff"
+    />
+     <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+  <script src="https://kit.fontawesome.com/9416f63361.js" crossorigin="anonymous"></script>
+  
   </head>
   <body>
     <div id="body-main">
@@ -370,38 +386,79 @@
 
           
         </div>
-        <div class="body-side-bar">
+       <div class="body-side-bar">
           <div class="sidebar-menu">
             <li class="sidebar-name"><a href="#">CookPang</a></li>
             <ul class="sidebar-ul">
               <li class="sidebar-li">
-                <img src="./img/홈.PNG" alt="" class="sidebar-img">
-                <a href="#">홈</a>
+                <div class="li-box">
+                  <!-- <img
+                    src="../img/managerImg/home.png"
+                    alt=""
+                    class="sidebar-img"
+                  /> -->
+                   <i class="fa-solid fa-house"></i>
+                  <a href="#">홈</a>
+                </div>
               </li>
               <li class="sidebar-li">
-                <img src="./img/검색.PNG" alt="" class="sidebar-img">
-                <a href="#">검색</a>
+                <div class="li-box">
+                  <!-- <img
+                    src="../img/managerImg/h.png"
+                    alt=""
+                    class="sidebar-img"
+                  /> -->
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <a href="#">검색</a>
+                </div>
               </li>
               <li class="sidebar-li">
-                <img src="./img/알림.PNG" alt="" class="sidebar-img">
-                <a href="#">알림</a>
+                <div class="li-box">
+                 <!--  <img
+                    src="../img/managerImg/heart.png"
+                    alt=""
+                    class="sidebar-img"
+                  /> -->
+                  <i class="fa-regular fa-heart"></i>
+                  <a href="#">알림</a>
+                </div>
               </li>
               <li class="sidebar-li">
-                <img src="./img/만들기.PNG" alt="" class="sidebar-img">
-                <a href="#">만들기</a>
+                <div class="li-box">
+                 <!--  <img
+                    src="../img/managerImg/plus.png"
+                    alt=""
+                    class="sidebar-img"
+                  /> -->
+                  <i class="fa-regular fa-square-plus"></i>
+                  <a href="#">만들기</a>
+                </div>
               </li>
               <li class="sidebar-li">
-                <img src="./img/찜한 레시피.PNG" alt="" class="sidebar-img">
-                <a href="#">찜한 레시피</a>
+                <div class="li-box">
+                  <!-- <img
+                    src="../img/managerImg/backet.png"
+                    alt=""
+                    class="sidebar-img"
+                  /> -->
+                   <i class="fa-regular fa-bookmark"></i>
+                  <a href="#">찜한 레시피</a>
+                </div>
               </li>
               <li class="sidebar-li">
-                <img src="./img/프로필.PNG" alt="" class="sidebar-img">
-                <a href="#">프로필</a>
+                <div class="li-box">
+                  <!-- <img
+                    src="../img/managerImg/pro.png"
+                    alt=""
+                    class="sidebar-img"
+                  /> -->
+                   <i class="fa-regular fa-user"></i>
+                  <a href="#">프로필</a>
+                </div>
               </li>
             </ul>
             <li class="sidebar-login"><a href="#">로그인</a></li>
           </div>
-        </div>
       </div>
       <div id="main-footer">
         <footer>
@@ -417,7 +474,7 @@
               <p>copyright © <a href="#">Cookpang</a></p>
               <div class="footer-menu">
                 <ul class="f-menu">
-                  <li><a href="">Home</a></li>
+                   <li><a href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
                   <li><a href="">About</a></li>
                   <li><a href="">Contact</a></li>
                   <li><a href="">Blog</a></li>
