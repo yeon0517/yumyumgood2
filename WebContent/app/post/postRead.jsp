@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>post_read</title>
-  <link rel="stylesheet" href="../css/postRead.css">
+   <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/postRead.css">
   <script src="https://kit.fontawesome.com/c6992f5b12.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css">
  <!--게시글 글꼴-->
@@ -404,7 +406,7 @@
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="../js/postRead.js"></script>
-</body>
+  <script src="${pageContext.request.contextPath}/assets/js/postRead.js"></script>
+  </body>
 
 </html>

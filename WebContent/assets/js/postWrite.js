@@ -8,7 +8,7 @@ $(document).ready(function () {
         if ($(this).is(':checked')) {
             $(this)
                 .closest('.category-list')
-                .css('background-color', '#937062');
+                .css('background-color', 'rgba(120, 119, 119, 0.9)');
             $(this)
                 .closest('.category-list')
                 .css('color', 'white');
@@ -18,7 +18,7 @@ $(document).ready(function () {
                 .css('background-color', 'transparent');
             $(this)
                 .closest('.category-list')
-                .css('color', '#937062');
+                .css('color', 'rgb(62, 62, 62)');
         }
     });
 });
