@@ -11,8 +11,7 @@ import com.cookpang.app.Execute;
 import com.cookpang.app.user.dao.UserDAO;
 import com.cookpang.app.user.dto.UserDTO;
 
-
-public class JoinOkController implements Execute {
+public class LoginOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserDAO userDAO = new UserDAO();
@@ -22,18 +21,12 @@ public class JoinOkController implements Execute {
 		
 		userDTO.setUserId(req.getParameter("userId"));
 		userDTO.setUserPassword(req.getParameter("userPassword"));
-		userDTO.setUserName(req.getParameter("userName"));
-		userDTO.setUserNickName(req.getParameter("userNickName"));
-		userDTO.setUserPhoneNumber(req.getParameter("userPhoneNumber"));
-		userDTO.setUserEmail(req.getParameter("userEmail"));
-		userDTO.setUserAddress(req.getParameter("userAddress"));
-		userDTO.setUserSelfIntroduction(req.getParameter("userSelIntroduction"));
-		userDTO.setUserGender(req.getParameter("userGender"));
 		
-		userDAO.join(userDTO);
+		
+		userDAO.login(userDTO);
 		
 		resp.sendRedirect("/user/login.us");
-		req.getRequestDispatcher("/app/join.jsp").forward(req, resp);
+	
 	}
 
 }

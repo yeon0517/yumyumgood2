@@ -12,7 +12,7 @@
 	<insert id="join" parameterType="UserDTO">
 	insert into cookpang.tbl_user
 (user_id, user_password, user_name, user_nickname, user_phone_number, user_email, user_address, user_self_introduction, user_gender)
-values(#{userId}, #{userPassword}, #{userName}, #{userNickname}, #{userPhoneNumber}, #{userEmail}, #{userAddress}, #{userSelfIntroducation}, #{userGender})
+values(#{userId}, #{userPassword}, #{userName}, #{userNickName}, #{userPhoneNumber}, #{userEmail}, #{userAddress}, #{userSelfIntroducation}, #{userGender})
 	
 	
 	</insert>
