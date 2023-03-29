@@ -22,7 +22,7 @@
           
             <div class="main-header-rank">
               <div class="tropy-img">
-                <img src="${pageContext.request.contextPath}/assets/img/main/trophy.png"  alt="" style="max-width: 100%; max-height: 100%;">
+                <img src="${pageContext.request.contextPath}/assets/img/main/trophy.PNG"  alt="" style="max-width: 100%; max-height: 100%;">
               </div>
               <div class="rank-round">
               <div class="rank-img" >

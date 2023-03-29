@@ -135,6 +135,7 @@ list-style: none;
   width: 300px;
   height: 300px;
   margin: 30px 5px;
+  cursor: pointer;
 }
 
 .text-box {
