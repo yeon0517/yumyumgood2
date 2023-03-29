@@ -25,6 +25,7 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/9416f63361.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="body-main">
@@ -674,61 +675,67 @@
             <ul class="sidebar-ul">
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
+                  <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/home.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> --%>
+                  <i class="fa-solid fa-house"></i>
                   <a href="#">홈</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
+                 <%--  <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/h.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> --%>
+                  <i class="fa-solid fa-magnifying-glass"></i>
                   <a href="#">검색</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
+                  <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/heart.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> --%>
+                  <i class="fa-regular fa-heart"></i>
                   <a href="#">알림</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
+                  <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/plus.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> --%>
+                  <i class="fa-regular fa-square-plus"></i>
                   <a href="#">만들기</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
+                  <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/backet.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> --%>
+                  <i class="fa-regular fa-bookmark"></i>
                   <a href="#">찜한 레시피</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
+                  <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/pro.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> --%>
+                  <i class="fa-regular fa-user"></i>
                   <a href="#">프로필</a>
                 </div>
               </li>

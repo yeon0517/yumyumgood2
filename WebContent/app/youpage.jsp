@@ -15,6 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@1&display=swap"
       rel="stylesheet"
     />
+        <script src="https://kit.fontawesome.com/9416f63361.js" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="body-main">
@@ -483,62 +484,69 @@
             <ul class="sidebar-ul">
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img src="../mypage/img/홈.png" alt="" class="sidebar-img" />
+                  <!-- <img src="../img/managerImg/home.png" alt="" class="sidebar-img" /> -->
+                  <i class="fa-solid fa-house"></i>
                   <a href="#">홈</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
-                    src="../mypage/img/검색.png"
+                  <!-- <img
+                    src="../img/managerImg/h.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> -->
+                  <i class="fa-solid fa-magnifying-glass"></i>
                   <a href="#">검색</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
-                    src="../mypage/img/좋아요.png"
+                  <!-- <img
+                    src="../img/managerImg/heart.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> -->
+                  <i class="fa-regular fa-heart"></i>
                   <a href="#">알림</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
-                    src="../mypage/img/만들기.png"
+                  <!-- <img
+                    src="../img/managerImg/plus.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  />  -->
+                  <i class="fa-regular fa-square-plus"></i>
                   <a href="#">만들기</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
-                    src="../mypage/img/좋아요.png"
+                  <!-- <img
+                    src="../img/managerImg/heart.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> -->
+                  <i class="fa-regular fa-bookmark"></i>
                   <a href="#">찜한 레시피</a>
-                </div>
+                
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-                  <img
-                    src="../mypage/img/프로필.png"
+                 <!--  <img
+                    src="../img/managerImg/pro.png"
                     alt=""
                     class="sidebar-img"
-                  />
+                  /> -->
+                  <i class="fa-regular fa-user"></i>
                   <a href="#">프로필</a>
                 </div>
               </li>
             </ul>
             <li class="sidebar-login"><a href="#">로그인</a></li>
+            
           </div>
         </div>
       </div>
@@ -557,7 +565,7 @@
               <p>copyright © <a href="#">Cookpang</a></p>
               <div class="footer-menu">
                 <ul class="f-menu">
-                  <li><a href="">Home</a></li>
+                   <li><a href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
                   <li><a href="">About</a></li>
                   <li><a href="">Contact</a></li>
                   <li><a href="">Blog</a></li>

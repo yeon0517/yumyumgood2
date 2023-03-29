@@ -585,6 +585,9 @@ td {
   cursor: pointer;
   font-family: "Josefin Slab", serif;
 }
+.sidebar-ul i {
+	margin-right: 21px;
+}
 
 .sidebar-li {
   margin-bottom: 35px;
