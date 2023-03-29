@@ -99,7 +99,7 @@
                     <div class="member-serch">
                       <input
                         type="text"
-                        placeholder="회원아이디를 입력하시오"
+                        placeholder="회원아이디를 입력하시오" name="userSearch"
                       />
                       <button>
                         <a href="#"
@@ -296,7 +296,7 @@
                     <div class="post-serch">
                       <input
                         type="text"
-                        placeholder="회원아이디를 입력하시오"
+                        placeholder="게시물 제목을 입력하세요" name="postSearch"
                       />
                       <button>
                         <a href="#"
@@ -477,7 +477,7 @@
                     <div class="payment-serch">
                       <input
                         type="text"
-                        placeholder="회원아이디를 입력하시오"
+                        placeholder="회원아이디를 입력하시오" name="paymentSearch"
                       />
                       <button>
                         <a href="#"
