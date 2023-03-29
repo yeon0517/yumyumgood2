@@ -20,7 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff"
     />
-    <link rel="icon" href="../img/managerImg/pecoImg.png" />
+    <link rel="icon" href="${pageContext.request.contextPath}/assets/img/managerImg/pecoImg.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -47,7 +47,7 @@
                       <div>
                         <a href="#"
                           ><img
-                            src="../img/managerImg/setting.png"
+                            src="${pageContext.request.contextPath}/assets/img/managerImg/setting.png"
                             alt=""
                             id="설정"
                         /></a>
@@ -103,7 +103,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="../img/managerImg/검색.png" alt=""
+                          ><img src="${pageContext.request.contextPath}/assets/img/managerImg/search.png" alt=""
                         /></a>
                       </button>
                     </div>
@@ -300,7 +300,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="../img/managerImg/search.png" alt=""
+                          ><img src="${pageContext.request.contextPath}/assets/img/managerImg/search.png" alt=""
                         /></a>
                       </button>
                     </div>
@@ -481,7 +481,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="../img/managerImg/search.png" alt=""
+                          ><img src="${pageContext.request.contextPath}/assets/img/managerImg/search.png" alt=""
                         /></a>
                       </button>
                     </div>
@@ -675,7 +675,7 @@
               <li class="sidebar-li">
                 <div class="li-box">
                   <img
-                    src="../img/managerImg/home.png"
+                    src="${pageContext.request.contextPath}/assets/img/managerImg/home.png"
                     alt=""
                     class="sidebar-img"
                   />
@@ -685,7 +685,7 @@
               <li class="sidebar-li">
                 <div class="li-box">
                   <img
-                    src="../img/managerImg/h.png"
+                    src="${pageContext.request.contextPath}/assets/img/managerImg/h.png"
                     alt=""
                     class="sidebar-img"
                   />
@@ -695,7 +695,7 @@
               <li class="sidebar-li">
                 <div class="li-box">
                   <img
-                    src="../img/managerImg/heart.png"
+                    src="${pageContext.request.contextPath}/assets/img/managerImg/heart.png"
                     alt=""
                     class="sidebar-img"
                   />
@@ -705,7 +705,7 @@
               <li class="sidebar-li">
                 <div class="li-box">
                   <img
-                    src="../img/managerImg/plus.png"
+                    src="${pageContext.request.contextPath}/assets/img/managerImg/plus.png"
                     alt=""
                     class="sidebar-img"
                   />
@@ -715,7 +715,7 @@
               <li class="sidebar-li">
                 <div class="li-box">
                   <img
-                    src="../img/managerImg/backet.png"
+                    src="${pageContext.request.contextPath}/assets/img/managerImg/backet.png"
                     alt=""
                     class="sidebar-img"
                   />
@@ -725,7 +725,7 @@
               <li class="sidebar-li">
                 <div class="li-box">
                   <img
-                    src="../img/managerImg/pro.png"
+                    src="${pageContext.request.contextPath}/assets/img/managerImg/pro.png"
                     alt=""
                     class="sidebar-img"
                   />
@@ -752,13 +752,13 @@
               <p>copyright © <a href="#">Cookpang</a></p>
               <div class="footer-menu">
                 <ul class="f-menu">
-                  <li><a href="../html/termsOfUse.html">이용약관</a></li>
+                  <li><a href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
                   <li><a href="">About</a></li>
                   <li><a href="">Contact</a></li>
                   <li><a href="">Blog</a></li>
                 </ul>
               </div>
-            </div>
+            </div> 
           </div>
         </footer>
       </div>
@@ -772,8 +772,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/cookpang.js"></script>
-    <script src="../js/chart.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/manager.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/managerChart.js"></script>
   </body>
 </html>
         
