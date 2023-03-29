@@ -111,16 +111,20 @@
                       <tbody>
                         <tr>
                           <th>번호</th>
+                          <th>아이디</th>
                           <th>이름</th>
                           <th>이메일</th>
                           <th>전화번호</th>
                           <th>성별</th>
                           <th>수정</th>
                           <th>삭제</th>
+                          
                         </tr>
 
                         <tr>
                           <td>1</td>
+                          <td>aaa</td>
+                          
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
