@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+#content.agreement.v2 .section {
+  padding-top: 47px;
+}
+#content.agreement .section {
+  padding-bottom: 91px;
+}
+
+#content.agreement .section {
+  padding: 46px 40px 95px 40px;
+}
+#content {
+  clear: both;
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  z-index: 1;
+}
+#content .section.v1 p {
+  font-size: 12px;
+  text-align: left;
+  line-height: 20px;
+  color: #666666;
+  padding-bottom: 20px;
+}
+#content.agreement .section h3 a {
+  color: #333;
+  text-decoration: none;
+}
+#content.agreement .section h3 a {
+  color: #333;
+  text-decoration: none;
+}
+a {
+  color: #01c73c;
+  text-decoration: none;
+}
+#content.agreement .section.v1 h3 {
+  font-family: "돋움";
+  letter-spacing: -1px;
+  font-size: 14px;
+  text-align: left;
+  line-height: 20px;
+  color: #333;
+  padding-bottom: 21px;
+}
+#content.agreement .section h3 {
+  color: #333;
+  letter-spacing: -1px;
+}
+#content .section .service_info dt {
+  float: left;
+  font-size: 12px;
+  text-align: left;
+  line-height: 20px;
+  color: #666666 !important;
+  margin: 0 !important;
+  padding-left: 8px;
+  background: url(https://s.pstatic.net/static/rules/r8/ico_hyphen.png) 0 7px
+    no-repeat;
+}
