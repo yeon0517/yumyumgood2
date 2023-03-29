@@ -80,13 +80,13 @@
         </div>
 
         <div class="form-group">
-          <label for="address_kakao">우편 번호</label>
-          <input type="text" id="address_kakao" name="adress" placeholder="우편번호 찾기" readonly />
+          <label for="address_kakao">주소</label>
+          <input type="text" id="address_kakao" name="adress" placeholder="주소를 입력해 주세요." readonly />
          </div> 
           
          <div class="form-group"></div>
-          <label for="address">주소</label>
-          <input id="address" type="text" placeholder="상세주소를 입력해 주세요." name="address_detail" required/>
+          <label for="address">상세 주소</label>
+          <input id="address" type="text" placeholder="상세주소를 입력해 주세요." name="addressDetail" required/>
         </div>
 
         <div class="form-group">
