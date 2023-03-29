@@ -9,8 +9,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>postWrite</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/postWrite.css">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/postWrite.css">
   <script src="https://kit.fontawesome.com/c6992f5b12.js" crossorigin="anonymous"></script>
+
+    <!--쿡팡 로고 글씨체-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <!--게시글 글꼴-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -20,7 +30,7 @@
     <div class="write-box-globar-wrap">
       <div class="write-box-container">
         
-        <form action="fdsfshf.po" method="post" class="write-box-form" enctype="multipart/form-data">
+        <form action="#" method="post" class="write-box-form" enctype="multipart/form-data">
           <div class="wirte-box-wrap">
 
             <!--작성창 상단 -->
@@ -87,7 +97,7 @@
                     </div>
 
                     <li>
-                      <img src="" alt="미리보기 이미지" class="preview-image">
+                      <img src="../img/test3.jpg" alt="미리보기 이미지" class="preview-image">
                       <div class="btn-box">
                         <button type='button' class='img-cancel-btn' data-name='${files[i].name}'>X</button>
                       </div>
@@ -105,13 +115,13 @@
 
               <!-- 사용자작성 게시물 부분 -->
               <div class="write-box-content-wrap">
-
+                
 
                 <!-- 사용자 프로필사진, 아이디 -->
                 <div class="wirte-box-main-user-info">
                   <div class="write-box-user-profile-img">
                     <!-- 임시 프로필사진 -->
-                    <img src="${pageContext.request.contextPath}/assets/img/testImg/test5.jpg" alt="프로필사진" class="profile-img">
+                    <img src="../img/test5.jpg" alt="프로필사진" class="profile-img">
                   </div>
                   <div class="write-box-user-id">
 
@@ -231,9 +241,11 @@
                           </label>
                         </ul>
                       </div>
-
                     </div>
-
+                    
+                     <textarea name="write-main-msg" id="main-msg" required="" 
+                     placeholder="게시글을 작성해주세요"></textarea>
+                    
                     <!-- 재료 부분 -->
                     <div class="ingredient-wrap">
                       <h4>재료</h4>
@@ -316,7 +328,7 @@
   </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="${pagetContext.request.contextPath}/assets/js/postWrite.js"></script>
+  <script src="${pageContext.request.contextPath}/assets/js/postWrite.js"></script>
 </body>
 
 </html>

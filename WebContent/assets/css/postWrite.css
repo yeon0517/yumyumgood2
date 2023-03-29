@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-
-
-
 html, body {
   overflow-x: hidden;
 }
@@ -10,7 +7,7 @@ html, body {
 *{
   margin: 0;
   padding: 0;
-}
+  }
 
 .write-box-globar-wrap{
   position: absolute;
@@ -71,7 +68,7 @@ html, body {
   
   .share-button{
     background-color: white;
-    color: #937062;
+    color: rgba(88, 88, 88, 0.789);
     border-style: none;
     font-weight: bolder;
     font-size: 20px;
@@ -110,7 +107,7 @@ html, body {
 
 .fa-image{
   font-size: 100px;
-  color: #937062;
+  color: rgba(88, 88, 88, 0.789);
 }
 
 .file-input{
@@ -124,7 +121,7 @@ html, body {
 }
 
 .file-input-msg{
-  color: #937062;
+  color: rgba(88, 88, 88, 0.789);
 }
 
 
@@ -193,7 +190,7 @@ html, body {
 }
 
 .content-title{
-  width: 74%;
+  /* width: 100px; */
   height: 30px;
   padding-left: 10px;
 }
@@ -204,15 +201,16 @@ html, body {
 }
 
 .category-list{
-  color: #937062;
+  color: rgba(11, 11, 11, 0.674);
   background-color: white;
-  border: 2px solid #937062;
+  border: 2px solid rgba(120, 119, 119, 0.674);
   border-radius: 15px;
   text-align: center;
   font-weight: bolder;
   margin-right: 10px;
   padding: 5px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .categories-wrap{
@@ -320,18 +318,21 @@ button{
   font-weight: bold;
   color: rgba(88, 88, 88, 0.789);
   left: 691px;
+  
 }
 
 
 /* 내용 스타일 */
 textarea {
   resize: none;
-  height: 294px;
+  height: 136px;
   width: 94%;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
   padding: 5px;
+  overflow-y: scroll;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 /*  */
 
@@ -339,6 +340,8 @@ textarea {
   width: 100%;
   display: flex;
   flex-direction: column;
+  font-family: 'Nanum Gothic', sans-serif;
+
 }
 
 .ingredient-items-container {

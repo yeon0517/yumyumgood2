@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
+
 *{
   margin: 0;
   padding: 0;
+
 }
 
 .container{
@@ -100,6 +102,8 @@ a{
   height: 9%;
   display: flex;
   padding: 5px;
+  font-family: 'Josefin Slab', serif;/*----로고글씨체----*/
+
 }
 
 .writer-profile{
@@ -129,6 +133,14 @@ a{
 .read-main-content{
   width: 90.1%;
   height: 91%;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+.content-msg-box{
+  height: 85%;
+  font-size: 5px;
+  color: black;
+  overflow-y: scroll;
+  padding: 5px 5px;
 }
 
 .content-choice-box{
@@ -139,7 +151,7 @@ a{
 }
 
 .content-choice-box button{
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
 }
 
@@ -149,6 +161,8 @@ a{
 
 .recipe-btn-box{
   margin-left: 10px;
+  border-left-style: inset;
+  padding-left: 5px;
 }
 
 
@@ -167,11 +181,14 @@ a{
   display: flex;
   align-items: center;
   padding-left: 10px;
+  justify-content: center;
+  font-size: 17px;
+  font-family: none;
 }
 
 .ingredient-box{
   overflow-y: scroll;
-  height: 355px;
+  height: 150px;
   width: 100%;
   display:flex;
   flex-direction: column;
@@ -179,7 +196,7 @@ a{
 
 .recipe-container{
   overflow-y: scroll;
-  height: 355px;
+  height: 60%;
   width: 100%;
   display: none;
   flex-direction: column;
@@ -262,19 +279,21 @@ a{
 
 .category-list{
   color: white;
-  background-color: #937062;
-  border: 2px solid #937062;
+  background-color: #919191;
+  border: 2px none #8a8a8a65;
   border-radius: 15px;
-  text-align: center;
-  font-weight: bolder;
-  margin-right: 10px;
-  padding: 5px;
+  font-weight: 100;
+  margin-right: 5px;
+  padding: 5px 5px;
+  font-size: 14px;
 }
 
 .main-content{
   width: 100%;
-  height: 80%;
-  font-size: 17px;
+  height: 95%;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 5px;
 }
 
 
@@ -284,6 +303,7 @@ a{
 
 .ingredient-list{
   width: 80%;
+  margin-left: 40px;
 }
 
 .ingredient-title{
@@ -292,6 +312,7 @@ a{
   width: 100%;
   height: 30px;
   font-size: 15px;
+  text-align: end;
 }
 
 .ingredient-info{
@@ -299,7 +320,7 @@ a{
   width: 100%;
   justify-content: space-between;
   margin: 10px 0px;
-  font-size: 13px;
+  font-size: 11px;
 }
 
 
@@ -319,19 +340,19 @@ a{
 
 .reader-act-section{
   width: 100%;
-  height: 35%;
+  height: 30%;
   display: flex;
   align-items: center;
 }
 
 .like-count-box{
-  height: 15%;
+  height: 20%;
   width: 100%;
   display: flex;
 }
 
 .like-count-btn{
-  font-size: 15px;
+  font-size: 11px;
   padding-left: 10px;
   font-weight: bold;
 }
@@ -401,11 +422,7 @@ div.post-view-count-box{
 
 
 
-.emoticon-box{
-  width: 14%;
-  height: 100%;
-  background-color: #937062;
-}
+
 
 .comment-box{
   height: 99%;
@@ -417,12 +434,13 @@ div.post-view-count-box{
 }
 
 .comment-post-btn{
-  color: #937062;
-  margin-right: 10px;
+  color: #383838;
+  margin-right: 1px;
+  
 }
 
 .comment-input{
-  font-size: 15px;
+  font-size: 11px;
   font-weight: bolder;
   width: 85%;
   height: 35%;
