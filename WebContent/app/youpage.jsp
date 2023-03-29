@@ -7,8 +7,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mypage</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/mypage.css" />
+    <title>youPage</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/youPage.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -26,7 +26,7 @@
               <div class="profile-picture">
                 <div class="img-box">
                   <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
+                    src="https://img.danawa.com/prod_img/500000/017/350/img/13350017_1.jpg?shrink=330:*&_v=20210224095944"
                     alt="profile-img"
                     class="profile-img"
                   />
@@ -34,7 +34,7 @@
                 <div class="aaa">
                   <div class="name-box">
                     <div class="nickname-box">
-                      <div class="nickname">hunbar_nom12</div>
+                      <div class="nickname">devil_gu12</div>
                     </div>
                     <div class="profile-btn">
                       <button
@@ -43,7 +43,7 @@
                         href="#"
                         class="profile-btn2"
                       >
-                        프로필 편집
+                        팔로우
                       </button>
                     </div>
                     <!-- <div class="point">
@@ -55,7 +55,7 @@
                       <div class="post">
                         게시물
                         <!-- 디비처리 숫자가 늘어나용>< -->
-                        <span class="cnt"> 6</span>
+                        <span class="cnt"> 3</span>
                       </div>
                     </div>
                     <!-- 팔로워 모달창 시작-->
@@ -64,7 +64,7 @@
                       <a class="follower" onclick="openModal()"
                         >팔로워
                         <!-- 디비처리 숫자가 늘어나용>< -->
-                        <span class="cnt">1.7만</span></a
+                        <span class="cnt">10.7만</span></a
                       >
                     </div>
 
@@ -84,7 +84,7 @@
                                 <!-- 팔로워 프로필 사진 -->
                                 <div class="follower-img">
                                   <img
-                                    src="https://img.danawa.com/prod_img/500000/017/350/img/13350017_1.jpg?shrink=330:*&_v=20210224095944"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
                                     alt="#"
                                     class="follower-img2"
                                   />
@@ -92,19 +92,19 @@
                                 <!-- 팔로워 이름, 아이디 -->
                                 <div class="follower-nickname">
                                   <div class="follower-nickname-box">
-                                    <a href="#">devil_gu12</a>
+                                    <a href="#">hunbar_nom12</a>
                                   </div>
-                                  <div class="follower-realname-box">짱구</div>
+                                  <div class="follower-realname-box">훈이</div>
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="follower-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button"
                                   >
                                     삭제
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
                               <div class="follower-box2">
@@ -125,13 +125,13 @@
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="follower-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button"
                                   >
                                     삭제
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
                               <div class="follower-box3">
@@ -152,13 +152,13 @@
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="follower-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button"
                                   >
                                     삭제
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
                               <div class="follower-box4">
@@ -179,16 +179,16 @@
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="follower-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button"
                                   >
                                     삭제
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
-                              <!-- 팔로워 모달창에 들어갈 사람이 없어서 잠시 대기 -->
+                              <!-- 떡잎마을 방범대는 5명이 최대라 대기 -->
                               <!-- <div class="follower-box5"></div>
                               <div class="follower-box6"></div>
                               <div class="follower-box7"></div>
@@ -208,7 +208,7 @@
                       <a class="following" onclick="openModal2()"
                         >팔로잉
                         <!-- 디비처리 숫자가 늘어나용>< -->
-                        <span class="cnt">30</span>
+                        <span class="cnt">136</span>
                       </a>
                     </div>
 
@@ -228,7 +228,7 @@
                                 <!-- 팔로워 프로필 사진 -->
                                 <div class="following-img">
                                   <img
-                                    src="https://img.danawa.com/prod_img/500000/017/350/img/13350017_1.jpg?shrink=330:*&_v=20210224095944"
+                                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
                                     alt="#"
                                     class="following-img2"
                                   />
@@ -236,19 +236,19 @@
                                 <!-- 팔로워 이름, 아이디 -->
                                 <div class="following-nickname">
                                   <div class="following-nickname-box">
-                                    <a href="#">devil_gu12</a>
+                                    <a href="#">hunbar_nom12</a>
                                   </div>
-                                  <div class="following-realname-box">짱구</div>
+                                  <div class="following-realname-box">훈이</div>
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="following-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button2"
                                   >
                                     취소
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
                               <div class="following-box2">
@@ -269,13 +269,13 @@
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="following-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button2"
                                   >
                                     취소
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
                               <div class="following-box3">
@@ -296,13 +296,13 @@
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="following-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button2"
                                   >
                                     취소
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
                               <div class="following-box4">
@@ -323,16 +323,16 @@
                                 </div>
                                 <!-- 팔로워 취소 버튼 -->
                                 <div class="following-cancel">
-                                  <button
+                                  <!-- <button
                                     type="button"
                                     value="#"
                                     class="cancel-button2"
                                   >
                                     취소
-                                  </button>
+                                  </button> -->
                                 </div>
                               </div>
-                              <!-- 팔로잉할 친구가 없어서 한번더 대기 -->
+                              <!-- 팔로워와 같은 이유 -->
                               <!-- <div class="following-box5"></div>
                               <div class="following-box6"></div>
                               <div class="following-box7"></div>
@@ -348,14 +348,13 @@
                     <!-- 팔로잉 모달창 끝 -->
                   </div>
                   <div class="real-name">
-                    <div class="name">훈이</div>
+                    <div class="name">짱구</div>
                   </div>
                   <div class="introduce">
                     <!-- db에서 조회해야한다. -->
                     <div class="introduce-txt">
-                      안녕 내이름은 이훈이 자신있는 사람은 얼마든지
-                      들어와라ㅋㅋㅋ 먹bread는 긴장해라ㅋ #술 #담배 #일탈 #11
-                      #12 #13 #333380398293 #카뱅 #입금해라ㅋ
+                      나를 통제하는건 이슬이누나와 초코비뿐ㅋ #이슬이누나
+                      #연상녀 #연하남 #결혼하자
                     </div>
                   </div>
                 </div>
@@ -364,28 +363,25 @@
 
             <div class="main-banner">
               <div class="banner-box">
-                <div id="post1" class="banner1 active-banner">
+                <div class="banner1">
                   <!-- <a href="#" class="post-thumbnail">게시물</a> -->
                   <div class="post-thumbnail">게시물</div>
                 </div>
-                <div id="post2" class="banner2">
-                  <!-- <a href="#" class="post-thumbnail2">구매내역</a> -->
-                  <div class="post-thumbnail2">구매내역</div>
+                <!-- <div class="banner2">
+                  <a href="#" class="post-thumbnail2">친구</a>
                 </div>
-                <div id="post3" class="banner3">
-                  <!-- <a href="#" class="post-thumbnail3">찜한 레시피</a> -->
-                  <div class="post-thumbnail3">찜한 레시피</div>
-                </div>
+                <div class="banner3">
+                  <a href="#" class="post-thumbnail3">저장</a>
+                </div> -->
               </div>
             </div>
 
-            <!-- 게시글 -->
-            <div id="bottom1" class="main-bottom test">
+            <div class="main-bottom">
               <div class="ccc">
                 <div class="bbb">
                   <a href="#" class="go-post">
                     <img
-                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
+                      src="https://media.licdn.com/dms/image/C4E03AQGzq62SgXXOmg/profile-displayphoto-shrink_800_800/0/1602751018851?e=2147483647&v=beta&t=XWJ0J8Di9xMxz6pdlZhb_GP_zEp4HDMWVwZcgYQY2Jg"
                       class="thumbnail-img"
                     />
                   </a>
@@ -393,225 +389,11 @@
                 <div class="bbb">
                   <a href="#" class="go-post">
                     <img
-                      src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
+                      src="https://newsimg-hams.hankookilbo.com/2022/10/19/64ff9dd1-43eb-4bb7-9fb7-ece0a2f793fc.jpg"
                       class="thumbnail-img"
                     />
                   </a>
                 </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img
-                      src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
-                      class="thumbnail-img"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="ccc">
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img
-                      src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
-                      class="thumbnail-img"
-                    />
-                  </a>
-                </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img
-                      src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
-                      class="thumbnail-img"
-                    />
-                  </a>
-                </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img
-                      src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
-                      class="thumbnail-img"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="ccc">
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img src="" class="thumbnail-img" />
-                  </a>
-                </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img src="" class="thumbnail-img" />
-                  </a>
-                </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img src="" class="thumbnail-img" />
-                  </a>
-                </div>
-              </div>
-              <div class="next-page">
-                <div class="paging">
-                  <p class="paging-btn">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-                        alt=""
-                        class="direction"
-                      />
-                    </a>
-                  </p>
-                  <p class="paging-num">
-                    <a href="">1</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">4</a>
-                    <a href="">5</a>
-                  </p>
-                  <p class="paging-btn">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-                        alt="다음으로"
-                      />
-                    </a>
-                  </p>
-                  <p class="paging-btn" id="paging-last">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-                        alt="마지막으로"
-                      />
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- 구매내역 -->
-            <div id="bottom2" class="main-bottom2 test">
-              <div class="purchase-history">
-                <div class="history-name">
-                  <div class="history-number">상품번호</div>
-                  <div class="history-picture">상품사진</div>
-                  <div class="history-name2">상품이름</div>
-                  <div class="history-date">구매날짜</div>
-                  <div class="history-price">상품가격</div>
-                </div>
-                <div class="purchase-ok1">
-                  <div class="ok-number">1</div>
-                  <div class="ok-picture">
-                    <a href="#">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-                        alt=""
-                        class="ok-picture-img"
-                      />
-                    </a>
-                  </div>
-                  <div class="ok-name">
-                    <a href="#">초코비</a>
-                  </div>
-                  <div class="ok-date">2023-03-24</div>
-                  <div class="ok-price">1,000,000원</div>
-                </div>
-                <div class="purchase-ok2">
-                  <div class="ok-number">2</div>
-                  <div class="ok-picture">
-                    <a href="#">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-                        alt=""
-                        class="ok-picture-img"
-                      />
-                    </a>
-                  </div>
-                  <div class="ok-name">
-                    <a href="#">짱구</a>
-                  </div>
-                  <div class="ok-date">2023-03-24</div>
-                  <div class="ok-price">1,000,000원</div>
-                </div>
-                <div class="purchase-ok3">
-                  <div class="ok-number">3</div>
-                  <div class="ok-picture">
-                    <a href="#">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-                        alt=""
-                        class="ok-picture-img"
-                      />
-                    </a>
-                  </div>
-                  <div class="ok-name">
-                    <a href="#">초코비</a>
-                  </div>
-                  <div class="ok-date">2023-03-24</div>
-                  <div class="ok-price">1,000,000원</div>
-                </div>
-                <div class="purchase-ok4">
-                  <div class="ok-number">4</div>
-                  <div class="ok-picture">
-                    <a href="#">
-                      <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-                        alt=""
-                        class="ok-picture-img"
-                      />
-                    </a>
-                  </div>
-                  <div class="ok-name">
-                    <a href="#">흰둥이</a>
-                  </div>
-                  <div class="ok-date">2023-03-24</div>
-                  <div class="ok-price">1,000,000원</div>
-                </div>
-                <!-- 구매내역 내용 없음 -->
-                <!-- <div class="purchase-ok1"></div>
-                <div class="purchase-ok2"></div>
-                <div class="purchase-ok3"></div> -->
-              </div>
-              <!--페이지 이동 버튼 1, 2, 3... -->
-              <div class="next-page">
-                <div class="paging">
-                  <p class="paging-btn">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-                        alt=""
-                        class="direction"
-                      />
-                    </a>
-                  </p>
-                  <p class="paging-num">
-                    <a href="">1</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">4</a>
-                    <a href="">5</a>
-                  </p>
-                  <p class="paging-btn">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-                        alt="다음으로"
-                      />
-                    </a>
-                  </p>
-                  <p class="paging-btn" id="paging-last">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-                        alt="마지막으로"
-                      />
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <!-- 찜한 레시피 -->
-            <div id="bottom3" class="main-bottom3 test">
-              <div class="ccc">
                 <div class="bbb">
                   <a href="#" class="go-post">
                     <img
@@ -620,16 +402,6 @@
                     />
                   </a>
                 </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img src="" class="thumbnail-img" />
-                  </a>
-                </div>
-                <div class="bbb">
-                  <a href="#" class="go-post">
-                    <img src="" class="thumbnail-img" />
-                  </a>
-                </div>
               </div>
               <div class="ccc">
                 <div class="bbb">
@@ -663,50 +435,48 @@
                   <a href="#" class="go-post">
                     <img src="" class="thumbnail-img" />
                   </a>
-                </div>
-              </div>
-              <div class="next-page">
-                <div class="paging">
-                  <p class="paging-btn">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-                        alt=""
-                        class="direction"
-                      />
-                    </a>
-                  </p>
-                  <!-- 페이지 이동 -->
-                  <p class="paging-num">
-                    <a href="">1</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">4</a>
-                    <a href="">5</a>
-                  </p>
-                  <p class="paging-btn">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-                        alt="다음으로"
-                      />
-                    </a>
-                  </p>
-                  <p class="paging-btn" id="paging-last">
-                    <a href="">
-                      <img
-                        src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-                        alt="마지막으로"
-                      />
-                    </a>
-                  </p>
                 </div>
               </div>
             </div>
           </div>
+          <div class="next-page">
+            <div class="paging">
+              <p class="paging-btn">
+                <a href="">
+                  <img
+                    src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+                    alt=""
+                    class="direction"
+                  />
+                </a>
+              </p>
+              <p class="paging-num">
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+                <a href="">5</a>
+              </p>
+              <p class="paging-btn">
+                <a href="">
+                  <img
+                    src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+                    alt="다음으로"
+                  />
+                </a>
+              </p>
+              <p class="paging-btn" id="paging-last">
+                <a href="">
+                  <img
+                    src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+                    alt="마지막으로"
+                  />
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
 
-        <!-- 사이드 바 -->
         <div class="body-side-bar">
           <div class="sidebar-menu">
             <li class="sidebar-name"><a href="#">CookPang</a></li>
@@ -799,8 +569,6 @@
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/mypage.js"></script>
+    <script src="${pageContext.request.contextPath}/assets/js/youPage.js"></script>
   </body>
 </html>
