@@ -27,7 +27,7 @@ public class LoginOkController implements Execute {
 		
 		System.out.println(userDAO.login(userDTO));
 		resp.sendRedirect("/user/login.us");
-		
+		System.out.println("오류");
 	
 	}
 
