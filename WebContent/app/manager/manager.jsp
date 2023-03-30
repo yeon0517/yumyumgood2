@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,7 +19,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff"
     />
-    <link rel="icon" href="${pageContext.request.contextPath}/assets/img/managerImg/pecoImg.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="../img/managerImg/pecoImg.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding:wght@400;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
       rel="stylesheet"
@@ -48,7 +49,7 @@
                       <div>
                         <a href="#"
                           ><img
-                            src="${pageContext.request.contextPath}/assets/img/managerImg/setting.png"
+                            src="../img/managerImg/setting.png"
                             alt=""
                             id="설정"
                         /></a>
@@ -88,10 +89,10 @@
               <div class="manage-member">
                 <div class="chart">
                   <div class="myChart-1">
-                    <canvas id="myChart"></canvas>
+                    <canvas id="myChart" width="900px" height="400px"></canvas>
                   </div>
                   <div class="myChart-2">
-                    <canvas id="mycate"></canvas>
+                    <canvas id="mycate" width="900px" height="400px"></canvas>
                   </div>
                 </div>
 
@@ -104,7 +105,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="${pageContext.request.contextPath}/assets/img/managerImg/search.png" alt=""
+                          ><img src="../img/managerImg/search.png" alt=""
                         /></a>
                       </button>
                     </div>
@@ -112,20 +113,24 @@
                       <tbody>
                         <tr>
                           <th>번호</th>
+                          <th>아이디</th>
                           <th>이름</th>
                           <th>이메일</th>
                           <th>전화번호</th>
                           <th>성별</th>
+                          <th>상태</th>
                           <th>수정</th>
                           <th>삭제</th>
                         </tr>
 
                         <tr>
                           <td>1</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -135,10 +140,12 @@
                         </tr>
                         <tr>
                           <td>2</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -148,10 +155,12 @@
                         </tr>
                         <tr>
                           <td>3</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -161,10 +170,12 @@
                         </tr>
                         <tr>
                           <td>4</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -174,10 +185,12 @@
                         </tr>
                         <tr>
                           <td>5</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -187,10 +200,12 @@
                         </tr>
                         <tr>
                           <td>6</td>
+                          <td>아이디는aaa</td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -200,10 +215,12 @@
                         </tr>
                         <tr>
                           <td>7</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -213,10 +230,12 @@
                         </tr>
                         <tr>
                           <td>8</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -226,10 +245,12 @@
                         </tr>
                         <tr>
                           <td>9</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
@@ -239,16 +260,16 @@
                         </tr>
                         <tr>
                           <td>10</td>
+                          <td><a href="">아이디는aaa</a></td>
                           <td><a href=""> 홍길동</a></td>
                           <td>hong@example.com</td>
                           <td>010-1234-5678</td>
                           <td>남</td>
+                          <td>유저</td>
                           <td><a href="#">수정</a></td>
                           <td>
                             <div class="checkbox-c">
-                              <a href="#"
-                                ><input type="checkbox" name="member-delet"
-                              /></a>
+                              <a href="#"><input type="checkbox" /></a>
                             </div>
                           </td>
                         </tr>
@@ -301,7 +322,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="${pageContext.request.contextPath}/assets/img/managerImg/search.png" alt=""
+                          ><img src="../img/managerImg/search.png" alt=""
                         /></a>
                       </button>
                     </div>
@@ -311,15 +332,15 @@
                         <th>게시물 제목</th>
                         <th>아이디</th>
                         <th>조회수</th>
-                        <th>수정</th>
+                        <th>날짜</th>
                         <th>삭제</th>
                       </tr>
                       <tr>
                         <td>1</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -329,9 +350,9 @@
                       <tr>
                         <td>2</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -341,9 +362,9 @@
                       <tr>
                         <td>3</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -353,9 +374,9 @@
                       <tr>
                         <td>4</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -365,9 +386,9 @@
                       <tr>
                         <td>5</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -377,9 +398,9 @@
                       <tr>
                         <td>6</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -389,9 +410,9 @@
                       <tr>
                         <td>7</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -401,9 +422,9 @@
                       <tr>
                         <td>8</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -413,9 +434,9 @@
                       <tr>
                         <td>9</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td>
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -425,9 +446,9 @@
                       <tr>
                         <td>10</td>
                         <td><a href="">만두를 만들어요</a></td>
-                        <td>asd123@naver.com</td>
+                        <td><a href=""> asd123@naver.com</a></td> 
                         <td>15</td>
-                        <td><a href="#">수정</a></td>
+                        <td>2023-03-30</td>
                         <td>
                           <div class="checkbox-c">
                             <a href="#"><input type="checkbox" /></a>
@@ -482,7 +503,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="${pageContext.request.contextPath}/assets/img/managerImg/search.png" alt=""
+                          ><img src="../img/managerImg/search.png" alt=""
                         /></a>
                       </button>
                     </div>
@@ -495,18 +516,7 @@
                         <th>주문수량</th>
                         <th>삭제</th>
                       </tr>
-                      <tr>
-                        <td>1</td>
-                        <td>강남구 어딘가</td>
-                        <td><a href="">asd123@naver.com</a></td>
-                        <td>15,000원</td>
-                        <td><a href="#">2</a></td>
-                        <td>
-                          <div class="checkbox-c">
-                            <a href="#"><input type="checkbox" /></a>
-                          </div>
-                        </td>
-                      </tr>
+                      
                       <tr>
                         <td>1</td>
                         <td>강남구 어딘가</td>
@@ -675,8 +685,13 @@
             <ul class="sidebar-ul">
               <li class="sidebar-li">
                 <div class="li-box">
+<<<<<<< HEAD
                   <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/home.png"
+=======
+                  <img
+                    src="../img/managerImg/home.png"
+>>>>>>> work/0330manager
                     alt=""
                     class="sidebar-img"
                   /> --%>
@@ -686,8 +701,13 @@
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
+<<<<<<< HEAD
                  <%--  <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/h.png"
+=======
+                  <img
+                    src="../img/managerImg/h.png"
+>>>>>>> work/0330manager
                     alt=""
                     class="sidebar-img"
                   /> --%>
@@ -697,8 +717,13 @@
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
+<<<<<<< HEAD
                   <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/heart.png"
+=======
+                  <img
+                    src="../img/managerImg/heart.png"
+>>>>>>> work/0330manager
                     alt=""
                     class="sidebar-img"
                   /> --%>
@@ -708,8 +733,13 @@
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
+<<<<<<< HEAD
                   <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/plus.png"
+=======
+                  <img
+                    src="../img/managerImg/plus.png"
+>>>>>>> work/0330manager
                     alt=""
                     class="sidebar-img"
                   /> --%>
@@ -719,8 +749,13 @@
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
+<<<<<<< HEAD
                   <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/backet.png"
+=======
+                  <img
+                    src="../img/managerImg/backet.png"
+>>>>>>> work/0330manager
                     alt=""
                     class="sidebar-img"
                   /> --%>
@@ -730,8 +765,13 @@
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
+<<<<<<< HEAD
                   <%-- <img
                     src="${pageContext.request.contextPath}/assets/img/managerImg/pro.png"
+=======
+                  <img
+                    src="../img/managerImg/pro.png"
+>>>>>>> work/0330manager
                     alt=""
                     class="sidebar-img"
                   /> --%>
@@ -759,13 +799,13 @@
               <p>copyright © <a href="#">Cookpang</a></p>
               <div class="footer-menu">
                 <ul class="f-menu">
-                  <li><a href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
+                  <li><a href="../html/termsOfUse.html">이용약관</a></li>
                   <li><a href="">About</a></li>
                   <li><a href="">Contact</a></li>
                   <li><a href="">Blog</a></li>
                 </ul>
               </div>
-            </div> 
+            </div>
           </div>
         </footer>
       </div>

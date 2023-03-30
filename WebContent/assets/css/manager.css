@@ -164,9 +164,11 @@ a {
   height: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .myChart-1 {
   margin-top: 63px;
+
 }
 .myChart-2 {
   margin-top: 135px;
@@ -192,7 +194,7 @@ a {
 }
 
 .main-bottom {
-  width: 830px;
+  width: 1000px;
   height: 800px;
   margin: auto;
 }
@@ -409,12 +411,12 @@ td {
 
 .member-table tr > th:nth-child(2),
 .member-table tr > td:nth-child(2) {
-  width: 100px;
+  width: 200px;
 }
 
 .member-table tr > th:nth-child(3),
 .member-table tr > td:nth-child(3) {
-  width: 200px;
+  width: 100px;
 }
 .member-table tr > th:nth-child(4),
 .member-table tr > td:nth-child(4) {
@@ -422,7 +424,7 @@ td {
 }
 .member-table tr > th:nth-child(5),
 .member-table tr > td:nth-child(5) {
-  width: 50px;
+  width: 300px;
 }
 .member-table tr > th:nth-child(6),
 .member-table tr > td:nth-child(6) {
@@ -432,6 +434,17 @@ td {
 .member-table tr > td:nth-child(7) {
   width: 50px;
 }
+
+.member-table tr > th:nth-child(8),
+.member-table tr > td:nth-child(8) {
+  width: 80px;
+}
+
+.member-table tr > th:nth-child(9),
+.member-table tr > td:nth-child(9) {
+  width: 50px;
+}
+
 
 .post-table tr > th:nth-child(1),
 .post-table tr > td:nth-child(1) {
@@ -452,7 +465,7 @@ td {
 }
 .post-table tr > th:nth-child(5),
 .post-table tr > td:nth-child(5) {
-  width: 50px;
+  width: 150px;
 }
 .post-table tr > th:nth-child(6),
 .post-table tr > td:nth-child(6) {
@@ -460,7 +473,7 @@ td {
 }
 .payment-table tr > th:nth-child(1),
 .payment-table tr > td:nth-child(1) {
-  width: 30px;
+  width: 50px;
 }
 .payment-table tr > th:nth-child(2),
 .payment-table tr > td:nth-child(2) {
