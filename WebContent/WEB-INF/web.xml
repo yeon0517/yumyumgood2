@@ -183,5 +183,19 @@
   	<url-pattern>/main</url-pattern>
   </servlet-mapping>
   
+  <!-- 혹시 오류나면 수정 및 삭제 위해 주석으로 표시 -->
+  <servlet>
+  	<servlet-name>Manager</servlet-name>
+  	<servlet-class>com.cookpang.app.manager.ManagerFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Manager</servlet-name>
+  	<url-pattern>/manager</url-pattern>
+  </servlet-mapping>
+  <!--  -->
+  
+  
+  
   
 </web-app>

@@ -520,8 +520,43 @@ td {
   margin-top: 30px;
 }
 
+
 /* 페이징 스타일 */
-.paging {
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.pagination > ul {
+  display: flex;
+  list-style: none;
+}
+
+.pagination a {
+  color: #BDBDBD;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  border: 1px solid #BDBDBD;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination a:hover {
+  background-color: #937062;
+  border-color: #937062;
+  color: #fff;
+}
+
+.pagination .active {
+  background-color: #BDBDBD;
+  border-color: #BDBDBD;
+  color: #fff;
+}
+/* .paging {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -550,7 +585,7 @@ td {
 .paging .active {
   color: #fff;
 }
-
+ */
 .category-box .recipe-category a:hover {
   color: #937062;
   border-color: #937062;
