@@ -17,7 +17,7 @@ public class UserDAO {
 		sqlSession.insert("user.join", userDTO);
 	}
 
-	public void login(UserDTO userDTO) {
-		// TODO Auto-generated method stub		
+	public int login(UserDTO userDTO) {
+		return sqlSession.selectOne("user.login", userDTO);	
 	}
 }

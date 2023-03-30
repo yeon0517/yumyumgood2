@@ -15,9 +15,13 @@
 		values(#{userId}, #{userPassword}, #{userName}, #{userNickName},
 		#{userPhoneNumber}, #{userEmail}, #{userAddress},
 		 #{userGender})
-
-
 	</insert>
+	
+	  <select id="login" parameterType="UserDTO" resultType="_int">
+       select user_number from tbl_user
+       where user_id = #{userId} and user_password = #{userPassword}
+      </select>
+	
 
 </mapper>
 
