@@ -30,7 +30,7 @@
     <div class="write-box-globar-wrap">
       <div class="write-box-container">
         
-        <form action="#" method="post" class="write-box-form" enctype="multipart/form-data">
+        <form id="write-form" action="${pageContext.request.contextPath}/post/postWriteOk.po" method="post" class="write-box-form" enctype="multipart/form-data">
           <div class="wirte-box-wrap">
 
             <!--작성창 상단 -->
