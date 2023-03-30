@@ -23,9 +23,11 @@ public class LoginOkController implements Execute {
 		userDTO.setUserPassword(req.getParameter("userPassword"));
 		
 		
-		userDAO.login(userDTO);
 		
+		
+		System.out.println(userDAO.login(userDTO));
 		resp.sendRedirect("/user/login.us");
+		
 	
 	}
 
