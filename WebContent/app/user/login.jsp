@@ -213,7 +213,7 @@ function kakaoLogout() {
 
     <div class="bottom">
     <div class="member">
-          계정이 없으신가요? <a href="${pageContext.request.contextPath}/app/join.jsp">
+          계정이 없으신가요? <a href="/user/join.us">
             회원가입
           </a>
       </div>
