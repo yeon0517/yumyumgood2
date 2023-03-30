@@ -105,8 +105,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="../img/managerImg/search.png" alt=""
-                        /></a>
+                          ><i class="fa-solid fa-magnifying-glass"></i></a>
                       </button>
                     </div>
                     <table class="member-table">
@@ -322,8 +321,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="../img/managerImg/search.png" alt=""
-                        /></a>
+                          ><i class="fa-solid fa-magnifying-glass"></i></a>
                       </button>
                     </div>
                     <table class="post-table">
@@ -503,8 +501,7 @@
                       />
                       <button>
                         <a href="#"
-                          ><img src="../img/managerImg/search.png" alt=""
-                        /></a>
+                          ><i class="fa-solid fa-magnifying-glass"></i></a>
                       </button>
                     </div>
                     <table class="payment-table">
@@ -685,96 +682,42 @@
             <ul class="sidebar-ul">
               <li class="sidebar-li">
                 <div class="li-box">
-<<<<<<< HEAD
-                  <%-- <img
-                    src="${pageContext.request.contextPath}/assets/img/managerImg/home.png"
-=======
-                  <img
-                    src="../img/managerImg/home.png"
->>>>>>> work/0330manager
-                    alt=""
-                    class="sidebar-img"
-                  /> --%>
+
                   <i class="fa-solid fa-house"></i>
                   <a href="#">홈</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-<<<<<<< HEAD
-                 <%--  <img
-                    src="${pageContext.request.contextPath}/assets/img/managerImg/h.png"
-=======
-                  <img
-                    src="../img/managerImg/h.png"
->>>>>>> work/0330manager
-                    alt=""
-                    class="sidebar-img"
-                  /> --%>
+
                   <i class="fa-solid fa-magnifying-glass"></i>
                   <a href="#">검색</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-<<<<<<< HEAD
-                  <%-- <img
-                    src="${pageContext.request.contextPath}/assets/img/managerImg/heart.png"
-=======
-                  <img
-                    src="../img/managerImg/heart.png"
->>>>>>> work/0330manager
-                    alt=""
-                    class="sidebar-img"
-                  /> --%>
+
                   <i class="fa-regular fa-heart"></i>
                   <a href="#">알림</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-<<<<<<< HEAD
-                  <%-- <img
-                    src="${pageContext.request.contextPath}/assets/img/managerImg/plus.png"
-=======
-                  <img
-                    src="../img/managerImg/plus.png"
->>>>>>> work/0330manager
-                    alt=""
-                    class="sidebar-img"
-                  /> --%>
+
                   <i class="fa-regular fa-square-plus"></i>
                   <a href="#">만들기</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-<<<<<<< HEAD
-                  <%-- <img
-                    src="${pageContext.request.contextPath}/assets/img/managerImg/backet.png"
-=======
-                  <img
-                    src="../img/managerImg/backet.png"
->>>>>>> work/0330manager
-                    alt=""
-                    class="sidebar-img"
-                  /> --%>
+
                   <i class="fa-regular fa-bookmark"></i>
                   <a href="#">찜한 레시피</a>
                 </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
-<<<<<<< HEAD
-                  <%-- <img
-                    src="${pageContext.request.contextPath}/assets/img/managerImg/pro.png"
-=======
-                  <img
-                    src="../img/managerImg/pro.png"
->>>>>>> work/0330manager
-                    alt=""
-                    class="sidebar-img"
-                  /> --%>
+
                   <i class="fa-regular fa-user"></i>
                   <a href="#">프로필</a>
                 </div>
