@@ -775,7 +775,7 @@
                 </div>
               </li>
             </ul>
-            <li class="sidebar-login"><a href="#">로그인</a></li>
+            <li class="sidebar-logout"><a href="/user/logoutOk.us" class="logout-btn">로그아웃</a></li>
           </div>
         </div>
       </div>
