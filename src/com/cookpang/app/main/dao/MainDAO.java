@@ -11,4 +11,9 @@ public SqlSession sqlSession;
 	public MainDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	
+	public void postList() {
+//		return 
+	}
+	
 }
