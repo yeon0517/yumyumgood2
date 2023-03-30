@@ -31,63 +31,73 @@
   
 </head>
 <body>
-  <div class="wrapper">
+ <div class="wrapper">
     <img src="" alt="">
     
     <div class="form-group">
     <h1>CookPang</h1>
     <h5>환영합니다!</h5>
   </div>
-    <form action="#">
+  
+    <form action="joinOk.us" method="POST">
       <div class="form-group">
         <label for="id">아이디</label>
-        <input type="text" id="id" name= "memberId" placeholder="아이디를 입력하세요." required/>
+        <input type="text" id="id" name= "userId" placeholder="아이디를 입력하세요." required/>
         <span class="check-msg" id="check-id-msg"></span>
       </div>
 
       <div class="form-group">
-        <label for="nick-name">닉네임</label>
-        <input type="text" id="nick-name" name="memberNick" placeholder="닉네임을 입력하세요." required/>
-        <span class="check-msg" id="check-nick-msg"></span>
-      </div>
-
-      <div class="form-group">
-        <label for="name">이름</label>
-        <input type="text" id="name"  name="memberName" placeholder="이름을 입력하세요." required/>
-      </div> 
-        
-      <div class="form-group">
         <label for="password">비밀번호</label>
-        <input type="password" id="password" name="memberPassword" placeholder="비밀번호를 입력하세요" required />
+        <input type="password" id="password" name="userPassword" placeholder="비밀번호를 입력하세요" required />
         <span class="check-msg" id="check-pw-msg"></span>
       </div>
       
       <div class="form-group">
+        <label for="name">이름</label>
+        <input type="text" id="name"  name="userName" placeholder="이름을 입력하세요." required/>
+      </div> 
+      
+      <div class="form-group">
+        <label for="nick-name">닉네임</label>
+        <input type="text" id="nick-name" name="userNickName" placeholder="닉네임을 입력하세요." required/>
+        <span class="check-msg" id="check-nick-msg"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone-number">핸드폰</label>
+        <input type="text" id="phone-number" name="userPhoneNumber" placeholder="핸드폰 번호를 입력하세요." required/>
+        <span class="check-msg" id="check-phone-msg"></span>
+      </div>
+        
+      
+      <div class="form-group">
         <label>성별</label>
         <div>
-          <input type="radio" id="none" name="memberGender" value="N" checked />
+          <input type="radio" id="none" name="userGender" value="N" checked />
           <label for="none">선택안함</label>
-          <input type="radio" id="male" name="memberGender" value="M" />
+          <input type="radio" id="male" name="userGender" value="M" />
           <label for="male">남성</label>
-          <input type="radio" id="female" name="memberGender" value="F" />
+          <input type="radio" id="female" name="userGender" value="F" />
           <label for="female">여성</label>
         </div>
 
         <div class="form-group">
           <label for="email">이메일</label>
-          <input type="email" id="email" name="memberEmail" placeholder="yumyumgood@cookpang.kr" required />
+          <input type="email" id="email" name="userEmail" placeholder="yumyumgood@cookpang.kr" required />
           <span class="check-msg" id="check-email-msg"></span>
         </div>
 
         <div class="form-group">
           <label for="address_kakao">주소</label>
-          <input type="text" id="address_kakao" name="adress" placeholder="주소를 입력해 주세요." readonly />
+          <input type="text" id="address_kakao" name="address" placeholder="주소를 입력해 주세요." readonly />
          </div> 
           
          <div class="form-group"></div>
           <label for="address">상세 주소</label>
           <input id="address" type="text" placeholder="상세주소를 입력해 주세요." name="addressDetail" required/>
         </div>
+
+       
 
         <div class="form-group">
           <div class="agree-wrap">

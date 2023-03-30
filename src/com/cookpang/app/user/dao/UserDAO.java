@@ -18,7 +18,6 @@ public class UserDAO {
 	}
 
 	public void login(UserDTO userDTO) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
 }

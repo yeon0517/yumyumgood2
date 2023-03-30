@@ -17,8 +17,14 @@ public class JoinOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
-
+		
 		req.setCharacterEncoding("utf-8");
+		
+		String userAddress = req.getParameter("address")+" "+req.getParameter("addressDetail");
+		System.out.println(userAddress);
+		
+		
+
 		
 		userDTO.setUserId(req.getParameter("userId"));
 		userDTO.setUserPassword(req.getParameter("userPassword"));
@@ -26,14 +32,14 @@ public class JoinOkController implements Execute {
 		userDTO.setUserNickName(req.getParameter("userNickName"));
 		userDTO.setUserPhoneNumber(req.getParameter("userPhoneNumber"));
 		userDTO.setUserEmail(req.getParameter("userEmail"));
-		userDTO.setUserAddress(req.getParameter("userAddress"));
-		userDTO.setUserSelfIntroduction(req.getParameter("userSelIntroduction"));
+		userDTO.setUserAddress(userAddress);
 		userDTO.setUserGender(req.getParameter("userGender"));
 		
 		userDAO.join(userDTO);
 		
+//		req.getRequestDispatcher("/app/user/join.jsp").forward(req, resp);
+		
 		resp.sendRedirect("/user/login.us");
-		req.getRequestDispatcher("/app/join.jsp").forward(req, resp);
 	}
 
 }
