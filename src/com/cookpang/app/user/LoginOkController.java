@@ -36,7 +36,7 @@ public class LoginOkController implements Execute {
 			path = "/main"; //마이페이지..? 경로 잡기
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
-			path = "user/login.us?login=fail";
+			path = "/user/login.us?login=fail";
 //			e.printStackTrace();
 		} catch(Exception e) {
 			e.printStackTrace();
