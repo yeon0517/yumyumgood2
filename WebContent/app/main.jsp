@@ -457,7 +457,7 @@
                 </div>
               </li>
             </ul>
-            <li class="sidebar-login"><a href="#">로그인</a></li>
+            <li class="sidebar-login"><a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
           </div>
       </div>
       <div id="main-footer">

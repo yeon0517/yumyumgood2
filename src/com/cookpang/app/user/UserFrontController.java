@@ -26,13 +26,18 @@ public class UserFrontController extends HttpServlet{
 		case "/user/join.us" :
 			req.getRequestDispatcher("/app/user/join.jsp").forward(req, resp);
 			break;
-		case "/app/user/joinOk.us":
+		case "/user/joinOk.us":
 			new JoinOkController().execute(req, resp);
-			break;	
+			break;
+			
+		case "/user/checkIdOk.us" :
+			new CheckIdOkController().execute(req, resp);
+			break;
+			
 		case "/user/login.us":
 			req.getRequestDispatcher("/app/user/login.jsp").forward(req, resp);
 			break;				
-		case "/app/user/loginOk.us":
+		case "/user/loginOk.us":
 			new LoginOkController().execute(req, resp);
 			break;
 		case "/user/logoutOk.us":

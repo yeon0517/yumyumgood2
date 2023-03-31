@@ -17,7 +17,14 @@ public class UserDAO {
 		sqlSession.insert("user.join", userDTO);
 	}
 
+	public boolean checkId(String userId) {
+		return sqlSession.selectOne("user.checkId",userId);
+	}
 	public int login(UserDTO userDTO) {
 		return sqlSession.selectOne("user.login", userDTO);	
+	}
+	
+	public String getUserId(int userNumber) {
+		return sqlSession.selectOne("user.getUserId" , userNumber);
 	}
 }

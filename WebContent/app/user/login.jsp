@@ -11,9 +11,9 @@
   nonce="SiOBIhLG"></script> 
   <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
   <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-  <script>
+<script>
 
-    //기존 로그인 상태를 가져오기 위해 Facebook에 대한 호출
+ //기존 로그인 상태를 가져오기 위해 Facebook에 대한 호출
     function statusChangeCallback(res){
       statusChangeCallback(response);
     }
@@ -42,8 +42,8 @@
         version    : 'v10.0'
       });
       FB.AppEvents.logPageView();   
-    };
-    </script>
+    }; */
+    </script> 
     
     <!--반드시 중간에 본인의 앱아이디를 입력하셔야 합니다.-->
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v10.0&appId=790499885980880" nonce="SiOBIhLG"></script>
@@ -127,7 +127,7 @@ function kakaoLogin() {
       },
     })
   }
-//카카오로그아웃  
+ //카카오로그아웃  
 function kakaoLogout() {
     if (Kakao.Auth.getAccessToken()) {
       Kakao.API.request({
@@ -141,8 +141,8 @@ function kakaoLogout() {
       })
       Kakao.Auth.setAccessToken(undefined)
     }
-  }  
-</script>
+  } 
+</script> 
 
 
   <title>Document</title>
@@ -156,7 +156,7 @@ function kakaoLogout() {
         <form action="loginOk.us" method="POST">
           <div class="input-group">
             <label for="id">아이디</label>
-            <input type="text" id="id" name="userId" value="" placeholder="아이디를 입력하세요." required />
+            <input type="text" id="id" name="userId" value="${requestScope.userId}" placeholder="아이디를 입력하세요." required />
           </div>
           <div class="input-group">
             <label for="password">비밀번호</label>
@@ -213,12 +213,14 @@ function kakaoLogout() {
 
     <div class="bottom">
     <div class="member">
-          계정이 없으신가요? <a href="/user/join.us">
+          계정이 없으신가요? <a href="${pageContext.request.contextPath}/user/join.us">
             회원가입
           </a>
       </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script type="${pageContext.request.contextPath}/assets/js/login.js"></script>
 <!-- <script src="./login.js"></script> -->
 </body>
 </html>
