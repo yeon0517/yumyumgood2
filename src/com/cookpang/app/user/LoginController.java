@@ -27,7 +27,7 @@ public class LoginController implements Execute {
 			}
 		}
 		
-		req.getRequestDispatcher("app/user/login.jsp").forward(req, resp);
+		req.getRequestDispatcher("/app/user/login.jsp").forward(req, resp);
 	}
 
 }

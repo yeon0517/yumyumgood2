@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
   
-  <script>
+ <script>
     window.onload = function(){
         document.getElementById("address_kakao").addEventListener("click", function(){ //주소입력칸을 클릭하면
             //카카오 지도 발생
@@ -27,7 +27,7 @@
             }).open();
         });
     }
-  </script>
+  </script> 
   
 </head>
 <body>
@@ -115,15 +115,14 @@
             로그인하기
           </a>
         </div>
-
-
-      </div>
-      
     </form>
     
 </div>
 
-<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-<script type="${pageContext.request.contextPath}/assets/js/join.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/join.js"></script>
+<script>
+	console.log('asdf')
+</script>
 </body>
 </html>
