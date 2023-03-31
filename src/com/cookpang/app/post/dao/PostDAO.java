@@ -2,6 +2,7 @@ package com.cookpang.app.post.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.cookpang.app.post.dto.PostDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class PostDAO {
@@ -11,4 +12,27 @@ public class PostDAO {
 	public PostDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	
+	public void insert(PostDTO postDTO) {
+		sqlSession.insert("post.insert", postDTO);
+	}
+	
+	public int getSequence() {
+		return sqlSession.selectOne("post.getSequence");
+		
+	}
+//	
+//	public BoardVO select(int boardNumber) {
+//		return sqlSession.selectOne("board.select", boardNumber);
+//	}
+	
+	public void delete(int postNumber) {
+		sqlSession.delete("post.delete", postNumber);
+	}
+
+	public void updatePostViewCount(int postNumber) {
+		sqlSession.update("post.updatePostViewCount", postNumber);
+	}
+	
+	
 }

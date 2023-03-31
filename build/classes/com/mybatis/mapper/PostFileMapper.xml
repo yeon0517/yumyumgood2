@@ -11,8 +11,12 @@ values(#{postFileSystemName}, #{postFileOriginalName}, #{postNumber});
 		select post_file_system_name, post_file_original_name, post_number
 		from tbl_post_file
 		where post_number = #{postNumber}
-		
 	</select>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_post_file
+		where post_number = #{postNumber}
+	</delete>	
 
 </mapper>
 
