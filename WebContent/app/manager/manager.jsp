@@ -135,7 +135,7 @@
 																<!--해당 유저페이지 경로  --> <a href="#">
 																	${user.getUserName() } </a>
 															</td>
-															<td class="user-email">${user.getUserEmail() }</td>
+															<td class="user-email">${user.getUserEmail()}</td>
 															<td class="user-phone-number">${user.getUserPhoneNumber() }</td>
 															<td class="user-gender">${user.getUserGender() }</td>
 															<td class="user-status">${user.getUserStatus() }</td>
@@ -167,7 +167,7 @@
 
 											<c:if test="${prev}">
 												<li><a
-													href="${pageContext.request.contextPath}/manager/managerListOk.manager?page=${startPage - 1}"
+													href="${pageContext.request.contextPath}/manager/managerListRest.manager?page=${startPage - 1}"
 													class="prev">&lt;</a></li>
 											</c:if>
 
@@ -175,7 +175,7 @@
 												<c:choose>
 													<c:when test="${!(i == page) }">
 														<li><a
-															href="${pageContext.request.contextPath}/manager/managerListOk.manager?page=${i}">
+															href="${pageContext.request.contextPath}/manager/managerListRest.manager?page=${i}">
 																<c:out value="${i}" />
 														</a></li>
 													</c:when>
@@ -189,7 +189,7 @@
 
 											<c:if test="${next}">
 												<li><a
-													href="${pageContext.request.contextPath}/manager/managerListOk.manager?page=${endPage + 1}"
+													href="${pageContext.request.contextPath}/manager/managerListRest.manager?page=${endPage + 1}"
 													class="next">&gt;</a></li>
 											</c:if>
 

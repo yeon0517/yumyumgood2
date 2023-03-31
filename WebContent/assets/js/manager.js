@@ -83,22 +83,25 @@ const chartData = [
 
 let $a = $('.user-page a');
 
-let $pageNum =$('.active').val();
 
 console.log($a);
 
-console.log($pageNum);
 
 
-/*$a.on('click', function(){
+$a.on('click', function(e){
+	e.preventDefault();
+	let page = $(this).text().trim();
+	
+	console.log(page);
+	
 	$.ajax({
-	url : '요청 주소',
+	url : '/manager/managerListRest.manager',
     type : 'GET',
-    data : '전송할 데이터',
-    contentType : '전송할 데이터 형식', (getParameter로 할거면 알아서 바꾸기 때문에 생략)
-    dataType : '받을 데이터 형식',
+    data : page,
+	dataType : 'json',
     success : function(result){
-                  //성공시 수행할 코드
+        console.log('성공!!');
+		console.log(result);
     },
     error : function(xhr, status, error){
               //실패시 수행할 코드
@@ -106,7 +109,7 @@ console.log($pageNum);
 		
 	});
 });
-*/
+
 
 
 

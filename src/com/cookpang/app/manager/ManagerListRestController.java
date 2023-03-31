@@ -1,6 +1,7 @@
 package com.cookpang.app.manager;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,12 +13,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.manager.dao.ManagerDAO;
 import com.cookpang.app.user.dto.UserDTO;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 
-public class ManagerListOkController implements Execute {
-
+public class ManagerListRestController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ManagerDAO managerDAO = new ManagerDAO();
+		
 		int total = managerDAO.getUserTotal();
 
 		String temp = req.getParameter("page");
@@ -57,23 +60,24 @@ public class ManagerListOkController implements Execute {
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
 		
-		List<UserDTO> users = managerDAO.selectUserAll(pageMap);
+		List<UserDTO> usersList = managerDAO.selectUserAll(pageMap);
+		Gson gson = new Gson();
+		JsonArray users = new JsonArray();
 		
 		
-		req.setAttribute("userList", users);
-		req.setAttribute("page", page);
-		req.setAttribute("startPage", startPage);
-		req.setAttribute("endPage", endPage);
-		req.setAttribute("prev", prev);
-		req.setAttribute("next", next);
-		
-		
-		req.getRequestDispatcher("/app/manager/manager.jsp").forward(req, resp);
-		
-		
+//		req.setAttribute("userList", users);
+//		req.setAttribute("page", page);
+//		req.setAttribute("startPage", startPage);
+//		req.setAttribute("endPage", endPage);
+//		req.setAttribute("prev", prev);
+//		req.setAttribute("next", next);
 		
 		
 		
+		resp.setCharacterEncoding("utf-8");
+		resp.setContentType("text/html; utf-8");
+		PrintWriter out = resp.getWriter();
+		out.print("ㅎㅇ");
+		out.close();
 	}
-
 }
