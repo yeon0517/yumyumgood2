@@ -11,6 +11,7 @@ public class PostVO {
     private String postDate;
     private int postViewCount;
     private int userNumber;
+    private String userNickName;
     private List<PostFileDTO> files; 
     
     public PostVO() {}
@@ -70,13 +71,24 @@ public class PostVO {
 	public void setFiles(List<PostFileDTO> files) {
 		this.files = files;
 	}
+		
+
+	public String getUserNickName() {
+		return userNickName;
+	}
+
+	public void setUserNickName(String userNickName) {
+		this.userNickName = userNickName;
+	}
 
 	@Override
 	public String toString() {
-		return "PostVo [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
+		return "PostVO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
 				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber
-				+ ", files=" + files + "]";
+				+ ", userNickName=" + userNickName + ", files=" + files + "]";
 	}
+
+	
     
     
 	

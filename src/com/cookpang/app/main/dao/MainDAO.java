@@ -15,8 +15,8 @@ public SqlSession sqlSession;
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<PostVO> PostAll(){
-		return null;
+	public List<PostVO> postAll(){
+		return sqlSession.selectList("post.postAll");
 	}
 	
 }
