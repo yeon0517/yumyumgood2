@@ -15,6 +15,7 @@ import com.cookpang.app.manager.dao.ManagerDAO;
 import com.cookpang.app.user.dto.UserDTO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 public class ManagerListRestController implements Execute{
 	@Override
@@ -61,23 +62,23 @@ public class ManagerListRestController implements Execute{
 		pageMap.put("rowCount", rowCount);
 		
 		List<UserDTO> usersList = managerDAO.selectUserAll(pageMap);
+		
 		Gson gson = new Gson();
-		JsonArray users = new JsonArray();
+		JsonObject result = new JsonObject();
 		
+		JsonArray usersJsonArray = gson.toJsonTree(usersList).getAsJsonArray();
+		result.add("users", usersJsonArray);
 		
-//		req.setAttribute("userList", users);
-//		req.setAttribute("page", page);
-//		req.setAttribute("startPage", startPage);
-//		req.setAttribute("endPage", endPage);
-//		req.setAttribute("prev", prev);
-//		req.setAttribute("next", next);
+		result.addProperty("page", page);
+		result.addProperty("startPage", startPage);
+		result.addProperty("endPage", endPage);
+		result.addProperty("prev", prev);
+		result.addProperty("next", next);
 		
-		
-		
+		resp.setContentType("application/json");
 		resp.setCharacterEncoding("utf-8");
-		resp.setContentType("text/html; utf-8");
 		PrintWriter out = resp.getWriter();
-		out.print("ㅎㅇ");
+		out.print(result.toString());
 		out.close();
 	}
 }
