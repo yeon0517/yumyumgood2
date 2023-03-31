@@ -23,11 +23,17 @@ public class ManagerFrontController extends HttpServlet{
 		System.out.println(target);
 		System.out.println("프론트 컨트롤러 잘 탄당!!");
 
+		
 		switch(target) {
 		case "/manager/managerListOk.manager":
 			new ManagerListOkController().execute(req, resp);
 			break; 
 		}
+		
+		
+		
+		
+		
 	}
 
 }

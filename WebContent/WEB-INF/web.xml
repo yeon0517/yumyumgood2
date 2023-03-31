@@ -191,7 +191,7 @@
   
   <servlet-mapping>
   	<servlet-name>Manager</servlet-name>
-  	<url-pattern>/manager</url-pattern>
+  	<url-pattern>*.manager</url-pattern>
   </servlet-mapping>
   <!--  -->
   

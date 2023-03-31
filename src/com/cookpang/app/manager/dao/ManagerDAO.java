@@ -16,7 +16,7 @@ public class ManagerDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<UserDTO> selectAll(Map<String, Integer> pageMap){
+	public List<UserDTO> selectUserAll(Map<String, Integer> pageMap){
 		
 		return sqlSession.selectList("manager.selectUserAll", pageMap);
 	}

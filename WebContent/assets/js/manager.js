@@ -70,6 +70,8 @@ chartCata.addEventListener("click", function () {
   }
 });
 
+
+
 //==========================
 const chartData = [
   { x: 10, y: 20, r: 5 },
@@ -78,3 +80,39 @@ const chartData = [
   { x: 40, y: 50, r: 20 },
   { x: 50, y: 40, r: 25 },
 ];
+
+let $a = $('.user-page a');
+
+let $pageNum =$('.active').val();
+
+console.log($a);
+
+console.log($pageNum);
+
+
+/*$a.on('click', function(){
+	$.ajax({
+	url : '요청 주소',
+    type : 'GET',
+    data : '전송할 데이터',
+    contentType : '전송할 데이터 형식', (getParameter로 할거면 알아서 바꾸기 때문에 생략)
+    dataType : '받을 데이터 형식',
+    success : function(result){
+                  //성공시 수행할 코드
+    },
+    error : function(xhr, status, error){
+              //실패시 수행할 코드
+    }
+		
+	});
+});
+*/
+
+
+
+
+
+
+
+
+

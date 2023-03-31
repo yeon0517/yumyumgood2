@@ -45,8 +45,8 @@
 											<a href="../html/profile.html">프로필 편집</a>
 										</div>
 										<div>
-											<a href="#"><img
-												src="../img/managerImg/setting.png" alt="" id="설정" /></a>
+											<a href="#"><img src="../img/managerImg/setting.png"
+												alt="" id="설정" /></a>
 										</div>
 									</div>
 									<div class="follow-box">
@@ -102,8 +102,7 @@
 										<input type="text" id="user-serch" name="userSerch"
 											placeholder="회원아이디를 입력하시오" />
 										<button>
-											<a href="#"><i
-												class="fa-solid fa-magnifying-glass"></i></a>
+											<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 										</button>
 									</div>
 									<table class="member-table">
@@ -120,52 +119,82 @@
 												<th>삭제</th>
 											</tr>
 
-											<tr>
-												<td>1</td>
-												<td><a href="">아이디는aaa</a></td>
-												<td><a href=""> 홍길동</a></td>
-												<td>hong@example.com</td>
-												<td>010-1234-5678</td>
-												<td>남</td>
-												<td>유저</td>
-												<td><a href="#">수정</a></td>
-												<td>
-													<div class="checkbox-c">
-														<a href="#"><input type="checkbox" name="user"
-															class="user-check-box" value="#회원번호" /></a>
-													</div>
-												</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td><a href="">아이디는aaa</a></td>
-												<td><a href=""> 홍길동</a></td>
-												<td>hong@example.com</td>
-												<td>010-1234-5678</td>
-												<td>남</td>
-												<td>유저</td>
-												<td><a href="#">수정</a></td>
-												<td>
-													<div class="checkbox-c">
-														<a href="#"><input type="checkbox" name="user"
-															class="user-check-box" value="#회원번호" /></a>
-													</div>
-												</td>
-											</tr>
+
+											<c:choose>
+											
+												<c:when test="${not empty userList}">
+													<c:forEach var="user" items="${userList}">
+
+														<tr>
+															<td class="user-number">${user.getUserNumber()}</td>
+															<td class="user-Id">
+																<!--해당 유저페이지 경로  --> <a href="#"> ${user.getUserId() }
+															</a>
+															</td>
+															<td class="user-name">
+																<!--해당 유저페이지 경로  --> <a href="#">
+																	${user.getUserName() } </a>
+															</td>
+															<td class="user-email">${user.getUserEmail() }</td>
+															<td class="user-phone-number">${user.getUserPhoneNumber() }</td>
+															<td class="user-gender">${user.getUserGender() }</td>
+															<td class="user-status">${user.getUserStatus() }</td>
+															<td><a href="#">수정</a></td>
+															<td>
+																<div class="checkbox-c">
+																	<a href="#"><input type="checkbox" name="user"
+																		class="user-check-box" value="${user.getUserNumber()}" /></a>
+																</div>
+															</td>
+														</tr>
+
+													</c:forEach>
+												</c:when>
+												<c:otherwise>
+													<tr>
+														<td colspan="5" align="center">등록된 회원이 없습니다.</td>
+													</tr>
+												</c:otherwise>
+											</c:choose>
 
 										</tbody>
 									</table>
 									<button class="button" id="memberDelete">회원 삭제</button>
-									<div class="pagination">
+									<div class="pagination user-page">
 										<ul>
 											<!-- ========== 페이징 처리 예시 ============ -->
-											<li><a href="#" class="prev">&lt;</a></li>
-											<li><a href="#" class="active">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li><a href="#" class="next">&gt;</a></li>
+
+
+											<c:if test="${prev}">
+												<li><a
+													href="${pageContext.request.contextPath}/manager/managerListOk.manager?page=${startPage - 1}"
+													class="prev">&lt;</a></li>
+											</c:if>
+
+											<c:forEach var="i" begin="${startPage}" end="${endPage}">
+												<c:choose>
+													<c:when test="${!(i == page) }">
+														<li><a
+															href="${pageContext.request.contextPath}/manager/managerListOk.manager?page=${i}">
+																<c:out value="${i}" />
+														</a></li>
+													</c:when>
+													<c:otherwise>
+														<li><a href="#" class="active"> <c:out
+																	value="${i}" />
+														</a></li>
+													</c:otherwise>
+												</c:choose>
+											</c:forEach>
+
+											<c:if test="${next}">
+												<li><a
+													href="${pageContext.request.contextPath}/manager/managerListOk.manager?page=${endPage + 1}"
+													class="next">&gt;</a></li>
+											</c:if>
+
+
+
 											<!-- ========== /페이징 처리 예시 ============ -->
 										</ul>
 									</div>
@@ -178,8 +207,7 @@
 										<input type="text" name="postSerch" id="post-search"
 											placeholder="게시물 제목을 입력하세요" />
 										<button>
-											<a href="#"><i
-												class="fa-solid fa-magnifying-glass"></i></a>
+											<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 										</button>
 									</div>
 									<table class="post-table">
@@ -242,8 +270,7 @@
 										<input type="text" name="paymentSerch" id="payment-serch"
 											placeholder="회원아이디를 입력하시오" />
 										<button>
-											<a href="#"><i
-												class="fa-solid fa-magnifying-glass"></i></a>
+											<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
 										</button>
 
 									</div>
