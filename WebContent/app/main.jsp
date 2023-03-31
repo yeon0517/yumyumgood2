@@ -237,39 +237,19 @@
 				<c:choose>
 					<c:when test="${not empty postList}">
 						<!-- 빠른 for문 -->
-						<c:forEach var="post" items="${postList}">
-						
-							<div class="aaa">
+						<div class="aaa">
+							<c:forEach var="post" items="${postList}">
+
 								<div class="bbb">
-									<img
-										src="${post.getFiles()}"
-										class="main-img" />
+									<img src="${post.getFiles()}" class="main-img" />
 									<div class="text-box">
-										<a href="" class="text-nick">${post.getUserNickName()}</a><br> <a href=""
-											class="text-title">${post.getPostTitle()}</a>
+										<a href="#" class="text-nick">${post.getUserNickName()}</a><br>
+										<a href="#" class="text-title">${post.getPostTitle()}</a>
 									</div>
 								</div>
-								<div class="bbb">
-									<img
-										src="${post.getFiles()}"
-										class="main-img" />
-									<div class="text-box">
-										<a href="" class="text-nick">${post.getUserNickName()}</a><br> <a href=""
-											class="text-title">${post.getPostTitle()}</a>
-									</div>
-								</div>
-								<div class="bbb">
-									<img
-										src="${post.getFiles()}"
-										class="main-img" />
-									<div class="text-box">
-										<a href="" class="text-nick">${post.getUserNickName()}</a><br> <a href=""
-											class="text-title">${post.getPostTitle()}</a>
-									</div>
-								</div>
-							</div>
-							
-						</c:forEach>
+
+							</c:forEach>
+						</div>
 					</c:when>
 					<c:otherwise>
 						<tr>
@@ -280,107 +260,7 @@
 				</c:choose>
 
 
-				<!-- <div class="aaa">
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20210923170425-BIXZO.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20210826165658-WNVO3.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20210826165322-J3F9W.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-          </div>
-          <div class="aaa">
-            <div class="bbb">
-              <img
-                src="
-                https://2bob.co.kr/data/recipe/20210923153812-924SC.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-             
-            </div>
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20210826151005-V9DSL.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-              
-                
-            </div>
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20191118100113-EIFYG.gif
-                "
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-          </div>
-          <div class="aaa">
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20191212134408-VRHN6.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20210304174955-ZE7O3.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-            <div class="bbb">
-              <img
-                src="https://2bob.co.kr/data/recipe/20210304140742-UG74N.jpg"
-                class="main-img"
-              />
-              <div class="text-box">
-                <a href="" class="text-nick">이동재</a><br>
-                <a href="" class="text-title">김치찌개</a>
-              </div>
-            </div>
-          </div> -->
+				
 
 				<div class="paging">
 					<p class="paging-btn">
