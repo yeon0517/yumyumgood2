@@ -25,6 +25,9 @@ public class ManagerDAO {
 		return sqlSession.selectOne("manager.getUserTotal");
 	}
 	
+	public void deleteUser(int userNumber) {
+		 sqlSession.delete("manager.deleteUser", userNumber);
+	}
 	
 	
 	
