@@ -34,5 +34,11 @@ public class PostDAO {
 		sqlSession.update("post.updatePostViewCount", postNumber);
 	}
 	
+	public void update(PostDTO postDTO) {
+		sqlSession.update("post.update", postDTO);
+	}
 	
+	public  select(int postNumber) {
+		return sqlSession.selectOne("post.select", postNumber);
+	}
 }
