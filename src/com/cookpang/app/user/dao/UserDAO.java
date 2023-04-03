@@ -30,5 +30,10 @@ public class UserDAO {
 		 return (Integer)sqlSession.selectOne("user.checkId",userId) <1;
 	 }
 	 
+	 public String findPassword(UserDTO userDTO) {
+		 return sqlSession.selectOne("user.findPassword",userDTO) ;
+	 }
+	 
+	
 	 
 }

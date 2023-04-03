@@ -29,6 +29,13 @@
 		select user_id from tbl_user
 		where user_number = #{userNumber}
 	</select>
+	
+	<select id="findPassword" parameterType="UserDTO" resultType="String">
+		select user_password from tbl_user
+		where user_phone_number = #{userPhoneNumber} and user_email = #{userEmail}
+	</select>
+
+
 
 </mapper>
 
