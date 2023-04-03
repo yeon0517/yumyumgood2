@@ -3,11 +3,6 @@
 
 <mapper namespace="post">
 	
-<<<<<<< HEAD
-=======
-
-
-
 	<insert id="insert" parameterType="PostDTO">
 		insert tbl_post
 (post_title, post_content, post_date, post_view_count, user_number)
@@ -45,8 +40,7 @@ values(#{postTitle}, #{postContent}, #{postDate}, #{postViewCount}, #{userNumber
 		where post_number = #{postNumber}
 	</update>	
 	
-	
->>>>>>> work/postWrite
+
 </mapper>
 
 

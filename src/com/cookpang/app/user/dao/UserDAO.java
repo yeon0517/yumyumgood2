@@ -13,16 +13,13 @@ public class UserDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-<<<<<<< HEAD
+
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
 	}
 
-	public void login(UserDTO userDTO) {
-		// TODO Auto-generated method stub		
-	}
-}
-=======
+
+
 	 public String getUserId(int userNumber) {
 		  return sqlSession.selectOne("user.getUserId", userNumber);
 	}
@@ -37,4 +34,3 @@ public class UserDAO {
 	 
 	 
 }
->>>>>>> work/postWrite

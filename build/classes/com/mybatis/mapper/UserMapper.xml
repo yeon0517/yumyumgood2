@@ -3,19 +3,13 @@
 
 <mapper namespace="user">
 	<insert id="join" parameterType="UserDTO">
-<<<<<<< HEAD
-		insert into cookpang.tbl_user
+
+		insert into tbl_user
 		(user_id, user_password, user_name, user_nickname, user_phone_number,
 		user_email, user_address, user_gender)
 		values(#{userId}, #{userPassword}, #{userName}, #{userNickName},
 		#{userPhoneNumber}, #{userEmail}, #{userAddress},
 		 #{userGender})
-=======
-		insert into tbl_member(member_id, member_password, member_name, member_age, member_gender,
-		member_email, member_address)
-		values(#{memberId}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberGender},
-		#{memberEmail}, #{memberAddress});
->>>>>>> work/postWrite
 	</insert>
 	
 	<select id="checkId" parameterType="string" resultType="_int">
