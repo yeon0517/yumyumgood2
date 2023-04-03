@@ -16,7 +16,7 @@ public class PostUpdateController implements Execute {
 		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		PostDAO postDAO = new PostDAO();
 		
-		req.setAttribute("post", postDAO.(postNumber));
+//		req.setAttribute("post", postDAO.select(postNumber));
 
 		req.getRequestDispatcher("/app/board/boardUpdate.jsp").forward(req, resp);
 		

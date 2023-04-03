@@ -13,6 +13,10 @@ public class PostDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+	public int getTotal() {
+		return sqlSession.selectOne("post.getTotal");
+	}
+	
 	public void insert(PostDTO postDTO) {
 		sqlSession.insert("post.insert", postDTO);
 	}
@@ -22,7 +26,7 @@ public class PostDAO {
 		
 	}
 //	
-//	public BoardVO select(int boardNumber) {
+//	public PostVO select(int boardNumber) {
 //		return sqlSession.selectOne("board.select", boardNumber);
 //	}
 	
@@ -38,7 +42,7 @@ public class PostDAO {
 		sqlSession.update("post.update", postDTO);
 	}
 	
-	public  select(int postNumber) {
-		return sqlSession.selectOne("post.select", postNumber);
-	}
+//	public void select(int postNumber) {
+//		return sqlSession.selectOne("post.select", postNumber);
+//	}
 }

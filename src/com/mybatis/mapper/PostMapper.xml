@@ -4,12 +4,44 @@
 <mapper namespace="post">
 	
 
+
+
 	<insert id="insert" parameterType="PostDTO">
 		insert tbl_post
 (post_title, post_content, post_date, post_view_count, user_number)
 values(#{postTitle}, #{postContent}, #{postDate}, #{postViewCount}, #{userNumber});
 	</insert>
 		
+	
+	
+
+	<select id="getSequence" resultType="_int">
+		select last_insert_id();
+	</select>
+	
+	 <select id="select" parameterType="_int" resultType="PostReadVO">
+		select
+		post_number , post_title , post_content ,
+		post_date , post_view_count , u.user_number, u.user_id
+		from tbl_user u join tbl_post p
+		on post_number = #{postNumber} and u.user_number = p.user_number ;
+	</select> 
+	
+	<update id="updateViewCount" parameterType="_int">
+		update tbl_post
+		set post_view_count = post_view_count + 1
+		where post_number = #{postNumber}
+	</update>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_post where post_number = #{postNumber}
+	</delete>
+	
+	<update id="update" parameterType="PostDTO">
+		update tbl_post
+		set post_title = #{postTitle}, post_content = #{postContent}, post_recipe_content = #{postRecipeContent}
+		where post_number = #{postNumber}
+	</update>	
 	
 	
 </mapper>
