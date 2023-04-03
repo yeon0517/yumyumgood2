@@ -19,6 +19,7 @@ public class ManagerListOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ManagerDAO managerDAO = new ManagerDAO();
 		int total = managerDAO.getUserTotal();
+		
 
 		String temp = req.getParameter("page");
 

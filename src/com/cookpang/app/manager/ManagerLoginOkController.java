@@ -36,38 +36,23 @@ public class ManagerLoginOkController implements Execute {
 		
 		
 		try {
-		
-			managerDTO = managerDAO.managerLogin(userDTO);
+	        managerDTO = managerDAO.managerLogin(userDTO);
+
+	        if (managerDTO == null) {
+	            path = "/manager/managerLogin.manager?login=fail";
+	        } else if (managerDTO.getUserStatus().equals("user")) {
+	            path = "/user/login.us";
+	        } else if (managerDTO.getUserStatus().equals("manager")) {
+	            managerNumber = managerDTO.getUserNumber();
+	            path = "/manager/managerListOk.manager"; // 관리자페이지로 이동
+	            session.setAttribute("managerNumber", managerNumber);
+	        }
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 
 
-			if (managerDTO.getUserStatus().equals("user")) {
-				path = "/user/login.us";
-			} else if(managerDTO.getUserStatus().equals("manager")){
-				managerNumber = managerDTO.getUserNumber();
-				path = "/manager/managerListOk.manager"; // 관리자페이지로 이동
-				session.setAttribute("managerNumber", managerNumber);
-			}else {
-			
-			
-			}
-			
-		} catch (NullPointerException e) {
-			path = "/manager/managerLogin.manager?login=fail";
-//			e.printStackTrace();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-//		if (remember != null) {
-//			Cookie cookie = new Cookie("managerId", managerId);
-//			cookie.setMaxAge(60 * 60 * 24);
-//			resp.addCookie(cookie);
-//		}
-
-//		System.out.println(userDAO.login(userDTO));
-//		resp.sendRedirect("/user/login.us");
-		System.out.println(managerNumber+"번 매니저" + managerDTO.getUserStatus());
 		
 		resp.sendRedirect(path);
 
