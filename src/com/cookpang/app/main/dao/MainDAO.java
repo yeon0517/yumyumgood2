@@ -16,8 +16,9 @@ public SqlSession sqlSession;
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public List<PostVO> postAll(Map<String, Integer>pageMap){
+	public List<PostVO> postAll(Map<String, Integer> pageMap){
 		return sqlSession.selectList("post.postAll", pageMap);
+
 	}
 	
 	public int getTotal() {

@@ -3,12 +3,15 @@
 
 <mapper namespace="post">
 	<select id="postAll" resultType="PostVO" parameterType="map">
-		select tp.post_number, post_title, tu.user_nickname, tpf.post_file_system_name
+		select tp.post_number, tp.user_number, post_title, tu.user_nickname, 
+		tpf.post_file_system_name, tp.post_date
 		from tbl_post tp
 		left outer join tbl_user tu on tp.user_number = tu.user_number
 		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		order by tp.post_date  desc
 		limit #{startRow}, #{rowCount}
 	</select>
+			
 	
 	<select id="getTotal" resultType="_int">
 		select count(post_number) from tbl_post

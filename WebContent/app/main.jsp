@@ -242,6 +242,9 @@
 
 								<div class="bbb">
 									<img src="${post.getFiles()}" class="main-img" />
+									<!-- <img
+										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
+										class="main-img" /> -->
 									<div class="text-box">
 										<a href="#" class="text-nick">${post.getUserNickName()}</a><br>
 										<a href="#" class="text-title">${post.getPostTitle()}</a>
@@ -254,40 +257,61 @@
 					<c:otherwise>
 						<tr>
 							<!-- 테이블에서 여러 칼럼을 합칠때 쓰는거 colspan -->
-							<td colspan="3" align="center">	.</td>
+							<td colspan="3" align="center">.</td>
 						</tr>
 					</c:otherwise>
 				</c:choose>
 
 
-				
+
 
 				<div class="paging">
 					<p class="paging-btn">
-						<a href=""> <img
-							src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-							alt="" class="direction">
-						</a>
+						<c:if test="${prev}">
+							<a
+								href="${pageContext.request.contextPath}/main?page=${startPage - 1}">
+								<img
+								src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+								alt="" class="direction">
+							</a>
+						</c:if>
 					</p>
 					<p class="paging-num">
-
-						<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-						<a href="">5</a>
+						<c:forEach var="q" begin="${startPage}" end="${endPage}">
+							<c:choose>
+								<c:when test="${!(q == page)}">
+									<a href="${pageContext.request.contextPath}/main?page=${q}">
+										<c:out value="${q}" />
+									</a>
+								</c:when>
+								<c:otherwise>
+									<a href="#" class="btnColor"> 
+										<c:out value="${q}" />
+									</a>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						
 
 					</p>
 					<p class="paging-btn">
-						<a href=""> <img
-							src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-							alt="다음으로">
-						</a>
+						<c:if test="${next}">
+							<a
+								href="${pageContext.request.contextPath}/main?page=${endPage + 1}">
+								<img
+								src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+								alt="다음으로">
+							</a>
+						</c:if>
 					</p>
-					<p class="paging-btn" id="paging-last">
-						<a href=""> <img
+					<!-- <p class="paging-btn" id="paging-last">
+						<a href="#"> <img
 							src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
 							alt="마지막으로">
 						</a>
-					</p>
+					</p> -->
 				</div>
+
 
 
 			</div>

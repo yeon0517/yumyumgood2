@@ -295,7 +295,9 @@ list-style: none;
   list-style: none;
 }
 
-
+.btnColor{
+	color: #2c2727;
+}
 
 .paging a {
   color: #888;
