@@ -61,9 +61,9 @@ public class PostListOkController implements Execute {
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
 		
-		List <VO> posts= postDAO.selectAll(pageMap);
+//		List <VO> posts= postDAO.selectAll(pageMap);
 		
-		req.setAttribute("postList", posts);
+//		req.setAttribute("postList", posts);
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
