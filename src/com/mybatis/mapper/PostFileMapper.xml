@@ -18,7 +18,7 @@
 	<delete id="delete" parameterType="_int">
 		delete from tbl_post_file
 		where post_number = #{postNumber}
-	</delete> -->	
+	</delete>	
 
 
 </mapper>
