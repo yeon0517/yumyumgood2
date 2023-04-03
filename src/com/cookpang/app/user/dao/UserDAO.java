@@ -19,13 +19,12 @@ public class UserDAO {
 	}
 
 
-
-	 public String getUserId(int userNumber) {
-		  return sqlSession.selectOne("user.getUserId", userNumber);
+	public int login(UserDTO userDTO) {
+		return sqlSession.selectOne("user.login", userDTO);	
 	}
-	 
-	 public int login(UserDTO UserDTO) {
-	      return sqlSession.selectOne("User.login", UserDTO);
+	
+	public String getUserId(int userNumber) {
+		return sqlSession.selectOne("user.getUserId" , userNumber);
 	}
 	 
 	 public boolean checkId(String userId) {
