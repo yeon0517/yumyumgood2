@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.post.dao.PostDAO;
+import com.cookpang.app.post.read.vo.PostReadVO;
 
 public class PostListOkController implements Execute {
 
@@ -61,9 +62,9 @@ public class PostListOkController implements Execute {
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
 		
-//		List <VO> posts= postDAO.selectAll(pageMap);
+		List <PostReadVO> posts= postDAO.selectAll(pageMap);
 		
-//		req.setAttribute("postList", posts);
+		req.setAttribute("postList", posts);
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
