@@ -3,13 +3,36 @@
 
 <mapper namespace="user">
 	<insert id="join" parameterType="UserDTO">
+<<<<<<< HEAD
 		insert into cookpang.tbl_user
 		(user_id, user_password, user_name, user_nickname, user_phone_number,
 		user_email, user_address, user_gender)
 		values(#{userId}, #{userPassword}, #{userName}, #{userNickName},
 		#{userPhoneNumber}, #{userEmail}, #{userAddress},
 		 #{userGender})
+=======
+		insert into tbl_member(member_id, member_password, member_name, member_age, member_gender,
+		member_email, member_address)
+		values(#{memberId}, #{memberPassword}, #{memberName}, #{memberAge}, #{memberGender},
+		#{memberEmail}, #{memberAddress});
+>>>>>>> work/postWrite
 	</insert>
+	
+	<select id="checkId" parameterType="string" resultType="_int">
+		select count(user_number) from tbl_user
+		where user_id = #{userId};
+	</select>
+	
+	<select id="login" parameterType="UserDTO" resultType="_int">
+       select User_number from tbl_User
+       where User_id = #{UserId} and User_password = #{UserPassword};
+   	</select>
+   	
+   	<select id="getUserId" parameterType="_int" resultType="String">
+		select User_id from tbl_USer
+		where User_number = #{UserNumber};
+	</select>
+	
 </mapper>
 
 

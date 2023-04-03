@@ -24,8 +24,32 @@ public class PostFrontController extends HttpServlet{
 		System.out.println("프론트 컨트롤러 잘 탄당!!");
 
 		switch(target) {
+		case "/post/postWrite.po":		
+		new PostWriteController().execute(req,resp);
+		break;
 		
+		case "/post/postWriteOk.po":
+		new PostWriteOkController().execute(req,resp);
+		break;
+		
+		case "/post/postDeleteOk.po":
+		new PostDeleteOkController().execute(req,resp);
+		break;
+		
+		case "/post/postReadOk.po":
+		new PostReadOkController().execute(req, resp);
+		break;
+		
+		case "/post/postUpdate.po":
+		new PostUpdateController().execute(req,resp);
+		break;
+		
+		case "/post/postUpdateOk.po":
+		new PostUpdateOkController().execute(req,resp);
+		break;
 		}
+		
+		
 	}
 
 }
