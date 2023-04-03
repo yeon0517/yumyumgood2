@@ -30,7 +30,7 @@ public class MainOkController implements Execute{
 		int pageCount = 5;
 		
 		
-		int startRow = (page -1) * 10;
+		int startRow = (page -1) * 12;
 		
 //		Math.ceil() 올림처리
 		int endPage = (int)(Math.ceil(page/(double)pageCount)* pageCount);
