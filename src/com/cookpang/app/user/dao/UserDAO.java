@@ -13,13 +13,12 @@ public class UserDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+
 	public void join(UserDTO userDTO) {
 		sqlSession.insert("user.join", userDTO);
 	}
 
-	public boolean checkId(String userId) {
-		return sqlSession.selectOne("user.checkId",userId);
-	}
+
 	public int login(UserDTO userDTO) {
 		return sqlSession.selectOne("user.login", userDTO);	
 	}
@@ -27,4 +26,10 @@ public class UserDAO {
 	public String getUserId(int userNumber) {
 		return sqlSession.selectOne("user.getUserId" , userNumber);
 	}
+	 
+	 public boolean checkId(String userId) {
+		 return (Integer)sqlSession.selectOne("user.checkId",userId) <1;
+	 }
+	 
+	 
 }
