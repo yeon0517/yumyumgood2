@@ -467,10 +467,7 @@
             </c:when>
             <c:otherwise>
             <a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
-            </c:otherwise>
-            
-            
-            
+            </c:otherwise>   
             </c:choose>
             </div>
             
