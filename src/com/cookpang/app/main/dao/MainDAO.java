@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.post.vo.PostVO;
+import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
 import com.mybatis.config.MyBatisConfig;
 
 public class MainDAO {
@@ -24,5 +25,10 @@ public SqlSession sqlSession;
 	public int getTotal() {
 		return sqlSession.selectOne("post.getTotal");
 	}
+	
+//	public RecipeCategoryDTO categoryList(RecipeCategoryDTO recipeCategoryDTO){
+//		return recipeCategoryDTO;
+//		
+//	}
 	
 }
