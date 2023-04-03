@@ -18,6 +18,7 @@
 		<typeAlias type="com.cookpang.app.payment.dto.PaymentDTO" alias="PaymentDTO"/>
 		<typeAlias type="com.cookpang.app.post.dto.PostDTO" alias="PostDTO"/>
 		<typeAlias type="com.cookpang.app.post.vo.PostVO" alias="PostVO"/>
+		<typeAlias type="com.cookpang.app.post.read.vo.PostReadVO" alias="PostReadVO"/>
 		<typeAlias type="com.cookpang.app.post.file.dto.PostFileDTO" alias="PostFileDTO"/>
 		<typeAlias type="com.cookpang.app.post.like.dto.PostLikeDTO" alias="PostLikeDTO"/>
 		<typeAlias type="com.cookpang.app.post.save.dto.PostSaveDTO" alias="PostSaveDTO"/>

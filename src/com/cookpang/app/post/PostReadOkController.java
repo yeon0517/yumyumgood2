@@ -11,6 +11,7 @@ import com.cookpang.app.Execute;
 import com.cookpang.app.post.dao.PostDAO;
 import com.cookpang.app.post.file.dao.PostFileDAO;
 import com.cookpang.app.post.file.dto.PostFileDTO;
+import com.cookpang.app.post.read.vo.PostReadVO;
 
 public class PostReadOkController implements Execute {
 
@@ -18,10 +19,15 @@ public class PostReadOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		PostDAO postDAO = new PostDAO();
-		
+		PostReadVO postReadVO = new PostReadVO();
 		List<PostFileDTO> files = new PostFileDAO().select(postNumber);
 		
+		
 		postDAO.updatePostViewCount(postNumber);
+		
+		postReadVO.setFiles(files);
+		
+		req.setAttribute("post", postReadVO);
 		
 		req.getRequestDispatcher("/app/post/postRead.jsp").forward(req, resp);
 		
