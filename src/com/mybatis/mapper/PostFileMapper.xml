@@ -3,12 +3,12 @@
 
 <mapper namespace="postFile">
 
-	<insert id="insert" parameterType="FileDTO">
+	<insert id="insert" parameterType="PostFileDTO">
 	insert into tbl_post_file(post_file_system_name, post_file_original_name, post_number)
 values(#{postFileSystemName}, #{postFileOriginalName}, #{postNumber});
 	</insert>
 	
-	<select id="select" parameterType="_int" resultType="FileDTO">
+	<select id="select" parameterType="_int" resultType="PostFileDTO">
 		select post_file_system_name, post_file_original_name, post_number
 		from tbl_post_file
 		where post_number = #{postNumber}

@@ -1,8 +1,12 @@
 package com.cookpang.app.post.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.post.dto.PostDTO;
+import com.cookpang.app.post.read.vo.PostReadVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class PostDAO {
@@ -11,6 +15,11 @@ public class PostDAO {
 	
 	public PostDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
+	}
+	
+	public List <PostReadVO> selectAll(Map<String, Integer>pageMap) {
+		return sqlSession.selectList("post.selectAll", pageMap);
+		
 	}
 	
 	public int getTotal() {
@@ -25,10 +34,10 @@ public class PostDAO {
 		return sqlSession.selectOne("post.getSequence");
 		
 	}
-//	
-//	public PostVO select(int boardNumber) {
-//		return sqlSession.selectOne("board.select", boardNumber);
-//	}
+	
+	public PostReadVO select(int postNumber) {
+		return sqlSession.selectOne("post.select", postNumber);
+	}
 	
 	public void delete(int postNumber) {
 		sqlSession.delete("post.delete", postNumber);
@@ -38,11 +47,10 @@ public class PostDAO {
 		sqlSession.update("post.updatePostViewCount", postNumber);
 	}
 	
+	
 	public void update(PostDTO postDTO) {
 		sqlSession.update("post.update", postDTO);
 	}
 	
-//	public void select(int postNumber) {
-//		return sqlSession.selectOne("post.select", postNumber);
-//	}
+
 }
