@@ -30,7 +30,7 @@
     <div class="write-box-globar-wrap">
       <div class="write-box-container">
         
-        <form action="#" method="post" class="write-box-form" enctype="multipart/form-data">
+        <form id="write-form" method= "post" action="${pageContext.request.contextPath}/post/postWriteOk.po" method="post" class="write-box-form" enctype="multipart/form-data">
           <div class="wirte-box-wrap">
 
             <!--작성창 상단 -->
@@ -126,7 +126,7 @@
                   <div class="write-box-user-id">
 
                     <!-- 임시 사용자아이디 -->
-                    <h3>cookpang</h3>
+                    <c:out value="${userId }"></c:out>
                   </div>
 
                 </div>
@@ -148,22 +148,22 @@
                         <ul class="categories">
                           <label>
                             <li class="category-list">
-                              밥요리<input type="checkbox" class="category" name="categorys" value="#">
+                              밥요리<input type="checkbox" class="category" name="categorys" value="1">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              국&탕<input type="checkbox" class="category" name="categorys" value="#">
+                              국&탕<input type="checkbox" class="category" name="categorys" value="2">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              찌개&전골<input type="checkbox" class="category" name="categorys" value="#">
+                              찌개&전골<input type="checkbox" class="category" name="categorys" value="3">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              볶음요리<input type="checkbox" class="category" name="categorys" value="#">
+                              볶음요리<input type="checkbox" class="category" name="categorys" value="4">
                             </li>
                           </label>
                         </ul>
@@ -173,46 +173,22 @@
                         <ul class="categories">
                           <label>
                             <li class="category-list">
-                              밑반찬<input type="checkbox" class="category" name="categorys" value="#">
+                              밑반찬<input type="checkbox" class="category" name="categorys" value="5">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              찜&조림<input type="checkbox" class="category" name="categorys" value="#">
+                              찜&조림<input type="checkbox" class="category" name="categorys" value="6">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              야식&술안주<input type="checkbox" class="category" name="categorys" value="#">
+                              야식&술안주<input type="checkbox" class="category" name="categorys" value="7">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              면요리<input type="checkbox" class="category" name="categorys" value="#">
-                            </li>
-                          </label>
-                        </ul>
-                      </div>
-                      <div class="categories-wrap">
-                        <ul class="categories">
-                          <label>
-                            <li class="category-list">
-                              샐러드<input type="checkbox" class="category" name="categorys" value="#">
-                            </li>
-                          </label>
-                          <label>
-                            <li class="category-list">
-                              김밥&초밥<input type="checkbox" class="category" name="categorys" value="#">
-                            </li>
-                          </label>
-                          <label>
-                            <li class="category-list">
-                              튀김<input type="checkbox" class="category" name="categorys" value="#">
-                            </li>
-                          </label>
-                          <label>
-                            <li class="category-list">
-                              스파게티<input type="checkbox" class="category" name="categorys" value="#">
+                              면요리<input type="checkbox" class="category" name="categorys" value="8">
                             </li>
                           </label>
                         </ul>
@@ -221,22 +197,46 @@
                         <ul class="categories">
                           <label>
                             <li class="category-list">
-                              간식&분식<input type="checkbox" class="category" name="categorys" value="#">
+                              샐러드<input type="checkbox" class="category" name="categorys" value="9">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              디저트<input type="checkbox" class="category" name="categorys" value="#">
+                              김밥&초밥<input type="checkbox" class="category" name="categorys" value="10">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              구이<input type="checkbox" class="category" name="categorys" value="#">
+                              튀김<input type="checkbox" class="category" name="categorys" value="11">
                             </li>
                           </label>
                           <label>
                             <li class="category-list">
-                              토스트/샌드위치<input type="checkbox" class="category" name="categorys" value="#">
+                              스파게티<input type="checkbox" class="category" name="categorys" value="12">
+                            </li>
+                          </label>
+                        </ul>
+                      </div>
+                      <div class="categories-wrap">
+                        <ul class="categories">
+                          <label>
+                            <li class="category-list">
+                              간식&분식<input type="checkbox" class="category" name="categorys" value="13">
+                            </li>
+                          </label>
+                          <label>
+                            <li class="category-list">
+                              디저트<input type="checkbox" class="category" name="categorys" value="14">
+                            </li>
+                          </label>
+                          <label>
+                            <li class="category-list">
+                              구이<input type="checkbox" class="category" name="categorys" value="15">
+                            </li>
+                          </label>
+                          <label>
+                            <li class="category-list">
+                              토스트/샌드위치<input type="checkbox" class="category" name="categorys" value="16">
                             </li>
                           </label>
                         </ul>

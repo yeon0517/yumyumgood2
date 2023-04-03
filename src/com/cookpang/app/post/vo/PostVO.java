@@ -1,24 +1,20 @@
-package com.cookpang.app.post.dto;
+package com.cookpang.app.post.vo;
 
+import java.util.List;
 
+import com.cookpang.app.post.file.dto.PostFileDTO;
 
-public class PostDTO {
-    private int postNumber;
+public class PostVO {
+	private int postNumber;
     private String postTitle;
     private String postContent;
-    private String postRecipeContent;
     private String postDate;
     private int postViewCount;
     private int userNumber;
+    private String userNickName;
+    private List<PostFileDTO> files; 
     
-    public PostDTO() {}
-
-	@Override
-	public String toString() {
-		return "PostDTO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
-				+ ", postRecipeContent=" + postRecipeContent + ", postDate=" + postDate + ", postViewCount="
-				+ postViewCount + ", userNumber=" + userNumber + "]";
-	}
+    public PostVO() {}
 
 	public int getPostNumber() {
 		return postNumber;
@@ -42,14 +38,6 @@ public class PostDTO {
 
 	public void setPostContent(String postContent) {
 		this.postContent = postContent;
-	}
-
-	public String getPostRecipeContent() {
-		return postRecipeContent;
-	}
-
-	public void setPostRecipeContent(String postRecipeContent) {
-		this.postRecipeContent = postRecipeContent;
 	}
 
 	public String getPostDate() {
@@ -76,4 +64,34 @@ public class PostDTO {
 		this.userNumber = userNumber;
 	}
 
+	public List<PostFileDTO> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<PostFileDTO> files) {
+		this.files = files;
+	}
+		
+
+	public String getUserNickName() {
+		return userNickName;
+	}
+
+	public void setUserNickName(String userNickName) {
+		this.userNickName = userNickName;
+	}
+
+	@Override
+	public String toString() {
+		return "PostVO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
+				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber
+				+ ", userNickName=" + userNickName + ", files=" + files + "]";
+	}
+
+	
+    
+    
+	
+    
+    
 }

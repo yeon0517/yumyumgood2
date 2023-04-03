@@ -8,7 +8,6 @@
 	
 	<typeAliases>
 		<typeAlias type="com.cookpang.app.user.dto.UserDTO" alias="UserDTO"/>
-		<typeAlias type="com.cookpang.app.cart.dto.CartDTO" alias="CartDTO"/>
 		<typeAlias type="com.cookpang.app.category.dto.CategoryDTO" alias="CategoryDTO"/>
 		<typeAlias type="com.cookpang.app.comment.dto.CommentDTO" alias="CommentDTO"/>
 		<typeAlias type="com.cookpang.app.follow.dto.FollowDTO" alias="FollowDTO"/>
