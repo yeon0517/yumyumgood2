@@ -34,6 +34,12 @@ public class ManagerFrontController extends HttpServlet{
 		case "/manager/UserDeleteOk.manager":
 			new ManagerUserDeleteOkController().execute(req, resp);
 			break;
+		case "/manager/managerLogin.manager":
+			req.getRequestDispatcher("/app/manager/managerLogin.jsp").forward(req, resp);
+			break;
+		case "/manager/managerLoginOk.manager":
+			new ManagerLoginOkController().execute(req, resp);
+			break;
 			
 			
 			

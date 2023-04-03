@@ -368,7 +368,7 @@
 									</div>
 								</li>
 							</ul>
-							<li class="sidebar-login"><a href="#">로그인</a></li>
+							<li class="sidebar-login"><a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a></li>
 						</div>
 					</div>
 				</div>

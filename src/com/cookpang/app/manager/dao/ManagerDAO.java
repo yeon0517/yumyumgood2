@@ -29,6 +29,9 @@ public class ManagerDAO {
 		 sqlSession.delete("manager.deleteUser", userNumber);
 	}
 	
+	public UserDTO managerLogin(UserDTO userDTO) {
+		return sqlSession.selectOne("manager.managerLogin", userDTO);
+	}
 	
 	
 	
