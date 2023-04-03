@@ -33,6 +33,9 @@ public class ManagerDAO {
 		return sqlSession.selectOne("manager.managerLogin", userDTO);
 	}
 	
+	public boolean checkManager( int managerNumber) {
+		 return sqlSession.selectOne("manager.checkManager", managerNumber).equals("manager") ? true : false   ;
+	}
 	
 	
 	

@@ -21,11 +21,23 @@
 		where user_number=#{userNumber};
 	</delete>
 	
-	
 	<select id="managerLogin" parameterType="UserDTO" resultType="UserDTO">
        select user_number, user_status from tbl_User
 	   where User_id = #{userId} and User_password = #{userPassword}
    	</select>
+
+	<select id="checkManager" parameterType="_int" resultType="string">
+       select user_status from tbl_User
+	   where user_number = #{managerNumber}
+   	</select>
+	
+
+
+
+
+
+
+
 
 
 
