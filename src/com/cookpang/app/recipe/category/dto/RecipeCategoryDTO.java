@@ -3,7 +3,7 @@ package com.cookpang.app.recipe.category.dto;
 
 public class RecipeCategoryDTO {
 	private int postNumber;
-	private int categoryNumber;
+	private String categoryName;
 	
 	public RecipeCategoryDTO() {}
 
@@ -15,16 +15,21 @@ public class RecipeCategoryDTO {
 		this.postNumber = postNumber;
 	}
 
-	public int getCategoryNumber() {
-		return categoryNumber;
+	public String getCategoryName() {
+		return categoryName;
 	}
 
-	public void setCategoryNumber(int categoryNumber) {
-		this.categoryNumber = categoryNumber;
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
 	}
 
 	@Override
 	public String toString() {
-		return "RecipeCategoryDTO [postNumber=" + postNumber + ", categoryNumber=" + categoryNumber + "]";
+		return "RecipeCategoryDTO [postNumber=" + postNumber + ", categoryName=" + categoryName + "]";
 	}
+
+		
+	
+	
+	
 	}

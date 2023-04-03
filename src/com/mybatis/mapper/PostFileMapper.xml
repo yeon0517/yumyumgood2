@@ -3,7 +3,7 @@
 
 <mapper namespace="postFile">
 
-	<insert id="insert" parameterType="FileDTO">
+	<!-- <insert id="insert" parameterType="FileDTO">
 	insert into tbl_post_file(post_file_system_name, post_file_original_name, post_number)
 values(#{postFileSystemName}, #{postFileOriginalName}, #{postNumber});
 	</insert>
@@ -17,7 +17,7 @@ values(#{postFileSystemName}, #{postFileOriginalName}, #{postNumber});
 	<delete id="delete" parameterType="_int">
 		delete from tbl_post_file
 		where post_number = #{postNumber}
-	</delete>	
+	</delete> -->	
 
 
 </mapper>

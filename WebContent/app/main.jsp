@@ -115,9 +115,15 @@
 					</div>
 
 				</div>
+
+				<!-- 카테고리 -->
+				<%-- <c:forEach var="category" items="${categories}">
+					<li><a href="category.jsp?id=${category.id}">${category.name}</a></li>
+				</c:forEach> --%>
+
 				<div class="main-body-bottom">
 					<ul class="category-menu">
-						<li class="category-box"><a class="recipe-category" href="">
+						<li class="category-box"><a class="recipe-category" href="#">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_1_off.jpg"
 								alt="" class="category-img">
@@ -173,7 +179,7 @@
 								<p class="category-name">튀김</p>
 
 						</a></li>
-						<!-- <br> -->
+						<br>
 						<li class="category-box"><a class="recipe-category" href="">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_13_off.jpg"
@@ -233,6 +239,8 @@
 
 					</ul>
 				</div>
+				<!-- 카테고리 -->
+
 
 				<c:choose>
 					<c:when test="${not empty postList}">
@@ -285,13 +293,12 @@
 									</a>
 								</c:when>
 								<c:otherwise>
-									<a href="#" class="btnColor"> 
-										<c:out value="${q}" />
+									<a href="#" class="btnColor"> <c:out value="${q}" />
 									</a>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
-						
+
 
 					</p>
 					<p class="paging-btn">
@@ -377,54 +384,53 @@
                     class="sidebar-img"
                   /> -->
 
-                   <i class="fa-regular fa-user"></i>
-                  <a href="#">프로필</a>
-                </div>
-              </li>
-            </ul>
-            
-            <div class="btn-group">
-            <li class="sidebar-login">
-            <c:choose>
-            <c:when test="${empty sessionScope.userNumber}">
-            <a href="${pageContext.request.contextPath}/user/login.us">로그인</a>
-            </li>
-            </c:when>
-            <c:otherwise>
-            <a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
-            </c:otherwise>   
-            </c:choose>
-            </div>
-            
-          </div>
-      </div>
-      <div id="main-footer">
-        <footer>
-          <div>
-            <div class="footer-content">
-              <h3>Cook Pang</h3>
-              <p>
-                콘텐츠의 저작권은 제공처 또는 코리아IT아카데미 에 있으며, 이를
-                무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.
-              </p>
-            </div>
-            <div class="footer-bottom">
-              <p>copyright © <a href="#">Cookpang</a></p>
-              <div class="footer-menu">
-                <ul class="f-menu">
-                   <li><a href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
-                  <li><a href="">About</a></li>
-                  <li><a href="">Contact</a></li>
-                  <li><a href="">Blog</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-  
-  </body>
+								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+							</div>
+						</li>
+					</ul>
+
+					<div class="btn-group">
+						<li class="sidebar-login"><c:choose>
+								<c:when test="${empty sessionScope.userNumber}">
+									<a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
+						</c:otherwise>
+						</c:choose>
+					</div>
+
+				</div>
+			</div>
+			<div id="main-footer">
+				<footer>
+					<div>
+						<div class="footer-content">
+							<h3>Cook Pang</h3>
+							<p>콘텐츠의 저작권은 제공처 또는 코리아IT아카데미 에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
+								법적책임을 질 수 있습니다.</p>
+						</div>
+						<div class="footer-bottom">
+							<p>
+								copyright © <a href="#">Cookpang</a>
+							</p>
+							<div class="footer-menu">
+								<ul class="f-menu">
+									<li><a
+										href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
+									<li><a href="">About</a></li>
+									<li><a href="">Contact</a></li>
+									<li><a href="">Blog</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</footer>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.6.3.js"
+			integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+			crossorigin="anonymous"></script>
+</body>
 
 </html>

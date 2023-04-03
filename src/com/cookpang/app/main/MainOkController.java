@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.main.dao.MainDAO;
 import com.cookpang.app.post.vo.PostVO;
+import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
 
 public class MainOkController implements Execute{
 	@Override
@@ -53,6 +54,12 @@ public class MainOkController implements Execute{
 		pageMap.put("rowCount", rowCount);
 		
 		List<PostVO> postList = mainDAO.postAll(pageMap);
+		
+//		카테고리
+//		RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
+//		
+//		req.setAttribute("categoryList", recipeCategoryDTO);
+//		카테고리
 		
 		req.setAttribute("postList", postList);
 		req.setAttribute("page", page);
