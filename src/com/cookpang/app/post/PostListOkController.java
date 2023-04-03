@@ -70,6 +70,8 @@ public class PostListOkController implements Execute {
 		req.setAttribute("prev", prev);
 		req.setAttribute("next", next);
 		
+		
+		
 		req.getRequestDispatcher("/app/mypage.jsp").forward(req, resp);
 	}
 
