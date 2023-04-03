@@ -26,9 +26,13 @@ $idInput.on('blur', function(){
 			type : 'get',
 			data : {userId : id},
 			success : function(result) {
-				$checkMsg.text(result);
-				test = result;
-			},
+				if(result==1){
+         $checkMsg.html('<p style="color:green">사용가능한 아이디입니다.</p>');
+      }else if(result==0){
+         $checkMsg.text("이미 존재하는 아이디입니다.");
+      }
+         test = result;
+      },
 			error : function(a,b,c) {
 				console.log(c);
 			}
@@ -42,7 +46,7 @@ const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]
 
 $pwInput.on('blur', function(){
    if(regex.test(  $(this).val()   )){
-      $checkPwMsg.text("사용 가능한 비밀번호입니다.");
+      $checkPwMsg.html('<p style="color:green">사용가능한 비밀번호입니다.</p>');
    }else{
       $checkPwMsg.html("사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!");
    }
