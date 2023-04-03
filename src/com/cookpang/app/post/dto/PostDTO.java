@@ -6,11 +6,19 @@ public class PostDTO {
     private int postNumber;
     private String postTitle;
     private String postContent;
+    private String postRecipeContent;
     private String postDate;
     private int postViewCount;
     private int userNumber;
     
     public PostDTO() {}
+
+	@Override
+	public String toString() {
+		return "PostDTO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
+				+ ", postRecipeContent=" + postRecipeContent + ", postDate=" + postDate + ", postViewCount="
+				+ postViewCount + ", userNumber=" + userNumber + "]";
+	}
 
 	public int getPostNumber() {
 		return postNumber;
@@ -36,6 +44,14 @@ public class PostDTO {
 		this.postContent = postContent;
 	}
 
+	public String getPostRecipeContent() {
+		return postRecipeContent;
+	}
+
+	public void setPostRecipeContent(String postRecipeContent) {
+		this.postRecipeContent = postRecipeContent;
+	}
+
 	public String getPostDate() {
 		return postDate;
 	}
@@ -58,12 +74,6 @@ public class PostDTO {
 
 	public void setUserNumber(int userNumber) {
 		this.userNumber = userNumber;
-	}
-
-	@Override
-	public String toString() {
-		return "PostDTO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
-				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber + "]";
 	}
 
 }
