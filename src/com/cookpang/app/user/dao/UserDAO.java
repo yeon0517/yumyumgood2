@@ -18,7 +18,7 @@ public class UserDAO {
 	}
 
 	public boolean checkId(String userId) {
-		return sqlSession.selectOne("user.checkId",userId);
+		return (Integer)sqlSession.selectOne("user.checkId",userId) < 1;
 	}
 	public int login(UserDTO userDTO) {
 		return sqlSession.selectOne("user.login", userDTO);	
