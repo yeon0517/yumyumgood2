@@ -111,7 +111,7 @@
         
         <div class="member">
           이미 회원이신가요? 
-          <a href="${pageContext.request.contextPath}/app/login.jsp">
+          <a href="${pageContext.request.contextPath}/user/loginOk.us">
             로그인하기
           </a>
         </div>

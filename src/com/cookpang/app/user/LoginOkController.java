@@ -19,13 +19,15 @@ public class LoginOkController implements Execute {
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
 		int userNumber = 0;
-		String path = null;
-		HttpSession session = req.getSession();
-		String remember = req.getParameter("remember");
+		req.setCharacterEncoding("utf-8");
+		
+		
 		String userId = req.getParameter("userId");
 		String userPassword = req.getParameter("userPassword");
+		String remember = req.getParameter("remember");
 		
-		req.setCharacterEncoding("utf-8");
+		String path = null;
+		HttpSession session = req.getSession();
 		
 		userDTO.setUserId(userId);
 		userDTO.setUserPassword(userPassword);
@@ -42,6 +44,8 @@ public class LoginOkController implements Execute {
 			e.printStackTrace();
 		}
 		
+		System.out.println(remember);
+		System.out.println(userId);
 		
 		if(remember != null) {
 			Cookie cookie= new Cookie("userId" , userId);

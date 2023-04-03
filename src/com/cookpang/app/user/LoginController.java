@@ -17,11 +17,10 @@ public class LoginController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		Cookie[] cookies = req.getCookies();
-		
 		if(cookies != null) {
 			for(Cookie cookie : cookies) {
 				if(cookie.getName().equals("userId")) {
-					System.out.println("되어라....");
+					System.out.println(cookie.getValue());
 					req.setAttribute("userId", cookie.getValue());
 				}
 			}
