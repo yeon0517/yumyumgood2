@@ -2,7 +2,19 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="category">
-
+	
+	<select id="categoryList" resultType="PostVO" parameterType="map">
+		select tp.post_number, tp.user_number, post_title, tu.user_nickname, tc.category_number, 
+		tpf.post_file_system_name, tp.post_date 
+		from tbl_post tp 
+		left outer join tbl_user tu on tp.user_number = tu.user_number
+		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		left outer join tbl_recipe_category trc on trc.post_number = tp.post_number 
+		join tbl_category tc on tc.category_number = #{categoryNumber} and trc.category_name = tc.category_name 
+		order by tp.post_date  desc
+	</select>
+	
+	
 </mapper>
 
 
