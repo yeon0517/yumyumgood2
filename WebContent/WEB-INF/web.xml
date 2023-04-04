@@ -181,7 +181,7 @@
   
   <servlet-mapping>
   	<servlet-name>Main</servlet-name>
-  	<url-pattern>/main</url-pattern>
+  	<url-pattern>*.m</url-pattern>
   </servlet-mapping>
   
   <!-- 혹시 오류나면 수정 및 삭제 위해 주석으로 표시 -->
