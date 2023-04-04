@@ -29,7 +29,7 @@ public class PostWriteOkController implements Execute {
 	      int postNumber = 0;
 	      
 	      System.out.println("writeOk컨트롤러 들어왔다!!!");
-	      System.out.println(req.getParameter("boardTitle"));
+	      System.out.println(req.getParameter("postTitle"));
 	      
 	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 	      int fileSize = 1024 * 1024 ; //5MB
@@ -66,7 +66,7 @@ public class PostWriteOkController implements Execute {
 	               
 	               postFileDTO.setPostFileSystemName(postFileSystemName);
 	               postFileDTO.setPostFileOriginalName(postFileOriginalName);
-	              postFileDTO.setPostNumber(postNumber);
+	               postFileDTO.setPostNumber(postNumber);
 	               
 	               postFileDAO.insert(postFileDTO);
 	            }
@@ -90,10 +90,11 @@ public class PostWriteOkController implements Execute {
 	            postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 	            postDAO.insert(postDTO);
 	            
-//	            postNumber = postDAO.getSequence();
+	            postNumber = postDAO.getSequence();
 	            System.out.println("db로 연결 됐다!");
 	         }
 	      }
+	      
 	      
 	      resp.sendRedirect("/post/postListOk.po");
 	      
