@@ -43,6 +43,11 @@ public class UserFrontController extends HttpServlet{
 		case "/user/logoutOk.us":
 			new LogoutOkController().execute(req, resp);
 			break;
+			
+		case "/user/findPassword.us":
+			req.getRequestDispatcher("/app/user/findPassword.jsp").forward(req, resp);
+			break;
+
 		case "/user/findPasswordOk.us":
 			new FindPasswordOkController().execute(req, resp);
 			break;
