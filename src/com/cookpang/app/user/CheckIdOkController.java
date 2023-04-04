@@ -23,7 +23,7 @@ public class CheckIdOkController implements Execute {
 	resp.setContentType("text/html; charset=utf-8");
 	PrintWriter out = resp.getWriter();
 	
-	out.print(isTrue ? "사용가능" : "중복된 아이디");
+	out.print(isTrue ? 1 : 0);
 	out.close();
 	}
 }
