@@ -90,10 +90,11 @@ public class PostWriteOkController implements Execute {
 	            postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 	            postDAO.insert(postDTO);
 	            
-//	            postNumber = postDAO.getSequence();
+	            postNumber = postDAO.getSequence();
 	            System.out.println("db로 연결 됐다!");
 	         }
 	      }
+	      
 	      
 	      resp.sendRedirect("/post/postListOk.po");
 	      
