@@ -25,9 +25,9 @@ public class FileFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		case "/postFile/download.pf":
-		new DownloadController().execute(req,resp);
-		break;
+//		case "/postFile/download.pf":
+//		new DownloadController().execute(req,resp);
+//		break;
 	}
 
   }
