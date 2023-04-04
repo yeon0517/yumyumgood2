@@ -28,6 +28,9 @@ public class ManagerListOkController implements Execute {
 		
 		try {
 			managerNumber = (int)session.getAttribute("managerNumber");
+			if(!(managerDAO.checkManager(managerNumber))) {
+				resp.sendRedirect("/main");
+			}
 		} catch(NullPointerException e) {
 			req.getRequestDispatcher("/manager/managerLogin.manager").forward(req, resp);
 		}
@@ -35,9 +38,6 @@ public class ManagerListOkController implements Execute {
 			e.printStackTrace();
 		}
 		
-		if(!managerDAO.checkManager(managerNumber)) {
-			resp.sendRedirect("/main");
-		}
 
 		String temp = req.getParameter("page");
 
