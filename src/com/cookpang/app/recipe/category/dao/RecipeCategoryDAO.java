@@ -11,4 +11,8 @@ public class RecipeCategoryDAO {
 	public RecipeCategoryDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	
+	public void insertC(int postNumber ) {
+		sqlSession.insert("recipeCategory.insertC", postNumber);
+	}
 }

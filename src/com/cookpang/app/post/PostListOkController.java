@@ -27,7 +27,7 @@ public class PostListOkController implements Execute {
 		int page = temp == null ? 1 : Integer.valueOf(temp);
 		
 		//한 페이지에 몇 개의 게시물? 10개
-		int rowCount = 10;
+		int rowCount = 12;
 		//페이지 버튼 세트는? 5개식
 		int pageCount = 5;
 		
