@@ -8,6 +8,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.manager.dao.ManagerDAO;
@@ -19,6 +20,24 @@ public class ManagerListOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ManagerDAO managerDAO = new ManagerDAO();
 		int total = managerDAO.getUserTotal();
+		
+//		매니저번호 세션이 없으면 접속을 못하도록
+		HttpSession session = req.getSession();
+		
+		int managerNumber = 0;
+		
+		try {
+			managerNumber = (int)session.getAttribute("managerNumber");
+			if(!(managerDAO.checkManager(managerNumber))) {
+				resp.sendRedirect("/mainOk.m");
+			}
+		} catch(NullPointerException e) {
+			req.getRequestDispatcher("/manager/managerLogin.manager").forward(req, resp);
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 
 		String temp = req.getParameter("page");
 
@@ -72,8 +91,8 @@ public class ManagerListOkController implements Execute {
 		
 		
 		
-		
-		
 	}
 
 }
+
+

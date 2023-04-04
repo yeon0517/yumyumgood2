@@ -17,7 +17,6 @@ public class ManagerDAO {
 	}
 	
 	public List<UserDTO> selectUserAll(Map<String, Integer> pageMap){
-		
 		return sqlSession.selectList("manager.selectUserAll", pageMap);
 	}
 	
@@ -27,6 +26,18 @@ public class ManagerDAO {
 	
 	public void deleteUser(int userNumber) {
 		 sqlSession.delete("manager.deleteUser", userNumber);
+	}
+	
+	public UserDTO managerLogin(UserDTO userDTO) {
+		return sqlSession.selectOne("manager.managerLogin", userDTO);
+	}
+	
+	public boolean checkManager( int managerNumber) {
+		 return sqlSession.selectOne("manager.checkManager", managerNumber).equals("manager") ? true : false   ;
+	}
+	
+	public List<UserDTO> userSerch(String userIdOrName){
+		return sqlSession.selectList("manager.userSerch", userIdOrName);
 	}
 	
 	
