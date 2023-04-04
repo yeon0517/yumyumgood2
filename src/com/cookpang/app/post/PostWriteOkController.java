@@ -66,7 +66,7 @@ public class PostWriteOkController implements Execute {
 	               
 	               postFileDTO.setPostFileSystemName(postFileSystemName);
 	               postFileDTO.setPostFileOriginalName(postFileOriginalName);
-	              postFileDTO.setPostNumber(postNumber);
+	               postFileDTO.setPostNumber(postNumber);
 	               
 	               postFileDAO.insert(postFileDTO);
 	            }
