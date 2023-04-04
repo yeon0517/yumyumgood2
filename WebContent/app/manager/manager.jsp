@@ -102,10 +102,10 @@
 								<form action="/manager/UserDeleteOk.manager" method="post">
 									<div class="member-main test" id="member-Menu">
 										<div class="member-serch">
-											<input type="text" id="user-serch" name="userSerch"
-												placeholder="회원아이디를 입력하시오" />
-											<button type="button">
-												<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+											<input type="text" id="user-serch" name="userIdOrName"
+												placeholder="회원의 아이디나 이름을입력하세요" />
+											<button type="button" class="user-serch-btn" >
+												<span class="btn-span"> <i class="fa-solid fa-magnifying-glass "></i></span>
 											</button>
 										</div>
 										<table class="member-table">

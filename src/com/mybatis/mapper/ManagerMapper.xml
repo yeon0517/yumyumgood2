@@ -7,7 +7,8 @@
 		select user_number , user_id , user_name , user_email ,
 		user_phone_number , user_gender ,user_status
 		from tbl_user
-		order by user_number desc
+		order by
+		user_number desc
 		limit #{startRow}, #{rowCount}
 	</select>
 
@@ -18,19 +19,30 @@
 
 	<delete id="deleteUser" parameterType="_int">
 		delete from tbl_user
-		where user_number=#{userNumber};
+		where
+		user_number=#{userNumber};
 	</delete>
-	
-	<select id="managerLogin" parameterType="UserDTO" resultType="UserDTO">
-       select user_number, user_status from tbl_User
-	   where User_id = #{userId} and User_password = #{userPassword}
-   	</select>
 
-	<select id="checkManager" parameterType="_int" resultType="string">
-       select user_status from tbl_User
-	   where user_number = #{managerNumber}
-   	</select>
-	
+	<select id="managerLogin" parameterType="UserDTO"
+		resultType="UserDTO">
+		select user_number, user_status from tbl_User
+		where User_id = #{userId} and User_password = #{userPassword}
+	</select>
+
+	<select id="checkManager" parameterType="_int"
+		resultType="string">
+		select user_status from tbl_User
+		where user_number = #{managerNumber}
+	</select>
+
+	<select id="userSerch" parameterType="string" resultType="UserDTO">
+		select user_number , user_id , user_name , user_number , user_phone_number ,user_gender , user_status
+		from tbl_user
+		where user_id like %#{userIdOrName}% or user_name like %#{userIdOrName}%;
+	</select>
+
+
+
 
 
 
