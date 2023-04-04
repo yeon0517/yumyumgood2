@@ -13,6 +13,7 @@ public class PostVO {
     private int userNumber;
     private String userNickName;
     private List<PostFileDTO> files; 
+    private int categoryNumber;
     
     public PostVO() {}
 
@@ -81,12 +82,22 @@ public class PostVO {
 		this.userNickName = userNickName;
 	}
 
+	public int getCategoryNumber() {
+		return categoryNumber;
+	}
+
+	public void setCategoryNumber(int categoryNumber) {
+		this.categoryNumber = categoryNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "PostVO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
 				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber
-				+ ", userNickName=" + userNickName + ", files=" + files + "]";
+				+ ", userNickName=" + userNickName + ", files=" + files + ", categoryNumber=" + categoryNumber + "]";
 	}
+
+	
 
 	
     
