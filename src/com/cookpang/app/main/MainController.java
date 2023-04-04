@@ -12,15 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.main.dao.MainDAO;
 import com.cookpang.app.post.vo.PostVO;
-import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
 
-public class MainOkController implements Execute{
+public class MainController implements Execute{
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		MainDAO mainDAO = new MainDAO();
 		int total = mainDAO.getTotal();
-		
-		int categoryNumber = Integer.valueOf(req.getParameter("categoryNumber"));
 		
 		String temp = req.getParameter("page");
 		
@@ -54,40 +51,20 @@ public class MainOkController implements Execute{
 		Map<String, Integer> pageMap = new HashMap<>();
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
-//		pageMap.put("categoryNumber", categoryNumber);
 		
-
-		List<PostVO> postList = mainDAO.categoryList(pageMap);
+		List<PostVO> postList = mainDAO.postAll(pageMap);
+		
 		
 		req.setAttribute("postList", postList);
-		req.setAttribute("categoryNumber", categoryNumber);
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
 		req.setAttribute("prev", prev);
 		req.setAttribute("next", next);
 		
-		
 		req.getRequestDispatcher("/app/main.jsp").forward(req, resp);
+		
+		
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

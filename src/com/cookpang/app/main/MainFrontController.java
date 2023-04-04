@@ -25,11 +25,12 @@ public class MainFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		case "/main" :
-//		req.getRequestDispatcher("/app/main.jsp").forward(req, resp);
+		case "/main.m" :
+		new MainController().execute(req, resp);
+		break;
+		case "/mainOk.m" :
 		new MainOkController().execute(req, resp);
 		break;
-		
 		}
 		
 	}
