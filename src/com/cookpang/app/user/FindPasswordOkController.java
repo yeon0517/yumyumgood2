@@ -35,6 +35,9 @@ public class FindPasswordOkController implements Execute {
             req.setAttribute("user", userDTO); // userDTO를 jsp에서 사용하기 위해 req.setAttribute()를 사용합니다.
             req.getRequestDispatcher("/user/findPasswordOk.us").forward(req, resp);
         }
+        
+        
+        resp.sendRedirect("/user/findPasswordOk.us");
 
     }
 }

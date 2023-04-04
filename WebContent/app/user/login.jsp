@@ -223,7 +223,7 @@ function kakaoLogout() {
 		</div>
 
 		<div class="recover">
-			<label for="find-password">비밀번호를 잊어버리셨나요? <a href="#">비밀번호
+			<label for="find-password">비밀번호를 잊어버리셨나요? <a href="${pageContext.request.contextPath}/user/findPassword.us">비밀번호
 					찾기</a>
 			</label>
 		</div>
