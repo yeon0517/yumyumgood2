@@ -229,7 +229,7 @@ button{
 }
 .member-serch > input {
   font-size: 14px;
-  width: 203px;
+  width: 505px;
   border: 0px;
   margin-left: 50px;
   height: 23px;
@@ -791,6 +791,12 @@ footer > div {
 .footer-menu ul li a:hover {
   color: #27bcda;
 }
+
+.btn-span i{
+  color: black;
+}
+
+
 /* @media (max-width:500px) {
   .footer-menu ul{
     display: flex;
