@@ -29,7 +29,7 @@ public class ManagerListOkController implements Execute {
 		try {
 			managerNumber = (int)session.getAttribute("managerNumber");
 			if(!(managerDAO.checkManager(managerNumber))) {
-				resp.sendRedirect("/main");
+				resp.sendRedirect("/mainOk.m");
 			}
 		} catch(NullPointerException e) {
 			req.getRequestDispatcher("/manager/managerLogin.manager").forward(req, resp);
