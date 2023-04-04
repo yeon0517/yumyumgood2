@@ -20,7 +20,7 @@
 	
 	
 
-	<!-- <insert id="insert" parameterType="PostDTO">
+	<insert id="insert" parameterType="PostDTO">
 		insert tbl_post
 		(post_title, post_content, post_date, post_view_count, user_number)
 		values(#{postTitle}, #{postContent}, #{postDate}, #{postViewCount}, #{userNumber});
@@ -55,7 +55,7 @@
 		update tbl_post
 		set post_title = #{postTitle}, post_content = #{postContent}, post_recipe_content = #{postRecipeContent}
 		where post_number = #{postNumber}
-	</update>	 -->
+	</update>	
 	
 
 

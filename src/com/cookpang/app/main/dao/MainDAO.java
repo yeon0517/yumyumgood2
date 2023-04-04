@@ -26,9 +26,8 @@ public SqlSession sqlSession;
 		return sqlSession.selectOne("post.getTotal");
 	}
 	
-//	public RecipeCategoryDTO categoryList(RecipeCategoryDTO recipeCategoryDTO){
-//		return recipeCategoryDTO;
-//		
-//	}
+	public List<PostVO> categoryList(Map<String, Integer> pageMap) {
+		return sqlSession.selectList("category.categoryList", pageMap);
+	}
 	
 }
