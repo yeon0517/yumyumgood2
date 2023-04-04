@@ -12,7 +12,17 @@
 		left outer join tbl_recipe_category trc on trc.post_number = tp.post_number 
 		join tbl_category tc on tc.category_number = #{categoryNumber} and trc.category_name = tc.category_name 
 		order by tp.post_date  desc
+		limit #{startRow}, #{rowCount}
 	</select>
+	
+	<select id="categoryTotal" resultType="_int" parameterType="_int">
+		select count(post_number) 
+		from tbl_recipe_category trc 
+		join tbl_category tc on trc.category_name = tc.category_name 
+		where tc.category_number =#{categoryNumber} 
+	</select>
+	
+	
 	
 	
 </mapper>
