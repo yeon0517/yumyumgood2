@@ -30,4 +30,8 @@ public SqlSession sqlSession;
 		return sqlSession.selectList("category.categoryList", pageMap);
 	}
 	
+	public int categoryTotal(int categoryNumber) {
+		return sqlSession.selectOne("category.categoryTotal", categoryNumber);
+	}
+	
 }
