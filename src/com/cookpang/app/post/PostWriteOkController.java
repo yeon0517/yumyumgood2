@@ -29,7 +29,7 @@ public class PostWriteOkController implements Execute {
 	      int postNumber = 0;
 	      
 	      System.out.println("writeOk컨트롤러 들어왔다!!!");
-	      System.out.println(req.getParameter("boardTitle"));
+	      System.out.println(req.getParameter("postTitle"));
 	      
 	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 	      int fileSize = 1024 * 1024 ; //5MB

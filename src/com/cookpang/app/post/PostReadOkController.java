@@ -19,7 +19,7 @@ public class PostReadOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		PostDAO postDAO = new PostDAO();
-		PostReadVO postReadVO = new PostReadVO();
+		PostReadVO postReadVO = postDAO.select(postNumber);
 		List<PostFileDTO> files = new PostFileDAO().select(postNumber);
 		
 		
