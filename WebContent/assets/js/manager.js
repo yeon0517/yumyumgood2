@@ -136,3 +136,42 @@ $(".user-page a").on("click", function(e) {
 
 
 
+$('.user-serch-btn').on('click', function() {
+	let userIdOrName = $('#user-serch').val();
+	console.log(userInfo);
+	
+	$.ajax({
+		url: '/manager/userSerch.manager',
+		type: 'POST',
+		data: { userIdOrName: userIdOrName },
+		dataType: 'json',
+		success: updateTable,
+		error: (xhr, status, error) => console.log(error),
+	});
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
