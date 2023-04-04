@@ -1,5 +1,3 @@
-console.log("dhodhodhod")
-
 
 console.log(window.location.search)
 

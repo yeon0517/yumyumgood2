@@ -26,4 +26,7 @@ public class CheckIdOkController implements Execute {
 	out.print(isTrue ? 1 : 0);
 	out.close();
 	}
+	
+	
+	
 }

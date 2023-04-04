@@ -48,7 +48,7 @@ form {
 	margin-top: 20px;
 }
 
-input[type="text"], input[type="tel"], input[type="email"] {
+button, input[type="text"], input[type="tel"], input[type="email"] {
 	border-radius: 5px;
 	border: 1px solid #ccc;
 	padding: 10px;
@@ -57,7 +57,7 @@ input[type="text"], input[type="tel"], input[type="email"] {
 	box-sizing: border-box;
 }
 
-input[type="submit"] {
+button, input[type="submit"] {
 	background-color: #4caf50;
 	color: white;
 	border-radius: 5px;
@@ -67,8 +67,13 @@ input[type="submit"] {
 	transition: all 0.3s ease-in-out;
 }
 
-input[type="submit"]:hover {
+button, input[type="submit"]:hover {
 	background-color: #3e8e41;
+}
+
+button {
+	width: 136px;
+	margin-top: 17px;
 }
 
 a {
@@ -79,7 +84,9 @@ a {
 a:hover {
 	text-decoration: underline;
 }
-
+.error-msg{
+color: red;
+}
 .error {
 	color: red;
 	margin-bottom: 10px;
@@ -101,7 +108,7 @@ input:focus::placeholder {
 	<div class="container">
 		<h2>비밀번호 찾기</h2>
 
-		<form action="resetPassword" method="post">
+		<form action="#" method="post">
 			<!-- <label for="name">이름</label>
         <input
           type="text"
@@ -112,44 +119,55 @@ input:focus::placeholder {
         /> -->
 
 			<label for="phone">핸드폰 번호</label> <input type="tel" id="phone"
-				name="phone" placeholder="ex) 010-1234-1234" required /> <label
-				for="email">이메일 주소</label> <input type="email" id="email"
-				name="email" placeholder="ex) sbsItAcademy@Academy.com" required />
-			
-			
-			<input
-				type="submit" id="password" value="비밀번호 찾기" />
+				name="userPhoneNumber" placeholder="ex) 010-1234-1234" required />
+			<label for="email">이메일 주소</label> <input type="email" id="email"
+				name="userEmail" placeholder="ex) sbsItAcademy@Academy.com" required />
+
+
+
+			<button type="button" id="password">비밀번호 찾기</button>
+
 		</form>
-		<p>
-			<a href="${pageContext.request.contextPath}/user/join.us">회원가입하기</a>
-		</p>
-		<p class="error">${user.getUserName() }</p>
-	<p class="success">${password }</p>
+
+			<div><a href="${pageContext.request.contextPath}/user/login.us">로그인</a></div>
+			<div><a href="${pageContext.request.contextPath}/user/join.us">회원가입하기</a></div>
+			
+	 <p class="error"></p>
+		당신의 비밀번호는 :<p class="success">${user.getUserPassword()}</p>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 	
-	$(document).ready(function() {
-		  $('#password').click(function() {
-		    var phone = $('#phone').val();
-		    var email = $('#email').val();
-		    
-		    $.ajax({
-		      url: 'resetPassword',
-		      type: 'POST',
-		      data: { userPhoneNumber: phone, userEmail: email },
-		      success: function(response) {
-		        $('.success').text(response);
-		      },
-		      error: function(response) {
-		        $('.error').text(response);
-		      }
+		$(document).ready(function() {
+			var $errorMsg = $('#error-msg');
+			var $successMsg = $('.success');
+		 	console.log('디버깅 메시지');
+		    $('#password').click(function() {
+		        var phone = $('#phone').val();
+		        var email = $('#email').val();
+
+		        $.ajax({
+		            url : '/user/findPasswordOk.us',
+		            type : 'POST',
+		            data : {
+		                userPhoneNumber : phone,
+		                userEmail : email
+		            },
+		            success : function(response) {
+		            	console.log('디버깅 메시지');
+		            	$successMsg.text(response);
+		            },
+		            error : function(jqXHR, textStatus, errorThrown) {
+		                $errorMsg.text("일치하는 회원이 없다.");
+		            }
+		        });
 		    });
-		  });
 		});
-	
-	
-	
+		
+		
+		
+
+		
 	</script>
 </body>
 </html>
