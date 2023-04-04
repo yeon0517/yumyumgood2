@@ -18,7 +18,6 @@ public class UserDAO {
 		sqlSession.insert("user.join", userDTO);
 	}
 
-
 	public int login(UserDTO userDTO) {
 		return sqlSession.selectOne("user.login", userDTO);	
 	}
@@ -31,5 +30,10 @@ public class UserDAO {
 		 return (Integer)sqlSession.selectOne("user.checkId",userId) <1;
 	 }
 	 
+	 public String findPassword(UserDTO userDTO) {
+		 return sqlSession.selectOne("user.findPassword",userDTO) ;
+	 }
+	 
+	
 	 
 }

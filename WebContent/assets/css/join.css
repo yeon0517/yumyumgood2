@@ -97,7 +97,7 @@ form h2 {
 }
 
 button[type='submit'] {
-  background-color: dodgerblue;
+  background-color: rgb(0, 128, 255 );
   border: none;
   border-radius: 30px;
   color: #fff;

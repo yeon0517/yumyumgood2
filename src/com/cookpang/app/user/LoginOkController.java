@@ -19,13 +19,15 @@ public class LoginOkController implements Execute {
 		UserDAO userDAO = new UserDAO();
 		UserDTO userDTO = new UserDTO();
 		int userNumber = 0;
-		String path = null;
-		HttpSession session = req.getSession();
-		String remember = req.getParameter("remember");
+		req.setCharacterEncoding("utf-8");
+		
+		
 		String userId = req.getParameter("userId");
 		String userPassword = req.getParameter("userPassword");
+		String remember = req.getParameter("remember");
 		
-		req.setCharacterEncoding("utf-8");
+		String path = null;
+		HttpSession session = req.getSession();
 		
 		userDTO.setUserId(userId);
 		userDTO.setUserPassword(userPassword);
@@ -36,12 +38,14 @@ public class LoginOkController implements Execute {
 			path = "/main"; //마이페이지..? 경로 잡기
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
-			path = "/user/login.us?login=fail";
+			path = "/user/login.us?login=fail"; 
 //			e.printStackTrace();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		
+		System.out.println(remember);
+		System.out.println(userId);
 		
 		if(remember != null) {
 			Cookie cookie= new Cookie("userId" , userId);
