@@ -17,11 +17,13 @@
 	<select id="getTotal" resultType="_int">
 		select count(post_number) from tbl_post
 	</select>
+	
+	
 
 	<insert id="insert" parameterType="PostDTO">
 		insert tbl_post
-(post_title, post_content, post_date, post_view_count, user_number)
-values(#{postTitle}, #{postContent}, #{postDate}, #{postViewCount}, #{userNumber});
+		(post_title, post_content, post_date, post_view_count, user_number)
+		values(#{postTitle}, #{postContent}, #{postDate}, #{postViewCount}, #{userNumber});
 	</insert>
 		
 	

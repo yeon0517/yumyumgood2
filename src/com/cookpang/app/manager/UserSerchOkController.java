@@ -20,32 +20,26 @@ public class UserSerchOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("여기 왜 안들어오냐");
-		
 		ManagerDAO managerDAO = new ManagerDAO();
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("utf-8");
 		
 		String userIdOrName = req.getParameter("userIdOrName");
+		System.out.println(userIdOrName);
+		
 		
 		List<UserDTO> userSerchList = managerDAO.userSerch(userIdOrName);
 		
+		
 		Gson gson = new Gson();
 		JsonObject result = new JsonObject();
-		
 		JsonArray usersJsonArray = gson.toJsonTree(userSerchList).getAsJsonArray();
 		result.add("users", usersJsonArray);
 		
 		
-		
 		PrintWriter out = resp.getWriter();
 		out.print(result.toString());
-		System.out.println(result.toString());
 		out.close();
-		
-		
-		
-		
 		
 		
 		
