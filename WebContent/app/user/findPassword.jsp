@@ -132,13 +132,27 @@ input:focus::placeholder {
 			<div><a href="${pageContext.request.contextPath}/user/login.us">로그인</a></div>
 			<div><a href="${pageContext.request.contextPath}/user/join.us">회원가입하기</a></div>
 			
-	 <p class="error"></p>
-		당신의 비밀번호는 :<p class="success">${user.getUserPassword()}</p>
+			
+			<%-- 	<li class="pw-msg">
+						<c:choose>
+								<c:when test="${empty sessionScope.userNumber}" >
+							<p class="success">	 ${user.getUserPassword()}</p>
+						</c:when>
+						<c:otherwise>
+									<p class="error"> <span id="error-msg"> </span> </p>
+						</c:otherwise>
+						</c:choose>
+						</li>
+			 --%>
+			
+			
+	 <p class="error"> <span id="error-msg"></span> </p>
+	<p class="success">	 ${user.getUserPassword()}</p>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
 	
-		$(document).ready(function() {
+/* 		$(document).ready(function() {
 			var $errorMsg = $('#error-msg');
 			var $successMsg = $('.success');
 		 	console.log('디버깅 메시지');
@@ -154,18 +168,41 @@ input:focus::placeholder {
 		                userEmail : email
 		            },
 		            success : function(response) {
-		            	console.log('디버깅 메시지');
 		            	$successMsg.text(response);
 		            },
 		            error : function(jqXHR, textStatus, errorThrown) {
-		                $errorMsg.text("일치하는 회원이 없다.");
+		            	   $errorMsg.text(jqXHR.responseText || "일치하는 회원이 없다.");
 		            }
 		        });
 		    });
+		}); */
+		
+		$(document).ready(function() {
+			var $errorMsg = $('#error-msg');
+			var $successMsg = $('.success');
+			console.log('디버깅 메시지');
+			$('#password').click(function() {
+				var phone = $('#phone').val();
+				var email = $('#email').val();
+
+				$.ajax({
+					url : '/user/findPasswordOk.us',
+					type : 'POST',
+					data : {
+						userPhoneNumber : phone,
+						userEmail : email
+					},
+					success : function(response) {
+						$successMsg.text(response);
+						assert(response, "Success message not found");
+					},
+					error : function(jqXHR, textStatus, errorThrown) {
+						$errorMsg.text(jqXHR.responseText || "일치하는 회원이 없다.");
+						assert(jqXHR.responseText, "Error message not found");
+					}
+				});
+			});
 		});
-		
-		
-		
 
 		
 	</script>
