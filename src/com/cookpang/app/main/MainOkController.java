@@ -52,7 +52,7 @@ public class MainOkController implements Execute {
 			categoryNumber = 0;
 		}
 
-		System.out.println(categoryNumber);
+//		System.out.println(categoryNumber);
 
 		Map<String, Integer> pageMap = new HashMap<>();
 		pageMap.put("startRow", startRow);
@@ -76,6 +76,7 @@ public class MainOkController implements Execute {
 		
 //		rank
 		List<PostVO> rankTotal = mainDAO.rankTotal();
+		
 		
 		req.setAttribute("rankTotal", rankTotal);
 //		rank

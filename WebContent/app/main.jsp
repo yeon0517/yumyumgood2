@@ -40,15 +40,18 @@
 								src="${pageContext.request.contextPath}/assets/img/main/trophy.PNG"
 								alt="" style="max-width: 100%; max-height: 100%;">
 						</div>
-						<c:forEach var="r" begin="1" end="8">
+						<c:forEach var="rank" begin="1" end="8">
 							<c:choose>
 								<c:when test="${not empty rankTotal}">
 									<div class="rank-round">
-										<a href="#">
+										<a href="#" class="rank-a">
 											<div class="rank-img">
-												<img src="${postLike.getFiles()}" alt="">
+											<%-- ${post.getFiles()} 이미지에 넣는거--%>
+												<img src="https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300"
+													alt="${post.getPostFileSystemName()}">
+
 											</div>
-										</a> <span class="number">${r}</span>
+										</a> <span class="number">${rank}</span>
 									</div>
 
 								</c:when>
@@ -273,11 +276,9 @@
 
 
 								<div class="bbb">
-									<a href="#"> <img src="${post.getFiles()}" class="main-img" />
+								<%-- ${post.getFiles()} 이미지코드에 넣기--%>
+									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" />
 									</a>
-									<!-- <img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
-										class="main-img" /> -->
 									<div class="text-box">
 										<a href="#" class="text-nick">${post.getUserNickName()}</a><br>
 										<a href="#" class="text-title">${post.getPostTitle()}</a>
