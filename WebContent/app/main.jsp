@@ -40,14 +40,21 @@
 								src="${pageContext.request.contextPath}/assets/img/main/trophy.PNG"
 								alt="" style="max-width: 100%; max-height: 100%;">
 						</div>
-						<div class="rank-round">
-							<div class="rank-img">
-								<img src="./img/20210826140223-17XU3.jpg" alt="">
-							</div>
-							<span class="number">1</span>
-						</div>
+						<c:forEach var="r" begin="1" end="8">
+							<c:choose>
+								<c:when test="${not empty rankTotal}">
+									<div class="rank-round">
+										<a href="#">
+											<div class="rank-img">
+												<img src="${postLike.getFiles()}" alt="">
+											</div>
+										</a> <span class="number">${r}</span>
+									</div>
 
-						<div class="rank-round">
+								</c:when>
+							</c:choose>
+						</c:forEach>
+						<!-- <div class="rank-round">
 							<div class="rank-img">
 								<img
 									src="https://2bob.co.kr/data/recipe/20210304174955-ZE7O3.jpg"
@@ -109,7 +116,7 @@
 									alt="">
 							</div>
 							<span class="number">8</span>
-						</div>
+						</div> -->
 
 
 					</div>
@@ -123,20 +130,23 @@
 
 				<div class="main-body-bottom">
 					<ul class="category-menu">
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=1">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=1">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_1_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">밥요리</p>
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=2">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=2">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_2_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">국&탕</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=3">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=3">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_3_off.jpg"
 								alt="" class="category-img">
@@ -144,35 +154,40 @@
 
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=5">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=5">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_4_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">밑반찬</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=4">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=4">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_5_off.jpg"
 								alt="" class="category-img" id="category-img1">
 								<p class="category-name">볶음요리</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=15">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=15">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_6_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">구이(고기/생선)</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=6">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=6">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_7_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">찜&조림</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=11">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=11">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_12_off.jpg"
 								alt="" class="category-img">
@@ -180,56 +195,64 @@
 
 						</a></li>
 						<br>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=8">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=8">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_13_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">국수</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=10">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=10">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_15_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">김밥&초밥</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=7">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=7">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_16_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">야식&술안주</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=12">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=12">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_17_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">스파게티</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=13">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=13">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_18_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">간식&분식</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=14">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=14">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_21_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">디저트</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=9">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=9">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_14_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">샐러드</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category" href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=16">
+						<li class="category-box"><a class="recipe-category"
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=16">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_19_off.jpg"
 								alt="" class="category-img">
@@ -248,8 +271,10 @@
 						<div class="aaa">
 							<c:forEach var="post" items="${postList}">
 
+
 								<div class="bbb">
-									<img src="${post.getFiles()}" class="main-img" />
+									<a href="#"> <img src="${post.getFiles()}" class="main-img" />
+									</a>
 									<!-- <img
 										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
 										class="main-img" /> -->
@@ -258,6 +283,7 @@
 										<a href="#" class="text-title">${post.getPostTitle()}</a>
 									</div>
 								</div>
+
 
 							</c:forEach>
 						</div>
@@ -288,7 +314,8 @@
 						<c:forEach var="q" begin="${startPage}" end="${endPage}">
 							<c:choose>
 								<c:when test="${!(q == page)}">
-									<a href="${pageContext.request.contextPath}/mainOk.m?page=${q}&categoryNumber=${categoryNumber}">
+									<a
+										href="${pageContext.request.contextPath}/mainOk.m?page=${q}&categoryNumber=${categoryNumber}">
 										<c:out value="${q}" />
 									</a>
 								</c:when>
@@ -333,7 +360,8 @@
                     alt=""
                     class="sidebar-img"
                   /> -->
-								<i class="fa-solid fa-house"></i> <a href="${pageContext.request.contextPath}/mainOk.m">홈</a>
+								<i class="fa-solid fa-house"></i> <a
+									href="${pageContext.request.contextPath}/mainOk.m">홈</a>
 							</div>
 						</li>
 						<li class="sidebar-li">

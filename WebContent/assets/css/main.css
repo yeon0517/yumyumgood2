@@ -138,7 +138,7 @@ list-style: none;
   width: 330px;
   height: 330px;
   margin: 30px 5px;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .text-box {
