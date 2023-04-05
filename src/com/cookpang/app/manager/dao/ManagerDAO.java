@@ -35,12 +35,14 @@ public class ManagerDAO {
 	public boolean checkManager( int managerNumber) {
 		 return sqlSession.selectOne("manager.checkManager", managerNumber).equals("manager") ? true : false   ;
 	}
-										//Map<String, Integer> pageMap
+										
 	public List<UserDTO> userSerch(Map<String, Object> pageMap){
 		return sqlSession.selectList("manager.userSerch", pageMap);
 	}
 	
-	
+	public int getUserSerchTotal(Map<String, Object> pageMap) {
+		return sqlSession.selectOne("manager.getUserSerchTotal",pageMap);
+	}
 	
 	
 	

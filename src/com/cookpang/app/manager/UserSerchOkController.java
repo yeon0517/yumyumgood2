@@ -24,7 +24,12 @@ public class UserSerchOkController implements Execute {
 		
 		ManagerDAO managerDAO = new ManagerDAO();
 		
-		int total = managerDAO.getUserTotal();
+		
+		Map<String, Object> pageMap = new HashMap<>();
+		String userIdOrName = req.getParameter("userIdOrName");
+		pageMap.put("userIdOrName", userIdOrName);
+		
+		int total = managerDAO.getUserSerchTotal(pageMap);
 
 		String temp = req.getParameter("page");
 
@@ -33,7 +38,7 @@ public class UserSerchOkController implements Execute {
 		int rowCount = 10;
 		int pageCount = 5;
 
-		int startRow = (page - 1) * rowCount;
+		int startRow = (page - 1) * rowCount;       
 
 		int endPage = (int) (Math.ceil(page / (double) pageCount) * pageCount);
 
@@ -46,17 +51,11 @@ public class UserSerchOkController implements Execute {
 		boolean prev = startPage > 1; // 이전버튼
 		boolean next = endPage != realEndPage; // 다음버튼
 
-		String userIdOrName = req.getParameter("userIdOrName");
 		
-		Map<String, Object> pageMap = new HashMap<>();
+		
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
-		pageMap.put("userIdOrName", userIdOrName);
 		
-		
-		
-		
-		System.out.println(userIdOrName);
 		
 		
 		List<UserDTO> userSerchList = managerDAO.userSerch(pageMap);

@@ -40,10 +40,13 @@
 		from tbl_user
 		where user_id like concat('%', #{userIdOrName}, '%') or user_name like concat('%', #{userIdOrName}, '%')
 		limit #{startRow}, #{rowCount}
-
 	</select>
 
-
+	<select id="getUserSerchTotal" parameterType="map" resultType="_int">
+		select  count(user_number)  
+		from tbl_user
+		where user_id like concat('%', #{userIdOrName}, '%') or user_name like concat('%', #{userIdOrName}, '%')
+	</select>
 
 
 
