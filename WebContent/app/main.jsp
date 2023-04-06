@@ -413,7 +413,7 @@
                     class="sidebar-img"
                   /> -->
 
-								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+								<i class="fa-regular fa-user"></i> <a href="">프로필</a>
 							</div>
 						</li>
 					</ul>

@@ -57,5 +57,20 @@ public class RecipeIngredientDTO {
 				+ ", recipeIngredientQuantity=" + recipeIngredientQuantity + "]";
 	}
 
+	public void setRecipeIngredientTitle(String[] parameterValues) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setRecipeIngredientName(String[] parameterValues) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setRecipeIngredientQuantity(String[] parameterValues) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

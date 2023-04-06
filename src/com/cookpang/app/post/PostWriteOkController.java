@@ -4,15 +4,18 @@ import java.io.IOException;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
-import com.cookpang.app.category.dto.CategoryDTO;
+import com.cookpang.app.ingredient.dto.IngredientDTO;
 import com.cookpang.app.post.dao.PostDAO;
 import com.cookpang.app.post.dto.PostDTO;
 import com.cookpang.app.post.file.dao.PostFileDAO;
 import com.cookpang.app.post.file.dto.PostFileDTO;
+import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
+import com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -24,8 +27,19 @@ public class PostWriteOkController implements Execute {
 	      PostDTO postDTO = new PostDTO();
 	      PostFileDAO postFileDAO = new PostFileDAO();
 	      PostFileDTO postFileDTO = new PostFileDTO();
-	      CategoryDTO categoryDTO = new CategoryDTO();
+	      RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
+	      IngredientDTO ingredientDTO = new IngredientDTO();
+	      RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
 	      int postNumber = 0;
+	     
+//	      ServletRequest multipartRequest;
+//		String[] ingredientTitles = multipartRequest.getParameterValues("ingredientTitle");
+//	      for (String ingredientTitle : ingredientTitles) {
+//	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
+//	          recipeIngredientDTO.setRecipeIngredientTitle(ingredientTitle);
+//	      
+//	      }
+
 	      
 	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 	      int fileSize = 1024 * 1024 * 5; //5MB
@@ -33,39 +47,53 @@ public class PostWriteOkController implements Execute {
 	     
 	      MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
 	      
-    
-//	      boardDTO.setBoardTitle(multipartRequest.getParameter("boardTitle"));
-//	      boardDTO.setBoardContent(multipartRequest.getParameter("boardContent"));
-//      boardDTO.setMemberNumber((Integer)req.getSession().getAttribute("memberNumber"));
-//    
-//     boardDAO.insert(boardDTO);
-//	      boardNumber = boardDAO.getSequence();
-//      
-//	      System.out.println(boardNumber);
-//	      
-//
-//	      Enumeration<String> fileNames = multipartRequest.getFileNames();/	      
+	      
+	      postDTO.setPostTitle(multipartRequest.getParameter("postTitle"));
+	      postDTO.setPostContent(multipartRequest.getParameter("postContent"));
+//	      postDTO.setPostNumber(postNumber);
+	      postDTO.setPostRecipeContent(multipartRequest.getParameter("postRecipeContent"));
+//	      postDTO.setPostDate(multipartRequest.getParameter("postDate"));
+	      postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
+//	      postDTO.setPostViewCount((Integer)req.getSession().getAttribute("postViewCount"));
+	      recipeCategoryDTO.setCategoryName(multipartRequest.getParameterValues("categorys"));
+	    
+	      recipeIngredientDTO.setRecipeIngredientTitle(multipartRequest.getParameterValues("ingredientTitle"));
+	      recipeIngredientDTO.setRecipeIngredientName(multipartRequest.getParameterValues("ingredientName"));
+	      recipeIngredientDTO.setRecipeIngredientQuantity(multipartRequest.getParameterValues("ingredientQuantity"));
+	      
+	      
+	      postDAO.insert(postDTO);
+	      
+	      
+	      
+
+	      
+	      postNumber = postDAO.getSequence();
+	      
+	      Enumeration<String> fileNames = multipartRequest.getFileNames();	      
 //	      이터레이터의 hasNex()
-//	      while(fileNames.hasMoreElements()) {
-////	         이터레이터의 next()
-//	         String name = fileNames.nextElement();
-//	         
-//	         String fileSystemName = multipartRequest.getFilesystemName(name);
-//	         String fileOriginalName = multipartRequest.getOriginalFileName(name);
-//	         
-//	         if(fileSystemName == null) {continue;}
-//	         
-//	         fileDTO.setFileSystemName(fileSystemName);
-//	         fileDTO.setFileOriginalName(fileOriginalName);
-//	         fileDTO.setBoardNumber(boardNumber);
-//	         
-//	         System.out.println(fileDTO);
-//	         fileDAO.insert(fileDTO);
-//	      }
-//	      
-//	      
-//	      resp.sendRedirect("/post/postListOk.po");
-//	      
+	      while(fileNames.hasMoreElements()) {
+//        	이터레이터의 next()
+	    	  String name = fileNames.nextElement();
+     
+     String fileSystemName = multipartRequest.getFilesystemName(name);
+     String fileOriginalName = multipartRequest.getOriginalFileName(name);
+     
+     if(fileSystemName == null) {continue;}
+     
+     postFileDTO.setPostFileSystemName(fileSystemName);
+     postFileDTO.setPostFileOriginalName(fileOriginalName);
+     postFileDTO.setPostNumber(postNumber);
+     postFileDTO.setPostFileIndex(1);
+     
+     
+     System.out.println(postFileDTO);
+     postFileDAO.insert(postFileDTO);
+  }
+  
+  
+  resp.sendRedirect("/post/postListOk.po");
+  
 	      
 	      
 	      
@@ -76,4 +104,4 @@ public class PostWriteOkController implements Execute {
 	      
 
 	   }
-	}
+}

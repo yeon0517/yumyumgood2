@@ -47,7 +47,7 @@
 
     <div class="write-box-globar-wrap">
       <div class="write-box-container">
-        <input type="file" name="file-input" id="file-input" accept=".jpg, .jpeg, .png" class="please" multiple />
+        <input type="file" name="file" id="file-input" accept=".jpg, .jpeg, .png" class="please" multiple />
         <form id="write-form" method= "post" action="${pageContext.request.contextPath}/post/postWriteOk.po" method="post" class="write-box-form" enctype="multipart/form-data">
           <div class="wirte-box-wrap">
 
@@ -84,19 +84,21 @@
 
                      
                    	
-                   	  <input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-     					 <input type="file" name="" id="" class="input" /><br />
+                   	  <input type="file" name="file1" id="" class="input" /><br />
+      					<input type="file" name="file2" id="" class="input" /><br />
+      					<input type="file" name="file3" id="" class="input" /><br />
+      					<input type="file" name="file4" id="" class="input" /><br />
+     					 <input type="file" name="file5" id="" class="input" /><br />
                       <h1><i class="fa-regular fa-image"></i></h1>
                       <br> <br> <br>
                       <h2 class="file-input-msg">아래를 클릭해 사진을 선택하세요</h2>
-                   	  <input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-     					 <input type="file" name="" id="" class="input" /><br />
+                   	  <input type="file" name="file6" id="" class="input" /><br />
+      					<input type="file" name="file7" id="" class="input" /><br />
+      					<input type="file" name="file8" id="" class="input" /><br />
+      					<input type="file" name="file9" id="" class="input" /><br />
+     					 <input type="file" name="file10" id="" class="input" /><br />
+     					 
+     					 
                     </div>
                   </div>
                 </label>
