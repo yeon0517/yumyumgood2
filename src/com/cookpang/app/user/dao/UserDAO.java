@@ -1,8 +1,11 @@
 package com.cookpang.app.user.dao;
 
+
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.user.dto.UserDTO;
+import com.cookpang.app.user.profileEdit.vo.ProfileEditVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class UserDAO {
@@ -34,6 +37,7 @@ public class UserDAO {
 		 return sqlSession.selectOne("user.findPassword",userDTO) ;
 	 }
 	 
-	
-	 
+	 public ProfileEditVO getUserProfileInfo(int userNumber) {
+		   return sqlSession.selectOne("user.selectMemberProfileInfo",userNumber);
+	   }
 }
