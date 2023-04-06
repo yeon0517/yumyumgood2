@@ -34,4 +34,9 @@ public SqlSession sqlSession;
 		return sqlSession.selectOne("category.categoryTotal", categoryNumber);
 	}
 	
+	public List<PostVO> rankTotal(){
+		return sqlSession.selectList("postLike.rankTotal");
+		
+	}
+	
 }
