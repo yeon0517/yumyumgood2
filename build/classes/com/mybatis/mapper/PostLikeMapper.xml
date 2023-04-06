@@ -8,7 +8,7 @@
 		from tbl_post tp 
 		left join tbl_post_like tpl on tpl.post_number = tp.post_number 
 		left join tbl_post_file tpf on tpf.post_number = tp.post_number 
-		where tpf.post_file_index =1
+		where tpf.post_file_index = '1'
 		group by tp.post_number, tpf.post_file_index 
 		order by count(distinct tpl.user_number) desc
 		limit 8

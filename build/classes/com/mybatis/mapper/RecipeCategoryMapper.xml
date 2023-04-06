@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="recipeCategory">
-	<insert id="insertC" parameterType="_int">
+	<insert id="insertC" parameterType="RecipeCategoryDTO">
 		insert into tbl_recipe_category
 (post_number, category_name)
 values(#{postNumber}, #{categoryName});
