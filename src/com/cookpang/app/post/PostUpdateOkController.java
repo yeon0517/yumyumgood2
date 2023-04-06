@@ -65,11 +65,11 @@ public class PostUpdateOkController implements Execute {
 //	               저장 후 파일 이름을 다시 뽑으면 저장될 때의 이름이 나온다.
 	              postFileSystemName = filePart.getFileName();
 	               
-	               postFileDTO.setPostFileSystemName(postFileSystemName);
-	               postFileDTO.setPostFileOriginalName(postFileOriginalName);
+	              postFileDTO.setPostFileSystemName(postFileSystemName);
+	              postFileDTO.setPostFileOriginalName(postFileOriginalName);
 	              postFileDTO.setPostNumber(postNumber);
 	               
-	               postFileDAO.insert(postFileDTO);
+	              postFileDAO.insert(postFileDTO);
 	            }
 	            
 	         }else {
@@ -94,8 +94,6 @@ public class PostUpdateOkController implements Execute {
 	            postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 	            postDAO.update(postDTO);
 	            
-	            postNumber = postDAO.getSequence();
-	            System.out.println("db로 연결 됐다!");
 	            
 	            List<PostFileDTO> files = postFileDAO.select(postNumber);
 	            

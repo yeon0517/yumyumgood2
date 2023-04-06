@@ -18,7 +18,7 @@ public class PostDAO {
 	}
 	
 	public List <PostReadVO> selectAll(Map<String, Integer>pageMap) {
-		return sqlSession.selectList("post.selectAll", pageMap);
+		return sqlSession.selectList("post.postAll", pageMap);
 		
 	}
 	

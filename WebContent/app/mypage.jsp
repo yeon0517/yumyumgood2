@@ -582,8 +582,6 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
@@ -648,7 +646,9 @@
 					</ul>
 					<li class="sidebar-logout"><a href="/main" class="logout-btn">로그아웃</a></li>
 				</div>
+			</div><!-- 사이드바  -->
 			</div>
+
 		</div>
 
 		<div id="main-footer">
@@ -676,7 +676,7 @@
 				</div>
 			</footer>
 		</div>
-	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 	<script

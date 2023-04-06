@@ -28,6 +28,11 @@ public class RecipeCategoryDTO {
 		return "RecipeCategoryDTO [postNumber=" + postNumber + ", categoryName=" + categoryName + "]";
 	}
 
+	public void setCategoryName(String[] parameterValues) {
+		
+		
+	}
+
 		
 	
 	
