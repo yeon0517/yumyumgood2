@@ -34,38 +34,38 @@ public class PostWriteOkController implements Execute {
 	      MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
 	      
     
-	      boardDTO.setBoardTitle(multipartRequest.getParameter("boardTitle"));
-	      boardDTO.setBoardContent(multipartRequest.getParameter("boardContent"));
-      boardDTO.setMemberNumber((Integer)req.getSession().getAttribute("memberNumber"));
-    
-     boardDAO.insert(boardDTO);
-	      boardNumber = boardDAO.getSequence();
-      
-	      System.out.println(boardNumber);
-	      
-
-	      Enumeration<String> fileNames = multipartRequest.getFileNames();/	      
+//	      boardDTO.setBoardTitle(multipartRequest.getParameter("boardTitle"));
+//	      boardDTO.setBoardContent(multipartRequest.getParameter("boardContent"));
+//      boardDTO.setMemberNumber((Integer)req.getSession().getAttribute("memberNumber"));
+//    
+//     boardDAO.insert(boardDTO);
+//	      boardNumber = boardDAO.getSequence();
+//      
+//	      System.out.println(boardNumber);
+//	      
+//
+//	      Enumeration<String> fileNames = multipartRequest.getFileNames();/	      
 //	      이터레이터의 hasNex()
-	      while(fileNames.hasMoreElements()) {
-//	         이터레이터의 next()
-	         String name = fileNames.nextElement();
-	         
-	         String fileSystemName = multipartRequest.getFilesystemName(name);
-	         String fileOriginalName = multipartRequest.getOriginalFileName(name);
-	         
-	         if(fileSystemName == null) {continue;}
-	         
-	         fileDTO.setFileSystemName(fileSystemName);
-	         fileDTO.setFileOriginalName(fileOriginalName);
-	         fileDTO.setBoardNumber(boardNumber);
-	         
-	         System.out.println(fileDTO);
-	         fileDAO.insert(fileDTO);
-	      }
-	      
-	      
-	      resp.sendRedirect("/post/postListOk.po");
-	      
+//	      while(fileNames.hasMoreElements()) {
+////	         이터레이터의 next()
+//	         String name = fileNames.nextElement();
+//	         
+//	         String fileSystemName = multipartRequest.getFilesystemName(name);
+//	         String fileOriginalName = multipartRequest.getOriginalFileName(name);
+//	         
+//	         if(fileSystemName == null) {continue;}
+//	         
+//	         fileDTO.setFileSystemName(fileSystemName);
+//	         fileDTO.setFileOriginalName(fileOriginalName);
+//	         fileDTO.setBoardNumber(boardNumber);
+//	         
+//	         System.out.println(fileDTO);
+//	         fileDAO.insert(fileDTO);
+//	      }
+//	      
+//	      
+//	      resp.sendRedirect("/post/postListOk.po");
+//	      
 	      
 	      
 	      
