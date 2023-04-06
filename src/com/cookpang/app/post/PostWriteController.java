@@ -20,7 +20,7 @@ public class PostWriteController implements Execute {
 		String path = null;
 		
 		if(userNumber == null) {
-			path = "/app/login.jsp";
+			path = "/app/user/login.jsp";
 		}else {
 			path = "/app/post/postWrite.jsp";
 			req.setAttribute("userId", userDAO.getUserId(userNumber));
