@@ -38,11 +38,13 @@
 						<div class="profile-picture">
 							<div class="profile">
 								<div class="imgbox-div">
-									<div class="img-box"></div>
+									<div class="img-box">
+										<img src="" alt="${profileImage.getUserProfileImageSystemName()}" class="profile-image"  />
+									</div>
 								</div>
 								<div class="profile-box">
 									<div class="nickname-box">
-										<p class="nickname">mana_mana</p>
+										<p class="manager-id">${manager.getUserId()}</p>
 										<div class="manage">
 											<a href="../html/profile.html">프로필 편집</a>
 										</div>
@@ -53,17 +55,17 @@
 									</div>
 									<div class="follow-box">
 										<p>
-											게시물<span>10</span>
+											게시물<span>${manager.getPostCount()}</span>
 										</p>
 										<p>
-											<a href="#">팔로워</a><span>100</span>
+											<a href="#">팔로워</a><span>${manager.getFollowersCount()}</span>
 										</p>
 										<p>
-											<a href="#">팔로우</a><span>100</span>
+											<a href="#">팔로우</a><span>${manager.getFollowingCount()}</span>
 										</p>
 									</div>
 									<div class="namebox">
-										<h6>쿸팡걸~</h6>
+										<h6>${manager.getUserSelfIntroduction()}</h6>
 									</div>
 								</div>
 							</div>
@@ -102,6 +104,7 @@
 								<form action="/manager/UserDeleteOk.manager" method="post">
 									<div class="member-main test" id="member-Menu">
 										<div class="member-serch">
+											<input hidden="hidden" />
 											<input type="text" id="user-serch" name="userIdOrName"
 												placeholder="회원의 아이디나 이름을입력하세요" />
 											<button type="button" class="user-serch-btn" >
@@ -238,19 +241,7 @@
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td>2</td>
-											<td><a href="">만두를 만들어요</a></td>
-											<td><a href=""> asd123@naver.com</a></td>
-											<td>15</td>
-											<td>2023-03-30</td>
-											<td>
-												<div class="checkbox-c">
-													<a href="#"><input type="checkbox"
-														class="post-check-box" name="post" value="#게시물번호" /></a>
-												</div>
-											</td>
-										</tr>
+										
 
 									</table>
 									<button class="button">게시글 삭제</button>

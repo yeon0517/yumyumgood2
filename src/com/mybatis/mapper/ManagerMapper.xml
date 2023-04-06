@@ -48,7 +48,19 @@
 		where user_id like concat('%', #{userIdOrName}, '%') or user_name like concat('%', #{userIdOrName}, '%')
 	</select>
 
-
+		<!-- 마이페이지, 매니저페이지 기본정보 불러오는 쿼리 유저에서 사용할 경우 UserVO로 변경, 필요에 따라 user_name같은거 추가 -->
+	<select id="getProfileInfo" parameterType="_int" resultType="ManagerVO">
+		select u.user_number, u.user_id, count(p.post_number) as post_count, u.user_self_introduction,
+  			max(upi.user_profile_original_name) as user_profile_original_name,
+  			max(upi.user_profile_image_system_name) as user_profile_image_system_name,
+  			(select count(follow_number) from tbl_follow where follow_number = u.user_number) as following_count,
+  			(select count(following_number) from tbl_follow where following_number = u.user_number) as followers_count
+		from tbl_user u
+		left join tbl_post p on u.user_number = p.user_number
+		left join tbl_user_profile_image upi on u.user_number = upi.user_number
+		where u.user_number = #{managerNumber }
+		group by u.user_number
+	</select>
 
 
 

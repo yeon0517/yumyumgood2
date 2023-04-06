@@ -12,7 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.manager.dao.ManagerDAO;
+import com.cookpang.app.manager.vo.ManagerVO;
 import com.cookpang.app.user.dto.UserDTO;
+import com.cookpang.app.user.profileImage.dao.ProfileImageDAO;
+import com.cookpang.app.user.profileImage.dto.ProfileImageDTO;
 
 public class ManagerListOkController implements Execute {
 
@@ -77,8 +80,16 @@ public class ManagerListOkController implements Execute {
 		pageMap.put("rowCount", rowCount);
 		
 		List<UserDTO> users = managerDAO.selectUserAll(pageMap);
+		ManagerVO managerVO = managerDAO.getProfileInfo(managerNumber);
+		ProfileImageDTO profileImage = new ProfileImageDAO().selectImage(managerNumber);
+		
+		System.out.println(managerVO);
+		System.out.println(profileImage);
 		
 		
+		
+		req.setAttribute("profileImage", profileImage);
+		req.setAttribute("manager", managerVO);
 		req.setAttribute("userList", users);
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);
