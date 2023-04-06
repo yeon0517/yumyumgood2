@@ -70,8 +70,6 @@ chartCata.addEventListener("click", function() {
 	}
 });
 
-
-
 //==========================
 const chartData = [
 	{ x: 10, y: 20, r: 5 },
@@ -81,8 +79,31 @@ const chartData = [
 	{ x: 50, y: 40, r: 25 },
 ];
 
+let searchMode = false;
 
-// 사용자 목록과 페이지네이션을 업데이트하는 함수
+function updatePage(page) {
+	if (searchMode) {
+		let userIdOrName = $('#user-serch').val();
+		$.ajax({
+			url: '/manager/userSerch.manager',
+			type: 'GET',
+			data: {userIdOrName: userIdOrName, page: page},
+			dataType: 'json',
+			success: updateTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	} else {
+		$.ajax({
+			url: "/manager/managerListRest.manager",
+			type: "GET",
+			data: { page: page },
+			dataType: "json",
+			success: updateTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	}
+}
+
 function updateTable(result) {
 	// 기존 사용자 목록을 지우기
 	$(".member-table tbody tr:not(:first)").remove();
@@ -91,7 +112,7 @@ function updateTable(result) {
 	result.users.forEach((user) => {
 		$(".member-table tbody").append(`
       <tr>
-        <td class="user-number">${user.userNumber}</td>
+                <td class="user-number">${user.userNumber}</td>
         <td class="user-Id"><a href="#">${user.userId}</a></td>
         <td class="user-name"><a href="#">${user.userName}</a></td>
         <td class="user-email">${user.userEmail}</td>
@@ -116,60 +137,23 @@ function updateTable(result) {
 	});
 }
 
-// 페이지 업데이트를 위한 AJAX 요청을 수행하는 함수
-function updatePage(page) {
-	$.ajax({
-		url: "/manager/managerListRest.manager",
-		type: "GET",
-		data: { page: page },
-		dataType: "json",
-		success: updateTable,
-		error: (xhr, status, error) => console.log(error),
-	});
-}
-
 // 초기 페이지네이션 링크에 클릭 이벤트 리스너를 추가
 $(".user-page a").on("click", function(e) {
 	e.preventDefault();
 	updatePage($(this).text().trim());
 });
 
-
-
 $('.user-serch-btn').on('click', function() {
 	let userIdOrName = $('#user-serch').val();
+	let gapCheck = $('#user-serch').val().trim();
 	console.log(userIdOrName);
 	
-	$.ajax({
-		url: '/manager/userSerch.manager',
-		type: 'GET',
-		data: { userIdOrName: userIdOrName },
-		dataType: 'json',
-		success: updateTable,
-		error: (xhr, status, error) => console.log(error),
-	});
-
+	if (gapCheck === '' || gapCheck.length === 0){
+		searchMode = false;
+		updatePage(1);
+	}else{
+		searchMode = true;
+		updatePage(1);
+	}
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
