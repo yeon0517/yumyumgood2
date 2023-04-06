@@ -35,14 +35,18 @@
 		where user_number = #{managerNumber}
 	</select>
 
-	<select id="userSerch" parameterType="string" resultType="UserDTO">
+	<select id="userSerch" parameterType="map" resultType="UserDTO">
 		select user_number, user_id, user_name, user_email, user_phone_number, user_gender, user_status
 		from tbl_user
 		where user_id like concat('%', #{userIdOrName}, '%') or user_name like concat('%', #{userIdOrName}, '%')
-
+		limit #{startRow}, #{rowCount}
 	</select>
 
-
+	<select id="getUserSerchTotal" parameterType="map" resultType="_int">
+		select  count(user_number)  
+		from tbl_user
+		where user_id like concat('%', #{userIdOrName}, '%') or user_name like concat('%', #{userIdOrName}, '%')
+	</select>
 
 
 

@@ -33,13 +33,13 @@ button{
 }
 
 #main-header {
-  background-color: rgb(189, 189, 189);
+/*   background-color: rgb(189, 189, 189);
   position: fixed;
   height: 25px;
   width: 100%;
   margin: 0;
   padding: 0;
-  z-index: 1;
+  z-index: 1; */
 }
 
 #main-body {
