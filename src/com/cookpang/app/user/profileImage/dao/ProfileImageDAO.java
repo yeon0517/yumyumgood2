@@ -15,8 +15,10 @@ public class ProfileImageDAO {
 	
 	public void insertImg(ProfileImageDTO profileImageDTO) {
 		sqlSession.insert("profileImage.insertImg", profileImageDTO);
-	
 	}
 	
+	public ProfileImageDTO selectImage(int userNumber) {
+		return sqlSession.selectOne("profileImage.selectImage", userNumber);
+	}
 	
 }

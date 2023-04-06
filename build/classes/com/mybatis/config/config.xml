@@ -25,6 +25,7 @@
 		<typeAlias type="com.cookpang.app.recipe.category.dto.RecipeCategoryDTO" alias="RecipeCategoryDTO"/>
 		<typeAlias type="com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO" alias="RecipeIngredientDTO"/>
 		<typeAlias type="com.cookpang.app.user.profileImage.dto.ProfileImageDTO" alias="ProfileImageDTO"/>
+		<typeAlias type="com.cookpang.app.user.profileEdit.vo.ProfileEditVO" alias="ProfileEditVo"/>
 		
 		<!-- managerVO만들예정 -->
 		

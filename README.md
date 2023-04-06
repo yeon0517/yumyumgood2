@@ -15,5 +15,6 @@
 1. ###  sns컨셉으로 사용자가 자신의 레시피를 공유하고 다른사람들의 레시피도 찾아 볼 수 있는 사이트
 2. ###  레시피에 필요한 재료들을 구매 할 수 있는 사이트
 
-
+## ERD구성
+[![쿡팡 erd구성](./WebContent/assets/img/erdImg/cookpangERD.png)](https://dbdiagram.io/d/642008425758ac5f17242b13)
 

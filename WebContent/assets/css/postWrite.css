@@ -110,7 +110,7 @@ html, body {
   color: rgba(88, 88, 88, 0.789);
 }
 
-.file-input{
+/* .file-input{
   position: absolute;
   width: 100%;
   opacity: 0;
@@ -118,14 +118,18 @@ html, body {
   left: 0;
   top: 0;
 
-}
+} */
 
 .file-input-msg{
   color: rgba(88, 88, 88, 0.789);
+  
 }
 
 
-
+.please{
+	position: absolute;
+	opacity: 0;
+}
 
 /* 사용자작성 게시물 부분 */
 .write-box-content-wrap{
@@ -403,6 +407,25 @@ textarea {
 .msg1{
   margin-left: 120px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
