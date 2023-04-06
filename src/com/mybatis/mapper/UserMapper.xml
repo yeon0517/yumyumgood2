@@ -42,18 +42,24 @@
 		#{userPhoneNumber} and user_email = #{userEmail}
 	</select>
 
-	<select id="selectMemberProfileInfo" parameterType="ProfileEditVO" resultType="_int">
-		select u.user_id,
-		u.user_password, u.user_nickname, u.user_phone_number, u.user_name,
-		u.user_phone_number,
-		u.user_email, u.user_name,
-		u.user_self_introduction,
-		p.user_profile_image_system_name,
-		p.user_profile_original_name
-		from tbl_user u join tbl_user_profile_image p
-		on user_number = #{userNumber} and u.user_number = p.user_number;
+	<select id="selectMemberProfileInfo" parameterType="_int" resultType="ProfileEditVO">
+	select pr.user_profile_image_system_name, ur.user_name, ur.user_nickname,ur.user_birth, ur.user_phone_number, ur.user_email, ur.user_address,ur.user_self_introduction
+		from tbl_user ur
+		join tbl_user_profile_image pr
+		on ur.user_number = pr.user_number
+		where ur.user_number = #{userNumber}
 	</select>
 	
+	<update id="updateUserProfileInfo" parameterType="ProfileEditVO">
+   	update tbl_user 
+	set user_id = #{userId}, user_name = #{userName} 
+	user_nickname = #{userNickname}, user_phone_number = #{userPhoneNumber}, 
+	user_email = #{userEmail}, user_address = #{userAddress}, user_self_introduction = #{userSelfIntroduction} 
+	where user_number = #{userNumber}
+   </update>
+	
+	
+
 </mapper>
 
 

@@ -15,11 +15,11 @@ public class ProfileSelectController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserDAO userDAO = new UserDAO();
 //		UserDTO userDTO = new UserDTO();
-		ProfileEditVO profileVO = new ProfileEditVO();
-//		ProfileEditVO profileEditVO = new ProfileEditVO();
+		ProfileEditVO profileVO = null;
+				//		ProfileEditVO profileEditVO = new ProfileEditVO();
 
 		req.setCharacterEncoding("utf-8");
-		int helpme = 1;
+		int helpme = 3;
 		
 //		userDTO.setUserId(req.getParameter("userId"));
 //		userDTO.setUserPassword(req.getParameter("userPassword"));
@@ -27,7 +27,9 @@ public class ProfileSelectController implements Execute {
 		
 		profileVO = userDAO.getUserProfileInfo(helpme);
 		
-		req.setAttribute("profileVO", profileVO);
+		req.setAttribute("profileEditVO", profileVO);
+		
+		System.out.println(profileVO.toString());
 		
 
 		req.getRequestDispatcher("/app/editProfile.jsp").forward(req, resp);

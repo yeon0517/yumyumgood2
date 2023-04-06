@@ -12,7 +12,7 @@ public class ProfileEditVO {
 	private String userName;
 	private String userPhoneNumber;
 	private String userEmail;
-	private String userAdress;
+	private String userAddress;
 	private String userSelfIntroduction;
 	private List<ProfileImageDTO> files;
 
@@ -22,7 +22,7 @@ public class ProfileEditVO {
 	public String toString() {
 		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
 				+ ", userNickName=" + userNickName + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
-				+ ", userEmail=" + userEmail + ", userAdress=" + userAdress + ", userSelfIntroduction="
+				+ ", userEmail=" + userEmail + ", userAdress=" + userAddress + ", userSelfIntroduction="
 				+ userSelfIntroduction + ", files=" + files + "]";
 	}
 	
@@ -69,10 +69,10 @@ public class ProfileEditVO {
 		this.userEmail = userEmail;
 	}
 	public String getUserAdress() {
-		return userAdress;
+		return userAddress;
 	}
-	public void setUserAdress(String userAdress) {
-		this.userAdress = userAdress;
+	public void setUserAdress(String userAddress) {
+		this.userAddress = userAddress;
 	}
 	public String getUserSelfIntroduction() {
 		return userSelfIntroduction;
