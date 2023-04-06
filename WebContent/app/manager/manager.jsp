@@ -39,7 +39,7 @@
 							<div class="profile">
 								<div class="imgbox-div">
 									<div class="img-box">
-										<img src="https://cdn.pixabay.com/photo/2021/01/14/19/30/water-5917708_1280.jpg" alt="${profileImage.getUserProfileImageSystemName()}" class="profile-image"  />
+										<img src="" alt="${profileImage.getUserProfileImageSystemName()}" class="profile-image"  />
 									</div>
 								</div>
 								<div class="profile-box">
@@ -241,19 +241,7 @@
 												</div>
 											</td>
 										</tr>
-										<tr>
-											<td>2</td>
-											<td><a href="">만두를 만들어요</a></td>
-											<td><a href=""> asd123@naver.com</a></td>
-											<td>15</td>
-											<td>2023-03-30</td>
-											<td>
-												<div class="checkbox-c">
-													<a href="#"><input type="checkbox"
-														class="post-check-box" name="post" value="#게시물번호" /></a>
-												</div>
-											</td>
-										</tr>
+										
 
 									</table>
 									<button class="button">게시글 삭제</button>
