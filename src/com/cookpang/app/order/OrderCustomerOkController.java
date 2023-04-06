@@ -37,7 +37,7 @@ public class OrderCustomerOkController implements Execute {
         // 주문 정보를 DB에 저장합니다.
         OrderDAO orderDAO = OrderDAO.getInstance();
         orderDAO.insertOrder(order);
-System.out.println(order);
+        System.out.println(order);
         // 주문 완료 페이지로 이동합니다.
         RequestDispatcher dispatcher = req.getRequestDispatcher("/");
         dispatcher.forward(req, resp);
