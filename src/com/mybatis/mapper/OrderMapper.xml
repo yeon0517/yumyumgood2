@@ -3,6 +3,21 @@
 
 <mapper namespace="order">
 
+<!-- 
+	<select id="selectAll" resultType="OrderVo">
+	select user_name , user_phone_number , user_email ,user_address from tbl_user u join tbl_order o
+on u.user_number = o.user_number 
+ order by order_number desc;
+	
+	</select> -->
+	
+	
+ 	<select id="defaultOrderInfo" parameterType="_int" resultType="UserDTO">
+<!--  	                    파라미터 타입은 #{}의 타입을 의미하고   리절트타입은 OrderVO 에서 가져온다는 말 -->
+ 	select user_number, user_name, user_phone_number, user_email,user_address from tbl_user
+	where user_number = #{userNumber} 
+ 	</select>
+
 </mapper>
 
 

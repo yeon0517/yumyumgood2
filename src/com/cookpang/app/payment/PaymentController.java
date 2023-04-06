@@ -1,0 +1,36 @@
+package com.cookpang.app.payment;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.cookpang.app.Execute;
+import com.cookpang.app.payment.dao.PaymentDAO;
+import com.cookpang.app.payment.dto.PaymentDTO;
+
+public class PaymentController implements Execute {
+	@Override
+	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		PaymentDAO paymentDAO = new PaymentDAO();
+//		PaymentDTO paymentDTO = new PaymentDTO();
+//
+//		req.setCharacterEncoding("utf-8");
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		req.getRequestDispatcher("/app/payment.jsp").forward(req, resp);
+//
+//		
+	}
+}
