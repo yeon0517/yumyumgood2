@@ -5,6 +5,7 @@ public class PostFileDTO {
     private String postFileSystemName;
     private String postFileOriginalName;
     private int postNumber;
+    private int postFileIndex;
 
     public PostFileDTO() {}
     
@@ -32,11 +33,21 @@ public class PostFileDTO {
         this.postNumber = postNumber;
     }
 
+	public int getPostFileIndex() {
+		return postFileIndex;
+	}
+
+	public void setPostFileIndex(int postFileIndex) {
+		this.postFileIndex = postFileIndex;
+	}
+
 	@Override
 	public String toString() {
 		return "PostFileDTO [postFileSystemName=" + postFileSystemName + ", postFileOriginalName="
-				+ postFileOriginalName + ", postNumber=" + postNumber + "]";
+				+ postFileOriginalName + ", postNumber=" + postNumber + ", postFileIndex=" + postFileIndex + "]";
 	}
+
+	
 
 
 }
