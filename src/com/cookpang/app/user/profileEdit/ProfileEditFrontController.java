@@ -11,21 +11,9 @@ public class ProfileEditFrontController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doProcess(req, resp);
-		
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-//		req.setAttribute("userId",req.getParameter("userId"));
-		
-		//req.getRequestDispatcher("#").forward(req, resp);
-		
+
+		doProcess(req, resp);   
+		 
 	}
 
 
@@ -40,11 +28,16 @@ public class ProfileEditFrontController extends HttpServlet{
 		System.out.println(target);
 		
 		switch(target) {
-		case "/cookpang/profileEdit.edit" : 
-//			req.getRequestDispatcher("/app/editProfile.jsp").forward(req, resp);
+		case "/user/profileEdit.edit" : 
 			new ProfileSelectController().execute(req, resp);
 			System.out.println("target");
 			break;
+			
+		case "/user/profileEditOk.edit" : 
+			new ProfileEditOkController().execute(req, resp);
+			System.out.println("target");
+			break;
+
 		}
 	}
 }

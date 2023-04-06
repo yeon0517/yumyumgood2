@@ -1,5 +1,7 @@
 package com.cookpang.app.user.dao;
 
+
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.user.dto.UserDTO;
@@ -38,6 +40,4 @@ public class UserDAO {
 	 public ProfileEditVO getUserProfileInfo(int userNumber) {
 		   return sqlSession.selectOne("user.selectMemberProfileInfo",userNumber);
 	   }
-
-	 
 }
