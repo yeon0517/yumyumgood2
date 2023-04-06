@@ -25,8 +25,7 @@
 		<typeAlias type="com.cookpang.app.recipe.category.dto.RecipeCategoryDTO" alias="RecipeCategoryDTO"/>
 		<typeAlias type="com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO" alias="RecipeIngredientDTO"/>
 		<typeAlias type="com.cookpang.app.user.profileImage.dto.ProfileImageDTO" alias="ProfileImageDTO"/>
-		
-		<!-- managerVO만들예정 -->
+		<typeAlias type="com.cookpang.app.manager.vo.ManagerVO" alias="ManagerVO"/>
 		
 		
 	</typeAliases>
@@ -49,9 +48,7 @@
 		<mapper resource="com/mybatis/mapper/FollowMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/IngredientImageMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/IngredientMapper.xml"/>
-		  <!-- 혹시 오류나면 수정 및 삭제 위해 주석으로 표시 -->
 		<mapper resource="com/mybatis/mapper/ManagerMapper.xml"/>
-		<!--  -->
 		<mapper resource="com/mybatis/mapper/OrderItemMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/OrderMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/PaymentMapper.xml"/>

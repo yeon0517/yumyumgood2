@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.cookpang.app.manager.vo.ManagerVO;
 import com.cookpang.app.user.dto.UserDTO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -44,6 +45,9 @@ public class ManagerDAO {
 		return sqlSession.selectOne("manager.getUserSerchTotal",pageMap);
 	}
 	
+	public ManagerVO getProfileInfo(int managerNumber) {
+		return sqlSession.selectOne("manager.getProfileInfo", managerNumber);
+	}
 	
 	
 	
