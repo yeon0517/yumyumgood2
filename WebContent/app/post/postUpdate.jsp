@@ -8,25 +8,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>postWrite</title>
-
-<style>
-      .input {
-      opacity: 0;
-        position: absolute;
-      }
-       </style>
-       
-    <style>
-    	#file-input{
-    	    position: absolute;
-    		margin-top:500px;
-    		margin-left: 290px;
-    		z-index:10;
-    		
-    	}
-    </style>
-   
+  <title>postUpdate</title>
  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/postWrite.css">
   <script src="https://kit.fontawesome.com/c6992f5b12.js" crossorigin="anonymous"></script>
 
@@ -47,7 +29,7 @@
 
     <div class="write-box-globar-wrap">
       <div class="write-box-container">
-        <input type="file" name="file-input" id="file-input" accept=".jpg, .jpeg, .png" class="please" multiple />
+        
         <form id="write-form" method= "post" action="${pageContext.request.contextPath}/post/postWriteOk.po" method="post" class="write-box-form" enctype="multipart/form-data">
           <div class="wirte-box-wrap">
 
@@ -60,13 +42,13 @@
               </div>
 
               <div class="write-box-header-content">
-                <h3> 레시피 등록 </h3>
+                <h3> 레시피 수정 </h3>
               </div>
               <div class="write-box-header-share">
                 <!-- 게시물 최종 작성버튼 -->
                 <!-- submit 버튼으로 변경 -->
                 <button type="submit" class="share-button ">
-                  공유하기
+                  수정하기
                 </button>
               </div>
 
@@ -77,26 +59,15 @@
 
               <!-- 이미지 업로드칸(파일추가되면 미리보기로)-->
               <div class="image-upload-wrap">
-                <label for="file-input" class="file-label">
+                <label for="file" class="file-label">
                   <div class="img-upload-section">
 
                     <div class="image-upload-guide">
 
-                     
-                   	
-                   	  <input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-     					 <input type="file" name="" id="" class="input" /><br />
                       <h1><i class="fa-regular fa-image"></i></h1>
                       <br> <br> <br>
-                      <h2 class="file-input-msg">아래를 클릭해 사진을 선택하세요</h2>
-                   	  <input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-      					<input type="file" name="" id="" class="input" /><br />
-     					 <input type="file" name="" id="" class="input" /><br />
+                      <h2 class="file-input-msg">이곳을 클릭해 사진을 선택하세요</h2>
+                      <input type="file" name="file" class="file-input" accept=".jpg, .jpeg, .png" multiple>
                     </div>
                   </div>
                 </label>
@@ -165,7 +136,7 @@
                 <div class="write-box-main-content-wrap">
                   <div class="write-box-main-content">
                     <div class="content-wrap">
-                      레시피 제목 <input type="text" name="postTitle" class="content-title" placeholder="예) 쇠고기 미역국 끓이기">
+                      레시피 제목 <input type="text" class="content-title" placeholder="예) 쇠고기 미역국 끓이기">
                     </div>
                     <div class="content-wrap">
                       레시피 카테고리 선택 <br>
@@ -272,7 +243,7 @@
                       </div>
                     </div>
                     
-                     <textarea name="postContent" id="main-msg" required="" 
+                     <textarea name="write-main-msg" id="main-msg" required="" 
                      placeholder="게시글을 작성해주세요"></textarea>
                     
                     <!-- 재료 부분 -->
@@ -336,7 +307,7 @@
 
 
                     <!-- 본문 내용 -->
-                    <textarea name="postRecipeContent" id="content" required placeholder="레시피를 작성해주세요"></textarea>
+                    <textarea name="write-content" id="content" required placeholder="레시피를 작성해주세요"></textarea>
 
 
                   </div>
@@ -358,30 +329,6 @@
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="${pageContext.request.contextPath}/assets/js/postWrite.js"></script>
-   <script>
-    let $tmpInput = $('#file-input');
-
-    $tmpInput.on('change', function () {
-      let files = this.files;
-      console.log(files);
-
-      let $input = $('.input');
-
-      for (let i = 0; i < 10; i++) {
-        if (i >= files.length) {
-          let dt = new DataTransfer();
-
-          $input[i].files = dt.files;
-        } else {
-          let dt = new DataTransfer();
-          dt.items.add(files[i]);
-
-          $input[i].files = dt.files;
-        }
-      }
-    });
-  </script>
-  
 </body>
 
 </html>
