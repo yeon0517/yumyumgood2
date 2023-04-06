@@ -46,8 +46,8 @@
 									<div class="rank-round">
 										<a href="#" class="rank-a">
 											<div class="rank-img">
-											<%-- ${post.getFiles()} 이미지에 넣는거--%>
-												<img src="https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300"
+											<%-- https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300 이미지에 넣는거--%>
+												<img src="${post.getFiles()}"
 													alt="${post.getPostFileSystemName()}">
 
 											</div>
