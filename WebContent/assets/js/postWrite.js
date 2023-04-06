@@ -134,9 +134,9 @@ function setupEventListeners() {
         if (hasEmptyInput) {
             event.preventDefault();
             alert('내용을 모두 작성해 주세요!');
-        } else if (images.length === 0) {
+       /* } else if (images.length === 0) {
             event.preventDefault();
-            alert("사진을 추가해주세요!!");
+            alert("사진을 추가해주세요!!");*/
         } else if (noneChecked()) {
             event.preventDefault();
             alert("카테고리를 추가해주세요!");
@@ -241,3 +241,9 @@ $(document).ready(function () {
         }
     }
 });
+
+
+
+
+
+

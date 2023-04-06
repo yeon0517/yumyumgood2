@@ -1,4 +1,4 @@
-package com.cookpang.app.post.file;
+package com.cookpang.app.user.profileEdit;
 
 import java.io.IOException;
 
@@ -7,26 +7,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class FileFrontController extends HttpServlet{
+public class ProfileEditFrontController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doProcess(req, resp);
+
+		doProcess(req, resp);   
+		 
 	}
+
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
+		
 	}
+	
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 		System.out.println(target);
-
+		
 		switch(target) {
-//		case "/postFile/download.pf":
-//		new DownloadController().execute(req,resp);
-//		break;
-	}
+		case "/user/profileEdit.edit" : 
+			new ProfileSelectController().execute(req, resp);
+			System.out.println("target");
+			break;
+			
+		case "/user/profileEditOk.edit" : 
+			new ProfileEditOkController().execute(req, resp);
+			System.out.println("target");
+			break;
 
-  }
+		}
+	}
 }
+

@@ -1,22 +1,23 @@
 package com.cookpang.app.post;
 
-import java.io.File;
 import java.io.IOException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
+import com.cookpang.app.ingredient.dto.IngredientDTO;
 import com.cookpang.app.post.dao.PostDAO;
 import com.cookpang.app.post.dto.PostDTO;
 import com.cookpang.app.post.file.dao.PostFileDAO;
 import com.cookpang.app.post.file.dto.PostFileDTO;
+import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
+import com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO;
+import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
-import com.oreilly.servlet.multipart.FilePart;
-import com.oreilly.servlet.multipart.MultipartParser;
-import com.oreilly.servlet.multipart.ParamPart;
-import com.oreilly.servlet.multipart.Part;
 
 public class PostWriteOkController implements Execute {
 
@@ -26,78 +27,73 @@ public class PostWriteOkController implements Execute {
 	      PostDTO postDTO = new PostDTO();
 	      PostFileDAO postFileDAO = new PostFileDAO();
 	      PostFileDTO postFileDTO = new PostFileDTO();
+	      RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
+	      IngredientDTO ingredientDTO = new IngredientDTO();
+	      RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
 	      int postNumber = 0;
-	      
-	      System.out.println("writeOk컨트롤러 들어왔다!!!");
-	      System.out.println(req.getParameter("postTitle"));
+	     
+//	      ServletRequest multipartRequest;
+//		String[] ingredientTitles = multipartRequest.getParameterValues("ingredientTitle");
+//	      for (String ingredientTitle : ingredientTitles) {
+//	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
+//	          recipeIngredientDTO.setRecipeIngredientTitle(ingredientTitle);
+//	      
+//	      }
+
 	      
 	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
-	      int fileSize = 1024 * 1024 ; //5MB
+	      int fileSize = 1024 * 1024 * 5; //5MB
 	      System.out.println(uploadPath);
+	     
+	      MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
 	      
-//	      하나의 input에 multiple 속성을 사용하여 여러 파일을 전달하는 경우 아래 코드를 사용한다.
-//	      =======================================
+	      
+	      postDTO.setPostTitle(multipartRequest.getParameter("postTitle"));
+	      postDTO.setPostContent(multipartRequest.getParameter("postContent"));
+//	      postDTO.setPostNumber(postNumber);
+	      postDTO.setPostRecipeContent(multipartRequest.getParameter("postRecipeContent"));
+//	      postDTO.setPostDate(multipartRequest.getParameter("postDate"));
+	      postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
+//	      postDTO.setPostViewCount((Integer)req.getSession().getAttribute("postViewCount"));
+	      recipeCategoryDTO.setCategoryName(multipartRequest.getParameterValues("categorys"));
+	    
+	      recipeIngredientDTO.setRecipeIngredientTitle(multipartRequest.getParameterValues("ingredientTitle"));
+	      recipeIngredientDTO.setRecipeIngredientName(multipartRequest.getParameterValues("ingredientName"));
+	      recipeIngredientDTO.setRecipeIngredientQuantity(multipartRequest.getParameterValues("ingredientQuantity"));
+	      
+	      
+	      postDAO.insert(postDTO);
+	      
+	      
+	      
 
-	      MultipartParser parser = new MultipartParser(req, fileSize);
-	      parser.setEncoding("utf-8");
 	      
-	      while(true) {
-//	         MultipartParser객체는 여러 폼데이터를 part객체로 분리할 수 있다.
-	         Part part = parser.readNextPart();
-	         
-	         if(part == null) {break; }
-	         String postFileSystemName = null;
-	         String postFileOriginalName = null;
-	         
-//	         part객체가 파일 데이터를 가진 경우
-	         if(part.isFile()) {
-	            FilePart filePart = (FilePart)part;
-	            
-	            filePart.setRenamePolicy(new DefaultFileRenamePolicy());
-	            postFileOriginalName = filePart.getFileName();
-	            
-	            if(postFileOriginalName != null) {
-//	               파일을 저장하기 위한 정보를 가진 객체를 만든다.
-	               File file = new File(uploadPath, postFileOriginalName);
-//	               파일을 저장한다.
-	               filePart.writeTo(file);
-//	               저장 후 파일 이름을 다시 뽑으면 저장될 때의 이름이 나온다.
-	              postFileSystemName = filePart.getFileName();
-	               
-	               postFileDTO.setPostFileSystemName(postFileSystemName);
-	               postFileDTO.setPostFileOriginalName(postFileOriginalName);
-	               postFileDTO.setPostNumber(postNumber);
-	               
-	               postFileDAO.insert(postFileDTO);
-	            }
-	            
-	         }else {
-//	            part객체가 문자열 데이터를 가진 경우
-	            ParamPart paramPart  = (ParamPart)part;
-	            String paramName = paramPart.getName();
-	            String paramValue = paramPart.getStringValue();
-	            
-	            if(paramName.equals("postTitle")) {
-	               postDTO.setPostTitle(paramValue);
-	            }else if(paramName.equals("postContent")) {
-	               postDTO.setPostContent(paramValue);
-	            }else if(paramName.equals("postRecipeContent")) {
-	            	postDTO.setPostRecipeContent(paramValue);
-	            }
-	            
-	            if(postDTO.getPostTitle() == null || postDTO.getPostContent() == null) { continue; }
-	            
-	            postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
-	            postDAO.insert(postDTO);
-	            
-	            postNumber = postDAO.getSequence();
-	            System.out.println("db로 연결 됐다!");
-	         }
-	      }
+	      postNumber = postDAO.getSequence();
 	      
-	      
-	      resp.sendRedirect("/post/postListOk.po");
-	      
+	      Enumeration<String> fileNames = multipartRequest.getFileNames();	      
+//	      이터레이터의 hasNex()
+	      while(fileNames.hasMoreElements()) {
+//        	이터레이터의 next()
+	    	  String name = fileNames.nextElement();
+     
+     String fileSystemName = multipartRequest.getFilesystemName(name);
+     String fileOriginalName = multipartRequest.getOriginalFileName(name);
+     
+     if(fileSystemName == null) {continue;}
+     
+     postFileDTO.setPostFileSystemName(fileSystemName);
+     postFileDTO.setPostFileOriginalName(fileOriginalName);
+     postFileDTO.setPostNumber(postNumber);
+     postFileDTO.setPostFileIndex(1);
+     
+     
+     System.out.println(postFileDTO);
+     postFileDAO.insert(postFileDTO);
+  }
+  
+  
+  resp.sendRedirect("/post/postListOk.po");
+  
 	      
 	      
 	      
@@ -108,4 +104,4 @@ public class PostWriteOkController implements Execute {
 	      
 
 	   }
-	}
+}

@@ -24,6 +24,14 @@ public class PostFrontController extends HttpServlet{
 		System.out.println("프론트 컨트롤러 잘 탄당!!");
 
 		switch(target) {
+		case "/post/postListOk.po":		
+		new PostListOkController().execute(req,resp);
+		break;
+			
+		case "/post/postReadOk.po":
+		new PostReadOkController().execute(req, resp);
+		break;
+			
 		case "/post/postWrite.po":		
 		new PostWriteController().execute(req,resp);
 		break;
@@ -36,9 +44,6 @@ public class PostFrontController extends HttpServlet{
 		new PostDeleteOkController().execute(req,resp);
 		break;
 		
-		case "/post/postReadOk.po":
-		new PostReadOkController().execute(req, resp);
-		break;
 		
 		case "/post/postUpdate.po":
 		new PostUpdateController().execute(req,resp);

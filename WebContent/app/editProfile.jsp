@@ -41,6 +41,9 @@
       <div id="main-body">
         <div class="body-main">
           <div class="body-main-body">
+          
+          <form action="${pageContext.request.contextPath}/user/profileEditOk.edit" method="post">
+          
             <div class="picture-box">
               <div class="picture-box-left">
                 <div class="img-box">
@@ -58,7 +61,7 @@
             <div class="nickname-box">
               <div class="nickname-box-left">이름</div>
               <div class="nickname-box-right">
-                <input type="text" class="text-box2" placeholder="이름" />
+                <input type="text" class="text-box2" placeholder="이름" value="${profileEditVO.getUserNickName()}" />
                 <div class="text-box2-text">
                   <p>
                     사람들이 이름, 별명 또는 비즈니스 이름 등 회원님의 알려진
@@ -75,7 +78,8 @@
                 <input
                   type="text"
                   class="text-box3"
-                  placeholder="사용자 이름"
+                  placeholder="사용자 이름" 
+                  value="${profileEditVO.getUserName()}"
                 />
                 <div class="text-box3-text">
                   대부분의 경우 이후 14일 동안 사용자 이름을 다시 poe.ntry(으)로
@@ -97,7 +101,7 @@
             <div class="birth-box">
               <div class="birth-box-left">생년월일</div>
               <div class="birth-box-right">
-                <input type="date" class="birthday" />
+                <input type="date" class="birthday" value="" />
               </div>
             </div>
             <div class="phone-number-box">
@@ -109,6 +113,7 @@
                   name="phone"
                   placeholder="010-1234-5678"
                   pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+                  value="${profileEditVO.getUserPhoneNumber()} "
                 />
               </div>
             </div>
@@ -120,6 +125,7 @@
                   class="email"
                   name="email"
                   placeholder="example@example.com"
+                  value="${profileEditVO.getUserEmail()}"
                 />
               </div>
             </div>
@@ -135,11 +141,15 @@
                 <input type="text" class="address" placeholder="상세 주소" />
               </div>
             </div>
+            
             <div class="editok-box">
               <button type="button" class="editok-btn" value="#">
                 회원정보 수정
               </button>
             </div>
+           
+            </form> <!-- 정보 보내기  여기까지   -->
+            
             <div class="eidt-password-box">
               <!-- 모달 열기 버튼 -->
               <button onclick="openModal()" class="eidt-modal">

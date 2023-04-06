@@ -4,8 +4,8 @@
 <mapper namespace="postFile">
 
 	<insert id="insert" parameterType="PostFileDTO">
-	insert into tbl_post_file(post_file_system_name, post_file_original_name, post_number)
-	values(#{postFileSystemName}, #{postFileOriginalName}, #{postNumber});
+	insert into tbl_post_file(post_file_system_name, post_file_original_name, post_number, post_file_index)
+	values(#{postFileSystemName}, #{postFileOriginalName}, #{postNumber}, #{postFileIndex})
 	</insert>
 	
 	<select id="select" parameterType="_int" resultType="PostFileDTO">

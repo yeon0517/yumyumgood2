@@ -1,4 +1,4 @@
-package com.cookpang.app.post.file.dao;
+package com.cookpang.app.post.file;
 
 import java.io.File;
 import java.io.FileInputStream;
