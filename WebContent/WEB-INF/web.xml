@@ -21,6 +21,17 @@
      <url-pattern>*.us</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+     <servlet-name>ProfileEdit</servlet-name>
+     <servlet-class>com.cookpang.app.user.profileEdit.ProfileEditFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>ProfileEdit</servlet-name>
+     <url-pattern>*.edit</url-pattern>
+  </servlet-mapping>
+  
+  
   <servlet>
      <servlet-name>Follow</servlet-name>
      <servlet-class>com.cookpang.app.follow.FollowFrontController</servlet-class>
