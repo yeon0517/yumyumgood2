@@ -376,6 +376,18 @@ textarea {
   font-size: 16px;
 }
 
+.ingredient-wrap #select{
+	padding: 5px;
+  width: 150px;
+  font-size: 16px;
+  background-color: #fffbf6;
+    border: 1px solid #aeaeae;
+    border-radius: 5px;
+    margin: 3px 0;
+    
+
+}
+
 .ingredient-quantity-li{
   margin: 0px 15px;
 }
@@ -405,7 +417,8 @@ textarea {
 }
 
 .msg1{
-  margin-left: 120px;
+  margin-left: 335px;
+  
 }
 
 

@@ -2,10 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="recipeIngredient">
-	<insert id="">
+	<insert id="insert" parameterType="RecipeIngredientDTO">
 		insert into tbl_recipe_ingredient
-(post_number, ingredient_number, recipe_ingredient_title, recipe_ingredient_name, recipe_ingredient_quantity)
-values(#{postNumber}, #{ingredientNumber}, #{recipeIngredientTitle}, #{recipeIngredientName}, #{recipeIngredientQuantity});
+(post_number, ingredient_number, recipe_ingredient_name, recipe_ingredient_quantity)
+values(#{postNumber}, #{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});
+		
 		
 	</insert>
 </mapper>

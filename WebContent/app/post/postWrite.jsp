@@ -91,7 +91,7 @@
      					 <input type="file" name="file5" id="" class="input" /><br />
                       <h1><i class="fa-regular fa-image"></i></h1>
                       <br> <br> <br>
-                      <h2 class="file-input-msg">아래를 클릭해 사진을 선택하세요</h2>
+                      <h2 class="file-input-msg">이곳을 클릭해 사진을 선택하세요</h2>
                    	  <input type="file" name="file6" id="" class="input" /><br />
       					<input type="file" name="file7" id="" class="input" /><br />
       					<input type="file" name="file8" id="" class="input" /><br />
@@ -285,16 +285,19 @@
                         <div class="ingredient-item">
                           <ul>
                             <li>
-                              <input type="text" name="ingredientTitle" class="ingredient-title"
-                                placeholder="재료묶음 이름 예) 기본재료">
+                              
                               <h5 class="ingredient-guide-msg  msg1">재료추가/삭제</h5>
                             </li>
 
                             <div class="ingredient-element">
 
                               <li class="ingredient-name-li">
-                                <input type="text" name="ingredientName" class="ingredient-name"
-                                  placeholder="재료이름 예)양배추 ">
+                               <select name="" id="select">
+              					<option value="-1">선택하기</option>
+              					<option value="1">선택1</option>
+              					<option value="2" selected>선택2</option>
+              					<option value="3">선택3</option>
+           					 </select>
                               </li>
 
                               <li class="ingredient-quantity-li">
@@ -323,10 +326,7 @@
 
                       <!-- 재료 묶음추가버튼 -->
                       <div class="item-edit-buttons">
-                        <h5 class="ingredient-guide-msg">재료 묶음 추가</h5>
-                        <button type="button" class="item-plus">
-                          <i class="fa-solid fa-circle-plus"></i>
-                        </button>
+                        
 
                         <button type="button" class="item-minus">
                           <i class="fa-solid fa-circle-minus"></i>

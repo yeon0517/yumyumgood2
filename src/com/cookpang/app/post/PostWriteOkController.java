@@ -14,7 +14,9 @@ import com.cookpang.app.post.dao.PostDAO;
 import com.cookpang.app.post.dto.PostDTO;
 import com.cookpang.app.post.file.dao.PostFileDAO;
 import com.cookpang.app.post.file.dto.PostFileDTO;
+import com.cookpang.app.recipe.category.dao.RecipeCategoryDAO;
 import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
+import com.cookpang.app.recipe.ingredient.dao.RecipeIngredientDAO;
 import com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -27,74 +29,115 @@ public class PostWriteOkController implements Execute {
 	      PostDTO postDTO = new PostDTO();
 	      PostFileDAO postFileDAO = new PostFileDAO();
 	      PostFileDTO postFileDTO = new PostFileDTO();
-	      RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
-	      IngredientDTO ingredientDTO = new IngredientDTO();
-	      RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
+//	      RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
+	      RecipeCategoryDAO recipeCategoryDAO = new RecipeCategoryDAO();
+//	      IngredientDTO ingredientDTO = new IngredientDTO();
+//	      RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
+	      RecipeIngredientDAO recipeIngredientDAO = new RecipeIngredientDAO();
 	      int postNumber = 0;
 	     
 //	      ServletRequest multipartRequest;
-//		String[] ingredientTitles = multipartRequest.getParameterValues("ingredientTitle");
-//	      for (String ingredientTitle : ingredientTitles) {
+//		String[] ingredientName = multipartRequest.getParameterValues("ingredientName");
+//	      for (String IngredientName : ingredientName) {
 //	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
-//	          recipeIngredientDTO.setRecipeIngredientTitle(ingredientTitle);
-//	      
+//	          recipeIngredientDTO.setRecipeIngredientName(IngredientName);
 //	      }
 
 	      
 	      String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 	      int fileSize = 1024 * 1024 * 5; //5MB
 	      System.out.println(uploadPath);
-	     
-	      MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
+	      
+	      MultipartRequest Request = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
+	      
+	      String[] ingredientNames = Request.getParameterValues("ingredientName");
+	      String[] ingredientQuantities = Request.getParameterValues("ingredientQuantity");
+
+
+
 	      
 	      
-	      postDTO.setPostTitle(multipartRequest.getParameter("postTitle"));
-	      postDTO.setPostContent(multipartRequest.getParameter("postContent"));
+	      
+	      postDTO.setPostTitle(Request.getParameter("postTitle"));
+	      postDTO.setPostContent(Request.getParameter("postContent"));
 //	      postDTO.setPostNumber(postNumber);
-	      postDTO.setPostRecipeContent(multipartRequest.getParameter("postRecipeContent"));
+	      postDTO.setPostRecipeContent(Request.getParameter("postRecipeContent"));
 //	      postDTO.setPostDate(multipartRequest.getParameter("postDate"));
 	      postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 //	      postDTO.setPostViewCount((Integer)req.getSession().getAttribute("postViewCount"));
-	      recipeCategoryDTO.setCategoryName(multipartRequest.getParameterValues("categorys"));
-	    
-	      recipeIngredientDTO.setRecipeIngredientTitle(multipartRequest.getParameterValues("ingredientTitle"));
-	      recipeIngredientDTO.setRecipeIngredientName(multipartRequest.getParameterValues("ingredientName"));
-	      recipeIngredientDTO.setRecipeIngredientQuantity(multipartRequest.getParameterValues("ingredientQuantity"));
+//	      recipeIngredientDTO.setRecipeIngredientName(multipartRequest.getParameterValues("ingredientName"));
+//	      recipeIngredientDTO.setRecipeIngredientQuantity(multipartRequest.getParameterValues("ingredientQuantity"));
+	     
+//	      recipeCategoryDTO.setCategoryName(multipartRequest.getParameterValues("categorys"));
+
 	      
 	      
 	      postDAO.insert(postDTO);
-	      
-	      
-	      
-
-	      
 	      postNumber = postDAO.getSequence();
 	      
-	      Enumeration<String> fileNames = multipartRequest.getFileNames();	      
+	      
+	      for (int i = 0; i < ingredientNames.length; i++) {
+	          String ingredientName = ingredientNames[i];
+	          String ingredientQuantity = ingredientQuantities[i];
+
+	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
+	          recipeIngredientDTO.setRecipeIngredientName(ingredientName);
+	          recipeIngredientDTO.setRecipeIngredientQuantity(ingredientQuantity);
+	          recipeIngredientDTO.setPostNumber(postNumber);
+	          recipeIngredientDAO.insert(recipeIngredientDTO);
+	      }
+	      
+	      
+	      String[] recipeCategories = Request.getParameterValues("categorys");
+	      
+	      for(int i=0; i<recipeCategories.length; i++) {
+	    	  String recipeCategory = recipeCategories[i];
+	    	  
+	    	  RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
+	    	  recipeCategoryDTO.setCategoryName(recipeCategory);
+	    	  recipeCategoryDTO.setPostNumber(postNumber);
+	    	  recipeCategoryDAO.insertC(recipeCategoryDTO);
+	      }
+	      
+	      
+	      
+	      
+	      
+	      Enumeration<String> fileNames = Request.getFileNames();	      
 //	      이터레이터의 hasNex()
 	      while(fileNames.hasMoreElements()) {
 //        	이터레이터의 next()
 	    	  String name = fileNames.nextElement();
-     
-     String fileSystemName = multipartRequest.getFilesystemName(name);
-     String fileOriginalName = multipartRequest.getOriginalFileName(name);
-     
-     if(fileSystemName == null) {continue;}
-     
-     postFileDTO.setPostFileSystemName(fileSystemName);
-     postFileDTO.setPostFileOriginalName(fileOriginalName);
-     postFileDTO.setPostNumber(postNumber);
-     postFileDTO.setPostFileIndex(1);
-     
-     
-     System.out.println(postFileDTO);
-     postFileDAO.insert(postFileDTO);
-  }
-  
-  
-  resp.sendRedirect("/post/postListOk.po");
-  
+	    	  
+	    	  String fileSystemName = Request.getFilesystemName(name);
+	    	  String fileOriginalName = Request.getOriginalFileName(name);
+	    	  
+	    	  if(fileSystemName == null) {continue;}
+	    	  
+	    	  postFileDTO.setPostFileSystemName(fileSystemName);
+	    	  postFileDTO.setPostFileOriginalName(fileOriginalName);
+	    	  postFileDTO.setPostNumber(postNumber);
+	    	  postFileDTO.setPostFileIndex(1);
+	    	  
+	    	  
+	    	  System.out.println(postFileDTO);
+	    	  postFileDAO.insert(postFileDTO);
+	      }
 	      
+	      
+	      resp.sendRedirect("/post/postListOk.po");
+	      
+	      
+	      
+	      
+	    
+	  
+	      
+	      
+	      
+	      
+	      
+
 	      
 	      
 	      

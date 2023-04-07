@@ -173,9 +173,14 @@ $(document).ready(function () {
         const ingredientElement = $(
             `
       <div class="ingredient-element">
-        <li class="ingredient-name-li">
-          <input type="text" name="ingredientName" class="ingredient-name" placeholder="재료이름 예)양배추 ">
-        </li>
+  <li class="ingredient-name-li">
+                               <select name="" id="select">
+              					<option value="-1">선택하기</option>
+              					<option value="1">선택1</option>
+              					<option value="2" selected>선택2</option>
+              					<option value="3">선택3</option>
+           					 </select>
+                              </li>
 
         <li class="ingredient-quantity-li">
           <input type="text" name="ingredientQuantity" class="ingredient-quantity" placeholder="재료 양 예) 1/2개">
