@@ -39,7 +39,7 @@
 							<div class="profile">
 								<div class="imgbox-div">
 									<div class="img-box">
-										<img src="" alt="${profileImage.getUserProfileImageSystemName()}" class="profile-image"  />
+										<img src="https://www.thechooeok.com/common/img/default_profile.png" alt="${profileImage.getUserProfileImageSystemName()}" class="profile-image"  />
 									</div>
 								</div>
 								<div class="profile-box">
@@ -227,7 +227,8 @@
 											<th>조회수</th>
 											<th>날짜</th>
 											<th>삭제</th>
-											<!-- 										</tr> -->
+											
+											
 										<tr>
 											<td>1</td>
 											<td><a href="">만두를 만들어요</a></td>
@@ -241,6 +242,55 @@
 												</div>
 											</td>
 										</tr>
+										
+											<c:choose>
+
+													<c:when test="${not empty postList}">
+														<c:forEach var="post" items="${postList}">
+
+															<tr>
+																<td class="post-number">${post.getPostNumber()}</td>
+																<td class="post-title">
+																	<!--해당 유저페이지 경로  --> <a href="#">
+																		${user.getUserId() } </a>
+																</td>
+																<td class="user-Id">
+																	<!--해당 유저페이지 경로  --> <a href="#">
+																		${user.getUserId() } </a>
+																</td>
+																<td class="user-name">
+																	<!--해당 유저페이지 경로  --> <a href="#">
+																		${user.getUserName() } </a>
+																</td>
+																<td class="user-email">${user.getUserEmail()}</td>
+																<td class="user-phone-number">${user.getUserPhoneNumber() }</td>
+																<td class="user-gender">${user.getUserGender() }</td>
+																<td class="user-status">${user.getUserStatus() }</td>
+																<td><a href="#">수정</a></td>
+																<td>
+																	<div class="checkbox-c">
+																		<a href="#"><input type="checkbox" name="user"
+																			class="user-check-box"
+																			value="${user.getUserNumber()}" /></a>
+																	</div>
+																</td>
+															</tr>
+
+														</c:forEach>
+													</c:when>
+													<c:otherwise>
+														<tr>
+															<td colspan="5" align="center">등록된 회원이 없습니다.</td>
+														</tr>
+													</c:otherwise>
+												</c:choose>
+										
+										
+										
+										
+										
+										
+										
 										
 
 									</table>

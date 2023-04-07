@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.manager.vo.ManagerVO;
+import com.cookpang.app.post.vo.PostVO;
 import com.cookpang.app.user.dto.UserDTO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -49,6 +50,8 @@ public class ManagerDAO {
 		return sqlSession.selectOne("manager.getProfileInfo", managerNumber);
 	}
 	
-	
+	public List<PostVO> selectPostAll(Map<String, Integer> pageMap){
+		return sqlSession.selectList("manager.selectPostAll", pageMap);
+	}
 	
 }

@@ -14,6 +14,7 @@ public class PostVO {
     private String userNickName;
     private List<PostFileDTO> files; 
     private int categoryNumber;
+    private String userId;
     
     public PostVO() {}
 
@@ -65,21 +66,20 @@ public class PostVO {
 		this.userNumber = userNumber;
 	}
 
-	public List<PostFileDTO> getFiles() {
-		return files;
-	}
-
-	public void setFiles(List<PostFileDTO> files) {
-		this.files = files;
-	}
-		
-
 	public String getUserNickName() {
 		return userNickName;
 	}
 
 	public void setUserNickName(String userNickName) {
 		this.userNickName = userNickName;
+	}
+
+	public List<PostFileDTO> getFiles() {
+		return files;
+	}
+
+	public void setFiles(List<PostFileDTO> files) {
+		this.files = files;
 	}
 
 	public int getCategoryNumber() {
@@ -90,14 +90,21 @@ public class PostVO {
 		this.categoryNumber = categoryNumber;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
 		return "PostVO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
 				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber
-				+ ", userNickName=" + userNickName + ", files=" + files + ", categoryNumber=" + categoryNumber + "]";
+				+ ", userNickName=" + userNickName + ", files=" + files + ", categoryNumber=" + categoryNumber
+				+ ", userId=" + userId + "]";
 	}
-
-	
 
 	
     
