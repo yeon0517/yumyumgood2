@@ -24,14 +24,13 @@ public class OrderDAO {
 		  // 값이 있으니 return을 쓰고 mapper의 제일 위 이름이 order이고 그 안에 이름이 defaultOrderInfo이며 , 그것의 userNumber을 뽑는다는 말 
 	 }
 
-		public void insertOrder(OrderDTO order) {
-			sqlSession.insert("order.insertOrder", order);
-		}
-
 		public static OrderDAO getInstance() { // 객체 반환 메서드
 			return getInstance();
 		}
-
+		
+		public void OrderInsert(OrderDTO orderDTO) {
+			sqlSession.insert("order.orderInsert", orderDTO);
+		}
 
 
 }

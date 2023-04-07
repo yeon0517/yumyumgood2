@@ -10,6 +10,7 @@ public class OrderDTO {
     private String orderMessage;
     private int orderTotalCost;
     private String orderStatus;
+    private String orderRecipient;
 
     public OrderDTO() {}
 
@@ -77,12 +78,22 @@ public class OrderDTO {
 		this.orderStatus = orderStatus;
 	}
 
+	public String getOrderRecipient() {
+		return orderRecipient;
+	}
+
+	public void setOrderRecipient(String orderRecipient) {
+		this.orderRecipient = orderRecipient;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderDTO [orderNumber=" + orderNumber + ", userNumber=" + userNumber + ", orderDate=" + orderDate
 				+ ", orderZipCode=" + orderZipCode + ", orderAddress=" + orderAddress + ", orderMessage=" + orderMessage
-				+ ", orderTotalCost=" + orderTotalCost + ", orderStatus=" + orderStatus + "]";
+				+ ", orderTotalCost=" + orderTotalCost + ", orderStatus=" + orderStatus + ", orderRecipient="
+				+ orderRecipient + "]";
 	}
 
+	
 
 }

@@ -23,13 +23,12 @@ public class OrderFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
+		case "/order/orderList.or" :
+		new OrderController().execute(req, resp);
+		break;
 		case "/order/orderListOk.or":
-			new OrderOkController().execute(req, resp);
-			break;
-			
-		case "/order/orderCustomerOk.or":
-			new OrderCustomerOkController().execute(req, resp);
-			break;
+		new OrderOkController().execute(req, resp);
+		break;
 		}
 	}
 

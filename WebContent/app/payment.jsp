@@ -51,7 +51,7 @@
 
             <div class="Payment-body-main">
               <!--아코디언메뉴-->
-              <form action="#" type="#"><!--맨마지막 버튼 이후에 닫기있음-->
+              <form action="/order/orderListOk.or" method="post"><!--맨마지막 버튼 이후에 닫기있음-->
                <div class="que">
                <span>주문 고객</span>
               </div>
@@ -59,31 +59,29 @@
                 <span>
                   <label for="anw1">
                    <h3>주문 고객 이름</h3>
-                    <input id="anw1-1" type="text" value="${order.getUserName()}">
+                    <input id="anw1-1" type="text" name="userName" value="${order.getUserName()}">
                     <h3>휴대전화 번호</h3>
-                    <input id="anw1-2" type="text" value="${order.getUserPhoneNumber()}">
+                    <input id="anw1-2" type="text" name="userPhoneNumber" value="${order.getUserPhoneNumber()}">
                     <h3>(필수)이메일 주소</h3>
-                    <input id="anw1-3" type="text" value="${order.getUserEmail()}" >
+                    <input id="anw1-3" type="text" name="userEmail" value="${order.getUserEmail()}" >
                    </label>
                  </span>
               </div>
 
                <div class="que2">
-               <form action="/order/orderCustomerOk.or" method="POST"> 
                 <span>배송지</span>
               </div>
               <div class="anw2">
                <span>
                   <h3>받는분 이름</h3>
-                   <input id="anw2-1" type="text" name="user_name">
+                   <input id="anw2-1" type="text" name="orderRecipient" >
                    <h3>주소</h3>
                    <input type="text" class="anw2-2" id="address_kakao" name="address" placeholder="주소 찾기" readonly />
                    <h3>상세 주소</h3>
-                   <input id="anw2-3" type="text" placeholder="상세주소를 입력해 주세요." name="address_detail" />
+                   <input id="anw2-3" type="text" placeholder="상세주소를 입력해 주세요." name="addressDetail" />
                    <h3>(선택)배송 메세지</h3>
-                   <input id="anw2-4" type="text" placeholder="배송메세지를 입력해 주세요" />
+                   <input id="anw2-4" type="text" placeholder="배송메세지를 입력해 주세요" name="orderMessage"/>
                </span>
-               </form>
               </div>
                <!--여기까지 배송지입력-->
 
@@ -163,14 +161,14 @@
 
                     <li>
                       <div class="radioButton">
-                        <input type="radio" id="card" name="pay_method">
+                        <input type="radio" id="card" name="payMethod">
                         <label for="card">
                           <span>신용카드</span>
                         </label>
                       </li>
 
                       <li>
-                      <input type="radio" id="card" name="pay_method">
+                      <input type="radio" id="card" name="payMethod">
                       <label for="card">
                           <span>휴대폰</span>
                         </label>
@@ -178,28 +176,28 @@
 
 
                       <li>
-                        <input type="radio" id="card" name="pay_method">
+                        <input type="radio" id="card" name="payMethod">
                         <label for="card">
                             <span>무통장 입금</span>
                           </label>
                         </li>
 
                         <li>
-                          <input type="radio" id="card" name="pay_method">
+                          <input type="radio" id="card" name="payMethod">
                           <label for="card">
                               <span>payco</span>
                             </label>
                           </li>
 
                           <li>
-                            <input type="radio" id="card" name="pay_method">
+                            <input type="radio" id="card" name="payMethod">
                             <label for="card">
                                 <span>네이버페이</span>
                               </label>
                             </li>
 
                             <li>
-                              <input type="radio" id="card" name="pay_method">
+                              <input type="radio" id="card" name="payMethod">
                               <label for="card">
                                   <span>카카오페이</span>
                                 </label>

@@ -13,10 +13,17 @@ on u.user_number = o.user_number
 	
 	
  	<select id="defaultOrderInfo" parameterType="_int" resultType="UserDTO">
-<!--  	                    파라미터 타입은 #{}의 타입을 의미하고   리절트타입은 OrderVO 에서 가져온다는 말 -->
+            <!-- 파라미터 타입은 #{}의 타입을 의미하고   리절트타입은 OrderVO 에서 가져온다는 말 -->
  	select user_number, user_name, user_phone_number, user_email,user_address from tbl_user
 	where user_number = #{userNumber} 
  	</select>
+ 	
+ 	
+ 	<insert id="orderInsert" parameterType="string">
+ 		insert into cookpang.tbl_order
+		(order_address, order_message, order_recipient)
+		values(#{orderAddress}, #{orderMessage},#{orderRecipient});
+ 	</insert>
 
 </mapper>
 
