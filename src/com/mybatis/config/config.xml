@@ -27,6 +27,8 @@
 		<typeAlias type="com.cookpang.app.user.profileImage.dto.ProfileImageDTO" alias="ProfileImageDTO"/>
 		<typeAlias type="com.cookpang.app.manager.vo.ManagerVO" alias="ManagerVO"/>
 		<typeAlias type="com.cookpang.app.user.profileEdit.vo.ProfileEditVO" alias="ProfileEditVo"/>
+		<typeAlias type="com.cookpang.app.order.vo.OrderVO" alias="OrderVO"/>
+
 		
 		
 	</typeAliases>

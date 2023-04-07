@@ -30,22 +30,16 @@ public class FindPasswordOkController implements Execute {
 
         
          String password = userDAO.findPassword(userDTO);
-//         String password = userDAO.findPassword(userDTO);
         System.out.println(password);
         PrintWriter out = resp.getWriter();
+        
+        
+
+        password = password == null ? "0" : password;
+        
         out.print(password);
         out.close();
         
-        
-//        if (password == null) { // 비밀번호가 없을 경우
-//            req.setAttribute("errorMsg", "일치하는 정보가 없습니다.");
-//            req.getRequestDispatcher("/user/findPasswordOk.us").forward(req, resp);
-//        } else { // 비밀번호가 있을 경우
-//            req.setAttribute("password", password);
-//            req.setAttribute("user", userDTO); // userDTO를 jsp에서 사용하기 위해 req.setAttribute()를 사용합니다.
-//            req.getRequestDispatcher("/user/findPasswordOk.us").forward(req, resp);
-//        }
-//        
         
 
     }

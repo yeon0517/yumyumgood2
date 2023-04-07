@@ -88,8 +88,10 @@
             <button id="plus">+ </button>
             <button id="reset">reset</button>
           </div>
+          
            
-      <button type="submit" name="buybutton" id="buybutton">구매하기</button>
+          <!-- 나중에 경로 바꾸기 payment로 -->
+      <button type="submit" name="buybutton" id="buybutton"> <a href="${pageContext.request.contextPath}/pay/payment.pa" style="color : white"> 구매하기 </a></button>
         
         </div>
       </div>
