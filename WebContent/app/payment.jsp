@@ -59,29 +59,31 @@
                 <span>
                   <label for="anw1">
                    <h3>주문 고객 이름</h3>
-                    <input id="anw1-1" type="text">
+                    <input id="anw1-1" type="text" value="${order.getUserName()}">
                     <h3>휴대전화 번호</h3>
-                    <input id="anw1-2" type="text" placeholder="숫자만 입력해 주세요.">
+                    <input id="anw1-2" type="text" value="${order.getUserPhoneNumber()}">
                     <h3>(필수)이메일 주소</h3>
-                    <input id="anw1-3" type="text" >
+                    <input id="anw1-3" type="text" value="${order.getUserEmail()}" >
                    </label>
                  </span>
               </div>
 
                <div class="que2">
+               <form action="/order/orderCustomerOk.or" method="POST"> 
                 <span>배송지</span>
               </div>
               <div class="anw2">
                <span>
                   <h3>받는분 이름</h3>
                    <input id="anw2-1" type="text" name="user_name">
-                   <h3>우편 번호</h3>
-                   <input type="text" class="anw2-2" id="address_kakao" name="address" placeholder="주소 찾기" readonly />
                    <h3>주소</h3>
+                   <input type="text" class="anw2-2" id="address_kakao" name="address" placeholder="주소 찾기" readonly />
+                   <h3>상세 주소</h3>
                    <input id="anw2-3" type="text" placeholder="상세주소를 입력해 주세요." name="address_detail" />
                    <h3>(선택)배송 메세지</h3>
                    <input id="anw2-4" type="text" placeholder="배송메세지를 입력해 주세요" />
                </span>
+               </form>
               </div>
                <!--여기까지 배송지입력-->
 

@@ -3,6 +3,15 @@
 
 <mapper namespace="payment">
 
+<!-- 	<insert id="payment" parameterType="PaymentDTO">
+		insert into cookpang.tbl_payment
+		(order_number, payment_amount, payment_date, payment_method)
+		values (#{orderNumber}, #{paymentAmount}, #{paymentDate}, #{paymentMethod});
+	</insert> -->
+	
+	
+	
+	
 </mapper>
 
 
