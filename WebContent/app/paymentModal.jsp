@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <button id="show">팝업열기</button>
+  <!-- <button id="show">팝업열기</button> -->
   <div class="background">
     <div class="window">
       <div class="popup">
@@ -91,7 +91,7 @@
           
            
           <!-- 나중에 경로 바꾸기 payment로 -->
-      <button type="submit" name="buybutton" id="buybutton"> <a href="${pageContext.request.contextPath}/pay/payment.pa" style="color : white"> 구매하기 </a></button>
+      <button type="submit" name="buybutton" id="buybutton"> <a href="/order/orderList.or" style="color : white"> 구매하기 </a></button>
         
         </div>
       </div>

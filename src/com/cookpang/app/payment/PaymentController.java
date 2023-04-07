@@ -13,24 +13,6 @@ import com.cookpang.app.payment.dto.PaymentDTO;
 public class PaymentController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		PaymentDAO paymentDAO = new PaymentDAO();
-//		PaymentDTO paymentDTO = new PaymentDTO();
-//
-//		req.setCharacterEncoding("utf-8");
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		
-//		req.getRequestDispatcher("/app/payment.jsp").forward(req, resp);
-//
-//		
+	
 	}
 }
