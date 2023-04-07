@@ -15,7 +15,11 @@ public class PostVO {
     private List<PostFileDTO> files; 
     private int categoryNumber;
     private String userId;
-    
+//    게시물 번호 ㅇ
+//    게시물 제목 ㅇ
+//    작성자 id 
+//    조회수 ㅇ
+//    게시 날짜ㅇ
     public PostVO() {}
 
 	public int getPostNumber() {

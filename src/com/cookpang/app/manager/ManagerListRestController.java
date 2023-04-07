@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.manager.dao.ManagerDAO;
+import com.cookpang.app.post.vo.PostVO;
 import com.cookpang.app.user.dto.UserDTO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -62,12 +63,15 @@ public class ManagerListRestController implements Execute{
 		pageMap.put("rowCount", rowCount);
 		
 		List<UserDTO> usersList = managerDAO.selectUserAll(pageMap);
+		List<PostVO> postsList = managerDAO.selectPostAll(pageMap);
 		
 		Gson gson = new Gson();
 		JsonObject result = new JsonObject();
 		
 		JsonArray usersJsonArray = gson.toJsonTree(usersList).getAsJsonArray();
+		JsonArray postsJsonArray = gson.toJsonTree(postsList).getAsJsonArray();
 		result.add("users", usersJsonArray);
+		result.add("posts", postsJsonArray);
 		
 		result.addProperty("page", page);
 		result.addProperty("startPage", startPage);
