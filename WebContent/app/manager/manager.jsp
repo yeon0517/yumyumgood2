@@ -219,92 +219,98 @@
 										<div class="post-serch">
 											<input type="text" name="postSerch" id="post-search"
 												placeholder="게시물 제목을 입력하세요" />
-											<button>
-												<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+											<button type="button" class="post-serch-btn">
+												<span class="btn-span"> <i
+													class="fa-solid fa-magnifying-glass "></i></span>
 											</button>
+											
 										</div>
 										<table class="post-table">
-											<tr>
-												<th>번호</th>
-												<th>게시물 제목</th>
-												<th>아이디</th>
-												<th>조회수</th>
-												<th>날짜</th>
-												<th>삭제</th>
+											<tbody>
+												<tr>
+													<th>번호</th>
+													<th>게시물 제목</th>
+													<th>아이디</th>
+													<th>조회수</th>
+													<th>날짜</th>
+													<th>수정</th>
+													<th>삭제</th>
 
 
 
 
-												<c:choose>
+													<c:choose>
 
-													<c:when test="${not empty postList}">
-														<c:forEach var="post" items="${postList}">
+														<c:when test="${not empty postList}">
+															<c:forEach var="post" items="${postList}">
 
+																<tr>
+																	<td class="post-number">${post.getPostNumber()}</td>
+																	<td class="post-title">
+																		<!--해당 게시물페이지 경로  --> <a href="#">
+																			${post.getPostTitle()} </a>
+																	</td>
+																	<td class="post-user-Id">
+																		<!--해당 유저페이지 경로  --> <a href="#">
+																			${post.getUserId() } </a>
+																	</td>
+																	<td class="post-view-count">
+																		${post.getPostViewCount() }</td>
+																	<td class="post-date">${post.getPostDate()}</td>
+																	<td><a href="#">수정</a></td>
+																	<td>
+																		<div class="checkbox-c">
+																			<a href="#"><input type="checkbox" name="post"
+																				class="post-check-box"
+																				value="{post.getPostNumber()}" /></a>
+																		</div>
+																	</td>
+																</tr>
+
+															</c:forEach>
+														</c:when>
+														<c:otherwise>
 															<tr>
-																<td class="post-number">${post.getPostNumber()}</td>
-																<td class="post-title">
-																	<!--해당 게시물페이지 경로  --> <a href="#">
-																		${post.getPostTitle()} </a>
-																</td>
-																<td class="post-user-Id">
-																	<!--해당 유저페이지 경로  --> <a href="#">
-																		${post.getUserId() } </a>
-																</td>
-																<td class="post-view-count">
-																	${post.getPostViewCount() }</td>
-																<td class="post-date">${post.getPostDate()}</td>
-																<td><a href="#">수정</a></td>
-																<td>
-																	<div class="checkbox-c">
-																		<a href="#"><input type="checkbox" name="post"
-																			class="post-check-box" value="{post.getPostNumber()}" /></a>
-																	</div>
-																</td>
+																<td colspan="6" align="center">등록된 게시물이 없습니다.</td>
 															</tr>
-
-														</c:forEach>
-													</c:when>
-													<c:otherwise>
-														<tr>
-															<td colspan="5" align="center">등록된 게시물이 없습니다.</td>
-														</tr>
-													</c:otherwise>
-												</c:choose>
+														</c:otherwise>
+													</c:choose>
+											</tbody>
 										</table>
 										<button class="button">게시글 삭제</button>
 										<div class="pagination post-page">
 											<ul>
-												<!-- ========== 페이징 처리 예시 ============ -->
 
-												<c:if test="${prev}">
+												<c:if test="${postPrev}">
 													<li><a
-														href="${pageContext.request.contextPath}/manager/managerListRest.manager?page=${startPage - 1}"
+														href="${pageContext.request.contextPath}/manager/managerListRest.manager?postPage=${postStartPage - 1}"
 														class="prev">&lt;</a></li>
 												</c:if>
 
-												<c:forEach var="i" begin="${startPage}" end="${endPage}">
+												<c:forEach var="j" begin="${postStartPage}"
+													end="${postEndPage}">
 													<c:choose>
-														<c:when test="${!(i == page) }">
+														<c:when test="${!(j == postPage) }">
 															<li><a
-																href="${pageContext.request.contextPath}/manager/managerListRest.manager?page=${i}">
-																	<c:out value="${i}" />
+																href="${pageContext.request.contextPath}/manager/managerListRest.manager?postPage=${j}">
+																	<c:out value="${j}" />
 															</a></li>
 														</c:when>
 														<c:otherwise>
 															<li><a href="#" class="active"> <c:out
-																		value="${i}" />
+																		value="${j}" />
 															</a></li>
 														</c:otherwise>
 													</c:choose>
 												</c:forEach>
 
-												<c:if test="${next}">
+												<c:if test="${postNext}">
 													<li><a
-														href="${pageContext.request.contextPath}/manager/managerListRest.manager?page=${endPage + 1}"
+														href="${pageContext.request.contextPath}/manager/managerListRest.manager?postPage=${postEndPage + 1}"
 														class="next">&gt;</a></li>
 												</c:if>
 
-												<!-- ========== /페이징 처리 예시 끝============ -->
+
 											</ul>
 										</div>
 									</div>

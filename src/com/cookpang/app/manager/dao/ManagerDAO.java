@@ -50,8 +50,12 @@ public class ManagerDAO {
 		return sqlSession.selectOne("manager.getProfileInfo", managerNumber);
 	}
 	
-	public List<PostVO> selectPostAll(Map<String, Integer> pageMap){
-		return sqlSession.selectList("manager.selectPostAll", pageMap);
+	public List<PostVO> selectPostAll(Map<String, Integer> postPageMap){
+		return sqlSession.selectList("manager.selectPostAll", postPageMap);
+	}
+	
+	public int getPostTotal() {
+		return sqlSession.selectOne("manager.getPostTotal");
 	}
 	
 }

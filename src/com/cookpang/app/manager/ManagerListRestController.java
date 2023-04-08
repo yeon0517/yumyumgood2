@@ -24,11 +24,11 @@ public class ManagerListRestController implements Execute{
 		ManagerDAO managerDAO = new ManagerDAO();
 		
 		int total = managerDAO.getUserTotal();
-
+		
 		String temp = req.getParameter("page");
-
+		
 		int page = temp == null ? 1 : Integer.valueOf(temp);
-
+		
 //		한 페이지에 보여줄 회원 목록의 갯수 10개
 		int rowCount = 10;
 //				페이지 버튼 세트는? 5개씩
@@ -38,18 +38,22 @@ public class ManagerListRestController implements Execute{
 //				10, 10 -> 2페이지
 //				20, 10 -> 3페이지
 		int startRow = (page - 1) * rowCount;
-
+		
 //		Math.ceil() 올림처리
 		int endPage = (int) (Math.ceil(page / (double) pageCount) * pageCount);
+
 //		endPage는 페이지 세트 당 마지막 번호를 의미한다.
 
 		int startPage = endPage - (pageCount - 1);
+
 //		startPage는 페이지 세트 당 첫 번째 번호를 의미한다.
 
 		int realEndPage = (int) Math.ceil(total / (double) rowCount);
+
 //		realEndPage는 전체 페이 중 가장 마지막 번호를 의미한다.
 
 		endPage = endPage > realEndPage ? realEndPage : endPage;
+
 //		첫 번째 페이 세트가 1~5
 //		두 번째 페이 세트가 6~10이어도
 //		realEndPage가 7이라면 두번째 페이지 세트의 마지막 번호는 7이어야 한다.
@@ -58,25 +62,29 @@ public class ManagerListRestController implements Execute{
 		boolean next = endPage != realEndPage; // 다음버튼
 
 		
+//		유저 페이징
 		Map<String, Integer> pageMap = new HashMap<>();
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
 		
+		
 		List<UserDTO> usersList = managerDAO.selectUserAll(pageMap);
-		List<PostVO> postsList = managerDAO.selectPostAll(pageMap);
+		
 		
 		Gson gson = new Gson();
 		JsonObject result = new JsonObject();
 		
 		JsonArray usersJsonArray = gson.toJsonTree(usersList).getAsJsonArray();
-		JsonArray postsJsonArray = gson.toJsonTree(postsList).getAsJsonArray();
 		result.add("users", usersJsonArray);
-		result.add("posts", postsJsonArray);
 		
 		result.addProperty("page", page);
+		
 		result.addProperty("startPage", startPage);
+		
 		result.addProperty("endPage", endPage);
+		
 		result.addProperty("prev", prev);
+		
 		result.addProperty("next", next);
 		
 		resp.setContentType("application/json");

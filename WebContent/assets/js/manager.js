@@ -87,7 +87,7 @@ function updatePage(page) {
 		$.ajax({
 			url: '/manager/userSerch.manager',
 			type: 'GET',
-			data: {userIdOrName: userIdOrName, page: page},
+			data: { userIdOrName: userIdOrName, page: page },
 			dataType: 'json',
 			success: updateTable,
 			error: (xhr, status, error) => console.log(error),
@@ -147,11 +147,11 @@ $('.user-serch-btn').on('click', function() {
 	let userIdOrName = $('#user-serch').val();
 	let gapCheck = $('#user-serch').val().trim();
 	console.log(userIdOrName);
-	
-	if (gapCheck === '' || gapCheck.length === 0){
+
+	if (gapCheck === '' || gapCheck.length === 0) {
 		searchMode = false;
 		updatePage(1);
-	}else{
+	} else {
 		searchMode = true;
 		updatePage(1);
 	}
@@ -161,22 +161,22 @@ $('.user-serch-btn').on('click', function() {
 // 게시물 리스트부분
 let postSearchMode = false;
 
-function updatePostPage(page) {
+function updatePostPage(postPage) {
 	if (postSearchMode) {
 		let postSearch = $('#post-search').val();
 		$.ajax({
 			url: '/manager/postSearch.manager',
 			type: 'GET',
-			data: {postSearch: postSearch, page: page},
+			data: { postSearch: postSearch, postPage: postPage },
 			dataType: 'json',
 			success: updatePostTable,
 			error: (xhr, status, error) => console.log(error),
 		});
 	} else {
 		$.ajax({
-			url: "/manager/postListRest.manager",
+			url: "/manager/managerPostOk.manager",
 			type: "GET",
-			data: { page: page },
+			data: { postPage: postPage },
 			dataType: "json",
 			success: updatePostTable,
 			error: (xhr, status, error) => console.log(error),
@@ -184,31 +184,34 @@ function updatePostPage(page) {
 	}
 }
 
-function updatePostTable(result) {
-	$(".post-table tr:not(:first)").remove();
+function updatePostTable(postResult) {
+	$(".post-table tbody tr:not(:first)").remove();
 
-	result.posts.forEach((post) => {
-		$(".post-table").append(`
+	postResult.posts.forEach((post) => {
+		$(".post-table tbody").append(`
       <tr>
         <td class="post-number">${post.postNumber}</td>
         <td class="post-title"><a href="#">${post.postTitle}</a></td>
         <td class="post-user-Id"><a href="#">${post.userId}</a></td>
         <td class="post-view-count">${post.postViewCount}</td>
         <td class="post-date">${post.postDate}</td>
+		<td><a href="#">수정</a></td>
         <td><div class="checkbox-c"><a href="#"><input type="checkbox" name="post" class="post-check-box" value="${post.postNumber}" /></a></div></td>
       </tr>`);
 	});
 
 	$(".post-page ul").html(`
-    ${result.prev ? `<li><a href="#" data-page="${result.startPage - 1}" class="prev">&lt;</a></li>` : ""}
-    ${Array.from({ length: result.endPage - result.startPage + 1 }, (_, i) => i + result.startPage).map(i => `<li><a href="#" data-page="${i}"${i === result.page ? ' class="active"' : ""}>${i}</a></li>`).join('')}
-    ${result.next ? `<li><a href="#" data-page="${result.endPage + 1}" class="next">&gt;</a></li>` : ""}`);
+    	${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
+    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="#" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
+    	${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`);
 
 	$(".post-page a").off("click").on("click", function(e) {
 		e.preventDefault();
-		updatePostPage($(this).data("page"));
+		updatePostPage($(this).data("postPage"));
 	});
+	
 }
+
 
 $(".post-page a").on("click", function(e) {
 	e.preventDefault();
@@ -218,11 +221,11 @@ $(".post-page a").on("click", function(e) {
 $('.post-serch button').on('click', function() {
 	let postSearch = $('#post-search').val();
 	let gapCheck = $('#post-search').val().trim();
-	
-	if (gapCheck === '' || gapCheck.length === 0){
+
+	if (gapCheck === '' || gapCheck.length === 0) {
 		postSearchMode = false;
 		updatePostPage(1);
-	}else{
+	} else {
 		postSearchMode = true;
 		updatePostPage(1);
 	}
