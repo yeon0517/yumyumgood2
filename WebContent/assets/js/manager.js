@@ -201,9 +201,9 @@ function updatePostTable(postResult) {
 	});
 
 	$(".post-page ul").html(`
-    	${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
-    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="#" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
-    	${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`);
+    	${postResult.postPrev ? `<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
+    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
+    	${postResult.postNext ? `<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`);
 
 	$(".post-page a").off("click").on("click", function(e) {
 		e.preventDefault();

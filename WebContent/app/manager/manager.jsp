@@ -297,7 +297,7 @@
 															</a></li>
 														</c:when>
 														<c:otherwise>
-															<li><a href="#" class="active"> <c:out
+															<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}" class="active"> <c:out
 																		value="${j}" />
 															</a></li>
 														</c:otherwise>
