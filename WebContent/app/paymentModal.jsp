@@ -30,6 +30,8 @@
         <div class="contents">
           <a href="#">
             <img src="${pageContext.request.contextPath}/assets/img/mainfoodimg.png" alt="" style="height: 100px; width: 120px;">
+            <%-- <img src="${pageContext.request.contextPath}/upload/" alt="" style="height: 100px; width: 120px;"> --%>
+            
           </a>  
            <div class="contents-box">
             <p class="content-name">튀김 덮밥 (텐    동)</p>
