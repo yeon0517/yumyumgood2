@@ -283,7 +283,7 @@
 
 												<c:if test="${postPrev}">
 													<li><a
-														href="${pageContext.request.contextPath}/manager/managerListRest.manager?postPage=${postStartPage - 1}"
+														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postStartPage - 1}"
 														class="prev">&lt;</a></li>
 												</c:if>
 
@@ -292,7 +292,7 @@
 													<c:choose>
 														<c:when test="${!(j == postPage) }">
 															<li><a
-																href="${pageContext.request.contextPath}/manager/managerListRest.manager?postPage=${j}">
+																href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}">
 																	<c:out value="${j}" />
 															</a></li>
 														</c:when>
@@ -306,7 +306,7 @@
 
 												<c:if test="${postNext}">
 													<li><a
-														href="${pageContext.request.contextPath}/manager/managerListRest.manager?postPage=${postEndPage + 1}"
+														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postEndPage + 1}"
 														class="next">&gt;</a></li>
 												</c:if>
 

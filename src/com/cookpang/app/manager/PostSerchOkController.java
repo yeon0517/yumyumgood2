@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.manager.dao.ManagerDAO;
-import com.cookpang.app.user.dto.UserDTO;
+import com.cookpang.app.post.vo.PostVO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -22,61 +22,61 @@ public class PostSerchOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("ajax연결 ㅇㅇ");
 		ManagerDAO managerDAO = new ManagerDAO();
 		
 		
-		Map<String, Object> pageMap = new HashMap<>();
-		String userIdOrName = req.getParameter("userIdOrName");
-		pageMap.put("userIdOrName", userIdOrName);
+		Map<String, Object> postPageMap = new HashMap<>();
+		String postTitle = req.getParameter("postTitle");
+		postPageMap.put("postTitle", postTitle);
 		
-		int total = managerDAO.getUserSerchTotal(pageMap);
+		int postTotal = managerDAO.getPostSerchTotal(postPageMap);
 
-		String temp = req.getParameter("page");
+		String postTemp = req.getParameter("postPage");
 
-		int page = temp == null ? 1 : Integer.valueOf(temp);
+		int postPage = postTemp == null ? 1 : Integer.valueOf(postTemp);
 
 		int rowCount = 10;
 		int pageCount = 5;
 
-		int startRow = (page - 1) * rowCount;       
+		int postStartRow = (postPage - 1) * rowCount;       
 
-		int endPage = (int) (Math.ceil(page / (double) pageCount) * pageCount);
+		int postEndPage = (int) (Math.ceil(postPage / (double) pageCount) * pageCount);
 
-		int startPage = endPage - (pageCount - 1);
+		int postStartPage = postEndPage - (pageCount - 1);
 
-		int realEndPage = (int) Math.ceil(total / (double) rowCount);
+		int postRealEndPage = (int) Math.ceil(postTotal / (double) rowCount);
 
-		endPage = endPage > realEndPage ? realEndPage : endPage;
+		postEndPage = postEndPage > postRealEndPage ? postRealEndPage : postEndPage;
 
-		boolean prev = startPage > 1; // 이전버튼
-		boolean next = endPage != realEndPage; // 다음버튼
+		boolean postPrev = postStartPage > 1; // 이전버튼
+		boolean postNext = postEndPage != postRealEndPage; // 다음버튼
 
 		
 		
-		pageMap.put("startRow", startRow);
-		pageMap.put("rowCount", rowCount);
+		postPageMap.put("postStartRow", postStartRow);
+		postPageMap.put("rowCount", rowCount);
 		
 		
 		
-		List<UserDTO> userSerchList = managerDAO.userSerch(pageMap);
+		List<PostVO> postSerchList = managerDAO.postSerch(postPageMap);
 		
 		
 		Gson gson = new Gson();
-		JsonObject result = new JsonObject();
-		JsonArray usersJsonArray = gson.toJsonTree(userSerchList).getAsJsonArray();
-		result.add("users", usersJsonArray);
+		JsonObject postResult = new JsonObject();
+		JsonArray postsJsonArray = gson.toJsonTree(postSerchList).getAsJsonArray();
+		postResult.add("posts", postsJsonArray);
 		
-		result.addProperty("page", page);
-		result.addProperty("startPage", startPage);
-		result.addProperty("endPage", endPage);
-		result.addProperty("prev", prev);
-		result.addProperty("next", next);
+		postResult.addProperty("postPage", postPage);
+		postResult.addProperty("postStartPage", postStartPage);
+		postResult.addProperty("postEndPage", postEndPage);
+		postResult.addProperty("postPrev", postPrev);
+		postResult.addProperty("postNext", postNext);
 		
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("utf-8");
 		PrintWriter out = resp.getWriter();
-		out.print(result.toString());
+		
+		out.print(postResult.toString());
 		out.close();
 		
 	}

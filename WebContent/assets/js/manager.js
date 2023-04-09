@@ -163,11 +163,11 @@ let postSearchMode = false;
 
 function updatePostPage(postPage) {
 	if (postSearchMode) {
-		let postSearch = $('#post-search').val();
+		let postTitle = $('#post-search').val();
 		$.ajax({
 			url: '/manager/postSerchOk.manager',
 			type: 'GET',
-			data: { postSearch: postSearch, postPage: postPage },
+			data: { postTitle: postTitle, postPage: postPage },
 			dataType: 'json',
 			success: updatePostTable,
 			error: (xhr, status, error) => console.log(error),
@@ -218,11 +218,11 @@ $(".post-page a").on("click", function(e) {
 	updatePostPage($(this).text().trim());
 });
 
-$('.post-serch button').on('click', function() {
+$('.post-serch-btn').on('click', function() {
 	let postSearch = $('#post-search').val();
-	let gapCheck = $('#post-search').val().trim();
+	let postGapCheck = $('#post-search').val().trim();
 
-	if (gapCheck === '' || gapCheck.length === 0) {
+	if (postGapCheck === '' || postGapCheck.length === 0) {
 		postSearchMode = false;
 		updatePostPage(1);
 	} else {
