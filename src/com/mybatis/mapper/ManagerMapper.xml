@@ -75,6 +75,20 @@
 		from tbl_post
 	</select>
 
+	<select id="postSerch" parameterType="map" resultType="PostVO">
+		select p.post_number , p.post_title , u.user_id , p.post_view_count , p.post_date 
+		from tbl_user u join tbl_post p
+		on u.user_number = p.user_number
+		where p.post_title like concat('%',#{postTitle}, '%')
+		limit 	#{postStartRow}, #{rowCount}
+	</select>
+
+	<select id="getPostSerchTotal" parameterType="map" resultType="_int">
+		select count(p.post_number) 
+		from tbl_user u join tbl_post p
+		on u.user_number = p.user_number
+		where p.post_title like concat('%',#{postTitle}, '%')
+	</select>
 
 
 

@@ -165,7 +165,7 @@ function updatePostPage(postPage) {
 	if (postSearchMode) {
 		let postSearch = $('#post-search').val();
 		$.ajax({
-			url: '/manager/postSearch.manager',
+			url: '/manager/postSerchOk.manager',
 			type: 'GET',
 			data: { postSearch: postSearch, postPage: postPage },
 			dataType: 'json',

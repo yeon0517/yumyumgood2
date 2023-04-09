@@ -58,4 +58,13 @@ public class ManagerDAO {
 		return sqlSession.selectOne("manager.getPostTotal");
 	}
 	
+	public List<PostVO> postSerch(Map<String, Object> postPageMap){
+		return sqlSession.selectList("manager.postSerch", postPageMap);
+	}
+	
+	public int getPostSerchTotal(Map<String, Object> postPageMap) {
+		return sqlSession.selectOne("manager.getPostSerchTotal",postPageMap);
+	}
+	
+	
 }
