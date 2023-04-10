@@ -39,7 +39,10 @@
 							<div class="profile">
 								<div class="imgbox-div">
 									<div class="img-box">
-										<img src="" alt="${profileImage.getUserProfileImageSystemName()}" class="profile-image"  />
+										<img
+											src="https://www.thechooeok.com/common/img/default_profile.png"
+											alt="${profileImage.getUserProfileImageSystemName()}"
+											class="profile-image" />
 									</div>
 								</div>
 								<div class="profile-box">
@@ -104,11 +107,11 @@
 								<form action="/manager/UserDeleteOk.manager" method="post">
 									<div class="member-main test" id="member-Menu">
 										<div class="member-serch">
-											<input hidden="hidden" />
-											<input type="text" id="user-serch" name="userIdOrName"
-												placeholder="회원의 아이디나 이름을입력하세요" />
-											<button type="button" class="user-serch-btn" >
-												<span class="btn-span"> <i class="fa-solid fa-magnifying-glass "></i></span>
+											<input hidden="hidden" /> <input type="text" id="user-serch"
+												name="userIdOrName" placeholder="회원의 아이디나 이름을입력하세요" />
+											<button type="button" class="user-serch-btn">
+												<span class="btn-span"> <i
+													class="fa-solid fa-magnifying-glass "></i></span>
 											</button>
 										</div>
 										<table class="member-table">
@@ -211,54 +214,107 @@
 							</div>
 
 							<div>
-								<div class="manage-post test" id="member-post">
-									<div class="post-serch">
-										<input type="text" name="postSerch" id="post-search"
-											placeholder="게시물 제목을 입력하세요" />
-										<button>
-											<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-										</button>
-									</div>
-									<table class="post-table">
-										<tr>
-											<th>번호</th>
-											<th>게시물 제목</th>
-											<th>아이디</th>
-											<th>조회수</th>
-											<th>날짜</th>
-											<th>삭제</th>
-											<!-- 										</tr> -->
-										<tr>
-											<td>1</td>
-											<td><a href="">만두를 만들어요</a></td>
-											<td><a href=""> asd123@naver.com</a></td>
-											<td>15</td>
-											<td>2023-03-30</td>
-											<td>
-												<div class="checkbox-c">
-													<a href="#"><input type="checkbox"
-														class="post-check-box" name="post" value="#게시물번호" /></a>
-												</div>
-											</td>
-										</tr>
-										
+								<form action="">
+									<div class="manage-post test" id="member-post">
+										<div class="post-serch">
+											<input type="text" name="postSerch" id="post-search"
+												placeholder="게시물 제목을 입력하세요" />
+											<button type="button" class="post-serch-btn">
+												<span class="btn-span"> <i
+													class="fa-solid fa-magnifying-glass "></i></span>
+											</button>
+											
+										</div>
+										<table class="post-table">
+											<tbody>
+												<tr>
+													<th>번호</th>
+													<th>게시물 제목</th>
+													<th>아이디</th>
+													<th>조회수</th>
+													<th>날짜</th>
+													<th>수정</th>
+													<th>삭제</th>
 
-									</table>
-									<button class="button">게시글 삭제</button>
-									<div class="pagination">
-										<ul>
-											<!-- ========== 페이징 처리 예시 ============ -->
-											<li><a href="#" class="prev">&lt;</a></li>
-											<li><a href="#" class="active">1</a></li>
-											<li><a href="#">2</a></li>
-											<li><a href="#">3</a></li>
-											<li><a href="#">4</a></li>
-											<li><a href="#">5</a></li>
-											<li><a href="#" class="next">&gt;</a></li>
-											<!-- ========== /페이징 처리 예시 ============ -->
-										</ul>
+
+
+
+													<c:choose>
+
+														<c:when test="${not empty postList}">
+															<c:forEach var="post" items="${postList}">
+
+																<tr>
+																	<td class="post-number">${post.getPostNumber()}</td>
+																	<td class="post-title">
+																		<!--해당 게시물페이지 경로  --> <a href="#">
+																			${post.getPostTitle()} </a>
+																	</td>
+																	<td class="post-user-Id">
+																		<!--해당 유저페이지 경로  --> <a href="#">
+																			${post.getUserId() } </a>
+																	</td>
+																	<td class="post-view-count">
+																		${post.getPostViewCount() }</td>
+																	<td class="post-date">${post.getPostDate()}</td>
+																	<td><a href="#">수정</a></td>
+																	<td>
+																		<div class="checkbox-c">
+																			<a href="#"><input type="checkbox" name="post"
+																				class="post-check-box"
+																				value="{post.getPostNumber()}" /></a>
+																		</div>
+																	</td>
+																</tr>
+
+															</c:forEach>
+														</c:when>
+														<c:otherwise>
+															<tr>
+																<td colspan="6" align="center">등록된 게시물이 없습니다.</td>
+															</tr>
+														</c:otherwise>
+													</c:choose>
+											</tbody>
+										</table>
+										<button class="button">게시글 삭제</button>
+										<div class="pagination post-page">
+											<ul>
+
+												<c:if test="${postPrev}">
+													<li><a
+														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postStartPage - 1}" data-postPage="${postStartPage - 1}"
+														class="prev">&lt;</a></li>
+												</c:if>
+
+												<c:forEach var="j" begin="${postStartPage}"
+													end="${postEndPage}">
+													<c:choose>
+														<c:when test="${!(j == postPage) }">
+															<li><a
+																href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}" data-postPage="${j}">
+																	<c:out value="${j}" />
+															</a></li>
+														</c:when>
+														<c:otherwise>
+															<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}" data-postPage="${j}" class="active"> <c:out
+																		value="${j}" />
+															</a></li>
+														</c:otherwise>
+													</c:choose>
+												</c:forEach>
+
+												<c:if test="${postNext}">
+													<li><a
+														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postEndPage + 1}" data-postPage="${postEndPage + 1}"
+														class="next">&gt;</a></li>
+												</c:if>
+
+
+											</ul>
+										</div>
 									</div>
-								</div>
+								</form>
 							</div>
 
 							<div>
