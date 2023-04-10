@@ -186,6 +186,8 @@ function updatePostPage(postPage) {
 
 function updatePostTable(postResult) {
 	$(".post-table tbody tr:not(:first)").remove();
+	
+	console.log(postResult)
 
 	postResult.posts.forEach((post) => {
 		$(".post-table tbody").append(`
@@ -199,15 +201,28 @@ function updatePostTable(postResult) {
         <td><div class="checkbox-c"><a href="#"><input type="checkbox" name="post" class="post-check-box" value="${post.postNumber}" /></a></div></td>
       </tr>`);
 	});
+	
+	let pageResult = '';
+	pageResult += `${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}`;
+    
+	for(let i=postResult.postStartPage; i<=postResult.postEndPage; i++){
+		pageResult += `<li><a href="#" data-postPage="${i}"${i === postResult.postPage ? ' class="active"' : ""}>${i}</a></li>`;
+	}
+	
+    pageResult +=`${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`;
 
-	$(".post-page ul").html(`
-    	${postResult.postPrev ? `<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
-    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
-    	${postResult.postNext ? `<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`);
+	/*`
+    	${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
+    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="#" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
+    	${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`*/
+
+	$(".post-page ul").html(pageResult);
 
 	$(".post-page a").off("click").on("click", function(e) {
 		e.preventDefault();
-		updatePostPage($(this).data("postPage"));
+		
+		console.log($(this).data("postpage"))
+		updatePostPage($(this).data("postpage"));
 	});
 	
 }
@@ -215,7 +230,8 @@ function updatePostTable(postResult) {
 
 $(".post-page a").on("click", function(e) {
 	e.preventDefault();
-	updatePostPage($(this).text().trim());
+	updatePostPage($(this).data('postpage'));
+	console.log('aaaa')
 });
 
 $('.post-serch-btn').on('click', function() {
