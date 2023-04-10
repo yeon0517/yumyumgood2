@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ManagerFrontController extends HttpServlet{
+public class ManagerFrontController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -18,6 +18,7 @@ public class ManagerFrontController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
 	}
+
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 		System.out.println(target);
@@ -43,14 +44,14 @@ public class ManagerFrontController extends HttpServlet{
 		case "/manager/userSerch.manager":
 			new UserSerchOkController().execute(req, resp);
 			break;
+		case "/manager/managerPostOk.manager":
+			new ManagerPostListOkController().execute(req, resp);
+			break;
+		case "/manager/postSerchOk.manager":
+			new PostSerchOkController().execute(req, resp);
+			break;
 		}
-		
-	
-		
-		
-		
-		
-		
-	}
+
+}
 
 }

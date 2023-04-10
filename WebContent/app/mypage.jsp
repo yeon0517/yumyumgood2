@@ -38,7 +38,8 @@
 									</div>
 
 									<div class="profile-btn">
-										<a href="${pageContext.request.contextPath}/user/profileEdit.edit">프로필
+										<a
+											href="${pageContext.request.contextPath}/user/profileEdit.edit">프로필
 											편집</a>
 									</div>
 
@@ -55,8 +56,8 @@
 									<!-- 팔로워 모달창 시작-->
 									<div class="follower-cnt">
 										<!-- 모달 열기 버튼 -->
-										<a class="follower" onclick="openModal()">팔로워
-											<!-- 디비처리 숫자가 늘어나용>< --> <span class="cnt">1.7만</span>
+										<a class="follower" onclick="openModal()">팔로워 <!-- 디비처리 숫자가 늘어나용>< -->
+											<span class="cnt">1.7만</span>
 										</a>
 									</div>
 
@@ -169,8 +170,8 @@
 
 									<!-- 팔로잉 모달창 시작 -->
 									<div class="following-cnt">
-										<a class="following" onclick="openModal2()">팔로잉
-											<!-- 디비처리 숫자가 늘어나용>< --> <span class="cnt">30</span>
+										<a class="following" onclick="openModal2()">팔로잉 <!-- 디비처리 숫자가 늘어나용>< -->
+											<span class="cnt">30</span>
 										</a>
 									</div>
 
@@ -290,365 +291,638 @@
 										들어와라ㅋㅋㅋ 먹bread는 긴장해라ㅋ #술 #담배 #일탈 #11 #12 #13 #333380398293 #카뱅
 										#입금해라ㅋ</div>
 								</div>
-								 </div>
-                  
 							</div>
-						</div>
-					</div>
 
-					<div class="main-banner">
-						<div class="banner-box">
-							<div id="post1" class="banner1 active-banner">
-								<!-- <a href="#" class="post-thumbnail">게시물</a> -->
-								<div class="post-thumbnail">게시물</div>
-							</div>
-							<div id="post2" class="banner2">
-								<!-- <a href="#" class="post-thumbnail2">구매내역</a> -->
-								<div class="post-thumbnail2">구매내역</div>
-							</div>
-							<div id="post3" class="banner3">
-								<!-- <a href="#" class="post-thumbnail3">찜한 레시피</a> -->
-								<div class="post-thumbnail3">찜한 레시피</div>
-							</div>
-						</div>
-					</div>
-
-					<!-- 게시글 -->
-					<div id="bottom1" class="main-bottom test">
-						<div class="ccc">
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
-									class="thumbnail-img" />
-								</a>
-							</div>
-						</div>
-						<div class="ccc">
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
-									class="thumbnail-img" />
-								</a>
-							</div>
-						</div>
-						<div class="ccc">
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-						</div>
-						<div class="next-page">
-							<div class="paging">
-								<p class="paging-btn">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-										alt="" class="direction" />
-									</a>
-								</p>
-								<p class="paging-num">
-									<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-									<a href="">5</a>
-								</p>
-								<p class="paging-btn">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-										alt="다음으로" />
-									</a>
-								</p>
-								<p class="paging-btn" id="paging-last">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-										alt="마지막으로" />
-									</a>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<!-- 구매내역 -->
-					<div id="bottom2" class="main-bottom2 test">
-						<div class="purchase-history">
-							<div class="history-name">
-								<div class="history-number">상품번호</div>
-								<div class="history-picture">상품사진</div>
-								<div class="history-name2">상품이름</div>
-								<div class="history-date">구매날짜</div>
-								<div class="history-price">상품가격</div>
-							</div>
-							<div class="purchase-ok1">
-								<div class="ok-number">1</div>
-								<div class="ok-picture">
-									<a href="#"> <img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-										alt="" class="ok-picture-img" />
-									</a>
-								</div>
-								<div class="ok-name">
-									<a href="#">초코비</a>
-								</div>
-								<div class="ok-date">2023-03-24</div>
-								<div class="ok-price">1,000,000원</div>
-							</div>
-							<div class="purchase-ok2">
-								<div class="ok-number">2</div>
-								<div class="ok-picture">
-									<a href="#"> <img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-										alt="" class="ok-picture-img" />
-									</a>
-								</div>
-								<div class="ok-name">
-									<a href="#">짱구</a>
-								</div>
-								<div class="ok-date">2023-03-24</div>
-								<div class="ok-price">1,000,000원</div>
-							</div>
-							<div class="purchase-ok3">
-								<div class="ok-number">3</div>
-								<div class="ok-picture">
-									<a href="#"> <img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-										alt="" class="ok-picture-img" />
-									</a>
-								</div>
-								<div class="ok-name">
-									<a href="#">초코비</a>
-								</div>
-								<div class="ok-date">2023-03-24</div>
-								<div class="ok-price">1,000,000원</div>
-							</div>
-							<div class="purchase-ok4">
-								<div class="ok-number">4</div>
-								<div class="ok-picture">
-									<a href="#"> <img
-										src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
-										alt="" class="ok-picture-img" />
-									</a>
-								</div>
-								<div class="ok-name">
-									<a href="#">흰둥이</a>
-								</div>
-								<div class="ok-date">2023-03-24</div>
-								<div class="ok-price">1,000,000원</div>
-							</div>
-							<!-- 구매내역 내용 없음 -->
-							<!-- <div class="purchase-ok1"></div>
-                <div class="purchase-ok2"></div>
-                <div class="purchase-ok3"></div> -->
-						</div>
-						<!--페이지 이동 버튼 1, 2, 3... -->
-						<div class="next-page">
-							<div class="paging">
-								<p class="paging-btn">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-										alt="" class="direction" />
-									</a>
-								</p>
-								<p class="paging-num">
-									<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-									<a href="">5</a>
-								</p>
-								<p class="paging-btn">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-										alt="다음으로" />
-									</a>
-								</p>
-								<p class="paging-btn" id="paging-last">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-										alt="마지막으로" />
-									</a>
-								</p>
-							</div>
-						</div>
-					</div>
-					<!-- 찜한 레시피 -->
-					<div id="bottom3" class="main-bottom3 test">
-						<div class="ccc">
-							<div class="bbb">
-								<a href="#" class="go-post"> <img
-									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYvpWheIfYYb8y3fZRgXHcg5gy5jUTTXGaw&usqp=CAU"
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-						</div>
-						<div class="ccc">
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-						</div>
-						<div class="ccc">
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-							<div class="bbb">
-								<a href="#" class="go-post"> <img src=""
-									class="thumbnail-img" />
-								</a>
-							</div>
-						</div>
-						<div class="next-page">
-							<div class="paging">
-								<p class="paging-btn">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-										alt="" class="direction" />
-									</a>
-								</p>
-								<!-- 페이지 이동 -->
-								<p class="paging-num">
-									<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-									<a href="">5</a>
-								</p>
-								<p class="paging-btn">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-										alt="다음으로" />
-									</a>
-								</p>
-								<p class="paging-btn" id="paging-last">
-									<a href=""> <img
-										src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-										alt="마지막으로" />
-									</a>
-								</p>
-							</div>
 						</div>
 					</div>
 				</div>
+
+				<div class="main-banner">
+					<div class="banner-box">
+						<div id="post1" class="banner1 active-banner">
+							<!-- <a href="#" class="post-thumbnail">게시물</a> -->
+							<div class="post-thumbnail">게시물</div>
+						</div>
+						<div id="post2" class="banner2">
+							<!-- <a href="#" class="post-thumbnail2">구매내역</a> -->
+							<div class="post-thumbnail2">구매내역</div>
+						</div>
+						<div id="post3" class="banner3">
+							<!-- <a href="#" class="post-thumbnail3">찜한 레시피</a> -->
+							<div class="post-thumbnail3">찜한 레시피</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- 게시글 -->
+				<div id="bottom1" class="main-bottom test">
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="next-page">
+						<div class="paging">
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" />
+								</a>
+							</p>
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- 구매내역 -->
+				<div id="bottom2" class="main-bottom2 test">
+					<div class="purchase-history">
+						<div class="history-name">
+							<div class="history-number">상품번호</div>
+							<div class="history-picture">상품사진</div>
+							<div class="history-name2">상품이름</div>
+							<div class="history-date">구매날짜</div>
+							<div class="history-price">상품가격</div>
+						</div>
+						<div class="purchase-ok1">
+							<div class="ok-number">1</div>
+							<div class="ok-picture">
+								<a href="#"> <img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
+									alt="" class="ok-picture-img" />
+								</a>
+							</div>
+							<div class="ok-name">
+								<a href="#">초코비</a>
+							</div>
+							<div class="ok-date">2023-03-24</div>
+							<div class="ok-price">1,000,000원</div>
+						</div>
+						<div class="purchase-ok2">
+							<div class="ok-number">2</div>
+							<div class="ok-picture">
+								<a href="#"> <img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
+									alt="" class="ok-picture-img" />
+								</a>
+							</div>
+							<div class="ok-name">
+								<a href="#">짱구</a>
+							</div>
+							<div class="ok-date">2023-03-24</div>
+							<div class="ok-price">1,000,000원</div>
+						</div>
+						<div class="purchase-ok3">
+							<div class="ok-number">3</div>
+							<div class="ok-picture">
+								<a href="#"> <img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
+									alt="" class="ok-picture-img" />
+								</a>
+							</div>
+							<div class="ok-name">
+								<a href="#">초코비</a>
+							</div>
+							<div class="ok-date">2023-03-24</div>
+							<div class="ok-price">1,000,000원</div>
+						</div>
+						<div class="purchase-ok4">
+							<div class="ok-number">4</div>
+							<div class="ok-picture">
+								<a href="#"> <img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
+									alt="" class="ok-picture-img" />
+								</a>
+							</div>
+							<div class="ok-name">
+								<a href="#">흰둥이</a>
+							</div>
+							<div class="ok-date">2023-03-24</div>
+							<div class="ok-price">1,000,000원</div>
+						</div>
+						<!-- 구매내역 내용 없음 -->
+						<!-- <div class="purchase-ok1"></div>
+                <div class="purchase-ok2"></div>
+                <div class="purchase-ok3"></div> -->
+					</div>
+					<!--페이지 이동 버튼 1, 2, 3... -->
+					<div class="next-page">
+						<div class="paging">
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" />
+								</a>
+							</p>
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- 찜한 레시피 -->
+				<div id="bottom3" class="main-bottom3 test">
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYvpWheIfYYb8y3fZRgXHcg5gy5jUTTXGaw&usqp=CAU"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="next-page">
+						<div class="paging">
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" />
+								</a>
+							</p>
+							<!-- 페이지 이동 -->
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 여기서부터 -->
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
 					<li class="sidebar-name"><a href="#">CookPang</a></li>
+
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!--  <img src="../img/managerImg/home.png" alt="" class="sidebar-img" /> -->
-								<i class="fa-solid fa-house"></i> <a href="#">홈</a>
+								<i class="fa-solid fa-house"></i> <a
+									href="${pageContext.request.contextPath}/mainOk.m">홈</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/h.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-								<i class="fa-solid fa-magnifying-glass"></i> <a href="#">검색</a>
+								<i class="fa-solid fa-magnifying-glass"></i> <a href="#"
+									class="find2">검색</a>
+								<!-- 검색 -->
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/heart.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-								<i class="fa-regular fa-heart"></i> <a href="#">알림</a>
+								<i class="fa-regular fa-heart"></i> <a href="#" class="alarmm">알림</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/plus.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
 								<i class="fa-regular fa-square-plus"></i> <a href="#">만들기</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/heart.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
 								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/pro.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
 								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
 							</div>
 						</li>
+						<!-- </ul> -->
 					</ul>
-					<li class="sidebar-logout"><a href="/main" class="logout-btn">로그아웃</a></li>
-				</div>
-			</div><!-- 사이드바  -->
-			</div>
 
+					<div class="btn-group">
+						<li class="sidebar-login"><c:choose>
+								<c:when test="${empty sessionScope.userNumber}">
+									<a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
+						</c:otherwise>
+						</c:choose>
+					</div>
+
+				</div>
+				<!-- 검색 창 -->
+				<article class="sub-find">
+					<div class="search-box">
+						<div class="search-box2">
+							<h1 class="qqq">검색</h1>
+						</div>
+						<div class="search-box3">
+							<input type="text" class="find-btn" placeholder="검색" />
+						</div>
+					</div>
+					<div class="recent-searches">
+						<h3 class="recent-searches2">최근 검색 항목</h3>
+					</div>
+					<div class="recent-searches-box">
+						<div class="search-man">
+							<div class="man-left">
+								<!-- <a href="#"> -->
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" /> <!-- </a> -->
+								</a>
+							</div>
+							<div class="man-right">
+								<div class="man-id">
+									<a href="#"> hot_boy </a>
+									<!-- <a href="#" class="man-id2">hot_boy</a> -->
+								</div>
+								<div class="man-name">
+									이동재
+									<!-- <a href="#" class="man-name2">이동재</a> -->
+								</div>
+							</div>
+							<div class="delete-btn">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!-- 검색 창 -->
+				<!-- 알림 창 -->
+				<article class="sub-find2">
+					<div class="search-box2">
+						<div class="alarm">
+							<h1 class="qqq">알림</h1>
+						</div>
+					</div>
+					<div class="alarm-box">
+						<div class="new-alarm">
+							<div>
+								<h4 class="alarm-date">이번주</h4>
+							</div>
+							<div class="boxboxbox">
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+								<div>
+									<h4 class="alarm-date2">이번달</h4>
+								</div>
+								<div class="new-alarm2">
+									<div class="boxboxbox2">
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!-- 알림창 -->
+			</div>
 		</div>
 
 		<div id="main-footer">
@@ -665,8 +939,7 @@
 						</p>
 						<div class="footer-menu">
 							<ul class="f-menu">
-								<li><a
-									href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
+								<li><a href="">Home</a></li>
 								<li><a href="">About</a></li>
 								<li><a href="">Contact</a></li>
 								<li><a href="">Blog</a></li>
@@ -676,7 +949,9 @@
 				</div>
 			</footer>
 		</div>
-	
+		<!-- 여기까지 -->
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
 	<script

@@ -48,7 +48,6 @@
 		where user_id like concat('%', #{userIdOrName}, '%') or user_name like concat('%', #{userIdOrName}, '%')
 	</select>
 
-		<!-- 마이페이지, 매니저페이지 기본정보 불러오는 쿼리 유저에서 사용할 경우 UserVO로 변경, 필요에 따라 user_name같은거 추가 -->
 	<select id="getProfileInfo" parameterType="_int" resultType="ManagerVO">
 		select u.user_number, u.user_id, count(p.post_number) as post_count, u.user_self_introduction,
   			max(upi.user_profile_original_name) as user_profile_original_name,
@@ -62,10 +61,34 @@
 		group by u.user_number
 	</select>
 
+	<select id="selectPostAll" parameterType="map" resultType="PostVO">
+		select p.post_number , p.post_title , u.user_id , p.post_view_count , p.post_date 
+		from tbl_user u join tbl_post p
+		on u.user_number = p.user_number
+		order by
+		p.post_number desc
+		limit #{postStartRow}, #{rowCount}
+	</select>
 
+	<select id="getPostTotal" resultType="_int">
+		select count(post_number)
+		from tbl_post
+	</select>
 
+	<select id="postSerch" parameterType="map" resultType="PostVO">
+		select p.post_number , p.post_title , u.user_id , p.post_view_count , p.post_date 
+		from tbl_user u join tbl_post p
+		on u.user_number = p.user_number
+		where p.post_title like concat('%',#{postTitle}, '%')
+		limit 	#{postStartRow}, #{rowCount}
+	</select>
 
-
+	<select id="getPostSerchTotal" parameterType="map" resultType="_int">
+		select count(p.post_number) 
+		from tbl_user u join tbl_post p
+		on u.user_number = p.user_number
+		where p.post_title like concat('%',#{postTitle}, '%')
+	</select>
 
 
 
