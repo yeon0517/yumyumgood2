@@ -29,13 +29,13 @@
       <div class="popup-body">
         <div class="contents">
           <a href="#">
-            <img src="${pageContext.request.contextPath}/assets/img/mainfoodimg.png" alt="" style="height: 100px; width: 120px;">
+            <img src="${pageContext.request.contextPath}/upload/${payPost.getPostThumbnail()}" alt="${payPost.getPostThumbnail()}" style="height: 100px; width: 120px;">
             <%-- <img src="${pageContext.request.contextPath}/upload/" alt="" style="height: 100px; width: 120px;"> --%>
             
           </a>  
            <div class="contents-box">
-            <p class="content-name">튀김 덮밥 (텐    동)</p>
-            <p class="content-subname">보기만해도 행복해지는</p>
+            <p class="content-name">${payPost.getPostTitle()}</p>
+            <p class="content-subname">${payPost.getPostContent()}</p>
             <p class="content-price">13,200원</p>
             <a href="#">
               <img src="${pageContext.request.contextPath}/assets/img/shareicon.png" alt="" class="share-img">
@@ -72,7 +72,7 @@
     <div class="footer">
       <div class="checkbox-span">필수 재료 선택 (최소 단위):</div> 
         <div class="checkbox">
-           <input type="checkbox" id="check1" name="깻잎" value="#" class="checkbox1"> 깻잎 10g </input>
+           <input type="checkbox" id="check1" name="material" value="재료번호를 넣어라" class="checkbox1"> 깻잎 10g </input>
            <input type="checkbox" id="check1" name="생새우" value="#" class="checkbox1"> 생새우 120g </input>
            <input type="checkbox" id="check1" name="연근" value="#" class="checkbox1"> 연근 80g</input>
            <input type="checkbox" id="check1" name="단호박" value="#" class="checkbox1"> 단호박 150g</input>

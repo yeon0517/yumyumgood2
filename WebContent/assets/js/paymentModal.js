@@ -32,3 +32,24 @@ reset.addEventListener('click',function(){
     count = 0;
     number.textContent = count;
 });
+
+
+// 재료 반복문
+
+    for (let i = 0; i < ingredients.length; i++) {
+      const ingredient = ingredients[i];
+      const inputId = "check" + (i + 1);
+      
+      document.write(`
+        <input type="checkbox" id="${inputId}" name="material" value="${ingredient.name}" class="checkbox1">
+          ${ingredient.name} ${ingredient.amount}
+        </input>
+      `);
+    }
+
+
+
+
+
+
+
