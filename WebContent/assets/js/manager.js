@@ -87,7 +87,7 @@ function updatePage(page) {
 		$.ajax({
 			url: '/manager/userSerch.manager',
 			type: 'GET',
-			data: {userIdOrName: userIdOrName, page: page},
+			data: { userIdOrName: userIdOrName, page: page },
 			dataType: 'json',
 			success: updateTable,
 			error: (xhr, status, error) => console.log(error),
@@ -147,13 +147,105 @@ $('.user-serch-btn').on('click', function() {
 	let userIdOrName = $('#user-serch').val();
 	let gapCheck = $('#user-serch').val().trim();
 	console.log(userIdOrName);
-	
-	if (gapCheck === '' || gapCheck.length === 0){
+
+	if (gapCheck === '' || gapCheck.length === 0) {
 		searchMode = false;
 		updatePage(1);
-	}else{
+	} else {
 		searchMode = true;
 		updatePage(1);
 	}
 });
+
+
+// 게시물 리스트부분
+let postSearchMode = false;
+
+function updatePostPage(postPage) {
+	if (postSearchMode) {
+		let postTitle = $('#post-search').val();
+		$.ajax({
+			url: '/manager/postSerchOk.manager',
+			type: 'GET',
+			data: { postTitle: postTitle, postPage: postPage },
+			dataType: 'json',
+			success: updatePostTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	} else {
+		$.ajax({
+			url: "/manager/managerPostOk.manager",
+			type: "GET",
+			data: { postPage: postPage },
+			dataType: "json",
+			success: updatePostTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	}
+}
+
+function updatePostTable(postResult) {
+	$(".post-table tbody tr:not(:first)").remove();
+	
+	console.log(postResult)
+
+	postResult.posts.forEach((post) => {
+		$(".post-table tbody").append(`
+      <tr>
+        <td class="post-number">${post.postNumber}</td>
+        <td class="post-title"><a href="#">${post.postTitle}</a></td>
+        <td class="post-user-Id"><a href="#">${post.userId}</a></td>
+        <td class="post-view-count">${post.postViewCount}</td>
+        <td class="post-date">${post.postDate}</td>
+		<td><a href="#">수정</a></td>
+        <td><div class="checkbox-c"><a href="#"><input type="checkbox" name="post" class="post-check-box" value="${post.postNumber}" /></a></div></td>
+      </tr>`);
+	});
+	
+	let pageResult = '';
+	pageResult += `${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}`;
+    
+	for(let i=postResult.postStartPage; i<=postResult.postEndPage; i++){
+		pageResult += `<li><a href="#" data-postPage="${i}"${i === postResult.postPage ? ' class="active"' : ""}>${i}</a></li>`;
+	}
+	
+    pageResult +=`${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`;
+
+	/*`
+    	${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
+    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="#" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
+    	${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`*/
+
+	$(".post-page ul").html(pageResult);
+
+	$(".post-page a").off("click").on("click", function(e) {
+		e.preventDefault();
+		
+		console.log($(this).data("postpage"))
+		updatePostPage($(this).data("postpage"));
+	});
+	
+}
+
+
+$(".post-page a").on("click", function(e) {
+	e.preventDefault();
+	updatePostPage($(this).data('postpage'));
+	console.log('aaaa')
+});
+
+$('.post-serch-btn').on('click', function() {
+	let postSearch = $('#post-search').val();
+	let postGapCheck = $('#post-search').val().trim();
+
+	if (postGapCheck === '' || postGapCheck.length === 0) {
+		postSearchMode = false;
+		updatePostPage(1);
+	} else {
+		postSearchMode = true;
+		updatePostPage(1);
+	}
+});
+
+
 
