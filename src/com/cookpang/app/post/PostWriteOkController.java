@@ -81,7 +81,7 @@ public class PostWriteOkController implements Execute {
 	          String ingredientQuantity = ingredientQuantities[i];
 
 	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
-	          recipeIngredientDTO.setRecipeIngredientName(ingredientName);
+//	          recipeIngredientDTO.setRecipeIngredientName(ingredientName);
 	          recipeIngredientDTO.setRecipeIngredientQuantity(ingredientQuantity);
 	          recipeIngredientDTO.setPostNumber(postNumber);
 	          recipeIngredientDAO.insert(recipeIngredientDTO);

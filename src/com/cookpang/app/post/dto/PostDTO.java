@@ -11,6 +11,7 @@ public class PostDTO {
     private int postViewCount;
     private int userNumber;
     
+    
     public PostDTO() {}
 
 	@Override

@@ -9,6 +9,11 @@ values(#{postNumber}, #{ingredientNumber}, #{recipeIngredientName}, #{recipeIngr
 		
 		
 	</insert>
+	
+	
+  		
+
+
 </mapper>
 
 

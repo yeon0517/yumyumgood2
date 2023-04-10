@@ -174,11 +174,11 @@ $(document).ready(function () {
             `
       <div class="ingredient-element">
   <li class="ingredient-name-li">
-                               <select name="" id="select">
+                               <select name="ingredientName" id="select">
               					<option value="-1">선택하기</option>
-              					<option value="1">선택1</option>
-              					<option value="2" selected>선택2</option>
-              					<option value="3">선택3</option>
+              					<option value="1">양배추</option>
+              					<option value="2" selected>돼지고기</option>
+              					
            					 </select>
                               </li>
 
