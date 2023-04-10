@@ -277,7 +277,8 @@
 
 								<div class="bbb">
 								<%-- ${post.getFiles()} 이미지코드에 넣기--%>
-									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" />
+<!-- 									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" /> -->
+									<a href="#"> <img src="/upload/${post.getPostThumbnail()}" class="main-img" />
 									</a>
 									<div class="text-box">
 										<a href="#" class="text-nick">${post.getUserNickName()}</a><br>
