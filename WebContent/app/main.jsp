@@ -46,7 +46,7 @@
 									<div class="rank-round">
 										<a href="#" class="rank-a">
 											<div class="rank-img">
-											<%-- https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300 이미지에 넣는거--%>
+												<%-- https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300 이미지에 넣는거--%>
 												<img src="${post.getFiles()}"
 													alt="${post.getPostFileSystemName()}">
 
@@ -276,9 +276,11 @@
 
 
 								<div class="bbb">
+
 								<%-- ${post.getFiles()} 이미지코드에 넣기--%>
 <!-- 									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" /> -->
 									<a href="#"> <img src="/upload/${post.getPostThumbnail()}" class="main-img" />
+
 									</a>
 									<div class="text-box">
 										<a href="#" class="text-nick">${post.getUserNickName()}</a><br>
@@ -351,72 +353,46 @@
 
 
 			</div>
+			<!-- 여기서부터 -->
+			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
 					<li class="sidebar-name"><a href="#">CookPang</a></li>
+
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/home.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-								<i class="fa-solid fa-house"></i> <a
-									href="${pageContext.request.contextPath}/mainOk.m">홈</a>
+								<i class="fa-solid fa-house"></i> <a href="${pageContext.request.contextPath}/mainOk.m">홈</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/h.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-								<i class="fa-solid fa-magnifying-glass"></i> <a href="#">검색</a>
+								<i class="fa-solid fa-magnifying-glass"></i> <a href="#"
+									class="find2">검색</a>
+								<!-- 검색 -->
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!--  <img
-                    src="../img/managerImg/heart.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-								<i class="fa-regular fa-heart"></i> <a href="#">알림</a>
+								<i class="fa-regular fa-heart"></i> <a href="#" class="alarmm">알림</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!--  <img
-                    src="../img/managerImg/plus.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-								<i class="fa-regular fa-square-plus"></i> <a href="${pageContext.request.contextPath}/post/postWrite.po">만들기</a>
+								<i class="fa-regular fa-square-plus"></i> <a href="#">만들기</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/backet.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
 								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<!-- <img
-                    src="../img/managerImg/pro.png"
-                    alt=""
-                    class="sidebar-img"
-                  /> -->
-
-								<i class="fa-regular fa-user"></i> <a href="">프로필</a>
+								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
 							</div>
 						</li>
+						<!-- </ul> -->
 					</ul>
 
 					<div class="btn-group">
@@ -429,38 +405,326 @@
 						</c:otherwise>
 						</c:choose>
 					</div>
-
+					
 				</div>
-			</div>
-			<div id="main-footer">
-				<footer>
-					<div>
-						<div class="footer-content">
-							<h3>Cook Pang</h3>
-							<p>콘텐츠의 저작권은 제공처 또는 코리아IT아카데미 에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
-								법적책임을 질 수 있습니다.</p>
+				<!-- 검색 창 -->
+				<article class="sub-find">
+					<div class="search-box">
+						<div class="search-box2">
+							<h1 class="qqq">검색</h1>
 						</div>
-						<div class="footer-bottom">
-							<p>
-								copyright © <a href="#">Cookpang</a>
-							</p>
-							<div class="footer-menu">
-								<ul class="f-menu">
-									<li><a
-										href="${pageContext.request.contextPath}/assets/html/termsOfUse.html">이용약관</a></li>
-									<li><a href="">About</a></li>
-									<li><a href="">Contact</a></li>
-									<li><a href="">Blog</a></li>
-								</ul>
+						<div class="search-box3">
+							<input type="text" class="find-btn" placeholder="검색" />
+						</div>
+					</div>
+					<div class="recent-searches">
+						<h3 class="recent-searches2">최근 검색 항목</h3>
+					</div>
+					<div class="recent-searches-box">
+						<div class="search-man">
+							<div class="man-left">
+								<!-- <a href="#"> -->
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" /> <!-- </a> -->
+								</a>
+							</div>
+							<div class="man-right">
+								<div class="man-id">
+									<a href="#"> hot_boy </a>
+									<!-- <a href="#" class="man-id2">hot_boy</a> -->
+								</div>
+								<div class="man-name">
+									이동재
+									<!-- <a href="#" class="man-name2">이동재</a> -->
+								</div>
+							</div>
+							<div class="delete-btn">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
 							</div>
 						</div>
 					</div>
-				</footer>
+				</article>
+				<!-- 검색 창 -->
+				<!-- 알림 창 -->
+				<article class="sub-find2">
+					<div class="search-box2">
+						<div class="alarm">
+							<h1 class="qqq">알림</h1>
+						</div>
+					</div>
+					<div class="alarm-box">
+						<div class="new-alarm">
+							<div>
+								<h4 class="alarm-date">이번주</h4>
+							</div>
+							<div class="boxboxbox">
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+								<div>
+									<h4 class="alarm-date2">이번달</h4>
+								</div>
+								<div class="new-alarm2">
+									<div class="boxboxbox2">
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="search-man">
+											<div class="man-left2">
+												<!-- <a href="#"> -->
+												<a href="#"> <img
+													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+													alt="#" class="man-img" />
+												</a>
+												<!-- </a> -->
+											</div>
+											<div class="alarm-right">
+												<div class="alarm-id">
+													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
+													좋아요를 눌렀습니다.
+												</div>
+											</div>
+											<div class="delete-btn3">
+												<div class="delete-btn2">
+													<button class="alarm-btn">삭제</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!-- 알림창 -->
 			</div>
 		</div>
-		<script src="https://code.jquery.com/jquery-3.6.3.js"
-			integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-			crossorigin="anonymous"></script>
+
+		<div id="main-footer">
+			<footer>
+				<div>
+					<div class="footer-content">
+						<h3>Cook Pang</h3>
+						<p>콘텐츠의 저작권은 제공처 또는 코리아IT아카데미 에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라
+							법적책임을 질 수 있습니다.</p>
+					</div>
+					<div class="footer-bottom">
+						<p>
+							copyright © <a href="#">Cookpang</a>
+						</p>
+						<div class="footer-menu">
+							<ul class="f-menu">
+								<li><a href="">Home</a></li>
+								<li><a href="">About</a></li>
+								<li><a href="">Contact</a></li>
+								<li><a href="">Blog</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+		<!-- 여기까지 -->
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.3.js"
+		integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+		crossorigin="anonymous"></script>
+	<script src="${pageContext.request.contextPath}/assets/js/main.js"></script>
+
 </body>
 
 </html>
