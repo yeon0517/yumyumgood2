@@ -1,5 +1,7 @@
 package com.cookpang.app.ingredient.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.ingredient.dto.IngredientDTO;
@@ -15,7 +17,7 @@ public class IngredientDAO {
 	
 
 	
-	public IngredientDTO getIngredientNumber(IngredientDTO ingredientDTO) {
-		return sqlSession.selectOne("ingredient.getIngredientNumber", ingredientDTO);
+	public List<IngredientDTO> getIngredientNumber() {
+		return sqlSession.selectList("ingredient.getIngredientNumber");
 	}
 }

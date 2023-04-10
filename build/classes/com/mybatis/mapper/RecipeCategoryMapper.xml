@@ -4,8 +4,8 @@
 <mapper namespace="recipeCategory">
 	<insert id="insertC" parameterType="RecipeCategoryDTO">
 		insert into tbl_recipe_category
-(post_number, category_name)
-values(#{postNumber}, #{categoryName});
+(post_number, category_number)
+values(#{postNumber}, #{categoryNumber});
 	</insert>
 		
 </mapper>

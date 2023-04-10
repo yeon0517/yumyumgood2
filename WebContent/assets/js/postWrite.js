@@ -170,34 +170,10 @@ $(document).ready(function () {
 
     // 요소 플러스 버튼에 대한 이벤트 위임
     $('.ingredient-wrap').on('click', '.element-plus', function () {
-        const ingredientElement = $(
-            `
-      <div class="ingredient-element">
-  <li class="ingredient-name-li">
-                               <select name="ingredientName" id="select">
-              					<option value="-1">선택하기</option>
-              					<option value="1">양배추</option>
-              					<option value="2" selected>돼지고기</option>
-              					
-           					 </select>
-                              </li>
-
-        <li class="ingredient-quantity-li">
-          <input type="text" name="ingredientQuantity" class="ingredient-quantity" placeholder="재료 양 예) 1/2개">
-        </li>
-
-        <div class="element-edit-buttons">
-          <button type="button" class="element-plus">
-            <i class="fa-solid fa-circle-plus"></i>
-          </button>
-
-          <button type="button" class="element-minus">
-            <i class="fa-solid fa-circle-minus"></i>
-          </button>
-        </div>
-      </div>`
-        );
-
+	let ingredientElement = '<div class="ingredient-element">';
+	ingredientElement += $('.ingredient-element').html();
+	ingredientElement += '</div>';
+	
         $(this)
             .closest('.ingredient-element')
             .after(ingredientElement);

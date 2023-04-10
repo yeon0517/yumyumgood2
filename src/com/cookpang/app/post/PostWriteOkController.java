@@ -1,6 +1,7 @@
 package com.cookpang.app.post;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
@@ -50,10 +51,11 @@ public class PostWriteOkController implements Execute {
 	      
 	      MultipartRequest Request = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
 	      
-	      String[] ingredientNames = Request.getParameterValues("ingredientName");
+	      String[] ingredientNumbers = Request.getParameterValues("ingredientNumber");
 	      String[] ingredientQuantities = Request.getParameterValues("ingredientQuantity");
 
-
+	      System.out.println(Arrays.toString(ingredientNumbers));
+	      System.out.println(Arrays.toString(ingredientQuantities));
 
 	      
 	      
@@ -76,12 +78,13 @@ public class PostWriteOkController implements Execute {
 	      postNumber = postDAO.getSequence();
 	      
 	      
-	      for (int i = 0; i < ingredientNames.length; i++) {
-	          String ingredientName = ingredientNames[i];
+	      for (int i = 0; i < ingredientNumbers.length; i++) {
+	          String ingredientNumber = ingredientNumbers[i];
 	          String ingredientQuantity = ingredientQuantities[i];
 
 	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
 //	          recipeIngredientDTO.setRecipeIngredientName(ingredientName);
+	          recipeIngredientDTO.setIngredientNumber(Integer.parseInt(ingredientNumber));
 	          recipeIngredientDTO.setRecipeIngredientQuantity(ingredientQuantity);
 	          recipeIngredientDTO.setPostNumber(postNumber);
 	          recipeIngredientDAO.insert(recipeIngredientDTO);
@@ -89,12 +92,12 @@ public class PostWriteOkController implements Execute {
 	      
 	      
 	      String[] recipeCategories = Request.getParameterValues("categorys");
+	      System.out.println(Arrays.toString(recipeCategories));
 	      
 	      for(int i=0; i<recipeCategories.length; i++) {
 	    	  String recipeCategory = recipeCategories[i];
-	    	  
 	    	  RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
-	    	  recipeCategoryDTO.setCategoryName(recipeCategory);
+	    	  recipeCategoryDTO.setCategoryNumber(Integer.parseInt(recipeCategory));
 	    	  recipeCategoryDTO.setPostNumber(postNumber);
 	    	  recipeCategoryDAO.insertC(recipeCategoryDTO);
 	      }

@@ -5,7 +5,7 @@
 	<insert id="insert" parameterType="RecipeIngredientDTO">
 		insert into tbl_recipe_ingredient
 (post_number, ingredient_number, recipe_ingredient_name, recipe_ingredient_quantity)
-values(#{postNumber}, #{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});
+values(#{postNumber} ,#{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});
 		
 		
 	</insert>

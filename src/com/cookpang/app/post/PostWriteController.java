@@ -29,8 +29,8 @@ public class PostWriteController implements Execute {
 		}else {
 			path = "/app/post/postWrite.jsp";
 			req.setAttribute("userId", userDAO.getUserId(userNumber));
-			req.setAttribute("ingredientNumber", ingredientDAO.getIngredientNumber(ingredientNumber));
-			req.setAttribute("ingredientName", ingredientDAO.getIngredientNumber(ingredientName));
+			req.setAttribute("ingredientList", ingredientDAO.getIngredientNumber());
+			
 		}
 		
 		req.getRequestDispatcher(path).forward(req, resp);
