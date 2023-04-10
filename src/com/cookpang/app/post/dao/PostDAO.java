@@ -51,6 +51,12 @@ public class PostDAO {
 	public void update(PostDTO postDTO) {
 		sqlSession.update("post.update", postDTO);
 	}
+	public PostReadVO postReadDefaultInfo(int postNumber) {
+		return sqlSession.selectOne("post.postReadDefaultInfo", postNumber);
+	}
+	
+	
+	
 	
 
 }

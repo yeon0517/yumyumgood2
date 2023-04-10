@@ -4,9 +4,23 @@
 <mapper namespace="recipeCategory">
 	<insert id="insertC" parameterType="_int">
 		insert into tbl_recipe_category
-(post_number, category_name)
-values(#{postNumber}, #{categoryName});
+		(post_number, category_name)
+		values(#{postNumber}, #{categoryName})
 	</insert>
+	
+	<select id="getRecipeCategories" parameterType="_int" resultType="RecipeCategoryVO">
+		select ca.category_name 
+		from tbl_category ca
+		join tbl_recipe_category rc
+		on ca.category_number = rc.category_number 
+		where rc.post_number = #{postNumber}
+	</select>
+	
+	
+	
+	
+	
+	
 		
 </mapper>
 

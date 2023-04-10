@@ -38,18 +38,4 @@ $(document).ready(function () {
 
 
 
-$(document).ready(function () {
-  $('.like-btn').on('click', function () {
-    const $likeBtn = $(this);
-    const $likeBtnIconF = $likeBtn.find('.fa-regular.fa-heart');
-    const $likeBtnIconT = $likeBtn.find('.fa-solid.fa-heart');
-    
-    if ($likeBtnIconF.is(':visible')) {
-      $likeBtnIconF.css('display', 'none');
-      $likeBtnIconT.css('display', 'block');
-    } else {
-      $likeBtnIconT.css('display', 'none');
-      $likeBtnIconF.css('display', 'block');
-    }
-  });
-});
+

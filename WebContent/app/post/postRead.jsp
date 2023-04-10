@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,15 +75,25 @@
 
               <!-- 작성자 페이지로 이동 -->
               <a href="#" class="writer-link">
-                <img src="../img/test3.jpg" alt="프로필 이미지" class="writer-profile-img">
+				
+				<!--프로필사진 분기처리 비어있으면 기본 프로필사진으로  -->              
+              <c:choose>
+				<c:when test="${null eq post.getUserProfileImageSystemName()}">
+                <img src="https://www.thechooeok.com/common/img/default_profile.png" alt="${post.getUserProfileImageSystemName()}" class="writer-profile-img">
+				</c:when>
+				<c:otherwise>
+	                <img src="${post.getUserProfileImageSystemName()}" alt="${post.getUserProfileImageSystemName()}" class="writer-profile-img">
+				</c:otherwise>
+				</c:choose>
               </a>
 
             </div>
 
             <div class="writer-id">
+            <!--작성자의 youpage로 이동  -->
               <a href="" class="writer-link">
                 <!-- 임시 작성자 id -->
-                <h4>id</h4>
+                <h4>${post.getUserId()}</h4>
               </a>
 
               <button class="more-btn">
@@ -99,14 +110,14 @@
             <div class="read-content-title">
               <!-- 임시 게시물 제목 -->
               <!-- 제목 최대 자릿수 44 -->
-              <h3>게시물 제목</h3>
+              <h3>${post.getPostTitle()}</h3>
 
             </div>
 
             
             <div class="content-box">
               <div class="content-msg-box"><!--게시물내용 보이는곳-->
-                게시글 내용 보이는곳
+                ${post.getPostContent()}
               </div>
 
               <div class="content-choice-box">
@@ -205,25 +216,17 @@
                   <!--a테그 : 해당 카테고리 누르면 검색화면으로 이동하고  -->
                   <!-- 그 카테고리가 검색된다.  -> 나중에 시간있으면-->
                   <ul class="categories">
-
-                    <li class="category-list">
-                      <a href="#">밑 반찬</a>
-                    </li>
-                    
-                    <li class="category-list">
-                      <a href="#">밥 요리</a>
-                    </li>
-                    <li class="category-list">
-                      <a href="#">야식&술안주</a>
-                    </li>
-                    <li class="category-list">
-                      <a href="#">구이</a>
-                    </li>
-
+                  
+                 	<c:forEach var="category" items="${categoryList}" >
+                 
+                    	<li class="category-list">
+                    	  	<a href="#">${category.getCategoryName() }</a>
+                    	</li>
+                 
+                 
+                 	</c:forEach>
 
                   </ul>
-
-
 
 
                 </div>
@@ -231,25 +234,7 @@
 
                 <div class="main-content">
                   <!-- 임시 내용 -->
-                  step1
-                  냄비에 물과 삶는 물 재료를 넣고 끓어오르면 삼겹살을 2등분해서 넣은 후 1시간 정도 삶아주세요.
-                  <br><br>
-                  step2
-                  대파와 양파는 곱게 채를 썰고 부추는 4cm 길이로 썰어주세요. 묵은지는 물에 헹군 후 물기를 빼고 먹기 좋게 썰고 볼에 파무침 소스를 넣고 고루 섞어 소스를 만들어주세요.
-                  
-                  <br><br>
-                  step3
-                  팬에 조림장 재료를 넣고 팔팔 끓으면 삶은 삼겹살을 넣은 후 앞뒤로 뒤집어 가며 윤기나게 조려주세요.
-                  
-                  <br><br>
-                  step4
-                  고기를 먹기 좋게 한 입 크기로 썰어 접시에 담아주세요.
-                  
-                  <br><br>
-                  step5
-                  파채와 양파, 부추를 무침 소스를 넣어 가볍게 섞고 묵은지 또는 명이나물 등을 곁들여 맛있게 즐겨주세요.
-
-
+              		${post.getPostRecipeContent()}
 
                 </div>
 
@@ -265,7 +250,8 @@
                   <li class="read-comment-box">
 
                     <div class="comment-writer-img-box">
-                      <img src="../img/test2.jpg" alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
+                    	<!-- 임시 댓글 프로필사진 -->
+                      <img src="https://starwalk.space/gallery/images/astrophotography/1140x641.jpg" alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
                     </div>
 
                     <div class="comment-content-box">
@@ -312,16 +298,26 @@
               <form class="comment-form">
 
                 <!-- 게시물 번호 작성 -->
-                <input type="hidden" name="postNumber" value="#">
+                <input type="hidden" name="postNumber" value="${post.getPostNumber()}">
 
                 <section class="reader-act-section">
 
                   <span class="like-box">
                     <button class="like-btn" type="button">
                       <!-- 버튼을 누르면 색이 채워진 아이콘으로 변경 -->
-
-                      <i class="fa-regular fa-heart like-f js-like-btn"></i>
-                      <i class="fa-solid fa-he art like-t js-like-btn" style="color: red;"></i>
+                      
+                      <!-- 좋아요버튼 db, ajax분기처리 세션의 id와 해당 게시물의 번호로 검색, 
+                      		  검색결과가 있으면 색이 채워진 아이콘으로 없으면 빈 아이콘으로-->
+                      			
+	                 	<c:choose>
+							<c:when test="${null eq post.getUserProfileImageSystemName()}">
+			                     <i class="fa-solid fa-heart like-t js-like-btn" style="color: red;"></i>
+							</c:when>
+							<c:otherwise>
+	 	                       <i class="fa-regular fa-heart like-f js-like-btn"></i>
+							</c:otherwise>
+						</c:choose>
+                      
                     </button>
                   </span>
 
@@ -351,20 +347,20 @@
                 <div class="like-count-box">
                   <button class="like-count-btn">
                     <!-- 임시 좋아요 갯수 -->
-                    좋아요 75개
+                    ${post.getPostLikeCount()}
                   </button>
 
                   <div class="post-view-count-box">
                     <i class="fa-regular fa-eye view-icon"></i>
                     <!-- 임시 조회수 -->
-                    84
+                    ${post.getPostViewCount()}
                   </div>
 
                 </div>
 
                 <div class="date-box">
                   <!-- 임시 게시일 -->
-                  3월 22일, 2023년
+                    ${post.getPostDate()}
                 </div>
 
 

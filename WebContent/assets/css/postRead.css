@@ -204,7 +204,7 @@ a{
 
 .read-comment-container{
   overflow-y: scroll;
-  height: 355px;
+  height: 60%;
   width: 100%;
   flex-direction: column;
   display: none;
@@ -357,9 +357,7 @@ a{
   font-weight: bold;
 }
 
-.like-t{
-  display: none;
-}
+
 
 
 
