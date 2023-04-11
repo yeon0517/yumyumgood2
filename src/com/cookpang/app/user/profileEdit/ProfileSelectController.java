@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.user.dao.UserDAO;
@@ -14,27 +15,22 @@ public class ProfileSelectController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		UserDAO userDAO = new UserDAO();
-//		UserDTO userDTO = new UserDTO();
-
-//		ProfileEditVO profileVO = new ProfileEditVO();
-//		ProfileEditVO profileEditVO = new ProfileEditVO();
+		ProfileEditVO profileVO = null;
+		HttpSession session = req.getSession();
+		Integer userNumber = (Integer)session.getAttribute("userNumber");
+		
 
 		req.setCharacterEncoding("utf-8");
-		int helpme = 1;
 
-		ProfileEditVO profileVO = null;
-		
-//		userDTO.setUserId(req.getParameter("userId"));
-//		userDTO.setUserPassword(req.getParameter("userPassword"));
-
-		
-		profileVO = userDAO.getUserProfileInfo(helpme);
+		profileVO = userDAO.getUserProfileInfo(userNumber);
 
 		req.setAttribute("profileVO", profileVO);
 
 		req.setAttribute("profileEditVO", profileVO);
 		
-		System.out.println(profileVO.toString());
+		System.out.println("===========================");
+		System.out.println(userNumber);
+		System.out.println(profileVO);
 
 
 		req.getRequestDispatcher("/app/editProfile.jsp").forward(req, resp);

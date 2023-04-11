@@ -387,12 +387,21 @@
 								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
 							</div>
 						</li>
-						<li class="sidebar-li">
+				<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+
+								<i class="fa-regular fa-user"></i> 
+						<c:choose>
+							 	<c:when test="${empty sessionScope.userNumber}">
+							 	<a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
+							</c:when> 
+								<c:otherwise>
+								<a href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
+								</c:otherwise>
+					</c:choose>
+
 							</div>
 						</li>
-						<!-- </ul> -->
 					</ul>
 
 					<div class="btn-group">

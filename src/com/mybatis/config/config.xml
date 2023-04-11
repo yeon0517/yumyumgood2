@@ -29,7 +29,7 @@
 		<typeAlias type="com.cookpang.app.user.profileEdit.vo.ProfileEditVO" alias="ProfileEditVo"/>
 		<typeAlias type="com.cookpang.app.recipe.category.vo.RecipeCategoryVO" alias="RecipeCategoryVO"/>
 		<typeAlias type="com.cookpang.app.comment.vo.CommentVO" alias="CommentVO"/>
-		
+		<typeAlias type="com.cookpang.app.user.vo.UserVO" alias="UserVo"/>
 		
 	</typeAliases>
 	
