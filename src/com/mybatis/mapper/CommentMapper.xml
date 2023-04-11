@@ -10,8 +10,15 @@
 		on c.post_number = #{postNumber} and c.user_number = u.user_number
 		left join tbl_user_profile_image up
 		on u.user_number = up.user_number
-	
 	</select>
+	
+	<insert id="commentPosting" parameterType="CommentDTO">
+		insert into tbl_comment
+		(comment_content, user_number, post_number)
+		values(#{commentContent}, #{userNumber}, #{postNumber})
+	</insert>
+	
+	
 	
 	
 

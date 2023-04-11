@@ -360,7 +360,7 @@
 							<div class="comment-wrap">
 
 								<div class="comment-box">
-									<textarea name="readComment" class="comment-input"
+									<textarea name="readComment" class="comment-input" id="comment-input"
 										placeholder="댓글 달기.."></textarea>
 
 									<button type="button" class="comment-post-btn" data-postNumber="${post.getPostNumber()}">

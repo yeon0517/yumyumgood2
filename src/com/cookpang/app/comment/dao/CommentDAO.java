@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.cookpang.app.comment.dto.CommentDTO;
 import com.cookpang.app.comment.vo.CommentVO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -17,6 +18,9 @@ public class CommentDAO {
 	
 	public List<CommentVO> getCommentList(int postNumber) {
 		return sqlSession.selectList("comment.getCommentList", postNumber);
+	}
+	public void commentPosting(CommentDTO commentDTO) {
+		sqlSession.insert("comment.commentPosting", commentDTO);
 	}
 	
 	

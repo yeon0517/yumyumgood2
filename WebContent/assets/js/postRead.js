@@ -79,13 +79,21 @@ function showComment(comments) {
 												<div class="read-comment-more">
 													<div class="comment-write-time">${comment.commentTime}</div>
 													<!--댓글번호  -->
-													<button type="button" class="comment-delete">삭제하기
+													`
+												if(comment.userNumber== userNumber){
+													
+											text +=
+							`<button type="button" class="comment-delete" data-number="${comment.commentNumber}"											`																																																																																																																																																																																																																																									`>삭제하기
 													</button>
+													`
+												}
+											text+=	`
 												</div>
 											</div>
 										</li>
 
-    `
+    				`;
+
 	$('.read-comment').html(text);
   });
 
@@ -94,6 +102,24 @@ function showComment(comments) {
 }
 
 
+let $comment = $('.comment-input');
+
+//댓글 작성
+$('.comment-post-btn').on('click', function() {
+   $.ajax({
+      url : '/comment/commentWriteOk.co',
+      type : 'post',
+      data : {
+         postNumber : postNumber,
+         userNumber : userNumber,
+         commentContent : $('#comment-input').val()
+      },
+      success : function(){
+          commentAjax();
+         $('#comment-input').val('');
+      }
+   });
+});
 
 
 

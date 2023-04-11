@@ -28,6 +28,9 @@ public class CommentFrontController extends HttpServlet{
 		case "/comment/commentListOk.co" :
 			new CommentListOkController().execute(req, resp);
 			break;
+		case "/comment/commentWriteOk.co" :
+			new CommentWriteOkController().execute(req, resp);
+			break;
 		}
 	}
 
