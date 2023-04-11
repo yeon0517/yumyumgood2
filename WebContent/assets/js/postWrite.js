@@ -223,6 +223,84 @@ $(document).ready(function () {
     }
 });
 
+	$(document).on('change', '#select', function() {
+    
+    $.ajax({
+        url: '/post/postWrite.po',
+        type: 'GET',
+        data: {ingredientCategoryNumber: ingredientCategoryNumber,
+				  ingredientCategoryName: ingredientCategoryName	,
+				  IngredientNumber: IngredientNumber,
+			      IngredientName: IngredientName
+				},
+        dataType: 'json',
+        success: showIngredientName
+        
+        
+  });
+});
+
+function showIngredientName(ingredientName){
+	let text ='';
+	
+	ingredientName.forEach(ingredient => {
+		text += `
+				
+													<ul>
+														<li>
+															<select name="ingredientCategoryNumber" id="select">
+																	<option value="-1" selected>선택하기</option>
+																	<c:forEach var="ingredientCategory" items="${ingredientCategoryList}">
+																		<option value="${ingredientCategory.getIngredientCategoryNumber()}">
+																			<c:out value="${ingredientCategory.getIngredientCategoryName()}" />
+																		</option>
+																	</c:forEach>
+															</select>
+															<h5 class="ingredient-guide-msg  msg1">재료추가/삭제</h5>
+														</li>`
+
+													if(ingredientCategory.getIngredientCategoryNumber() == ingredient.getIngredientNumber() ){
+													text +=		`<div class="ingredient-element">
+
+															<li class="ingredient-name-li">
+															<select name="ingredientNumber" id="select">
+																	<option value="-1" selected>선택하기</option>
+																	<c:forEach var="ingredient" items="${ingredientList}">
+																		<option value="${ingredient.getIngredientNumber()}">
+																			<c:out value="${ingredient.getIngredientName()}" />
+																		</option>
+																	</c:forEach>
+															</select>
+															</li>
+
+															<li class="ingredient-quantity-li"><input
+																type="text" name="ingredientQuantity"
+																class="ingredient-quantity" placeholder="재료 양 예) 1/2개">
+															</li>
+
+															<!-- 재료 추가버튼 -->
+															<div class="element-edit-buttons">
+																<button type="button" class="element-plus">
+																	<i class="fa-solid fa-circle-plus"></i>
+																</button>
+
+																<button type="button" class="element-minus">
+																	<i class="fa-solid fa-circle-minus"></i>
+																</button>
+															</div>
+
+														</div>
+
+													</ul>
+
+												</div>
+		`
+													}
+														
+		
+		
+	} )
+}
 
 
 

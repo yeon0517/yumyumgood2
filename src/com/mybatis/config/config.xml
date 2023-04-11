@@ -27,6 +27,7 @@
 		<typeAlias type="com.cookpang.app.user.profileImage.dto.ProfileImageDTO" alias="ProfileImageDTO"/>
 		<typeAlias type="com.cookpang.app.manager.vo.ManagerVO" alias="ManagerVO"/>
 		<typeAlias type="com.cookpang.app.user.profileEdit.vo.ProfileEditVO" alias="ProfileEditVo"/>
+		<typeAlias type="com.cookpang.app.ingredient.category.dto.IngredientCategoryDTO" alias="IngredientCategoryDTO"/>
 		
 		
 	</typeAliases>
@@ -61,6 +62,7 @@
 		<mapper resource="com/mybatis/mapper/RecipeIngredientMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/UserMapper.xml"/>
 		<mapper resource="com/mybatis/mapper/UserProfileImageMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/IngredientCategoryMapper.xml"/>
 	</mappers>
 	
 </configuration>
