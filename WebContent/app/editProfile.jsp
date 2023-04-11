@@ -1,329 +1,428 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+String myTextareaValue = request.getParameter("myTextarea");
+%>
+<!-- 자기소개창 null값주기위한 변수생성   -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>editProfile</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/editProfile.css" />
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/editPassword.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@1&display=swap"
-      rel="stylesheet"
-    />
-     <script src="https://kit.fontawesome.com/9416f63361.js" crossorigin="anonymous"></script>
-    <script>
-      window.onload = function () {
-        document
-          .getElementById("address_kakao")
-          .addEventListener("click", function () {
-            //주소입력칸을 클릭하면
-            //카카오 지도 발생
-            new daum.Postcode({
-              oncomplete: function (data) {
-                //선택시 입력값 세팅
-                document.getElementById("address_kakao").value = data.address; // 주소 넣기
-                document.querySelector("input[name=address_detail]").focus(); //상세입력 포커싱
-              },
-            }).open();
-          });
-      };
-    </script>
-  </head>
-  <body>
-    <div id="body-main">
-      <div id="main-header"></div>
-      <div id="main-body">
-        <div class="body-main">
-          <div class="body-main-body">
-          
-          <form action="${pageContext.request.contextPath}/user/profileEditOk.edit" method="post">
-          
-            <div class="picture-box">
-              <div class="picture-box-left">
-                <div class="img-box">
-                  <img
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
-                    alt="#"
-                    class="img-box-img"
-                  />
-                </div>
-              </div>
-              <div class="picture-box-rigth">
-                <a href="#" class="change-picture">프로필 사진 바꾸기</a>
-              </div>
-            </div>
-            <div class="nickname-box">
-              <div class="nickname-box-left">이름</div>
-              <div class="nickname-box-right">
-                <input type="text" class="text-box2" placeholder="이름" value="${profileEditVO.getUserNickName()}" />
-                <div class="text-box2-text">
-                  <p>
-                    사람들이 이름, 별명 또는 비즈니스 이름 등 회원님의 알려진
-                    이름을 사용하여 회원님의 계정을 찾을 수 있도록 도와주세요.
-                  </p>
-                  <br />
-                  <p>이름은 14일 안에 두 번만 변경할 수 있습니다.</p>
-                </div>
-              </div>
-            </div>
-            <div class="name-box">
-              <div class="name-box-left">사용자 이름</div>
-              <div class="name-box-right">
-                <input
-                  type="text"
-                  class="text-box3"
-                  placeholder="사용자 이름" 
-                  value="${profileEditVO.getUserName()}"
-                />
-                <div class="text-box3-text">
-                  대부분의 경우 이후 14일 동안 사용자 이름을 다시 poe.ntry(으)로
-                  변경할 수 있습니다.
-                </div>
-              </div>
-            </div>
-            <div class="introduce-box">
-              <div class="introduce-box-left">소개</div>
-              <div class="introduce-box-right">
-                <textarea
-                  id="myTextarea"
-                  class="text-box4"
-                  maxlength="150"
-                ></textarea>
-                <div id="charCount" class="box4-cnt">0 / 150</div>
-              </div>
-            </div>
-            <div class="birth-box">
-              <div class="birth-box-left">생년월일</div>
-              <div class="birth-box-right">
-                <input type="date" class="birthday" value="" />
-              </div>
-            </div>
-            <div class="phone-number-box">
-              <div class="phone-box-left">핸드폰 번호</div>
-              <div class="phone-box-right">
-                <input
-                  type="tel"
-                  class="phone"
-                  name="phone"
-                  placeholder="010-1234-5678"
-                  pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-                  value="${profileEditVO.getUserPhoneNumber()} "
-                />
-              </div>
-            </div>
-            <div class="email-box">
-              <div class="email-box-left">이메일</div>
-              <div class="email-box-right">
-                <input
-                  type="email"
-                  class="email"
-                  name="email"
-                  placeholder="example@example.com"
-                  value="${profileEditVO.getUserEmail()}"
-                />
-              </div>
-            </div>
-            <div class="address-box">
-              <div class="address-box-left">주소</div>
-              <div class="address-box-right">
-                <input
-                  id="address_kakao"
-                  type="text"
-                  class="address"
-                  placeholder="시/군/구 도로명 주소"
-                />
-                <input type="text" class="address" placeholder="상세 주소" />
-              </div>
-            </div>
-            
-            <div class="editok-box">
-              <button type="button" class="editok-btn" value="#">
-                회원정보 수정
-              </button>
-            </div>
-           
-            </form> <!-- 정보 보내기  여기까지   -->
-            
-            <div class="eidt-password-box">
-              <!-- 모달 열기 버튼 -->
-              <button onclick="openModal()" class="eidt-modal">
-                비밀번호 변경
-              </button>
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>editProfile</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/editProfile.css" />
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/editPassword.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@1&display=swap"
+	rel="stylesheet" />
+<script src="https://kit.fontawesome.com/9416f63361.js"
+	crossorigin="anonymous"></script>
+<script>
+	window.onload = function() {
+		document
+				.getElementById("address_kakao")
+				.addEventListener(
+						"click",
+						function() {
+							//주소입력칸을 클릭하면
+							//카카오 지도 발생
+							new daum.Postcode(
+									{
+										oncomplete : function(data) {
+											//선택시 입력값 세팅
+											document
+													.getElementById("address_kakao").value = data.address; // 주소 넣기
+											document
+													.querySelector(
+															"input[name=address_detail]")
+													.focus(); //상세입력 포커싱
+										},
+									}).open();
+						});
+	};
+</script>
+</head>
+<body>
+	<div id="body-main">
+		<div id="main-header"></div>
+		<div id="main-body">
+			<div class="body-main">
+					<div class="body-main-body">
 
-              <!-- 모달 창 -->
-              <div id="myModal" class="modal">
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <div class="main">
-                    <div class="main-page">
-                      <div class="password-name">
-                        <h3>비밀번호 변경</h3>
-                      </div>
-                      <div class="password-text">
-                        <p>
-                          누군가 엑세스 권한을 얻으려고 시도중인 경우 계정을
-                          보호하기 위해 이 세션을 제외한 모든 세션에서
-                          로그아웃됩니다.
-                        </p>
-                        <p>
-                          비밀번호는 6자 이상이어야 하고 숫자, 영문,
-                          특수기호(!$@%)의 조합을 포함해야 합니다.
-                        </p>
-                      </div>
-                      <div class="now-password-box">
-                        <input
-                          type="text"
-                          class="box1"
-                          placeholder="현재 비밀번호"
-                        />
-                      </div>
-                      <div class="new-password-box">
-                        <input
-                          type="text"
-                          class="box2"
-                          placeholder="새 비밀번호"
-                        />
-                      </div>
-                      <div class="agian-password-box">
-                        <input
-                          type="text"
-                          class="box3"
-                          placeholder="새 비밀번호 재입력"
-                        />
-                      </div>
-                      <div class="no-password">
-                        <a href="#" class="box4">비밀번호를 잊으셨나요?</a>
-                      </div>
-                      <div class="changeok-btn">
-                        <button type="button" class="box5" value="#">
-                          비밀번호 변경
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="goodbye-box">
-              <a href="#" class="goodbye-btn">회원탈퇴</a>
-            </div>
-          </div>
-        </div>
+				<form
+					action="${pageContext.request.contextPath}/user/profileEditOk.edit"
+					method="post">
 
-        <!-- 여기서부터 -->
-			<!-- 사이드 바 -->
-			<div class="body-side-bar">
-				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="#">CookPang</a></li>
+						<div class="picture-box">
+						<form
+								action="${pageContext.request.contextPath}/profileImage/profileImage.pr"
+								method="post" enctype="multipart/form-data">
+							<div class="picture-box-left">
 
-					<ul class="sidebar-ul">
-						<li class="sidebar-li">
-							<div class="li-box">
-								<i class="fa-solid fa-house"></i> <a href="${pageContext.request.contextPath}/mainOk.m">홈</a>
+								<div class="img-box">
+									<img src="/uploads/파일이름.jpg" alt="이미지" class="img-box-img" />
+								</div>
 							</div>
-						</li>
-						<li class="sidebar-li">
-							<div class="li-box">
-								<i class="fa-solid fa-magnifying-glass"></i> <a href="#"
-									class="find2">검색</a>
-								<!-- 검색 -->
+							<div class="picture-box-rigth">
+							<input type="file" name="file1" id="uploadLink" class="change-picture" placeholder="프로필 사진 바꾸기"/><br />
+							<!-- <input type="file" name="file1" id="" class="input" /><br /> -->
+							<!-- <a href="#" id="uploadLink" onclick="showUploadDialog()"
+									class="change-picture">프로필 사진 바꾸기</a> -->	
 							</div>
-						</li>
-						<li class="sidebar-li">
-							<div class="li-box">
-								<i class="fa-regular fa-heart"></i> <a href="#" class="alarmm">알림</a>
-							</div>
-						</li>
-						<li class="sidebar-li">
-							<div class="li-box">
-								<i class="fa-regular fa-square-plus"></i> <a href="#">만들기</a>
-							</div>
-						</li>
-						<li class="sidebar-li">
-							<div class="li-box">
-								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
-							</div>
-						</li>
-						<li class="sidebar-li">
-							<div class="li-box">
-								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
-							</div>
-						</li>
-						<!-- </ul> -->
-					</ul>
-
-					<div class="btn-group">
-						<li class="sidebar-login"><c:choose>
-								<c:when test="${empty sessionScope.userNumber}">
-									<a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
-						</c:when>
-						<c:otherwise>
-							<a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
-						</c:otherwise>
-						</c:choose>
+					</form>
+			</div>
+			<div class="nickname-box">
+				<div class="nickname-box-left">이름</div>
+				<div class="nickname-box-right">
+					<input type="text" class="text-box2" placeholder="이름"
+						value="${profileEditVO.getUserNickName()}" />
+					<div class="text-box2-text">
+						<p>사람들이 이름, 별명 또는 비즈니스 이름 등 회원님의 알려진 이름을 사용하여 회원님의 계정을 찾을 수
+							있도록 도와주세요.</p>
+						<br />
+						<p>이름은 14일 안에 두 번만 변경할 수 있습니다.</p>
 					</div>
-					
 				</div>
-				<!-- 검색 창 -->
-				<article class="sub-find">
-					<div class="search-box">
-						<div class="search-box2">
-							<h1 class="qqq">검색</h1>
+			</div>
+			<div class="name-box">
+				<div class="name-box-left">사용자 이름</div>
+				<div class="name-box-right">
+					<input type="text" class="text-box3" placeholder="사용자 이름"
+						value="${profileEditVO.getUserName()}" />
+					<div class="text-box3-text">대부분의 경우 이후 14일 동안 사용자 이름을 다시
+						poe.ntry(으)로 변경할 수 있습니다.</div>
+				</div>
+			</div>
+			<div class="introduce-box">
+				<div class="introduce-box-left">소개</div>
+				<div class="introduce-box-right">
+					<textarea id="myTextarea" name="myTextarea" class="text-box4"
+						maxlength="150"
+						placeholder="${profileEditVO.getUserSelfIntroduction()}">
+                 <%
+                 if (myTextareaValue != null && !myTextareaValue.isEmpty()) {
+                 %>
+        <%=myTextareaValue%> <%
+ } else {
+ %> ${profileEditVO.getUserSelfIntroduction()}<%
+ }
+ %>
+                </textarea>
+					<div id="charCount" class="box4-cnt">0 / 150</div>
+				</div>
+			</div>
+			<div class="birth-box">
+				<div class="birth-box-left">생년월일</div>
+				<div class="birth-box-right">
+					<input type="date" class="birthday" value="" />
+				</div>
+			</div>
+			<div class="phone-number-box">
+				<div class="phone-box-left">핸드폰 번호</div>
+				<div class="phone-box-right">
+					<input type="tel" class="phone" name="phone"
+						placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
+						value="${profileEditVO.getUserPhoneNumber()} " />
+				</div>
+			</div>
+			<div class="email-box">
+				<div class="email-box-left">이메일</div>
+				<div class="email-box-right">
+					<input type="email" class="email" name="email"
+						placeholder="example@example.com"
+						value="${profileEditVO.getUserEmail()}" />
+				</div>
+			</div>
+			<div class="address-box">
+				<div class="address-box-left">주소</div>
+				<div class="address-box-right">
+					<input id="address_kakao" type="text" class="address"
+						placeholder="${profileEditVO.getUserAddress()}" /> <input
+						type="text" class="address" placeholder=" 상세 주소" />
+				</div>
+			</div>
+
+			<div class="editok-box">
+				<button type="button" class="editok-btn" value="#">회원정보 수정
+				</button>
+			</div>
+			</form>
+	
+	<!-- 정보 보내기  여기까지   -->
+
+	<div class="eidt-password-box">
+		<!-- 모달 열기 버튼 -->
+		<button onclick="openModal()" class="eidt-modal">비밀번호 변경</button>
+
+		<!-- 모달 창 -->
+		<div id="myModal" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<div class="main">
+					<div class="main-page">
+						<div class="password-name">
+							<h3>비밀번호 변경</h3>
 						</div>
-						<div class="search-box3">
-							<input type="text" class="find-btn" placeholder="검색" />
+						<div class="password-text">
+							<p>누군가 엑세스 권한을 얻으려고 시도중인 경우 계정을 보호하기 위해 이 세션을 제외한 모든 세션에서
+								로그아웃됩니다.</p>
+							<p>비밀번호는 6자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
+						</div>
+						<div class="now-password-box">
+							<input type="text" class="box1" placeholder="현재 비밀번호" />
+						</div>
+						<div class="new-password-box">
+							<input type="text" class="box2" placeholder="새 비밀번호" />
+						</div>
+						<div class="agian-password-box">
+							<input type="text" class="box3" placeholder="새 비밀번호 재입력" />
+						</div>
+						<div class="no-password">
+							<a href="#" class="box4">비밀번호를 잊으셨나요?</a>
+						</div>
+						<div class="changeok-btn">
+							<button type="button" class="box5" value="#">비밀번호 변경</button>
 						</div>
 					</div>
-					<div class="recent-searches">
-						<h3 class="recent-searches2">최근 검색 항목</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="goodbye-box">
+		<a href="#" class="goodbye-btn">회원탈퇴</a>
+	</div>
+	</div>
+	</div>
+
+	<!-- 여기서부터 -->
+	<!-- 사이드 바 -->
+	<div class="body-side-bar">
+		<div class="sidebar-menu">
+			<li class="sidebar-name"><a href="#">CookPang</a></li>
+
+			<ul class="sidebar-ul">
+				<li class="sidebar-li">
+					<div class="li-box">
+						<i class="fa-solid fa-house"></i> <a
+							href="${pageContext.request.contextPath}/mainOk.m">홈</a>
 					</div>
-					<div class="recent-searches-box">
+				</li>
+				<li class="sidebar-li">
+					<div class="li-box">
+						<i class="fa-solid fa-magnifying-glass"></i> <a href="#"
+							class="find2">검색</a>
+						<!-- 검색 -->
+					</div>
+				</li>
+				<li class="sidebar-li">
+					<div class="li-box">
+						<i class="fa-regular fa-heart"></i> <a href="#" class="alarmm">알림</a>
+					</div>
+				</li>
+				<li class="sidebar-li">
+					<div class="li-box">
+						<i class="fa-regular fa-square-plus"></i> <a href="#">만들기</a>
+					</div>
+				</li>
+				<li class="sidebar-li">
+					<div class="li-box">
+						<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
+					</div>
+				</li>
+				<li class="sidebar-li">
+					<div class="li-box">
+						<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+					</div>
+				</li>
+				<!-- </ul> -->
+			</ul>
+
+			<div class="btn-group">
+				<li class="sidebar-login"><c:choose>
+						<c:when test="${empty sessionScope.userNumber}">
+							<a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
+				</c:when>
+				<c:otherwise>
+					<a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
+				</c:otherwise>
+				</c:choose>
+			</div>
+
+		</div>
+		<!-- 검색 창 -->
+		<article class="sub-find">
+			<div class="search-box">
+				<div class="search-box2">
+					<h1 class="qqq">검색</h1>
+				</div>
+				<div class="search-box3">
+					<input type="text" class="find-btn" placeholder="검색" />
+				</div>
+			</div>
+			<div class="recent-searches">
+				<h3 class="recent-searches2">최근 검색 항목</h3>
+			</div>
+			<div class="recent-searches-box">
+				<div class="search-man">
+					<div class="man-left">
+						<!-- <a href="#"> -->
+						<a href="#"> <img
+							src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+							alt="#" class="man-img" /> <!-- </a> -->
+						</a>
+					</div>
+					<div class="man-right">
+						<div class="man-id">
+							<a href="#"> hot_boy </a>
+							<!-- <a href="#" class="man-id2">hot_boy</a> -->
+						</div>
+						<div class="man-name">
+							이동재
+							<!-- <a href="#" class="man-name2">이동재</a> -->
+						</div>
+					</div>
+					<div class="delete-btn">
+						<div class="delete-btn2">
+							<button class="alarm-btn">삭제</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		<!-- 검색 창 -->
+		<!-- 알림 창 -->
+		<article class="sub-find2">
+			<div class="search-box2">
+				<div class="alarm">
+					<h1 class="qqq">알림</h1>
+				</div>
+			</div>
+			<div class="alarm-box">
+				<div class="new-alarm">
+					<div>
+						<h4 class="alarm-date">이번주</h4>
+					</div>
+					<div class="boxboxbox">
 						<div class="search-man">
-							<div class="man-left">
+							<div class="man-left2">
 								<!-- <a href="#"> -->
 								<a href="#"> <img
 									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-									alt="#" class="man-img" /> <!-- </a> -->
+									alt="#" class="man-img" />
 								</a>
+								<!-- </a> -->
 							</div>
-							<div class="man-right">
-								<div class="man-id">
-									<a href="#"> hot_boy </a>
-									<!-- <a href="#" class="man-id2">hot_boy</a> -->
-								</div>
-								<div class="man-name">
-									이동재
-									<!-- <a href="#" class="man-name2">이동재</a> -->
+							<div class="alarm-right">
+								<div class="alarm-id">
+									<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+									시작했습니다.
 								</div>
 							</div>
-							<div class="delete-btn">
+							<div class="delete-btn3">
 								<div class="delete-btn2">
 									<button class="alarm-btn">삭제</button>
 								</div>
 							</div>
 						</div>
-					</div>
-				</article>
-				<!-- 검색 창 -->
-				<!-- 알림 창 -->
-				<article class="sub-find2">
-					<div class="search-box2">
-						<div class="alarm">
-							<h1 class="qqq">알림</h1>
-						</div>
-					</div>
-					<div class="alarm-box">
-						<div class="new-alarm">
-							<div>
-								<h4 class="alarm-date">이번주</h4>
+
+						<div class="search-man">
+							<div class="man-left2">
+								<!-- <a href="#"> -->
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" />
+								</a>
+								<!-- </a> -->
 							</div>
-							<div class="boxboxbox">
+							<div class="alarm-right">
+								<div class="alarm-id">
+									<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+									시작했습니다.
+								</div>
+							</div>
+							<div class="delete-btn3">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="search-man">
+							<div class="man-left2">
+								<!-- <a href="#"> -->
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" />
+								</a>
+								<!-- </a> -->
+							</div>
+							<div class="alarm-right">
+								<div class="alarm-id">
+									<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+									시작했습니다.
+								</div>
+							</div>
+							<div class="delete-btn3">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="search-man">
+							<div class="man-left2">
+								<!-- <a href="#"> -->
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" />
+								</a>
+								<!-- </a> -->
+							</div>
+							<div class="alarm-right">
+								<div class="alarm-id">
+									<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+									시작했습니다.
+								</div>
+							</div>
+							<div class="delete-btn3">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
+							</div>
+						</div>
+
+						<div class="search-man">
+							<div class="man-left2">
+								<!-- <a href="#"> -->
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" />
+								</a>
+								<!-- </a> -->
+							</div>
+							<div class="alarm-right">
+								<div class="alarm-id">
+									<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+									시작했습니다.
+								</div>
+							</div>
+							<div class="delete-btn3">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
+							</div>
+						</div>
+						<div>
+							<h4 class="alarm-date2">이번달</h4>
+						</div>
+						<div class="new-alarm2">
+							<div class="boxboxbox2">
 								<div class="search-man">
 									<div class="man-left2">
 										<!-- <a href="#"> -->
@@ -335,8 +434,8 @@
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
-											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-											시작했습니다.
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에 좋아요를
+											눌렀습니다.
 										</div>
 									</div>
 									<div class="delete-btn3">
@@ -357,8 +456,8 @@
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
-											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-											시작했습니다.
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에 좋아요를
+											눌렀습니다.
 										</div>
 									</div>
 									<div class="delete-btn3">
@@ -379,8 +478,8 @@
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
-											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-											시작했습니다.
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에 좋아요를
+											눌렀습니다.
 										</div>
 									</div>
 									<div class="delete-btn3">
@@ -401,8 +500,8 @@
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
-											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-											시작했습니다.
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에 좋아요를
+											눌렀습니다.
 										</div>
 									</div>
 									<div class="delete-btn3">
@@ -423,146 +522,35 @@
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
-											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-											시작했습니다.
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에 좋아요를
+											눌렀습니다.
 										</div>
 									</div>
 									<div class="delete-btn3">
 										<div class="delete-btn2">
 											<button class="alarm-btn">삭제</button>
-										</div>
-									</div>
-								</div>
-								<div>
-									<h4 class="alarm-date2">이번달</h4>
-								</div>
-								<div class="new-alarm2">
-									<div class="boxboxbox2">
-										<div class="search-man">
-											<div class="man-left2">
-												<!-- <a href="#"> -->
-												<a href="#"> <img
-													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-													alt="#" class="man-img" />
-												</a>
-												<!-- </a> -->
-											</div>
-											<div class="alarm-right">
-												<div class="alarm-id">
-													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
-												</div>
-											</div>
-											<div class="delete-btn3">
-												<div class="delete-btn2">
-													<button class="alarm-btn">삭제</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="search-man">
-											<div class="man-left2">
-												<!-- <a href="#"> -->
-												<a href="#"> <img
-													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-													alt="#" class="man-img" />
-												</a>
-												<!-- </a> -->
-											</div>
-											<div class="alarm-right">
-												<div class="alarm-id">
-													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
-												</div>
-											</div>
-											<div class="delete-btn3">
-												<div class="delete-btn2">
-													<button class="alarm-btn">삭제</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="search-man">
-											<div class="man-left2">
-												<!-- <a href="#"> -->
-												<a href="#"> <img
-													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-													alt="#" class="man-img" />
-												</a>
-												<!-- </a> -->
-											</div>
-											<div class="alarm-right">
-												<div class="alarm-id">
-													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
-												</div>
-											</div>
-											<div class="delete-btn3">
-												<div class="delete-btn2">
-													<button class="alarm-btn">삭제</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="search-man">
-											<div class="man-left2">
-												<!-- <a href="#"> -->
-												<a href="#"> <img
-													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-													alt="#" class="man-img" />
-												</a>
-												<!-- </a> -->
-											</div>
-											<div class="alarm-right">
-												<div class="alarm-id">
-													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
-												</div>
-											</div>
-											<div class="delete-btn3">
-												<div class="delete-btn2">
-													<button class="alarm-btn">삭제</button>
-												</div>
-											</div>
-										</div>
-
-										<div class="search-man">
-											<div class="man-left2">
-												<!-- <a href="#"> -->
-												<a href="#"> <img
-													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-													alt="#" class="man-img" />
-												</a>
-												<!-- </a> -->
-											</div>
-											<div class="alarm-right">
-												<div class="alarm-id">
-													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
-												</div>
-											</div>
-											<div class="delete-btn3">
-												<div class="delete-btn2">
-													<button class="alarm-btn">삭제</button>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</article>
-				<!-- 알림창 -->
+				</div>
 			</div>
-      </div>
+		</article>
+		<!-- 알림창 -->
+	</div>
+	</div>
 
-      <div id="main-footer"></div>
-      </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="${pageContext.request.contextPath}/assets/js/editProfile.js"></script>
-  </body>
+	<div id="main-footer"></div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/editProfile.js"></script>
+</body>
 </html>
