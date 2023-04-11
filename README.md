@@ -16,5 +16,5 @@
 2. ###  레시피에 필요한 재료들을 구매 할 수 있는 사이트
 
 ## ERD구성
-[![쿡팡 erd구성](./WebContent/assets/img/erdImg/cookpangERD.png)](https://dbdiagram.io/d/642008425758ac5f17242b13)
+[![쿡팡 erd구성](./WebContent/assets/img/erdImg/cookpnagERD2.png)](https://dbdiagram.io/d/642008425758ac5f17242b13)
 

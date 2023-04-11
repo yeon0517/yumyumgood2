@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.main.MainOkController;
+
 public class CommentFrontController extends HttpServlet{
 
 	@Override
@@ -23,7 +25,9 @@ public class CommentFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		
+		case "/comment/commentListOk.co" :
+			new CommentListOkController().execute(req, resp);
+			break;
 		}
 	}
 

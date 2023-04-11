@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
+import com.cookpang.app.comment.dao.CommentDAO;
+import com.cookpang.app.comment.vo.CommentVO;
 import com.cookpang.app.post.dao.PostDAO;
-import com.cookpang.app.post.file.dao.PostFileDAO;
-import com.cookpang.app.post.file.dto.PostFileDTO;
 import com.cookpang.app.post.read.vo.PostReadVO;
 import com.cookpang.app.recipe.category.dao.RecipeCategoryDAO;
 import com.cookpang.app.recipe.category.vo.RecipeCategoryVO;
@@ -28,20 +28,23 @@ public class PostReadOkController implements Execute {
 		
 		PostDAO postDAO = new PostDAO();
 		RecipeCategoryDAO recipeCategoryDAO = new RecipeCategoryDAO();
+		CommentDAO commentDAO = new CommentDAO();
 		
 		postDAO.updatePostViewCount(postNumber);
 		
 		PostReadVO postReadVO = postDAO.postReadDefaultInfo(postNumber);
 		List<RecipeCategoryVO> categoryList = recipeCategoryDAO.getRecipeCategories(postNumber);
-		
+		List<CommentVO> commentList = commentDAO.getCommentList(postNumber);
 		
 //		List<PostFileDTO> files = new PostFileDAO().select(postNumber);
 		
 		
 //		postReadVO.setFiles(files);
 		
+		
 		req.setAttribute("post", postReadVO);
 		req.setAttribute("categoryList", categoryList);
+//		req.setAttribute("commentList", commentList);
 		
 		req.getRequestDispatcher("/app/post/postRead.jsp").forward(req, resp);
 		

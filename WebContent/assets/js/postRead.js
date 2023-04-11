@@ -36,6 +36,77 @@ $(document).ready(function () {
   });
 });
 
+let $postingBtn = $('.comment-post-btn');
+
+
+let postNumber = $postingBtn.data("postnumber");
+
+
+commentAjax();
+
+function commentAjax(){
+   $.ajax({
+      url : '/comment/commentListOk.co',
+      type : 'get',
+      data : {postNumber : postNumber},
+      dataType : 'json',
+      success : showComment,
+	  error: (xhr, status, error) => console.log(error),
+   });
+}
+
+function showComment(comments) {
+	let text= '';
+
+  comments.forEach(comment => {
+    text +=`
+    	<li class="read-comment-box">
+											<div class="comment-writer-img-box">
+												
+												<!-- 임시 댓글 프로필사진 -->
+														<img src="https://www.thechooeok.com/common/img/default_profile.png"
+															alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
+													
+											</div>
+											<div class="comment-content-box">
+												<!-- 임시 댓글작성자 아이디 -->
+												<div class="comment-writer-id">${comment.userId}</div>
+												<div class="read-comment-content">
+													<!-- 임시 댓글 내용 -->
+													${comment.commentContent}
+													
+												</div>
+												<div class="read-comment-more">
+													<div class="comment-write-time">${comment.commentTime}</div>
+													<!--댓글번호  -->
+													<button type="button" class="comment-delete">삭제하기
+													</button>
+												</div>
+											</div>
+										</li>
+
+    `
+	$('.read-comment').html(text);
+  });
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
