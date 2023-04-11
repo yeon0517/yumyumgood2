@@ -3,7 +3,7 @@
 
 <mapper namespace="ingredient">
 	<select id="getIngredientNumber"  resultType="IngredientDTO">
-		select ingredient_number, ingredient_name from tbl_ingredient
+		select ingredient_number, ingredient_name, ingredient_category_number from tbl_ingredient
 	</select>
 </mapper>
 

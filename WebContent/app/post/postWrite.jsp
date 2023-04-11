@@ -296,7 +296,14 @@
 												<div class="ingredient-item">
 													<ul>
 														<li>
-
+															<select name="ingredientCategoryNumber" id="select">
+																	<option value="-1" selected>선택하기</option>
+																	<c:forEach var="ingredientCategory" items="${ingredientCategoryList}">
+																		<option value="${ingredientCategory.getIngredientCategoryNumber()}">
+																			<c:out value="${ingredientCategory.getIngredientCategoryName()}" />
+																		</option>
+																	</c:forEach>
+															</select>
 															<h5 class="ingredient-guide-msg  msg1">재료추가/삭제</h5>
 														</li>
 
@@ -339,12 +346,15 @@
 
 											<!-- 재료 묶음추가버튼 -->
 											<div class="item-edit-buttons">
+                        						<h5 class="ingredient-guide-msg">재료 묶음 추가</h5>
+                        							<button type="button" class="item-plus">
+                         								<i class="fa-solid fa-circle-plus"></i>
+                        							</button>
 
-
-												<button type="button" class="item-minus">
-													<i class="fa-solid fa-circle-minus"></i>
-												</button>
-											</div>
+                        							<button type="button" class="item-minus">
+                          								<i class="fa-solid fa-circle-minus"></i>
+                        							</button>
+                      						</div>
 
 										</div>
 

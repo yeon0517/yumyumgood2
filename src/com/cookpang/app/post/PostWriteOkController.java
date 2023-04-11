@@ -5,11 +5,12 @@ import java.util.Arrays;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
+import com.cookpang.app.ingredient.category.dao.IngredientCategoryDAO;
+import com.cookpang.app.ingredient.category.dto.IngredientCategoryDTO;
 import com.cookpang.app.ingredient.dto.IngredientDTO;
 import com.cookpang.app.post.dao.PostDAO;
 import com.cookpang.app.post.dto.PostDTO;
@@ -32,9 +33,13 @@ public class PostWriteOkController implements Execute {
 	      PostFileDTO postFileDTO = new PostFileDTO();
 //	      RecipeCategoryDTO recipeCategoryDTO = new RecipeCategoryDTO();
 	      RecipeCategoryDAO recipeCategoryDAO = new RecipeCategoryDAO();
-//	      IngredientDTO ingredientDTO = new IngredientDTO();
+	      IngredientDTO ingredientDTO = new IngredientDTO();
 //	      RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
 	      RecipeIngredientDAO recipeIngredientDAO = new RecipeIngredientDAO();
+	      IngredientCategoryDAO ingredientCategoryDAO = new IngredientCategoryDAO();
+	      
+	      
+	      
 	      int postNumber = 0;
 	     
 //	      ServletRequest multipartRequest;
@@ -102,8 +107,17 @@ public class PostWriteOkController implements Execute {
 	    	  recipeCategoryDAO.insertC(recipeCategoryDTO);
 	      }
 	      
+//	      
+	      String[] ingredientCategoryNumbers = Request.getParameterValues("ingredientCategoryNumber");
+	      String[] ingredientCategoryNames = Request.getParameterValues("ingredientCategoryName");
 	      
-	      
+//	      for(int i=0; i<ingredientCategoryNumbers.length; i++) {
+//	    	  String ingredientCategoryNumber = ingredientCategoryNumbers[i];
+//	    	  IngredientCategoryDTO ingredientCategoryDTO = new IngredientCategoryDTO();
+//	    	  ingredientCategoryDTO.setIngredientCategoryNumber(Integer.parseInt(ingredientCategoryNumber));
+//	    	
+//	    	  ingredientCategoryDAO.getIngredientCategoryNumber();
+//	      }
 	      
 	      
 	      Enumeration<String> fileNames = Request.getFileNames();	      
