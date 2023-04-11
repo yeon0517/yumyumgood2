@@ -55,7 +55,7 @@
 		ur.user_number = #{userNumber}
 	</select>
 
-	<update id="updateUserProfileInfo" parameterType="ProfileEditVO">
+	<update id="updateUserProfileInfo" parameterType="_int">
 		update tbl_user
 		set user_id = #{userId}, user_name = #{userName}
 		user_nickname = #{userNickname}, user_phone_number = #{userPhoneNumber},
@@ -63,6 +63,7 @@
 		= #{userSelfIntroduction}
 		where user_number = #{userNumber}
 	</update>
+	
 
 	<select id="getProfileInfo" parameterType="_int"
 		resultType="UserVO">

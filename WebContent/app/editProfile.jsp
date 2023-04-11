@@ -56,13 +56,11 @@ String myTextareaValue = request.getParameter("myTextarea");
 					<div class="body-main-body">
 
 				<form
-					action="${pageContext.request.contextPath}/user/profileEditOk.edit"
-					method="post">
+					action="${pageContext.request.contextPath}/user/profileEditUpdate.edit"
+					method="post" enctype="multipart/form-data">
 
 						<div class="picture-box">
-						<form
-								action="${pageContext.request.contextPath}/profileImage/profileImage.pr"
-								method="post" enctype="multipart/form-data">
+						
 							<div class="picture-box-left">
 
 								<div class="img-box">
@@ -77,6 +75,8 @@ String myTextareaValue = request.getParameter("myTextarea");
 							</div>
 					</form>
 			</div>
+			
+			
 			<div class="nickname-box">
 				<div class="nickname-box-left">이름</div>
 				<div class="nickname-box-right">
@@ -149,7 +149,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 			</div>
 
 			<div class="editok-box">
-				<button type="button" class="editok-btn" value="#">회원정보 수정
+				<button type="submit" class="editok-btn">회원정보 수정
 				</button>
 			</div>
 			</form>

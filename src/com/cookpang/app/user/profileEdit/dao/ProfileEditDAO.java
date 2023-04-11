@@ -3,6 +3,7 @@ package com.cookpang.app.user.profileEdit.dao;
 
 import org.apache.ibatis.session.SqlSession;
 
+
 import com.cookpang.app.user.profileEdit.vo.ProfileEditVO;
 
 import com.mybatis.config.MyBatisConfig;
@@ -13,11 +14,11 @@ public class ProfileEditDAO {
 	   public ProfileEditDAO() {
 	      sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	   }
-	   public void updateUserProfileInfo(ProfileEditVO profileEditVO) {
-		   sqlSession.update("user.updateUserProfileInfo",profileEditVO);
+	   public void updateUserProfileInfo(int userNumber) {
+		   sqlSession.update("user.updateUserProfileInfo",userNumber);
 	   }
-	   
-	   
-		   
+	 public ProfileEditVO select(int userNumber) {
+		 return sqlSession.selectOne("user.select", userNumber);
+	 }
 
 }

@@ -18,11 +18,14 @@ public class ProfileSelectController implements Execute {
 		ProfileEditVO profileVO = null;
 		HttpSession session = req.getSession();
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
-		
 
+		System.out.println(userNumber);
 		req.setCharacterEncoding("utf-8");
 
-		profileVO = userDAO.getUserProfileInfo(userNumber);
+		profileVO = userDAO.selectMemberProfileInfo(userNumber);
+		
+		System.out.println("===============()()()()()============");
+//		System.out.println(userDAO.getProfileInfo(userNumber));
 
 		req.setAttribute("profileVO", profileVO);
 

@@ -17,24 +17,24 @@ public class ProfileEditOkController implements Execute{
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 		
-		int userNumber=Integer.valueOf(req.getParameter("userNumber"));
-		ProfileEditDAO profileEditDAO = new ProfileEditDAO();
-		ProfileEditVO profileEditVO = new ProfileEditVO();
-		List<ProfileImageDTO> files = new ProfileImageDAO().select(userNumber);
-		
-		System.out.println("profileEditOk컨트롤러~~");
-		System.out.println(req.getParameter("userName"));
-		
-		profileEditDAO.updateUserProfileInfo(profileEditVO);
-		
-		
-//		profileImageDTO.setFiles(files);
-		
-		req.setAttribute("profileEditVO", profileEditVO);
-		
-		req.getRequestDispatcher("/app/mypage.jsp").forward(req, resp);
-	
-		
+//		int userNumber=Integer.valueOf(req.getParameter("userNumber"));
+//		ProfileEditDAO profileEditDAO = new ProfileEditDAO();
+//		ProfileEditVO profileEditVO = new ProfileEditVO();
+////		List<ProfileImageDTO> files = new ProfileImageDAO().select(userNumber);
+//
+//		System.out.println("profileEditOk컨트롤러~~");
+//		System.out.println(req.getParameter("userName"));
+//		
+//		profileEditDAO.updateUserProfileInfo(userNumber);
+//		
+//		
+////		profileImageDTO.setFiles(files);
+//		
+//		req.setAttribute("profileEditVO", profileEditVO);
+//		
+//		req.getRequestDispatcher("/app/mypage.jsp").forward(req, resp);
+//	
+//		
 		
 		
 	}
