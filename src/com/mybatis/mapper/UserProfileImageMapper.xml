@@ -8,13 +8,15 @@
 		where user_number = #{userNumber}
 	</select>
 	
-	<!-- <insert id="insertImg" parameterType="ProfileImageDTO">
+
+	<insert id="insertImg" parameterType="ProfileImageDTO">
 		insert into tbl_user_profile_image(user_profile_image_system_name, user_profile_original_name, user_number)
 values(#{userProfileImageSystemName}, #{userProfileOriginalName}, #{userNumber});
-	</insert> -->
+	</insert>
 	
-	
-	
+	<delete id="delete" parameterType="_int">
+  	delete from tbl_user_profile_image
+  	where user_number = #{userNumber}</delete>
 		
 </mapper>
 
