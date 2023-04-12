@@ -22,6 +22,9 @@ public class CommentDAO {
 	public void commentPosting(CommentDTO commentDTO) {
 		sqlSession.insert("comment.commentPosting", commentDTO);
 	}
+	public void deleteComment(int commentNumber) {
+		sqlSession.delete("comment.deleteComment", commentNumber);
+	}
 	
 	
 }

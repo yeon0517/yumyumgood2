@@ -22,9 +22,8 @@ public class CommentListOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 			
 		HttpSession session = req.getSession();
-		int userNumber = (int) session.getAttribute("userNumber");
+		int userNumber = (int)session.getAttribute("userNumber");
 		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
-		
 //		임시 게시물 번호 나중에 연결되면 바로 밑은 삭제, 위의 주석은 해제
 //		int postNumber = 8;
 		
@@ -43,7 +42,6 @@ public class CommentListOkController implements Execute {
 		
 		resp.setContentType("application/json; charset=utf-8");
 		PrintWriter out = resp.getWriter();
-
 		out.print(comments.toString());
 		out.close();
 		

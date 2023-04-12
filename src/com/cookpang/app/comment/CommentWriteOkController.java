@@ -16,7 +16,6 @@ public class CommentWriteOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		System.out.println("댓글작성 ajax연결완료");
 		 req.setCharacterEncoding("utf-8");
 		 
 		 CommentDTO commentDTO = new CommentDTO();
