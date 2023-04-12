@@ -23,10 +23,11 @@ public class ProfileImageFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		case "/profileImage/profileImage.pr":
-			new ProfileImageController().execute(req,resp);
-			break;
-		
+//		case "/profileImage/profileImage.pr":
+//			new ProfileImageController().execute(req,resp);
+//			break;
+	
+			
 		}
 	}
 

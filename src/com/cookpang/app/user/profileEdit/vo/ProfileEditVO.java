@@ -14,9 +14,16 @@ public class ProfileEditVO {
 	private String userEmail;
 	private String userAddress;
 	private String userSelfIntroduction;
+	private ProfileImageDTO profileImageDTO;
 	private List<ProfileImageDTO> files;
 
-	public ProfileEditVO() {}
+	@Override
+	public String toString() {
+		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
+				+ ", userNickname=" + userNickname + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
+				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userSelfIntroduction="
+				+ userSelfIntroduction + ", profileImageDTO=" + profileImageDTO + ", files=" + files + "]";
+	}
 
 	public int getUserNumber() {
 		return userNumber;
@@ -90,6 +97,14 @@ public class ProfileEditVO {
 		this.userSelfIntroduction = userSelfIntroduction;
 	}
 
+	public ProfileImageDTO getProfileImageDTO() {
+		return profileImageDTO;
+	}
+
+	public void setProfileImageDTO(ProfileImageDTO profileImageDTO) {
+		this.profileImageDTO = profileImageDTO;
+	}
+
 	public List<ProfileImageDTO> getFiles() {
 		return files;
 	}
@@ -98,15 +113,5 @@ public class ProfileEditVO {
 		this.files = files;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
-				+ ", userNickname=" + userNickname + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
-				+ ", userEmail=" + userEmail + ", userAdress=" + userAddress + ", userSelfIntroduction="
-				+ userSelfIntroduction + ", files=" + files + "]";
-	}
-	
-
-	
+	public ProfileEditVO() {}
 }

@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
+import com.cookpang.app.user.dto.UserDTO;
 import com.cookpang.app.user.profileEdit.dao.ProfileEditDAO;
 import com.cookpang.app.user.profileEdit.vo.ProfileEditVO;
-import com.cookpang.app.user.vo.UserVO;
 
 public class ProfileUpdateOkController implements Execute{
 	 @Override
@@ -18,36 +18,44 @@ public class ProfileUpdateOkController implements Execute{
 		 HttpSession session = req.getSession();
 		 ProfileEditDAO profileEditDAO = new ProfileEditDAO();
 		ProfileEditVO profileEditVO = new ProfileEditVO();
-//		UserVO userVO = new UserVO();
+		UserDTO userDTO = new UserDTO();
+		req.setCharacterEncoding("utf-8");
+
 		int userNumber=(Integer)req.getSession().getAttribute("userNumber");
 		
 		 
 		 System.out.println("Profile수정시이이이이작");
 		 System.out.println(userNumber);
 		 
-		 profileEditVO.setUserName(req.getParameter("userName"));
-		 profileEditVO.setUserNickname(req.getParameter("userNickname"));
-		 profileEditVO.setUserSelfIntroduction(req.getParameter("userSelfIntroduction"));
-		 profileEditVO.setUserPhoneNumber(req.getParameter("userPhoneNumber"));
-		 profileEditVO.setUserEmail(req.getParameter("userEmail"));		
-		 profileEditVO.setUserAddress(req.getParameter("userAddress"));
-
-//		 userVO.setUserName(req.getParameter("userName"));
-//		 userVO.setUserNickname(req.getParameter("userNickname"));
-//		 userVO.setUserSelfIntroduction(req.getParameter("userSelfIntroduction"));
-//		 userVO.setUserPhoneNumber(req.getParameter("userPhoneNumber"));
-//		 userVO.setUserEmail(req.getParameter("userEmail"));		
-//		 userVO.setUserAddress(req.getParameter("userAddress"));
-	
+		 
+		 userDTO.setUserNumber(userNumber);
+		 userDTO.setUserName(req.getParameter("userName"));
+		 userDTO.setUserNickname(req.getParameter("userNickname"));
+		 userDTO.setUserSelfIntroduction(req.getParameter("userSelfIntroduction"));
+		 userDTO.setUserPhoneNumber(req.getParameter("userPhoneNumber"));
+		 userDTO.setUserEmail(req.getParameter("userEmail"));		
+		 userDTO.setUserAddress(req.getParameter("userAddress")+req.getParameter("userAddressDetail"));
 		 
 		 
-		 profileEditDAO.updateUserProfileInfo(profileEditVO);
+		 System.out.println("++++++++");
+		 System.out.println(req.getParameter("userName"));
+		 System.out.println(req.getParameter("userNickname"));
+		 System.out.println(req.getParameter("userSelfIntroduction"));
+		 System.out.println(req.getParameter("userPhoneNumber"));
+		 System.out.println(req.getParameter("userEmail"));
+		 System.out.println(req.getParameter("userAddress")+req.getParameter("userAddressDetail"));
+		 
+		 
+		 System.out.println(userDTO);
+		 
+		 
+		 profileEditDAO.updateUserProfileInfo(userDTO);
 
 		 System.out.println("Profile수정완");
-		 System.out.println(profileEditVO);
 //		 profileEditVO.setUserNumber(2);
-		 
 		 resp.sendRedirect("/mypage/mypageOk.my");
+//		 req.getRequestDispatcher("/profileImage/profileEditUpdateImg.pr").forward(req, resp);
+//		 req.getRequestDispatcher("/mypage/mypageOk.my").forward(req, resp);
 //		resp.sendRedirect(req.getContextPath() + "/app/editProfile.jsp");	
 	 	}
 	 }
