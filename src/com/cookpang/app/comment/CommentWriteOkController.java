@@ -5,6 +5,7 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.comment.dao.CommentDAO;
@@ -20,9 +21,8 @@ public class CommentWriteOkController implements Execute {
 		 
 		 CommentDTO commentDTO = new CommentDTO();
 		 
-//		 int userNumber =Integer.valueOf(req.getParameter("postNumber")); 
-		 //연결되면 위에주석 풀고 아래 삭제
-		 int userNumber = 6672;
+		 HttpSession session = req.getSession();
+		int userNumber = (int) session.getAttribute("userNumber");
 		 
 		 int postNumer = Integer.valueOf(req.getParameter("postNumber"));
 		 String commentContent =req.getParameter("commentContent"); 

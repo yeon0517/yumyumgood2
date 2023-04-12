@@ -40,7 +40,9 @@ let $postingBtn = $('.comment-post-btn');
 
 
 let postNumber = $postingBtn.data("postnumber");
+let $postUserNumber = $(".post-user-number").val();
 
+console.log(postNumber);
 
 commentAjax();
 
@@ -80,7 +82,7 @@ function showComment(comments) {
 													<div class="comment-write-time">${comment.commentTime}</div>
 													<!--댓글번호  -->
 													`
-												if(comment.userNumber== userNumber){
+												if(comment.userNumber== userNumber || $postUserNumber ==userNumber){
 													
 											text +=
 							`<button type="button" class="comment-delete" data-number="${comment.commentNumber}"											`																																																																																																																																																																																																																																									`>삭제하기

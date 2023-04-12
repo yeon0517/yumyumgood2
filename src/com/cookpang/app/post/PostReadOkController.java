@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.comment.dao.CommentDAO;
@@ -20,11 +21,14 @@ public class PostReadOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-//		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
-//		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
+		HttpSession session = req.getSession();
+		
+		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
+		int userNumber = (int) session.getAttribute("userNumber");
+		
 		
 //		임시 게시물 번호 나중에 연결되면 바로 밑은 삭제, 위의 주석은 해제
-		int postNumber = 8;
+//		int postNumber = 8;
 		
 		PostDAO postDAO = new PostDAO();
 		RecipeCategoryDAO recipeCategoryDAO = new RecipeCategoryDAO();

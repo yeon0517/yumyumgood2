@@ -99,6 +99,7 @@
 
 						<div class="writer-id">
 							<!--작성자의 youpage로 이동  -->
+							<input type="hidden" value="${post.getUserNumber()}" class="post-user-number" >
 							<a href="" class="writer-link"> <!-- 임시 작성자 id -->
 								<h4>${post.getUserId()}</h4>
 							</a>
