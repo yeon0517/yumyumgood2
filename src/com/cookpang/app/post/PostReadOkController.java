@@ -12,6 +12,8 @@ import com.cookpang.app.Execute;
 import com.cookpang.app.comment.dao.CommentDAO;
 import com.cookpang.app.comment.vo.CommentVO;
 import com.cookpang.app.post.dao.PostDAO;
+import com.cookpang.app.post.like.dao.PostLikeDAO;
+import com.cookpang.app.post.like.dto.PostLikeDTO;
 import com.cookpang.app.post.read.vo.PostReadVO;
 import com.cookpang.app.recipe.category.dao.RecipeCategoryDAO;
 import com.cookpang.app.recipe.category.vo.RecipeCategoryVO;
@@ -23,6 +25,7 @@ public class PostReadOkController implements Execute {
 		
 		HttpSession session = req.getSession();
 		
+		boolean likeStatus = false;
 		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		int userNumber = (int) session.getAttribute("userNumber");
 		
@@ -39,15 +42,21 @@ public class PostReadOkController implements Execute {
 		PostReadVO postReadVO = postDAO.postReadDefaultInfo(postNumber);
 		List<RecipeCategoryVO> categoryList = recipeCategoryDAO.getRecipeCategories(postNumber);
 		List<CommentVO> commentList = commentDAO.getCommentList(postNumber);
-		
+		PostLikeDAO postLikeDAO = new PostLikeDAO();
+		PostLikeDTO postLikeDTO = new PostLikeDTO();
 //		List<PostFileDTO> files = new PostFileDAO().select(postNumber);
 		
+		postLikeDTO.setPostNumber(postNumber);
+		postLikeDTO.setUserNumber(userNumber);
+		
+		likeStatus = postLikeDAO.checkLike(postLikeDTO) ==null ? false : true;
 		
 //		postReadVO.setFiles(files);
 		
 		
 		req.setAttribute("post", postReadVO);
 		req.setAttribute("categoryList", categoryList);
+		req.setAttribute("likeStatus", likeStatus);
 //		req.setAttribute("commentList", commentList);
 		
 		req.getRequestDispatcher("/app/post/postRead.jsp").forward(req, resp);

@@ -14,6 +14,23 @@
 		limit 8
 	</select>
 	
+	<select id="checkLike" parameterType="PostLikeDTO" resultType="int">
+		select post_like_number 
+		from tbl_post_like tpl 
+		where post_number = #{postNumber} and user_number=  #{userNumber}
+	</select>
+	
+	<insert id="insertLike" parameterType="PostLikeDTO">
+		insert into tbl_post_like
+		(post_number, user_number)
+		values(#{postNumber}, #{userNumber})
+	</insert>
+	
+	<delete id="deleteLike" parameterType="PostLikeDTO">
+		delete from tbl_post_like
+		where post_number = #{postNumber} and user_number=  #{userNumber}
+	</delete>
+	
 </mapper>
 
 

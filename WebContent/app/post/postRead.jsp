@@ -297,15 +297,14 @@
 							<section class="reader-act-section">
 
 								<span class="like-box">
+								
 									<button class="like-btn" type="button">
 										<!-- 버튼을 누르면 색이 채워진 아이콘으로 변경 -->
-
-
 										<!-- 좋아요버튼 db, ajax분기처리 세션의 id와 해당 게시물의 번호로 검색, 
                       		  					검색결과가 있으면 색이 채워진 아이콘으로 없으면 빈 아이콘으로-->
-										<c:choose>
-											<c:when
-												test="${null eq post.getUserProfileImageSystemName()}">
+                      		  			
+                      		  			<c:choose>
+											<c:when test="${likeStatus}">
 												<i class="fa-solid fa-heart like-t js-like-btn"
 													style="color: red;"></i>
 											</c:when>
@@ -313,8 +312,10 @@
 												<i class="fa-regular fa-heart like-f js-like-btn"></i>
 											</c:otherwise>
 										</c:choose>
-
+                      		  			
+                      		  			
 									</button>
+									
 								</span> <span class="comment-btn-box">
 									<button class="comment-btn" type="button">
 										<i class="fa-regular fa-comment"></i>
@@ -329,9 +330,11 @@
 
 								<sapn class="save-box">
 								<button class="save-btn" type="button">
+								
 									<!-- 버튼을 누르면 색이 채워진 아이콘으로 변경 -->
 									<i class="fa-regular fa-bookmark save-f"></i>
 									<!-- <i class="fa-solid fa-bookmark save-t"></i> -->
+									
 								</button>
 								</sapn>
 

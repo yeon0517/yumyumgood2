@@ -46,6 +46,7 @@ console.log(postNumber);
 
 commentAjax();
 
+
 function commentAjax() {
 	$.ajax({
 		url: '/comment/commentListOk.co',
@@ -56,6 +57,7 @@ function commentAjax() {
 		error: (xhr, status, error) => console.log(error),
 	});
 }
+
 
 function showComment(comments) {
 	console.log(comments);
@@ -124,25 +126,69 @@ $('.comment-post-btn').on('click', function() {
 
 //댓글 삭제
 $('.read-comment').on('click', '.comment-delete', function(){
-   console.log('delete~~~@@@@@');
    let commentNumber = $(this).data('number');
    
-   $.ajax({
-      url : "/comment/commentDeleteOk.co",
-      type : "get",
-      data : {commentNumber : commentNumber},
-      success : function(){
-         commentAjax();
-      }
-   });
+   if (window.confirm('해당 댓글을 삭제하시겠습니까?')){
+       $.ajax({
+        url : "/comment/commentDeleteOk.co",
+        type : "get",
+        data : {commentNumber : commentNumber},
+        success : function(){
+           commentAjax();
+        }
+     });
+   }
+   else{
+   }
 });
 
 
+//게시물 좋아요
 
 
+$('.like-box').on('click','.like-btn', function(){
+	likeAjax();
+});
 
+function likeAjax() {
+	$.ajax({
+		url: '/postLike/postLikeOk.pl',
+		type: 'get',
+		data: { userNumber: userNumber, 
+					postNumber: postNumber
+				},
+		success: function(result){
+			
+			showLike(result);
+			console.log('연결성공');
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+}
 
+function showLike(result) {
+	let likeTF = result.trim();
+	console.log(likeTF);
+	
+		if(likeTF==="true"){
+	
+			$('.like-btn').html(
+			`
+			<i class="fa-solid fa-heart like-t js-like-btn"
+													style="color: red;"></i>
+			`
+ 			)
+		} else if(likeTF==="false"){
+			$('.like-btn').html(
+			`
+			<i class="fa-regular fa-heart like-f js-like-btn"></i>
+			`
+ 			)
+		}
+}
 
+/*let postLikeNumber = $('.like-btn').data('likenumber');*/
 
 
 
