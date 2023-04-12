@@ -27,7 +27,13 @@ public class ProfileImageDAO {
 		
 	}
 	
+	public void updateImg(ProfileImageDTO profileImageDTO) {
+		sqlSession.update("profileImage.updateImg",profileImageDTO);
+	}
 	
+	public void delete(ProfileImageDTO profileImageDTO) {
+		sqlSession.delete("profileImage.delete",profileImageDTO);
+	}
 	public int getSequence() {
 		return sqlSession.selectOne("profileImage.getSequence");
 		

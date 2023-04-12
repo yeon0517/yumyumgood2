@@ -17,6 +17,13 @@ values(#{userProfileImageSystemName}, #{userProfileOriginalName}, #{userNumber})
 	<delete id="delete" parameterType="_int">
   	delete from tbl_user_profile_image
   	where user_number = #{userNumber}</delete>
+  	
+  	<update id="updateImg" parameterType="ProfileImageDTO">
+  		update tbl_user_profile_image 
+  		set user_profile_image_system_name = #{userProfileImageSystemName}, 
+  		user_profile_original_name = #{userProfileOriginalName}
+  		where user_number = #{userNumber}
+  	</update>
 		
 </mapper>
 

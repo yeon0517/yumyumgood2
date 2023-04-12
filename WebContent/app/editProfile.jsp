@@ -56,7 +56,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 					<div class="body-main-body">
 
 				<form
-					action="${pageContext.request.contextPath}/user/profileEditUpdate.edit"
+					action="${pageContext.request.contextPath}/user/profileEditUpdateOK.edit"
 					method="post" enctype="multipart/form-data">
 
 						<div class="picture-box">
@@ -73,15 +73,14 @@ String myTextareaValue = request.getParameter("myTextarea");
 							<!-- <a href="#" id="uploadLink" onclick="showUploadDialog()"
 									class="change-picture">프로필 사진 바꾸기</a> -->	
 							</div>
-					</form>
 			</div>
 			
 			
 			<div class="nickname-box">
 				<div class="nickname-box-left">이름</div>
 				<div class="nickname-box-right">
-					<input type="text" class="text-box2" placeholder="이름"
-						value="${profileEditVO.getUserNickName()}" />
+					<input type="text" class="text-box2" placeholder="이름" name="UserNickname"
+						value="${profileEditVO.getUserNickname()}" />
 					<div class="text-box2-text">
 						<p>사람들이 이름, 별명 또는 비즈니스 이름 등 회원님의 알려진 이름을 사용하여 회원님의 계정을 찾을 수
 							있도록 도와주세요.</p>
@@ -93,7 +92,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 			<div class="name-box">
 				<div class="name-box-left">사용자 이름</div>
 				<div class="name-box-right">
-					<input type="text" class="text-box3" placeholder="사용자 이름"
+					<input type="text" class="text-box3" placeholder="사용자 이름" name="UserName"
 						value="${profileEditVO.getUserName()}" />
 					<div class="text-box3-text">대부분의 경우 이후 14일 동안 사용자 이름을 다시
 						poe.ntry(으)로 변경할 수 있습니다.</div>
@@ -102,9 +101,9 @@ String myTextareaValue = request.getParameter("myTextarea");
 			<div class="introduce-box">
 				<div class="introduce-box-left">소개</div>
 				<div class="introduce-box-right">
-					<textarea id="myTextarea" name="myTextarea" class="text-box4"
+					<textarea id="myTextarea" name="UserSelfIntroduction" class="text-box4"
 						maxlength="150"
-						placeholder="${profileEditVO.getUserSelfIntroduction()}">
+						placeholder="${profileEditVO.getUserSelfIntroduction()}"> 
                  <%
                  if (myTextareaValue != null && !myTextareaValue.isEmpty()) {
                  %>
@@ -126,16 +125,17 @@ String myTextareaValue = request.getParameter("myTextarea");
 			<div class="phone-number-box">
 				<div class="phone-box-left">핸드폰 번호</div>
 				<div class="phone-box-right">
-					<input type="tel" class="phone" name="phone"
-						placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-						value="${profileEditVO.getUserPhoneNumber()} " />
+					<input type="tel" class="phone" name="UserPhoneNumber"
+						placeholder="010-1234-5678"
+						value="${profileEditVO.getUserPhoneNumber()}" />
+						<!-- pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" -->
 				</div>
 			</div>
 			<div class="email-box">
 				<div class="email-box-left">이메일</div>
 				<div class="email-box-right">
 					<input type="email" class="email" name="email"
-						placeholder="example@example.com"
+						placeholder="example@example.com" name="UserEmail"
 						value="${profileEditVO.getUserEmail()}" />
 				</div>
 			</div>
@@ -143,7 +143,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 				<div class="address-box-left">주소</div>
 				<div class="address-box-right">
 					<input id="address_kakao" type="text" class="address"
-						placeholder="${profileEditVO.getUserAddress()}" /> <input
+						placeholder="${profileEditVO.getUserAddress()}" name="UserAddress"/> <input
 						type="text" class="address" placeholder=" 상세 주소" />
 				</div>
 			</div>

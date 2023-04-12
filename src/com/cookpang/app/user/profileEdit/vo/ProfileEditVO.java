@@ -8,7 +8,7 @@ public class ProfileEditVO {
 	private int userNumber;
 	private String userId;
 	private String userPassword;
-	private String userNickName;
+	private String userNickname;
 	private String userName;
 	private String userPhoneNumber;
 	private String userEmail;
@@ -42,12 +42,12 @@ public class ProfileEditVO {
 		this.userPassword = userPassword;
 	}
 
-	public String getUserNickName() {
-		return userNickName;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
 
 	public String getUserName() {
@@ -102,7 +102,7 @@ public class ProfileEditVO {
 	@Override
 	public String toString() {
 		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
-				+ ", userNickName=" + userNickName + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
+				+ ", userNickname=" + userNickname + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
 				+ ", userEmail=" + userEmail + ", userAdress=" + userAddress + ", userSelfIntroduction="
 				+ userSelfIntroduction + ", files=" + files + "]";
 	}

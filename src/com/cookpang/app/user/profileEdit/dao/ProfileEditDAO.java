@@ -14,11 +14,14 @@ public class ProfileEditDAO {
 	   public ProfileEditDAO() {
 	      sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	   }
-	   public void updateUserProfileInfo(int userNumber) {
-		   sqlSession.update("user.updateUserProfileInfo",userNumber);
+	   public void updateUserProfileInfo(ProfileEditVO profileEditVO) {
+		   sqlSession.update("user.updateUserProfileInfo",profileEditVO);
 	   }
 	 public ProfileEditVO select(int userNumber) {
 		 return sqlSession.selectOne("user.select", userNumber);
 	 }
+	 
+	 
+	 
 
 }
