@@ -16,6 +16,11 @@ $(document).ready(function() {
 	function hideAllContents() {
 		$('.js-contents').hide();
 	}
+	
+	function clickComment(){
+		hideAllContents();
+		$readCommentContainer.show();
+	}
 
 	// 재료 보기 버튼 클릭 시 재료 내용 영역을 보여주는 이벤트 핸들러 등록
 	$ingredientBtn.on('click', function() {
@@ -32,7 +37,7 @@ $(document).ready(function() {
 	// 댓글 보기 버튼 클릭 시 댓글 내용 영역을 보여주는 이벤트 핸들러 등록
 	$commentBtn.on('click', function() {
 		hideAllContents();
-		$readCommentContainer.show();
+		clickComment();
 	});
 });
 
@@ -48,15 +53,25 @@ commentAjax();
 
 
 function commentAjax() {
-	$.ajax({
-		url: '/comment/commentListOk.co',
-		type: 'get',
-		data: { postNumber: postNumber },
-		dataType: 'json',
-		success: showComment,
-		error: (xhr, status, error) => console.log(error),
-	});
+  // Promise 객체를 반환
+  return new Promise((resolve, reject) => {
+    $.ajax({
+      url: '/comment/commentListOk.co',
+      type: 'get',
+      data: { postNumber: postNumber },
+      dataType: 'json',
+      success: function(data) {
+        showComment(data);
+        resolve(); // AJAX 요청이 성공하면 resolve()를 호출
+      },
+      error: function(xhr, status, error) {
+        console.log(error);
+        reject(error); // AJAX 요청이 실패하면 reject()를 호출
+      },
+    });
+  });
 }
+
 
 
 function showComment(comments) {
@@ -101,6 +116,7 @@ function showComment(comments) {
 	});
 
 	$('.read-comment').html(text);
+	
 }
 
 
@@ -108,20 +124,28 @@ let $comment = $('.comment-input');
 
 //댓글 작성
 $('.comment-post-btn').on('click', function() {
-	$.ajax({
-		url: '/comment/commentWriteOk.co',
-		type: 'post',
-		data: {
-			postNumber: postNumber,
-			userNumber: userNumber,
-			commentContent: $('#comment-input').val()
-		},
-		success: function() {
-			commentAjax();
-			$('#comment-input').val('');
-		}
-	});
+  $.ajax({
+    url: '/comment/commentWriteOk.co',
+    type: 'post',
+    data: {
+      postNumber: postNumber,
+      userNumber: userNumber,
+      commentContent: $('#comment-input').val()
+    },
+    success: function() {
+      commentAjax().then(() => {
+        // commentAjax 함수가 완료된 후에 실행
+        $('#comment-input').val('');
+
+        $('.js-contents').hide();
+        $('.read-comment-container').show();
+      }).catch((error) => {
+        console.log('commentAjax 에러:', error);
+      });
+    }
+  });
 });
+
 
 
 //댓글 삭제
@@ -160,7 +184,6 @@ function likeAjax() {
 		success: function(result){
 			
 			showLike(result);
-			console.log('연결성공');
 		} ,
 		
 		error: (xhr, status, error) => console.log(error),
@@ -168,7 +191,10 @@ function likeAjax() {
 }
 
 function showLike(result) {
-	let likeTF = result.trim();
+	let results = result.trim().split(",");
+	let likeTF = results[0];
+	let likeCount = parseInt(results[1]);
+	
 	console.log(likeTF);
 	
 		if(likeTF==="true"){
@@ -186,10 +212,14 @@ function showLike(result) {
 			`
  			)
 		}
+		
+		$('.like-count-btn').text(likeCount);
+		
 }
 
-/*let postLikeNumber = $('.like-btn').data('likenumber');*/
-
+$('.close-btn').on('click', function(){
+	history.back();
+});
 
 
 

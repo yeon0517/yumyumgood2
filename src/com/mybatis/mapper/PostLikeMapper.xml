@@ -31,6 +31,14 @@
 		where post_number = #{postNumber} and user_number=  #{userNumber}
 	</delete>
 	
+	<select id="getLikeCount" parameterType="_int" resultType="_int">
+		select count(post_like_number)  from tbl_post_like 
+		where post_number =#{postNumber}
+	</select>
+	
+	
+	
+	
 </mapper>
 
 

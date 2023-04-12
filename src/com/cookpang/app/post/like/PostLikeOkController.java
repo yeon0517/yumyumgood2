@@ -31,11 +31,11 @@ public class PostLikeOkController implements Execute {
 //		조회 결과가 있으면 delete, 결과가 없으면 insert
 		if(postLikeDAO.checkLike(postLikeDTO)==null) {
 			postLikeDAO.insertLike(postLikeDTO);
-			out. print(true);
+			out. print(true+ "," + postLikeDAO.getLikeCount(Integer.valueOf(req.getParameter("postNumber"))));
 			System.out.println("추가");
 		}else {
 			postLikeDAO.deleteLike(postLikeDTO);
-			out. print(false);
+			out. print(false+ "," + postLikeDAO.getLikeCount(Integer.valueOf(req.getParameter("postNumber"))));
 			System.out.println("삭제");
 		}
 		

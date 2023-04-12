@@ -391,8 +391,8 @@
 
 	<button class="close-btn">
 		<!-- 이전 경로로 이동 -->
-		<a href="#"> <i class="fa-solid fa-x"></i>
-		</a>
+		 <i class="fa-solid fa-x"></i>
+		
 	</button>
 	</div>
 

@@ -22,8 +22,22 @@ public class PostLikeDAO {
 	public void deleteLike(PostLikeDTO postLikeDTO) {
 		sqlSession.delete("postLike.deleteLike", postLikeDTO);
 	}
+	public int getLikeCount(int postNumber) {
+		return sqlSession.selectOne("postLike.getLikeCount", postNumber);
+	}
 	
 	
 	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
