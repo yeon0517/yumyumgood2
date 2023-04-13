@@ -8,6 +8,16 @@
 values(#{postNumber}, #{ingredientNumber}, #{recipeIngredientTitle}, #{recipeIngredientName}, #{recipeIngredientQuantity});
 		
 	</insert>
+	
+	<select id="postPaymentIngredient" parameterType="_int" resultType="RecipeIngredientVO">
+		select  ti.ingredient_number ,ingredient_name , ingredient_smallest_unit , ingredient_price, tii.ingredient_image_system_name 
+		from tbl_ingredient ti
+		join tbl_recipe_ingredient tri on ti.ingredient_number = tri.ingredient_number
+	left join tbl_ingredient_image tii  on tii.ingredient_number = ti.ingredient_number 
+		where tri.post_number = #{postNumber} ;
+	</select>
+	
+	
 </mapper>
 
 

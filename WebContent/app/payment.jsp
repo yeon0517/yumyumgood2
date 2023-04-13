@@ -88,7 +88,7 @@
             <div class="pmt">
               <span>주문상품</span>
                 <img src="#" alt="">
-                <span>2개</span>
+                <span>여기에 주문 상품 갯수 적기</span>
              </div>
 
              <div class="amt">
@@ -99,11 +99,14 @@
                         <li class="CheckoutProductsSectionstyle">
                   <span>
                   <a class="productName" href="#">
-                    [플레이트 2종] 엔유씨 멀티 전기그릴 (스카이블루/다크그레이/다크레드)
+                  <input type="hidden" name="selectedValues">
+                  <!-- 여기는 모달창에서 선택된 체크박스의 이름을 넣어야함 -->
+                  
                   </a>
                     <ul>
                       <li>
                         <p>NMG-309K 다크그레이</p>
+                        <!-- 수량은 버튼수량 갯수를 확인 후 해야함 / 금액도...  -->
                         <p>수량 1개 / 총 59,000원</p>
                       </li>
                     </ul>

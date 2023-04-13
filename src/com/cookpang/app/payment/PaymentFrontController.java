@@ -26,7 +26,7 @@ public class PaymentFrontController extends HttpServlet{
 
 		switch(target) {
         case "/pay/paymentmo.pa" :
-            new PaymentController().execute(req, resp);
+            new PaymentMoController().execute(req, resp);
             break;
         case "/pay/paymentOkmo.pa":
             new PaymentOkController().execute(req, resp);

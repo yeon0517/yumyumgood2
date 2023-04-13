@@ -15,22 +15,7 @@ public class PaymentOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
-//		PaymentDAO paymentDAO = new PaymentDAO();
-//		PostDTO postDTO = new PostDTO();
-//		PostDTO result = null;
-//		
-//		req.setCharacterEncoding("utf-8");
-//		
-////		postDTO.setPostThumbnail(req.getParameter("postThumbnail"));
-////		postDTO.setPostTitle(req.getParameter("postTitle"));
-////		postDTO.setPostContent(req.getParameter("postContent"));
-//		
-//		result = paymentDAO.postPayment(1);
-//		
-//	
-//		req.setAttribute("profileImage", profileImage);
 
-		
 		
 		
 	}
