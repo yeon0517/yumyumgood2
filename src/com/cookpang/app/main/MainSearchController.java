@@ -12,16 +12,15 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.main.dao.MainDAO;
 import com.cookpang.app.post.vo.PostVO;
-import com.cookpang.app.user.profileEdit.vo.ProfileEditVO;
 
-public class MainOkController implements Execute {
+public class MainSearchController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		MainDAO mainDAO = new MainDAO();
+		
+		
+		
 		int total = 0;
-		
-		
-		
 		
 
 		String temp = req.getParameter("page");
@@ -42,33 +41,29 @@ public class MainOkController implements Execute {
 
 		int startPage = endPage - (pageCount - 1);
 //		staratPage는 페이지 세트 당 첫 번째 번호를 의미한다.
+		
 
-		List<PostVO> postList = null;
-
-		Integer categoryNumber = null;
-		try {
-			categoryNumber = Integer.valueOf(req.getParameter("categoryNumber"));
-		} catch (NumberFormatException e) {
-			categoryNumber = 0;
-		}
-
-//		System.out.println(categoryNumber);
-//		String postTitle;
-
-		Map<String, Integer> pageMap = new HashMap<>();
+		String postTitle= req.getParameter("keyword");
+		System.out.println(postTitle);
+		total = mainDAO.searchTotal(postTitle);
+		
+		
+		Map<String, Object> pageMap = new HashMap<>();
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
-		pageMap.put("categoryNumber", categoryNumber);
-//		pageMap.put("postTitle", postTitle);
-
-		if (categoryNumber == null || categoryNumber == 0) {
-			postList = mainDAO.postAll(pageMap);
-			total = mainDAO.getTotal();
-		} else {
-			postList = mainDAO.categoryList(pageMap);
-			total = mainDAO.categoryTotal(categoryNumber);
-		}
-
+		pageMap.put("keyword", postTitle);
+		System.out.println(pageMap);
+		
+		
+		
+		List<PostVO> postList = mainDAO.postSelect(pageMap);
+		System.out.println(postList);
+		
+		if (postTitle == "keyword") {
+			postList = mainDAO.postSelect(pageMap);
+			total = mainDAO.searchTotal(postTitle);
+		} 
+		
 		int realEndPage = (int) Math.ceil(total / (double) rowCount);
 
 		endPage = endPage > realEndPage ? realEndPage : endPage;
@@ -82,17 +77,20 @@ public class MainOkController implements Execute {
 		
 		req.setAttribute("rankTotal", rankTotal);
 //		rank
+//		System.out.println("page : "+page);
+//		System.out.println("startPage : " + startPage);
+//		System.out.println("endPage : " + endPage);
 		
 		
+		req.setAttribute("pageMap", pageMap);
 		req.setAttribute("postList", postList);
-		req.setAttribute("categoryNumber", categoryNumber);
 		req.setAttribute("page", page);
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
 		req.setAttribute("prev", prev);
 		req.setAttribute("next", next);
-
+		req.setAttribute("keyword", postTitle);
+		
 		req.getRequestDispatcher("/app/main.jsp").forward(req, resp);
-
 	}
 }
