@@ -13,6 +13,7 @@ public class PostDTO {
     private String postThumbnail;
     
     
+    
     public PostDTO() {}
 
 

@@ -15,9 +15,11 @@ public class RecipeIngredientDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
+	
+	public void insert(RecipeIngredientDTO recipeIngredientDTO) {
+		sqlSession.insert("recipeIngredient.insert", recipeIngredientDTO);
+	}
 	public List<RecipeIngredientDTO> getRecipeIngredients(int postNumber) {
 		return sqlSession.selectList("recipeIngredient.getRecipeIngredients", postNumber);
 	}
-	
-	
 }

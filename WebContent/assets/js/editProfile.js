@@ -85,25 +85,31 @@ $(function () {
 // 여기까지
 
 
+//미리보기 여기서부터 
+$('.change-picture').on('change',function(){
+	let files = this.files;
+	console.log(files);
+	let src = URL.createObjectURL(files[0]);
+	console.log(src);
+	
+	$('#img-box').html(
+		
+		`<img src= ${src} class='img-box-img'  />`
+	)
+	
+});
 
-// 이미지 선택 시 실행되는 메소드
-function onFileInputChange(e) {
-    var files = e.target.files;
-    readImages(files);
-}
 
-// 이미지 읽기 메소드
-function readImages(files) {
-    for (var i = 0; i < files.length; i++) {
-        if (files[i].type.startsWith("image/")) {
-            var reader = new FileReader();
-            reader.readAsDataURL(files[i]);
-            reader.onload = (function (theFile) {
-                return function (e) {
-                    images.push(e.target.result);
-                    updateImagePreview();
-                };
-            })(files[i]);
-        }
-}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+

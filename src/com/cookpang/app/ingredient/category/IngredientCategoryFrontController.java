@@ -1,4 +1,4 @@
-package com.cookpang.app.user.profileImage;
+package com.cookpang.app.ingredient.category;
 
 import java.io.IOException;
 
@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ProfileImageFrontController extends HttpServlet{
+public class IngredientCategoryFrontController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -23,13 +23,7 @@ public class ProfileImageFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		case "/profileImage/profileEditUpdateImg.pr" : 
-			new ProfileImageController().execute(req, resp);
-			System.out.println("프로필 이미지 업데이트");
-			break;
-			
 		
-			
 		}
 	}
 

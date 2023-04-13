@@ -8,11 +8,36 @@
 		from tbl_post tp 
 		left join tbl_post_like tpl on tpl.post_number = tp.post_number 
 		left join tbl_post_file tpf on tpf.post_number = tp.post_number 
-		where tpf.post_file_index =1
+		where tpf.post_file_index = '1'
 		group by tp.post_number, tpf.post_file_index 
 		order by count(distinct tpl.user_number) desc
 		limit 8
 	</select>
+	
+	<select id="checkLike" parameterType="PostLikeDTO" resultType="int">
+		select post_like_number 
+		from tbl_post_like tpl 
+		where post_number = #{postNumber} and user_number=  #{userNumber}
+	</select>
+	
+	<insert id="insertLike" parameterType="PostLikeDTO">
+		insert into tbl_post_like
+		(post_number, user_number)
+		values(#{postNumber}, #{userNumber})
+	</insert>
+	
+	<delete id="deleteLike" parameterType="PostLikeDTO">
+		delete from tbl_post_like
+		where post_number = #{postNumber} and user_number=  #{userNumber}
+	</delete>
+	
+	<select id="getLikeCount" parameterType="_int" resultType="_int">
+		select count(post_like_number)  from tbl_post_like 
+		where post_number =#{postNumber}
+	</select>
+	
+	
+	
 	
 </mapper>
 
