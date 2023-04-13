@@ -1,9 +1,9 @@
 package com.cookpang.app.recipe.category.dto;
 
-
 public class RecipeCategoryDTO {
 	private int postNumber;
 	private int categoryNumber;
+
 	
 	public RecipeCategoryDTO() {}
 
@@ -28,8 +28,9 @@ public class RecipeCategoryDTO {
 		return "RecipeCategoryDTO [postNumber=" + postNumber + ", categoryNumber=" + categoryNumber + "]";
 	}
 
+}
 	
 	
 	
 	
-	}
+

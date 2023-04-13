@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
 import com.cookpang.app.recipe.category.vo.RecipeCategoryVO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -15,8 +16,8 @@ public class RecipeCategoryDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public void insertC(int postNumber ) {
-		sqlSession.insert("recipeCategory.insertC", postNumber);
+	public void insertC(RecipeCategoryDTO recipeCategoryDTO ) {
+		sqlSession.insert("recipeCategory.insertC", recipeCategoryDTO);
 	}
 	
 	public List<RecipeCategoryVO> getRecipeCategories(int postNumber ) {
