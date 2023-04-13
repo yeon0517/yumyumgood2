@@ -27,7 +27,8 @@
 					<div class="main-top">
 						<div class="profile-picture">
 							<div class="img-box">
-								<a href="${profileImage.getUserProfileImageSystemName()}" alt="profile-img" class="profile-img">이미지</a>
+								<img alt="" src="/upload/${userInfo.getUserProfileImageSystemName()}" class="profile-img">
+							<!-- 	<a href="${profileImage.getUserProfileImageSystemName()}" alt="profile-img" class="profile-img">이미지</a> -->
 									</div>
 							<div class="aaa">
 								<div class="name-box">
