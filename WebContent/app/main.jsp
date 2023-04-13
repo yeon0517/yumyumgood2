@@ -271,15 +271,17 @@
 				<c:choose>
 					<c:when test="${not empty postList}">
 						<!-- 빠른 for문 -->
+						<!-- 아래 친구들을 div로 감싸고 복사해서 ajax로 사용 -->
 						<div class="aaa">
 							<c:forEach var="post" items="${postList}">
 
 
 								<div class="bbb">
 
-								<%-- ${post.getFiles()} 이미지코드에 넣기--%>
-<!-- 									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" /> -->
-									<a href="#"> <img src="/upload/${post.getPostThumbnail()}" class="main-img" />
+									<%-- ${post.getFiles()} 이미지코드에 넣기--%>
+									<!-- 									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" /> -->
+									<a href="#"> <img src="/upload/${post.getPostThumbnail()}"
+										class="main-img" />
 
 									</a>
 									<div class="text-box">
@@ -307,7 +309,8 @@
 					<p class="paging-btn">
 						<c:if test="${prev}">
 							<a
-								href="${pageContext.request.contextPath}/mainOk.m?page=${startPage - 1}&categoryNumber=${categoryNumber}">
+								href="${pageContext.request.contextPath}/mainOk.m?page=${startPage - 1}&categoryNumber=${categoryNumber}"
+								class="paging-button">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
 								alt="" class="direction">
@@ -362,7 +365,8 @@
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-solid fa-house"></i> <a href="${pageContext.request.contextPath}/mainOk.m">홈</a>
+								<i class="fa-solid fa-house"></i> <a
+									href="${pageContext.request.contextPath}/mainOk.m">홈</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
@@ -389,11 +393,22 @@
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+
+								<i class="fa-regular fa-user"></i>
+								<c:choose>
+									<c:when test="${empty sessionScope.userNumber}">
+										<a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
+									</c:otherwise>
+								</c:choose>
+
 							</div>
 						</li>
-						<!-- </ul> -->
 					</ul>
+
 
 					<div class="btn-group">
 						<li class="sidebar-login"><c:choose>
@@ -405,49 +420,89 @@
 						</c:otherwise>
 						</c:choose>
 					</div>
-					
+
+				</div>
+
+
+				<%-- <c:choose>
+						<c:when test="${not empty findUser}">
+							<div class="recent-searches-box">
+								<c:forEach var="user" items="${findUser}">
+									<div class="search-man">
+										<!-- 검색 결과를 출력하는 부분 -->
+									</div>
+								</c:forEach>
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="recent-searches-box">
+								<!-- 최근 검색 항목을 출력하는 부분 -->
+							</div>
+						</c:otherwise>
+					</c:choose> --%>
+
+				<!-- 검색 창 -->
+				<div class="userList">
+					<article class="sub-find">
+
+						<div class="search-box">
+							<div class="search-box2">
+								<h1 class="qqq">검색</h1>
+							</div>
+							<div class="search-box3">
+								<!-- 사이드바 드롭다운 추가 -->
+								<select class="drop-down" id="drop-down" name="fruits">
+									<option value="user">회원</option>
+									<option value="post">게시물</option>
+								</select> <input type="text" class="find-btn" id="find-btn" name="searchInput" placeholder="검색" />
+								<button type="button" class="search-btn">검색</button>
+								<!-- 사이드바 드롭다운 추가 -->
+							</div>
+						</div>
+						<div class="recent-searches">
+							<h3 class="recent-searches2">검색 항목</h3>
+						</div>
+
+
+
+						<div class="recent-searches-box">
+<!-- ======================================== -->
+							<%-- <div class="search-man">
+								<div class="man-left">
+									<!-- <a href="#"> -->
+									<a href="#"> <img
+										src="${user.getUserProfileImageSystemName }" alt="#"
+										class="man-img" /> <!-- </a> -->
+									</a>
+								</div>
+								<div class="man-right">
+									<div class="man-id">
+										<a href="#"> ${user.getUserNicname} </a>
+										<!-- <a href="#" class="man-id2">hot_boy</a> -->
+									</div>
+									<div class="man-name">
+										${user.getUserName}
+										<!-- <a href="#" class="man-name2">이동재</a> -->
+									</div>
+								</div>
+								<div class="delete-btn">
+									<div class="delete-btn2">
+										<!-- <button class="alarm-btn">삭제</button> -->
+									</div>
+								</div>
+							</div> --%>
+<!-- ======================================== -->
+
+						</div>
+
+
+
+					</article>
 				</div>
 				<!-- 검색 창 -->
-				<article class="sub-find">
-					<div class="search-box">
-						<div class="search-box2">
-							<h1 class="qqq">검색</h1>
-						</div>
-						<div class="search-box3">
-							<input type="text" class="find-btn" placeholder="검색" />
-						</div>
-					</div>
-					<div class="recent-searches">
-						<h3 class="recent-searches2">최근 검색 항목</h3>
-					</div>
-					<div class="recent-searches-box">
-						<div class="search-man">
-							<div class="man-left">
-								<!-- <a href="#"> -->
-								<a href="#"> <img
-									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-									alt="#" class="man-img" /> <!-- </a> -->
-								</a>
-							</div>
-							<div class="man-right">
-								<div class="man-id">
-									<a href="#"> hot_boy </a>
-									<!-- <a href="#" class="man-id2">hot_boy</a> -->
-								</div>
-								<div class="man-name">
-									이동재
-									<!-- <a href="#" class="man-name2">이동재</a> -->
-								</div>
-							</div>
-							<div class="delete-btn">
-								<div class="delete-btn2">
-									<button class="alarm-btn">삭제</button>
-								</div>
-							</div>
-						</div>
-					</div>
-				</article>
-				<!-- 검색 창 -->
+
+
+
 				<!-- 알림 창 -->
 				<article class="sub-find2">
 					<div class="search-box2">

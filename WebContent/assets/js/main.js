@@ -2,53 +2,239 @@
 // 검색창
 let $search = $(".find2");
 $search.click(() => {
-  console.log("click");
+	console.log("click");
 
-  $(".sub-find").toggleClass("sub-find__close");
-  // $(".sub-find").stop().animate({ left: "toggle" });
+	$(".sub-find").toggleClass("sub-find__close");
+	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
-$(function () {
-  $(".left_sub_menu").hide();
-  $(".has_sub").click(function () {
-    $(".left_sub_menu").fadeToggle(300);
-  });
-  // 왼쪽메뉴 드롭다운
-  $(".sub_menu ul.small_menu").hide();
-  $(".sub_menu ul.big_menu").click(function () {
-    $("ul", this).slideToggle(300);
-  });
-  // 외부 클릭 시 좌측 사이드 메뉴 숨기기
-  $(".overlay").on("click", function () {
-    $(".left_sub_menu").fadeOut();
-    $(".hide_sidemenu").fadeIn();
-  });
+$(function() {
+	$(".left_sub_menu").hide();
+	$(".has_sub").click(function() {
+		$(".left_sub_menu").fadeToggle(300);
+	});
+	// 왼쪽메뉴 드롭다운
+	$(".sub_menu ul.small_menu").hide();
+	$(".sub_menu ul.big_menu").click(function() {
+		$("ul", this).slideToggle(300);
+	});
+	// 외부 클릭 시 좌측 사이드 메뉴 숨기기
+	$(".overlay").on("click", function() {
+		$(".left_sub_menu").fadeOut();
+		$(".hide_sidemenu").fadeIn();
+	});
 });
 
 // 알림창
 let $search2 = $(".alarmm");
 $search2.click(() => {
-  console.log("click");
+	console.log("click");
 
-  $(".sub-find2").toggleClass("sub-find2__close");
-  // $(".sub-find").stop().animate({ left: "toggle" });
+	$(".sub-find2").toggleClass("sub-find2__close");
+	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
-$(function () {
-  $(".left_sub_menu").hide();
-  $(".has_sub").click(function () {
-    $(".left_sub_menu").fadeToggle(300);
-  });
-  // 왼쪽메뉴 드롭다운
-  $(".sub_menu ul.small_menu").hide();
-  $(".sub_menu ul.big_menu").click(function () {
-    $("ul", this).slideToggle(300);
-  });
-  // 외부 클릭 시 좌측 사이드 메뉴 숨기기
-  $(".overlay").on("click", function () {
-    $(".left_sub_menu").fadeOut();
-    $(".hide_sidemenu").fadeIn();
-  });
+$(function() {
+	$(".left_sub_menu").hide();
+	$(".has_sub").click(function() {
+		$(".left_sub_menu").fadeToggle(300);
+	});
+	// 왼쪽메뉴 드롭다운
+	$(".sub_menu ul.small_menu").hide();
+	$(".sub_menu ul.big_menu").click(function() {
+		$("ul", this).slideToggle(300);
+	});
+	// 외부 클릭 시 좌측 사이드 메뉴 숨기기
+	$(".overlay").on("click", function() {
+		$(".left_sub_menu").fadeOut();
+		$(".hide_sidemenu").fadeIn();
+	});
 });
 
 // 여기까지
+
+// ================================================검색 Ajax==================================================== //
+function showUserList(result) {
+	$(".userList").html('');
+	for (let i = 0; i < result.list.length; i++) {
+
+
+
+		if (result.list[i].snsNumber == 0) {
+			$('.userList').html(`<div>
+									<h1>검색기록 없음!</h1>
+								</div>`
+			);
+		}
+		/*else {
+
+			if (i >= 1) {
+				$('.userList').append(`	<div class="post-section">`)
+			}
+*/
+		$('.userList').append(`
+		
+							
+							
+							<div class="post-part">
+								<input class="snsNumber" type="hidden"
+									value="${result.list[i].snsNumber}"> 
+									<img class="post-image" src="/assets/img/SNSPage/03.jpg" />
+								<div class="post-info">
+									<div class="post-name-box">
+										<span class="post-name"> 
+										${result.list[i].snsTitle}
+										</span>
+									</div>
+									<div class="date-like-wrap">
+										<div class="post-date-box">
+											<span class="post-date"> 
+											${result.list[i].snsDate}
+											</span>
+										</div>
+										<div class="post-like-cnt-box">
+											<span class="heart">♥</span> <span class="like-cnt"> 
+											${result.list[i].likeCnt}
+											</span>
+										</div>
+										<div class="post-view-cnt-box">
+											<span class="material-symbols-outlined"> visibility </span> <span
+												class="view-cnt"> 
+												${result.list[i].snsViewCnt}
+											</span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+		`);
+
+
+
+		/*}*/
+
+
+	}
+
+}
+
+
+
+
+/*function searchUser() {
+  // 검색어 가져오기
+  var findUser = document.getElementById("search-input").value;
+  if (findUser.trim() == "") return;*/
+
+
+/*let findUrl = '';*/
+$('.search-btn').on('click', function() {
+	let searchCate = $('.drop-down').val();
+
+	if (searchCate == 'user') {
+		$.ajax({
+			url: '/mainAjaxOk.m',
+			type: 'get',
+			data: { input: $('.find-btn').val().trim() },
+			dataType: 'json',
+			success: function(result) {
+				console.log(result);
+				addUserInfo(result);
+				//$('.find-btn').val('');
+			},
+			error: function(a, b, c) {
+				console.log(c);
+			}
+		});
+	} else {
+		findPost($('.find-btn').val().trim());
+	}
+});
+// ================================================검색 Ajax==================================================== //
+
+function findPost(keyword) {
+	let form = document.createElement('form');
+	form.setAttribute('charset', 'utf-8');
+	form.setAttribute('method', 'get');
+	form.setAttribute('action', '/mainSearch.m');
+
+	var hiddenField = document.createElement("input");
+	hiddenField.setAttribute("type", "hidden");
+	hiddenField.setAttribute("name", "keyword");
+	hiddenField.setAttribute("value", keyword);
+	form.appendChild(hiddenField);
+	
+	document.body.appendChild(form);
+	form.submit();
+}
+
+/* $( document ).ready( function() {
+    var hClass = $( 'h1' ).attr( 'class' );
+    $( 'span' ).text( hClass );
+   } );
+*/
+/*온클릭 속성을 삭제*/
+/*$("").removeAttr("onclick"); 
+*/
+/*온클릭 속성을 다시 부여*/
+/*$("").attr("onclick", 주소?)
+
+속성값 추가
+$$( '.direction' ).attr( href, '${pageContext.request.contextPath}/mainSearch.m?page=${startPage - 1}' );
+
+$('.content').hide();*/
+/*클릭 이벤트*/
+
+$('.search-btn').click(function(){
+  $( '.paging-button' ).attr( 'href', '${pageContext.request.contextPath}/mainSearch.m?page=${startPage - 1}' );
+});
+
+
+
+function addUserInfo(result) {
+	
+	
+	let text = '';
+
+	result.forEach(info => {
+		text += `
+			<div class="search-man">
+				<div class="man-left">
+					<a href="#"> <img
+						src="" alt="#"
+						class="man-img" /> <!-- </a> -->
+					</a>
+				</div>
+				<div class="man-right">
+					<div class="man-id">
+						<a href="#"> ${info.userNickName} </a>
+						<!-- <a href="#" class="man-id2">hot_boy</a> -->
+					</div>
+					<div class="man-name">
+						${info.userName}
+					</div>
+				</div>
+				
+			</div>
+		`;
+	});
+
+	$('.recent-searches-box').html(text);
+}
+
+
+/* 검색한 회원 옆에 삭제 버튼 마지막 </div> 바로 위에 복사
+<div class="delete-btn">
+					<div class="delete-btn2">
+						<button class="alarm-btn">삭제</button>
+					</div>
+				</div>*/
+
+
+
+
+
+
+
+
+
