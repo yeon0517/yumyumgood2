@@ -7,22 +7,21 @@ import com.cookpang.app.post.file.dto.PostFileDTO;
 
 public class PostReadVO {
 	private int postNumber;
-	private String postTitle;
-	private String postContent;
-	private String postDate;
-	private int postViewCount;
-	private int userNumber;
-	private String userId;
-	private List<PostFileDTO>files;
+    private String postTitle;
+    private String postContent;
+    private String postDate;
+    private int postViewCount;
+    private int userNumber;
+    private String userNickName;
+    private List<PostFileDTO> files; 
+    private int categoryNumber;
+    private String userId;
+    private String postThumbnail;
+    private String postRecipeContent;
+    private String userProfileImageSystemName;
+    private int postLikeCount;
 	
 	public PostReadVO(){}
-
-	@Override
-	public String toString() {
-		return "PostReadVO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
-				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber
-				+ ", userId=" + userId + ", files=" + files + "]";
-	}
 
 	public int getPostNumber() {
 		return postNumber;
@@ -72,12 +71,12 @@ public class PostReadVO {
 		this.userNumber = userNumber;
 	}
 
-	public String getUserId() {
-		return userId;
+	public String getUserNickName() {
+		return userNickName;
 	}
 
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserNickName(String userNickName) {
+		this.userNickName = userNickName;
 	}
 
 	public List<PostFileDTO> getFiles() {
@@ -87,6 +86,65 @@ public class PostReadVO {
 	public void setFiles(List<PostFileDTO> files) {
 		this.files = files;
 	}
+
+	public int getCategoryNumber() {
+		return categoryNumber;
+	}
+
+	public void setCategoryNumber(int categoryNumber) {
+		this.categoryNumber = categoryNumber;
+	}
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getPostThumbnail() {
+		return postThumbnail;
+	}
+
+	public void setPostThumbnail(String postThumbnail) {
+		this.postThumbnail = postThumbnail;
+	}
+
+	public String getPostRecipeContent() {
+		return postRecipeContent;
+	}
+
+	public void setPostRecipeContent(String postRecipeContent) {
+		this.postRecipeContent = postRecipeContent;
+	}
+
+	public String getUserProfileImageSystemName() {
+		return userProfileImageSystemName;
+	}
+
+	public void setUserProfileImageSystemName(String userProfileImageSystemName) {
+		this.userProfileImageSystemName = userProfileImageSystemName;
+	}
+
+	public int getPostLikeCount() {
+		return postLikeCount;
+	}
+
+	public void setPostLikeCount(int postLikeCount) {
+		this.postLikeCount = postLikeCount;
+	}
+
+	@Override
+	public String toString() {
+		return "PostReadVO [postNumber=" + postNumber + ", postTitle=" + postTitle + ", postContent=" + postContent
+				+ ", postDate=" + postDate + ", postViewCount=" + postViewCount + ", userNumber=" + userNumber
+				+ ", userNickName=" + userNickName + ", files=" + files + ", categoryNumber=" + categoryNumber
+				+ ", userId=" + userId + ", postThumbnail=" + postThumbnail + ", postRecipeContent=" + postRecipeContent
+				+ ", userProfileImageSystemName=" + userProfileImageSystemName + ", postLikeCount=" + postLikeCount
+				+ "]";
+	}
+
 	
 	
 }

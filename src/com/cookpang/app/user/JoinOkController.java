@@ -29,7 +29,7 @@ public class JoinOkController implements Execute {
 		userDTO.setUserId(req.getParameter("userId"));
 		userDTO.setUserPassword(req.getParameter("userPassword"));
 		userDTO.setUserName(req.getParameter("userName"));
-		userDTO.setUserNickName(req.getParameter("userNickName"));
+		userDTO.setUserNickname(req.getParameter("userNickName"));
 		userDTO.setUserPhoneNumber(req.getParameter("userPhoneNumber"));
 		userDTO.setUserEmail(req.getParameter("userEmail"));
 		userDTO.setUserAddress(userAddress);

@@ -4,8 +4,8 @@ public class RecipeCategoryDTO {
 	private int postNumber;
 	private int categoryNumber;
 
-	public RecipeCategoryDTO() {
-	}
+	
+	public RecipeCategoryDTO() {}
 
 	public int getPostNumber() {
 		return postNumber;
@@ -29,3 +29,8 @@ public class RecipeCategoryDTO {
 	}
 
 }
+	
+	
+	
+	
+

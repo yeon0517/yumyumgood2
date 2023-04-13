@@ -3,10 +3,23 @@
 
 <mapper namespace="recipeCategory">
 	<insert id="insertC" parameterType="RecipeCategoryDTO">
-		insert into tbl_recipe_category
-(post_number, category_number)
-values(#{postNumber}, #{categoryNumber});
+		insert into tbl_recipe_category (post_number, category_number)
+		 values(#{postNumber}, #{categoryNumber})
 	</insert>
+	
+	<select id="getRecipeCategories" parameterType="_int" resultType="RecipeCategoryVO">
+		select ca.category_name 
+		from tbl_category ca
+		join tbl_recipe_category rc
+		on ca.category_number = rc.category_number 
+		where rc.post_number = #{postNumber}
+	</select>
+	
+	
+	
+	
+	
+	
 		
 </mapper>
 

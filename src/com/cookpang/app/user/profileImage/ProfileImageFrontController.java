@@ -23,7 +23,13 @@ public class ProfileImageFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
+		case "/profileImage/profileEditUpdateImg.pr" : 
+			new ProfileImageController().execute(req, resp);
+			System.out.println("프로필 이미지 업데이트");
+			break;
+			
 		
+			
 		}
 	}
 

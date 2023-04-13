@@ -7,13 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.user.profileImage.ProfileImageController;
+
 public class ProfileEditFrontController extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		doProcess(req, resp);   
-		 
+		
 	}
 
 
@@ -30,14 +32,25 @@ public class ProfileEditFrontController extends HttpServlet{
 		switch(target) {
 		case "/user/profileEdit.edit" : 
 			new ProfileSelectController().execute(req, resp);
-			System.out.println("target");
+			System.out.println("프로필 편집 불러오기 ");
 			break;
 			
-		case "/user/profileEditOk.edit" : 
-			new ProfileEditOkController().execute(req, resp);
-			System.out.println("target");
-			break;
+//		case "/user/profileEditUpdate.edit" : 
+//			new ProfileUpdateController().execute(req, resp);
+//			System.out.println("프로필 업데이트");
+//			break;
+//		case "/user/profileEditUpdateOK.edit" : 
+//			new ProfileUpdateOkController().execute(req, resp);
+//			System.out.println("프로필 업데이트Ok");
+//			break;
+//		case "/profileImage/profileEditUpdateImg.pr" : 
+//			new ProfileImageController().execute(req, resp);
+//			System.out.println("프로필 이미지 업데이트");
+//			break;
 
+			
+			
+		
 		}
 	}
 }

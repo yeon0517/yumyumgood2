@@ -84,3 +84,32 @@ $(function () {
 
 // 여기까지
 
+
+//미리보기 여기서부터 
+$('.change-picture').on('change',function(){
+	let files = this.files;
+	console.log(files);
+	let src = URL.createObjectURL(files[0]);
+	console.log(src);
+	
+	$('#img-box').html(
+		
+		`<img src= ${src} class='img-box-img'  />`
+	)
+	
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

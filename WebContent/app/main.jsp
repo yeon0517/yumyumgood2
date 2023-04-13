@@ -276,15 +276,15 @@
 
 
 								<div class="bbb">
-
+																								
 								<%-- ${post.getFiles()} 이미지코드에 넣기--%>
 <!-- 									<a href="#"> <img src="https://img.insight.co.kr/static/2023/02/24/700/img_20230224130814_f2w78110.webp" class="main-img" /> -->
-									<a href="#"> <img src="/upload/${post.getPostThumbnail()}" class="main-img" />
+									<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}"> <img src="/upload/${post.getPostThumbnail()}" alt="${post.getPostThumbnail()}" class="main-img" />
 
 									</a>
 									<div class="text-box">
-										<a href="#" class="text-nick">${post.getUserNickName()}</a><br>
-										<a href="#" class="text-title">${post.getPostTitle()}</a>
+										<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}" class="text-nick">${post.getUserNickName()}</a><br>
+										<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}" class="text-title">${post.getPostTitle()}</a>
 									</div>
 								</div>
 
@@ -387,12 +387,21 @@
 								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
 							</div>
 						</li>
-						<li class="sidebar-li">
+				<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+
+								<i class="fa-regular fa-user"></i> 
+						<c:choose>
+							 	<c:when test="${empty sessionScope.userNumber}">
+							 	<a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
+							</c:when> 
+								<c:otherwise>
+								<a href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
+								</c:otherwise>
+					</c:choose>
+
 							</div>
 						</li>
-						<!-- </ul> -->
 					</ul>
 
 					<div class="btn-group">

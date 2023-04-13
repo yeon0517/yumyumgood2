@@ -72,11 +72,16 @@ public class PostWriteOkController implements Execute {
 //	      postDTO.setPostDate(multipartRequest.getParameter("postDate"));
 	      postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 //	      postDTO.setPostViewCount((Integer)req.getSession().getAttribute("postViewCount"));
-//	      recipeIngredientDTO.setRecipeIngredientName(multipartRequest.getParameterValues("ingredientName"));
-//	      recipeIngredientDTO.setRecipeIngredientQuantity(multipartRequest.getParameterValues("ingredientQuantity"));
-	     
-//	      recipeCategoryDTO.setCategoryName(multipartRequest.getParameterValues("categorys"));
 
+	    
+			/*
+			 * recipeIngredientDTO.setRecipeIngredientTitle(multipartRequest.
+			 * getParameterValues("ingredientTitle"));
+			 * recipeIngredientDTO.setRecipeIngredientName(multipartRequest.
+			 * getParameterValues("ingredientName"));
+			 * recipeIngredientDTO.setRecipeIngredientQuantity(multipartRequest.
+			 * getParameterValues("ingredientQuantity"));
+			 */
 	      
 	      
 	      postDAO.insert(postDTO);

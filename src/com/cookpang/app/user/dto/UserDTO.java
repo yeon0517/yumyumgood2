@@ -4,7 +4,7 @@ public class UserDTO {
 	private int userNumber;
 	private String userId;
 	private String userPassword;
-	private String userNickName;
+	private String userNickname;
 	private String userName;
 	private String userBirth;
 	private String userPhoneNumber;
@@ -21,7 +21,7 @@ public class UserDTO {
 	@Override
 	public String toString() {
 		return "UserDTO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
-				+ ", userNickName=" + userNickName + ", userName=" + userName + ", userBirth=" + userBirth
+				+ ", userNickname=" + userNickname + ", userName=" + userName + ", userBirth=" + userBirth
 				+ ", userPhoneNumber=" + userPhoneNumber + ", userEmail=" + userEmail + ", userStatus=" + userStatus
 				+ ", userAddress=" + userAddress + ", userSelfIntroduction=" + userSelfIntroduction + ", userGender="
 				+ userGender + "]";
@@ -52,12 +52,12 @@ public class UserDTO {
 		this.userPassword = userPassword;
 	}
 
-	public String getUserNickName() {
-		return userNickName;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
 
 	public String getUserName() {

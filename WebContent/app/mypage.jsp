@@ -27,14 +27,13 @@
 					<div class="main-top">
 						<div class="profile-picture">
 							<div class="img-box">
-								<img
-									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR04JlroqrWnZpJunUNp4esFmT_qjuYd9WKoh0Lvj0&s"
-									alt="profile-img" class="profile-img" />
-							</div>
+								<img alt="" src="/upload/${userInfo.getUserProfileImageSystemName()}" class="profile-img">
+							<!-- 	<a href="${profileImage.getUserProfileImageSystemName()}" alt="profile-img" class="profile-img">이미지</a> -->
+									</div>
 							<div class="aaa">
 								<div class="name-box">
 									<div class="nickname-box">
-										<div class="nickname">hunbar_nom12</div>
+										<div class="nickname">${userInfo.getUserId()}</div>
 									</div>
 
 									<div class="profile-btn">
@@ -50,14 +49,14 @@
 										<div class="post">
 											게시물
 											<!-- 디비처리 숫자가 늘어나용>< -->
-											<span class="cnt"> 6</span>
+											<span class="cnt"> ${userInfo.getPostCount()}</span>
 										</div>
 									</div>
 									<!-- 팔로워 모달창 시작-->
 									<div class="follower-cnt">
 										<!-- 모달 열기 버튼 -->
 										<a class="follower" onclick="openModal()">팔로워 <!-- 디비처리 숫자가 늘어나용>< -->
-											<span class="cnt">1.7만</span>
+											<span class="cnt">${userInfo.getFollowersCount()}</span>
 										</a>
 									</div>
 
@@ -171,7 +170,7 @@
 									<!-- 팔로잉 모달창 시작 -->
 									<div class="following-cnt">
 										<a class="following" onclick="openModal2()">팔로잉 <!-- 디비처리 숫자가 늘어나용>< -->
-											<span class="cnt">30</span>
+											<span class="cnt">${userInfo.getFollowingCount()}</span>
 										</a>
 									</div>
 
@@ -283,13 +282,11 @@
 									<!-- 팔로잉 모달창 끝 -->
 								</div>
 								<div class="real-name">
-									<div class="name">훈이</div>
+									<div class="name">${userInfo.getUserNickName()}</div>
 								</div>
 								<div class="introduce">
 									<!-- db에서 조회해야한다. -->
-									<div class="introduce-txt">안녕 내이름은 이훈이 자신있는 사람은 얼마든지
-										들어와라ㅋㅋㅋ 먹bread는 긴장해라ㅋ #술 #담배 #일탈 #11 #12 #13 #333380398293 #카뱅
-										#입금해라ㅋ</div>
+									<div class="introduce-txt">${userInfo.getUserSelfIntroduction()}</div>
 								</div>
 							</div>
 
@@ -620,11 +617,22 @@
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-user"></i> <a href="#">프로필</a>
+
+								<i class="fa-regular fa-user"></i> 
+						<c:choose>
+							 	<c:when test="${empty sessionScope.userNumber}">
+							 	<a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
+							</c:when> 
+								<c:otherwise>
+								<a href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
+								</c:otherwise>
+					</c:choose>
+
 							</div>
 						</li>
-						<!-- </ul> -->
 					</ul>
+
+					
 
 					<div class="btn-group">
 						<li class="sidebar-login"><c:choose>
