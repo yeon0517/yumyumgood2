@@ -37,15 +37,18 @@
 				<div class="read-imgs-container">
 
 					<ul class="read-imgs">
+					
+						<c:forEach var="postFile" items="${postFileList}">
+							<li>
+								<div class="read-img-box">
+									<!-- 임시 이미지 -->
+									<img
+										src="${pageContext.request.contextPath}/upload/${postFile.getPostFileSystemName()}"
+										alt="게시물 사진" class="read-img">
+								</div>
+							</li>
 
-						<li>
-							<div class="read-img-box">
-								<!-- 임시 이미지 -->
-								<img
-									src="https://static.wtable.co.kr/image/production/service/recipe/1739/6692f01e-191c-4072-9481-43e6530bbcf8.jpg?size=1024x1024"
-									alt="" class="read-img">
-							</div>
-						</li>
+						</c:forEach>
 
 					</ul>
 
@@ -163,7 +166,7 @@
 										<li class="ingredient-info">
 											<div class="ingredient-name">
 												<!-- 임시 재료 이름 -->
-												${ingredient.getRecipeIngredientName()}
+												${ingredient.getIngredientName()}
 											</div>
 
 											<div class="ingredient-quantity">
