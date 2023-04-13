@@ -77,9 +77,9 @@ public class MainSearchController implements Execute {
 		
 		req.setAttribute("rankTotal", rankTotal);
 //		rank
-		System.out.println("page : "+page);
-		System.out.println("startPage : " + startPage);
-		System.out.println("endPage : " + endPage);
+//		System.out.println("page : "+page);
+//		System.out.println("startPage : " + startPage);
+//		System.out.println("endPage : " + endPage);
 		
 		
 		req.setAttribute("pageMap", pageMap);
@@ -89,6 +89,7 @@ public class MainSearchController implements Execute {
 		req.setAttribute("endPage", endPage);
 		req.setAttribute("prev", prev);
 		req.setAttribute("next", next);
+		req.setAttribute("keyword", postTitle);
 		
 		req.getRequestDispatcher("/app/main.jsp").forward(req, resp);
 	}
