@@ -3,57 +3,69 @@
 
 <mapper namespace="post">
 	<select id="postAll" resultType="PostVO" parameterType="map">
-		select tp.post_number, tp.user_number, post_title, tu.user_nickname, 
+		select
+		tp.post_number, tp.user_number, post_title, tu.user_nickname,
 		tpf.post_file_index, tp.post_date, tp.post_thumbnail
 		from tbl_post tp
 		left outer join tbl_user tu on tp.user_number = tu.user_number
-		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
-		order by tp.post_date  desc
+		left
+		outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		order
+		by tp.post_date desc
 		limit #{startRow}, #{rowCount}
 	</select>
-			
-	
+
+
 
 	<select id="getTotal" resultType="_int">
-		select count(post_number) from tbl_post
+		select count(post_number) from
+		tbl_post
 	</select>
-	
-	
+
+
 
 	<insert id="insert" parameterType="PostDTO">
 		insert tbl_post
-		(post_title, post_content, post_view_count, user_number, post_recipe_content)
-		values(#{postTitle}, #{postContent}, #{postViewCount}, #{userNumber}, #{postRecipeContent})
+		(post_title,
+		post_content, post_view_count, user_number, post_recipe_content)
+		values(#{postTitle}, #{postContent}, #{postViewCount}, #{userNumber},
+		#{postRecipeContent})
 	</insert>
-		
-	
-	
+
+
+
 
 	<select id="getSequence" resultType="_int">
 		select last_insert_id()
 	</select>
-	
-	 <select id="select" parameterType="_int" resultType="PostReadVO">
+
+	<select id="select" parameterType="_int" resultType="PostReadVO">
 		select
 		post_number , post_title , post_content ,
-		post_date , post_view_count , u.user_number, u.user_id
+		post_date , post_view_count ,
+		u.user_number, u.user_id
 		from tbl_user u join tbl_post p
-		on post_number = #{postNumber} and u.user_number = p.user_number
+		on post_number
+		= #{postNumber} and u.user_number = p.user_number
 	</select> 
 	
 	<update id="updatePostViewCount" parameterType="_int">
 		update tbl_post
-		set post_view_count = post_view_count + 1
+		set
+		post_view_count = post_view_count + 1
 		where post_number = #{postNumber}
 	</update>
-	
+
 	<delete id="delete" parameterType="_int">
-		delete from tbl_post where post_number = #{postNumber}
+		delete from tbl_post where
+		post_number = #{postNumber}
 	</delete>
-	
+
 	<update id="update" parameterType="PostDTO">
 		update tbl_post
-		set post_title = #{postTitle}, post_content = #{postContent}, post_recipe_content = #{postRecipeContent}
+		set post_title
+		= #{postTitle}, post_content = #{postContent}, post_recipe_content =
+		#{postRecipeContent}
 		where post_number = #{postNumber}
 	</update>
 	
@@ -73,7 +85,26 @@
 	</select>	
 	
 
+	<select id="postSelect" parameterType="map" resultType="PostVO">
+		select tp.post_number, tp.user_number, post_title, tu.user_nickname,
+		tpf.post_file_index, tp.post_date, tp.post_thumbnail
+		from tbl_post tp
+		left outer join tbl_user tu on tp.user_number = tu.user_number
+		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		where tpf.post_file_index = '1' and tp.post_title like concat('%' , #{keyword} , '%')
+		order by tp.post_date desc
+		limit #{startRow} , #{rowCount}
+	</select>
 
+	<select id="searchTotal" parameterType="string" resultType="_int">
+		select count(tp.post_number)
+		from tbl_post tp
+		left outer join tbl_user tu on tp.user_number = tu.user_number
+		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		where tpf.post_file_index = '1' and tp.post_title like concat('%' , #{keyword} , '%')
+	</select>
+
+ 
 </mapper>
 
 

@@ -6,7 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.post.vo.PostVO;
-import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
+import com.cookpang.app.userList.vo.UserListVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class MainDAO {
@@ -37,6 +37,19 @@ public SqlSession sqlSession;
 	public List<PostVO> rankTotal(){
 		return sqlSession.selectList("postLike.rankTotal");
 		
+	}
+	
+	
+	public List<UserListVO> findUser(String searchUser) {
+		return sqlSession.selectList("user.findUser", searchUser);
+	}
+	
+	public List<PostVO> postSelect(Map<String, Object> postTitle){
+		return sqlSession.selectList("post.postSelect", postTitle);
+	}
+	
+	public int searchTotal(String keyword) {
+		return sqlSession.selectOne("post.searchTotal", keyword);
 	}
 	
 }
