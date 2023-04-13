@@ -83,7 +83,9 @@ function showComment(comments) {
     	<li class="read-comment-box">
 											<div class="comment-writer-img-box">
 												
-												<!-- 임시 댓글 프로필사진 -->
+												<!-- 임시 댓글 프로필사진 -->`
+												if(${comment.})
+												`
 														<img src="https://www.thechooeok.com/common/img/default_profile.png"
 															alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
 													
@@ -168,8 +170,6 @@ $('.read-comment').on('click', '.comment-delete', function(){
 
 
 //게시물 좋아요
-
-
 $('.like-box').on('click','.like-btn', function(){
 	likeAjax();
 });
@@ -217,9 +217,68 @@ function showLike(result) {
 		
 }
 
+// x버튼(이전화면으로 돌아가기)
 $('.close-btn').on('click', function(){
 	history.back();
 });
+
+//게시물 저장
+$('.save-box').on('click','.save-btn', function(){
+	saveAjax();
+});
+
+function saveAjax() {
+	$.ajax({
+		url: '/postSave/postSaveOk.ps',
+		type: 'get',
+		data: { userNumber: userNumber, 
+					postNumber: postNumber
+				},
+		success: function(result){
+			
+			showSave(result);
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+}
+
+function showSave(result) {
+	let saveTF = result.trim();
+	
+	console.log(saveTF);
+	
+		if(saveTF==="true"){
+	
+			$('.save-btn').html(
+			`
+			<i class="fa-solid fa-bookmark save-t"></i>
+			`
+ 			)
+		} else if(saveTF==="false"){
+			$('.save-btn').html(
+			`
+			<i class="fa-regular fa-bookmark save-f"></i>
+			`
+ 			)
+		}
+		
+		
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
