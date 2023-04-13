@@ -185,9 +185,13 @@ $$( '.direction' ).attr( href, '${pageContext.request.contextPath}/mainSearch.m?
 $('.content').hide();*/
 /*클릭 이벤트*/
 
-$('.search-btn').click(function(){
+/*검색 페이징 처리 -> 키워드가 있는지 없는지 검사 -> 메인 페이지로 이동할 때 키워드를 들고온게 있는지 없는 지 검사
+empty 키워드 
+*/
+
+/*$('.search-btn').click(function(){
   $( '.paging-button' ).attr( 'href', '${pageContext.request.contextPath}/mainSearch.m?page=${startPage - 1}' );
-});
+});*/
 
 
 

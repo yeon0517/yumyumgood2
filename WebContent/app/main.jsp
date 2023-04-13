@@ -318,7 +318,26 @@
 						</c:if>
 					</p>
 					<p class="paging-num">
-						<c:forEach var="q" begin="${startPage}" end="${endPage}">
+						<%-- <c:forEach var="q" begin="${startPage}" end="${endPage}">
+							<c:choose>
+								<c:when test="${!(q == page)}">
+									<a
+										href="${pageContext.request.contextPath}/mainOk.m?page=${q}&categoryNumber=${categoryNumber}">
+										<c:out value="${q}" />
+									</a>
+								</c:when>
+								<c:otherwise>
+									<a href="#" class="btnColor"> <c:out value="${q}" />
+									</a>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach> --%>
+						
+						<!-- empty keyword가 null이면 위에 페이징 처리 실행
+						not empty면 ${pageContext.request.contextPath}/mainOk.m?page=${q}&keyword=${keyword}
+						 -->
+						<c:if test="${empty keyword}">
+							<c:forEach var="q" begin="${startPage}" end="${endPage}">
 							<c:choose>
 								<c:when test="${!(q == page)}">
 									<a
@@ -332,7 +351,24 @@
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
-
+						</c:if>
+						
+						<c:if test="${not empty keyword}">
+							<c:forEach var="q" begin="${startPage}" end="${endPage}">
+							<c:choose>
+								<c:when test="${!(q == page)}">
+									<a
+										href="${pageContext.request.contextPath}/mainOk.m?page=${q}&keyword=${postTitle}">
+										<c:out value="${q}" />
+									</a>
+								</c:when>
+								<c:otherwise>
+									<a href="#" class="btnColor"> <c:out value="${q}" />
+									</a>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>
+						</c:if>
 
 					</p>
 					<p class="paging-btn">
