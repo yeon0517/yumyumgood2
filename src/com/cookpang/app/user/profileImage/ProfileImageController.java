@@ -97,7 +97,6 @@ public class ProfileImageController implements Execute {
 			profileImageDAO.insertImg(profileImageDTO);
 		}
 		
-		
 		System.out.println("왜안대 ");  
 		System.out.println(profileImageDTO);  
 		 resp.sendRedirect("/mypage/mypageOk.my");

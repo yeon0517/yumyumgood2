@@ -15,14 +15,17 @@ public class ProfileEditVO {
 	private String userAddress;
 	private String userSelfIntroduction;
 	private ProfileImageDTO profileImageDTO;
-	private List<ProfileImageDTO> files;
+    private String userProfileImageSystemName;
+
+	public ProfileEditVO() {}
 
 	@Override
 	public String toString() {
 		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
 				+ ", userNickname=" + userNickname + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
 				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userSelfIntroduction="
-				+ userSelfIntroduction + ", profileImageDTO=" + profileImageDTO + ", files=" + files + "]";
+				+ userSelfIntroduction + ", profileImageDTO=" + profileImageDTO + ", userProfileImageSystemName="
+				+ userProfileImageSystemName + "]";
 	}
 
 	public int getUserNumber() {
@@ -105,13 +108,12 @@ public class ProfileEditVO {
 		this.profileImageDTO = profileImageDTO;
 	}
 
-	public List<ProfileImageDTO> getFiles() {
-		return files;
+	public String getUserProfileImageSystemName() {
+		return userProfileImageSystemName;
 	}
 
-	public void setFiles(List<ProfileImageDTO> files) {
-		this.files = files;
+	public void setUserProfileImageSystemName(String userProfileImageSystemName) {
+		this.userProfileImageSystemName = userProfileImageSystemName;
 	}
-
-	public ProfileEditVO() {}
+	
 }

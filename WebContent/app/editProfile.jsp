@@ -63,16 +63,17 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 							<div class="picture-box-left">
 
-								<div class="img-box">
-									<img
-										src="/upload/${profileImage.getUserProfileImageSystemName()}"
-										name="getUserProfileImageSystemName" class="img-box-img" />
+								<div id="img-box">
+									 <img
+										src="/upload/${profileEditVO.getUserProfileImageSystemName()}"
+										class="img-box-img"  /> 
+										<!-- src="/upload/${profileImage.getUserProfileImageSystemName()}"-->
 								</div>
 							</div>
 							<div class="picture-box-rigth">
-								<input type="file" name="file1" id="uploadLink"
+								<input type="file" name="file1" id="uploadLink" onchange="readURL(this);"
 									class="change-picture" accept=".jpg, .jpeg, .png"
-									placeholder="프로필 사진 바꾸기" /><br />
+									 /><br />
 
 							</div>
 							
