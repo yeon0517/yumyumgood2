@@ -120,30 +120,23 @@
 
 									<ul class="preview-list">
 
-										<!-- 이전사진으로 넘기기 아이콘 -->
-										<div class="wirte-box-imgs-prev">
-											<button type="button" class="img-prev-next-button">
-												<i class="fa-solid fa-circle-chevron-left"></i>
-											</button>
-										</div>
-
-
-										<!-- 다음사진으로 넘기기 아이콘 -->
-										<div class="wirte-box-imgs-next">
-											<button type="button" class="img-prev-next-button">
-												<i class="fa-solid fa-circle-chevron-right"></i>
-											</button>
-										</div>
-
-										<li><img src="../img/test3.jpg" alt="미리보기 이미지"
-											class="preview-image">
+										<li><img src="" alt="미리보기 이미지" class="preview-image">
 											<div class="btn-box">
 												<button type='button' class='img-cancel-btn'
 													data-name='${files[i].name}'>X</button>
 											</div></li>
 
-
 									</ul>
+									<div class="wirte-box-imgs-prev">
+										<button type="button" class="img-prev-next-button prev-btn">
+											<i class="fa-solid fa-circle-chevron-left"></i>
+										</button>
+									</div>
+									<div class="wirte-box-imgs-next">
+										<button type="button" class="img-prev-next-button next-btn">
+											<i class="fa-solid fa-circle-chevron-right"></i>
+										</button>
+									</div>
 
 								</div>
 
@@ -160,12 +153,12 @@
 								<div class="wirte-box-main-user-info">
 									<div class="write-box-user-profile-img">
 										<!-- 임시 프로필사진 -->
-										<img src="../img/test5.jpg" alt="프로필사진" class="profile-img">
+										<img src="<%-- /upload/${ } --%>" alt="프로필사진" class="profile-img">
 									</div>
 									<div class="write-box-user-id">
 
 										<!-- 임시 사용자아이디 -->
-										<c:out value="${userId }"></c:out>
+										<c:out value="${userId}"></c:out>
 									</div>
 
 								</div>
@@ -295,30 +288,31 @@
 
 												<div class="ingredient-item">
 													<ul>
-														<li>
-															<select name="ingredientCategoryNumber" id="select">
-																	<option value="-1" selected>선택하기</option>
-																	<c:forEach var="ingredientCategory" items="${ingredientCategoryList}">
-																		<option value="${ingredientCategory.getIngredientCategoryNumber()}">
-																			<c:out value="${ingredientCategory.getIngredientCategoryName()}" />
-																		</option>
-																	</c:forEach>
-															</select>
-															<h5 class="ingredient-guide-msg  msg1">재료추가/삭제</h5>
-														</li>
+														<li><select name="ingredientCategoryNumber"
+															id="select">
+																<option value="-1" selected>선택하기</option>
+																<c:forEach var="ingredientCategory"
+																	items="${ingredientCategoryList}">
+																	<option
+																		value="${ingredientCategory.getIngredientCategoryNumber()}">
+																		<c:out
+																			value="${ingredientCategory.getIngredientCategoryName()}" />
+																	</option>
+																</c:forEach>
+														</select>
+															<h5 class="ingredient-guide-msg  msg1">재료추가/삭제</h5></li>
 
 														<div class="ingredient-element">
 
-															<li class="ingredient-name-li">
-															<select name="ingredientNumber" id="select">
+															<li class="ingredient-name-li"><select
+																name="ingredientNumber" id="" class="select-ingredient">
 																	<option value="-1" selected>선택하기</option>
 																	<c:forEach var="ingredient" items="${ingredientList}">
 																		<option value="${ingredient.getIngredientNumber()}">
 																			<c:out value="${ingredient.getIngredientName()}" />
 																		</option>
 																	</c:forEach>
-															</select>
-															</li>
+															</select></li>
 
 															<li class="ingredient-quantity-li"><input
 																type="text" name="ingredientQuantity"
@@ -346,15 +340,15 @@
 
 											<!-- 재료 묶음추가버튼 -->
 											<div class="item-edit-buttons">
-                        						<h5 class="ingredient-guide-msg">재료 묶음 추가</h5>
-                        							<button type="button" class="item-plus">
-                         								<i class="fa-solid fa-circle-plus"></i>
-                        							</button>
+												<h5 class="ingredient-guide-msg">재료 묶음 추가</h5>
+												<button type="button" class="item-plus">
+													<i class="fa-solid fa-circle-plus"></i>
+												</button>
 
-                        							<button type="button" class="item-minus">
-                          								<i class="fa-solid fa-circle-minus"></i>
-                        							</button>
-                      						</div>
+												<button type="button" class="item-minus">
+													<i class="fa-solid fa-circle-minus"></i>
+												</button>
+											</div>
 
 										</div>
 
@@ -385,29 +379,7 @@
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="${pageContext.request.contextPath}/assets/js/postWrite.js"></script>
-	<script>
-		let $tmpInput = $('#file-input');
 
-		$tmpInput.on('change', function() {
-			let files = this.files;
-			console.log(files);
-
-			let $input = $('.input');
-
-			for (let i = 0; i < 10; i++) {
-				if (i >= files.length) {
-					let dt = new DataTransfer();
-
-					$input[i].files = dt.files;
-				} else {
-					let dt = new DataTransfer();
-					dt.items.add(files[i]);
-
-					$input[i].files = dt.files;
-				}
-			}
-		});
-	</script>
 
 </body>
 

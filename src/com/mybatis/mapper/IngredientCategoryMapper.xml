@@ -4,7 +4,13 @@
 <mapper namespace="ingredientCategory">
 	<select id="getIngredientCategoryNumber" resultType="IngredientCategoryDTO">
 	select ingredient_category_number, ingredient_category_name
-from tbl_ingredient_category
+	from tbl_ingredient_category
+	</select>
+	
+	<select id="getIngredientNumbers" resultType="IngredientDTO" parameterType="_int">
+		select ingredient_number, ingredient_name
+		from tbl_ingredient
+		where ingredient_category_number = #{ingredientCategoryNumber}
 	</select>
 </mapper>
 	
