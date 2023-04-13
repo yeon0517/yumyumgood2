@@ -31,6 +31,15 @@
      <url-pattern>*.edit</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+     <servlet-name>Mypage</servlet-name>
+     <servlet-class>com.cookpang.app.user.mypage.MypageFrontController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+     <servlet-name>Mypage</servlet-name>
+     <url-pattern>*.my</url-pattern>
+  </servlet-mapping>
   
   <servlet>
      <servlet-name>Follow</servlet-name>

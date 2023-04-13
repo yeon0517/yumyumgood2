@@ -8,15 +8,25 @@ public class ProfileEditVO {
 	private int userNumber;
 	private String userId;
 	private String userPassword;
-	private String userNickName;
+	private String userNickname;
 	private String userName;
 	private String userPhoneNumber;
 	private String userEmail;
 	private String userAddress;
 	private String userSelfIntroduction;
-	private List<ProfileImageDTO> files;
+	private ProfileImageDTO profileImageDTO;
+    private String userProfileImageSystemName;
 
 	public ProfileEditVO() {}
+
+	@Override
+	public String toString() {
+		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
+				+ ", userNickname=" + userNickname + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
+				+ ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", userSelfIntroduction="
+				+ userSelfIntroduction + ", profileImageDTO=" + profileImageDTO + ", userProfileImageSystemName="
+				+ userProfileImageSystemName + "]";
+	}
 
 	public int getUserNumber() {
 		return userNumber;
@@ -42,12 +52,12 @@ public class ProfileEditVO {
 		this.userPassword = userPassword;
 	}
 
-	public String getUserNickName() {
-		return userNickName;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
 	}
 
 	public String getUserName() {
@@ -90,23 +100,20 @@ public class ProfileEditVO {
 		this.userSelfIntroduction = userSelfIntroduction;
 	}
 
-	public List<ProfileImageDTO> getFiles() {
-		return files;
+	public ProfileImageDTO getProfileImageDTO() {
+		return profileImageDTO;
 	}
 
-	public void setFiles(List<ProfileImageDTO> files) {
-		this.files = files;
+	public void setProfileImageDTO(ProfileImageDTO profileImageDTO) {
+		this.profileImageDTO = profileImageDTO;
 	}
 
-	
-	@Override
-	public String toString() {
-		return "ProfileEditVO [userNumber=" + userNumber + ", userId=" + userId + ", userPassword=" + userPassword
-				+ ", userNickName=" + userNickName + ", userName=" + userName + ", userPhoneNumber=" + userPhoneNumber
-				+ ", userEmail=" + userEmail + ", userAdress=" + userAddress + ", userSelfIntroduction="
-				+ userSelfIntroduction + ", files=" + files + "]";
+	public String getUserProfileImageSystemName() {
+		return userProfileImageSystemName;
 	}
-	
 
+	public void setUserProfileImageSystemName(String userProfileImageSystemName) {
+		this.userProfileImageSystemName = userProfileImageSystemName;
+	}
 	
 }

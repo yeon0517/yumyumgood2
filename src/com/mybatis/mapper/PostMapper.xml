@@ -47,9 +47,9 @@
 		from tbl_user u join tbl_post p
 		on post_number
 		= #{postNumber} and u.user_number = p.user_number
-	</select>
-
-	<update id="updateViewCount" parameterType="_int">
+	</select> 
+	
+	<update id="updatePostViewCount" parameterType="_int">
 		update tbl_post
 		set
 		post_view_count = post_view_count + 1
@@ -68,6 +68,22 @@
 		#{postRecipeContent}
 		where post_number = #{postNumber}
 	</update>
+	
+	<select id="postReadDefaultInfo" parameterType="_int" resultType="PostReadVO" >
+		select p.post_number, up.user_profile_image_system_name, u.user_number, u.user_id, p.post_title,
+   		p.post_content, p.post_recipe_content, count(pl.post_number) as post_like_count, p.post_view_count, p.post_date
+		from tbl_user u
+		join tbl_post p
+		on u.user_number = p.user_number
+		left join tbl_user_profile_image up
+		on u.user_number = up.user_number
+		left join tbl_post_like pl
+		on p.post_number = pl.post_number
+		where p.post_number = #{postNumber}
+		group by p.post_number, up.user_profile_image_system_name, u.user_number, 
+		u.user_id, p.post_title, p.post_content, p.post_recipe_content, p.post_view_count, p.post_date
+	</select>	
+	
 
 	<select id="postSelect" parameterType="map" resultType="PostVO">
 		select tp.post_number, tp.user_number, post_title, tu.user_nickname,
