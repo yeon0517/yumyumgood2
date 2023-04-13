@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.cookpang.app.Execute;
 import com.cookpang.app.user.dto.UserDTO;
 import com.cookpang.app.user.profileEdit.dao.ProfileEditDAO;
+import com.cookpang.app.user.profileEdit.vo.ProfileEditVO;
 import com.cookpang.app.user.profileImage.dao.ProfileImageDAO;
 import com.cookpang.app.user.profileImage.dto.ProfileImageDTO;
 import com.oreilly.servlet.MultipartRequest;
@@ -24,15 +25,16 @@ public class ProfileImageController implements Execute {
 		HttpSession session = req.getSession();
 		ProfileImageDAO profileImageDAO = new ProfileImageDAO();
 		ProfileImageDTO profileImageDTO = new ProfileImageDTO();
+		System.out.println("image컨트롤러 들어왔다!!");
 		UserDTO userDTO = new UserDTO();
 		ProfileEditDAO profileEditDAO = new ProfileEditDAO();
-
+		ProfileEditVO profileEditVO = new ProfileEditVO();
+		req.setCharacterEncoding("utf-8");
 //		int userNumber=(Integer)req.getSession().getAttribute("userNumber");
 		
 		 
 		int userNumber = 0;
 		userNumber = (int)session.getAttribute("userNumber");
-		System.out.println("image컨트롤러 들어왔다!!");
 		
 		
 		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
@@ -69,6 +71,7 @@ public class ProfileImageController implements Execute {
 			System.out.println(fileSystemName);
 			System.out.println(fileOriginalName);
 
+			
 			if (fileSystemName == null) {
 				continue;
 			}
@@ -76,9 +79,10 @@ public class ProfileImageController implements Execute {
 			profileImageDTO.setUserProfileImageSystemName(fileSystemName);
 			profileImageDTO.setUserProfileOriginalName(fileOriginalName);
 			profileImageDTO.setUserNumber(userNumber);
-
+		
 			System.out.println(profileImageDTO);
-			profileImageDAO.insertImg(profileImageDTO);
+			System.out.println(userDTO);
+		
 
 		}
 //      null 값인 경우와 null 값이 아닌 경우를 나눠서 insert와 update를 따로 사용해 이미지를 넣어줌
@@ -86,7 +90,7 @@ public class ProfileImageController implements Execute {
 //         전에 DTO에 있던 파일은 삭제하고 새로 받아오는 channelFileDTO에 넣은 이미지는 update해줌
 			ProfileImageDTO profileImageDTO2 = profileImageDAO.selectImage(userNumber);
 			File existFile = new File(uploadPath, profileImageDTO2.getUserProfileImageSystemName());
-			existFile.delete();
+//			existFile.delete();
 
 			profileImageDAO.updateImg(profileImageDTO);
 		} else {

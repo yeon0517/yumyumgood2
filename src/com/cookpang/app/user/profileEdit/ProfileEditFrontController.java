@@ -39,16 +39,15 @@ public class ProfileEditFrontController extends HttpServlet{
 //			new ProfileUpdateController().execute(req, resp);
 //			System.out.println("프로필 업데이트");
 //			break;
-		case "/user/profileEditUpdateOK.edit" : 
-			new ProfileUpdateOkController().execute(req, resp);
-			System.out.println("프로필 업데이트Ok");
-			break;
-		case "/profileImage/profileEditUpdateImg.pr" : 
-			new ProfileImageController().execute(req, resp);
-			System.out.println("프로필 이미지 업데이트");
-			break;
-			
-		
+//		case "/user/profileEditUpdateOK.edit" : 
+//			new ProfileUpdateOkController().execute(req, resp);
+//			System.out.println("프로필 업데이트Ok");
+//			break;
+//		case "/profileImage/profileEditUpdateImg.pr" : 
+//			new ProfileImageController().execute(req, resp);
+//			System.out.println("프로필 이미지 업데이트");
+//			break;
+
 			
 			
 		

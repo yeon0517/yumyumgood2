@@ -56,8 +56,8 @@ String myTextareaValue = request.getParameter("myTextarea");
 				<div class="body-main-body">
 
 					<form
-						action="${pageContext.request.contextPath}/user/profileEditUpdateOK.edit"
-						method="POST">
+						action="${pageContext.request.contextPath}/profileImage/profileEditUpdateImg.pr"
+						method="POST" enctype="multipart/form-data">
 						<!-- enctype="multipart/form-data" -->
 						<div class="picture-box">
 
