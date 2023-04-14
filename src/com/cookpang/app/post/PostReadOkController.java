@@ -12,6 +12,8 @@ import com.cookpang.app.Execute;
 import com.cookpang.app.comment.dao.CommentDAO;
 import com.cookpang.app.comment.vo.CommentVO;
 import com.cookpang.app.post.dao.PostDAO;
+import com.cookpang.app.post.file.dao.PostFileDAO;
+import com.cookpang.app.post.file.dto.PostFileDTO;
 import com.cookpang.app.post.like.dao.PostLikeDAO;
 import com.cookpang.app.post.like.dto.PostLikeDTO;
 import com.cookpang.app.post.read.vo.PostReadVO;
@@ -20,7 +22,7 @@ import com.cookpang.app.post.save.dto.PostSaveDTO;
 import com.cookpang.app.recipe.category.dao.RecipeCategoryDAO;
 import com.cookpang.app.recipe.category.vo.RecipeCategoryVO;
 import com.cookpang.app.recipe.ingredient.dao.RecipeIngredientDAO;
-import com.cookpang.app.recipe.ingredient.dto.RecipeIngredientDTO;
+import com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO;
 
 public class PostReadOkController implements Execute {
 
@@ -52,10 +54,12 @@ public class PostReadOkController implements Execute {
 		PostSaveDAO postSaveDAO = new PostSaveDAO();
 		PostSaveDTO postSaveDTO = new PostSaveDTO();
 		RecipeIngredientDAO recipeIngredientDAO = new RecipeIngredientDAO();
+		PostFileDAO postFileDAO = new PostFileDAO(); 
 		
-//		List<PostFileDTO> files = new PostFileDAO().select(postNumber);
+		List<PostFileDTO> postFileList = postFileDAO.select(postNumber);
+		System.out.println(postFileList);
 		
-		List<RecipeIngredientDTO> ingredients = recipeIngredientDAO.getRecipeIngredients(postNumber);
+		List<RecipeIngredientVO> ingredients = recipeIngredientDAO.getRecipeIngredients(postNumber);
 		
 		
 		
@@ -75,6 +79,7 @@ public class PostReadOkController implements Execute {
 		req.setAttribute("likeStatus", likeStatus);
 		req.setAttribute("saveStatus", saveStatus);
 		req.setAttribute("ingredients", ingredients);
+		req.setAttribute("postFileList", postFileList);
 //		req.setAttribute("commentList", commentList);
 		
 		req.getRequestDispatcher("/app/post/postRead.jsp").forward(req, resp);

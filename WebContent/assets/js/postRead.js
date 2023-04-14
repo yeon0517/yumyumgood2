@@ -75,51 +75,48 @@ function commentAjax() {
 
 
 function showComment(comments) {
-	console.log(comments);
-	let text = '';
+  console.log(comments);
+  let text = '';
 
-	comments.forEach(comment => {
-		text += `
-    	<li class="read-comment-box">
-											<div class="comment-writer-img-box">
-												
-												<!-- 임시 댓글 프로필사진 -->`
-												if(${comment.})
-												`
-														<img src="https://www.thechooeok.com/common/img/default_profile.png"
-															alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
-													
-											</div>
-											<div class="comment-content-box">
-												<!-- 임시 댓글작성자 아이디 -->
-												<div class="comment-writer-id">${comment.userId}</div>
-												<div class="read-comment-content">
-													<!-- 임시 댓글 내용 -->
-													${comment.commentContent}
-													
-												</div>
-												<div class="read-comment-more">
-													<div class="comment-write-time">${comment.commentTime}</div>
-													<!--댓글번호  -->
-													`;
-		if (comment.userNumber == userNumber || $postUserNumber == userNumber){
-			text +=
-				`<button type="button" class="comment-delete" data-number="${comment.commentNumber}">
-					삭제하기
-				</button>	`;
-		}
-		
-		text += `
-												</div>
-											</div>
-										</li>
+  comments.forEach(comment => {
+    text += `
+    <li class="read-comment-box">
+      <div class="comment-writer-img-box">`;
 
-    				`;
-	});
+    if (comment.userProfileImageSystemName == null) {
+      text += `
+        <img src="https://www.thechooeok.com/common/img/default_profile.png" alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">`;
+    } else {
+      text += `
+        <img src="/upload/${comment.userProfileImageSystemName}" alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">`;
+    }
 
-	$('.read-comment').html(text);
-	
+    text += `
+      </div>
+      <div class="comment-content-box">
+        <div class="comment-writer-id">${comment.userId}</div>
+        <div class="read-comment-content">
+          ${comment.commentContent}
+        </div>
+        <div class="read-comment-more">
+          <div class="comment-write-time">${comment.commentTime}</div>`;
+
+    if (comment.userNumber == userNumber || $postUserNumber == userNumber) {
+      text += `
+          <button type="button" class="comment-delete" data-number="${comment.commentNumber}">
+            삭제하기
+          </button>`;
+    }
+
+    text += `
+        </div>
+      </div>
+    </li>`;
+  });
+
+  $('.read-comment').html(text);
 }
+
 
 
 let $comment = $('.comment-input');

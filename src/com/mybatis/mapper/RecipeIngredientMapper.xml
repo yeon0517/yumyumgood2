@@ -8,10 +8,11 @@
 		values(#{postNumber} ,#{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});;
 	</insert>
 	
-	<select id="getRecipeIngredients" parameterType="_int" resultType="RecipeIngredientDTO">
-		select recipe_ingredient_name , recipe_ingredient_quantity 
-		from tbl_recipe_ingredient 
-		where post_number = #{postNumber}
+	<select id="getRecipeIngredients" parameterType="_int" resultType="RecipeIngredientVO">
+		select ti.ingredient_name ,ri.recipe_ingredient_quantity 
+		from tbl_ingredient ti
+		join tbl_recipe_ingredient ri
+		on ti.ingredient_number = ri.ingredient_number and ri.post_number = #{postNumber}
 	</select>
 	
 		
