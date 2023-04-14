@@ -55,6 +55,17 @@
 		ur.user_number = #{userNumber}
 	</select>
 
+
+	<select id="findUser" resultType="UserListVO" parameterType="string">
+		select
+		tu.user_number, tu.user_name, tu.user_nickname,
+		tupi.user_profile_image_system_name
+		from tbl_user tu
+		join tbl_user_profile_image tupi on tupi.user_number = tu.user_number
+		where user_name like concat('%', #{findUser} , '%')
+		or user_nickname like concat('%', #{findUser} , '%')
+	</select>
+
 	<update id="updateUserProfileInfo" parameterType="UserDTO">
 		update tbl_user
 		set user_name = #{userName},
