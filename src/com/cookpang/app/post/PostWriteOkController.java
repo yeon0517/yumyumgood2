@@ -54,21 +54,25 @@ public class PostWriteOkController implements Execute {
 	      int fileSize = 1024 * 1024 * 5; //5MB
 	      System.out.println(uploadPath);
 	      
-	      MultipartRequest Request = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
+	      MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
 	      
-	      String[] ingredientNumbers = Request.getParameterValues("ingredientNumber");
-	      String[] ingredientQuantities = Request.getParameterValues("ingredientQuantity");
+	      String[] ingredientNumbers = multipartRequest.getParameterValues("ingredientNumber");
+	      String[] ingredientQuantities = multipartRequest.getParameterValues("ingredientQuantity");
+//	      String[] ingredientNames = Request.getParameterValues("ingredientName");
+	     // String[] recipeIngredientNames = Request.getParameterValues("recipeIngredientName");
 
-	      System.out.println(Arrays.toString(ingredientNumbers));
-	      System.out.println(Arrays.toString(ingredientQuantities));
-
+			
+			  System.out.println(Arrays.toString(ingredientNumbers));
+			  System.out.println(Arrays.toString(ingredientQuantities));
+			 
+	      //System.out.println(Arrays.toString(recipeIngredientNames));
 	      
 	      
 	      
-	      postDTO.setPostTitle(Request.getParameter("postTitle"));
-	      postDTO.setPostContent(Request.getParameter("postContent"));
+	      postDTO.setPostTitle(multipartRequest.getParameter("postTitle"));
+	      postDTO.setPostContent(multipartRequest.getParameter("postContent"));
 //	      postDTO.setPostNumber(postNumber);
-	      postDTO.setPostRecipeContent(Request.getParameter("postRecipeContent"));
+	      postDTO.setPostRecipeContent(multipartRequest.getParameter("postRecipeContent"));
 //	      postDTO.setPostDate(multipartRequest.getParameter("postDate"));
 	      postDTO.setUserNumber((Integer)req.getSession().getAttribute("userNumber"));
 //	      postDTO.setPostViewCount((Integer)req.getSession().getAttribute("postViewCount"));
@@ -91,9 +95,12 @@ public class PostWriteOkController implements Execute {
 	      for (int i = 0; i < ingredientNumbers.length; i++) {
 	          String ingredientNumber = ingredientNumbers[i];
 	          String ingredientQuantity = ingredientQuantities[i];
+//	          String ingredientName = ingredientNames[i];
+	       //   String recipeIngredientName = recipeIngredientNames[i];
 
 	          RecipeIngredientDTO recipeIngredientDTO = new RecipeIngredientDTO();
-//	          recipeIngredientDTO.setRecipeIngredientName(ingredientName);
+//	          recipeIngredientDTO.setRecipeIngredientName(recipeIngredientName);
+//	         recipeIngredientDTO.setRecipeIngredientName(ingredientName);
 	          recipeIngredientDTO.setIngredientNumber(Integer.parseInt(ingredientNumber));
 	          recipeIngredientDTO.setRecipeIngredientQuantity(ingredientQuantity);
 	          recipeIngredientDTO.setPostNumber(postNumber);
@@ -101,7 +108,7 @@ public class PostWriteOkController implements Execute {
 	      }
 	      
 	      
-	      String[] recipeCategories = Request.getParameterValues("categorys");
+	      String[] recipeCategories = multipartRequest.getParameterValues("categorys");
 	      System.out.println(Arrays.toString(recipeCategories));
 	      
 	      for(int i=0; i<recipeCategories.length; i++) {
@@ -113,8 +120,8 @@ public class PostWriteOkController implements Execute {
 	      }
 	      
 //	      
-	      String[] ingredientCategoryNumbers = Request.getParameterValues("ingredientCategoryNumber");
-	      String[] ingredientCategoryNames = Request.getParameterValues("ingredientCategoryName");
+      String[] ingredientCategoryNumbers = multipartRequest.getParameterValues("ingredientCategoryNumber");
+	      String[] ingredientCategoryNames = multipartRequest.getParameterValues("ingredientCategoryName");
 	      
 //	      for(int i=0; i<ingredientCategoryNumbers.length; i++) {
 //	    	  String ingredientCategoryNumber = ingredientCategoryNumbers[i];
@@ -125,14 +132,14 @@ public class PostWriteOkController implements Execute {
 //	      }
 	      
 	      
-	      Enumeration<String> fileNames = Request.getFileNames();	      
+	      Enumeration<String> fileNames = multipartRequest.getFileNames();	      
 //	      이터레이터의 hasNex()
 	      while(fileNames.hasMoreElements()) {
 //        	이터레이터의 next()
 	    	  String name = fileNames.nextElement();
 	    	  
-	    	  String fileSystemName = Request.getFilesystemName(name);
-	    	  String fileOriginalName = Request.getOriginalFileName(name);
+	    	  String fileSystemName = multipartRequest.getFilesystemName(name);
+	    	  String fileOriginalName = multipartRequest.getOriginalFileName(name);
 	    	  
 	    	  if(fileSystemName == null) {continue;}
 	    	  
@@ -140,6 +147,7 @@ public class PostWriteOkController implements Execute {
 	    	  postFileDTO.setPostFileOriginalName(fileOriginalName);
 	    	  postFileDTO.setPostNumber(postNumber);
 	    	  postFileDTO.setPostFileIndex(1);
+	    	  
 	    	  
 	    	  
 	    	  System.out.println(postFileDTO);

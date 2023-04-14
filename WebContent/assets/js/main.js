@@ -55,7 +55,6 @@ $(function() {
 
 // ================================================검색 Ajax==================================================== //
 
-
 /*function searchUser() {
   // 검색어 가져오기
   var findUser = document.getElementById("search-input").value;
