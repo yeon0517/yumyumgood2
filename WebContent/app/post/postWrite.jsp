@@ -53,7 +53,7 @@
 		<div class="write-box-globar-wrap">
 			<div class="write-box-container">
 				<input type="file" name="file" id="file-input"
-					accept=".jpg, .jpeg, .png" class="please" multiple />
+					accept=".jpg, .jpeg, .png" class="please" multiple  />
 				<form id="write-form" method="post"
 					action="${pageContext.request.contextPath}/post/postWriteOk.po"
 					method="post" class="write-box-form" enctype="multipart/form-data">
@@ -311,9 +311,11 @@
 																		<option value="${ingredient.getIngredientNumber()}">
 																			<c:out value="${ingredient.getIngredientName()}" />
 																		</option>
+																		
+														
 																	</c:forEach>
+														
 															</select></li>
-
 															<li class="ingredient-quantity-li"><input
 																type="text" name="ingredientQuantity"
 																class="ingredient-quantity" placeholder="재료 양 예) 1/2개">
