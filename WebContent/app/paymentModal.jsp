@@ -44,7 +44,9 @@
 							<p class="content-price">
 							<%-- <input type="hidden" value="${payPost.getPostNumber()}" class="post-number" > --%>
 							<input type="hidden" value="${payPost.getPostNumber()}" class="post-number" >
-							<span class="result-price"></span>
+							<span class="result-price">
+								
+							</span>
 							</p>
 							<a href="#"> <img
 								src="${pageContext.request.contextPath}/assets/img/shareicon.png"
@@ -83,19 +85,20 @@
 
 
 				<div class="footer">
+				       
 					<div class="checkboxBox">
 						<div class="checkbox-span">필수 재료 선택 (최소 단위):</div>
 						<div class="checkbox" id="checkboxes">
 
 
-							<form action="/order/orderList.or" method="POST">
+							
 								<c:forEach var="ingredient" items="${ingredient}" varStatus="status">
 									<span class = "amount-box">
-										<input type="checkbox" name="amountInput" class="amount-input"
+										<input type="checkbox" name="ingredientNumber" class="amount-input"
 											value="${ingredient.getIngredientNumber()}">
 											<c:out value="${ingredient.getIngredientName()}"/>
 											<c:out value="${ingredient.getIngredientSmallestUnit()}g"/>
-	        							<input type="hidden" name="price" class="price"
+	        							 <input type="hidden" name="price" class="price"
 											value="${ingredient.getIngredientPrice()}">
 									</span>
         							<c:if test="${status.count >= 5}">
@@ -115,7 +118,7 @@
 							<button id="reset" type="button">reset</button>
 						</div>
 
-						</form>
+					
 						<!-- 나중에 경로 바꾸기 payment로 -->
 						<button type="submit" name="buybutton" id="buybutton">
 							<a href="/order/orderList.or" style="color: white"> 구매하기 </a>

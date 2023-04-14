@@ -138,7 +138,11 @@ function updateTotalPrice() {
   }
 
   totalPrice *= quantity;
-  $('.result-price').text(totalPrice + '원');
+  $('.result-price').html(totalPrice + '원'+
+		`
+		<input type="hidden" value="${totalPrice}" name="totalPrice" class="total-price" >
+		`
+	);
 }
 
 $('.footer').on('change', function() {

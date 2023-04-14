@@ -16,7 +16,7 @@ public class OrderDAO {
 	public OrderDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
-
+ 
 	
 	  public UserDTO defaultOrderInfo(int userNumber) { 
 		  // OrderVO의 mapper에 있는 id이름이 defaultOrderInfo(뽑는 값이 userNumber 이고 이거의 타입은 int)
@@ -30,6 +30,10 @@ public class OrderDAO {
 		
 		public void OrderInsert(OrderDTO orderDTO) {
 			sqlSession.insert("order.orderInsert", orderDTO);
+		}
+		
+		public void orderCost(OrderDTO orderDTO) {
+			sqlSession.insert("order.orderCost", orderDTO);
 		}
 
 
