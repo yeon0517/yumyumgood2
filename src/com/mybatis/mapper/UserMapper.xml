@@ -42,21 +42,57 @@
 		#{userPhoneNumber} and user_email = #{userEmail}
 	</select>
 
-	<select id="selectMemberProfileInfo" parameterType="_int" resultType="ProfileEditVO">
-	select pr.user_profile_image_system_name, ur.user_name, ur.user_nickname,ur.user_birth, ur.user_phone_number, ur.user_email, ur.user_address,ur.user_self_introduction
+	<select id="selectMemberProfileInfo" parameterType="_int"
+		resultType="ProfileEditVO">
+		select pr.user_profile_image_system_name, ur.user_name,
+		ur.user_nickname,ur.user_birth, ur.user_phone_number, ur.user_email,
+		ur.user_address,ur.user_self_introduction
 		from tbl_user ur
-		join tbl_user_profile_image pr
+		left outer join
+		tbl_user_profile_image pr
 		on ur.user_number = pr.user_number
-		where ur.user_number = #{userNumber}
+		where
+		ur.user_number = #{userNumber}
 	</select>
+
+
+	<select id="findUser" resultType="UserListVO" parameterType="string">
+		select
+		tu.user_number, tu.user_name, tu.user_nickname,
+		tupi.user_profile_image_system_name
+		from tbl_user tu
+		join tbl_user_profile_image tupi on tupi.user_number = tu.user_number
+		where user_name like concat('%', #{findUser} , '%')
+		or user_nickname like concat('%', #{findUser} , '%')
+	</select>
+
+	<update id="updateUserProfileInfo" parameterType="UserDTO">
+		update tbl_user
+		set user_name = #{userName},
+		user_nickname = #{userNickname}, user_phone_number = #{userPhoneNumber},
+		user_email = #{userEmail}, user_address = #{userAddress}, user_self_introduction
+		= #{userSelfIntroduction}
+		where user_number = #{userNumber}
+	</update>
 	
-	<update id="updateUserProfileInfo" parameterType="ProfileEditVO">
-   	update tbl_user 
-	set user_id = #{userId}, user_name = #{userName} 
-	user_nickname = #{userNickname}, user_phone_number = #{userPhoneNumber}, 
-	user_email = #{userEmail}, user_address = #{userAddress}, user_self_introduction = #{userSelfIntroduction} 
-	where user_number = #{userNumber}
-   </update>
+
+	<select id="getProfileInfo" parameterType="_int"
+		resultType="UserVO">
+		select u.user_number, u.user_id, u.user_nickname , count(p.post_number) as
+		post_count, u.user_self_introduction,
+		max(upi.user_profile_original_name) as user_profile_original_name,
+		max(upi.user_profile_image_system_name) as
+		user_profile_image_system_name,
+		(select count(follow_number) from tbl_follow where follow_number =
+		u.user_number) as following_count,
+		(select count(following_number) from tbl_follow where following_number =
+		u.user_number) as followers_count
+		from tbl_user u
+		left join tbl_post p on u.user_number = p.user_number
+		left join tbl_user_profile_image upi on u.user_number = upi.user_number
+		where u.user_number = #{userNumber}
+		group by u.user_number
+	</select>
 	
 </mapper>
 

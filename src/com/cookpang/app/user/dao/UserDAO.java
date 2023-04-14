@@ -37,7 +37,11 @@ public class UserDAO {
 		 return sqlSession.selectOne("user.findPassword",userDTO) ;
 	 }
 	 
-	 public ProfileEditVO getUserProfileInfo(int userNumber) {
+	 public ProfileEditVO selectMemberProfileInfo(int userNumber) {
 		   return sqlSession.selectOne("user.selectMemberProfileInfo",userNumber);
+	   }
+	 
+	 public ProfileEditVO getProfileInfo(int userNumber) {
+		   return sqlSession.selectOne("user.getProfileInfo",userNumber);
 	   }
 }

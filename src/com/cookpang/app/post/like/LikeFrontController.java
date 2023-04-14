@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.comment.CommentDeleteOkController;
+
 public class LikeFrontController extends HttpServlet{
 
 	@Override
@@ -23,7 +25,9 @@ public class LikeFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		
+		case "/postLike/postLikeOk.pl" :
+			new PostLikeOkController().execute(req, resp);
+			break;
 		}
 	}
 

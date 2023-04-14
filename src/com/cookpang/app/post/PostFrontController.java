@@ -52,6 +52,10 @@ public class PostFrontController extends HttpServlet{
 		case "/post/postUpdateOk.po":
 		new PostUpdateOkController().execute(req,resp);
 		break;
+		
+		case "/post/postCategory.po":
+			new PostCategoryController().execute(req, resp);
+			break;
 		}
 		
 		

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.main.dao.MainDAO;
 import com.cookpang.app.post.vo.PostVO;
-import com.cookpang.app.recipe.category.dto.RecipeCategoryDTO;
+import com.cookpang.app.user.profileEdit.vo.ProfileEditVO;
 
 public class MainOkController implements Execute {
 	@Override
@@ -53,11 +53,13 @@ public class MainOkController implements Execute {
 		}
 
 //		System.out.println(categoryNumber);
+//		String postTitle;
 
 		Map<String, Integer> pageMap = new HashMap<>();
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
 		pageMap.put("categoryNumber", categoryNumber);
+//		pageMap.put("postTitle", postTitle);
 
 		if (categoryNumber == null || categoryNumber == 0) {
 			postList = mainDAO.postAll(pageMap);
@@ -80,6 +82,7 @@ public class MainOkController implements Execute {
 		
 		req.setAttribute("rankTotal", rankTotal);
 //		rank
+		
 		
 		req.setAttribute("postList", postList);
 		req.setAttribute("categoryNumber", categoryNumber);
