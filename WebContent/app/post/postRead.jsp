@@ -54,14 +54,14 @@
 
 					<div class="read-img-controller-box">
 						<div class="read-box-imgs-prev">
-							<button type="button" class="img-prev-next-button">
+							<button type="button" class="img-prev-next-button prev-btn">
 								<i class="fa-solid fa-circle-chevron-left"></i>
 							</button>
 						</div>
 
 						<!-- 다음사진으로 넘기기  -->
 						<div class="read-box-imgs-next">
-							<button type="button" class="img-prev-next-button">
+							<button type="button" class="img-prev-next-button next-btn">
 								<i class="fa-solid fa-circle-chevron-right"></i>
 							</button>
 						</div>

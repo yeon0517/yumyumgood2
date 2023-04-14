@@ -259,27 +259,50 @@ function showSave(result) {
 			`
  			)
 		}
+}		
 		
-		
+
+// 게시물 이미지 슬라이드
+let $readImgs = $('.read-imgs');
+let width = 696.858;
+let idx = 0;
+let length = $('.read-img').length;
+	console.log('.read-img');
+
+checkEnd();
+
+$('.next-btn').on('click', function() {
+	console.log('next');
+	idx++;
+
+	$readImgs.css('left', -width * idx).css('transition', '0.5s');
+	checkEnd();
+	console.log(idx);
+});
+
+$('.prev-btn').on('click', function() {
+	console.log('prev');
+
+	idx--;
+
+	$readImgs.css('left', -width * idx).css('transition', '0.5s');
+	checkEnd();
+	console.log(idx);
+});
+
+function checkEnd() {
+	console.log(length);
+	if (idx <= 0) {
+		$('.prev-btn').hide();
+	} else {
+		$('.prev-btn').show();
+	}
+
+	if (idx >=length  - 1) {
+		$('.next-btn').hide();
+	} else {
+		$('.next-btn').show();
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
