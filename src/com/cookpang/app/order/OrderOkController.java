@@ -1,6 +1,7 @@
 package com.cookpang.app.order;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import com.cookpang.app.Execute;
 import com.cookpang.app.order.dao.OrderDAO;
 import com.cookpang.app.order.dto.OrderDTO;
+import com.cookpang.app.payment.dao.PaymentDAO;
+import com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO;
 import com.cookpang.app.user.dao.UserDAO;
 import com.cookpang.app.user.dto.UserDTO;
 
@@ -21,6 +24,7 @@ public class OrderOkController implements Execute {
 		UserDAO userDAO = new UserDAO();
 		
 		OrderDTO orderDTO = new OrderDTO();
+		PaymentDAO paymentDAO = new PaymentDAO();
 		
 		req.setCharacterEncoding("utf-8");
 		
@@ -34,6 +38,17 @@ public class OrderOkController implements Execute {
 		orderDAO.OrderInsert(orderDTO);
 		
 		
+		/*
+		int postNumber = 2;
+		 * List<RecipeIngredientVO> recipeIngredientList
+		 * =paymentDAO.postPaymentIngredient(postNumber); req.setAttribute("ingredient",
+		 * recipeIngredientList);
+		 */
+		
+		
+		
+		
 		resp.sendRedirect("/mainOk.m");
+		
 	}
 }

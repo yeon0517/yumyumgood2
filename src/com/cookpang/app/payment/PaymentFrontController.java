@@ -25,10 +25,12 @@ public class PaymentFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-//		case "/pay/paymentmo.pa" :
-//			req.getRequestDispatcher("/app/paymentModal.jsp").forward(req, resp);
-//			break;
-//			
+        case "/pay/paymentmo.pa" :
+            new PaymentMoController().execute(req, resp);
+            break;
+        case "/pay/paymentOkmo.pa":
+            new PaymentOkController().execute(req, resp);
+            break;
 
 			
 		}

@@ -9,10 +9,14 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.payment.dao.PaymentDAO;
 import com.cookpang.app.payment.dto.PaymentDTO;
+import com.cookpang.app.post.dto.PostDTO;
 
 public class PaymentOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
+
+		
+		
 	}
 }
