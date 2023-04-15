@@ -39,17 +39,27 @@
 							<div class="profile">
 								<div class="imgbox-div">
 									<div class="img-box">
-										<img
-											src="https://www.thechooeok.com/common/img/default_profile.png"
-											alt="${profileImage.getUserProfileImageSystemName()}"
-											class="profile-image" />
+											<c:choose>
+													<c:when test="${empty profileImage.getUserProfileImageSystemName()}">
+														<img
+															src="https://www.thechooeok.com/common/img/default_profile.png"
+																alt="${profileImage.getUserProfileImageSystemName()}"
+																class="profile-image" />
+													</c:when>
+													<c:otherwise>
+														<img
+															src="${pageContext.request.contextPath}/upload/${profileImage.getUserProfileImageSystemName()}"
+																alt="${profileImage.getUserProfileImageSystemName()}"
+																class="profile-image" />
+													</c:otherwise>
+												</c:choose>
 									</div>
 								</div>
 								<div class="profile-box">
 									<div class="nickname-box">
 										<p class="manager-id">${manager.getUserId()}</p>
 										<div class="manage">
-											<a href="../html/profile.html">프로필 편집</a>
+											<a href="${pageContext.request.contextPath}/user/profileEdit.edit">프로필 편집</a>
 										</div>
 										<div>
 											<a href="#"><img src="../img/managerImg/setting.png"
@@ -214,7 +224,7 @@
 							</div>
 
 							<div>
-								<form action="">
+								<form action="/manager/postDeleteOk.manager" method="post">
 									<div class="manage-post test" id="member-post">
 										<div class="post-serch">
 											<input type="text" name="postSerch" id="post-search"
@@ -247,11 +257,11 @@
 																<tr>
 																	<td class="post-number">${post.getPostNumber()}</td>
 																	<td class="post-title">
-																		<!--해당 게시물페이지 경로  --> <a href="#">
+																		<!--해당 게시물페이지 경로  --> <a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}">
 																			${post.getPostTitle()} </a>
 																	</td>
 																	<td class="post-user-Id">
-																		<!--해당 유저페이지 경로  --> <a href="#">
+																		<!--해당 유저페이지 경로  --> <a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}">
 																			${post.getUserId() } </a>
 																	</td>
 																	<td class="post-view-count">
@@ -277,7 +287,7 @@
 													</c:choose>
 											</tbody>
 										</table>
-										<button class="button">게시글 삭제</button>
+										<button class="button" type="submit">게시글 삭제</button>
 										<div class="pagination post-page">
 											<ul>
 

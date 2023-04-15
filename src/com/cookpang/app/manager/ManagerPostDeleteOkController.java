@@ -9,20 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.cookpang.app.Execute;
 import com.cookpang.app.manager.dao.ManagerDAO;
 
-public class ManagerUserDeleteOkController implements Execute {
+public class ManagerPostDeleteOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		ManagerDAO managerDAO = new ManagerDAO();
-		System.out.println("여기로 들어오나?");
 		
 		req.setCharacterEncoding("utf-8");
 		
-		String[]	userAr = req.getParameterValues("user");
+		String[]	postAr = req.getParameterValues("post");
 		
 		
-		for (String userNumber : userAr) {
-			managerDAO.deleteUser(Integer.valueOf(userNumber) );
+		for (String postNumber : postAr) {
+			managerDAO.deleteUser(Integer.valueOf(postNumber));
 		}
 		
 		resp.sendRedirect("/manager/managerListOk.manager");
