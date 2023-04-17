@@ -105,9 +105,9 @@
                   </a>
                     <ul>
                       <li>
-                        <p>NMG-309K 다크그레이</p>
+                        <p name="orderItemNumber"></p>
                         <!-- 수량은 버튼수량 갯수를 확인 후 해야함 / 금액도...  -->
-                        <p>수량 1개 / 총 59,000원</p>
+                        <p name="orderItemQuantity"></p>
                       </li>
                     </ul>
                   </span>

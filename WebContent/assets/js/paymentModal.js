@@ -140,7 +140,7 @@ function updateTotalPrice() {
   totalPrice *= quantity;
   $('.result-price').html(totalPrice + '원'+
 		`
-		<input type="hidden" value="${totalPrice}" name="totalPrice" class="total-price" >
+		<input type="hidden" value="${totalPrice}" name="orderTotalCost" class="total-price" >
 		`
 	);
 }

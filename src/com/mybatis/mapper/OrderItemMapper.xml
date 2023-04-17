@@ -9,7 +9,11 @@
 	values(#{orderNumber}, #{ingredientNumber}, #{orderItemQuantity});
 	</insert>
 
-
+	<insert id="orderTotalCost" parameterType="OrderDTO">
+	insert into tbl_order
+	(user_number,order_total_cost)
+	values(#{userNumber}, #{orderTotalCost});
+	</insert>
 
 </mapper>
 

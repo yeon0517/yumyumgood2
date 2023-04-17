@@ -26,8 +26,11 @@ public class OrderItemFrontController extends HttpServlet{
 
 		switch(target) {
 		
-		case "/order/orderItemOk.us":
+		case "/order/orderItem.us":
 			new orderItemController().execute(req, resp);
+			break;
+		case "/order/orderItemOk.us":
+			new orderItemOkController().execute(req, resp);
 			break;
 		
 		}

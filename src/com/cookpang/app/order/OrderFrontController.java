@@ -29,9 +29,10 @@ public class OrderFrontController extends HttpServlet{
 		case "/order/orderListOk.or":
 		new OrderOkController().execute(req, resp);
 		break;
-		case "/order/orderTotalPriceOk.or":
-			new OrderTotalPriceOkController().execute(req, resp);
-			break;
+		
+		
+		
+		
 		}
 	}
 
