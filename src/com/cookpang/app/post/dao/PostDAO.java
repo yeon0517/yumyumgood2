@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.post.dto.PostDTO;
+import com.cookpang.app.post.file.dto.PostFileDTO;
 import com.cookpang.app.post.read.vo.PostReadVO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -55,6 +56,10 @@ public class PostDAO {
 		return sqlSession.selectOne("post.postReadDefaultInfo", postNumber);
 	}
 	
+	public void updateThumb(PostFileDTO postFileDTO) {
+		sqlSession.update("post.updateThumb", postFileDTO);
+	}
+
 	
 	public void deleteUser(int userNumber) {
 		sqlSession.delete("post.deleteUser",userNumber);

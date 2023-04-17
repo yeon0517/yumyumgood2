@@ -311,92 +311,94 @@
                </div>
             </div>
 
-            <!-- 게시글 -->
-            <div id="bottom1" class="main-bottom test">
-               <div class="ccc">
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-               </div>
-               <div class="ccc">
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-               </div>
-               <div class="ccc">
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-               </div>
-               <div class="next-page">
-                  <div class="paging" >
-                     <p class="paging-btn prev">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-                           alt="" class="direction" />
-                        </a>
-                     </p>
-                     <p class="paging-num">
-                        <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-                        <a href="">5</a>
-                     </p>
-                     <p class="paging-btn next">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-                           alt="다음으로" />
-                        </a>
-                     </p>
-                     <p class="paging-btn" id="paging-last">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-                           alt="마지막으로" />
-                        </a>
-                     </p>
-                  </div>
-               </div>
-            </div>
+
+				<!-- 게시글 -->
+				<div id="bottom1" class="main-bottom test">
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="next-page">
+						<div class="paging" >
+							<p class="paging-btn prev">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" />
+								</a>
+							</p>
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn next">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+
 
             <!-- 구매내역 -->
             <div id="bottom2" class="main-bottom2 test">
@@ -468,126 +470,128 @@
                   <!-- <div class="purchase-ok1"></div>
                 <div class="purchase-ok2"></div>
                 <div class="purchase-ok3"></div> -->
-               </div>
-               <!--페이지 이동 버튼 1, 2, 3... -->
-               <div class="next-page">
-                  <div class="paging">
-                     <p class="paging-btn">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-                           alt="" class="direction" />
-                        </a>
-                     </p>
-                     <p class="paging-num">
-                        <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-                        <a href="">5</a>
-                     </p>
-                     <p class="paging-btn">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-                           alt="다음으로" />
-                        </a>
-                     </p>
-                     <p class="paging-btn" id="paging-last">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-                           alt="마지막으로" />
-                        </a>
-                     </p>
-                  </div>
-               </div>
-            </div>
-            <!-- 찜한 레시피 -->
-            <div class="LikeRecipe">
-            <div id="bottom3" class="main-bottom3 test">
-               <div class="ccc">
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYvpWheIfYYb8y3fZRgXHcg5gy5jUTTXGaw&usqp=CAU"
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-               </div>
-               <div class="ccc">
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-               </div>
-               <div class="ccc">
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-                  <div class="bbb">
-                     <a href="#" class="go-post"> <img src=""
-                        class="thumbnail-img" />
-                     </a>
-                  </div>
-               </div>
-               <div class="next-page">
-                  <div class="paging">
-                     <p class="paging-btn">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-                           alt="" class="direction" class="paging-btn prev"/>
-                           
-                        </a>
-                     </p>
-                     <!-- 페이지 이동 -->
-                     <p class="paging-num">
-                        <a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-                        <a href="">5</a>
-                     </p>
-                     <p class="paging-btn">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-                           alt="다음으로" class="paging-btn next"/>
-                        </a>
-                     </p>
-                     <p class="paging-btn" id="paging-last">
-                        <a href=""> <img
-                           src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-                           alt="마지막으로" />
-                        </a>
-                     </p>
-                  </div>
-               </div>
-            </div>
-         </div>
-         </div>
-         <!-- 여기서부터 -->
-         <!-- 사이드 바 -->
-         <div class="body-side-bar">
-            <div class="sidebar-menu">
-               <li class="sidebar-name"><a href="#">CookPang</a></li>
+
+					</div>
+					<!--페이지 이동 버튼 1, 2, 3... -->
+					<div class="next-page">
+						<div class="paging">
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" />
+								</a>
+							</p>
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- 찜한 레시피 -->
+				<div class="LikeRecipe">
+				<div id="bottom3" class="main-bottom3 test">
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYvpWheIfYYb8y3fZRgXHcg5gy5jUTTXGaw&usqp=CAU"
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="ccc">
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+						<div class="bbb">
+							<a href="#" class="go-post"> <img src=""
+								class="thumbnail-img" />
+							</a>
+						</div>
+					</div>
+					<div class="next-page">
+						<div class="paging">
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" class="paging-btn prev"/>
+									
+								</a>
+							</p>
+							<!-- 페이지 이동 -->
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" class="paging-btn next"/>
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<!-- 여기서부터 -->
+			<!-- 사이드 바 -->
+			<div class="body-side-bar">
+				<div class="sidebar-menu">
+					<li class="sidebar-name"><a href="#">CookPang</a></li>
+
 
                <ul class="sidebar-ul">
                   <li class="sidebar-li">
