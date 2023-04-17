@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="order">
+<delete id="delete" parameterType="_int">
+delete from tbl_order where user_number = #{userNumber}
+</delete>
 
 <!-- 
 	<select id="selectAll" resultType="OrderVo">

@@ -9,13 +9,6 @@ public class RecipeIngredientDTO {
 
     public RecipeIngredientDTO() {}
 
-	@Override
-	public String toString() {
-		return "RecipeIngredientDTO [postNumber=" + postNumber + ", ingredientNumber=" + ingredientNumber
-				+ ", recipeIngredientName=" + recipeIngredientName + ", recipeIngredientQuantity="
-				+ recipeIngredientQuantity + "]";
-	}
-
 	public int getPostNumber() {
 		return postNumber;
 	}
@@ -47,5 +40,14 @@ public class RecipeIngredientDTO {
 	public void setRecipeIngredientQuantity(String recipeIngredientQuantity) {
 		this.recipeIngredientQuantity = recipeIngredientQuantity;
 	}
+
+	@Override
+	public String toString() {
+		return "RecipeIngredientDTO [postNumber=" + postNumber + ", ingredientNumber=" + ingredientNumber
+				+ ", recipeIngredientName=" + recipeIngredientName + ", recipeIngredientQuantity="
+				+ recipeIngredientQuantity + "]";
+	}
+
+
 
 }

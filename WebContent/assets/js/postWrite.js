@@ -69,6 +69,26 @@ $tmpInput.on('change', function() {
 	
 });
 
+// 파일 분리해서 넣기
+function splitFile(files) {
+	let $input = $('.input');
+
+	for (let i = 0; i < 10; i++) {
+		if (i >= files.length) {
+			let dt = new DataTransfer();
+
+			$input[i].files = dt.files;
+		} else {
+			let dt = new DataTransfer();
+			dt.items.add(files[i]);
+
+			$input[i].files = dt.files;
+		}
+
+		console.log($input[i].files);
+	}
+}
+
 // 삭제 버튼
 $('.preview-list').on('click', ".img-cancel-btn", function() {
 		let files = $tmpInput[0].files

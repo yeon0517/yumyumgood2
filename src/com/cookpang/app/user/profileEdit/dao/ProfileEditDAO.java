@@ -19,8 +19,7 @@ public class ProfileEditDAO {
 	 public ProfileEditVO select(int userNumber) {
 		 return sqlSession.selectOne("user.select", userNumber);
 	 }
-	 
-	 
+	
 	 
 
 }

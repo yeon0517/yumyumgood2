@@ -75,49 +75,48 @@ function commentAjax() {
 
 
 function showComment(comments) {
-	console.log(comments);
-	let text = '';
+  console.log(comments);
+  let text = '';
 
-	comments.forEach(comment => {
-		text += `
-    	<li class="read-comment-box">
-											<div class="comment-writer-img-box">
-												
-												<!-- 임시 댓글 프로필사진 -->
-														<img src="https://www.thechooeok.com/common/img/default_profile.png"
-															alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
-													
-											</div>
-											<div class="comment-content-box">
-												<!-- 임시 댓글작성자 아이디 -->
-												<div class="comment-writer-id">${comment.userId}</div>
-												<div class="read-comment-content">
-													<!-- 임시 댓글 내용 -->
-													${comment.commentContent}
-													
-												</div>
-												<div class="read-comment-more">
-													<div class="comment-write-time">${comment.commentTime}</div>
-													<!--댓글번호  -->
-													`;
-		if (comment.userNumber == userNumber || $postUserNumber == userNumber){
-			text +=
-				`<button type="button" class="comment-delete" data-number="${comment.commentNumber}">
-					삭제하기
-				</button>	`;
-		}
-		
-		text += `
-												</div>
-											</div>
-										</li>
+  comments.forEach(comment => {
+    text += `
+    <li class="read-comment-box">
+      <div class="comment-writer-img-box">`;
 
-    				`;
-	});
+    if (comment.userProfileImageSystemName == null) {
+      text += `
+        <img src="https://www.thechooeok.com/common/img/default_profile.png" alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">`;
+    } else {
+      text += `
+        <img src="/upload/${comment.userProfileImageSystemName}" alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">`;
+    }
 
-	$('.read-comment').html(text);
-	
+    text += `
+      </div>
+      <div class="comment-content-box">
+        <div class="comment-writer-id">${comment.userId}</div>
+        <div class="read-comment-content">
+          ${comment.commentContent}
+        </div>
+        <div class="read-comment-more">
+          <div class="comment-write-time">${comment.commentTime}</div>`;
+
+    if (comment.userNumber == userNumber || $postUserNumber == userNumber) {
+      text += `
+          <button type="button" class="comment-delete" data-number="${comment.commentNumber}">
+            삭제하기
+          </button>`;
+    }
+
+    text += `
+        </div>
+      </div>
+    </li>`;
+  });
+
+  $('.read-comment').html(text);
 }
+
 
 
 let $comment = $('.comment-input');
@@ -168,8 +167,6 @@ $('.read-comment').on('click', '.comment-delete', function(){
 
 
 //게시물 좋아요
-
-
 $('.like-box').on('click','.like-btn', function(){
 	likeAjax();
 });
@@ -217,13 +214,95 @@ function showLike(result) {
 		
 }
 
+// x버튼(이전화면으로 돌아가기)
 $('.close-btn').on('click', function(){
 	history.back();
 });
 
+//게시물 저장
+$('.save-box').on('click','.save-btn', function(){
+	saveAjax();
+});
 
+function saveAjax() {
+	$.ajax({
+		url: '/postSave/postSaveOk.ps',
+		type: 'get',
+		data: { userNumber: userNumber, 
+					postNumber: postNumber
+				},
+		success: function(result){
+			
+			showSave(result);
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+}
 
+function showSave(result) {
+	let saveTF = result.trim();
+	
+	console.log(saveTF);
+	
+		if(saveTF==="true"){
+	
+			$('.save-btn').html(
+			`
+			<i class="fa-solid fa-bookmark save-t"></i>
+			`
+ 			)
+		} else if(saveTF==="false"){
+			$('.save-btn').html(
+			`
+			<i class="fa-regular fa-bookmark save-f"></i>
+			`
+ 			)
+		}
+}		
+		
 
+// 게시물 이미지 슬라이드
+let $readImgs = $('.read-imgs');
+let width = 696.858;
+let idx = 0;
+let length = $('.read-img').length;
+	console.log('.read-img');
 
+checkEnd();
+
+$('.next-btn').on('click', function() {
+	console.log('next');
+	idx++;
+
+	$readImgs.css('left', -width * idx).css('transition', '0.5s');
+	checkEnd();
+	console.log(idx);
+});
+
+$('.prev-btn').on('click', function() {
+	console.log('prev');
+
+	idx--;
+
+	$readImgs.css('left', -width * idx).css('transition', '0.5s');
+	checkEnd();
+	console.log(idx);
+});
+
+function checkEnd() {
+	console.log(length);
+	if (idx <= 0) {
+		$('.prev-btn').hide();
+	} else {
+		$('.prev-btn').show();
+	}
+
+	if (idx >=length  - 1) {
+		$('.next-btn').hide();
+	} else {
+		$('.next-btn').show();
+	}
+}
 
 

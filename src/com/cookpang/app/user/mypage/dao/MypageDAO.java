@@ -15,4 +15,9 @@ public class MypageDAO {
 	   public UserVO getProfileInfo(int userNumber) {
 			return sqlSession.selectOne("user.getProfileInfo", userNumber);	
 		}
+	   
+	   public int getTotal() {
+			return sqlSession.selectOne("post.getTotal");
+		}
+	   
 }

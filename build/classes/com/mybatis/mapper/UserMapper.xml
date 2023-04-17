@@ -9,7 +9,7 @@
 		user_password, user_name, user_nickname, user_phone_number,
 		user_email, user_address, user_gender)
 		values(#{userId},
-		#{userPassword}, #{userName}, #{userNickName},
+		#{userPassword}, #{userName}, #{userNickname},
 		#{userPhoneNumber},
 		#{userEmail}, #{userAddress},
 		#{userGender})
@@ -55,6 +55,17 @@
 		ur.user_number = #{userNumber}
 	</select>
 
+
+	<select id="findUser" resultType="UserListVO" parameterType="string">
+		select
+		tu.user_number, tu.user_name, tu.user_nickname,
+		tupi.user_profile_image_system_name
+		from tbl_user tu
+		join tbl_user_profile_image tupi on tupi.user_number = tu.user_number
+		where user_name like concat('%', #{findUser} , '%')
+		or user_nickname like concat('%', #{findUser} , '%')
+	</select>
+
 	<update id="updateUserProfileInfo" parameterType="UserDTO">
 		update tbl_user
 		set user_name = #{userName},
@@ -67,7 +78,7 @@
 
 	<select id="getProfileInfo" parameterType="_int"
 		resultType="UserVO">
-		select u.user_number, u.user_id, u.user_nickname , count(p.post_number) as
+		select u.user_number, u.user_id, u.user_nickname, u.user_name, count(p.post_number) as
 		post_count, u.user_self_introduction,
 		max(upi.user_profile_original_name) as user_profile_original_name,
 		max(upi.user_profile_image_system_name) as
@@ -83,6 +94,10 @@
 		group by u.user_number
 	</select>
 	
+	<delete id="delete" parameterType="_int">
+delete from tbl_user where user_number = #{userNumber};
+</delete>
+
 </mapper>
 
 

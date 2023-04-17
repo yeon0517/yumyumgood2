@@ -1,5 +1,6 @@
 package com.cookpang.app.recipe.ingredient.vo;
 
+
 public class RecipeIngredientVO {
 	private int postNumber; // 레시피 게시물 고유 번호
 	private int ingredientNumber; // 레시피에 사용된 재료 고유 번호
@@ -106,6 +107,5 @@ public class RecipeIngredientVO {
 
 
 	
-
 	
 }

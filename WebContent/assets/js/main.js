@@ -54,72 +54,6 @@ $(function() {
 // 여기까지
 
 // ================================================검색 Ajax==================================================== //
-function showUserList(result) {
-	$(".userList").html('');
-	for (let i = 0; i < result.list.length; i++) {
-
-
-
-		if (result.list[i].snsNumber == 0) {
-			$('.userList').html(`<div>
-									<h1>검색기록 없음!</h1>
-								</div>`
-			);
-		}
-		/*else {
-
-			if (i >= 1) {
-				$('.userList').append(`	<div class="post-section">`)
-			}
-*/
-		$('.userList').append(`
-		
-							
-							
-							<div class="post-part">
-								<input class="snsNumber" type="hidden"
-									value="${result.list[i].snsNumber}"> 
-									<img class="post-image" src="/assets/img/SNSPage/03.jpg" />
-								<div class="post-info">
-									<div class="post-name-box">
-										<span class="post-name"> 
-										${result.list[i].snsTitle}
-										</span>
-									</div>
-									<div class="date-like-wrap">
-										<div class="post-date-box">
-											<span class="post-date"> 
-											${result.list[i].snsDate}
-											</span>
-										</div>
-										<div class="post-like-cnt-box">
-											<span class="heart">♥</span> <span class="like-cnt"> 
-											${result.list[i].likeCnt}
-											</span>
-										</div>
-										<div class="post-view-cnt-box">
-											<span class="material-symbols-outlined"> visibility </span> <span
-												class="view-cnt"> 
-												${result.list[i].snsViewCnt}
-											</span>
-										</div>
-									</div>
-								</div>
-							</div>
-
-		`);
-
-
-
-		/*}*/
-
-
-	}
-
-}
-
-
-
 
 /*function searchUser() {
   // 검색어 가져오기
@@ -206,7 +140,7 @@ function addUserInfo(result) {
 				<div class="man-left">
 					<a href="#"> <img
 						src="" alt="#"
-						class="man-img" /> <!-- </a> -->
+						class="man-img" /> 
 					</a>
 				</div>
 				<div class="man-right">

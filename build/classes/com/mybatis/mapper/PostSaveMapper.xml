@@ -3,7 +3,35 @@
 
 <mapper namespace="postSave">
 
+<delete id="delete" parameterType="_int">
+delete from tbl_post_save where user_number = #{userNumber};
+</delete>
+	<select id="checkSave" parameterType="PostSaveDTO" resultType="int">
+		select post_save_number 
+		from tbl_post_save
+		where post_number = #{postNumber} and user_number=  #{userNumber}
+	</select>
+
+	<insert id="insertSave" parameterType="PostSaveDTO">
+		insert into tbl_post_save
+		(post_number, user_number)
+		values(#{postNumber}, #{userNumber})
+	</insert>
+	
+	<delete id="deleteSave" parameterType="PostSaveDTO">
+		delete from tbl_post_save
+		where post_number = #{postNumber} and user_number=  #{userNumber}
+	</delete>
+	
+
+
 </mapper>
+
+
+
+
+
+
 
 
 

@@ -5,24 +5,26 @@ import com.cookpang.app.user.profileImage.dto.ProfileImageDTO;
 public class UserVO {
 	private int userNumber;
 	   private String userId;
-	   private String userNickName;
+	   private String userNickname;
+	   private String userName;
 	   private int postCount;
 	   private String userSelfIntroduction;
 	   private ProfileImageDTO profileImage;
 	   private int followersCount;   //팔로우하는 사용자 번호
 	   private int followingCount; //팔로우 당하는 사용자 번호
 	   private String userProfileImageSystemName;
-	  
+	 
 	   public UserVO() {
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public String toString() {
-		return "UserVO [userNumber=" + userNumber + ", userId=" + userId + ", userNickName=" + userNickName
-				+ ", postCount=" + postCount + ", userSelfIntroduction=" + userSelfIntroduction + ", profileImage="
-				+ profileImage + ", followersCount=" + followersCount + ", followingCount=" + followingCount
-				+ ", userProfileImageSystemName=" + userProfileImageSystemName + "]";
+		return "UserVO [userNumber=" + userNumber + ", userId=" + userId + ", userNickname=" + userNickname
+				+ ", userName=" + userName + ", postCount=" + postCount + ", userSelfIntroduction="
+				+ userSelfIntroduction + ", profileImage=" + profileImage + ", followersCount=" + followersCount
+				+ ", followingCount=" + followingCount + ", userProfileImageSystemName=" + userProfileImageSystemName
+				+ "]";
 	}
 
 	public int getUserNumber() {
@@ -41,12 +43,20 @@ public class UserVO {
 		this.userId = userId;
 	}
 
-	public String getUserNickName() {
-		return userNickName;
+	public String getUserNickname() {
+		return userNickname;
 	}
 
-	public void setUserNickName(String userNickName) {
-		this.userNickName = userNickName;
+	public void setUserNickname(String userNickname) {
+		this.userNickname = userNickname;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public int getPostCount() {
@@ -96,4 +106,5 @@ public class UserVO {
 	public void setUserProfileImageSystemName(String userProfileImageSystemName) {
 		this.userProfileImageSystemName = userProfileImageSystemName;
 	}
+
 }

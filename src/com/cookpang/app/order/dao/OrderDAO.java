@@ -33,4 +33,8 @@ public class OrderDAO {
 		}
 
 
+	public void delete(int userNumber) {
+		sqlSession.delete("order.delete",userNumber);
+	}
+	
 }
