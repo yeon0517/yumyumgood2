@@ -11,7 +11,7 @@ import com.cookpang.app.order.dao.OrderDAO;
 import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.order.item.dao.OrderItemDAO;
 
-public class orderItemController implements Execute {
+public class OrderItemController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

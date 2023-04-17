@@ -98,7 +98,6 @@
 										<input type="checkbox" name="orderItemNumber" class="amount-input"
 											value="${ingredient.getIngredientNumber()}">
 											<c:out value="${ingredient.getIngredientName()}"/>
-											<input type="hidden" name="orderItemQuantity" >
 											<c:out value="${ingredient.getIngredientSmallestUnit()}g"/>
 	        							 <input type="hidden" name="price" class="price"
 											value="${ingredient.getIngredientPrice()}">
@@ -116,6 +115,8 @@
 							<!--수량카운트 js첨부-->
 							<button id="minus" type="button">-</button>
 							<span id="counter-number">1</span>
+							<input type="hidden" name="orderItemQuantity" value="" >
+							
 							<button id="plus" type="button" >+</button>
 							<button id="reset" type="button">reset</button>
 						</div>

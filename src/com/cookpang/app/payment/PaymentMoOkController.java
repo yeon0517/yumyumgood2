@@ -34,9 +34,10 @@ public class PaymentMoOkController implements Execute {
 		
 //		String items = Integer.valueOf(req.getParameter("orderItemNumber"))+" "+Integer.valueOf(req.getParameter("orderItemQuantity"));
 		
-		int number = (Integer)req.getSession().getAttribute("ingredientNumber");
+//		int number = (Integer)req.getSession().getAttribute("ingredientNumber");
+	int number = 15;
 		
-		orderItemDTO.setIngredientNumber(number);
+		orderItemDTO.setOrderNumber(number);
 		orderItemDTO.setOrderItemNumber(Integer.valueOf(req.getParameter("orderItemNumber")));
 		orderItemDTO.setOrderItemQuantity(Integer.valueOf(req.getParameter("orderItemQuantity")));
 //		orderItemDTO.setOrderItemQuantity(Integer.valueOf(req.getParameter("orderItemQuantity")));
@@ -47,7 +48,15 @@ public class PaymentMoOkController implements Execute {
 
 		resp.sendRedirect("/order/orderList.or");
 		
-		
+//		String orderItemNumberStr = req.getParameter("orderItemNumber");
+//		if (!orderItemNumberStr.isEmpty()) {
+//		    orderItemDTO.setOrderItemNumber(Integer.valueOf(orderItemNumberStr));
+//		}
+//
+//		String orderItemQuantityStr = req.getParameter("orderItemQuantity");
+//		if (!orderItemQuantityStr.isEmpty()) {
+//		    orderItemDTO.setOrderItemQuantity(Integer.valueOf(orderItemQuantityStr));
+//		}
 	}
 }
 

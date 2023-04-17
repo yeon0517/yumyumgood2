@@ -13,7 +13,7 @@ import com.cookpang.app.order.item.dao.OrderItemDAO;
 import com.cookpang.app.order.item.dto.OrderItemDTO;
 import com.cookpang.app.post.dao.PostDAO;
 
-public class orderItemOkController implements Execute {
+public class OrderItemOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
