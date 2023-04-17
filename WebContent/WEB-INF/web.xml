@@ -217,7 +217,15 @@
   <!--  -->
   
   
+   <servlet>
+  	<servlet-name>MyPageAjax</servlet-name>
+  	<servlet-class>com.cookpang.app.user.mypage.MypageFrontController</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+  	<servlet-name>MyPageAjax</servlet-name>
+  	<url-pattern>*.myAjax</url-pattern>
+  </servlet-mapping>
 
   
 </web-app>

@@ -18,8 +18,9 @@
 
 
 	<select id="getTotal" resultType="_int">
-		select count(post_number) from
-		tbl_post
+		select count(post_number) 
+		from tbl_post
+		where user_number = #{userNumber}
 	</select>
 
 
@@ -47,13 +48,14 @@
 		from tbl_user u join tbl_post p
 		on post_number
 		= #{postNumber} and u.user_number = p.user_number
-	</select> 
-	
+	</select>
+
 	<update id="updatePostViewCount" parameterType="_int">
 		update tbl_post
 		set
 		post_view_count = post_view_count + 1
-		where post_number = #{postNumber}
+		where post_number =
+		#{postNumber}
 	</update>
 
 	<delete id="delete" parameterType="_int">
@@ -68,46 +70,78 @@
 		#{postRecipeContent}
 		where post_number = #{postNumber}
 	</update>
-	
-	<select id="postReadDefaultInfo" parameterType="_int" resultType="PostReadVO" >
-		select p.post_number, up.user_profile_image_system_name, u.user_number, u.user_id, p.post_title,
-   		p.post_content, p.post_recipe_content, count(pl.post_number) as post_like_count, p.post_view_count, p.post_date
+
+	<select id="postReadDefaultInfo" parameterType="_int"
+		resultType="PostReadVO">
+		select p.post_number,
+		up.user_profile_image_system_name, u.user_number, u.user_id,
+		p.post_title,
+		p.post_content, p.post_recipe_content, count(pl.post_number) as post_like_count,
+		p.post_view_count, p.post_date
 		from tbl_user u
 		join tbl_post p
-		on u.user_number = p.user_number
+		on
+		u.user_number = p.user_number
 		left join tbl_user_profile_image up
-		on u.user_number = up.user_number
+		on
+		u.user_number = up.user_number
 		left join tbl_post_like pl
-		on p.post_number = pl.post_number
+		on
+		p.post_number = pl.post_number
 		where p.post_number = #{postNumber}
-		group by p.post_number, up.user_profile_image_system_name, u.user_number, 
-		u.user_id, p.post_title, p.post_content, p.post_recipe_content, p.post_view_count, p.post_date
-	</select>	
-	
+		group by p.post_number, up.user_profile_image_system_name,
+		u.user_number,
+		u.user_id, p.post_title, p.post_content, p.post_recipe_content,
+		p.post_view_count, p.post_date
+	</select>
+
 
 	<select id="postSelect" parameterType="map" resultType="PostVO">
-		select tp.post_number, tp.user_number, post_title, tu.user_nickname,
+		select
+		tp.post_number, tp.user_number, post_title, tu.user_nickname,
 		tpf.post_file_index, tp.post_date, tp.post_thumbnail
 		from tbl_post tp
 		left outer join tbl_user tu on tp.user_number = tu.user_number
-		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
-		where tpf.post_file_index = '1' and tp.post_title like concat('%' , #{keyword} , '%')
+		left
+		outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		where
+		tpf.post_file_index = '1' and tp.post_title like concat('%' ,
+		#{keyword} , '%')
 		order by tp.post_date desc
-		limit #{startRow} , #{rowCount}
+		limit #{startRow} ,
+		#{rowCount}
 	</select>
 
-	<select id="searchTotal" parameterType="string" resultType="_int">
+	<select id="searchTotal" parameterType="string"
+		resultType="_int">
 		select count(tp.post_number)
 		from tbl_post tp
-		left outer join tbl_user tu on tp.user_number = tu.user_number
-		left outer join tbl_post_file tpf on tpf.post_number = tp.post_number
-		where tpf.post_file_index = '1' and tp.post_title like concat('%' , #{keyword} , '%')
+		left outer join
+		tbl_user tu on tp.user_number = tu.user_number
+		left outer join
+		tbl_post_file tpf on tpf.post_number = tp.post_number
+		where
+		tpf.post_file_index = '1' and tp.post_title like concat('%' ,
+		#{keyword} , '%')
 	</select>
+
 
  <delete id="deleteUser" parameterType="_int">
 delete from tbl_post where user_number = #{userNumber}
 </delete>
  
+
+	<update id="updateThumb" parameterType="PostFileDTO">
+		UPDATE tbl_post
+		SET post_thumbnail= #{postFileSystemName}
+		WHERE post_number= #{postNumber}
+
+	</update>
+	
+	
+
+
+
 </mapper>
 
 
