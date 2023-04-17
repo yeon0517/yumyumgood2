@@ -37,17 +37,6 @@ public class OrderOkController implements Execute {
 
 		orderDAO.OrderInsert(orderDTO);
 		
-		
-		/*
-		int postNumber = 2;
-		 * List<RecipeIngredientVO> recipeIngredientList
-		 * =paymentDAO.postPaymentIngredient(postNumber); req.setAttribute("ingredient",
-		 * recipeIngredientList);
-		 */
-		
-		
-		
-		
 		resp.sendRedirect("/mainOk.m");
 		
 	}

@@ -3,6 +3,18 @@
 
 <mapper namespace="orderItem">
 
+	<insert id="item" parameterType="OrderItemDTO">
+	insert into tbl_order_item
+	(order_number, ingredient_number, order_item_quantity)
+	values(#{orderNumber}, #{ingredientNumber}, #{orderItemQuantity});
+	</insert>
+
+	<insert id="orderTotalCost" parameterType="OrderDTO">
+	insert into tbl_order
+	(user_number,order_total_cost)
+	values(#{userNumber}, #{orderTotalCost});
+	</insert>
+
 </mapper>
 
 

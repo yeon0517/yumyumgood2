@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.user.LoginOkController;
+
 public class OrderItemFrontController extends HttpServlet{
 
 	@Override
@@ -23,6 +25,13 @@ public class OrderItemFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
+		
+		case "/order/orderItem.us":
+			new orderItemController().execute(req, resp);
+			break;
+		case "/order/orderItemOk.us":
+			new orderItemOkController().execute(req, resp);
+			break;
 		
 		}
 	}

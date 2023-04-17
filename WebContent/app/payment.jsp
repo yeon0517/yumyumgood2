@@ -105,9 +105,9 @@
                   </a>
                     <ul>
                       <li>
-                        <p>NMG-309K 다크그레이</p>
+                        <p name="orderItemNumber"></p>
                         <!-- 수량은 버튼수량 갯수를 확인 후 해야함 / 금액도...  -->
-                        <p>수량 1개 / 총 59,000원</p>
+                        <p name="orderItemQuantity"></p>
                       </li>
                     </ul>
                   </span>
@@ -121,11 +121,12 @@
               <img src="#" alt="#"><!--물품사진-->
               <li class="CheckoutProductsSectionstyle">
         <span>
-        <a class="productName" href="#"> [미강] 만능 짤순이 다짜고짜 오이지 짤순이 야채 탈수기</a>
+        <a class="productName" href="#"> ${orderItem.getIngredientNumber()}</a>
           <ul>
             <li>
-              <p>본품</p>
-              <p>수량 1개 / 총 34,900원</p>
+              <p>본품 금액</p>
+              <p>${orderItem.getOrderItemQuantity()}</p>
+              <p>총 금액</p>
             </li>
           </ul>
         </span>

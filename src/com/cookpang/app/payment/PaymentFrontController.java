@@ -29,9 +29,11 @@ public class PaymentFrontController extends HttpServlet{
             new PaymentMoController().execute(req, resp);
             break;
         case "/pay/paymentOkmo.pa":
-            new PaymentOkController().execute(req, resp);
+            new PaymentMoOkController().execute(req, resp);
             break;
-
+        case "/pay/paymentItem.pa":
+            new PaymentItemController().execute(req, resp);
+            break;
 			
 		}
 	}

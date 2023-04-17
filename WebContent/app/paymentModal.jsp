@@ -23,6 +23,7 @@
 	<div class="background">
 		<div class="window">
 			<div class="popup">
+			 <form action="${pageContext.request.contextPath}/pay/paymentOkmo.pa" method="POST">
 				<div class="popup-header">
 					<button id="close" type="button">
 						<img
@@ -44,7 +45,9 @@
 							<p class="content-price">
 							<%-- <input type="hidden" value="${payPost.getPostNumber()}" class="post-number" > --%>
 							<input type="hidden" value="${payPost.getPostNumber()}" class="post-number" >
-							<span class="result-price"></span>
+							<span class="result-price">
+								
+							</span>
 							</p>
 							<a href="#"> <img
 								src="${pageContext.request.contextPath}/assets/img/shareicon.png"
@@ -83,19 +86,21 @@
 
 
 				<div class="footer">
+				      
 					<div class="checkboxBox">
 						<div class="checkbox-span">필수 재료 선택 (최소 단위):</div>
 						<div class="checkbox" id="checkboxes">
 
 
-							<form action="/order/orderList.or" method="POST">
+							
 								<c:forEach var="ingredient" items="${ingredient}" varStatus="status">
 									<span class = "amount-box">
-										<input type="checkbox" name="amountInput" class="amount-input"
+										<input type="checkbox" name="orderItemNumber" class="amount-input"
 											value="${ingredient.getIngredientNumber()}">
 											<c:out value="${ingredient.getIngredientName()}"/>
+											<input type="hidden" name="orderItemQuantity" >
 											<c:out value="${ingredient.getIngredientSmallestUnit()}g"/>
-	        							<input type="hidden" name="price" class="price"
+	        							 <input type="hidden" name="price" class="price"
 											value="${ingredient.getIngredientPrice()}">
 									</span>
         							<c:if test="${status.count >= 5}">
@@ -115,13 +120,15 @@
 							<button id="reset" type="button">reset</button>
 						</div>
 
-						</form>
+					
 						<!-- 나중에 경로 바꾸기 payment로 -->
 						<button type="submit" name="buybutton" id="buybutton">
-							<a href="/order/orderList.or" style="color: white"> 구매하기 </a>
+							<span style="color: white"> 구매하기 </span>
 						</button>
 					</div>
+				
 				</div>
+			</form>
 			</div>
 
 		</div>
