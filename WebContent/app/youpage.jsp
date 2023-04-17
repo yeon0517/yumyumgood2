@@ -35,7 +35,7 @@
                 <div class="aaa">
                   <div class="name-box">
                     <div class="nickname-box">
-                      <div class="nickname">devil_gu12</div>
+                      <div class="nickname">${userVO.getUserNickname()}</div>
                     </div>
                     <div class="profile-btn">
                       <button
@@ -56,7 +56,7 @@
                       <div class="post">
                         게시물
                         <!-- 디비처리 숫자가 늘어나용>< -->
-                        <span class="cnt"> 3</span>
+                        <span class="cnt"> ${userVO.getPostCount()}</span>
                       </div>
                     </div>
                     <!-- 팔로워 모달창 시작-->
@@ -65,7 +65,7 @@
                       <a class="follower" onclick="openModal()"
                         >팔로워
                         <!-- 디비처리 숫자가 늘어나용>< -->
-                        <span class="cnt">10.7만</span></a
+                        <span class="cnt">${userVO.getFollowersCount()}</span></a
                       >
                     </div>
 
@@ -209,7 +209,7 @@
                       <a class="following" onclick="openModal2()"
                         >팔로잉
                         <!-- 디비처리 숫자가 늘어나용>< -->
-                        <span class="cnt">136</span>
+                        <span class="cnt">${userVO.getFollowingCount()}</span>
                       </a>
                     </div>
 
@@ -349,13 +349,12 @@
                     <!-- 팔로잉 모달창 끝 -->
                   </div>
                   <div class="real-name">
-                    <div class="name">짱구</div>
+                    <div class="name">${userVO.getUserName()}</div>
                   </div>
                   <div class="introduce">
                     <!-- db에서 조회해야한다. -->
                     <div class="introduce-txt">
-                      나를 통제하는건 이슬이누나와 초코비뿐ㅋ #이슬이누나
-                      #연상녀 #연하남 #결혼하자
+                      ${userVO.getUserSelfIntroduction()}
                     </div>
                   </div>
                 </div>
@@ -480,14 +479,15 @@
 
         <div class="body-side-bar">
           <div class="sidebar-menu">
-            <li class="sidebar-name"><a href="#">CookPang</a></li>
+            <li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">CookPang</a></li>
             <ul class="sidebar-ul">
               <li class="sidebar-li">
                 <div class="li-box">
                   <!-- <img src="../img/managerImg/home.png" alt="" class="sidebar-img" /> -->
                   <i class="fa-solid fa-house"></i>
-                  <a href="#">홈</a>
-                </div>
+                  <a
+                           href="${pageContext.request.contextPath}/mainOk.m">홈</a>
+                     </div>
               </li>
               <li class="sidebar-li">
                 <div class="li-box">
@@ -541,12 +541,25 @@
                     class="sidebar-img"
                   /> -->
                   <i class="fa-regular fa-user"></i>
-                  <a href="#">프로필</a>
+                   <c:choose>
+                         <c:when test="${empty sessionScope.userNumber}">
+                         <a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
+                     </c:when> 
+                        <c:otherwise>
+                        <a href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
+                        </c:otherwise>
+               </c:choose>
                 </div>
               </li>
             </ul>
-            <li class="sidebar-login"><a href="#">로그인</a></li>
-            
+             <li class="sidebar-login"><c:choose>
+                        <c:when test="${empty sessionScope.userNumber}">
+                           <a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
+                  </c:when>
+                  <c:otherwise>
+                     <a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
+                  </c:otherwise>
+                  </c:choose>
           </div>
         </div>
       </div>

@@ -133,19 +133,19 @@ function addUserInfo(result) {
 	
 	
 	let text = '';
-
+console.log(result);
 	result.forEach(info => {
 		text += `
 			<div class="search-man">
 				<div class="man-left">
 					<a href="#"> <img
-						src="" alt="#"
+						src="/upload/${info.userProfileImageSystemName}" alt="${info.userProfileImageSystemName}"
 						class="man-img" /> <!-- </a> -->
 					</a>
 				</div>
 				<div class="man-right">
 					<div class="man-id">
-						<a href="#"> ${info.userNickName} </a>
+						<a href="/user/youPage.us?userNumber=${info.userNumber}"> ${info.userNickName} </a>
 						<!-- <a href="#" class="man-id2">hot_boy</a> -->
 					</div>
 					<div class="man-name">

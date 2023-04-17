@@ -587,7 +587,7 @@
          <!-- 사이드 바 -->
          <div class="body-side-bar">
             <div class="sidebar-menu">
-               <li class="sidebar-name"><a href="#">CookPang</a></li>
+               <li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">CookPang</a></li>
 
                <ul class="sidebar-ul">
                   <li class="sidebar-li">

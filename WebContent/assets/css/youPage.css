@@ -11,13 +11,13 @@ a {
 }
 
 #main-header {
-  background-color: #aca4a4;
+ /*  
   position: fixed;
   height: 25px;
   width: 100%;
   margin: 0;
   padding: 0;
-  z-index: 1;
+  z-index: 1; */
 }
 
 #main-body {
