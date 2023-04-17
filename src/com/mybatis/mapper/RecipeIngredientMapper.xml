@@ -4,11 +4,19 @@
 <mapper namespace="recipeIngredient">
 	<insert id="insert" parameterType="RecipeIngredientDTO">
 		insert into tbl_recipe_ingredient
-(post_number, ingredient_number, recipe_ingredient_name, recipe_ingredient_quantity)
-values(#{postNumber} ,#{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});
-		
-		
+		(post_number, ingredient_number, recipe_ingredient_name, recipe_ingredient_quantity)
+		values(#{postNumber} ,#{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});;
 	</insert>
+	
+	<select id="getRecipeIngredients" parameterType="_int" resultType="RecipeIngredientVO">
+		select ti.ingredient_name ,ri.recipe_ingredient_quantity 
+		from tbl_ingredient ti
+		join tbl_recipe_ingredient ri
+		on ti.ingredient_number = ri.ingredient_number and ri.post_number = #{postNumber}
+	</select>
+	
+		
+		
 	
 	
   		

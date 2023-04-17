@@ -113,7 +113,7 @@ delete from tbl_post where user_number = #{userNumber}
 
 
 
-
+ 
 
 
 

@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.post.like.PostLikeOkController;
+
 public class SaveFrontController extends HttpServlet{
 
 	@Override
@@ -23,7 +25,9 @@ public class SaveFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		
+		case "/postSave/postSaveOk.ps" :
+			new PostSaveOkController().execute(req, resp);
+			break;
 		}
 	}
 
