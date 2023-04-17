@@ -140,7 +140,7 @@ function addUserInfo(result) {
 				<div class="man-left">
 					<a href="#"> <img
 						src="" alt="#"
-						class="man-img" /> <!-- </a> -->
+						class="man-img" /> 
 					</a>
 				</div>
 				<div class="man-right">

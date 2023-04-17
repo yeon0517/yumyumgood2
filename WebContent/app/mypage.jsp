@@ -371,8 +371,8 @@
 						</div>
 					</div>
 					<div class="next-page">
-						<div class="paging">
-							<p class="paging-btn">
+						<div class="paging" >
+							<p class="paging-btn prev">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
 									alt="" class="direction" />
@@ -382,7 +382,7 @@
 								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
 								<a href="">5</a>
 							</p>
-							<p class="paging-btn">
+							<p class="paging-btn next">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
 									alt="다음으로" />
@@ -498,6 +498,7 @@
 					</div>
 				</div>
 				<!-- 찜한 레시피 -->
+				<div class="LikeRecipe">
 				<div id="bottom3" class="main-bottom3 test">
 					<div class="ccc">
 						<div class="bbb">
@@ -556,7 +557,8 @@
 							<p class="paging-btn">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-									alt="" class="direction" />
+									alt="" class="direction" class="paging-btn prev"/>
+									
 								</a>
 							</p>
 							<!-- 페이지 이동 -->
@@ -567,7 +569,7 @@
 							<p class="paging-btn">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-									alt="다음으로" />
+									alt="다음으로" class="paging-btn next"/>
 								</a>
 							</p>
 							<p class="paging-btn" id="paging-last">
@@ -579,6 +581,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 			<!-- 여기서부터 -->
 			<!-- 사이드 바 -->
