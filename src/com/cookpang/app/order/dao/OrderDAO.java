@@ -11,4 +11,8 @@ public class OrderDAO {
 	public OrderDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	public void delete(int userNumber) {
+		sqlSession.delete("order.delete",userNumber);
+	}
+	
 }

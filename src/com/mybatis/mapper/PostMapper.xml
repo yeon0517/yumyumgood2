@@ -104,6 +104,9 @@
 		where tpf.post_file_index = '1' and tp.post_title like concat('%' , #{keyword} , '%')
 	</select>
 
+ <delete id="deleteUser" parameterType="_int">
+delete from tbl_post where user_number = #{userNumber}
+</delete>
  
 </mapper>
 

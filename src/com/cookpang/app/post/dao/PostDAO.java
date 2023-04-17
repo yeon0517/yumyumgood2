@@ -56,6 +56,9 @@ public class PostDAO {
 	}
 	
 	
+	public void deleteUser(int userNumber) {
+		sqlSession.delete("post.deleteUser",userNumber);
+	}
 	
 	
 

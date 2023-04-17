@@ -44,4 +44,8 @@ public class UserDAO {
 	 public ProfileEditVO getProfileInfo(int userNumber) {
 		   return sqlSession.selectOne("user.getProfileInfo",userNumber);
 	   }
+	 public void delete(int userNumber) {
+			sqlSession.delete("user.delete",userNumber);
+		}
+		
 }

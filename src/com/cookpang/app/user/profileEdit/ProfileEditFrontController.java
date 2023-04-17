@@ -35,6 +35,10 @@ public class ProfileEditFrontController extends HttpServlet{
 			System.out.println("프로필 편집 불러오기 ");
 			break;
 			
+		case "/user/Delete.edit" : 
+			new ProfileDeleteController().execute(req, resp);
+			System.out.println("회원 삭제 ");
+			break;
 //		case "/user/profileEditUpdate.edit" : 
 //			new ProfileUpdateController().execute(req, resp);
 //			System.out.println("프로필 업데이트");

@@ -12,6 +12,12 @@ public class PostSaveDAO {
 	public PostSaveDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+
+	public void delete(int userNumber) {
+		sqlSession.delete("postSave.delete",userNumber);
+	}
+	
+
 	public Integer checkSave(PostSaveDTO postSaveDTO) {
 		return sqlSession.selectOne("postSave.checkSave", postSaveDTO);
 	}
@@ -21,4 +27,5 @@ public class PostSaveDAO {
 	public void deleteSave(PostSaveDTO postSaveDTO) {
 		sqlSession.delete("postSave.deleteSave", postSaveDTO);
 	}
+
 }

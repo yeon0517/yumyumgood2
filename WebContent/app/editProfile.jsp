@@ -21,6 +21,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 <link
 	href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital@1&display=swap"
 	rel="stylesheet" />
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+	
+	
 <script src="https://kit.fontawesome.com/9416f63361.js"
 	crossorigin="anonymous"></script>
 <script>
@@ -70,6 +76,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 										<!-- src="/upload/${profileImage.getUserProfileImageSystemName()}"-->
 								</div>
 							</div>
+							
 							<div class="picture-box-rigth">
 								<input type="file" name="file1" id="uploadLink" onchange="readURL(this);"
 									class="change-picture" accept=".jpg, .jpeg, .png"
@@ -199,9 +206,13 @@ String myTextareaValue = request.getParameter("myTextarea");
 							</div>
 						</div>
 					</div>
+						
 					<div class="goodbye-box">
-						<a href="#" class="goodbye-btn">회원탈퇴</a>
+					 <button type="button" class="goodbye-btn">회원 탈퇴</button>
+										
+				<!-- 		<a href="#" class="goodbye-btn">회원탈퇴</a> -->
 					</div>
+						
 				</div>
 			</div>
 
@@ -551,6 +562,9 @@ String myTextareaValue = request.getParameter("myTextarea");
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+      let userNumber = "${sessionScope.userNumber}";
+   </script>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script
