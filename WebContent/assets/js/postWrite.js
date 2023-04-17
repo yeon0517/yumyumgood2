@@ -42,10 +42,10 @@ $tmpInput.on('change', function() {
 	let files = this.files;
 	//console.log(files);
 
-	splitFile(files);
 
 	//파일을 변경하면 원래 선택된 파일은 미리보기를 제거한다.
 	$fileList.html('');
+
 
 	for (let i = 0; i < files.length; i++) {
 		let src = URL.createObjectURL(files[i]);
@@ -66,70 +66,48 @@ $tmpInput.on('change', function() {
 	}
 	length = $('.preview-image').length;
 	checkEnd();
-
+	
 });
-
-// 파일 분리해서 넣기
-function splitFile(files) {
-	let $input = $('.input');
-
-	for (let i = 0; i < 10; i++) {
-		if (i >= files.length) {
-			let dt = new DataTransfer();
-
-			$input[i].files = dt.files;
-		} else {
-			let dt = new DataTransfer();
-			dt.items.add(files[i]);
-
-			$input[i].files = dt.files;
-		}
-
-		console.log($input[i].files);
-	}
-}
-
 
 // 삭제 버튼
 $('.preview-list').on('click', ".img-cancel-btn", function() {
-	let files = $tmpInput[0].files
-	console.log("삭제!");
+		let files = $tmpInput[0].files
+		console.log("삭제!");
 
-	$(this).parent().parent().remove();
+		$(this).parent().parent().remove();
 
-	let fileName = $(this).data('name');
-	let dt = new DataTransfer();
+		let fileName = $(this).data('name');
+		let dt = new DataTransfer();
 
 
-	for (let i = 0; i < files.length; i++) {
-		if (files[i].name !== fileName) {
-			dt.items.add(files[i]);
+		for (let i = 0; i < files.length; i++) {
+			if (files[i].name !== fileName) {
+				dt.items.add(files[i]);
+			}
 		}
-	}
 
-	files = dt.files;
-	$tmpInput[0].files = files;
-
-	length = $('.preview-image').length;
-
-	if (idx != 0) {
-		idx--;
-	}
-
-	if (length == 0) {
-		$('.image-upload-wrap').css("display", "flex");
-		$('.image-preview-wrap').css("display", "none");
-	}
-
-	if (idx == length - 1) {
-		$previewList.css('left', -width * idx).css('transition', 'none');
-	}
-	console.log(`idx : ${idx}`)
-	console.log(`length : ${length}`)
-	checkEnd();
-
-	splitFile(files)
-});
+		files = dt.files;
+		$tmpInput[0].files = files;
+		
+		length = $('.preview-image').length;
+		
+		if(idx != 0){
+			idx--;
+		}
+		
+		if(length == 0){
+			$('.image-upload-wrap').css("display", "flex");
+			$('.image-preview-wrap').css("display", "none");
+		}
+		
+		if(idx == length-1){
+			$previewList.css('left', -width * idx).css('transition', 'none');
+		}
+		console.log(`idx : ${idx}`)
+		console.log(`length : ${length}`)
+		checkEnd();
+		
+	});
 
 
 
@@ -162,16 +140,16 @@ $('.prev-btn').on('click', function() {
 
 
 function checkEnd() {
-
-	if (idx <= 0) {
+	
+	if(idx <= 0){
 		$('.prev-btn').hide();
-	} else {
+	}else {
 		$('.prev-btn').show();
 	}
-
-	if (idx >= length - 1) {
+	
+	if(idx >= length - 1){
 		$('.next-btn').hide();
-	} else {
+	}else {
 		$('.next-btn').show();
 	}
 }
@@ -295,9 +273,7 @@ $(document).on('change', '#select', function() {
 
 				text += `<option value="${cate.ingredientNumber}">
 									${cate.ingredientName}
-								</option>
-				
-								`;
+								</option>`;
 			});
 			text += `</select>`;
 

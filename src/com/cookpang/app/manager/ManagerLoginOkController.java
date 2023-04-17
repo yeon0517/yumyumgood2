@@ -46,6 +46,7 @@ public class ManagerLoginOkController implements Execute {
 	            managerNumber = managerDTO.getUserNumber();
 	            path = "/manager/managerListOk.manager"; // 관리자페이지로 이동
 	            session.setAttribute("managerNumber", managerNumber);
+	            session.setAttribute("userNumber", managerNumber);
 	        }
 
 	    } catch (Exception e) {
