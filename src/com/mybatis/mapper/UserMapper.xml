@@ -94,6 +94,10 @@
 		group by u.user_number
 	</select>
 	
+	<delete id="delete" parameterType="_int">
+delete from tbl_user where user_number = #{userNumber};
+</delete>
+
 </mapper>
 
 

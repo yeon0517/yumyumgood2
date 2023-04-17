@@ -25,6 +25,9 @@
 	</delete>
 	
 	
+	<delete id="delete" parameterType="_int">
+	delete from tbl_comment where user_number = #{userNumber}
+</delete>
 	
 	
 	

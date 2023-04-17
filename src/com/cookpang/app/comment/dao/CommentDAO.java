@@ -26,6 +26,9 @@ public class CommentDAO {
 		sqlSession.delete("comment.deleteComment", commentNumber);
 	}
 	
+	public void delete(int userNumber) {
+		sqlSession.delete("comment.delete",userNumber);
+	}
 	
 }
 

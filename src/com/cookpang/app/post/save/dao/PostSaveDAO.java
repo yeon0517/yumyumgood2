@@ -11,4 +11,8 @@ public class PostSaveDAO {
 	public PostSaveDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	public void delete(int userNumber) {
+		sqlSession.delete("postSave.delete",userNumber);
+	}
+	
 }
