@@ -208,7 +208,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 					</div>
 						
 					<div class="goodbye-box">
-					 <button type="button" class="goodbye-btn" onclick="location.href='/mainOk.m'">회원 탈퇴</button>
+					 <button type="button" class="goodbye-btn">회원 탈퇴</button>
 										
 				<!-- 		<a href="#" class="goodbye-btn">회원탈퇴</a> -->
 					</div>

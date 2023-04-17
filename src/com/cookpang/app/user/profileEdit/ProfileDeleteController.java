@@ -55,7 +55,7 @@ public class ProfileDeleteController implements Execute {
 		userDAO.delete(userNumber);
 		req.getSession().invalidate();
 		
-		resp.sendRedirect("/mainOk.m");
+		resp.sendRedirect("/user/logoutOk.us");
 	
 	}
 

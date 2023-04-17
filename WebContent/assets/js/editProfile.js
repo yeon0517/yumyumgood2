@@ -104,14 +104,7 @@ $('.change-picture').on('change',function(){
 $('.goodbye-btn').on('click', function(){
    
    if (window.confirm('정말 탈퇴하시겠습니까?')){
-       $.ajax({
-        url : "/user/Delete.edit",
-        type : "POST",
-        data : {userNumber : userNumber},
-        success : function(){
-           console.log('회원삭제!!')
-        }
-     });
+       window.location.href = "/user/Delete.edit";
    }
    else{
    }
