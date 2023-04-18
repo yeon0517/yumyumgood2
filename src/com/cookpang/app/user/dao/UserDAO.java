@@ -51,5 +51,5 @@ public class UserDAO {
 	 public UserVO getProfileInfo(int userNumber) {
 			return sqlSession.selectOne("user.getProfileInfo", userNumber);	
 		}
-		
+	
 }

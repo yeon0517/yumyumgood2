@@ -18,7 +18,7 @@ public class YoupageController implements Execute {
 	System.out.println("유페이지 진입 ");
 		req.setCharacterEncoding("utf-8");
 		HttpSession session = req.getSession();
-		int userNumber =(int)session.getAttribute("userNumber");
+		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
 	
 		
 		UserDAO userDAO = new UserDAO();
@@ -28,7 +28,7 @@ public class YoupageController implements Execute {
 
 		System.out.println(userVO);
 		
-	    System.out.println("으디야");
+	    
 		req.setAttribute("userVO", userVO);
 
 		req.getRequestDispatcher("/app/youpage.jsp").forward(req, resp);
