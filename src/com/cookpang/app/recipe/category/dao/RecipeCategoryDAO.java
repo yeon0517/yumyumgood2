@@ -23,6 +23,9 @@ public class RecipeCategoryDAO {
 	public List<RecipeCategoryVO> getRecipeCategories(int postNumber ) {
 		return sqlSession.selectList("recipeCategory.getRecipeCategories", postNumber);
 	}
+	public void delete(int postNumber ) {
+		 sqlSession.selectList("recipeCategory.delete", postNumber);
+	}
 }
 
 

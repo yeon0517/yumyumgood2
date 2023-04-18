@@ -23,4 +23,7 @@ public class RecipeIngredientDAO {
 	public List<RecipeIngredientVO> getRecipeIngredients(int postNumber) {
 		return sqlSession.selectList("recipeIngredient.getRecipeIngredients", postNumber);
 	}
+	public void delete(int postNumber) {
+		sqlSession.delete("recipeIngredient.delete", postNumber);
+	}
 }
