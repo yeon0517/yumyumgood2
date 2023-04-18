@@ -147,6 +147,14 @@ function postListTable(result) {
 	console.log(result);
 	let text = '';
 	for (let i = 0; i < result.userPost.length; i++) {
+		if(result.userPost[i].postNumber == 0){
+			text+= `	<div>
+									<h1>아직 등록된 게시글이 없습니다!</h1>
+								</div>
+			
+			`;
+		}
+		
 		if (i % 3 == 0) {
 			text += `	<div class="ccc">`;
 		}
