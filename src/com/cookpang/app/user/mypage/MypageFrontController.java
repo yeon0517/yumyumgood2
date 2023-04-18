@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.post.PostListOkController;
+
 public class MypageFrontController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -27,6 +29,20 @@ public class MypageFrontController extends HttpServlet{
 		case "/mypage/mypageOk.my" :
 			new MypageOkController().execute(req, resp);
 			break;
+		
+		case "/mypage/mypageLikeOk.myAjax" :
+			new MyPageLikeOkController().execute(req, resp);
+			break;
+			
+		case "/mypage/paymentListOk.myAjax" :
+			new PaymentListOkController().execute(req, resp);
+			break;
+			
+		case "/mypage/mypageListOk.my" :
+			new MyPageListOkController().execute(req, resp);
+			break;
+		
+		
 		}
 	}
 }

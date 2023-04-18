@@ -100,9 +100,6 @@ $('.change-picture').on('change',function(){
 });
 
 
-/*$('.box5').on('click', function(){
-	let passwordEdit = 
-})*/
 
 $('.box1').on('blur', function(){
 	let password = $(this).val();
@@ -119,23 +116,6 @@ $('.box1').on('blur', function(){
 	});
 });
 
-/*$(function() {
-      let p1 = document.getElementById('#box2').value;
-      let p2 = document.getElementById('#box3').value;
-      
-      if(p1.length < 8) {
-              alert('입력한 글자가 8글자 이상이어야 합니다.');
-              return false;
-          }
-          
-          if( p1 != p2 ) {
-            alert("비밀번호불일치");
-            return false;
-          } else{
-            alert("비밀번호가 일치합니다");
-            return true;
-          }
-    });*/
 
 
 
@@ -160,20 +140,17 @@ $(function() {
   });
 });
 
-/*$(function(){
-	$("#password-form").submit(function(){
-		
-		let password1 = $("#password-form #box2").val();
-		let password1 = $("#password-form #box3").val();
-		
-		console.log(password1);
-		console.log(password2);
-	});
+
+
+//회원 삭제
+$('.goodbye-btn').on('click', function(){
+   
+   if (window.confirm('정말 탈퇴하시겠습니까?')){
+       window.location.href = "/user/Delete.edit";
+   }
+   else{
+   }
 });
-*/
-
-
-
 
 
 

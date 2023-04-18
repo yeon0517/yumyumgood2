@@ -9,7 +9,7 @@
 		user_password, user_name, user_nickname, user_phone_number,
 		user_email, user_address, user_gender)
 		values(#{userId},
-		#{userPassword}, #{userName}, #{userNickName},
+		#{userPassword}, #{userName}, #{userNickname},
 		#{userPhoneNumber},
 		#{userEmail}, #{userAddress},
 		#{userGender})
@@ -78,7 +78,7 @@
 
 	<select id="getProfileInfo" parameterType="_int"
 		resultType="UserVO">
-		select u.user_number, u.user_id, u.user_nickname , count(p.post_number) as
+		select u.user_number, u.user_id, u.user_nickname, u.user_name, count(p.post_number) as
 		post_count, u.user_self_introduction,
 		max(upi.user_profile_original_name) as user_profile_original_name,
 		max(upi.user_profile_image_system_name) as
@@ -108,6 +108,10 @@
 		where user_number = #{userNumber} and user_password = #{userPassword}
 	</select>
 	
+	<delete id="delete" parameterType="_int">
+delete from tbl_user where user_number = #{userNumber};
+</delete>
+
 </mapper>
 
 

@@ -31,12 +31,13 @@ public class ProfileImageDAO {
 		sqlSession.update("profileImage.updateImg",profileImageDTO);
 	}
 	
-	public void delete(ProfileImageDTO profileImageDTO) {
-		sqlSession.delete("profileImage.delete",profileImageDTO);
+	public void delete(int userNumber) {
+		sqlSession.delete("profileImage.delete",userNumber);
 	}
 	public int getSequence() {
 		return sqlSession.selectOne("profileImage.getSequence");
 		
 	}
+
 	
 }

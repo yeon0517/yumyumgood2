@@ -36,6 +36,9 @@
 		where post_number =#{postNumber}
 	</select>
 	
+	<delete id="delete" parameterType="_int">
+delete from tbl_post_like where user_number = #{userNumber}
+</delete>
 	
 	
 	

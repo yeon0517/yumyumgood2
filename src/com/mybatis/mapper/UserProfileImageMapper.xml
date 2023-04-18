@@ -25,6 +25,8 @@
   		where user_number = #{userNumber}
   	</update>
 		
+		
+		
 </mapper>
 
 

@@ -60,6 +60,89 @@ manageMember.addEventListener("click", function () {
   }
 });
 
+function postListTable(result){
+	console.log(result);
+	$(".main-bottom test").html('');
+	let text = '';
+	for (let i = 0; i < result.list.length; i++) {
+
+
+			if (i % 3 == 0) {
+			text += (`	<div class="ccc">`)
+			}
+
+			text += (`
+						<div class="bbb">
+							<a href="#" class="go-post"> <img
+								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
+								class="thumbnail-img" />
+							</a>
+						</div>
+							
+							
+							
+
+		`);
+
+
+			if (i % 3 == 2) {
+				text += (`
+				</div>
+			`);
+			}
+
+			$(".main-bottom test").html(text);
+	}
+
+}
+
+let thisPage = 1;
+let realEndPage = $('.realEndPage').val();
+
+
+$('.paging-btn next').on('click', function() {
+	console.log('!!!!2343241342423!');
+
+	if (thisPage != realEndPage) {
+
+
+		$.ajax({
+			url: '/mypage/mypageListOk.my',
+			
+			data: { page: thisPage + 1 },
+			success: function(result) {
+				postListTable(result);
+				thisPage = result.page;
+				console.log(thisPage);
+			}
+		});
+
+	}
+
+});
+
+
+
+$('.paging-btn prev').on('click', function() {
+	console.log('!!!!!');
+
+	if (thisPage != 1) {
+
+		$.ajax({
+			url: '/mypage/mypageListOk.my',
+			data: { page: thisPage - 1 },
+			success: function(result) {
+				postListTable(result);
+				thisPage = result.page;
+				console.log(thisPage);
+			}
+		});
+
+	}
+
+});
+
+
 // click 이벤트(구매내역)
 let managePost = document.querySelector("#post2");
 
@@ -238,4 +321,89 @@ function addUserInfo(result) {
 }
 
 //회원 & 게시물 검색
+
+// postList 페이징 처리
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

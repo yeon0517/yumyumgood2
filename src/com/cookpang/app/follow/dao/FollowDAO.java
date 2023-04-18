@@ -11,4 +11,8 @@ public class FollowDAO {
 	public FollowDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	public void delete(int userNumber) {
+		sqlSession.delete("follow.delete",userNumber);
+	}
+	
 }

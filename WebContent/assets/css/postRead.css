@@ -65,17 +65,28 @@ a{
 }
 
 .read-imgs-container{
-  height: 100%;
-  width: 60%;
+  height: 669.275px;
+  width: 696.858px;
   display: flex;
   position: relative;
-
+  overflow: hidden;
 }
 
 .read-imgs, .read-imgs>li,
 .read-img-box, .read-img,.read-img-controller-box{
-  width: 100%;
-  height: 100%;
+  width: 696.858px;
+  height: 669.275px;
+}
+
+
+
+.read-imgs >li{
+  float: left;
+}
+
+.read-imgs{
+  display: flex;
+  position : absolute;
 }
 
 .read-img-controller-box{

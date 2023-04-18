@@ -37,28 +37,31 @@
 				<div class="read-imgs-container">
 
 					<ul class="read-imgs">
+					
+						<c:forEach var="postFile" items="${postFileList}">
+							<li>
+								<div class="read-img-box">
+									<!-- 임시 이미지 -->
+									<img
+										src="${pageContext.request.contextPath}/upload/${postFile.getPostFileSystemName()}"
+										alt="게시물 사진" class="read-img">
+								</div>
+							</li>
 
-						<li>
-							<div class="read-img-box">
-								<!-- 임시 이미지 -->
-								<img
-									src="https://static.wtable.co.kr/image/production/service/recipe/1739/6692f01e-191c-4072-9481-43e6530bbcf8.jpg?size=1024x1024"
-									alt="" class="read-img">
-							</div>
-						</li>
+						</c:forEach>
 
 					</ul>
 
 					<div class="read-img-controller-box">
 						<div class="read-box-imgs-prev">
-							<button type="button" class="img-prev-next-button">
+							<button type="button" class="img-prev-next-button prev-btn">
 								<i class="fa-solid fa-circle-chevron-left"></i>
 							</button>
 						</div>
 
 						<!-- 다음사진으로 넘기기  -->
 						<div class="read-box-imgs-next">
-							<button type="button" class="img-prev-next-button">
+							<button type="button" class="img-prev-next-button next-btn">
 								<i class="fa-solid fa-circle-chevron-right"></i>
 							</button>
 						</div>
@@ -81,14 +84,14 @@
 							<!-- 작성자 페이지로 이동 -->
 							<a href="#" class="writer-link"> <!--프로필사진 분기처리 비어있으면 기본 프로필사진으로  -->
 								<c:choose>
-									<c:when test="${null eq post.getUserProfileImageSystemName()}">
+									<c:when test="${empty post.getUserProfileImageSystemName()}">
 										<img
 											src="https://www.thechooeok.com/common/img/default_profile.png"
-											alt="${post.getUserProfileImageSystemName()}"
+											alt="${pageContext.request.contextPath}${post.getUserProfileImageSystemName()}"
 											class="writer-profile-img">
 									</c:when>
 									<c:otherwise>
-										<img src="${post.getUserProfileImageSystemName()}"
+										<img src="${pageContext.request.contextPath}/upload/${post.getUserProfileImageSystemName()}"
 											alt="${post.getUserProfileImageSystemName()}"
 											class="writer-profile-img">
 									</c:otherwise>
@@ -99,8 +102,9 @@
 
 						<div class="writer-id">
 							<!--작성자의 youpage로 이동  -->
-							<input type="hidden" value="${post.getUserNumber()}" class="post-user-number" >
-							<a href="" class="writer-link"> <!-- 임시 작성자 id -->
+							<input type="hidden" value="${post.getUserNumber()}"
+								class="post-user-number"> <a href="" class="writer-link">
+								<!-- 임시 작성자 id -->
 								<h4>${post.getUserId()}</h4>
 							</a>
 
@@ -156,54 +160,21 @@
 										<!-- 임시 재료묶음 제목 -->
 										기본재료
 									</div>
+									
+									<c:forEach var="ingredient" items="${ingredients}">
 
-									<li class="ingredient-info">
-										<div class="ingredient-name">
-											<!-- 임시 재료 이름 -->
-											삼겹살
-										</div>
+										<li class="ingredient-info">
+											<div class="ingredient-name">
+												<!-- 임시 재료 이름 -->
+												${ingredient.getIngredientName()}
+											</div>
 
-										<div class="ingredient-quantity">
-											<!-- 임시 재료 수량 -->
-											800g
-										</div>
-									</li>
-									<li class="ingredient-info">
-										<div class="ingredient-name">
-											<!-- 임시 재료 이름 -->
-											삼겹살
-										</div>
-
-										<div class="ingredient-quantity">
-											<!-- 임시 재료 수량 -->
-											800g
-										</div>
-									</li>
-									<li class="ingredient-info">
-										<div class="ingredient-name">
-											<!-- 임시 재료 이름 -->
-											삼겹살
-										</div>
-
-										<div class="ingredient-quantity">
-											<!-- 임시 재료 수량 -->
-											800g
-										</div>
-									</li>
-									<li class="ingredient-info">
-										<div class="ingredient-name">
-											<!-- 임시 재료 이름 -->
-											삼겹살
-										</div>
-
-										<div class="ingredient-quantity">
-											<!-- 임시 재료 수량 -->
-											800g
-										</div>
-									</li>
-
-
-
+											<div class="ingredient-quantity">
+												<!-- 임시 재료 수량 -->
+												${ingredient.getRecipeIngredientQuantity()}
+											</div>
+										</li>
+									</c:forEach>
 
 								</ul>
 
@@ -252,33 +223,34 @@
 								<ul class="read-comment">
 
 
-										<li class="read-comment-box">
-											<div class="comment-writer-img-box">
-												
-												<!-- 임시 댓글 프로필사진 -->
-														<img src="https://www.thechooeok.com/common/img/default_profile.png"
-															alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
-														<%-- <img src="${pageContext.request.contextPath}/upload/${commentList.getUserProfileImageSystemName()}"
+									<li class="read-comment-box">
+										<div class="comment-writer-img-box">
+
+											<!-- 임시 댓글 프로필사진 -->
+											<img
+												src="https://www.thechooeok.com/common/img/default_profile.png"
+												alt="댓글작성자 프로필 사진" class="comment-writer-profile-img">
+											<%-- <img src="${pageContext.request.contextPath}/upload/${commentList.getUserProfileImageSystemName()}"
 															alt="댓글작성자 프로필 사진" class="comment-writer-profile-img"> --%>
-													
+
+										</div>
+										<div class="comment-content-box">
+											<!-- 임시 댓글작성자 아이디 -->
+											<div class="comment-writer-id">임시 아이디</div>
+											<div class="read-comment-content">
+												<!-- 임시 댓글 내용 -->
+												댓글 내용
+
 											</div>
-											<div class="comment-content-box">
-												<!-- 임시 댓글작성자 아이디 -->
-												<div class="comment-writer-id">임시 아이디</div>
-												<div class="read-comment-content">
-													<!-- 임시 댓글 내용 -->
-													댓글 내용
-													
-												</div>
-												<div class="read-comment-more">
-													<div class="comment-write-time">댓글 작성 시간</div>
-													<!--댓글번호  -->
-													<input type="hidden" value="${post.getPostNumber()}" name="postNumber" class="comment-number" >
-													<button type="button" class="comment-delete">삭제하기
-													</button>
-												</div>
+											<div class="read-comment-more">
+												<div class="comment-write-time">댓글 작성 시간</div>
+												<!--댓글번호  -->
+												<input type="hidden" value="${post.getPostNumber()}"
+													name="postNumber" class="comment-number">
+												<button type="button" class="comment-delete">삭제하기</button>
 											</div>
-										</li>
+										</div>
+									</li>
 
 								</ul>
 
@@ -292,18 +264,15 @@
 
 							<!-- 게시물 번호 작성 -->
 							<input type="hidden" name="postNumber"
-								value="${post.getPostNumber()}" class="hidden-post-number" >
+								value="${post.getPostNumber()}" class="hidden-post-number">
 
 							<section class="reader-act-section">
 
 								<span class="like-box">
-								
+
 									<button class="like-btn" type="button">
-										<!-- 버튼을 누르면 색이 채워진 아이콘으로 변경 -->
-										<!-- 좋아요버튼 db, ajax분기처리 세션의 id와 해당 게시물의 번호로 검색, 
-                      		  					검색결과가 있으면 색이 채워진 아이콘으로 없으면 빈 아이콘으로-->
-                      		  			
-                      		  			<c:choose>
+
+										<c:choose>
 											<c:when test="${likeStatus}">
 												<i class="fa-solid fa-heart like-t js-like-btn"
 													style="color: red;"></i>
@@ -312,10 +281,10 @@
 												<i class="fa-regular fa-heart like-f js-like-btn"></i>
 											</c:otherwise>
 										</c:choose>
-                      		  			
-                      		  			
+
+
 									</button>
-									
+
 								</span> <span class="comment-btn-box">
 									<button class="comment-btn" type="button">
 										<i class="fa-regular fa-comment"></i>
@@ -330,11 +299,14 @@
 
 								<sapn class="save-box">
 								<button class="save-btn" type="button">
-								
-									<!-- 버튼을 누르면 색이 채워진 아이콘으로 변경 -->
-									<i class="fa-regular fa-bookmark save-f"></i>
-									<!-- <i class="fa-solid fa-bookmark save-t"></i> -->
-									
+									<c:choose>
+										<c:when test="${saveStatus}">
+											<i class="fa-solid fa-bookmark save-t"></i>
+										</c:when>
+										<c:otherwise>
+											<i class="fa-regular fa-bookmark save-f"></i>
+										</c:otherwise>
+									</c:choose>
 								</button>
 								</sapn>
 
@@ -364,10 +336,11 @@
 							<div class="comment-wrap">
 
 								<div class="comment-box">
-									<textarea name="readComment" class="comment-input" id="comment-input"
-										placeholder="댓글 달기.."></textarea>
+									<textarea name="readComment" class="comment-input"
+										id="comment-input" placeholder="댓글 달기.."></textarea>
 
-									<button type="button" class="comment-post-btn" data-postNumber="${post.getPostNumber()}">
+									<button type="button" class="comment-post-btn"
+										data-postNumber="${post.getPostNumber()}">
 										<h4>게시</h4>
 									</button>
 
@@ -391,17 +364,16 @@
 
 	<button class="close-btn">
 		<!-- 이전 경로로 이동 -->
-		 <i class="fa-solid fa-x"></i>
-		
+		<i class="fa-solid fa-x"></i>
+
 	</button>
 	</div>
 
 
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script  >
+	<script>
 		let userNumber = "${sessionScope.userNumber}";
-
 	</script>
 
 	<script src="${pageContext.request.contextPath}/assets/js/postRead.js"></script>

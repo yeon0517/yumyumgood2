@@ -1,4 +1,4 @@
-package com.cookpang.app.post;
+package com.cookpang.app.user.mypage;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -19,14 +19,16 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class PostListOkController implements Execute {
+public class MyPageListOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		HttpSession session = req.getSession();
 		
-		int userNumber = 1;
+		req.getParameter("userNumber");
+		HttpSession session = req.getSession();
+		Integer userNumber = (Integer)session.getAttribute("userNumber");
+//		int userNumber = 1;
 		PostDAO postDAO = new PostDAO();
 		int total = postDAO.getTotal();
 		//처음 게시판 페이지에 진입하면 페이지에 대한 정보가 없다
@@ -87,7 +89,7 @@ public class PostListOkController implements Execute {
 	     
 	     
 //JsonArray 객체를 생성하고, 변수를 설정하여 할당한다. 
-	      JsonArray snsList = new JsonArray();
+	      JsonArray postList = new JsonArray();
 	      
 	    
 /*//DAO객체를 생성할 때 만든 리스트를 stream() 메소드를 이용해 순차적으로 처리하고,
@@ -97,14 +99,14 @@ JsonParser::parseString() 메소드를 이용해 JsonElement 형태로 파싱합
 	      posts.stream()
 	      .map(gson::toJson)
 	      .map(JsonParser::parseString)
-	      .forEach(snsList::add);
+	      .forEach(postList::add);
 	      
 	     
 /*//JsonObject 객체를 생성하고 이를 이용해 JSON 형태의 결과값을 저장한다
 result라는 객체에는 list, startPage, endPage, page , realEndPage라는 key와 그에 해당하는 값들이 저장된다.*/
 	      JsonObject result = new JsonObject();
 	      
-	      result.add("list", JsonParser.parseString(snsList.toString()));
+	      result.add("list", JsonParser.parseString(postList.toString()));
 	      
 	      result.addProperty("startPage", startPage);
 	      result.addProperty("endPage", endPage);
