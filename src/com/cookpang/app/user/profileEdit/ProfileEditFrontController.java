@@ -34,6 +34,12 @@ public class ProfileEditFrontController extends HttpServlet{
 			new ProfileSelectController().execute(req, resp);
 			System.out.println("프로필 편집 불러오기 ");
 			break;
+		case "/user/passwordEdit.edit" :
+			new PasswordEditController().execute(req, resp);
+			break;
+		case "/user/passwordAjax.edit" :
+			new PasswordAjaxController().execute(req, resp);
+			break;
 			
 		case "/user/Delete.edit" : 
 			new ProfileDeleteController().execute(req, resp);

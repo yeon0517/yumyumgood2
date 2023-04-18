@@ -102,30 +102,7 @@ function findPost(keyword) {
 	form.submit();
 }
 
-/* $( document ).ready( function() {
-    var hClass = $( 'h1' ).attr( 'class' );
-    $( 'span' ).text( hClass );
-   } );
-*/
-/*온클릭 속성을 삭제*/
-/*$("").removeAttr("onclick"); 
-*/
-/*온클릭 속성을 다시 부여*/
-/*$("").attr("onclick", 주소?)
 
-속성값 추가
-$$( '.direction' ).attr( href, '${pageContext.request.contextPath}/mainSearch.m?page=${startPage - 1}' );
-
-$('.content').hide();*/
-/*클릭 이벤트*/
-
-/*검색 페이징 처리 -> 키워드가 있는지 없는지 검사 -> 메인 페이지로 이동할 때 키워드를 들고온게 있는지 없는 지 검사
-empty 키워드 
-*/
-
-/*$('.search-btn').click(function(){
-  $( '.paging-button' ).attr( 'href', '${pageContext.request.contextPath}/mainSearch.m?page=${startPage - 1}' );
-});*/
 
 
 
@@ -139,8 +116,8 @@ function addUserInfo(result) {
 			<div class="search-man">
 				<div class="man-left">
 					<a href="#"> <img
-						src="" alt="#"
-						class="man-img" /> 
+						src="/upload/${info.userProfileImageSystemName}" alt="${info.userProfileImageSystemName}"
+						class="man-img" /> <!-- </a> -->
 					</a>
 				</div>
 				<div class="man-right">
@@ -161,12 +138,6 @@ function addUserInfo(result) {
 }
 
 
-/* 검색한 회원 옆에 삭제 버튼 마지막 </div> 바로 위에 복사
-<div class="delete-btn">
-					<div class="delete-btn2">
-						<button class="alarm-btn">삭제</button>
-					</div>
-				</div>*/
 
 
 
