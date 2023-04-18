@@ -57,21 +57,21 @@ reset.addEventListener('click', function() {
 		checkboxValues.push($(this).val());
 	});
 	/*"input[name='amountInput']:checked"*/
-	/*console.log(checkboxValues);
+/*console.log(checkboxValues);
 
 
-	$.ajax({
-		url: '/order/orderTotalPriceOk.or',
-		type: 'POST',
-		data: { checkboxValues: checkboxValues },
-		dataType: '',
-		success: function(result) {
-			//성공시 수행할 코드
-		},
-		error: function(xhr, status, error) {
-			//실패시 수행할 코드
-		}
-	});*/
+$.ajax({
+	url: '/order/orderTotalPriceOk.or',
+	type: 'POST',
+	data: { checkboxValues: checkboxValues },
+	dataType: '',
+	success: function(result) {
+		//성공시 수행할 코드
+	},
+	error: function(xhr, status, error) {
+		//실패시 수행할 코드
+	}
+});*/
 
 /*}*/
 
@@ -107,8 +107,8 @@ var selectedPartOid = oidObj.val();
 				console.log($("input[name=price]"))
 			}
 		});*/
-		
-		
+
+
 // 체크박스에 체크 된 애들의 가격을 화면에 뿌려주기
 
 /*$('.footer').on('change', function(){
@@ -128,17 +128,17 @@ var selectedPartOid = oidObj.val();
 
 
 function updateTotalPrice() {
-  let $checkList = $('.amount-input:checked');
-  let totalPrice = 0;
-  let quantity = parseInt($('#counter-number').text());
+	let $checkList = $('.amount-input:checked');
+	let totalPrice = 0;
+	let quantity = parseInt($('#counter-number').text());
 
-  for (let i = 0; i < $checkList.length; i++) {
-    let price = $checkList.eq(i).closest('.amount-box').find('.price').val();
-    totalPrice += parseInt(price);
-  }
+	for (let i = 0; i < $checkList.length; i++) {
+		let price = $checkList.eq(i).closest('.amount-box').find('.price').val();
+		totalPrice += parseInt(price);
+	}
 
-  totalPrice *= quantity;
-  $('.result-price').html(totalPrice + '원'+
+	totalPrice *= quantity;
+	$('.result-price').html(totalPrice + '원' +
 		`
 		<input type="hidden" value="${totalPrice}" name="orderTotalCost" class="total-price" >
 		`
@@ -146,26 +146,33 @@ function updateTotalPrice() {
 }
 
 $('.footer').on('change', function() {
-  updateTotalPrice();
+	updateTotalPrice();
 });
 
 $('#plus').on('click', function() {
-  let currentVal = parseInt($('#counter-number').text());
-  $('#counter-number').text(currentVal + 1);
-  updateTotalPrice(); // 수량이 변경될 때마다 총 가격을 다시 계산하고 출력함
+	let currentVal = parseInt($('#counter-number').text());
+	$('#counter-number').text(currentVal + 1);
+	currentVal +=1;	
+	console.log(currentVal);
+	$('.counterNumber').attr('value', currentVal);
+	updateTotalPrice(); // 수량이 변경될 때마다 총 가격을 다시 계산하고 출력함
+	
 });
 
 $('#minus').on('click', function() {
-  let currentVal = parseInt($('#counter-number').text());
-  if (currentVal > 1) {
-    $('#counter-number').text(currentVal - 1);
-    updateTotalPrice();
-  }
+	let currentVal = parseInt($('#counter-number').text());
+	if (currentVal > 1) {
+		$('#counter-number').text(currentVal - 1);
+	currentVal -=1;	
+	console.log(currentVal);
+		$('.counterNumber').attr('value', currentVal);
+		updateTotalPrice();
+	}
 });
 
 $('#reset').on('click', function() {
-  $('#counter-number').text('1');
-  updateTotalPrice();
+	$('#counter-number').text('1');
+	updateTotalPrice();
 });
 
 

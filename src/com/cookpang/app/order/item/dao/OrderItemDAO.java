@@ -17,8 +17,14 @@ public class OrderItemDAO {
 	public void item(OrderItemDTO orderItemDTO) {
 		sqlSession.insert("orderItem.item", orderItemDTO);
 	}
+	public int getSequnce() {
+		return sqlSession.selectOne("orderItem.getSequnce");
+	}
 	
-	
+    public void orderTotalCost(OrderDTO orderDTO) {
+		sqlSession.insert("orderItem.orderTotalCost", orderDTO);
+	}
+    
 	
 	
 

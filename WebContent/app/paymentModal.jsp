@@ -95,7 +95,7 @@
 							
 								<c:forEach var="ingredient" items="${ingredient}" varStatus="status">
 									<span class = "amount-box">
-										<input type="checkbox" name="orderItemNumber" class="amount-input"
+										<input type="checkbox" name="ingredientNumber" class="amount-input"
 											value="${ingredient.getIngredientNumber()}">
 											<c:out value="${ingredient.getIngredientName()}"/>
 											<c:out value="${ingredient.getIngredientSmallestUnit()}g"/>
@@ -114,8 +114,10 @@
 						<div id="container">
 							<!--수량카운트 js첨부-->
 							<button id="minus" type="button">-</button>
-							<span id="counter-number">1</span>
-							<input type="hidden" name="orderItemQuantity" value="" >
+							<span id="counter-number">1
+							</span>
+								<input type="hidden" name="orderItemQuantity" value="1" class="counterNumber">
+							
 							
 							<button id="plus" type="button" >+</button>
 							<button id="reset" type="button">reset</button>

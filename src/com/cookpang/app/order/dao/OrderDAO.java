@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSession;
 import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.order.vo.OrderVO;
 import com.cookpang.app.user.dto.UserDTO;
+import com.cookpang.app.userList.vo.UserListVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class OrderDAO {
@@ -40,5 +41,15 @@ public class OrderDAO {
 	public void delete(int userNumber) {
 		sqlSession.delete("order.delete",userNumber);
 	}
+	
+	
+//	  public List<OrderVO> orderDetail(int userNumber) { return
+//	  sqlSession.selectList("order.orderDetail", userNumber); }
+	 
+	
+	
+	
+	
+	
 	
 }

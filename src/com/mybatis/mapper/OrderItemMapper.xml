@@ -14,6 +14,13 @@
 	(user_number,order_total_cost)
 	values(#{userNumber}, #{orderTotalCost})
 	</insert>
+	
+	<select id="getSequnce" resultType="_int">
+		select last_insert_id()
+	</select>	
+	
+	
+	
 
 </mapper>
 

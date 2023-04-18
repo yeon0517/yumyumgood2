@@ -105,9 +105,10 @@
                   </a>
                     <ul>
                       <li>
-                        <p name="orderItemNumber"></p>
+                        <p name="orderItemNumber">아이템</p>
                         <!-- 수량은 버튼수량 갯수를 확인 후 해야함 / 금액도...  -->
-                        <p name="orderItemQuantity"></p>
+                        <p name="orderItemQuantity"> 아이템</p>
+                        <p name="ingredientPrice"> 아이템</p>
                       </li>
                     </ul>
                   </span>
@@ -121,11 +122,11 @@
               <img src="#" alt="#"><!--물품사진-->
               <li class="CheckoutProductsSectionstyle">
         <span>
-        <a class="productName" href="#"> ${orderItem.getIngredientNumber()}</a>
+        <a class="productName" href="#"> </a>
           <ul>
             <li>
               <p>본품 금액</p>
-              <p>${orderItem.getOrderItemQuantity()}</p>
+              <p></p>
               <p>총 금액</p>
             </li>
           </ul>
@@ -141,14 +142,16 @@
   <div class="Payment-body-footer">
               <div class="amount">
               <p>결제 금액</p>
-              <strong style="color: red;">93,900원</strong> 
+              <strong style="color: red;">
+              93,000원
+              </strong> 
                </div>
 
                <div class="amount-tag">
                 <p>총 상품금액</p>
-                <p style="text-align: end;">93,900원</p>
+                <p style="text-align: end;">39,000원</p>
                 <p>총 배송비</p>
-                <p style="text-align: end;">0원</p>
+                <p style="text-align: end;">2000원</p>
                 <p>할인금액</p>
                 <p style="text-align: end;">0원</p>
                </div>
