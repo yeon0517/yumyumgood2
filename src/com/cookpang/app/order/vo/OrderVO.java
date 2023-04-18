@@ -5,7 +5,7 @@ import java.util.List;
 public class OrderVO {
     private int orderNumber;
     private int userNumber; 
-    private int userPhoneNumber;
+    private String userPhoneNumber;
     private String userEmail;
     private String userAddress;
     private String orderMessage;
@@ -14,7 +14,7 @@ public class OrderVO {
     private String ingredientName;
     private int orderItemQuantity;
     private	int ingredientPrice ;
-    
+    private String userName;
 
     public OrderVO() {}
 
@@ -34,11 +34,11 @@ public class OrderVO {
 		this.userNumber = userNumber;
 	}
 
-	public int getUserPhoneNumber() {
+	public String getUserPhoneNumber() {
 		return userPhoneNumber;
 	}
 
-	public void setUserPhoneNumber(int userPhoneNumber) {
+	public void setUserPhoneNumber(String userPhoneNumber) {
 		this.userPhoneNumber = userPhoneNumber;
 	}
 
@@ -106,18 +106,23 @@ public class OrderVO {
 		this.ingredientPrice = ingredientPrice;
 	}
 
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderVO [orderNumber=" + orderNumber + ", userNumber=" + userNumber + ", userPhoneNumber="
 				+ userPhoneNumber + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", orderMessage="
 				+ orderMessage + ", orderTotalCost=" + orderTotalCost + ", orderStatus=" + orderStatus
 				+ ", ingredientName=" + ingredientName + ", orderItemQuantity=" + orderItemQuantity
-				+ ", ingredientPrice=" + ingredientPrice + "]";
+				+ ", ingredientPrice=" + ingredientPrice + ", userName=" + userName + "]";
 	}
 
-
-
-	
 
 	
 
