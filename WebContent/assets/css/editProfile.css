@@ -404,11 +404,15 @@ input[type=file]::file-selector-button {
 }
 
 .goodbye-btn {
-  /* background-color: rgb(190, 126, 126); */
-  color: rgb(48, 45, 45);
-  width: 57px;
-  height: 35px;
-  font-size: 14px;
+  background-color: white; 
+  color: grey;
+  width: 80px;
+  height: 25px;
+  font-size: 12px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  
 }
 
 /* 여기서부터 */

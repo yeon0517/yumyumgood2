@@ -46,8 +46,13 @@ public class UserFrontController extends HttpServlet{
 		case "/user/findPasswordOk.us":
 			new FindPasswordOkController().execute(req, resp);
 			break;
-			
-			
+		case "/user/youPage.us":
+			new YoupageController().execute(req, resp);
+			break;
+		case "/user/youPageLike.us":
+			new YoupageLikeController().execute(req, resp);
+			break;
+		
 		
 		}
 	}

@@ -110,7 +110,7 @@ function addUserInfo(result) {
 	
 	
 	let text = '';
-
+console.log(result);
 	result.forEach(info => {
 		text += `
 			<div class="search-man">
@@ -122,7 +122,7 @@ function addUserInfo(result) {
 				</div>
 				<div class="man-right">
 					<div class="man-id">
-						<a href="#"> ${info.userNickName} </a>
+						<a href="/user/youPage.us?userNumber=${info.userNumber}"> ${info.userNickName} </a>
 						<!-- <a href="#" class="man-id2">hot_boy</a> -->
 					</div>
 					<div class="man-name">
