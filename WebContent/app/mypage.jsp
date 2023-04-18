@@ -314,82 +314,105 @@
 
 				<!-- 게시글 -->
 				<div id="bottom1" class="main-bottom test">
-					<div class="ccc">
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
-								class="thumbnail-img" />
-							</a>
+					<div class="PostList">
+						<div class="ccc">
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
 						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
-								class="thumbnail-img" />
-							</a>
+						<div class="ccc">
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
+									class="thumbnail-img" />
+								</a>
+							</div>
 						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
-								class="thumbnail-img" />
-							</a>
+						<div class="ccc">
+							<div class="bbb">
+								<a href="#" class="go-post"> <img src=""
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img src=""
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img src=""
+									class="thumbnail-img" />
+								</a>
+							</div>
 						</div>
 					</div>
-					<div class="ccc">
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
-								class="thumbnail-img" />
-							</a>
-						</div>
-					</div>
-					<div class="ccc">
-						<div class="bbb">
-							<a href="#" class="go-post"> <img src=""
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img src=""
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img src=""
-								class="thumbnail-img" />
-							</a>
-						</div>
-					</div>
-					<div class="next-page">
+					<div class="next-page"  >
 						<div class="paging" >
-							<p class="paging-btn prev">
+							<p class="paging-btn-prev">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-									alt="" class="direction" />
+									alt="" class="direction" data-postPage= "${startPage - 1 }" />
 								</a>
 							</p>
+							
+								<%-- <c:forEach var="j" begin="${startPage}"
+													end="${endPage}">
+													<c:choose>
+														<c:when test="${!(j == page) }">
+														<p class="paging-num">
+															<a
+																href="${pageContext.request.contextPath}/mypage/mypageOk.my?Page=${j}" data-postPage="${j}">
+																	<c:out value="${j}" />
+															</a>
+															</p>
+														</c:when>
+														<c:otherwise>
+														<p class="paging-num">
+															<a href="${pageContext.request.contextPath}/mypage/mypageOk.my?Page=${j}=${j}" data-postPage="${j}" class="active"> <c:out
+																		value="${j}" />
+															</a>
+															</p>
+														</c:otherwise>
+													</c:choose>
+												</c:forEach> --%>
 							<p class="paging-num">
-								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-								<a href="">5</a>
+								<a href="" >1</a> <a href="" >2</a> <a href="" >3</a> <a href="" >4</a>
+								<a href="" >5</a>
 							</p>
-							<p class="paging-btn next">
+							<p class="paging-btn-next">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-									alt="다음으로" />
+									alt="다음으로" data-postPage= "${endPage + 1 }" />
 								</a>
 							</p>
-							<p class="paging-btn" id="paging-last">
+							<p class="paging-btn" id="paging-last" >
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
 									alt="마지막으로" />
@@ -971,6 +994,11 @@
    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
    <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+      <script >
+      
+		let userNumber = "${sessionScope.userNumber}";
+      </script>
    <script src="${pageContext.request.contextPath}/assets/js/mypage.js"></script>
 </body>
 </html>
