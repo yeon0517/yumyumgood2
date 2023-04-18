@@ -33,6 +33,7 @@
 		<typeAlias type="com.cookpang.app.user.vo.UserVO" alias="UserVo"/>
 		<typeAlias type="com.cookpang.app.ingredient.category.dto.IngredientCategoryDTO" alias="IngredientCategoryDTO"/>
 		<typeAlias type="com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO" alias="RecipeIngredientVO"/>
+		<typeAlias type="com.cookpang.app.post.save.vo.PostSaveVO" alias="PostSaveVO"/>
 		
 		
 	</typeAliases>
