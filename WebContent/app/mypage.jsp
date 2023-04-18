@@ -27,9 +27,11 @@
 					<div class="main-top">
 						<div class="profile-picture">
 							<div class="img-box">
-								<img alt="" src="/upload/${userInfo.getUserProfileImageSystemName()}" class="profile-img">
-							<!-- 	<a href="${profileImage.getUserProfileImageSystemName()}" alt="profile-img" class="profile-img">이미지</a> -->
-									</div>
+								<img alt=""
+									src="/upload/${userInfo.getUserProfileImageSystemName()}"
+									class="profile-img">
+								<!-- 	<a href="${profileImage.getUserProfileImageSystemName()}" alt="profile-img" class="profile-img">이미지</a> -->
+							</div>
 							<div class="aaa">
 								<div class="name-box">
 									<div class="nickname-box">
@@ -618,21 +620,22 @@
 						<li class="sidebar-li">
 							<div class="li-box">
 
-								<i class="fa-regular fa-user"></i> 
-						<c:choose>
-							 	<c:when test="${empty sessionScope.userNumber}">
-							 	<a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
-							</c:when> 
-								<c:otherwise>
-								<a href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
-								</c:otherwise>
-					</c:choose>
+								<i class="fa-regular fa-user"></i>
+								<c:choose>
+									<c:when test="${empty sessionScope.userNumber}">
+										<a href="${pageContext.request.contextPath}/user/login.us">프로필</a>
+									</c:when>
+									<c:otherwise>
+										<a
+											href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
+									</c:otherwise>
+								</c:choose>
 
 							</div>
 						</li>
 					</ul>
 
-					
+
 
 					<div class="btn-group">
 						<li class="sidebar-login"><c:choose>
@@ -653,29 +656,35 @@
 							<h1 class="qqq">검색</h1>
 						</div>
 						<div class="search-box3">
-							<input type="text" class="find-btn" placeholder="검색" />
+							<!-- 사이드바 드롭다운 추가 -->
+								<select class="drop-down" id="drop-down" name="fruits">
+									<option value="user">회원</option>
+									<option value="post">게시물</option>
+								</select> <input type="text" class="find-btn" id="find-btn" name="searchInput" placeholder="검색" />
+								<button type="button" class="search-btn">검색</button>
+								<!-- 사이드바 드롭다운 추가 -->
 						</div>
 					</div>
 					<div class="recent-searches">
-						<h3 class="recent-searches2">최근 검색 항목</h3>
+						<h3 class="recent-searches2">검색 항목</h3>
 					</div>
 					<div class="recent-searches-box">
-						<div class="search-man">
+						<!-- <div class="search-man">
 							<div class="man-left">
-								<!-- <a href="#"> -->
+								<a href="#">
 								<a href="#"> <img
 									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-									alt="#" class="man-img" /> <!-- </a> -->
+									alt="#" class="man-img" /> </a>
 								</a>
 							</div>
 							<div class="man-right">
 								<div class="man-id">
 									<a href="#"> hot_boy </a>
-									<!-- <a href="#" class="man-id2">hot_boy</a> -->
+									<a href="#" class="man-id2">hot_boy</a>
 								</div>
 								<div class="man-name">
 									이동재
-									<!-- <a href="#" class="man-name2">이동재</a> -->
+									<a href="#" class="man-name2">이동재</a>
 								</div>
 							</div>
 							<div class="delete-btn">
@@ -683,7 +692,7 @@
 									<button class="alarm-btn">삭제</button>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</article>
 				<!-- 검색 창 -->

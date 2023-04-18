@@ -100,6 +100,79 @@ $('.change-picture').on('change',function(){
 });
 
 
+/*$('.box5').on('click', function(){
+	let passwordEdit = 
+})*/
+
+$('.box1').on('blur', function(){
+	let password = $(this).val();
+	console.log(password);
+	
+	$.ajax({
+		url : '/user/passwordAjax.edit',
+		type : 'get',
+		data : {password : password},
+		success : function(result){
+			let msg = result == 1 ? "비밀번호가 일치합니다." : "비밀번호를 다시 확인해주세요";
+			$('.pass-msg').text(msg);
+		}
+	});
+});
+
+/*$(function() {
+      let p1 = document.getElementById('#box2').value;
+      let p2 = document.getElementById('#box3').value;
+      
+      if(p1.length < 8) {
+              alert('입력한 글자가 8글자 이상이어야 합니다.');
+              return false;
+          }
+          
+          if( p1 != p2 ) {
+            alert("비밀번호불일치");
+            return false;
+          } else{
+            alert("비밀번호가 일치합니다");
+            return true;
+          }
+    });*/
+
+
+
+$(function() { 
+  $("#password-form").submit(function(e) {
+    e.preventDefault();
+
+    let password1 = $("#password-form .box2").val();
+    let password2 = $("#password-form .box3").val();
+
+    if (!password1 || !password2) {
+      $(".password_check_msg").text("비밀번호를 입력해주세요");
+      return;
+    }
+
+    if (password1 !== password2) {
+      $(".password_check_msg").text("비밀번호를 확인해주세요");
+      return;
+    }
+
+    this.submit();
+  });
+});
+
+/*$(function(){
+	$("#password-form").submit(function(){
+		
+		let password1 = $("#password-form #box2").val();
+		let password1 = $("#password-form #box3").val();
+		
+		console.log(password1);
+		console.log(password2);
+	});
+});
+*/
+
+
 
 
 

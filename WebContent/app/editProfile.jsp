@@ -64,19 +64,19 @@ String myTextareaValue = request.getParameter("myTextarea");
 							<div class="picture-box-left">
 
 								<div id="img-box">
-									 <img
+									<img
 										src="/upload/${profileEditVO.getUserProfileImageSystemName()}"
-										class="img-box-img"  /> 
-										<!-- src="/upload/${profileImage.getUserProfileImageSystemName()}"-->
+										class="img-box-img" />
+									<!-- src="/upload/${profileImage.getUserProfileImageSystemName()}"-->
 								</div>
 							</div>
 							<div class="picture-box-rigth">
-								<input type="file" name="file1" id="uploadLink" onchange="readURL(this);"
-									class="change-picture" accept=".jpg, .jpeg, .png"
-									 /><br />
+								<input type="file" name="file1" id="uploadLink"
+									onchange="readURL(this);" class="change-picture"
+									accept=".jpg, .jpeg, .png" /><br />
 
 							</div>
-							
+
 						</div>
 
 
@@ -166,38 +166,48 @@ String myTextareaValue = request.getParameter("myTextarea");
 						<button onclick="openModal()" class="eidt-modal">비밀번호 변경</button>
 
 						<!-- 모달 창 -->
-						<div id="myModal" class="modal">
-							<div class="modal-content">
-								<span class="close">&times;</span>
-								<div class="main">
-									<div class="main-page">
-										<div class="password-name">
-											<h3>비밀번호 변경</h3>
-										</div>
-										<div class="password-text">
-											<p>누군가 엑세스 권한을 얻으려고 시도중인 경우 계정을 보호하기 위해 이 세션을 제외한 모든 세션에서
-												로그아웃됩니다.</p>
-											<p>비밀번호는 6자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
-										</div>
-										<div class="now-password-box">
-											<input type="text" class="box1" placeholder="현재 비밀번호" />
-										</div>
-										<div class="new-password-box">
-											<input type="text" class="box2" placeholder="새 비밀번호" />
-										</div>
-										<div class="agian-password-box">
-											<input type="text" class="box3" placeholder="새 비밀번호 재입력" />
-										</div>
-										<div class="no-password">
-											<a href="#" class="box4">비밀번호를 잊으셨나요?</a>
-										</div>
-										<div class="changeok-btn">
-											<button type="button" class="box5" value="#">비밀번호 변경</button>
+						 <form action="${pageContext.request.contextPath}/user/passwordEdit.edit" method = "post"
+						 id="password-form">
+							<div id="myModal" class="modal">
+								<div class="modal-content">
+									<span class="close">&times;</span>
+									<div class="main">
+										<div class="main-page">
+											<div class="password-name">
+												<h3>비밀번호 변경</h3>
+											</div>
+											<div class="password-text">
+												<p>누군가 엑세스 권한을 얻으려고 시도중인 경우 계정을 보호하기 위해 이 세션을 제외한 모든
+													세션에서 로그아웃됩니다.</p>
+												<br>
+												<p>비밀번호는 6자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
+											</div>
+											<div class="now-password-box">
+												<input type="text" class="box1" placeholder="현재 비밀번호" />
+											</div>
+											<span class="pass-msg"></span>
+											<div class="new-password-box">
+												<input type="password" name="newPassword" class="box2" id ="box2" placeholder="새 비밀번호" />
+											</div>
+											<div class="agian-password-box">
+												<input type="password" name="newPassword2" class="box3" id ="box3" placeholder="새 비밀번호 재입력" />
+											</div>
+											<span class="password_check_msg"></span>
+											<div class="no-password">
+												<a
+													href="${pageContext.request.contextPath}/user/findPassword.us"
+													class="box4">비밀번호를 잊으셨나요?</a>
+											</div>
+											<div class="changeok-btn">
+												<button type="submit" class="box5" value="#">비밀번호
+													변경</button>
+											</div>
+
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
+						</form>
 					</div>
 					<div class="goodbye-box">
 						<a href="#" class="goodbye-btn">회원탈퇴</a>
