@@ -100,6 +100,48 @@ $('.change-picture').on('change',function(){
 });
 
 
+
+$('.box1').on('blur', function(){
+	let password = $(this).val();
+	console.log(password);
+	
+	$.ajax({
+		url : '/user/passwordAjax.edit',
+		type : 'get',
+		data : {password : password},
+		success : function(result){
+			let msg = result == 1 ? "비밀번호가 일치합니다." : "비밀번호를 다시 확인해주세요";
+			$('.pass-msg').text(msg);
+		}
+	});
+});
+
+
+
+
+$(function() { 
+  $("#password-form").submit(function(e) {
+    e.preventDefault();
+
+    let password1 = $("#password-form .box2").val();
+    let password2 = $("#password-form .box3").val();
+
+    if (!password1 || !password2) {
+      $(".password_check_msg").text("비밀번호를 입력해주세요");
+      return;
+    }
+
+    if (password1 !== password2) {
+      $(".password_check_msg").text("비밀번호를 확인해주세요");
+      return;
+    }
+
+    this.submit();
+  });
+});
+
+
+
 //회원 삭제
 $('.goodbye-btn').on('click', function(){
    
