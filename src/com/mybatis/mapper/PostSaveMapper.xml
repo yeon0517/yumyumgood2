@@ -4,13 +4,15 @@
 <mapper namespace="postSave">
 
 	<delete id="delete" parameterType="_int">
-		delete from tbl_post_save where user_number = #{userNumber};
+		delete from tbl_post_save
+		where user_number = #{userNumber};
 	</delete>
 	<select id="checkSave" parameterType="PostSaveDTO"
 		resultType="int">
 		select post_save_number
 		from tbl_post_save
-		where post_number = #{postNumber} and user_number=
+		where post_number
+		= #{postNumber} and user_number=
 		#{userNumber}
 	</select>
 
@@ -35,12 +37,13 @@
 
 	<select id="getPostAll" parameterType="map"
 		resultType="PostSaveVO">
-		select tp.post_thumbnail , ps.post_save_number , ps.user_number ,
-		ps.post_number
-		from tbl_post tp
-		join tbl_post_save ps
-		on tp.post_number = ps.post_number
-		limit #{startRow}, #{rowCount};
+		select s.post_number, s.user_number, p.post_thumbnail
+		from tbl_post_save s
+		join tbl_post p
+		on s.post_number = p.post_number and s.user_number = #{userNumber}
+		order by p.post_number desc 
+		limit
+		#{startRow}, #{rowCount};
 	</select>
 	
 	<delete id="deleteByPostNumber" parameterType="_int">

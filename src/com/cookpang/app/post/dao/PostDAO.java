@@ -23,6 +23,11 @@ public class PostDAO {
 		
 	}
 	
+	public List <PostReadVO> getPostAll(Map<String, Integer>pageMap) {
+		return sqlSession.selectList("post.getPostAll", pageMap);
+		
+	}
+	
 	public int getTotal() {
 		return sqlSession.selectOne("post.getTotal");
 	}

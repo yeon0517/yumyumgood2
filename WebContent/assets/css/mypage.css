@@ -564,12 +564,29 @@ a {
   margin: auto;
 }
 
+.next-page3 {
+  /* background-color: violet; */
+  width: 830px;
+  height: 40px;
+  margin: auto;
+}
+
+.next-page2 {
+  /* background-color: violet; */
+  width: 830px;
+  height: 40px;
+  margin: auto;
+}
 /* 페이징 스타일 */
 .paging {
   display: flex;
   justify-content: center;
   align-items: center;
   /* margin-top: 50px; */
+}
+
+.pagingLike{
+	display: flex;
 }
 
 .paging > p {

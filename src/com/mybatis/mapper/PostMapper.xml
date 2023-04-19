@@ -15,6 +15,20 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 
+		<select id="getPostAll" resultType="PostVO" parameterType="map">
+		select
+		tp.post_number, tp.user_number, post_title, tu.user_nickname,
+		tpf.post_file_index, tp.post_date, tp.post_thumbnail
+		from tbl_post tp
+		left outer join tbl_user tu on tp.user_number = tu.user_number
+		left
+		outer join tbl_post_file tpf on tpf.post_number = tp.post_number
+		where tp.user_number = #{userNumber}
+		order
+		by tp.post_date desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
 
 
 	<select id="getTotal" resultType="_int">

@@ -101,7 +101,7 @@ function paging(result) {
 	page += `
 	
 						<p class="paging-btn-prev">
-								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.page - 1}> <img
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.startPage - 1}> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
 									alt="" class="direction"  />
 								</a>
@@ -121,7 +121,7 @@ function paging(result) {
 		
 	}
 			page += `	<p class="paging-btn-next">
-								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.page + 1}> <img
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.Endpage + 1}> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
 									alt="다음으로"  />
 								</a>
@@ -147,6 +147,14 @@ function postListTable(result) {
 	console.log(result);
 	let text = '';
 	for (let i = 0; i < result.userPost.length; i++) {
+		if(result.userPost[i].postNumber == 0){
+			text+= `	<div>
+									<h1>아직 등록된 게시글이 없습니다!</h1>
+								</div>
+			
+			`;
+		}
+		
 		if (i % 3 == 0) {
 			text += `	<div class="ccc">`;
 		}
@@ -173,50 +181,6 @@ function postListTable(result) {
 
 
 
-
-
-/*$('.paging-btn-next').on('click', function() {
-	console.log('!!!!2343241342423!');
-
-	if (thisPage != ) {
-
-
-		$.ajax({
-			url: '/mypage/mypageListOk.my',
-			dataType: 'json',
-			data: { page: thisPage + 1 },
-			success: function(result) {
-				paging(result);
-				thisPage = result.page;
-				console.log(thisPage);
-			}
-		});
-
-	}
-
-});*/
-
-
-
-/*$('.paging-btn-prev').on('click', function() {
-	console.log('!!!!!');
-
-	if (thisPage != 1) {
-
-		$.ajax({
-			url: '/mypage/mypageListOk.my',
-			data: { page: thisPage - 1 },
-			dataType: 'json',
-			success: function(result) {
-				paging(result);
-				thisPage = result.page;
-				console.log(thisPage);
-			}
-		});
-
-	}
-
-});*/
 
 
 // click 이벤트(구매내역)
@@ -247,7 +211,131 @@ managePay.addEventListener("click", function() {
 	} else {
 		memberPay.style.display = "block";
 	}
+	showLikeList();
 });
+
+
+// 찜한 리스트 불러오기
+
+showLikeList(userNumber);
+
+ function showLikeList(userNumber, page) {
+	$.ajax({
+		url: '/mypage/mypageLikeOk.my',
+		type: 'get',
+		data: {
+			userNumber: userNumber,
+			page : page
+		},
+		dataType: 'json',
+		success: function(saveResult) {
+			postLikeTable(saveResult);
+			pagingLike(saveResult);
+		}
+	});
+}
+
+$('.next-page3').on('click', 'a', function(e){
+	e.preventDefault();
+	let userNumber = $(this).data('number');
+	let page = $(this).data('page');
+	showLikeList(userNumber, page);
+});
+
+function postLikeTable(saveResult) {
+
+	console.log(saveResult);
+	let text = '';
+	for (let i = 0; i < saveResult.userSavePost.length; i++) {
+		if(saveResult.userSavePost[i].postNumber == 0){
+			text+= `	<div>
+									<h1>아직 등록된 게시글이 없습니다!</h1>
+								</div>
+			
+			`;
+		}
+		
+		/*text = ``*/
+		
+		if (i % 3 == 0) {
+			text += `	<div class="ccc">`;
+		}
+
+		text += `
+						<div class="bbb">
+							<a href="/post/postReadOk.po?postNumber=${saveResult.userSavePost[i].postNumber}" class="go-post"> <img
+								src="/upload/${saveResult.userSavePost[i].postThumbnail}"
+								class="thumbnail-img" />
+							</a>
+						</div>
+		`;
+
+		if (i % 3 == 2) {
+			text += `
+				</div>
+			`;
+		}
+
+	}
+	$(".LikeRecipe").html(text);
+
+}
+
+//찜한 리스트 페이징 처리
+function pagingLike(saveResult) {
+	console.log("================");
+	console.log(saveResult);
+	
+	let likePage = '';
+
+	
+
+
+	likePage += `
+	
+						<p class="paging-btn-prev">
+								<a href="" data-number=${saveResult.userSavePost[0].userSaveNumber} data-page=${saveResult.page - 1}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction"  />
+								</a>
+						</p>`
+	for(let i = saveResult.startPage; i<=saveResult.endPage; i++){
+		
+		
+			if(i == saveResult.page){
+				likePage += `<p class="paging-num">
+								<a href="" data-number=${saveResult.userSavePost[0].userSaveNumber} data-page=${i} class="active">${i}</a>
+							</p>`
+			}else{
+				likePage += `<p class="paging-num">
+								<a href="" data-number=${saveResult.userSavePost[0].userSaveNumber} data-page=${i} >${i}</a>
+							</p>`
+			}
+			
+		
+	}
+			likePage += `	<p class="paging-btn-next">
+								<a href="" data-number=${saveResult.userSavePost[0].userSaveNumber} data-page=${saveResult.page + 1}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로"  />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last" >
+								<a href="" data-number=${saveResult.userSavePost[0].userSaveNumber} data-page=${saveResult.realEndPage}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>`
+							
+		$(".pagingLike").html(likePage);				
+						
+					
+		
+
+
+}
+
+
 
 
 

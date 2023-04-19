@@ -79,7 +79,7 @@ public class MyPageListOkController implements Execute {
 		pageMap.put("rowCount", rowCount);
 		pageMap.put("userNumber", userNumber);
 
-		List<PostReadVO> posts = postDAO.selectAll(pageMap);
+		List<PostReadVO> posts = postDAO.getPostAll(pageMap);
 		System.out.println(posts);
 
 		// Gson 객체를 생성하고, 이를 이용해 위에 설정한 리스트를 json 형태로 변환한다.
