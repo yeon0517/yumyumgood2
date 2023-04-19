@@ -10,6 +10,8 @@ import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.order.dao.OrderDAO;
+import com.cookpang.app.order.dto.OrderDTO;
+import com.cookpang.app.order.item.dao.OrderItemDAO;
 import com.cookpang.app.order.vo.OrderVO;
 import com.cookpang.app.user.dao.UserDAO;
 import com.cookpang.app.user.dto.UserDTO;
@@ -23,32 +25,42 @@ public class OrderController implements Execute{
 		OrderDAO orderDAO = new OrderDAO();
 		UserDTO userDTO = new UserDTO();
 		UserDAO userDAO = new UserDAO();
+		OrderItemDAO orderItemDAO = new OrderItemDAO();
+		OrderDTO orderDTO = new OrderDTO();
+	
 		int userNumber = (int) session.getAttribute("userNumber");
+		int orderNumber = 0;
 		
 		System.out.println(userNumber);
 //		주문고객
 		// 로그인 연결되면 여기 지우고 위에 userNumber로 교체
-//		int number = userNumber ;
+		int number = userNumber ;
 		
 		OrderVO orderVO = new OrderVO();
+		UserDTO order =  orderDAO.orderInfo(number);
 		
 //		int order = orderVO.getOrderNumber();
 
+		orderNumber = Integer.parseInt(req.getParameter("orderNumber")) ;
+		System.out.println(orderNumber);
 		
-		List<OrderVO> test = orderDAO.defaultOrderInfo(userNumber);
+		OrderDTO cost = orderDAO.cost(orderNumber);
+		List<OrderVO> test = orderDAO.defaultOrderInfo(orderNumber);
 		System.out.println("=============================");
-//		System.out.println(order);
+		System.out.println(number);
 		System.out.println(test);
+		System.out.println(cost);
 		
-//		UserDTO user = (UserDTO) orderDAO.defaultOrderInfo(userNumber);
 		
 //		OrderVO defaultOrderInfoList = orderDAO.defaultOrderInfo(number);
 		
 //		UserDTO order = orderDAO.defaultOrderInfo(number);
 //		System.out.println(order);
-//		req.setAttribute("order", order);
 		
-		req.setAttribute("order", test);
+		req.setAttribute("order", order);
+		req.setAttribute("test", test);
+		req.setAttribute("cost", cost);
+		
 		
 //		여기에 orderList를 뽑아 와야함.
 //		orderDetail

@@ -76,11 +76,11 @@
 						<div class="anw">
 							<span> <label for="anw1">
 									<h3>주문 고객 이름</h3> <input id="anw1-1" type="text"
-									name="userName" value="${user.getUserName()}">
+									name="userName" value="${order.getUserName()}">
 									<h3>휴대전화 번호</h3> <input id="anw1-2" type="text"
-									name="userPhoneNumber" value="${user.getUserPhoneNumber()}">
+									name="userPhoneNumber" value="${order.getUserPhoneNumber()}">
 									<h3>(필수)이메일 주소</h3> <input id="anw1-3" type="text"
-									name="userEmail" value="${user.getUserEmail()}">
+									name="userEmail" value="${order.getUserEmail()}">
 							</label>
 							</span>
 						</div>
@@ -103,8 +103,7 @@
 						<!--여기까지 배송지입력-->
 
 						<div class="pmt">
-							<span>주문상품</span> <img src="#" alt=""> <span>여기에 주문
-								상품 갯수 적기</span>
+							<span>주문상품</span> <img src="#" alt=""> 
 						</div>
 
 						<div class="amt">
@@ -132,7 +131,7 @@
             </div>
            </span> -->
 
-								<c:forEach var="order" items="${order}" varStatus="status">
+								<c:forEach var="test" items="${test}" varStatus="status">
 								<span>
 									<div class="checkoutProductSection" style="display: flex;">
 										<img src="#" alt="#">
@@ -142,8 +141,8 @@
 												<ul>
 													<li>
 													
-													<c:out value="${order.getIngredientName()}"/>
-													<c:out value="${order.getOrderItemQuantity()}"/>
+													재료 : <c:out value="${test.getIngredientName()}"/> -
+							수량 : <c:out value="  ${ test.getOrderItemQuantity()}"/> 
 														<!-- <p>본품 금액</p>
 														<p></p>
 														<p>총 금액</p> -->
@@ -162,16 +161,16 @@
 				<div class="Payment-body-footer">
 					<div class="amount">
 						<p>결제 금액</p>
-						<strong style="color: red;"> 93,000원 </strong>
+						<strong style="color: red;"> ${cost.getOrderTotalCost()+3000} 원 </strong>
 					</div>
 
 					<div class="amount-tag">
 						<p>총 상품금액</p>
-						<p style="text-align: end;">39,000원</p>
+						<p style="text-align: end;"> ${cost.getOrderTotalCost()} 원</p>
 						<p>총 배송비</p>
-						<p style="text-align: end;">2000원</p>
-						<p>할인금액</p>
-						<p style="text-align: end;">0원</p>
+						<p style="text-align: end;">3000원</p>
+						<!-- <p>할인금액</p>
+						<p style="text-align: end;">0원</p> -->
 					</div>
 					<!--여기까지 결제금액-->
 

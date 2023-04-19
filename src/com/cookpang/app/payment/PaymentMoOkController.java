@@ -51,7 +51,7 @@ public class PaymentMoOkController implements Execute {
 			orderItemDAO.item(orderItemDTO);
 		}
 		
-		resp.sendRedirect("/order/orderList.or");
+		resp.sendRedirect("/order/orderList.or?orderNumber=" + orderNumber);
 		
 	}
 }

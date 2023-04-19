@@ -49,10 +49,10 @@
 								
 							</span>
 							</p>
-							<a href="#"> <img
+							<%-- <a href="#"> <img
 								src="${pageContext.request.contextPath}/assets/img/shareicon.png"
 								alt="" class="share-img">
-							</a>
+							</a> --%>
 						</div>
 
 					</div>
