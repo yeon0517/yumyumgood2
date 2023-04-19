@@ -264,7 +264,7 @@ function showSave(result) {
 
 // 게시물 이미지 슬라이드
 let $readImgs = $('.read-imgs');
-let width = 696.858;
+let width = 783.963;
 let idx = 0;
 let length = $('.read-img').length;
 	console.log('.read-img');
@@ -304,5 +304,14 @@ function checkEnd() {
 		$('.next-btn').show();
 	}
 }
+
+$('.more-btn').on('click', function(){
+		$('.modal').css("display", "flex");
+})
+
+$('.modal-cancel-btn').on('click', function(){
+		$('.modal').css("display", "none");
+})
+
 
 

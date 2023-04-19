@@ -52,6 +52,9 @@
 
 					</ul>
 
+
+
+				</div>
 					<div class="read-img-controller-box">
 						<div class="read-box-imgs-prev">
 							<button type="button" class="img-prev-next-button prev-btn">
@@ -66,9 +69,6 @@
 							</button>
 						</div>
 					</div>
-
-
-				</div>
 
 
 				<!-- 게시물 내용영역 -->
@@ -108,9 +108,13 @@
 								<h4>${post.getUserId()}</h4>
 							</a>
 
-							<button class="more-btn">
-								<i class="fa-solid fa-ellipsis"></i>
-							</button>
+
+							<c:if test="${sessionScope.userNumber == post.getUserNumber() }">
+								<button class="more-btn">
+									<i class="fa-solid fa-ellipsis"></i>
+								</button>
+               
+    						</c:if>
 
 						</div>
 
@@ -368,6 +372,21 @@
 
 	</button>
 	</div>
+	
+	
+		<form action="/post/postDeleteOk.po" method="post" class="post-delete-form">
+			<div id="myModal" class="modal">
+					<input type="hidden" value="${post.getPostNumber()}" name="postNumber" class="post-number-by-post-delete">
+					<div class="modal-content">
+			  		<h3>게시물을 삭제하시겠습니까?</h3>
+			  			<button class="post-delete-btn" type="submit" >삭제하기</button>
+			  			<button class="modal-cancel-btn" type="button" >취소</button>
+				</div>
+			</div>
+		</form>
+	
+	<!--게시물 삭제 부분  -->
+	
 
 
 
