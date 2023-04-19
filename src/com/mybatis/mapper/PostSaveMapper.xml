@@ -42,6 +42,13 @@
 		on tp.post_number = ps.post_number
 		limit #{startRow}, #{rowCount};
 	</select>
+	
+	<delete id="deleteByPostNumber" parameterType="_int">
+		delete from tbl_post_save 
+		where post_number =#{postNumber}
+	</delete>
+	
+	
 
 </mapper>
 

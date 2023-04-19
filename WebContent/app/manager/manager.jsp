@@ -270,9 +270,9 @@
 																	<td><a href="#">수정</a></td>
 																	<td>
 																		<div class="checkbox-c">
-																			<a href="#"><input type="checkbox" name="post"
+																			<input type="checkbox" name="post"
 																				class="post-check-box"
-																				value="{post.getPostNumber()}" /></a>
+																				value="${post.getPostNumber()}" />
 																		</div>
 																	</td>
 																</tr>

@@ -18,6 +18,14 @@
 	</select>
 	
 
+	<delete id="delete" parameterType="_int">
+		delete from tbl_recipe_ingredient
+		where post_number=#{postNumber}
+	</delete>
+		
+	
+
+
   	
 	<select id="postPaymentIngredient" parameterType="_int" resultType="RecipeIngredientVO">
 		select  ti.ingredient_number ,ingredient_name , ingredient_smallest_unit , ingredient_price, tii.ingredient_image_system_name 

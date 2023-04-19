@@ -68,5 +68,8 @@ public class PostDAO {
 	public int getUserPost(int userNumber) {
 		return sqlSession.selectOne("post.getUserPost", userNumber);
 	}
+	public List<Integer> getPostNumberByUserNumber(int userNumber) {
+		return sqlSession.selectList("post.getPostNumberByUserNumber", userNumber);
+	}
 
 }
