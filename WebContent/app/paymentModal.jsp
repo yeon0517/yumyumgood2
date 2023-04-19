@@ -49,10 +49,10 @@
 								
 							</span>
 							</p>
-							<a href="#"> <img
+							<%-- <a href="#"> <img
 								src="${pageContext.request.contextPath}/assets/img/shareicon.png"
 								alt="" class="share-img">
-							</a>
+							</a> --%>
 						</div>
 
 					</div>
@@ -95,10 +95,9 @@
 							
 								<c:forEach var="ingredient" items="${ingredient}" varStatus="status">
 									<span class = "amount-box">
-										<input type="checkbox" name="orderItemNumber" class="amount-input"
+										<input type="checkbox" name="ingredientNumber" class="amount-input"
 											value="${ingredient.getIngredientNumber()}">
 											<c:out value="${ingredient.getIngredientName()}"/>
-											<input type="hidden" name="orderItemQuantity" >
 											<c:out value="${ingredient.getIngredientSmallestUnit()}g"/>
 	        							 <input type="hidden" name="price" class="price"
 											value="${ingredient.getIngredientPrice()}">
@@ -115,7 +114,11 @@
 						<div id="container">
 							<!--수량카운트 js첨부-->
 							<button id="minus" type="button">-</button>
-							<span id="counter-number">1</span>
+							<span id="counter-number">1
+							</span>
+								<input type="hidden" name="orderItemQuantity" value="1" class="counterNumber">
+							
+							
 							<button id="plus" type="button" >+</button>
 							<button id="reset" type="button">reset</button>
 						</div>

@@ -26,11 +26,4 @@ public class PaymentDAO {
 		  return sqlSession.selectList("recipeIngredient.postPaymentIngredient", postNumber);
 	 }
     
-    public void orderTotalCost(OrderDTO orderDTO) {
-		sqlSession.insert("orderItem.orderTotalCost", orderDTO);
-	}
-    
-    public void item(OrderItemDTO orderItemDTO) {
-		sqlSession.insert("orderItem.item", orderItemDTO);
-	}
 }

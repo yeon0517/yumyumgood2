@@ -37,6 +37,8 @@ public class OrderOkController implements Execute {
 
 		orderDAO.OrderInsert(orderDTO);
 		
+		
+//		req.getRequestDispatcher("/app/payment.jsp");
 		resp.sendRedirect("/mainOk.m");
 		
 	}
