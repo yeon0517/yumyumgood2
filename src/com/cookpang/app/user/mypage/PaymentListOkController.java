@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
-import com.cookpang.app.post.dao.PostDAO;
-import com.cookpang.app.post.read.vo.PostReadVO;
+import com.cookpang.app.payment.dao.PaymentDAO;
+import com.cookpang.app.payment.vo.PaymentVO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -29,8 +29,8 @@ public class PaymentListOkController implements Execute {
 		HttpSession session = req.getSession();
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
 //		int userNumber = 1;
-		PostDAO postDAO = new PostDAO();
-		int total = postDAO.getTotal();
+		PaymentDAO paymentDAO = new PaymentDAO();
+		int total = paymentDAO.getTotalList();
 		//처음 게시판 페이지에 진입하면 페이지에 대한 정보가 없다
 		//그러므로 temp에는 null이 들어가게 된다.
 		String temp = req.getParameter("page");
@@ -68,6 +68,13 @@ public class PaymentListOkController implements Execute {
 		boolean prev = startPage>1;
 		boolean next = endPage != realEndPage;
 		
+		
+		System.out.println("!@@@@@@@@@@@@@@@@@!");
+		  System.out.println("total"+total); 
+		  System.out.println("page"+page);
+		  System.out.println("startRow"+startRow);
+		  System.out.println("endPage"+endPage);
+		  System.out.println("realEndPage"+realEndPage);
 			
 		Map<String, Integer>pageMap = new HashMap();
 		
@@ -75,60 +82,63 @@ public class PaymentListOkController implements Execute {
 		pageMap.put("rowCount", rowCount);
 		pageMap.put("userNumber", userNumber);
 		
-		List <PostReadVO> posts= postDAO.selectAll(pageMap);
+		List <PaymentVO> payments= paymentDAO.paymentList(pageMap);
 		
-		req.setAttribute("postList", posts);
-		req.setAttribute("page", page);
-		req.setAttribute("startPage", startPage);
-		req.setAttribute("endPage", endPage);
-		req.setAttribute("prev", prev);
-		req.setAttribute("next", next);
-		
-		// Gson 객체를 생성하고, 이를 이용해 위에 설정한 리스트를 json 형태로 변환한다.
-	      Gson gson = new Gson();
-	     
-	     
-//JsonArray 객체를 생성하고, 변수를 설정하여 할당한다. 
-	      JsonArray postList = new JsonArray();
-	      
-	    
-/*//DAO객체를 생성할 때 만든 리스트를 stream() 메소드를 이용해 순차적으로 처리하고,
-각 요소를 gson::toJson() 메소드를 이용해 JSON형태로 변환한 후
-JsonParser::parseString() 메소드를 이용해 JsonElement 형태로 파싱합니다.
-마지막으로 JsonArray의 변수에 각 JsonElement를 add()메소드를 통해 추가한다.	*/      
-	      posts.stream()
-	      .map(gson::toJson)
-	      .map(JsonParser::parseString)
-	      .forEach(postList::add);
-	      
-	     
-/*//JsonObject 객체를 생성하고 이를 이용해 JSON 형태의 결과값을 저장한다
-result라는 객체에는 list, startPage, endPage, page , realEndPage라는 key와 그에 해당하는 값들이 저장된다.*/
-	      JsonObject result = new JsonObject();
-	      
-	      result.add("list", JsonParser.parseString(postList.toString()));
-	      
-	      result.addProperty("startPage", startPage);
-	      result.addProperty("endPage", endPage);
-	      result.addProperty("page", page);
-	      result.addProperty("realEndPage", realEndPage);
-	      
-	      
-	      
-	      resp.setContentType("application/json; charSet=utf-8");
-	
-/*//PrintWriter 객체를 생성하고, result 객체를 문자열로 변환한 후
-print()메소드를 통해 결과값을 출력한다. 마지막으로 close()메소드를 통해 출력 스트림을 닫습니다.  */    
-	      PrintWriter out = resp.getWriter();
-	      out.print(result.toString());
-	      out.close();
-	      
-		
-		
+		System.out.println(payments);
 
-	
+		// Gson 객체를 생성하고, 이를 이용해 위에 설정한 리스트를 json 형태로 변환한다.
+		Gson gson = new Gson();
 		
 		
+//JsonArray 객체를 생성하고, 변수를 설정하여 할당한다. 
+		JsonObject paymentResult = new JsonObject();
+
+		//여기
+//		JsonArray postList = new JsonArray();
+		JsonArray paymentList = gson.toJsonTree(payments).getAsJsonArray();
+		System.out.println(paymentList);
+		/*
+		 * //DAO객체를 생성할 때 만든 리스트를 stream() 메소드를 이용해 순차적으로 처리하고, 각 요소를 gson::toJson()
+		 * 메소드를 이용해 JSON형태로 변환한 후 JsonParser::parseString() 메소드를 이용해 JsonElement 형태로
+		 * 파싱합니다. 마지막으로 JsonArray의 변수에 각 JsonElement를 add()메소드를 통해 추가한다.
+		 */
+		System.out.println("==============");
+
+//		posts.stream()
+//		.map(gson::toJson)
+//		.map(JsonParser::parseString)
+//		.forEach(postList::add);
+
+		System.out.println("=====%%%=========");
+
+		/*
+		 * //JsonObject 객체를 생성하고 이를 이용해 JSON 형태의 결과값을 저장한다 result라는 객체에는 list,
+		 * startPage, endPage, page , realEndPage라는 key와 그에 해당하는 값들이 저장된다.
+		 */
+		//여기
+//		result.add("list", JsonParser.parseString(postList.toString()));
+		paymentResult.add("userPaymentList", paymentList);
+		
+		paymentResult.addProperty("startPage", startPage);
+		paymentResult.addProperty("endPage", endPage);
+		paymentResult.addProperty("page", page);
+		paymentResult.addProperty("realEndPage", realEndPage);
+
+		
+		System.out.println("*******************");
+		System.out.println(paymentResult);
+		resp.setContentType("application/json; charSet=utf-8");
+
+		/*
+		 * //PrintWriter 객체를 생성하고, result 객체를 문자열로 변환한 후 print()메소드를 통해 결과값을 출력한다. 마지막으로
+		 * close()메소드를 통해 출력 스트림을 닫습니다.
+		 */
+		PrintWriter out = resp.getWriter();
+		out.print(paymentResult.toString());
+		System.out.println("==============");
+		System.out.println(paymentResult.toString());
+		out.close();
+
 //		req.getRequestDispatcher("/app/mypage.jsp").forward(req, resp);
 	}
 
