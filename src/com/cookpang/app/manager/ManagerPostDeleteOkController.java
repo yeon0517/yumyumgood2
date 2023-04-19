@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cookpang.app.Execute;
 import com.cookpang.app.comment.dao.CommentDAO;
-import com.cookpang.app.manager.dao.ManagerDAO;
 import com.cookpang.app.post.dao.PostDAO;
 import com.cookpang.app.post.file.dao.PostFileDAO;
 import com.cookpang.app.post.like.dao.PostLikeDAO;
@@ -20,7 +19,6 @@ public class ManagerPostDeleteOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ManagerDAO managerDAO = new ManagerDAO();
 		CommentDAO commentDAO = new CommentDAO();	
 		PostSaveDAO postSaveDAO = new PostSaveDAO();
 		PostLikeDAO postLikeDAO = new PostLikeDAO();
