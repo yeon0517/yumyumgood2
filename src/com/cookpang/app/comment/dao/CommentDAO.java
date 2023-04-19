@@ -29,6 +29,9 @@ public class CommentDAO {
 	public void delete(int userNumber) {
 		sqlSession.delete("comment.delete",userNumber);
 	}
+	public void deleteByPostNumber(int postNumber) {
+		sqlSession.delete("comment.deleteByPostNumber",postNumber);
+	}
 	
 }
 

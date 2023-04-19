@@ -146,7 +146,7 @@ delete from tbl_post where user_number = #{userNumber}
 
 	</update>
 	
-	<select id="getPostNumberByUserNumber" parameterType="_int" resultType="_int">
+	<select id="getPostNumberByUserNumber" parameterType="_int" resultType="int">
 		select post_number  from tbl_post 
 		where user_number =#{userNumber}
 	</select>

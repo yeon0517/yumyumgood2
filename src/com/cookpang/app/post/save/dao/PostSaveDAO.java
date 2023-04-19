@@ -39,5 +39,8 @@ public class PostSaveDAO {
 	public List <PostSaveVO> getPostAll (Map<String, Integer>pageMap) {
 		return sqlSession.selectList("postSave.getPostAll", pageMap);
 	}
+	public void deleteByPostNumber(int postNumber) {
+		sqlSession.delete("postSave.deleteByPostNumber", postNumber);
+	}
 
 }

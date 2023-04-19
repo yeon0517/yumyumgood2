@@ -32,6 +32,7 @@
   border-radius: 0px 10px 10px 0px;
   background-color: white;
   display: flex;
+  position: relative;
 }
 
 button{
@@ -65,8 +66,8 @@ a{
 }
 
 .read-imgs-container{
-  height: 669.275px;
-  width: 696.858px;
+  height: 100%;
+  width: 60%;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -74,8 +75,8 @@ a{
 
 .read-imgs, .read-imgs>li,
 .read-img-box, .read-img,.read-img-controller-box{
-  width: 696.858px;
-  height: 669.275px;
+  width: 783.963px;
+  height:100%;
 }
 
 
@@ -94,6 +95,8 @@ a{
   position: absolute;
   align-items: center;
   justify-content: space-between;
+  width: 60%;
+  height: 100%;
 }
 
 .read-img-controller-box i{
@@ -435,7 +438,7 @@ div.post-view-count-box{
 
 .comment-box{
   height: 99%;
-  width: 90%;
+  width: 95%;
   padding-left: 10px;
   display: flex;
   justify-content: space-between;

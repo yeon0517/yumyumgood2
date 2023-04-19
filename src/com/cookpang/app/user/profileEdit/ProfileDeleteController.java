@@ -45,7 +45,7 @@ public class ProfileDeleteController implements Execute {
 		RecipeCategoryDAO recipeCategoryDAO = new RecipeCategoryDAO();
 		RecipeIngredientDAO recipeIngredientDAO = new RecipeIngredientDAO();
 		
-		List<Integer> postNmbers = postDAO.getPostNumberByUserNumber(userNumber);
+		List<Integer> postNumbers = postDAO.getPostNumberByUserNumber(userNumber);
 		
 		
 
@@ -56,7 +56,7 @@ public class ProfileDeleteController implements Execute {
 		orderDAO.delete(userNumber);
 		profileImageDAO.delete(userNumber);
 		
-		for (Integer postNumber : postNmbers) {
+		for (Integer postNumber : postNumbers) {
 			postFileDAO.delete(postNumber);
 			recipeCategoryDAO.delete(postNumber);
 			recipeIngredientDAO.delete(postNumber);

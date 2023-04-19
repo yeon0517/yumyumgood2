@@ -29,6 +29,9 @@ public class PostLikeDAO {
 	public void delete(int userNumber) {
 		sqlSession.delete("postLike.delete",userNumber);
 	}
+	public void deleteByPostNumber(int postNumber) {
+		sqlSession.delete("postLike.deleteByPostNumber",postNumber);
+	}
 	
 	
 	

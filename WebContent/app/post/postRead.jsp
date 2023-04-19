@@ -52,6 +52,9 @@
 
 					</ul>
 
+
+
+				</div>
 					<div class="read-img-controller-box">
 						<div class="read-box-imgs-prev">
 							<button type="button" class="img-prev-next-button prev-btn">
@@ -66,9 +69,6 @@
 							</button>
 						</div>
 					</div>
-
-
-				</div>
 
 
 				<!-- 게시물 내용영역 -->
