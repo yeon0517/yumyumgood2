@@ -314,82 +314,105 @@
 
 				<!-- 게시글 -->
 				<div id="bottom1" class="main-bottom test">
-					<div class="ccc">
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
-								class="thumbnail-img" />
-							</a>
+					<div class="PostList">
+						<div class="ccc">
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
 						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://i.pinimg.com/736x/6c/60/0a/6c600ab5e645aa739ad5f3909450c461.jpg"
-								class="thumbnail-img" />
-							</a>
+						<div class="ccc">
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img
+									src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
+									class="thumbnail-img" />
+								</a>
+							</div>
 						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://blog.kakaocdn.net/dn/nnA0S/btrCCG47mNV/gj3xQgynZpb2W2fW5fCC8K/img.jpg"
-								class="thumbnail-img" />
-							</a>
+						<div class="ccc">
+							<div class="bbb">
+								<a href="#" class="go-post"> <img src=""
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img src=""
+									class="thumbnail-img" />
+								</a>
+							</div>
+							<div class="bbb">
+								<a href="#" class="go-post"> <img src=""
+									class="thumbnail-img" />
+								</a>
+							</div>
 						</div>
 					</div>
-					<div class="ccc">
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://i.pinimg.com/474x/47/cb/42/47cb4218bd4813b3c98d21105f6b93eb.jpg"
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://blog.kakaocdn.net/dn/b0PG9a/btrSq9RDws2/abIZukt42LB4Yvcsls7TY1/img.jpg"
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img
-								src="https://dispatch.cdnser.be/wp-content/uploads/2018/08/42690d9e27bca889ccad97ac4845112a.png"
-								class="thumbnail-img" />
-							</a>
-						</div>
-					</div>
-					<div class="ccc">
-						<div class="bbb">
-							<a href="#" class="go-post"> <img src=""
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img src=""
-								class="thumbnail-img" />
-							</a>
-						</div>
-						<div class="bbb">
-							<a href="#" class="go-post"> <img src=""
-								class="thumbnail-img" />
-							</a>
-						</div>
-					</div>
-					<div class="next-page">
+					<div class="next-page"  >
 						<div class="paging" >
-							<p class="paging-btn prev">
+							<p class="paging-btn-prev">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-									alt="" class="direction" />
+									alt="" class="direction" data-postPage= "${startPage - 1 }" />
 								</a>
 							</p>
+							
+								<%-- <c:forEach var="j" begin="${startPage}"
+													end="${endPage}">
+													<c:choose>
+														<c:when test="${!(j == page) }">
+														<p class="paging-num">
+															<a
+																href="${pageContext.request.contextPath}/mypage/mypageOk.my?Page=${j}" data-postPage="${j}">
+																	<c:out value="${j}" />
+															</a>
+															</p>
+														</c:when>
+														<c:otherwise>
+														<p class="paging-num">
+															<a href="${pageContext.request.contextPath}/mypage/mypageOk.my?Page=${j}=${j}" data-postPage="${j}" class="active"> <c:out
+																		value="${j}" />
+															</a>
+															</p>
+														</c:otherwise>
+													</c:choose>
+												</c:forEach> --%>
 							<p class="paging-num">
-								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
-								<a href="">5</a>
+								<a href="" >1</a> <a href="" >2</a> <a href="" >3</a> <a href="" >4</a>
+								<a href="" >5</a>
 							</p>
-							<p class="paging-btn next">
+							<p class="paging-btn-next">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-									alt="다음으로" />
+									alt="다음으로" data-postPage= "${endPage + 1 }" />
 								</a>
 							</p>
-							<p class="paging-btn" id="paging-last">
+							<p class="paging-btn" id="paging-last" >
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
 									alt="마지막으로" />
@@ -634,14 +657,12 @@
                         <a href="${pageContext.request.contextPath}/mypage/mypageOk.my">프로필</a>
                         </c:otherwise>
                </c:choose>
+               
 
                      </div>
                   </li>
                </ul>
-
-               
-
-               <div class="btn-group">
+                 <div class="btn-group">
                   <li class="sidebar-login"><c:choose>
                         <c:when test="${empty sessionScope.userNumber}">
                            <a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
@@ -651,171 +672,92 @@
                   </c:otherwise>
                   </c:choose>
                </div>
+               
 
-            </div>
-            <!-- 검색 창 -->
-            <article class="sub-find">
-               <div class="search-box">
-                  <div class="search-box2">
-                     <h1 class="qqq">검색</h1>
-                  </div>
-                  <div class="search-box3">
-                     <input type="text" class="find-btn" placeholder="검색" />
-                  </div>
-               </div>
-               <div class="recent-searches">
-                  <h3 class="recent-searches2">최근 검색 항목</h3>
-               </div>
-               <div class="recent-searches-box">
-                  <div class="search-man">
-                     <div class="man-left">
-                        <!-- <a href="#"> -->
-                        <a href="#"> <img
-                           src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-                           alt="#" class="man-img" /> <!-- </a> -->
-                        </a>
-                     </div>
-                     <div class="man-right">
-                        <div class="man-id">
-                           <a href="#"> hot_boy </a>
-                           <!-- <a href="#" class="man-id2">hot_boy</a> -->
-                        </div>
-                        <div class="man-name">
-                           이동재
-                           <!-- <a href="#" class="man-name2">이동재</a> -->
-                        </div>
-                     </div>
-                     <div class="delete-btn">
-                        <div class="delete-btn2">
-                           <button class="alarm-btn">삭제</button>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </article>
-            <!-- 검색 창 -->
-            <!-- 알림 창 -->
-            <article class="sub-find2">
-               <div class="search-box2">
-                  <div class="alarm">
-                     <h1 class="qqq">알림</h1>
-                  </div>
-               </div>
-               <div class="alarm-box">
-                  <div class="new-alarm">
-                     <div>
-                        <h4 class="alarm-date">이번주</h4>
-                     </div>
-                     <div class="boxboxbox">
-                        <div class="search-man">
-                           <div class="man-left2">
-                              <!-- <a href="#"> -->
-                              <a href="#"> <img
-                                 src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-                                 alt="#" class="man-img" />
-                              </a>
-                              <!-- </a> -->
-                           </div>
-                           <div class="alarm-right">
-                              <div class="alarm-id">
-                                 <a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-                                 시작했습니다.
-                              </div>
-                           </div>
-                           <div class="delete-btn3">
-                              <div class="delete-btn2">
-                                 <button class="alarm-btn">삭제</button>
-                              </div>
-                           </div>
-                        </div>
+				</div>
+				<!-- 검색 창 -->
+				<article class="sub-find">
+					<div class="search-box">
+						<div class="search-box2">
+							<h1 class="qqq">검색</h1>
+						</div>
+						<div class="search-box3">
+							<!-- 사이드바 드롭다운 추가 -->
+								<select class="drop-down" id="drop-down" name="fruits">
+									<option value="user">회원</option>
+									<option value="post">게시물</option>
+								</select> <input type="text" class="find-btn" id="find-btn" name="searchInput" placeholder="검색" />
+								<button type="button" class="search-btn">검색</button>
+								<!-- 사이드바 드롭다운 추가 -->
+						</div>
+					</div>
+					<div class="recent-searches">
+						<h3 class="recent-searches2">검색 항목</h3>
+					</div>
+					<div class="recent-searches-box">
+						<!-- <div class="search-man">
+							<div class="man-left">
+								<a href="#">
+								<a href="#"> <img
+									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+									alt="#" class="man-img" /> </a>
+								</a>
+							</div>
+							<div class="man-right">
+								<div class="man-id">
+									<a href="#"> hot_boy </a>
+									<a href="#" class="man-id2">hot_boy</a>
+								</div>
+								<div class="man-name">
+									이동재
+									<a href="#" class="man-name2">이동재</a>
+								</div>
+							</div>
+							<div class="delete-btn">
+								<div class="delete-btn2">
+									<button class="alarm-btn">삭제</button>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</article>
+				<!-- 검색 창 -->
+				<!-- 알림 창 -->
+				<article class="sub-find2">
+					<div class="search-box2">
+						<div class="alarm">
+							<h1 class="qqq">알림</h1>
+						</div>
+					</div>
+					<div class="alarm-box">
+						<div class="new-alarm">
+							<div>
+								<h4 class="alarm-date">이번주</h4>
+							</div>
+							<div class="boxboxbox">
+								<div class="search-man">
+									<div class="man-left2">
+										<!-- <a href="#"> -->
+										<a href="#"> <img
+											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
+											alt="#" class="man-img" />
+										</a>
+										<!-- </a> -->
+									</div>
+									<div class="alarm-right">
+										<div class="alarm-id">
+											<a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
+											시작했습니다.
+										</div>
+									</div>
+									<div class="delete-btn3">
+										<div class="delete-btn2">
+											<button class="alarm-btn">삭제</button>
+										</div>
+									</div>
+								</div>
+               
 
-                        <div class="search-man">
-                           <div class="man-left2">
-                              <!-- <a href="#"> -->
-                              <a href="#"> <img
-                                 src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-                                 alt="#" class="man-img" />
-                              </a>
-                              <!-- </a> -->
-                           </div>
-                           <div class="alarm-right">
-                              <div class="alarm-id">
-                                 <a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-                                 시작했습니다.
-                              </div>
-                           </div>
-                           <div class="delete-btn3">
-                              <div class="delete-btn2">
-                                 <button class="alarm-btn">삭제</button>
-                              </div>
-                           </div>
-                        </div>
-
-                        <div class="search-man">
-                           <div class="man-left2">
-                              <!-- <a href="#"> -->
-                              <a href="#"> <img
-                                 src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-                                 alt="#" class="man-img" />
-                              </a>
-                              <!-- </a> -->
-                           </div>
-                           <div class="alarm-right">
-                              <div class="alarm-id">
-                                 <a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-                                 시작했습니다.
-                              </div>
-                           </div>
-                           <div class="delete-btn3">
-                              <div class="delete-btn2">
-                                 <button class="alarm-btn">삭제</button>
-                              </div>
-                           </div>
-                        </div>
-
-                        <div class="search-man">
-                           <div class="man-left2">
-                              <!-- <a href="#"> -->
-                              <a href="#"> <img
-                                 src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-                                 alt="#" class="man-img" />
-                              </a>
-                              <!-- </a> -->
-                           </div>
-                           <div class="alarm-right">
-                              <div class="alarm-id">
-                                 <a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-                                 시작했습니다.
-                              </div>
-                           </div>
-                           <div class="delete-btn3">
-                              <div class="delete-btn2">
-                                 <button class="alarm-btn">삭제</button>
-                              </div>
-                           </div>
-                        </div>
-
-                        <div class="search-man">
-                           <div class="man-left2">
-                              <!-- <a href="#"> -->
-                              <a href="#"> <img
-                                 src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-                                 alt="#" class="man-img" />
-                              </a>
-                              <!-- </a> -->
-                           </div>
-                           <div class="alarm-right">
-                              <div class="alarm-id">
-                                 <a href="#" class="alarm-font">hot_boy</a> 님이 회원님을 팔로우하기
-                                 시작했습니다.
-                              </div>
-                           </div>
-                           <div class="delete-btn3">
-                              <div class="delete-btn2">
-                                 <button class="alarm-btn">삭제</button>
-                              </div>
-                           </div>
-                        </div>
                         <div>
                            <h4 class="alarm-date2">이번달</h4>
                         </div>
@@ -971,6 +913,11 @@
    <script src="https://code.jquery.com/jquery-3.6.4.js"></script>
    <script
       src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      
+      <script >
+      
+		let userNumber = "${sessionScope.userNumber}";
+      </script>
    <script src="${pageContext.request.contextPath}/assets/js/mypage.js"></script>
 </body>
 </html>

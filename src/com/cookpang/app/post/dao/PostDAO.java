@@ -65,6 +65,8 @@ public class PostDAO {
 		sqlSession.delete("post.deleteUser",userNumber);
 	}
 	
-	
+	public int getUserPost(int userNumber) {
+		return sqlSession.selectOne("post.getUserPost", userNumber);
+	}
 
 }

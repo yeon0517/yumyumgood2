@@ -379,7 +379,7 @@
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="#">CookPang</a></li>
+					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">CookPang</a></li>
 
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
@@ -662,7 +662,7 @@
 											<div class="alarm-right">
 												<div class="alarm-id">
 													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
+													댓글을 달았습니다.
 												</div>
 											</div>
 											<div class="delete-btn3">
@@ -684,7 +684,7 @@
 											<div class="alarm-right">
 												<div class="alarm-id">
 													<a href="#" class="alarm-font">hot_boy</a> 님이 회원님의 게시물에
-													좋아요를 눌렀습니다.
+													댓글을 달았습니다.
 												</div>
 											</div>
 											<div class="delete-btn3">

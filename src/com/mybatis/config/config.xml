@@ -42,6 +42,8 @@
 
 		<typeAlias type="com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO" alias="RecipeIngredientVO"/>
 
+		<typeAlias type="com.cookpang.app.post.save.vo.PostSaveVO" alias="PostSaveVO"/>
+		
 		
 	</typeAliases>
 	

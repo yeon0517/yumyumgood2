@@ -3,13 +3,15 @@
 
 <mapper namespace="postSave">
 
-<delete id="delete" parameterType="_int">
-delete from tbl_post_save where user_number = #{userNumber};
-</delete>
-	<select id="checkSave" parameterType="PostSaveDTO" resultType="int">
-		select post_save_number 
+	<delete id="delete" parameterType="_int">
+		delete from tbl_post_save where user_number = #{userNumber};
+	</delete>
+	<select id="checkSave" parameterType="PostSaveDTO"
+		resultType="int">
+		select post_save_number
 		from tbl_post_save
-		where post_number = #{postNumber} and user_number=  #{userNumber}
+		where post_number = #{postNumber} and user_number=
+		#{userNumber}
 	</select>
 
 	<insert id="insertSave" parameterType="PostSaveDTO">
@@ -17,13 +19,29 @@ delete from tbl_post_save where user_number = #{userNumber};
 		(post_number, user_number)
 		values(#{postNumber}, #{userNumber})
 	</insert>
-	
+
 	<delete id="deleteSave" parameterType="PostSaveDTO">
 		delete from tbl_post_save
-		where post_number = #{postNumber} and user_number=  #{userNumber}
+		where post_number = #{postNumber} and user_number= #{userNumber}
 	</delete>
-	
 
+	<select id="getSavePost" parameterType="_int" resultType="_int">
+		select
+		count(post_number)
+		from tbl_post_save
+		where user_number = #{userNumber}
+
+	</select>
+
+	<select id="getPostAll" parameterType="map"
+		resultType="PostSaveVO">
+		select tp.post_thumbnail , ps.post_save_number , ps.user_number ,
+		ps.post_number
+		from tbl_post tp
+		join tbl_post_save ps
+		on tp.post_number = ps.post_number
+		limit #{startRow}, #{rowCount};
+	</select>
 
 </mapper>
 
