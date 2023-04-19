@@ -34,13 +34,12 @@ let followCount = parseInt(results[1]);
 
 		$('.profile-btn2').html(
 			`
-		 <i class="fas fa-user-plus like-t js-like-btn"
-          style="color: red;"></i>
+		 <i class="followBtnOn">팔로다!</i>
 			`
 		)
 	} else if (followTF === "false") {
 		$('.profile-btn2').html(
-			`<i class="far fa-user-plus like-f js-like-btn"></i>
+			`<i class="followBtnOff">팔로우</i>
 			`
 		)
 	}
@@ -50,7 +49,10 @@ let followCount = parseInt(results[1]);
 }
 //===================##===================
 
+/* <i class="fas fa-user-plus like-t js-like-btn"
+          style="color: red;"></i>
 
+<i class="far fa-user-plus like-f js-like-btn"></i>*/ 
 
 
 // 모달 열기 함수

@@ -35,21 +35,21 @@
 								<div class="name-box">
 									<div class="nickname-box">
 										<div class="nickname">${userVO.getUserNickname()}</div>
-										<input type="hidden" name="yourNumber" class="yourNumber" value="${userVO.getUserNumber()}">
+										<input type="hidden" name="yourNumber" class="yourNumber"
+											value="${userVO.getUserNumber()}">
 									</div>
 									<div class="profile-btn">
 										<button type="button" class="profile-btn2">
-											팔로우
+											
 											<c:choose>
 												<c:when test="${followStatus}">
-													<i class="fas fa-user-plus like-t js-like-btn"
-														style="color: red;"></i>
+													<i class="followBtnOn">팔로잉됐다!</i>
 												</c:when>
 												<c:otherwise>
-													<i class="far fa-user-plus like-f js-like-btn"></i>
+													<i class="followBtnOff">팔로우</i>
 												</c:otherwise>
 											</c:choose>
-<!-- -------------------------------------------------------------------- -->
+											<!-- -------------------------------------------------------------------- -->
 										</button>
 									</div>
 									<!-- <div class="point">
@@ -519,12 +519,13 @@
 						</div>
 						<div class="search-box3">
 							<!-- 사이드바 드롭다운 추가 -->
-								<select class="drop-down" id="drop-down" name="fruits">
-									<option value="user">회원</option>
-									<option value="post">게시물</option>
-								</select> <input type="text" class="find-btn" id="find-btn" name="searchInput" placeholder="검색" />
-								<button type="button" class="search-btn">검색</button>
-								<!-- 사이드바 드롭다운 추가 -->
+							<select class="drop-down" id="drop-down" name="fruits">
+								<option value="user">회원</option>
+								<option value="post">게시물</option>
+							</select> <input type="text" class="find-btn" id="find-btn"
+								name="searchInput" placeholder="검색" />
+							<button type="button" class="search-btn">검색</button>
+							<!-- 사이드바 드롭다운 추가 -->
 						</div>
 					</div>
 					<div class="recent-searches">
@@ -802,8 +803,8 @@
 				</article>
 				<!-- 알림창 -->
 			</div>
-        
-      </div>
+
+		</div>
 
 
 		<div id="main-footer">
