@@ -3,6 +3,24 @@
 
 <mapper namespace="payment">
 
+	<!-- <insert id="payment" parameterType="PaymentDTO"> insert into cookpang.tbl_payment 
+		(order_number, payment_amount, payment_date, payment_method) values (#{orderNumber}, 
+		#{paymentAmount}, #{paymentDate}, #{paymentMethod}); </insert> -->
+
+
+	<select id="postPayment" parameterType="_int"
+		resultType="PostDTO">
+		select post_number, post_thumbnail , post_title,
+		post_content
+		from
+		tbl_post
+		where post_number = #{postNumber}
+	</select>
+
+
+
+
+
 </mapper>
 
 

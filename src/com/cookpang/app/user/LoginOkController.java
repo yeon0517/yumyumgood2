@@ -35,7 +35,9 @@ public class LoginOkController implements Execute {
 		
 		try {
 			userNumber = userDAO.login(userDTO);
+
 			path = "/mainOk.m"; //마이페이지..? 경로 잡기
+
 			session.setAttribute("userNumber", userNumber);
 		} catch (NullPointerException e) {
 			path = "/user/login.us?login=fail"; 

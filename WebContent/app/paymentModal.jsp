@@ -1,106 +1,149 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PaymentModal</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/PaymentModal.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  
-  <!-- <script language="javascript">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PaymentModal</title>
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/PaymentModal.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- <script language="javascript">
     function showPopup() { window.open("08_2_popup.html", "a", "width=400, height=300, left=100, top=50"); }
     </script> -->
 </head>
 
 <body>
-  <button id="show">팝업열기</button>
-  <div class="background">
-    <div class="window">
-      <div class="popup">
-        <div class="popup-header">
-        <button id="close" type="button">
-          <img src="${pageContext.request.contextPath}/assets/img/closemodalbutton.png" alt="">
-        </button>
-      </div>
-      <div class="popup-body">
-        <div class="contents">
-          <a href="#">
-            <img src="${pageContext.request.contextPath}/assets/img/mainfoodimg.png" alt="" style="height: 100px; width: 120px;">
-          </a>  
-           <div class="contents-box">
-            <p class="content-name">튀김 덮밥 (텐    동)</p>
-            <p class="content-subname">보기만해도 행복해지는</p>
-            <p class="content-price">13,200원</p>
-            <a href="#">
-              <img src="${pageContext.request.contextPath}/assets/img/shareicon.png" alt="" class="share-img">
-            </a>
-            </div>
-           
-            </div>
-             <h3 style="font-size: 12px; font-weight: 500; color: rgb(153, 153, 153);">이 레시피를 활용한 쿡팡 크리에이터</h3>
-            </div>
-        <div class="ingredients">
-              <ul>
-                <li>
-              <a href="#">
-                <img src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/154658128817l0.jpg" alt="깻잎" class="ingredients-img">
-              </a>
-              <a href="#">
-                <img src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1601354216394l0.jpg" alt="생새우" class="ingredients-img">
-              </a>
-              <a href="#">
-                <img src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/162121775358l0.jpg" alt="연근" class="ingredients-img">
-              </a>
-              <a href="#">
-                <img src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1613444214459l0.jpg" alt="단호박" class="ingredients-img">
-              </a>
-              <a href="#">
-                <img src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1585197140211l0.jpg" alt="김" class="ingredients-img">
-              </a>
-              <a href="#">
-                <img src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1637922047806l0.jpg" alt="표고버섯" class="ingredients-img">
-              </a>
-            </li>
-            </ul>
-              </div>
-    <div class="footer">
-      <div class="checkbox-span">필수 재료 선택 (최소 단위):</div> 
-        <div class="checkbox">
-           <input type="checkbox" id="check1" name="깻잎" value="#" class="checkbox1"> 깻잎 10g </input>
-           <input type="checkbox" id="check1" name="생새우" value="#" class="checkbox1"> 생새우 120g </input>
-           <input type="checkbox" id="check1" name="연근" value="#" class="checkbox1"> 연근 80g</input>
-           <input type="checkbox" id="check1" name="단호박" value="#" class="checkbox1"> 단호박 150g</input>
-           <input type="checkbox" id="check1" name="김" value="#" class="checkbox1"> 김 2g</input>
-          <p></p>
-           <input type="checkbox" id="check1" name="표고버섯" value="#" class="checkbox1"> 표고버섯 30g</input>
-           <input type="checkbox" id="check1" name="고기" value="#" class="checkbox1"> 고기 150g</input>
-           <input type="checkbox" id="check1" name="괴기" value="#" class="checkbox1"> 괴기 2g</input>
-           <input type="checkbox" id="check1" name="구기" value="#" class="checkbox1"> 구기 30g</input>
-        </div>
-          
-          <div id="container"> <!--수량카운트 js첨부-->
-            <button id="minus"> -</button>
-            <span id="counter-number">0</span>
-            <button id="plus">+ </button>
-            <button id="reset">reset</button>
-          </div>
-           
-      <button type="submit" name="buybutton" id="buybutton">구매하기</button>
-        
-        </div>
-      </div>
-      
-    </div>
-  </div>
+	<!-- <button id="show">팝업열기</button> -->
+	<div class="background">
+		<div class="window">
+			<div class="popup">
+			 <form action="${pageContext.request.contextPath}/pay/paymentOkmo.pa" method="POST">
+				<div class="popup-header">
+					<button id="close" type="button">
+						<img
+							src="${pageContext.request.contextPath}/assets/img/closemodalbutton.png"
+							alt="">
+					</button>
+				</div>
+				<div class="popup-body">
+					<div class="contents">
+						<a href="#"> <img
+							src="${pageContext.request.contextPath}/upload/${payPost.getPostThumbnail()}"
+							alt="${payPost.getPostThumbnail()}"
+							style="height: 100px; width: 120px;"> <%-- <img src="${pageContext.request.contextPath}/upload/" alt="" style="height: 100px; width: 120px;"> --%>
 
-   
- 
-  
-  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
-  <script src="${pageContext.request.contextPath}/assets/js/paymentModal.js"></script>
+						</a>
+						<div class="contents-box">
+							<p class="content-name">${payPost.getPostTitle()}</p>
+							<p class="content-subname">${payPost.getPostContent()}</p>
+							<p class="content-price">
+							<%-- <input type="hidden" value="${payPost.getPostNumber()}" class="post-number" > --%>
+							<input type="hidden" value="${payPost.getPostNumber()}" class="post-number" >
+							<span class="result-price">
+								
+							</span>
+							</p>
+							<%-- <a href="#"> <img
+								src="${pageContext.request.contextPath}/assets/img/shareicon.png"
+								alt="" class="share-img">
+							</a> --%>
+						</div>
+
+					</div>
+					<h3
+						style="font-size: 12px; font-weight: 500; color: rgb(153, 153, 153);">이
+						레시피를 활용한 쿡팡 크리에이터</h3>
+				</div>
+				<div class="ingredients">
+					<ul>
+						<li><a href="#"> <img
+								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/154658128817l0.jpg"
+								alt="깻잎" class="ingredients-img">
+						</a> <a href="#"> <img
+								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1601354216394l0.jpg"
+								alt="생새우" class="ingredients-img">
+						</a> <a href="#"> <img
+								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/162121775358l0.jpg"
+								alt="연근" class="ingredients-img">
+						</a> <a href="#"> <img
+								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1613444214459l0.jpg"
+								alt="단호박" class="ingredients-img">
+						</a> <a href="#"> <img
+								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1585197140211l0.jpg"
+								alt="김" class="ingredients-img">
+						</a> <a href="#"> <img
+								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1637922047806l0.jpg"
+								alt="표고버섯" class="ingredients-img">
+						</a></li>
+					</ul>
+				</div>
+
+
+				<div class="footer">
+				      
+					<div class="checkboxBox">
+						<div class="checkbox-span">필수 재료 선택 (최소 단위):</div>
+						<div class="checkbox" id="checkboxes">
+
+
+							
+								<c:forEach var="ingredient" items="${ingredient}" varStatus="status">
+									<span class = "amount-box">
+										<input type="checkbox" name="ingredientNumber" class="amount-input"
+											value="${ingredient.getIngredientNumber()}">
+											<c:out value="${ingredient.getIngredientName()}"/>
+											<c:out value="${ingredient.getIngredientSmallestUnit()}g"/>
+	        							 <input type="hidden" name="price" class="price"
+											value="${ingredient.getIngredientPrice()}">
+									</span>
+        							<c:if test="${status.count >= 5}">
+										<br>
+									</c:if>
+								</c:forEach>
+						</div>
+					</div>
+
+
+					<div class="containerBox">
+						<div id="container">
+							<!--수량카운트 js첨부-->
+							<button id="minus" type="button">-</button>
+							<span id="counter-number">1
+							</span>
+								<input type="hidden" name="orderItemQuantity" value="1" class="counterNumber">
+							
+							
+							<button id="plus" type="button" >+</button>
+							<button id="reset" type="button">reset</button>
+						</div>
+
+					
+						<!-- 나중에 경로 바꾸기 payment로 -->
+						<button type="submit" name="buybutton" id="buybutton">
+							<span style="color: white"> 구매하기 </span>
+						</button>
+					</div>
+				
+				</div>
+			</form>
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.3.js"
+		integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+		crossorigin="anonymous"></script>
+	<script
+		src="${pageContext.request.contextPath}/assets/js/paymentModal.js"></script>
 </body>
 </html>

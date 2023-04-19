@@ -429,14 +429,16 @@
 
 
 					<div class="btn-group">
-						<li class="sidebar-login"><c:choose>
+						<li class="sidebar-login">
+						<c:choose>
 								<c:when test="${empty sessionScope.userNumber}">
-									<a href="${pageContext.request.contextPath}/user/login.us">로그인</a></li>
+									<a href="${pageContext.request.contextPath}/user/login.us">로그인</a>
 						</c:when>
 						<c:otherwise>
 							<a href="${pageContext.request.contextPath}/user/logoutOk.us">로그아웃</a>
 						</c:otherwise>
 						</c:choose>
+						</li>
 					</div>
 
 				</div>

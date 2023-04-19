@@ -121,8 +121,6 @@
 
 <script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 <script src="${pageContext.request.contextPath}/assets/js/join.js"></script>
-<script>
-	console.log('asdf')
-</script>
+
 </body>
 </html>

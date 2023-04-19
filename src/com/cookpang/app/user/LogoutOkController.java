@@ -15,6 +15,7 @@ public class LogoutOkController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.getSession().invalidate();
+
 		resp.sendRedirect("/mainOk.m");
 	}
 

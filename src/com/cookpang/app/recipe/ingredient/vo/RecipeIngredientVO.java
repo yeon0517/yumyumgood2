@@ -2,20 +2,18 @@ package com.cookpang.app.recipe.ingredient.vo;
 
 
 public class RecipeIngredientVO {
-    private int postNumber; // 레시피 게시물 고유 번호
-    private int ingredientNumber; // 레시피에 사용된 재료 고유 번호
-    private String IngredientName; // 레시피 재료 이름
-    private String recipeIngredientQuantity; // 레시피 재료 수량
-    private int ingredientPrice; // 재료가격
-    private int ingredientSmallestUnit; // 재료 최소 단위
-    private int ingredientCategoryNumber; // 재료 카테고리 번호
-    
-    
-    
-
-    public RecipeIngredientVO() {}
-
-
+	private int postNumber; // 레시피 게시물 고유 번호
+	private int ingredientNumber; // 레시피에 사용된 재료 고유 번호
+	private String recipeIngredientName; // 레시피 재료 이름
+	private String recipeIngredientQuantity; // 레시피 재료 수량
+	private String ingredientName;
+	private int ingredientSmallestUnit ;
+	private int ingredientPrice;
+	private String ingredientImageSystemName; 
+	
+	
+	public RecipeIngredientVO() {
+	}
 
 
 	public int getPostNumber() {
@@ -23,13 +21,9 @@ public class RecipeIngredientVO {
 	}
 
 
-
-
 	public void setPostNumber(int postNumber) {
 		this.postNumber = postNumber;
 	}
-
-
 
 
 	public int getIngredientNumber() {
@@ -37,27 +31,19 @@ public class RecipeIngredientVO {
 	}
 
 
-
-
 	public void setIngredientNumber(int ingredientNumber) {
 		this.ingredientNumber = ingredientNumber;
 	}
 
 
-
-
-	public String getIngredientName() {
-		return IngredientName;
+	public String getRecipeIngredientName() {
+		return recipeIngredientName;
 	}
 
 
-
-
-	public void setIngredientName(String ingredientName) {
-		IngredientName = ingredientName;
+	public void setRecipeIngredientName(String recipeIngredientName) {
+		this.recipeIngredientName = recipeIngredientName;
 	}
-
-
 
 
 	public String getRecipeIngredientQuantity() {
@@ -65,27 +51,19 @@ public class RecipeIngredientVO {
 	}
 
 
-
-
 	public void setRecipeIngredientQuantity(String recipeIngredientQuantity) {
 		this.recipeIngredientQuantity = recipeIngredientQuantity;
 	}
 
 
-
-
-	public int getIngredientPrice() {
-		return ingredientPrice;
+	public String getIngredientName() {
+		return ingredientName;
 	}
 
 
-
-
-	public void setIngredientPrice(int ingredientPrice) {
-		this.ingredientPrice = ingredientPrice;
+	public void setIngredientName(String ingredientName) {
+		this.ingredientName = ingredientName;
 	}
-
-
 
 
 	public int getIngredientSmallestUnit() {
@@ -93,38 +71,41 @@ public class RecipeIngredientVO {
 	}
 
 
-
-
 	public void setIngredientSmallestUnit(int ingredientSmallestUnit) {
 		this.ingredientSmallestUnit = ingredientSmallestUnit;
 	}
 
 
-
-
-	public int getIngredientCategoryNumber() {
-		return ingredientCategoryNumber;
+	public int getIngredientPrice() {
+		return ingredientPrice;
 	}
 
 
-
-
-	public void setIngredientCategoryNumber(int ingredientCategoryNumber) {
-		this.ingredientCategoryNumber = ingredientCategoryNumber;
+	public void setIngredientPrice(int ingredientPrice) {
+		this.ingredientPrice = ingredientPrice;
 	}
 
 
+	public String getIngredientImageSystemName() {
+		return ingredientImageSystemName;
+	}
+
+
+	public void setIngredientImageSystemName(String ingredientImageSystemName) {
+		this.ingredientImageSystemName = ingredientImageSystemName;
+	}
 
 
 	@Override
 	public String toString() {
 		return "RecipeIngredientVO [postNumber=" + postNumber + ", ingredientNumber=" + ingredientNumber
-				+ ", IngredientName=" + IngredientName + ", recipeIngredientQuantity=" + recipeIngredientQuantity
-				+ ", ingredientPrice=" + ingredientPrice + ", ingredientSmallestUnit=" + ingredientSmallestUnit
-				+ ", ingredientCategoryNumber=" + ingredientCategoryNumber + "]";
+				+ ", recipeIngredientName=" + recipeIngredientName + ", recipeIngredientQuantity="
+				+ recipeIngredientQuantity + ", ingredientName=" + ingredientName + ", ingredientSmallestUnit="
+				+ ingredientSmallestUnit + ", ingredientPrice=" + ingredientPrice + ", ingredientImageSystemName="
+				+ ingredientImageSystemName + "]";
 	}
 
+
 	
-
-
+	
 }

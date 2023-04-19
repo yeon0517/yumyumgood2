@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.user.JoinOkController;
+
 public class PaymentFrontController extends HttpServlet{
 
 	@Override
@@ -23,7 +25,14 @@ public class PaymentFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		
+        case "/pay/paymentmo.pa" :
+            new PaymentMoController().execute(req, resp);
+            break;
+        case "/pay/paymentOkmo.pa":
+            new PaymentMoOkController().execute(req, resp);
+            break;
+
+			
 		}
 	}
 
