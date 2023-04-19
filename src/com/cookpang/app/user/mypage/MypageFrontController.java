@@ -30,11 +30,11 @@ public class MypageFrontController extends HttpServlet{
 			new MypageOkController().execute(req, resp);
 			break;
 		
-		case "/mypage/mypageLikeOk.myAjax" :
+		case "/mypage/mypageLikeOk.my" :
 			new MyPageLikeOkController().execute(req, resp);
 			break;
 			
-		case "/mypage/paymentListOk.myAjax" :
+		case "/mypage/paymentListOk.my" :
 			new PaymentListOkController().execute(req, resp);
 			break;
 			

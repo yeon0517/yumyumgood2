@@ -24,13 +24,13 @@ public class MyPageLikeOkController implements Execute {
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		HttpSession session = req.getSession();
-		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
+		int userSaveNumber = Integer.valueOf(req.getParameter("userNumber"));
 //		int userNumber = 1;
 		
 		
 		PostSaveDAO postSaveDAO = new PostSaveDAO();
 		
-		int total = postSaveDAO.getSavePost(userNumber);
+		int total = postSaveDAO.getSavePost(userSaveNumber);
 		// 처음 게시판 페이지에 진입하면 페이지에 대한 정보가 없다
 		// 그러므로 temp에는 null이 들어가게 된다.
 		String temp = req.getParameter("page");
@@ -67,7 +67,7 @@ public class MyPageLikeOkController implements Execute {
 		boolean next = endPage != realEndPage;
 
 		
-		System.out.println("!!!!!!!!!!!!!!!!!!11111");
+		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		  System.out.println("total"+total); 
 		  System.out.println("page"+page);
 		  System.out.println("startRow"+startRow);
@@ -79,7 +79,7 @@ public class MyPageLikeOkController implements Execute {
 
 		pageMap.put("startRow", startRow);
 		pageMap.put("rowCount", rowCount);
-		pageMap.put("userNumber", userNumber);
+		pageMap.put("userNumber", userSaveNumber);
 
 		List<PostSaveVO> savePosts = postSaveDAO.getPostAll(pageMap);
 		System.out.println(savePosts);
@@ -107,7 +107,7 @@ public class MyPageLikeOkController implements Execute {
 //		.map(JsonParser::parseString)
 //		.forEach(postList::add);
 
-		System.out.println("=====%%%=========");
+		System.out.println("123123123213213213213");
 
 		/*
 		 * //JsonObject 객체를 생성하고 이를 이용해 JSON 형태의 결과값을 저장한다 result라는 객체에는 list,
@@ -123,7 +123,7 @@ public class MyPageLikeOkController implements Execute {
 		saveResult.addProperty("realEndPage", realEndPage);
 
 		
-		System.out.println("*******************");
+		System.out.println("!!!*******************!!!");  
 		System.out.println(saveResult);
 		resp.setContentType("application/json; charSet=utf-8");
 

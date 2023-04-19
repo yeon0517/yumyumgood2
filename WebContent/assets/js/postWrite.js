@@ -40,7 +40,7 @@ $tmpInput.on('change', function() {
 
 
 	let files = this.files;
-	//console.log(files);
+	console.log(files);
 
 
 	//파일을 변경하면 원래 선택된 파일은 미리보기를 제거한다.
@@ -70,7 +70,11 @@ $tmpInput.on('change', function() {
 });
 
 // 파일 분리해서 넣기
+
 function splitFile(files) {
+	
+	console.log("=====================");
+	console.log(files);
 	let $input = $('.input');
 
 	for (let i = 0; i < 10; i++) {
@@ -87,7 +91,7 @@ function splitFile(files) {
 
 		console.log($input[i].files);
 	}
-}
+};
 
 // 삭제 버튼
 $('.preview-list').on('click', ".img-cancel-btn", function() {
