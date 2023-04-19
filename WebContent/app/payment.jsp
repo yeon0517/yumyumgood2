@@ -134,15 +134,15 @@
 								<c:forEach var="test" items="${test}" varStatus="status">
 								<span>
 									<div class="checkoutProductSection" style="display: flex;">
-										<img src="#" alt="#">
-										<!--물품사진-->
+										<!-- <img src="#" alt="#">
+										물품사진 -->
 										<li class="CheckoutProductsSectionstyle"><span> <a
 												class="productName" href="#"> </a>
 												<ul>
 													<li>
 													
-													재료 : <c:out value="${test.getIngredientName()}"/> -
-							수량 : <c:out value="  ${ test.getOrderItemQuantity()}"/> 
+													 <c:out value="${test.getIngredientName()}"/>
+							 							<c:out value="${test.getOrderItemQuantity()}"/> 개 
 														<!-- <p>본품 금액</p>
 														<p></p>
 														<p>총 금액</p> -->

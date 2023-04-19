@@ -12,6 +12,7 @@ import com.cookpang.app.Execute;
 import com.cookpang.app.order.dao.OrderDAO;
 import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.payment.dao.PaymentDAO;
+import com.cookpang.app.payment.dto.PaymentDTO;
 import com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO;
 import com.cookpang.app.user.dao.UserDAO;
 import com.cookpang.app.user.dto.UserDTO;
@@ -25,20 +26,37 @@ public class OrderOkController implements Execute {
 		
 		OrderDTO orderDTO = new OrderDTO();
 		PaymentDAO paymentDAO = new PaymentDAO();
+		PaymentDTO paymentDTO = new PaymentDTO();
 		
 		req.setCharacterEncoding("utf-8");
 		
-		String orderAddress = req.getParameter("address")+" "+req.getParameter("addressDetail");
-		System.out.println(orderAddress);
-		
-		orderDTO.setOrderRecipient(req.getParameter("orderRecipient"));
-		orderDTO.setOrderAddress(orderAddress);
-		orderDTO.setOrderMessage(req.getParameter("orderMessage"));
-
-		orderDAO.OrderInsert(orderDTO);
-		
+//		String orderAddress = req.getParameter("address")+" "+req.getParameter("addressDetail");
+//		System.out.println(orderAddress);
+//		
+//		orderDTO.setOrderRecipient(req.getParameter("orderRecipient"));
+//		orderDTO.setOrderAddress(orderAddress);
+//		orderDTO.setOrderMessage(req.getParameter("orderMessage"));
+//
+//		orderDAO.OrderInsert(orderDTO);
 		
 //		req.getRequestDispatcher("/app/payment.jsp");
+		
+		
+		
+		paymentDTO.setPaymentAmount(0);
+//		paymentDTO.set
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		resp.sendRedirect("/mainOk.m");
 		
 	}

@@ -20,11 +20,12 @@ public class PaymentMoController implements Execute {
 		HttpSession session = req.getSession();
 		PaymentDAO paymentDAO = new PaymentDAO();
 
-//		int postNumber = (int) session.getAttribute("postNumber");
+//		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		
 		//이거 지우기
 		int postNumber = 2;
 
+		
 		PostDTO payPost = paymentDAO.postPayment(postNumber);
 		
 		List<RecipeIngredientVO> recipeIngredientList =paymentDAO.postPaymentIngredient(postNumber);

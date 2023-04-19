@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.order.vo.OrderVO;
+import com.cookpang.app.payment.dto.PaymentDTO;
 import com.cookpang.app.user.dto.UserDTO;
 import com.cookpang.app.userList.vo.UserListVO;
 import com.mybatis.config.MyBatisConfig;
@@ -47,6 +48,10 @@ public class OrderDAO {
 	  public OrderDTO cost(int orderNumber) { 
 		  return sqlSession.selectOne("order.cost", orderNumber);
 	 }
+	  
+	  public void orderpay(PaymentDTO paymentDTO) {
+		  sqlSession.insert("order.orderpay", paymentDTO);
+	  }
 
 	
 	public int getSequnce() {
