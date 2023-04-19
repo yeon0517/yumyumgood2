@@ -2,15 +2,18 @@
 $('.profile-btn').on('click', '.profile-btn2', function() {
 	followAjax();
 });
+let userNumber = $('.yourNumber').val();
+console.log(userNumber);
+
 function followAjax() {
 	$.ajax({
 		url: '/user/youPageLike.us',
 		type: 'get',
 		data: {
 			userNumber: userNumber,
-			followNumber: followNumber
 		},
 		success: function(result) {
+			console.log(result);
 			showFollow(result);
 
 
@@ -20,13 +23,14 @@ function followAjax() {
 }
 
 function showFollow(result) {
-	let results = result.trim().split(",");
-	let followTF = results[0];
-	let followCount = parseInt(results[1]);
+			console.log(result);
 
-	console.log(followTF);
+let results = result.trim().split(",");
+let followTF = results[0];
+let followCount = parseInt(results[1]);
 
-	if (followTF === "true") {
+
+	if(followTF === "true") {
 
 		$('.profile-btn2').html(
 			`
@@ -41,7 +45,7 @@ function showFollow(result) {
 		)
 	}
 
-	$('.cnt').text(followCount);
+	$('.followCnt').text(followCount);
 
 }
 //===================##===================

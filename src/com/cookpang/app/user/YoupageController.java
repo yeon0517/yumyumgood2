@@ -25,6 +25,12 @@ public class YoupageController implements Execute {
 		UserVO userVO = null;
 		userVO= userDAO.getProfileInfo(userNumber);
 		
+//		followDTO.setFollowNumber(userNumber);
+//		followDTO.setFollowingNumber(yourNumber);
+//		
+//		req.setAttribute("followStatus", followStatus);
+		
+		
 
 		System.out.println(userVO);
 		

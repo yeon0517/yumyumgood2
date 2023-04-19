@@ -89,7 +89,7 @@ a {
   align-items: center;
 }
 
-/* .profile-btn2 {
+.profile-btn2 {
   display: inline-block;
   padding: 5px 9px;
   border: none;
@@ -103,7 +103,7 @@ a {
 }
 .profile-btn2:hover {
   background-color: rgb(109, 106, 106);
-} */
+} 
 
 
 /*=======================================================*/
@@ -125,7 +125,10 @@ a {
 .cnt {
   font-weight: bolder;
 }
-
+.followCnt{
+	 font-weight: bolder;
+	
+}
 .post-cnt {
   /* background-color: snow; */
   height: 50px;

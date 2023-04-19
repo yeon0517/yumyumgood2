@@ -35,6 +35,7 @@
 								<div class="name-box">
 									<div class="nickname-box">
 										<div class="nickname">${userVO.getUserNickname()}</div>
+										<input type="hidden" name="yourNumber" class="yourNumber" value="${userVO.getUserNumber()}">
 									</div>
 									<div class="profile-btn">
 										<button type="button" class="profile-btn2">
@@ -67,7 +68,7 @@
 									<div class="follower-cnt">
 										<!-- 모달 열기 버튼 -->
 										<a class="follower" onclick="openModal()">팔로워 <!-- 디비처리 숫자가 늘어나용>< -->
-											<span class="cnt">${userVO.getFollowersCount()}</span>
+											<span class="followCnt">${userVO.getFollowersCount()}</span>
 										</a>
 									</div>
 

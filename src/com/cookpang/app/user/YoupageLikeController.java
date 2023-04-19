@@ -17,6 +17,7 @@ public class YoupageLikeController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		boolean followStatus = false;
 		FollowDAO followDAO = new FollowDAO();
 		FollowDTO followDTO = new FollowDTO();
@@ -26,25 +27,32 @@ public class YoupageLikeController implements Execute {
 		
 		resp.setContentType("text/html; charset=utf-8");
 		
-		followDTO.setFollowNumber(Integer.valueOf(req.getParameter("followNumber")));
-		followDTO.setFollowingNumber(Integer.valueOf(req.getParameter("followingNumber")));
-		int userNumber =(int)session.getAttribute("userNumber");
+//		int userNumber =(int)session.getAttribute("userNumber");
+		System.out.println("ajax연결 완료");
 		
+		int followNumber = (int)session.getAttribute("userNumber");
+		int followingNumber =Integer.valueOf(req.getParameter("userNumber"));
+
+		System.out.println(followNumber);
+		System.out.println(followingNumber);
 		
-		followStatus = followDAO.checkFollow(followDTO) ==null ? false : true;
-		req.setAttribute("followStatus", followStatus);
-		
-		
+		 followDTO.setFollowNumber(followNumber);
+		 followDTO.setFollowingNumber(followingNumber);
+
+//		 int followCount = followDAO.getFollowCount(followNumber); // 현재 팔로워 수 가져오기
+		 // followCount 누적이 안됨 쿼리 다시 고쳐야됨 팔로우수에서 누적되게 해야댐  
 		if(followDAO.checkFollow(followDTO)==null) {
 			followDAO.insertFollow(followDTO);
-			out. print(true+ "," + followDAO.getFollowCount(Integer.valueOf(req.getParameter("followNumber"))));
-			System.out.println("팔로워 추가");
+//			 followCount++; 
+			out.print(true+ "," + followDAO.getFollowCount(followingNumber));
+			System.out.println(followDAO.getFollowCount(followingNumber));
 		
 			
 		}else {
 			followDAO.deleteFollow(followDTO);
-			out.print(false+ "," + followDAO.getFollowCount(Integer.valueOf(req.getParameter("followNumber"))));
-			System.out.println("팔로워 삭제");
+//			followCount--; 
+			out.print(false+ "," + followDAO.getFollowCount(followingNumber));
+			System.out.println(followDAO.getFollowCount(followingNumber));
 		}
 		out.close();
 //		
