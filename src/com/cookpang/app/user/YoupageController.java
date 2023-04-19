@@ -21,6 +21,8 @@ public class YoupageController implements Execute {
 		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
 	
 		
+		
+		
 		UserDAO userDAO = new UserDAO();
 		UserVO userVO = null;
 		userVO= userDAO.getProfileInfo(userNumber);

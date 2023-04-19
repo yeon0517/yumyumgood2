@@ -12,8 +12,9 @@
 	<select id="checkFollow" parameterType="FollowDTO"
 		resultType="_int">
 		select follow_number
-		from tbl_follow 
-		where follow_number = #{followNumber} and following_number = #{followingNumber}
+		from tbl_follow
+		where follow_number = #{followNumber} and following_number =
+		#{followingNumber}
 	</select>
 
 	<insert id="insertFollow" parameterType="FollowDTO">
@@ -24,7 +25,8 @@
 	</insert>
 	<delete id="deleteFollow" parameterType="FollowDTO">
 		delete from tbl_follow
-		where follow_number = #{followNumber} and following_number = #{followingNumber}
+		where follow_number = #{followNumber} and following_number =
+		#{followingNumber}
 	</delete>
 	<select id="getFollowCount" parameterType="_int"
 		resultType="_int">
@@ -36,9 +38,9 @@
 		resultType="_int">
 		select count(following_number) from tbl_follow
 		where
-		following_number =#{followingNumber}
+		follow_number =#{followNumber}
 	</select>
-
+	
 
 
 </mapper>

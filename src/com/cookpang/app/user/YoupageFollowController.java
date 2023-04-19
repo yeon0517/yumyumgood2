@@ -12,13 +12,14 @@ import com.cookpang.app.Execute;
 import com.cookpang.app.follow.dao.FollowDAO;
 import com.cookpang.app.follow.dto.FollowDTO;
 
-public class YoupageLikeController implements Execute {
+public class YoupageFollowController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
 		boolean followStatus = false;
+		
 		FollowDAO followDAO = new FollowDAO();
 		FollowDTO followDTO = new FollowDTO();
 		HttpSession session = req.getSession();
@@ -55,20 +56,9 @@ public class YoupageLikeController implements Execute {
 			System.out.println(followDAO.getFollowCount(followingNumber));
 		}
 		out.close();
-//		
-//		if(followDAO.checkFollow(followDTO)==null) {
-//			followDAO.insertFollow(followDTO);
-//			out. print(true+ "," + followDAO.getFollowingCount(Integer.valueOf(req.getParameter("followingNumber"))));
-//			System.out.println("팔로잉 추가");
-//		
-//			
-//		}else {
-//			followDAO.deleteFollow(followDTO);
-//			out.print(false+ "," + followDAO.getFollowingCount(Integer.valueOf(req.getParameter("followingNumber"))));
-//			System.out.println("팔로잉 삭제");
-//		}
-//		
-//	
+		
+
+	
 		
 	}
 		

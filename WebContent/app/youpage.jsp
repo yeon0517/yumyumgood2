@@ -202,7 +202,7 @@
 									<!-- 팔로잉 모달창 시작 -->
 									<div class="following-cnt">
 										<a class="following" onclick="openModal2()">팔로잉 <!-- 디비처리 숫자가 늘어나용>< -->
-											<span class="cnt">${userVO.getFollowingCount()}</span>
+											<span class="followingCnt">${userVO.getFollowingCount()}</span>
 										</a>
 									</div>
 

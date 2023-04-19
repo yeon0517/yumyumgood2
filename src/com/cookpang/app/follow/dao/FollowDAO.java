@@ -28,7 +28,18 @@ public class FollowDAO {
 	public int getFollowCount(int followNumber) {
 		return sqlSession.selectOne("follow.getFollowCount", followNumber);
 	}
+	
+	
 	public int getFollowingCount(int followingNumber) {
 		return sqlSession.selectOne("follow.getFollowingCount", followingNumber);
+	}
+	public Integer checkFollowing(FollowDTO followDTO) {
+		return sqlSession.selectOne("follow.checkFollowing",followDTO);
+	}
+	public void insertFollowing(FollowDTO followDTO) {
+		sqlSession.insert("follow.insertFollow",followDTO);
+	}
+	public void deleteFollowing(FollowDTO followDTO) {
+		sqlSession.delete("follow.deleteFollowing", followDTO);
 	}
 }
