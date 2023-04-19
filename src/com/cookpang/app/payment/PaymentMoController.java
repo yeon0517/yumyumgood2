@@ -20,10 +20,10 @@ public class PaymentMoController implements Execute {
 		HttpSession session = req.getSession();
 		PaymentDAO paymentDAO = new PaymentDAO();
 
-//		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
+		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		
 		//이거 지우기
-		int postNumber = 2;
+//		int postNumber = 2;
 
 		
 		PostDTO payPost = paymentDAO.postPayment(postNumber);
@@ -31,7 +31,7 @@ public class PaymentMoController implements Execute {
 		List<RecipeIngredientVO> recipeIngredientList =paymentDAO.postPaymentIngredient(postNumber);
 		
 		System.out.println("=============================");
-		System.out.println(recipeIngredientList);
+//		System.out.println(recipeIngredientList);
 		System.out.println("=============================");
 		req.setAttribute("ingredient", recipeIngredientList);
 			
