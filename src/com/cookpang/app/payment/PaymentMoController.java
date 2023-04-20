@@ -38,7 +38,7 @@ public class PaymentMoController implements Execute {
 		req.setAttribute("payPost", payPost);
 
 		req.getRequestDispatcher("/app/paymentModal.jsp").forward(req, resp);
-		resp.sendRedirect(null);
+//		resp.sendRedirect(null);
 
 	}
 }

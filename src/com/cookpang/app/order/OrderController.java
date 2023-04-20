@@ -13,9 +13,10 @@ import com.cookpang.app.order.dao.OrderDAO;
 import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.order.item.dao.OrderItemDAO;
 import com.cookpang.app.order.vo.OrderVO;
+import com.cookpang.app.payment.dao.PaymentDAO;
+import com.cookpang.app.payment.dto.PaymentDTO;
 import com.cookpang.app.user.dao.UserDAO;
 import com.cookpang.app.user.dto.UserDTO;
-import com.cookpang.app.userList.vo.UserListVO;
 
 public class OrderController implements Execute{
 
@@ -27,9 +28,12 @@ public class OrderController implements Execute{
 		UserDAO userDAO = new UserDAO();
 		OrderItemDAO orderItemDAO = new OrderItemDAO();
 		OrderDTO orderDTO = new OrderDTO();
+		PaymentDAO paymentDAO = new PaymentDAO();
+		PaymentDTO paymentDTO = new PaymentDTO();
 	
 		int userNumber = (int) session.getAttribute("userNumber");
 		int orderNumber = 0;
+		
 		
 		System.out.println(userNumber);
 //		주문고객
@@ -39,7 +43,6 @@ public class OrderController implements Execute{
 		OrderVO orderVO = new OrderVO();
 		UserDTO order =  orderDAO.orderInfo(number);
 		
-//		int order = orderVO.getOrderNumber();
 
 		orderNumber = Integer.parseInt(req.getParameter("orderNumber")) ;
 		System.out.println(orderNumber);
@@ -52,27 +55,10 @@ public class OrderController implements Execute{
 		System.out.println(cost);
 		
 		
-//		OrderVO defaultOrderInfoList = orderDAO.defaultOrderInfo(number);
-		
-//		UserDTO order = orderDAO.defaultOrderInfo(number);
-//		System.out.println(order);
-		
 		req.setAttribute("order", order);
 		req.setAttribute("test", test);
 		req.setAttribute("cost", cost);
 		
-		
-//		여기에 orderList를 뽑아 와야함.
-//		orderDetail
-		
-		
-		
-//		System.out.println(orderDetail);
-		
-//		${order.getIngredientNumber()}
-		
-//		req.getRequestDispatcher("/app/payment.jsp");
-//		resp.sendRedirect("/order/orderListOk.or");
 		req.getRequestDispatcher("/app/payment.jsp").forward(req, resp);
 	}
 	

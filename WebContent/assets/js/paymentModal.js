@@ -170,10 +170,10 @@ $('#minus').on('click', function() {
 	}
 });
 
-$('#reset').on('click', function() {
+/*$('#reset').on('click', function() {
 	$('#counter-number').text('1');
 	updateTotalPrice();
-});
+});*/
 
 
 
