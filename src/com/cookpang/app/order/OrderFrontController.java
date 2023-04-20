@@ -31,8 +31,6 @@ public class OrderFrontController extends HttpServlet{
 		break;
 		
 		
-		
-		
 		}
 	}
 

@@ -58,4 +58,9 @@ public class OrderDAO {
 		return sqlSession.selectOne("order.getSequnce");
 	}
 
+	public void orderUpdate(OrderDTO orderDTO) {
+	sqlSession.update("order.orderUpdate", orderDTO);
+		
+	}
+
 }

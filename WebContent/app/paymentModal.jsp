@@ -120,7 +120,7 @@
 							
 							
 							<button id="plus" type="button" >+</button>
-							<button id="reset" type="button">reset</button>
+							<!-- <button id="reset" type="button">reset</button> -->
 						</div>
 
 					
