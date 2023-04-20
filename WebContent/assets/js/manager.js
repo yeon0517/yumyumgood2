@@ -247,5 +247,32 @@ $('.post-serch-btn').on('click', function() {
 	}
 });
 
+// ==========결제 관리 js======
 
+
+function showOrder() {
+  let table = $(".order");
+  let button = $('button[onclick="showOrder()"]');
+
+  if (table.is(":hidden")) {
+    table.show();
+    button.html("상세정보숨기기");
+  } else {
+    table.hide();
+    button.html("상세정보보기");
+  }
+}
+
+function showOrderProducts() {
+  let table = $(".product");
+  let button = $('button[onclick="showOrderProducts()"]');
+
+  if (table.is(":hidden")) {
+    table.show();
+    button.html("주문상품숨기기");
+  } else {
+    table.hide();
+    button.html("주문상품보기");
+  }
+}
 
