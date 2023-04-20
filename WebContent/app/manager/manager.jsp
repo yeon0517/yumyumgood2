@@ -61,9 +61,10 @@
 										<div class="manage">
 											<a href="${pageContext.request.contextPath}/user/profileEdit.edit">프로필 편집</a>
 										</div>
-										<div>
-											<a href="#"><img src="../img/managerImg/setting.png"
-												alt="" id="설정" /></a>
+										<div class="ingredient-insert">
+											<a href="/manager/ingredietnInsert.manager">
+												재료추가		
+											</a>
 										</div>
 									</div>
 									<div class="follow-box">

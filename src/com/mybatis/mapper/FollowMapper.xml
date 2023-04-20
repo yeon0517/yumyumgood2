@@ -2,11 +2,46 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="follow">
-<delete id="delete" parameterType="_int">
-delete from tbl_follow 
-where follow_number = #{userNumber} or following_number = #{userNumber}
+	<delete id="delete" parameterType="_int">
+		delete from tbl_follow
+		where
+		follow_number = #{userNumber} or following_number = #{userNumber}
 
-</delete>
+	</delete>
+
+	<select id="checkFollow" parameterType="FollowDTO"
+		resultType="_int">
+		select follow_number
+		from tbl_follow
+		where follow_number = #{followNumber} and following_number =
+		#{followingNumber}
+	</select>
+
+	<insert id="insertFollow" parameterType="FollowDTO">
+		insert into tbl_follow
+		(follow_number, following_number)
+		values (#{followNumber},
+		#{followingNumber})
+	</insert>
+	<delete id="deleteFollow" parameterType="FollowDTO">
+		delete from tbl_follow
+		where follow_number = #{followNumber} and following_number =
+		#{followingNumber}
+	</delete>
+	<select id="getFollowCount" parameterType="_int"
+		resultType="_int">
+		select count(follow_number) from tbl_follow
+		where
+		following_number =#{followingNumber}
+	</select>
+	<select id="getFollowingCount" parameterType="_int"
+		resultType="_int">
+		select count(following_number) from tbl_follow
+		where
+		follow_number =#{followNumber}
+	</select>
+	
+
 
 </mapper>
 

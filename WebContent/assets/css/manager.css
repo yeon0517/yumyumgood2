@@ -801,6 +801,9 @@ footer > div {
   color: black;
 }
 
+.ingredient-insert{
+	font-size: 17px;
+}
 
 /* @media (max-width:500px) {
   .footer-menu ul{
