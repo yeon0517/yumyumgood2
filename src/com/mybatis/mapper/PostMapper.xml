@@ -113,7 +113,7 @@
 		left
 		outer join tbl_post_file tpf on tpf.post_number = tp.post_number
 		where
-		tpf.post_file_index = '1' and tp.post_title like concat('%' ,
+		tp.post_title like concat('%' ,
 		#{keyword} , '%')
 		order by tp.post_date desc
 		limit #{startRow} ,
@@ -129,7 +129,7 @@
 		left outer join
 		tbl_post_file tpf on tpf.post_number = tp.post_number
 		where
-		tpf.post_file_index = '1' and tp.post_title like concat('%' ,
+		tp.post_title like concat('%' ,
 		#{keyword} , '%')
 	</select>
 

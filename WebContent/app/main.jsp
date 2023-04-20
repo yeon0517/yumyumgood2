@@ -133,14 +133,15 @@
 
 				<div class="main-body-bottom">
 					<ul class="category-menu">
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="1">
+						<a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=1">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_1_off.jpg"
 								alt="" class="category-img">
 								<p class="category-name">밥요리</p>
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="2"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=2">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_2_off.jpg"
@@ -148,7 +149,7 @@
 								<p class="category-name">국&탕</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="3"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=3">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_3_off.jpg"
@@ -157,7 +158,7 @@
 
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="5"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=5">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_4_off.jpg"
@@ -165,7 +166,7 @@
 								<p class="category-name">밑반찬</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="4"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=4">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_5_off.jpg"
@@ -173,7 +174,7 @@
 								<p class="category-name">볶음요리</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="15"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=15">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_6_off.jpg"
@@ -181,7 +182,7 @@
 								<p class="category-name">구이(고기/생선)</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="6"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=6">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_7_off.jpg"
@@ -189,7 +190,7 @@
 								<p class="category-name">찜&조림</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="11"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=11">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_12_off.jpg"
@@ -198,7 +199,7 @@
 
 						</a></li>
 						<br>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="8"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=8">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_13_off.jpg"
@@ -206,7 +207,7 @@
 								<p class="category-name">국수</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="10"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=10">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_15_off.jpg"
@@ -214,7 +215,7 @@
 								<p class="category-name">김밥&초밥</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="7"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=7">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_16_off.jpg"
@@ -222,7 +223,7 @@
 								<p class="category-name">야식&술안주</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="12"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=12">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_17_off.jpg"
@@ -230,7 +231,7 @@
 								<p class="category-name">스파게티</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="13"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=13">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_18_off.jpg"
@@ -238,7 +239,7 @@
 								<p class="category-name">간식&분식</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="14"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=14">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_21_off.jpg"
@@ -246,7 +247,7 @@
 								<p class="category-name">디저트</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="9"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=9">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_14_off.jpg"
@@ -254,7 +255,7 @@
 								<p class="category-name">샐러드</p>
 
 						</a></li>
-						<li class="category-box"><a class="recipe-category"
+						<li class="category-box" data-id="16"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=16">
 								<img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_19_off.jpg"

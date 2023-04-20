@@ -599,17 +599,17 @@ input[type=file]::file-selector-button {
 /* .sub-find {
   transform: translateX(0px);
 } */
-.search-box3 {
+/* .search-box3 {
   display: flex;
   width: 100%;
-  /* background-color: blue; */
+  background-color: blue;
   height: 126px;
   align-items: center;
   justify-content: space-around;
   border-bottom: 1px solid rgb(217, 209, 209);
-}
+} */
 
-.find-btn {
+/* .find-btn {
   width: 465px;
   height: 50px;
   font-size: 20px;
@@ -617,7 +617,7 @@ input[type=file]::file-selector-button {
   border-radius: 10px;
   border: none;
   padding-left: 20px;
-}
+} */
 
 .find-btn:focus {
   outline: none;
@@ -797,3 +797,49 @@ transition: all 0.1s ease;
   width: 0;
   height: 0;
 }
+
+
+/* 사이드바 css수정 & 추가 */
+.drop-down {
+	border-radius: 12px;
+	background-color: #ebedf0;
+	height: 50px;
+	border: none;
+}
+
+.search-box3 {
+	display: flex;
+	width: 100%;
+	/* background-color: blue; */
+	height: 126px;
+	align-items: center;
+	justify-content: space-evenly;
+	border-bottom: 1px solid rgb(217, 209, 209);
+}
+
+.find-btn {
+	width: 348px;
+	height: 50px;
+	font-size: 20px;
+	background-color: #ebedf0;
+	border-radius: 10px;
+	border: none;
+	padding-left: 20px;
+}
+
+.search-btn {
+	background-color: #ebedf0;
+	border-radius: 6px;
+	width: 59px;
+	height: 50px;
+	border: none;
+	cursor: pointer;
+}
+
+.search-btn:hover {
+	background-color: #cacdd2;
+}
+
+/* 사이드바 css수정 & 추가 */
+
+

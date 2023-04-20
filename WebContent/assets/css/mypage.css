@@ -717,7 +717,7 @@ footer > div {
 /* 모달 내용 스타일 */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 165px auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 25px;
@@ -951,7 +951,7 @@ a {
 /* 모달 내용 스타일 */
 .modal-content2 {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 165px auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 25px;

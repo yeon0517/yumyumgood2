@@ -4,12 +4,11 @@
 <mapper namespace="postLike">
 	
 	<select id="rankTotal" resultType="PostVO">
-		select  tp.post_number,  count(distinct tpl.user_number) , tp.user_number , tpf.post_file_index 
+		select  tp.post_number,  count(distinct tpl.user_number) , tp.user_number , tp.post_thumbnail 
 		from tbl_post tp 
 		left join tbl_post_like tpl on tpl.post_number = tp.post_number 
 		left join tbl_post_file tpf on tpf.post_number = tp.post_number 
-		where tpf.post_file_index = '1'
-		group by tp.post_number, tpf.post_file_index 
+		group by tp.post_number
 		order by count(distinct tpl.user_number) desc
 		limit 8
 	</select>

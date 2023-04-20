@@ -187,7 +187,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 												<p>누군가 엑세스 권한을 얻으려고 시도중인 경우 계정을 보호하기 위해 이 세션을 제외한 모든
 													세션에서 로그아웃됩니다.</p>
 												<br>
-												<p>비밀번호는 6자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
+												<p>비밀번호는 8자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
 											</div>
 											<div class="now-password-box">
 												<input type="text" class="box1" placeholder="현재 비밀번호" />
@@ -196,6 +196,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 											<div class="new-password-box">
 												<input type="password" name="newPassword" class="box2" id ="box2" placeholder="새 비밀번호" />
 											</div>
+											<span class="password_check_msg2"></span>
 											<div class="agian-password-box">
 												<input type="password" name="newPassword2" class="box3" id ="box3" placeholder="새 비밀번호 재입력" />
 											</div>
@@ -282,46 +283,63 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 				</div>
 				<!-- 검색 창 -->
-				<article class="sub-find">
-					<div class="search-box">
-						<div class="search-box2">
-							<h1 class="qqq">검색</h1>
-						</div>
-						<div class="search-box3">
-							<input type="text" class="find-btn" placeholder="검색" />
-						</div>
-					</div>
-					<div class="recent-searches">
-						<h3 class="recent-searches2">최근 검색 항목</h3>
-					</div>
-					<div class="recent-searches-box">
-						<div class="search-man">
-							<div class="man-left">
-								<!-- <a href="#"> -->
-								<a href="#"> <img
-									src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
-									alt="#" class="man-img" /> <!-- </a> -->
-								</a>
+				<div class="userList">
+					<article class="sub-find">
+
+						<div class="search-box">
+							<div class="search-box2">
+								<h1 class="qqq">검색</h1>
 							</div>
-							<div class="man-right">
-								<div class="man-id">
-									<a href="#"> hot_boy </a>
-									<!-- <a href="#" class="man-id2">hot_boy</a> -->
-								</div>
-								<div class="man-name">
-									이동재
-									<!-- <a href="#" class="man-name2">이동재</a> -->
-								</div>
-							</div>
-							<div class="delete-btn">
-								<div class="delete-btn2">
-									<button class="alarm-btn">삭제</button>
-								</div>
+							<div class="search-box3">
+								<!-- 사이드바 드롭다운 추가 -->
+								<select class="drop-down" id="drop-down" name="fruits">
+									<option value="user">회원</option>
+									<option value="post">게시물</option>
+								</select> <input type="text" class="find-btn" id="find-btn" name="searchInput" placeholder="검색" />
+								<button type="button" class="search-btn">검색</button>
+								<!-- 사이드바 드롭다운 추가 -->
 							</div>
 						</div>
-					</div>
-				</article>
-				<!-- 검색 창 -->
+						<div class="recent-searches">
+							<h3 class="recent-searches2">검색 항목</h3>
+						</div>
+
+
+
+						<div class="recent-searches-box">
+<!-- ======================================== -->
+							<%-- <div class="search-man">
+								<div class="man-left">
+									<!-- <a href="#"> -->
+									<a href="#"> <img
+										src="${user.getUserProfileImageSystemName }" alt="#"
+										class="man-img" /> <!-- </a> -->
+									</a>
+								</div>
+								<div class="man-right">
+									<div class="man-id">
+										<a href="#"> ${user.getUserNicname} </a>
+										<!-- <a href="#" class="man-id2">hot_boy</a> -->
+									</div>
+									<div class="man-name">
+										${user.getUserName}
+										<!-- <a href="#" class="man-name2">이동재</a> -->
+									</div>
+								</div>
+								<div class="delete-btn">
+									<div class="delete-btn2">
+										<!-- <button class="alarm-btn">삭제</button> -->
+									</div>
+								</div>
+							</div> --%>
+<!-- ======================================== -->
+
+						</div>
+
+
+
+					</article>
+				</div>
 				<!-- 알림 창 -->
 				<article class="sub-find2">
 					<div class="search-box2">

@@ -275,6 +275,7 @@ $search.click(() => {
 	console.log("click");
 
 	$(".sub-find").toggleClass("sub-find__close");
+	$(".sub-find2").removeClass("sub-find2__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
@@ -301,6 +302,7 @@ $search2.click(() => {
 	console.log("click");
 
 	$(".sub-find2").toggleClass("sub-find2__close");
+	$(".sub-find").removeClass("sub-find__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
