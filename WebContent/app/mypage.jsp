@@ -429,11 +429,13 @@
             <div id="bottom2" class="main-bottom2 test">
                <div class="purchase-history">
                   <div class="history-name">
-                     <div class="history-number">상품번호</div>
+                     <div class="history-number">주문번호</div>
                      <div class="history-picture">상품사진</div>
                      <div class="history-name2">상품이름</div>
                      <div class="history-date">구매날짜</div>
                      <div class="history-price">상품가격</div>
+                     <div class="history-price">수량</div>
+                     <div class="history-price">주문상태</div>
                   </div>
                   <div class="purchase-ok1">
                      <div class="ok-number">1</div>
@@ -448,6 +450,8 @@
                      </div>
                      <div class="ok-date">2023-03-24</div>
                      <div class="ok-price">1,000,000원</div>
+                     <div class="ok-amount">1,000,000원</div>
+                     <div class="ok-orderStatus">1,000,000원</div>
                   </div>
                   <div class="purchase-ok2">
                      <div class="ok-number">2</div>

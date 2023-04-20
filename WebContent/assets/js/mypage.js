@@ -196,7 +196,67 @@ managePost.addEventListener("click", function() {
 	} else {
 		memberPost.style.display = "block";
 	}
+	showPaymentList();
 });
+
+showPaymentList(userNumber);
+
+ function showPaymentList(userNumber, page) {
+	$.ajax({
+		url: '/mypage/paymentListOk.my',
+		type: 'get',
+		data: {
+			userNumber: userNumber,
+			page : page
+		},
+		dataType: 'json',
+		success: function(paymentResult) {
+			postPaymentTable(paymentResult);
+			pagingPayment(paymentResult);
+		}
+	});
+}
+
+
+function postPaymentTable(paymentResult){
+	
+	let pay = '';
+	
+		pay = `  <div class="history-name">
+                     <div class="history-number">주문번호</div>
+                     <div class="history-picture">상품사진</div>
+                     <div class="history-name2">상품이름</div>
+                     <div class="history-date">구매날짜</div>
+                     <div class="history-price">상품가격</div>
+                     <div class="history-price">수량</div>
+                     <div class="history-price">주문상태</div>
+                  </div>`
+
+	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
+		 
+		pay += `<div class="purchase-ok1">
+                     	<div class="ok-number">1</div>
+                     	<div class="ok-picture">
+                        	<a href="#"> <img
+                           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
+                           alt="" class="ok-picture-img" />
+                        	</a>
+                     	</div>
+                     	<div class="ok-name">
+                        	<a href="#">초코비</a>
+                    	</div>
+                     	<div class="ok-date">2023-03-24</div>
+                     	<div class="ok-price">1,000,000원</div>
+					 	<div class="ok-amount">1,000,000원</div>
+                     	<div class="ok-orderStatus">1,000,000원</div>
+                  	</div>`
+	}
+}
+
+
+
+
+
 
 // click 이벤트(찜한레시피)
 let managePay = document.querySelector("#post3");
