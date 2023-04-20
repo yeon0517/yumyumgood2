@@ -2,10 +2,10 @@
 $('.profile-btn').on('click', '.profile-btn2', function() {
 	followAjax();
 });
-let userNumber = $('.yourNumber').val();
-console.log(userNumber);
 
 function followAjax() {
+let userNumber = $('.yourNumber').val();
+console.log(userNumber);
 	$.ajax({
 		url: '/user/youPageFollow.us',
 		type: 'get',
