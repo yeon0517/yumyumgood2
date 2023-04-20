@@ -296,9 +296,12 @@
 								</span>
 
 								<sapn class="buy-box">
-								<button class="buy-btn" type="button">
-									<i class="fa-solid fa-cart-shopping"></i>
-								</button>
+									<a href="/pay/paymentmo.pa?postNumber=${post.getPostNumber()}">
+										<button class="buy-btn" type="button">
+										<i class="fa-solid fa-cart-shopping"></i>
+									</button>
+								</a>
+								
 								</sapn>
 
 								<sapn class="save-box">
@@ -360,24 +363,7 @@
 			</div>
 
 
-               <sapn class="buy-box">
-                  <a href="${pageContext.request.contextPath}/app/paymentModal.jsp">   <!-- 그 결제창으로 연결해야함 -->
-                    <button class="buy-btn" type="button">
-                      <i class="fa-solid fa-cart-shopping"></i>
-                    </button>
-                      </a>
-                  </sapn>
-
-                  <sapn class="save-box">         
-                   <button class="save-btn" type="button">
-                      <!-- 버튼을 누르면 색이 채워진 아이콘으로 변경 -->
-                      <i class="fa-regular fa-bookmark save-f"></i>
-                      <!-- <i class="fa-solid fa-bookmark save-t"></i> -->        
-                    </button>
-                  </sapn>
-
 		</div>
-
 
 
 	</div>

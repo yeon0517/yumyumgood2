@@ -2,7 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="ingredientImage">
-
+		
+	<insert id="insert" parameterType="IngredientImageDTO">
+		insert into tbl_ingredient_image
+		(ingredient_image_system_name, ingredient_image_original_name, ingredient_number)
+		values(#{ingredientImageSystemName}, #{ingredientImageOriginalName}, #{ingredientNumber})
+	</insert>
+	
+	
+	
 </mapper>
 
 
