@@ -190,15 +190,15 @@ String myTextareaValue = request.getParameter("myTextarea");
 												<p>비밀번호는 8자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
 											</div>
 											<div class="now-password-box">
-												<input type="text" class="box1" placeholder="현재 비밀번호" />
+												<input type="text" class="box1" placeholder="현재 비밀번호" required/>
 											</div>
 											<span class="pass-msg"></span>
 											<div class="new-password-box">
-												<input type="password" name="newPassword" class="box2" id ="box2" placeholder="새 비밀번호" />
+												<input type="password" name="newPassword" class="box2" id ="box2" placeholder="새 비밀번호" required/>
 											</div>
 											<span class="password_check_msg2"></span>
 											<div class="agian-password-box">
-												<input type="password" name="newPassword2" class="box3" id ="box3" placeholder="새 비밀번호 재입력" />
+												<input type="password" name="newPassword2" class="box3" id ="box3" placeholder="새 비밀번호 재입력" required/>
 											</div>
 											<span class="password_check_msg"></span>
 											<div class="no-password">

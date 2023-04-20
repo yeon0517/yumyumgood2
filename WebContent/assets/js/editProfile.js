@@ -129,38 +129,34 @@ $('.box1').on('blur', function(){
    }
 });
 */
+	const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
+	
 $(function() { 
   $("#password-form").submit(function(e) {
     e.preventDefault();
 
-	const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
-    let password1 = $("#password-form .box2").val();
+	let password1 = $("#password-form .box2").val();
     let password2 = $("#password-form .box3").val();
-
-	if(password1.length <= 8) {
-      $(".password_check_msg2").text('입력한 글자가 8글자 이상이어야 합니다.');
+    let oldPassword = $("#password-form .box1").val();
+    let $checkPwMsg = $(".password_check_msg2");
+	
+	if (!regex.test(password1)) {
+      $checkPwMsg.html("사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!");
+      return;
+    } else if (password1 !== password2) {
+      $(".password_check_msg").text('비밀번호를 확인해주세요');
+      return;
+    } else if (oldPassword === password1) {
+      $(".password_check_msg2").text('이전 비밀번호와 동일합니다. 다른 비밀번호를 입력해주세요.');
       return;
     }
-
-	if (password1 != regex) {
-		$(".password_check_msg2").text('특수문자를 입력해 주세요.');
-	}
-
-    if (!password1 || !password2) {
-      $(".password_check_msg").text("비밀번호를 입력해주세요");
-      return;
-    }
-
-    if (password1 !== password2) {
-      $(".password_check_msg").text("비밀번호를 확인해주세요");
-      return;
-    }
-
-
 
     this.submit();
+	
   });
 });
+
+
 
 
 
