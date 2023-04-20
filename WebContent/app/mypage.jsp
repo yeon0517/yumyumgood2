@@ -315,7 +315,7 @@
 				<!-- 게시글 -->
 				<div id="bottom1" class="main-bottom test">
 					<div class="PostList">
-						<div class="ccc">
+				<!-- 		<div class="ccc">
 							<div class="bbb">
 								<a href="#" class="go-post"> <img
 									src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSZRRqahUJnD6Ve1RMCmiHe4ABs5mUBJ33wg&usqp=CAU"
@@ -371,16 +371,43 @@
 									class="thumbnail-img" />
 								</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				
+				
+					<div class="next-page1">
+						<div class="paging">
+							<!-- <p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction" />
+								</a>
+							</p>
+							<p class="paging-num">
+								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
+								<a href="">5</a>
+							</p>
+							<p class="paging-btn">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로" />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last">
+								<a href=""> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p> -->
+						</div>
+					</div> 
 				</div>
 
 
             <!-- 구매내역 -->
             <div id="bottom2" class="main-bottom2 test">
                <div class="purchase-history">
-                  <div class="history-name">
+              <!--     <div class="history-name">
                      <div class="history-number">주문번호</div>
                      <div class="history-picture">상품사진</div>
                      <div class="history-name2">상품이름</div>
@@ -449,16 +476,16 @@
                      <div class="ok-amount">1,000,000원</div>
                      <div class="ok-orderStatus">1,000,000원</div>
                   </div>
-                  <!-- 구매내역 내용 없음 -->
-                  <!-- <div class="purchase-ok1"></div>
+                  구매내역 내용 없음
+                  <div class="purchase-ok1"></div>
                 <div class="purchase-ok2"></div>
                 <div class="purchase-ok3"></div> -->
 
 					</div>
 					<!--페이지 이동 버튼 1, 2, 3... -->
-					<!-- <div class="next-page2">
+					<div class="next-page2">
 						<div class="paging">
-							<p class="paging-btn">
+							<!-- <p class="paging-btn">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
 									alt="" class="direction" />
@@ -479,15 +506,15 @@
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
 									alt="마지막으로" />
 								</a>
-							</p>
+							</p> -->
 						</div>
-					</div> -->
+					</div> 
 				</div>
 				<!-- 찜한 레시피 -->
 				<div id="bottom3" class="main-bottom3 test">
 				<div class="LikeRecipe">
 			
-					<div class="ccc">
+					<!-- <div class="ccc">
 						<div class="bbb">
 							<a href="#" class="go-post"> <img
 								src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYYvpWheIfYYb8y3fZRgXHcg5gy5jUTTXGaw&usqp=CAU"
@@ -538,21 +565,21 @@
 								class="thumbnail-img" />
 							</a>
 						</div>
-					</div>
+					</div> -->
 					</div>
 					
 					<div class="next-page3">
 						<div class="paging">
 						<div class = "pageLikeList">
 						<div class ="pagingLike">
-							<p class="paging-btn-prev">
+							<!-- <p class="paging-btn-prev">
 								<a href=""> <img
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
 									alt="" class="direction" class="paging-btn prev"/>
 									
 								</a>
 							</p>
-							<!-- 페이지 이동 -->
+							페이지 이동
 							<p class="paging-num">
 								<a href="">1</a> <a href="">2</a> <a href="">3</a> <a href="">4</a>
 								<a href="">5</a>
@@ -568,7 +595,7 @@
 									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
 									alt="마지막으로" />
 								</a>
-							</p>
+							</p> -->
 							</div>
 							</div>
 						</div>

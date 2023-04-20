@@ -573,11 +573,14 @@ a {
   width: 85%;
 }
 
-.next-page {
+.next-page1 {
   /* background-color: violet; */
   width: 830px;
   height: 40px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .next-page3 {
@@ -585,6 +588,9 @@ a {
   width: 830px;
   height: 40px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .next-page2 {
@@ -592,6 +598,9 @@ a {
   width: 830px;
   height: 40px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* 페이징 스타일 */
 .paging {

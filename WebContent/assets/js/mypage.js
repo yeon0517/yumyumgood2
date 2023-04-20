@@ -98,7 +98,7 @@ function paging(result) {
 	}
 	let page = '';
 
-	page = `<div class="paging" >`
+	
 
 
 	page += `
@@ -135,8 +135,8 @@ function paging(result) {
 									alt="마지막으로" />
 								</a>
 							</p>`
-							
-		$(".next-page").html(page);				
+		
+		$(".next-page1 .paging").html(page);				
 						
 					
 		
@@ -287,14 +287,14 @@ function postPaymentTable(paymentResult){
 	console.log("================");
 	console.log(paymentResult);
 	
-	/*if(paymentResult.userPaymentList.length == 0){
+	if(paymentResult.userPaymentList.length == 0){
 		console.log("&*&*&*&*&*&*&&*&*");
 		return;
-	}*/
+	}
 	
 	let pagingPay= '';
 
-	pagingPay = `<div class="paging" >`
+	/*pagingPay = `<div class="paging" >`*/
 
 
 	pagingPay += `
@@ -332,7 +332,8 @@ function postPaymentTable(paymentResult){
 								</a>
 							</p>`
 							
-		$(".next-page2").html(pagingPay);				
+			/*pagingPay = `</div>`*/
+		$(".next-page2 .paging").html(pagingPay);				
 	    console.log("##############3");
 }
 	
@@ -389,14 +390,14 @@ function postLikeTable(saveResult) {
 
 	console.log(saveResult);
 	let text = '';
-	for (let i = 0; i < saveResult.userSavePost.length; i++) {
-		if(saveResult.userSavePost[i].postNumber == 0){
+		if(saveResult.userSavePost.length == 0){
 			text+= `	<div>
 									<h1>아직 등록된 게시글이 없습니다!</h1>
 								</div>
 			
 			`;
 		}
+	for (let i = 0; i < saveResult.userSavePost.length; i++) {
 		
 		/*text = ``*/
 		
@@ -430,7 +431,10 @@ function pagingLike(saveResult) {
 	console.log(saveResult);
 	
 	let likePage = '';
-
+	
+	if(saveResult.userSavePost.length == 0){
+		return;
+		}
 	
 
 
