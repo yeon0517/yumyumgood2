@@ -30,32 +30,32 @@ public class OrderOkController implements Execute {
 		
 		req.setCharacterEncoding("utf-8");
 		
-//		String orderAddress = req.getParameter("address")+" "+req.getParameter("addressDetail");
-//		System.out.println(orderAddress);
+		//=============================================================
+		int orderNumber = Integer.parseInt(req.getParameter("orderNumber")) ;
+		System.out.println("주문번호 : " + orderNumber);
+		
+		paymentDTO.setPaymentAmount(Integer.valueOf(req.getParameter("paymentAmount")));
+		paymentDTO.setOrderNumber(orderNumber);
+		paymentDTO.setPaymentMethod(req.getParameter("paymentMethod"));
 //		
-//		orderDTO.setOrderRecipient(req.getParameter("orderRecipient"));
-//		orderDTO.setOrderAddress(orderAddress);
-//		orderDTO.setOrderMessage(req.getParameter("orderMessage"));
-//
-//		orderDAO.OrderInsert(orderDTO);
-		
-//		req.getRequestDispatcher("/app/payment.jsp");
+//		
+		orderDAO.orderpay(paymentDTO);
 		
 		
+		String orderAddress = req.getParameter("address")+" "+req.getParameter("addressDetail");
+		System.out.println(orderAddress);
 		
-		paymentDTO.setPaymentAmount(0);
-//		paymentDTO.set
+		orderDTO.setOrderNumber(orderNumber);
+		orderDTO.setOrderRecipient(req.getParameter("orderRecipient"));
+		orderDTO.setOrderAddress(orderAddress);
+		orderDTO.setOrderMessage(req.getParameter("orderMessage"));
 		
+		System.out.println(orderDTO);
+
+		//업데이트하셈
+		orderDAO.orderUpdate(orderDTO);
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		resp.sendRedirect("/mainOk.m");
 		
