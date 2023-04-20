@@ -47,6 +47,8 @@ let followCount = parseInt(results[1]);
 	$('.followCnt').text(followCount);
 
 }
+
+
 //===================##===================
 
 

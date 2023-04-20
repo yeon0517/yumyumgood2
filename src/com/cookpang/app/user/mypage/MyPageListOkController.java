@@ -82,6 +82,10 @@ public class MyPageListOkController implements Execute {
 		List<PostReadVO> posts = postDAO.getPostAll(pageMap);
 		System.out.println(posts);
 
+		boolean checkPosts = posts.isEmpty();
+		System.out.println("*********");
+		System.out.println(checkPosts);
+		System.out.println("*********");
 		// Gson 객체를 생성하고, 이를 이용해 위에 설정한 리스트를 json 형태로 변환한다.
 		Gson gson = new Gson();
 		
@@ -119,6 +123,7 @@ public class MyPageListOkController implements Execute {
 		result.addProperty("endPage", endPage);
 		result.addProperty("page", page);
 		result.addProperty("realEndPage", realEndPage);
+		result.addProperty("checkPosts", checkPosts);
 
 		
 		System.out.println("*******************");

@@ -93,6 +93,9 @@ function paging(result) {
 	console.log("================");
 	console.log(result);
 	
+	if(result.userPost.length == 0){
+		return;
+	}
 	let page = '';
 
 	page = `<div class="paging" >`
@@ -144,17 +147,19 @@ function paging(result) {
 
 function postListTable(result) {
 
-	console.log(result);
 	let text = '';
-	for (let i = 0; i < result.userPost.length; i++) {
-		if(result.userPost[i].postNumber == 0){
+
+		if(result.userPost.length == 0){
+			console.log("@@@@@@@@@@@@@@@");
 			text+= `	<div>
 									<h1>아직 등록된 게시글이 없습니다!</h1>
 								</div>
 			
 			`;
+			
 		}
 		
+	for (let i = 0; i < result.userPost.length; i++) {
 		if (i % 3 == 0) {
 			text += `	<div class="ccc">`;
 		}
@@ -199,6 +204,7 @@ managePost.addEventListener("click", function() {
 	showPaymentList();
 });
 
+
 showPaymentList(userNumber);
 
  function showPaymentList(userNumber, page) {
@@ -217,11 +223,34 @@ showPaymentList(userNumber);
 	});
 }
 
+$('.next-page2').on('click', 'a', function(e){
+	e.preventDefault();
+	let userNumber = $(this).data('number');
+	let page = $(this).data('page');
+	postPaymentTable(userNumber, page);
+});
+
+
+/*console.log(paymentResult);*/
 
 function postPaymentTable(paymentResult){
 	
 	let pay = '';
 	
+	if(paymentResult.userPaymentList.length == 0){
+			console.log("@@@@@@@@@@@@@@@");
+			pay+= `	<div>
+									<h1>구매 내역이 없습니다!</h1>
+								</div>
+			
+			`;
+			
+		}
+	
+	
+	
+
+	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
 		pay = `  <div class="history-name">
                      <div class="history-number">주문번호</div>
                      <div class="history-picture">상품사진</div>
@@ -231,29 +260,83 @@ function postPaymentTable(paymentResult){
                      <div class="history-price">수량</div>
                      <div class="history-price">주문상태</div>
                   </div>`
-
-	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
 		 
 		pay += `<div class="purchase-ok1">
-                     	<div class="ok-number">1</div>
+                     	<div class="ok-number">${paymentResult.userPaymentList[i].orderNumber}</div>
                      	<div class="ok-picture">
                         	<a href="#"> <img
-                           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkVAjFhlBDBs04SH6i8etGCG6FuJsLMmoTqeHkxq5XmBaUqNL12SIfDQI5czr-VwAnh1c&usqp=CAU"
+                           src="/upload/${paymentResult.userPaymentList[i].ingredientImageSystemName}"
                            alt="" class="ok-picture-img" />
                         	</a>
                      	</div>
                      	<div class="ok-name">
-                        	<a href="#">초코비</a>
+                        	<a href="#">${paymentResult.userPaymentList[i].ingredientName}</a>
                     	</div>
-                     	<div class="ok-date">2023-03-24</div>
-                     	<div class="ok-price">1,000,000원</div>
-					 	<div class="ok-amount">1,000,000원</div>
-                     	<div class="ok-orderStatus">1,000,000원</div>
+                     	<div class="ok-date">${paymentResult.userPaymentList[i].orderDate}</div>
+                     	<div class="ok-price">${paymentResult.userPaymentList[i].orderItemPrice}</div>
+					 	<div class="ok-amount">${paymentResult.userPaymentList[i].orderItemQuantity}</div>
+                     	<div class="ok-orderStatus">${paymentResult.userPaymentList[i].orderStatus}</div>
                   	</div>`
 	}
+		$(".purchase-history").html(pay);
 }
 
+// 구매내역 페이징 처리
 
+	function pagingPayment(paymentResult) {
+	console.log("================");
+	console.log(paymentResult);
+	
+	/*if(paymentResult.userPaymentList.length == 0){
+		console.log("&*&*&*&*&*&*&&*&*");
+		return;
+	}*/
+	
+	let pagingPay= '';
+
+	pagingPay = `<div class="paging" >`
+
+
+	pagingPay += `
+	
+						<p class="paging-btn-prev">
+								<a href="" data-number=${paymentResult.userPaymentList[0].userNumber} data-page=${paymentResult.startPage - 1}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction"  />
+								</a>
+						</p>`
+	for(let i = paymentResult.startPage; i<=paymentResult.endPage; i++){
+		
+			if(i == paymentResult.page){
+				pagingPay += `<p class="paging-num">
+								<a href="" data-number=${paymentResult.userPaymentList[0].userNumber} data-page=${i} class="active">${i}</a>
+							</p>`
+			}else{
+				pagingPay += `<p class="paging-num">
+								<a href="" data-number=${paymentResultt.userPaymentList[0].userNumber} data-page=${i} >${i}</a>
+							</p>`
+			}
+			
+		
+	}
+			pagingPay += `	<p class="paging-btn-next">
+								<a href="" data-number=${paymentResult.userPaymentList[0].userNumber} data-page=${paymentResult.Endpage + 1}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로"  />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last" >
+								<a href="" data-number=${paymentResult.userPaymentList[0].userNumber} data-page=${paymentResult.realEndPage}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>`
+							
+		$(".next-page2").html(pagingPay);				
+	    console.log("##############3");
+}
+	
+	
 
 
 

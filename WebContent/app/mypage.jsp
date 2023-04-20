@@ -373,55 +373,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="next-page"  >
-						<div class= "PostListPage">
-						<div class="paging" >
-							<p class="paging-btn-prev">
-								<a href=""> <img
-									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
-									alt="" class="direction" data-postPage= "${startPage - 1 }" />
-								</a>
-							</p>
-							
-								<%-- <c:forEach var="j" begin="${startPage}"
-													end="${endPage}">
-													<c:choose>
-														<c:when test="${!(j == page) }">
-														<p class="paging-num">
-															<a
-																href="${pageContext.request.contextPath}/mypage/mypageOk.my?Page=${j}" data-postPage="${j}">
-																	<c:out value="${j}" />
-															</a>
-															</p>
-														</c:when>
-														<c:otherwise>
-														<p class="paging-num">
-															<a href="${pageContext.request.contextPath}/mypage/mypageOk.my?Page=${j}=${j}" data-postPage="${j}" class="active"> <c:out
-																		value="${j}" />
-															</a>
-															</p>
-														</c:otherwise>
-													</c:choose>
-												</c:forEach> --%>
-							<p class="paging-num">
-								<a href="" >1</a> <a href="" >2</a> <a href="" >3</a> <a href="" >4</a>
-								<a href="" >5</a>
-							</p>
-							<p class="paging-btn-next">
-								<a href=""> <img
-									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
-									alt="다음으로" data-postPage= "${endPage + 1 }" />
-								</a>
-							</p>
-							<p class="paging-btn" id="paging-last" >
-								<a href=""> <img
-									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
-									alt="마지막으로" />
-								</a>
-							</p>
-						</div>
-						</div>
-					</div>
+				
 				</div>
 
 
@@ -494,6 +446,8 @@
                      </div>
                      <div class="ok-date">2023-03-24</div>
                      <div class="ok-price">1,000,000원</div>
+                     <div class="ok-amount">1,000,000원</div>
+                     <div class="ok-orderStatus">1,000,000원</div>
                   </div>
                   <!-- 구매내역 내용 없음 -->
                   <!-- <div class="purchase-ok1"></div>
@@ -502,7 +456,7 @@
 
 					</div>
 					<!--페이지 이동 버튼 1, 2, 3... -->
-					<div class="next-page2">
+					<!-- <div class="next-page2">
 						<div class="paging">
 							<p class="paging-btn">
 								<a href=""> <img
@@ -527,7 +481,7 @@
 								</a>
 							</p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 				<!-- 찜한 레시피 -->
 				<div id="bottom3" class="main-bottom3 test">

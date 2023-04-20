@@ -20,7 +20,7 @@
 
 	<select id="paymentList" parameterType="map" resultType="PaymentVO">
 		select oi.order_number, oi.order_item_quantity, i.ingredient_price * oi.order_item_quantity as order_item_price,
-		o.order_date, o.order_status, i.ingredient_name,
+		o.order_date, o.order_status, i.ingredient_name, o.user_number,
 		ii.ingredient_image_system_name
 		from tbl_order o
 		join tbl_order_item oi ON o.order_number = oi.order_number

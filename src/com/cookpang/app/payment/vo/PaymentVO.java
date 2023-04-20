@@ -2,6 +2,8 @@ package com.cookpang.app.payment.vo;
 
 
 public class PaymentVO {
+	
+	int userNumber;
     int orderNumber;
     int orderItemQuantity;
     String orderDate;
@@ -15,23 +17,40 @@ public class PaymentVO {
     
 
 
+	
+
 	@Override
 	public String toString() {
-		return "PaymentVO [orderNumber=" + orderNumber + ", orderItemQuantity=" + orderItemQuantity + ", orderDate="
-				+ orderDate + ", orderStatus=" + orderStatus + ", ingredientName=" + ingredientName
-				+ ", ingredientPrice=" + ingredientPrice + ", orderItemPrice=" + orderItemPrice
+		return "PaymentVO [userNumber=" + userNumber + ", orderNumber=" + orderNumber + ", orderItemQuantity="
+				+ orderItemQuantity + ", orderDate=" + orderDate + ", orderStatus=" + orderStatus + ", ingredientName="
+				+ ingredientName + ", ingredientPrice=" + ingredientPrice + ", orderItemPrice=" + orderItemPrice
 				+ ", ingredientImageSystemName=" + ingredientImageSystemName + "]";
 	}
 
 
-	public int getOrderItemPrice() {
-		return orderItemPrice;
+
+
+
+
+
+	public int getUserNumber() {
+		return userNumber;
 	}
 
 
-	public void setOrderItemPrice(int orderItemPrice) {
-		this.orderItemPrice = orderItemPrice;
+
+
+
+
+
+	public void setUserNumber(int userNumber) {
+		this.userNumber = userNumber;
 	}
+
+
+
+
+
 
 
 	public int getOrderNumber() {
@@ -39,9 +58,19 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setOrderNumber(int orderNumber) {
 		this.orderNumber = orderNumber;
 	}
+
+
+
+
+
 
 
 	public int getOrderItemQuantity() {
@@ -49,9 +78,19 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setOrderItemQuantity(int orderItemQuantity) {
 		this.orderItemQuantity = orderItemQuantity;
 	}
+
+
+
+
+
 
 
 	public String getOrderDate() {
@@ -59,9 +98,19 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
+
+
+
+
+
 
 
 	public String getOrderStatus() {
@@ -69,9 +118,19 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setOrderStatus(String orderStatus) {
 		this.orderStatus = orderStatus;
 	}
+
+
+
+
+
 
 
 	public String getIngredientName() {
@@ -79,9 +138,19 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setIngredientName(String ingredientName) {
 		this.ingredientName = ingredientName;
 	}
+
+
+
+
+
 
 
 	public int getIngredientPrice() {
@@ -89,9 +158,39 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setIngredientPrice(int ingredientPrice) {
 		this.ingredientPrice = ingredientPrice;
 	}
+
+
+
+
+
+
+
+	public int getOrderItemPrice() {
+		return orderItemPrice;
+	}
+
+
+
+
+
+
+
+	public void setOrderItemPrice(int orderItemPrice) {
+		this.orderItemPrice = orderItemPrice;
+	}
+
+
+
+
+
 
 
 	public String getIngredientImageSystemName() {
@@ -99,9 +198,19 @@ public class PaymentVO {
 	}
 
 
+
+
+
+
+
 	public void setIngredientImageSystemName(String ingredientImageSystemName) {
 		this.ingredientImageSystemName = ingredientImageSystemName;
 	}
+
+
+
+
+
 
 
 	public PaymentVO() {}
