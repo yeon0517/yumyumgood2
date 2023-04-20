@@ -247,7 +247,7 @@ $('.post-serch-btn').on('click', function() {
 	}
 });
 
-// ==========결제 관리 js======
+// ==========결제 관리 추가정보js======
 
 
 function showOrder() {
@@ -275,4 +275,140 @@ function showOrderProducts() {
     button.html("주문상품보기");
   }
 }
+
+// ==========결제 관리 js======
+
+let orderSearchMode = false;
+let orderPage = 1;
+
+console.log('으하하하하하')
+console.log(orderPage)
+
+updateOrderPage(orderPage)
+function updateOrderPage(orderPage) {
+	if (orderSearchMode) {
+		let orderTitle = $('#payment-serch').val();
+		$.ajax({
+			url: '/manager/orderSerchOk.manager',
+			type: 'GET',
+			data: { orderTitle: orderTitle, orderPage: orderPage },
+			dataType: 'json',
+			success: updateOrderTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	} else {
+		$.ajax({
+			url: "/manager/managerOrderOk.manager",
+			type: "GET",
+			data: { 
+				orderPage: orderPage 
+				},
+			dataType: "json",
+			success: updateOrderTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	}
+}
+
+
+function updateOrderTable(orderResult) {
+	$(".payment-table tbody tr:not(:first)").remove();
+	
+	console.log(orderResult)
+
+	orderResult.orders.forEach((order) => {
+		$(".payment-table tbody").append(`
+		<tr>
+			<td class="order-number">${order.orderNumber}</td>
+			<td class="order-user-id">${order.userId}</td>
+			<td class="order-total-cost">${order.orderTotalCost}</td>
+			<td class="order-date">${order.orderDate}</td>
+			<td class="order-status">${order.orderStatus}</td>
+			<td class="order-status-edit">
+				<div class="checkbox-c">
+					<button type="button" class="order-check-btn">확인</button>
+					<input type="hidden" name="payment"
+						class="payment-check-box" value="#결제번호" />
+					<input type="hidden" name="orderUserNumber"
+						class="payment-check-box" value="${order.userNumber}" />
+				</div>
+			</td>
+			<td><button onclick="showOrder()">정보보기</button></td>
+			<td>
+				<button onclick="showOrderProducts()">주문상품보기</button>
+			</td>
+	</tr>
+			`);
+	});
+	
+	let orderPageResult = '';
+	orderPageResult += `${orderResult.orderPrev ? `<li><a href="#" data-orderPage="${orderResult.orderStartPage - 1}" class="prev">&lt;</a></li>` : ""}`;
+    
+	for(let i=orderResult.orderStartPage; i<=orderResult.orderEndPage; i++){
+		orderPageResult += `<li><a href="#" data-orderPage="${i}"${i === orderResult.orderPage ? ' class="active"' : ""}>${i}</a></li>`;
+	}
+	
+    orderPageResult +=`${orderResult.orderNext ? `<li><a href="#" data-orderPage="${orderResult.orderEndPage + 1}" class="next">&gt;</a></li>` : ""}`;
+
+	/*`
+    	${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
+    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="#" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
+    	${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`*/
+
+	$(".order-page ul").html(orderPageResult);
+
+	$(".order-page a").off("click").on("click", function(e) {
+		e.preventDefault();
+		
+		console.log($(this).data("orderpage"))
+		updateOrderPage($(this).data("orderpage"));
+	});
+	
+}
+
+
+$(".order-page a").on("click", function(e) {
+	e.preventDefault();
+	updateOrderPage($(this).data('orderpage'));
+	console.log('aaaa')
+});
+
+$('.order-serch-btn').on('click', function() {
+	let orderSearch = $('#order-search').val();
+	let orderGapCheck = $('#order-search').val().trim();
+
+	if (orderGapCheck === '' || orderGapCheck.length === 0) {
+		orderSearchMode = false;
+		updateOrderPage(1);
+	} else {
+		orderSearchMode = true;
+		updateOrderPage(1);
+	}
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
