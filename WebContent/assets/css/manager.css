@@ -16,8 +16,8 @@ a {
   text-decoration: none;
 }
 
-button{
-	border: none;
+button {
+  border: none;
   background: transparent;
   color: inherit;
   font: inherit;
@@ -33,13 +33,13 @@ button{
 }
 
 #main-header {
-/*   background-color: rgb(189, 189, 189);
-  position: fixed;
-  height: 25px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 1; */
+  /*   background-color: rgb(189, 189, 189);
+    position: fixed;
+    height: 25px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    z-index: 1; */
 }
 
 #main-body {
@@ -70,10 +70,10 @@ button{
   cursor: pointer;
 }
 
-.profile-image{
+.profile-image {
   width: 100%;
-    height: 100%;
-    border-radius: 50%;
+  height: 100%;
+  border-radius: 50%;
 }
 
 .manager-id {
@@ -183,7 +183,6 @@ button{
 }
 .myChart-1 {
   margin-top: 63px;
-
 }
 .myChart-2 {
   margin-top: 135px;
@@ -457,7 +456,6 @@ td {
   width: 50px;
 }
 
-
 .post-table tr > th:nth-child(1),
 .post-table tr > td:nth-child(1) {
   width: 50px;
@@ -483,6 +481,8 @@ td {
 .post-table tr > td:nth-child(6) {
   width: 50px;
 }
+
+/* 결제  */
 .payment-table tr > th:nth-child(1),
 .payment-table tr > td:nth-child(1) {
   width: 50px;
@@ -493,7 +493,7 @@ td {
 }
 .payment-table tr > th:nth-child(3),
 .payment-table tr > td:nth-child(3) {
-  width: 200px;
+  width: 100px;
 }
 .payment-table tr > th:nth-child(4),
 .payment-table tr > td:nth-child(4) {
@@ -507,9 +507,27 @@ td {
 .payment-table tr > td:nth-child(6) {
   width: 50px;
 }
-
+.payment-table tr > th:nth-child(7),
+.payment-table tr > td:nth-child(7) {
+  width: 100px;
+}
+.payment-table tr > th:nth-child(8),
+.payment-table tr > td:nth-child(8) {
+  width: 100px;
+}
 .payment-table tr {
   margin-left: 47px;
+}
+
+.product,
+.order {
+  width: 100%;
+  border: 1px #a39485 solid;
+  font-size: 12px;
+  display: none;
+}
+.order .product td {
+  padding: 0px;
 }
 
 .button {
@@ -525,7 +543,6 @@ td {
   margin-top: 30px;
 }
 
-
 /* 페이징 스타일 */
 .pagination {
   display: flex;
@@ -540,13 +557,13 @@ td {
 }
 
 .pagination a {
-  color: #BDBDBD;
+  color: #bdbdbd;
   text-decoration: none;
   font-weight: bold;
   padding: 10px;
   margin: 0 5px;
   border-radius: 5px;
-  border: 1px solid #BDBDBD;
+  border: 1px solid #bdbdbd;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -557,40 +574,40 @@ td {
 }
 
 .pagination .active {
-  background-color: #BDBDBD;
-  border-color: #BDBDBD;
+  background-color: #bdbdbd;
+  border-color: #bdbdbd;
   color: #fff;
 }
 /* .paging {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.paging > p {
-  display: flex;
-  list-style: none;
-}
-
-.paging a {
-  color: #888;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px;
-  margin: 0 5px;
-
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.paging a:hover {
-  color: #937062;
-}
-
-.paging .active {
-  color: #fff;
-}
- */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .paging > p {
+    display: flex;
+    list-style: none;
+  }
+  
+  .paging a {
+    color: #888;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+    margin: 0 5px;
+  
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .paging a:hover {
+    color: #937062;
+  }
+  
+  .paging .active {
+    color: #fff;
+  }
+   */
 .category-box .recipe-category a:hover {
   color: #937062;
   border-color: #937062;
@@ -647,7 +664,7 @@ td {
   font-family: "Josefin Slab", serif;
 }
 .sidebar-ul i {
-	margin-right: 21px;
+  margin-right: 21px;
 }
 
 .sidebar-li {
@@ -797,28 +814,28 @@ footer > div {
   color: #27bcda;
 }
 
-.btn-span i{
+.btn-span i {
   color: black;
 }
 
-.ingredient-insert{
-	font-size: 17px;
+.ingredient-insert {
+  font-size: 17px;
 }
 
 /* @media (max-width:500px) {
-  .footer-menu ul{
-    display: flex;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  } */
+    .footer-menu ul{
+      display: flex;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    } */
 
 /* #live {
-  width: 300px;
-  height: 200px;
-} */
+    width: 300px;
+    height: 200px;
+  } */
 /* 
-.profile-picture canvas {
-  width: 300px;
-  height: 300px;
-} */
+  .profile-picture canvas {
+    width: 300px;
+    height: 300px;
+  } */
