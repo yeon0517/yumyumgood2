@@ -21,9 +21,6 @@ public class IngredietnInsertController implements Execute {
 		
 		List<IngredientCategoryDTO> categoryList =  ingredientCategoryDAO.getIngredientCategoryNumber();
 		
-		System.out.println(categoryList.toString());
-		
-		
 		req.setAttribute("categoryList", categoryList);
 		
 		
