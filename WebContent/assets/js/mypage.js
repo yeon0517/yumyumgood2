@@ -14,11 +14,13 @@ function closeModal() {
 document.querySelector(".close").addEventListener("click", closeModal);
 
 // 모달 창 외부를 클릭하면 모달 창이 닫히도록 추가
+/* 
 window.addEventListener("click", function(event) {
 	if (event.target == document.getElementById("myModal")) {
 		closeModal();
 	}
 });
+*/
 
 // 팔로잉 모달창
 // 모달 열기 함수
@@ -36,11 +38,13 @@ function closeModal2() {
 document.querySelector(".close2").addEventListener("click", closeModal2);
 
 // 모달 창 외부를 클릭하면 모달 창이 닫히도록 추가
+/*
 window.addEventListener("click", function(event) {
 	if (event.target == document.getElementById("myModal2")) {
 		closeModal();
 	}
 });
+*/
 
 // click 이벤트(게시물)
 let manageMember = document.querySelector("#post1");
