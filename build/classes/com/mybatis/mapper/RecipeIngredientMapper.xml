@@ -2,12 +2,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="recipeIngredient">
+
 	<insert id="insert" parameterType="RecipeIngredientDTO">
 		insert into tbl_recipe_ingredient
 		(post_number, ingredient_number, recipe_ingredient_name, recipe_ingredient_quantity)
-		values(#{postNumber} ,#{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity});;
+		values(#{postNumber} ,#{ingredientNumber}, #{recipeIngredientName}, #{recipeIngredientQuantity})
 	</insert>
 	
+		
 	<select id="getRecipeIngredients" parameterType="_int" resultType="RecipeIngredientVO">
 		select ti.ingredient_name ,ri.recipe_ingredient_quantity 
 		from tbl_ingredient ti
@@ -15,12 +17,24 @@
 		on ti.ingredient_number = ri.ingredient_number and ri.post_number = #{postNumber}
 	</select>
 	
-		
-		
-	
-	
-  		
 
+	<delete id="delete" parameterType="_int">
+		delete from tbl_recipe_ingredient
+		where post_number=#{postNumber}
+	</delete>
+		
+	
+
+
+  	
+	<select id="postPaymentIngredient" parameterType="_int" resultType="RecipeIngredientVO">
+		select  ti.ingredient_number ,ingredient_name , ingredient_smallest_unit , ingredient_price, tii.ingredient_image_system_name 
+		from tbl_ingredient ti
+		join tbl_recipe_ingredient tri on ti.ingredient_number = tri.ingredient_number
+	left join tbl_ingredient_image tii  on tii.ingredient_number = ti.ingredient_number 
+		where tri.post_number = #{postNumber}
+	</select>
+	
 
 </mapper>
 
