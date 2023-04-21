@@ -71,7 +71,6 @@ public class ManagerOrderListOkController implements Execute {
 		orderPageMap.put("rowCount", rowCount);
 		
 		List<OrderVO> ordersList = managerDAO.selectOrderAll(orderPageMap);
-		System.out.println(ordersList);
 		
 		Gson gson = new Gson();
 		JsonObject orderResult = new JsonObject();
