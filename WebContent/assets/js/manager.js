@@ -251,28 +251,25 @@ $('.post-serch-btn').on('click', function() {
 
 
 function showOrder(target) {
-  let table = $(".order");
-  let button = $('button[onclick="showOrder()"]');
+  let deliveryRow = $(target).closest("td").parent().next("tr.order-info");
 
-  if (table.is(":hidden")) {
-    table.show();
-    $(target).html("상세정보숨기기");
+  if (deliveryRow.css("display") === "none") {
+    deliveryRow.css("display", "table-row");
   } else {
-    table.hide();
-    $(target).html("상세정보보기");
+    deliveryRow.css("display", "none");
   }
 }
 
-function showOrderProducts() {
-  let table = $(".product");
-  let button = $('button[onclick="showOrderProducts()"]');
+function showOrderProducts(target) {
+  let productsRow = $(target)
+    .closest("tr")
+    .nextAll("tr.order-itemLIst")
+    .first();
 
-  if (table.is(":hidden")) {
-    table.show();
-    button.html("주문상품숨기기");
+  if (productsRow.css("display") === "none") {
+    productsRow.css("display", "table-row");
   } else {
-    table.hide();
-    button.html("주문상품보기");
+    productsRow.css("display", "none");
   }
 }
 
@@ -323,17 +320,25 @@ function updateOrderTable(orderResult) {
 			<td class="order-user-id">${order.userId}</td>
 			<td class="order-total-cost">${order.orderTotalCost}</td>
 			<td class="order-date">${order.orderDate}</td>
-			<td class="order-status">${order.orderStatus}</td>
+			<td class="order-status">
+				<select name="orderStatus" class="order-status-select" data-orderNumber="${order.orderNumber}">
+		            <option value="${order.orderStatus}" selected="selected">${order.orderStatus}</option>
+		            <option value="대기중">대기중</option>
+		            <option value="배송중" >배송중</option>
+		            <option value="배송완료">배송완료</option>
+		            <option value="취소됨">취소됨</option>
+				</select>
+			</td>
 			<td class="order-status-edit">
 				<div class="checkbox-c">
-					<button type="button" class="order-check-btn">확인</button>
+					<button type="button" class="order-check-btn" data-orderNumber="${order.orderNumber}">확인</button>
 					<input type="hidden" name="payment"
 						class="payment-check-box" value="#결제번호" />
 					<input type="hidden" name="orderUserNumber"
 						class="payment-check-box" value="${order.userNumber}" />
 				</div>
 			</td>
-			<td><button onclick="showOrder(this)">정보보기</button></td>
+			<td><button onclick="showOrder(this)">상세정보보기</button></td>
 			<td>
 				<button onclick="showOrderProducts(this)">주문상품보기</button>
 			</td>
@@ -387,10 +392,88 @@ $('.order-serch-btn').on('click', function() {
 });
 
 
+$('.payment-table').on('click', '.order-check-btn', function() {
+      let clickedButton = $(this); // 클릭한 버튼
+	  let orderNumber = clickedButton.data("ordernumber")
+	  let orderStatus = $(this).closest("tr").find('.order-status-select').val();
+		
+	  orderStatusAjax(orderNumber,orderStatus );
+	/*주문상태변경하는 ajax들어가야함*/
 
 
+	
+    });
 
 
+function orderStatusAjax(orderNumber,orderStatus) {
+	$.ajax({
+		url: '/manager/orderStatusUpdateOk.manager',
+		type: 'post',
+		data: { orderNumber: orderNumber,
+					orderStatus: orderStatus 
+					/*orderPage: orderPage*/
+				},
+		success: function(result){
+			console.log('주문상태변경 ajax연결 성공')
+			/*updateOrderPage(orderPage);*/
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+}
+
+/*얘 꽂아야됨*/
+/*<tr id="order-mmm">
+                        
+                          <td class="order-number"></td>
+                          <td class="order-user-id">rhjkhdklash</td>
+                          <td class="order-total-cost">12313</td>
+                          <td class="order-date">23.04.21</td>
+                          <td class="order-status">대기중</td>
+                          <td class="order-status-edit">
+                            <div class="checkbox-c">
+                              <button type="button" class="order-check-btn">
+                                확인
+                              </button>
+                              <input
+                                type="hidden"
+                                name="payment"
+                                class="payment-check-box"
+                                value="#결제번호"
+                              />
+                              <input
+                                type="hidden"
+                                name="orderUserNumber"
+                                class="payment-check-box"
+                                value="${order.userNumber}"
+                              />
+                            </div>
+                          </td>
+                         
+                          <td>
+                            <button onclick="showOrder(this)">정보보기</button>
+                          </td>
+                          <td>
+                            <button onclick="showOrderProducts(this)">
+                              주문상품보기
+                            </button>
+                          </td>
+                          
+                          <tr class="order-info" style="display: none ;" >
+                            <td>1</td>
+                            <td colspan="1">받는사람 : 나선욱</td>
+                            <td colspan="3">서울 강동구 아리수로 46 강력반21</td>
+                            <td colspan="3">빨리 와주세요 현기증 나니깐.</td>
+                          </tr>
+                          <tr class="order-itemLIst"  style="display: none ;">
+                            <td>1</td>
+                            <td colspan="1">새우</td>
+                            <td colspan="3">100g</td>
+                            <td colspan="3">2개</td>
+                          </tr>
+                         
+                        </tr>
+*/
 
 
 
