@@ -250,16 +250,16 @@ $('.post-serch-btn').on('click', function() {
 // ==========결제 관리 추가정보js======
 
 
-function showOrder() {
+function showOrder(target) {
   let table = $(".order");
   let button = $('button[onclick="showOrder()"]');
 
   if (table.is(":hidden")) {
     table.show();
-    button.html("상세정보숨기기");
+    $(target).html("상세정보숨기기");
   } else {
     table.hide();
-    button.html("상세정보보기");
+    $(target).html("상세정보보기");
   }
 }
 
@@ -333,9 +333,9 @@ function updateOrderTable(orderResult) {
 						class="payment-check-box" value="${order.userNumber}" />
 				</div>
 			</td>
-			<td><button onclick="showOrder()">정보보기</button></td>
+			<td><button onclick="showOrder(this)">정보보기</button></td>
 			<td>
-				<button onclick="showOrderProducts()">주문상품보기</button>
+				<button onclick="showOrderProducts(this)">주문상품보기</button>
 			</td>
 	</tr>
 			`);
