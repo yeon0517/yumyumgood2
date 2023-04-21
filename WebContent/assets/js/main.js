@@ -5,6 +5,7 @@ $search.click(() => {
 	console.log("click");
 
 	$(".sub-find").toggleClass("sub-find__close");
+	$(".sub-find2").removeClass("sub-find2__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
@@ -31,6 +32,7 @@ $search2.click(() => {
 	console.log("click");
 
 	$(".sub-find2").toggleClass("sub-find2__close");
+	$(".sub-find").removeClass("sub-find__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
@@ -97,7 +99,7 @@ function findPost(keyword) {
 	hiddenField.setAttribute("name", "keyword");
 	hiddenField.setAttribute("value", keyword);
 	form.appendChild(hiddenField);
-	
+
 	document.body.appendChild(form);
 	form.submit();
 }
@@ -107,8 +109,8 @@ function findPost(keyword) {
 
 
 function addUserInfo(result) {
-	
-	
+
+
 	let text = '';
 console.log(result);
 	result.forEach(info => {
@@ -139,8 +141,32 @@ console.log(result);
 
 
 
+//==========================================클릭 이벤트 할꺼임 건들지 마삼 카테고리꺼임==================================
 
 
+
+
+// 새로고침 때문에 click이벤트를 줘도 console.log를 해도 콘솔에 값이 안나온다.
+// 그렇기 때문에 click이벤트를 주는것이 아니라 로드가 된 다음을 생각하자
+// 역시 ajax 공부를 하는게 짱이다
+$(document).ready(function() {
+	const urlSearch = new URLSearchParams(location.search);
+	const categoryNumber = urlSearch.get('categoryNumber');
+	
+	let $cateBox = $(".category-box");
+	
+	for(let i=0; i<$cateBox.length; i++){
+		if($cateBox.eq(i).data("id") == categoryNumber){
+			$cateBox.eq(i).addClass('selected');
+		}
+	}
+
+});
+
+// a태그를 span으로 바꿔서 onclick으로 경로 보내기 (도전해보자)
+
+
+//==========================================클릭 이벤트 할꺼임 건들지 마삼 카테고리꺼임==================================
 
 
 

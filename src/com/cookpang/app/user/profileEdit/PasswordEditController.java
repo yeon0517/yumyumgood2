@@ -39,7 +39,6 @@ public class PasswordEditController implements Execute{
 //			System.out.println(newPassword);
 //		}
 		
-		
 //		String newPassword = req.getParameter("newPassword");
 		
 		userDTO.setUserPassword(req.getParameter("newPassword"));
