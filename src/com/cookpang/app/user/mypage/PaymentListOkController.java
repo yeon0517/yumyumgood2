@@ -30,7 +30,7 @@ public class PaymentListOkController implements Execute {
 		Integer userNumber = (Integer)session.getAttribute("userNumber");
 //		int userNumber = 1;
 		PaymentDAO paymentDAO = new PaymentDAO();
-		int total = paymentDAO.getTotalList();
+		int total = paymentDAO.getTotalList(userNumber);
 		//처음 게시판 페이지에 진입하면 페이지에 대한 정보가 없다
 		//그러므로 temp에는 null이 들어가게 된다.
 		String temp = req.getParameter("page");

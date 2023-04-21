@@ -388,6 +388,7 @@ a {
 }
 .ok-date {
   /* background-color: #7d8084; */
+  
   width: 170px;
   height: 100%;
   display: flex;

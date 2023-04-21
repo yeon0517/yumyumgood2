@@ -21,6 +21,7 @@ public class PaymentDAO {
     public PostDTO postPayment(int postNumber) {
         return sqlSession.selectOne("payment.postPayment",postNumber);
     }
+    
 	
     public List<RecipeIngredientVO> postPaymentIngredient(int postNumber) { 
 		  return sqlSession.selectList("recipeIngredient.postPaymentIngredient", postNumber);
@@ -30,8 +31,8 @@ public class PaymentDAO {
     	return sqlSession.selectList("payment.paymentList", pageMap);
     }
     
-    public int getTotalList() {
-		return sqlSession.selectOne("payment.getTotalList");
+    public int getTotalList(int userNumber) {
+		return sqlSession.selectOne("payment.getTotalList", userNumber);
 	}
     
 }

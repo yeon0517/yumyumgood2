@@ -15,7 +15,7 @@ public class PaymentVO {
 	
 	
     
-
+    public PaymentVO() {}
 
 	
 
@@ -213,7 +213,7 @@ public class PaymentVO {
 
 
 
-	public PaymentVO() {}
+	
 
 	
 }
