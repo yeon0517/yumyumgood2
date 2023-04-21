@@ -1,9 +1,12 @@
 package com.cookpang.app.follow.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.follow.dto.FollowDTO;
-import com.cookpang.app.post.like.dto.PostLikeDTO;
+import com.cookpang.app.follow.vo.FollowVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class FollowDAO {
@@ -42,4 +45,8 @@ public class FollowDAO {
 	public void deleteFollowing(FollowDTO followDTO) {
 		sqlSession.delete("follow.deleteFollowing", followDTO);
 	}
+	public List<FollowVO> userFollower(int followNumber) {
+		return sqlSession.selectList("follow.userFollower", followNumber);
+	}
+	
 }

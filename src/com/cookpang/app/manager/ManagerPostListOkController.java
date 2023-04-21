@@ -29,7 +29,7 @@ public class ManagerPostListOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-ManagerDAO managerDAO = new ManagerDAO();
+		ManagerDAO managerDAO = new ManagerDAO();
 		
 		int postTotal = managerDAO.getPostTotal();
 		

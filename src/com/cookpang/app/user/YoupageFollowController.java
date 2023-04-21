@@ -16,12 +16,7 @@ public class YoupageFollowController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		
-		boolean followStatus = false;
-		
-		
-		
+
 		FollowDAO followDAO = new FollowDAO();
 		FollowDTO followDTO = new FollowDTO();
 		HttpSession session = req.getSession();
@@ -41,33 +36,17 @@ public class YoupageFollowController implements Execute {
 		
 		 followDTO.setFollowNumber(followNumber);
 		 followDTO.setFollowingNumber(followingNumber);
-		 
-		 
-		 followStatus = followDAO.checkFollow(followDTO) == null ? false : true;
-		 
-		 System.out.println("!!!!!!!!!!!!!!!!!!!");
-		 System.out.println(followStatus);
-		 
-		 
-		 req.setAttribute("followStatus", followStatus);
-		 
-		 System.out.println("@@@@@@@@@@@@");
-		 System.out.println(followStatus);
 
-//		 int followCount = followDAO.getFollowCount(followNumber); // 현재 팔로워 수 가져오기
-		 // followCount 누적이 안됨 쿼리 다시 고쳐야됨 팔로우수에서 누적되게 해야댐  
 		if(followDAO.checkFollow(followDTO)==null) {
 			followDAO.insertFollow(followDTO);
-//			 followCount++; 
 			out.print(true+ "," + followDAO.getFollowCount(followingNumber));
-			System.out.println(followDAO.getFollowCount(followingNumber));
+			System.out.println(followDAO.getFollowCount(followingNumber)+"추가");
 		
 			
 		}else {
 			followDAO.deleteFollow(followDTO);
-//			followCount--; 
 			out.print(false+ "," + followDAO.getFollowCount(followingNumber));
-			System.out.println(followDAO.getFollowCount(followingNumber));
+			System.out.println(followDAO.getFollowCount(followingNumber)+"삭제");
 		}
 		out.close();
 		
