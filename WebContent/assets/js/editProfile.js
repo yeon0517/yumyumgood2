@@ -12,11 +12,11 @@ function closeModal() {
 document.querySelector(".close").addEventListener("click", closeModal);
 
 // 모달 창 외부를 클릭하면 모달 창이 닫히도록 추가
-window.addEventListener("click", function (event) {
+/*window.addEventListener("click", function (event) {
   if (event.target == document.getElementById("myModal")) {
     closeModal();
   }
-});
+});*/
 
 // 소개글 아래에 숫자 늘어나는거
 const myTextarea = document.getElementById("myTextarea");
@@ -36,6 +36,7 @@ $search.click(() => {
   console.log("click");
 
   $(".sub-find").toggleClass("sub-find__close");
+  $(".sub-find2").removeClass("sub-find2__close");
   // $(".sub-find").stop().animate({ left: "toggle" });
 });
 
@@ -62,6 +63,7 @@ $search2.click(() => {
   console.log("click");
 
   $(".sub-find2").toggleClass("sub-find2__close");
+	$(".sub-find").removeClass("sub-find__close");
   // $(".sub-find").stop().animate({ left: "toggle" });
 });
 
@@ -119,26 +121,42 @@ $('.box1').on('blur', function(){
 
 
 
+/*$pwInput.on('blur', function(){
+   if(regex.test(  $(this).val()   )){
+      $checkPwMsg.html('<p style="color:green">사용가능한 비밀번호입니다.</p>');
+   }else{
+      $checkPwMsg.html("사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!");
+   }
+});
+*/
+	const regex = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[a-zA-Z\d!@#$%^&*()_+]{8,}$/;
+	
 $(function() { 
   $("#password-form").submit(function(e) {
     e.preventDefault();
 
-    let password1 = $("#password-form .box2").val();
+	let password1 = $("#password-form .box2").val();
     let password2 = $("#password-form .box3").val();
-
-    if (!password1 || !password2) {
-      $(".password_check_msg").text("비밀번호를 입력해주세요");
+    let oldPassword = $("#password-form .box1").val();
+    let $checkPwMsg = $(".password_check_msg2");
+	
+	if (!regex.test(password1)) {
+      $checkPwMsg.html("사용 불가능한 비밀번호입니다. <br>영어, 숫자, 특수문자를 포함하여 8글자 이상 작성하세요!");
       return;
-    }
-
-    if (password1 !== password2) {
-      $(".password_check_msg").text("비밀번호를 확인해주세요");
+    } else if (password1 !== password2) {
+      $(".password_check_msg").text('비밀번호를 확인해주세요');
+      return;
+    } else if (oldPassword === password1) {
+      $(".password_check_msg2").text('이전 비밀번호와 동일합니다. 다른 비밀번호를 입력해주세요.');
       return;
     }
 
     this.submit();
+	
   });
 });
+
+
 
 
 
@@ -154,7 +172,85 @@ $('.goodbye-btn').on('click', function(){
 
 
 
+// 검색 & 알림
 
+$('.search-btn').on('click', function() {
+	let searchCate = $('.drop-down').val();
+
+	if (searchCate == 'user') {
+		$.ajax({
+			url: '/mainAjaxOk.m',
+			type: 'get',
+			data: { input: $('.find-btn').val().trim() },
+			dataType: 'json',
+			success: function(result) {
+				console.log(result);
+				addUserInfo(result);
+				//$('.find-btn').val('');
+			},
+			error: function(a, b, c) {
+				console.log(c);
+			}
+		});
+	} else {
+		findPost($('.find-btn').val().trim());
+	}
+});
+// ================================================검색 Ajax==================================================== //
+
+function findPost(keyword) {
+	let form = document.createElement('form');
+	form.setAttribute('charset', 'utf-8');
+	form.setAttribute('method', 'get');
+	form.setAttribute('action', '/mainSearch.m');
+
+	var hiddenField = document.createElement("input");
+	hiddenField.setAttribute("type", "hidden");
+	hiddenField.setAttribute("name", "keyword");
+	hiddenField.setAttribute("value", keyword);
+	form.appendChild(hiddenField);
+
+	document.body.appendChild(form);
+	form.submit();
+}
+
+
+
+
+
+function addUserInfo(result) {
+
+
+	let text = '';
+
+	result.forEach(info => {
+		text += `
+			<div class="search-man">
+				<div class="man-left">
+					<a href="#"> <img
+						src="/upload/${info.userProfileImageSystemName}" alt="${info.userProfileImageSystemName}"
+						class="man-img" /> <!-- </a> -->
+					</a>
+				</div>
+				<div class="man-right">
+					<div class="man-id">
+						<a href="#"> ${info.userNickName} </a>
+						<!-- <a href="#" class="man-id2">hot_boy</a> -->
+					</div>
+					<div class="man-name">
+						${info.userName}
+					</div>
+				</div>
+				
+			</div>
+		`;
+	});
+
+	$('.recent-searches-box').html(text);
+}
+
+
+// 검색 & 알림
 
 
 

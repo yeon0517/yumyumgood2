@@ -89,7 +89,19 @@
 		on u.user_number = p.user_number
 		where p.post_title like concat('%',#{postTitle}, '%')
 	</select>
-
+	
+	<select id="selectOrderAll" parameterType="map" resultType="OrderVO">
+		select order_number, o.user_number,u.user_id , order_date, order_address, order_message, order_total_cost, order_status, order_recipient
+		from tbl_user u 
+		right outer join tbl_order o
+		on u.user_number=o.user_number
+		limit #{orderStartRow}, #{rowCount}
+	</select>
+	
+	<select id="getOrderTotal" resultType="_int">
+		select count(order_number)
+		from tbl_order
+	</select>
 
 
 

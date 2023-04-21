@@ -16,7 +16,7 @@ public class YoupageFollowController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
+
 		FollowDAO followDAO = new FollowDAO();
 		FollowDTO followDTO = new FollowDTO();
 		HttpSession session = req.getSession();
@@ -36,8 +36,7 @@ public class YoupageFollowController implements Execute {
 		
 		 followDTO.setFollowNumber(followNumber);
 		 followDTO.setFollowingNumber(followingNumber);
- 
-		 
+
 		if(followDAO.checkFollow(followDTO)==null) {
 			followDAO.insertFollow(followDTO);
 			out.print(true+ "," + followDAO.getFollowCount(followingNumber));

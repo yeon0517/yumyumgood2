@@ -39,31 +39,33 @@
 							<div class="profile">
 								<div class="imgbox-div">
 									<div class="img-box">
-											<c:choose>
-													<c:when test="${empty profileImage.getUserProfileImageSystemName()}">
-														<img
-															src="https://www.thechooeok.com/common/img/default_profile.png"
-																alt="${profileImage.getUserProfileImageSystemName()}"
-																class="profile-image" />
-													</c:when>
-													<c:otherwise>
-														<img
-															src="${pageContext.request.contextPath}/upload/${profileImage.getUserProfileImageSystemName()}"
-																alt="${profileImage.getUserProfileImageSystemName()}"
-																class="profile-image" />
-													</c:otherwise>
-												</c:choose>
+										<c:choose>
+											<c:when
+												test="${empty profileImage.getUserProfileImageSystemName()}">
+												<img
+													src="https://www.thechooeok.com/common/img/default_profile.png"
+													alt="${profileImage.getUserProfileImageSystemName()}"
+													class="profile-image" />
+											</c:when>
+											<c:otherwise>
+												<img
+													src="${pageContext.request.contextPath}/upload/${profileImage.getUserProfileImageSystemName()}"
+													alt="${profileImage.getUserProfileImageSystemName()}"
+													class="profile-image" />
+											</c:otherwise>
+										</c:choose>
 									</div>
 								</div>
 								<div class="profile-box">
 									<div class="nickname-box">
 										<p class="manager-id">${manager.getUserId()}</p>
 										<div class="manage">
-											<a href="${pageContext.request.contextPath}/user/profileEdit.edit">프로필 편집</a>
+											<a
+												href="${pageContext.request.contextPath}/user/profileEdit.edit">프로필
+												편집</a>
 										</div>
-										<div>
-											<a href="#"><img src="../img/managerImg/setting.png"
-												alt="" id="설정" /></a>
+										<div class="ingredient-insert">
+											<a href="/manager/ingredietnInsert.manager"> 재료추가 </a>
 										</div>
 									</div>
 									<div class="follow-box">
@@ -233,7 +235,7 @@
 												<span class="btn-span"> <i
 													class="fa-solid fa-magnifying-glass "></i></span>
 											</button>
-											
+
 										</div>
 										<table class="post-table">
 											<tbody>
@@ -257,11 +259,13 @@
 																<tr>
 																	<td class="post-number">${post.getPostNumber()}</td>
 																	<td class="post-title">
-																		<!--해당 게시물페이지 경로  --> <a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}">
+																		<!--해당 게시물페이지 경로  --> <a
+																		href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}">
 																			${post.getPostTitle()} </a>
 																	</td>
 																	<td class="post-user-Id">
-																		<!--해당 유저페이지 경로  --> <a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}">
+																		<!--해당 유저페이지 경로  --> <a
+																		href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}">
 																			${post.getUserId() } </a>
 																	</td>
 																	<td class="post-view-count">
@@ -293,8 +297,8 @@
 
 												<c:if test="${postPrev}">
 													<li><a
-														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postStartPage - 1}" data-postPage="${postStartPage - 1}"
-														class="prev">&lt;</a></li>
+														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postStartPage - 1}"
+														data-postPage="${postStartPage - 1}" class="prev">&lt;</a></li>
 												</c:if>
 
 												<c:forEach var="j" begin="${postStartPage}"
@@ -302,12 +306,14 @@
 													<c:choose>
 														<c:when test="${!(j == postPage) }">
 															<li><a
-																href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}" data-postPage="${j}">
-																	<c:out value="${j}" />
+																href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}"
+																data-postPage="${j}"> <c:out value="${j}" />
 															</a></li>
 														</c:when>
 														<c:otherwise>
-															<li><a href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}" data-postPage="${j}" class="active"> <c:out
+															<li><a
+																href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${j}"
+																data-postPage="${j}" class="active"> <c:out
 																		value="${j}" />
 															</a></li>
 														</c:otherwise>
@@ -316,8 +322,8 @@
 
 												<c:if test="${postNext}">
 													<li><a
-														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postEndPage + 1}" data-postPage="${postEndPage + 1}"
-														class="next">&gt;</a></li>
+														href="${pageContext.request.contextPath}/manager/managerPostOk.manager?postPage=${postEndPage + 1}"
+														data-postPage="${postEndPage + 1}" class="next">&gt;</a></li>
 												</c:if>
 
 
@@ -327,56 +333,66 @@
 								</form>
 							</div>
 
+							<!-- 결제 관리  -->
 							<div>
 								<div class="manage-payment test" id="member-payment">
 									<div class="payment-serch">
 										<input type="text" name="paymentSerch" id="payment-serch"
 											placeholder="회원아이디를 입력하시오" />
 										<button>
-											<a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+											<a href="#"><i
+												class="fa-solid fa-magnifying-glass"></i></a>
 										</button>
-
 									</div>
 									<table class="payment-table">
-										<tr>
-											<th>번호</th>
-											<th>주소</th>
-											<th>아이디</th>
-											<th>금액</th>
-											<th>주문수량</th>
-											<th>삭제</th>
-										</tr>
+										<tbody>
+											<tr>
+												<th>주문번호</th>
+												<th>아이디</th>
+												<th>결제 금액</th>
+												<th>주문날짜</th>
+												<th>주문상태</th>
+												<th>확인</th>
+												<th>주문상제정보</th>
+												<th>주문상품</th>
 
-										<tr>
-											<td>1</td>
-											<td>강남구 어딘가</td>
-											<td><a href="">asd123@naver.com</a></td>
-											<td>15,000원</td>
-											<td><a href="#">2</a></td>
-											<td>
-												<div class="checkbox-c">
-													<a href="#"><input type="checkbox" name="payment"
-														class="payment-check-box" value="#결제번호" /></a>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td>강남구 어딘가</td>
-											<td><a href="">asd123@naver.com</a></td>
-											<td>15,000원</td>
-											<td><a href="#">2</a></td>
-											<td>
-												<div class="checkbox-c">
-													<a href="#"><input type="checkbox" name="payment"
-														class="payment-check-box" value="#결제번호" /></a>
-												</div>
-											</td>
-										</tr>
+												<!-- 눌렀을 때 주문한 재료 번호 , 재료이름, 주문수량, 배송메시지, 받는사람 -->
+											</tr>
+
+										
+										</tbody>
+
+
+										<!--이부분은 조금 나중에 ajax로 처리할듯  -->
+										<table class="order" style="display: none">
+											<tr>
+												<td>1</td>
+												<td>받는사람 : 나선욱</td>
+												<td>서울 강동구 아리수로 46 강력반21</td>
+												<td>빨리 와주세요 현기증 나니깐.</td>
+											</tr>
+										</table>
+										<table class="product" style="display: none">
+											<tr>
+												<td>1</td>
+												<td>새우</td>
+												<td>100g</td>
+												<td>2개</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>새우</td>
+												<td>100g</td>
+												<td>2개</td>
+											</tr>
+										</table>
+										<!--이부분은 조금 나중에 ajax로 처리할듯  -->
+
 
 									</table>
+
 									<button class="button">결제 삭제</button>
-									<div class="pagination">
+									<div class="pagination order-page">
 										<ul>
 											<!-- ========== 페이징 처리 예시 ============ -->
 											<li><a href="#" class="prev">&lt;</a></li>

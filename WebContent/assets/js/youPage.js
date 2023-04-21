@@ -47,6 +47,8 @@ function showFollow(result) {
 	$('.followCnt').text(followCount);
 
 }
+
+
 //===================##===================
 
 
@@ -106,6 +108,7 @@ $search.click(() => {
 
 	$(".sub-find").toggleClass("sub-find__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
+
 });
 
 $(function() {
@@ -132,6 +135,7 @@ $search2.click(() => {
 
 	$(".sub-find2").toggleClass("sub-find2__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
+
 });
 
 $(function() {

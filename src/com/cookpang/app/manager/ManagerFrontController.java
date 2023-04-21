@@ -53,6 +53,15 @@ public class ManagerFrontController extends HttpServlet {
 		case "/manager/postSerchOk.manager":
 			new PostSerchOkController().execute(req, resp);
 			break;
+		case "/manager/ingredietnInsert.manager":
+			new IngredietnInsertController().execute(req, resp);
+			break;
+		case "/manager/ingredietnInsertOk.manager":
+			new IngredietnInsertOkController().execute(req, resp);
+			break;
+		case "/manager/managerOrderOk.manager":
+			new ManagerOrderListOkController().execute(req, resp);
+			break;
 		}
 
 }

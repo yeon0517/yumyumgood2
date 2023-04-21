@@ -28,4 +28,15 @@ public class IngredientDAO {
 		return sqlSession.selectOne("ingredient.totalPrice" , recipeIngredientDTO);
 		
 	}
+	
+	public void insert(IngredientDTO ingredientDTO){
+		 sqlSession.insert("ingredient.insert" , ingredientDTO);
+	}
+	
+	public int getSequence(){
+		return sqlSession.selectOne("ingredient.getSequence");
+	}
+	
+	
+	
 }

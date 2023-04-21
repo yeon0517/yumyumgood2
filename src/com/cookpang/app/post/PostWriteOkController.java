@@ -50,10 +50,10 @@ public class PostWriteOkController implements Execute {
 		String uploadPath = req.getSession().getServletContext().getRealPath("/") + "upload/";
 		int fileSize = 1024 * 1024 * 5; // 5MB
 		System.out.println(uploadPath);
+		
+		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8", new DefaultFileRenamePolicy());
 
-		MultipartRequest multipartRequest = new MultipartRequest(req, uploadPath, fileSize, "utf-8",
-				new DefaultFileRenamePolicy());
-
+		
 		String[] ingredientNumbers = multipartRequest.getParameterValues("ingredientNumber");
 		String[] ingredientQuantities = multipartRequest.getParameterValues("ingredientQuantity");
 //	      String[] ingredientNames = Request.getParameterValues("ingredientName");
@@ -85,6 +85,8 @@ public class PostWriteOkController implements Execute {
 		postDAO.insert(postDTO);
 		postNumber = postDAO.getSequence();
 
+		System.out.println("++++++++++++++++++++++++");
+		System.out.println(postNumber);
 		for (int i = 0; i < ingredientNumbers.length; i++) {
 			String ingredientNumber = ingredientNumbers[i];
 			String ingredientQuantity = ingredientQuantities[i];
@@ -128,10 +130,15 @@ public class PostWriteOkController implements Execute {
 		while (fileNames.hasMoreElements()) {
 //        	이터레이터의 next()
 			String name = fileNames.nextElement();
-
+			
+			System.out.println(name);
+			
 			String fileSystemName = multipartRequest.getFilesystemName(name);
 			String fileOriginalName = multipartRequest.getOriginalFileName(name);
 
+			System.out.println(fileSystemName);
+			System.out.println(fileOriginalName);
+			
 			if (fileSystemName == null) {
 				continue;
 			}

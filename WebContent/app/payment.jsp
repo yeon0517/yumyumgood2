@@ -67,7 +67,7 @@
 				<div class="Payment-body-main">
 					<!--아코디언메뉴-->
 					<form
-						action="${pageContext.request.contextPath}/order/orderList.or"
+						action="${pageContext.request.contextPath}/order/orderListOk.or?orderNumber=${cost.getOrderNumber()}"
 						method="post">
 						<!--맨마지막 버튼 이후에 닫기있음-->
 						<div class="que">
@@ -161,8 +161,10 @@
 				<div class="Payment-body-footer">
 					<div class="amount">
 						<p>결제 금액</p>
-						<strong style="color: red;"> ${cost.getOrderTotalCost()+3000} 원 </strong>
+						<strong style="color: red;" > ${cost.getOrderTotalCost()+3000} 원 </strong>
+						 <input type="hidden" name="paymentAmount" value="${cost.getOrderTotalCost()+3000}" />
 					</div>
+					
 
 					<div class="amount-tag">
 						<p>총 상품금액</p>
@@ -184,31 +186,30 @@
 						<ul class="pay-radio">
 
 							<li>
-								<div class="radioButton">
-									<input type="radio" id="card" name="payMethod"> <label
+									<input type="radio" id="card" name="paymentMethod" value="신용카드"> <label
 										for="card"> <span>신용카드</span>
 									</label>
 							</li>
 
-							<li><input type="radio" id="card" name="payMethod">
-								<label for="card"> <span>휴대폰</span>
+							<li><input type="radio" id="phone" name="paymentMethod" value="휴대폰">
+								<label for="phone"> <span>휴대폰</span>
 							</label></li>
 
 
-							<li><input type="radio" id="card" name="payMethod">
-								<label for="card"> <span>무통장 입금</span>
+							<li><input type="radio" id="bank" name="paymentMethod" value="무통장 입금">
+								<label for="bank"> <span>무통장 입금</span>
 							</label></li>
 
-							<li><input type="radio" id="card" name="payMethod">
-								<label for="card"> <span>payco</span>
+							<li><input type="radio" id="payco" name="paymentMethod" value="payco">
+								<label for="payco"> <span>payco</span>
 							</label></li>
 
-							<li><input type="radio" id="card" name="payMethod">
-								<label for="card"> <span>네이버페이</span>
+							<li><input type="radio" id="naverpay" name="paymentMethod" value= "네이버페이">
+								<label for="naverpay"> <span>네이버페이</span>
 							</label></li>
 
-							<li><input type="radio" id="card" name="payMethod">
-								<label for="card"> <span>카카오페이</span>
+							<li><input type="radio" id="kakaopay" name="paymentMethod" value= "카카오페이">
+								<label for="kakaopay"> <span>카카오페이</span>
 							</label></li>
 						</ul>
 					</div>

@@ -45,6 +45,8 @@
 
 		<typeAlias type="com.cookpang.app.post.save.vo.PostSaveVO" alias="PostSaveVO"/>
 		
+		<typeAlias type="com.cookpang.app.payment.vo.PaymentVO" alias="PaymentVO"/>
+		
 		
 	</typeAliases>
 	

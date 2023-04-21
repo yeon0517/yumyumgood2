@@ -15,6 +15,8 @@ public class OrderVO {
     private int orderItemQuantity;
     private	int ingredientPrice ;
     private String userName;
+    private String userId;
+    private String orderDate;
 
     public OrderVO() {}
 
@@ -114,16 +116,34 @@ public class OrderVO {
 		this.userName = userName;
 	}
 
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public String getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderVO [orderNumber=" + orderNumber + ", userNumber=" + userNumber + ", userPhoneNumber="
 				+ userPhoneNumber + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", orderMessage="
 				+ orderMessage + ", orderTotalCost=" + orderTotalCost + ", orderStatus=" + orderStatus
 				+ ", ingredientName=" + ingredientName + ", orderItemQuantity=" + orderItemQuantity
-				+ ", ingredientPrice=" + ingredientPrice + ", userName=" + userName + "]";
+				+ ", ingredientPrice=" + ingredientPrice + ", userName=" + userName + ", userId=" + userId
+				+ ", orderDate=" + orderDate + "]";
 	}
 
-
+	
+    
 	
 
 

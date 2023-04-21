@@ -403,6 +403,22 @@ a {
   justify-content: space-around;
 }
 
+.ok-amount{
+	 width: 165px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.ok-orderStatus{
+	 width: 165px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .purchase-ok1 {
   /* background-color: orange; */
   width: 100%;
@@ -557,11 +573,14 @@ a {
   width: 85%;
 }
 
-.next-page {
+.next-page1 {
   /* background-color: violet; */
   width: 830px;
   height: 40px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .next-page3 {
@@ -569,6 +588,9 @@ a {
   width: 830px;
   height: 40px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .next-page2 {
@@ -576,6 +598,9 @@ a {
   width: 830px;
   height: 40px;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* 페이징 스타일 */
 .paging {
@@ -734,7 +759,7 @@ footer > div {
 /* 모달 내용 스타일 */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 165px auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 25px;
@@ -968,7 +993,7 @@ a {
 /* 모달 내용 스타일 */
 .modal-content2 {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: 165px auto;
   padding: 20px;
   border: 1px solid #888;
   border-radius: 25px;

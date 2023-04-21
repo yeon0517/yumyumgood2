@@ -16,6 +16,18 @@
 		where tri.post_number = #{postNumber} and ti.ingredient_number = #{ingredientNumber} ;
 
 	</select>
+	
+	<insert id="insert" parameterType="IngredientDTO">
+		insert into tbl_ingredient
+		(ingredient_name, ingredient_price, ingredient_smallest_unit, ingredient_category_number, ingredient_more_info)
+		values(#{ingredientName}, #{ingredientPrice}, #{ingredientSmallestUnit}, #{ingredientCategoryNumber}, #{ingredientMoreInfo})
+	</insert>
+	
+	<select id="getSequence" resultType="_int">
+		select last_insert_id()
+	</select>
+	
+	
 
 </mapper>
 
