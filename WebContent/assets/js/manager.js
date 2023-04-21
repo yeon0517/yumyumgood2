@@ -263,7 +263,7 @@ function showOrder(target) {
 function showOrderProducts(target) {
   let productsRow = $(target)
     .closest("tr")
-    .nextAll("tr.order-itemLIst")
+    .nextAll("tr.order-itemList")
     .first();
 
   if (productsRow.css("display") === "none") {
@@ -343,6 +343,22 @@ function updateOrderTable(orderResult) {
 				<button onclick="showOrderProducts(this)">주문상품보기</button>
 			</td>
 	</tr>
+	
+                          <tr class="order-info" style="display: none ;" >
+                            <td></td>
+                            <td colspan="1">받는사람 : <br> ${order.orderRecipient} </td>
+                            <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
+                            <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
+                         </tr>
+ 
+                          <tr class="order-itemList"  style="display: none ;">
+                            <td></td>
+                            <td colspan="1">새우</td>
+                            <td colspan="3">100g</td>
+                            <td colspan="3">2개</td>
+                          </tr>
+                         
+                        </tr>
 			`);
 	});
 	
@@ -414,8 +430,8 @@ function orderStatusAjax(orderNumber,orderStatus) {
 					/*orderPage: orderPage*/
 				},
 		success: function(result){
-			console.log('주문상태변경 ajax연결 성공')
-			/*updateOrderPage(orderPage);*/
+			console.log('주문상태변경 ajax연결 성공');
+			alert('주문상태가 변경되었습니다.');
 		} ,
 		
 		error: (xhr, status, error) => console.log(error),
