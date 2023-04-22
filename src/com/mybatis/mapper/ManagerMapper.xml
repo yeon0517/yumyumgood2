@@ -95,6 +95,8 @@
 		from tbl_user u 
 		right outer join tbl_order o
 		on u.user_number=o.user_number
+		order by
+		o.order_number desc
 		limit #{orderStartRow}, #{rowCount}
 	</select>
 	

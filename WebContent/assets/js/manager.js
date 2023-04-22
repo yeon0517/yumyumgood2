@@ -231,7 +231,6 @@ function updatePostTable(postResult) {
 $(".post-page a").on("click", function(e) {
 	e.preventDefault();
 	updatePostPage($(this).data('postpage'));
-	console.log('aaaa')
 });
 
 $('.post-serch-btn').on('click', function() {
@@ -265,21 +264,29 @@ function showOrderProducts(target) {
     .closest("tr")
     .nextAll("tr.order-itemList")
     .first();
+  
+  let orderNumber = $(target).data("ordernumber");
+  console.log(orderNumber);
 
   if (productsRow.css("display") === "none") {
     productsRow.css("display", "table-row");
+	orderItemAjax(orderNumber);
+
+
   } else {
     productsRow.css("display", "none");
   }
 }
+
+
+
+
 
 // ==========결제 관리 js======
 
 let orderSearchMode = false;
 let orderPage = 1;
 
-console.log('으하하하하하')
-console.log(orderPage)
 
 updateOrderPage(orderPage)
 function updateOrderPage(orderPage) {
@@ -340,7 +347,7 @@ function updateOrderTable(orderResult) {
 			</td>
 			<td><button onclick="showOrder(this)">상세정보보기</button></td>
 			<td>
-				<button onclick="showOrderProducts(this)">주문상품보기</button>
+				<button onclick="showOrderProducts(this)" data-orderNumber="${order.orderNumber}">주문상품보기</button>
 			</td>
 	</tr>
 	
@@ -352,11 +359,6 @@ function updateOrderTable(orderResult) {
                          </tr>
  
                           <tr class="order-itemList"  style="display: none ;">
-                            <td></td>
-                            <td colspan="1">새우</td>
-                            <td colspan="3">100g</td>
-                            <td colspan="3">2개</td>
-                          </tr>
                          
                         </tr>
 			`);
@@ -415,8 +417,6 @@ $('.payment-table').on('click', '.order-check-btn', function() {
 		
 	  orderStatusAjax(orderNumber,orderStatus );
 	/*주문상태변경하는 ajax들어가야함*/
-
-
 	
     });
 
@@ -438,59 +438,40 @@ function orderStatusAjax(orderNumber,orderStatus) {
 	});
 }
 
-/*얘 꽂아야됨*/
-/*<tr id="order-mmm">
-                        
-                          <td class="order-number"></td>
-                          <td class="order-user-id">rhjkhdklash</td>
-                          <td class="order-total-cost">12313</td>
-                          <td class="order-date">23.04.21</td>
-                          <td class="order-status">대기중</td>
-                          <td class="order-status-edit">
-                            <div class="checkbox-c">
-                              <button type="button" class="order-check-btn">
-                                확인
-                              </button>
-                              <input
-                                type="hidden"
-                                name="payment"
-                                class="payment-check-box"
-                                value="#결제번호"
-                              />
-                              <input
-                                type="hidden"
-                                name="orderUserNumber"
-                                class="payment-check-box"
-                                value="${order.userNumber}"
-                              />
-                            </div>
-                          </td>
-                         
-                          <td>
-                            <button onclick="showOrder(this)">정보보기</button>
-                          </td>
-                          <td>
-                            <button onclick="showOrderProducts(this)">
-                              주문상품보기
-                            </button>
-                          </td>
-                          
-                          <tr class="order-info" style="display: none ;" >
-                            <td>1</td>
-                            <td colspan="1">받는사람 : 나선욱</td>
-                            <td colspan="3">서울 강동구 아리수로 46 강력반21</td>
-                            <td colspan="3">빨리 와주세요 현기증 나니깐.</td>
-                          </tr>
-                          <tr class="order-itemLIst"  style="display: none ;">
-                            <td>1</td>
-                            <td colspan="1">새우</td>
-                            <td colspan="3">100g</td>
-                            <td colspan="3">2개</td>
-                          </tr>
-                         
-                        </tr>
-*/
 
+function orderItemAjax(orderNumber) {
+	$.ajax({
+		url: '/manager/orderItemListOk.manager',
+		type: 'get',
+		data: { orderNumber: orderNumber},
+		dataType: 'json',
+		success: function(result){
+			console.log(result);
+			getOrderItems(result);
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+}
+
+function getOrderItems(result) {
+	let text = '';
+	result.orderItems.forEach((item) => {
+		
+		
+	text +=	`
+			<td></td>
+       		<td colspan="1">${item.ingredientName}</td>
+       		<td colspan="2">${item.ingredientSmallestUnit}g</td>
+       		<td colspan="2">${item.ingredientPrice}원</td>
+       		<td colspan="3">${item.orderItemQuantity}개</td>
+			
+			`
+			
+	});
+		$(".order-itemList").html(text);
+
+}
 
 
 

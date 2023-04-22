@@ -65,6 +65,9 @@ public class ManagerFrontController extends HttpServlet {
 		case "/manager/orderStatusUpdateOk.manager":
 			new OrderStatusUpdateOkController().execute(req, resp);
 			break;
+		case "/manager/orderItemListOk.manager":
+			new OrderItemListOkController().execute(req, resp);
+			break;
 		}
 
 }
