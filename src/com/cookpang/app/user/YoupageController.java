@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cookpang.app.Execute;
+import com.cookpang.app.follow.dao.FollowDAO;
+import com.cookpang.app.follow.dto.FollowDTO;
 import com.cookpang.app.user.dao.UserDAO;
 import com.cookpang.app.user.vo.UserVO;
 
@@ -27,12 +29,22 @@ public class YoupageController implements Execute {
 		UserVO userVO = null;
 		userVO= userDAO.getProfileInfo(userNumber);
 		
-//		followDTO.setFollowNumber(userNumber);
-//		followDTO.setFollowingNumber(yourNumber);
-//		
-//		req.setAttribute("followStatus", followStatus);
 		
+		//===========================
+		FollowDAO followDAO = new FollowDAO();
+		FollowDTO followDTO = new FollowDTO();
 		
+		int followNumber = (int)session.getAttribute("userNumber");
+		int followingNumber =Integer.valueOf(req.getParameter("userNumber"));
+
+		boolean followStatus = false;
+		
+		 followDTO.setFollowNumber(followNumber);
+		 followDTO.setFollowingNumber(followingNumber);
+		 
+		 followStatus = followDAO.checkFollow(followDTO)==null?false:true;
+		 req.setAttribute("followStatus", followStatus);
+		//===========================
 
 		System.out.println(userVO);
 		

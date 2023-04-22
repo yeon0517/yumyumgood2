@@ -38,11 +38,12 @@ $tmpInput.on('change', function() {
 	$('.image-upload-wrap').css("display", "none");
 	$('.image-preview-wrap').css("display", "flex");
 
-
+	
 	let files = this.files;
 	console.log(files);
 
-
+	splitFile(files);
+	
 	//파일을 변경하면 원래 선택된 파일은 미리보기를 제거한다.
 	$fileList.html('');
 
@@ -70,6 +71,8 @@ $tmpInput.on('change', function() {
 });
 
 // 파일 분리해서 넣기
+
+
 
 function splitFile(files) {
 	
@@ -130,7 +133,7 @@ $('.preview-list').on('click', ".img-cancel-btn", function() {
 		console.log(`idx : ${idx}`)
 		console.log(`length : ${length}`)
 		checkEnd();
-		
+		splitFile(files);
 	});
 
 

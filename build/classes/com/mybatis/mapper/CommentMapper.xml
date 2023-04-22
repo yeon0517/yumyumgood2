@@ -29,7 +29,10 @@
 	delete from tbl_comment where user_number = #{userNumber}
 </delete>
 	
-	
+	<delete id="deleteByPostNumber" parameterType="_int">
+		delete from tbl_comment
+		where post_number =#{postNumber}
+	</delete>
 	
 
 </mapper>

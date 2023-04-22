@@ -2,9 +2,58 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="order">
-<delete id="delete" parameterType="_int">
-delete from tbl_order where user_number = #{userNumber}
-</delete>
+
+
+	<delete id="delete" parameterType="_int">
+		delete from tbl_order where
+		user_number = #{userNumber}
+	</delete>
+
+
+	<select id="orderInfo" parameterType="_int" resultType="UserDTO">
+		<!-- 파라미터 타입은 #{}의 타입을 의미하고 리절트타입은 OrderVO 에서 가져온다는 말 -->
+		select user_number, user_name,
+		user_phone_number,
+		user_email,user_address from tbl_user
+		where user_number
+		= #{userNumber}
+	</select>
+
+
+	<select id="defaultOrderInfo" parameterType="_int"
+		resultType="OrderVO">
+		select oi.order_item_number , oi.order_number ,
+		oi.ingredient_number , order_item_quantity ,
+		i.ingredient_name ,
+		i.ingredient_price
+		from tbl_order_item oi
+		join tbl_ingredient i ON
+		order_number = #{orderNumber} and oi.ingredient_number = i.ingredient_number
+	</select>
+
+	<select id="getSequnce" resultType="_int">
+		select last_insert_id()
+	</select>
+
+	<select id="cost" parameterType="_int" resultType="OrderDTO">
+		select
+		order_number , order_total_cost
+		from tbl_order to2
+		where order_number =
+		#{orderNumber}
+	</select>
+
+	<insert id="orderpay" parameterType="PaymentDTO" >
+		insert into tbl_payment
+		(order_number, payment_amount, payment_method)
+		values(#{orderNumber}, #{paymentAmount}, #{paymentMethod})
+	</insert>
+	
+	<update id="orderUpdate" parameterType="OrderDTO">
+	update  tbl_order
+	set order_address= #{orderAddress}, order_message= #{orderMessage}, order_recipient= #{orderRecipient}
+	where order_number=#{orderNumber}
+	</update>
 
 </mapper>
 

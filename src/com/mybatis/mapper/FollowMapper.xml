@@ -41,7 +41,17 @@
 		follow_number =#{followNumber}
 	</select>
 	
-
+	
+	
+	
+<select id="userFollower" resultType="FollowVO" parameterType="_int">
+select distinct tf.follow_number, tu.user_name, tu.user_nickname, tf.following_number,
+		tupi.user_profile_image_system_name
+		from tbl_user tu
+		left outer join tbl_user_profile_image tupi on tupi.user_number = tu.user_number
+		left outer join tbl_follow tf on tf.follow_number = tu.user_number 
+		where tf.following_number = #{followingNumber}
+</select>
 
 </mapper>
 
