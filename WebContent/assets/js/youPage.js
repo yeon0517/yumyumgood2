@@ -5,6 +5,7 @@ $('.profile-btn').on('click', '.profile-btn2', function() {
 
 function followAjax() {
 	let userNumber = $('.yourNumber').val();
+	
 	console.log(userNumber);
 	$.ajax({
 		url: '/user/youPageFollow.us',
@@ -239,7 +240,7 @@ function addUserInfo(result) {
 
 
 $('.follower').on('click', function() {
-	
+	console.log(userNumber);
 
 	$.ajax({
 		url: '/follow/followerAjax.fo',
@@ -275,7 +276,7 @@ function addUserInfo(result) {
 			<!-- 팔로워 이름, 아이디 -->
 			<div class="follower-nickname">
 					<div class="follower-nickname-box">
-						<a href="/user/youPage.us?userNumber=${userVO.getUserNumber()}">${info.userNickName}</a>
+						<a href="/user/youPage.us?userNumber=${info.userNumber}">${info.userNickName}</a>
 					</div>
 				<div class="follower-realname-box">${info.userName}</div>
 			</div>
