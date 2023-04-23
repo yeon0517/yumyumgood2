@@ -34,9 +34,10 @@
 
 
 	<select id="getTotalList" parameterType="_int" resultType="_int">
-		select count(order_number) 
-		from tbl_order
-		where user_number = #{userNumber}
+			select count(o.order_number)
+		from tbl_order o
+		join tbl_order_item toi 
+	on o.order_number = toi.order_number and user_number = #{userNumber}
 		
 	</select>
 
