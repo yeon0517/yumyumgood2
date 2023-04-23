@@ -64,6 +64,7 @@ public class FollowerAjaxController implements Execute {
 		
 			PrintWriter out = resp.getWriter();
 		    out.print(userList.toString());
+		    System.out.println(userList.toString());
 		    out.close();
 		
 	}
