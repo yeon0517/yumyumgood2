@@ -270,8 +270,7 @@ function showOrderProducts(target) {
 
   if (productsRow.css("display") === "none") {
     productsRow.css("display", "table-row");
-	orderItemAjax(orderNumber);
-
+	orderItemAjax(orderNumber,productsRow);
 
   } else {
     productsRow.css("display", "none");
@@ -357,10 +356,9 @@ function updateOrderTable(orderResult) {
                             <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
                             <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
                          </tr>
- 
-                          <tr class="order-itemList"  style="display: none ;">
-                         
-                        </tr>
+ 						<tr class="order-itemList"  style="display: none ;">
+            			/tr>
+                          
 			`);
 	});
 	
@@ -439,37 +437,49 @@ function orderStatusAjax(orderNumber,orderStatus) {
 }
 
 
-function orderItemAjax(orderNumber) {
+function orderItemAjax(orderNumber,productsRow) {
 	$.ajax({
 		url: '/manager/orderItemListOk.manager',
 		type: 'get',
 		data: { orderNumber: orderNumber},
 		dataType: 'json',
-		success: function(result){
+		success: function(result,target){
 			console.log(result);
-			getOrderItems(result);
+			getOrderItems(result,productsRow);
+
 		} ,
 		
 		error: (xhr, status, error) => console.log(error),
 	});
 }
 
-function getOrderItems(result) {
+function getOrderItems(result,productsRow) {
 	let text = '';
+	console.log(result);
+	console.log(productsRow);
+	console.log(productsRow.closest('tr'));
+	
+	productsRow.closest('tr').next().remove();
+	
 	result.orderItems.forEach((item) => {
-		
-		
-	text +=	`
+	text +=`
+			<tr class="order-itemList">
 			<td></td>
        		<td colspan="1">${item.ingredientName}</td>
        		<td colspan="2">${item.ingredientSmallestUnit}g</td>
        		<td colspan="2">${item.ingredientPrice}원</td>
        		<td colspan="3">${item.orderItemQuantity}개</td>
+            </tr>
 			
-			`
+			`;
 			
-	});
-		$(".order-itemList").html(text);
+	})
+	
+	
+	console.log(productsRow.closest('tr').find('.order-info'));
+	
+	productsRow.closest('tr').find('.order-info').after(text);
+	
 
 }
 
