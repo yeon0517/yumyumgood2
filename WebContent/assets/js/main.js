@@ -117,7 +117,7 @@ console.log(result);
 				<div class="man-left">
 					<a href="#"> <img
 						src="/upload/${info.userProfileImageSystemName}" alt="${info.userProfileImageSystemName}"
-						class="man-img" /> <!-- </a> -->
+						class="man-img" />
 					</a>
 				</div>
 				<div class="man-right">

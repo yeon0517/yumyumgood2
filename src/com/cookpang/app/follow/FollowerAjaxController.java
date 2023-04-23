@@ -17,6 +17,7 @@ import com.cookpang.app.follow.vo.FollowVO;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 public class FollowerAjaxController implements Execute {
@@ -24,22 +25,35 @@ public class FollowerAjaxController implements Execute {
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		FollowDAO followDAO = new FollowDAO();
-		FollowVO followVO = new FollowVO();
+//		FollowVO followVO = new FollowVO();
 		HttpSession session = req.getSession();
-		int followNumber = (int)session.getAttribute("userNumber");
+//		int followingNumber = (int)session.getAttribute("userNumber");
+		int followingNumber = Integer.parseInt(req.getParameter("userNumber"));
 //		int followNumber = Integer.parseInt(req.getParameter("userNumber"));
 //		int followingNumber =Integer.valueOf(req.getParameter("userNumber"));
 		
-		System.out.println(followNumber);
+		System.out.println(followingNumber);
 		System.out.println("ㅇㅇㅇㅇㅇㅇㅇ");
 		
-		List<FollowVO> users = followDAO.userFollower(followNumber); //DAO
+		List<FollowVO> users = followDAO.userFollower(followingNumber); //DAO
 	
 		Gson gson = new GsonBuilder().serializeNulls().create();
+		
 		JsonArray userList = new JsonArray();
+		JsonObject test = new JsonObject();
+		
+		test.add("followerList", userList);
+		
+		
+//		users.stream()
+//		.map(gson::toJson)
+//		.map(JsonParser::parseString)
+//		.forEach(userList::add);
 		
 		System.out.println(users);
 		System.out.println(userList);
+		
+		
 		
 		for(FollowVO user : users) {
 			String jsonString = gson.toJson(user);
