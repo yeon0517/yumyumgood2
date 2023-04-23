@@ -85,7 +85,7 @@ function showPostList(userNumber, page) {
 		}
 	});
 }
-$('.next-page').on('click', 'a', function(e){
+$('.next-page1 .paging').on('click', 'a', function(e){
 	e.preventDefault();
 	let userNumber = $(this).data('number');
 	let page = $(this).data('page');
@@ -227,11 +227,11 @@ showPaymentList(userNumber);
 	});
 }
 
-$('.next-page2').on('click', 'a', function(e){
+$('.next-page2 .paging').on('click', 'a', function(e){
 	e.preventDefault();
 	let userNumber = $(this).data('number');
 	let page = $(this).data('page');
-	postPaymentTable(userNumber, page);
+	showPaymentList(userNumber, page);
 });
 
 
@@ -254,7 +254,7 @@ console.log(paymentResult);
 	
 	
 	
-		pay = `  <div class="history-name">
+		pay = `<div class="history-name">
                      <div class="history-number">주문번호</div>
                      <div class="history-picture">상품사진</div>
                      <div class="history-name2">상품이름</div>
@@ -318,7 +318,7 @@ console.log(paymentResult);
 							</p>`
 			}else{
 				pagingPay += `<p class="paging-num">
-								<a href="" data-number=${paymentResultt.userPaymentList[0].userNumber} data-page=${i} >${i}</a>
+								<a href="" data-number=${paymentResult.userPaymentList[0].userNumber} data-page=${i} >${i}</a>
 							</p>`
 			}
 			
@@ -384,7 +384,7 @@ showLikeList(userNumber);
 	});
 }
 
-$('.next-page3').on('click', 'a', function(e){
+$('.pagingLike').on('click', 'a', function(e){
 	e.preventDefault();
 	let userNumber = $(this).data('number');
 	let page = $(this).data('page');
