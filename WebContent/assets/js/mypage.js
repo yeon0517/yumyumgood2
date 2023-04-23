@@ -235,9 +235,10 @@ $('.next-page2').on('click', 'a', function(e){
 });
 
 
-/*console.log(paymentResult);*/
 
 function postPaymentTable(paymentResult){
+console.log("^^^^^^^^^^^^^^^^^");
+console.log(paymentResult);
 	
 	let pay = '';
 	
@@ -253,8 +254,6 @@ function postPaymentTable(paymentResult){
 	
 	
 	
-
-	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
 		pay = `  <div class="history-name">
                      <div class="history-number">주문번호</div>
                      <div class="history-picture">상품사진</div>
@@ -264,6 +263,8 @@ function postPaymentTable(paymentResult){
                      <div class="history-price">수량</div>
                      <div class="history-price">주문상태</div>
                   </div>`
+
+	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
 		 
 		pay += `<div class="purchase-ok1">
                      	<div class="ok-number">${paymentResult.userPaymentList[i].orderNumber}</div>

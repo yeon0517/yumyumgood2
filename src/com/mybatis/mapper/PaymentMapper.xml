@@ -27,7 +27,8 @@
 		join tbl_ingredient i ON oi.ingredient_number = i.ingredient_number
 		left join tbl_ingredient_image ii ON i.ingredient_number =
 		ii.ingredient_number
-		where o.user_number = #{userNumber};
+		where o.user_number = #{userNumber}
+		order by order_number
 
 	</select>
 
