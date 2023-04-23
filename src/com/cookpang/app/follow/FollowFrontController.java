@@ -28,6 +28,9 @@ public class FollowFrontController extends HttpServlet{
 		case "/follow/followerAjax.fo" :
 			new FollowerAjaxController().execute(req, resp);
 			break;
+		case "/follow/followingAjax.fo" :
+			new FollowingAjaxController().execute(req, resp);
+			break;
 		}
 	}
 

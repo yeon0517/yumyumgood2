@@ -648,6 +648,77 @@ function addUserInfo(result) {
 
 
 
+// myPage 팔로잉 리스트 뽑기
+$('.following').on('click', function() {
+	console.log(userNumber);
+
+	$.ajax({
+		url: '/follow/followingAjax.fo',
+		type: 'get',
+		data : { userNumber:userNumber },
+		dataType: 'json',
+		success: function(result) {
+			console.log(result);
+			addFollowingInfo(result);
+		},
+		error: function(xhr, status, error) {
+			console.log(error);
+		}
+	});
+});
+
+
+
+function addFollowingInfo(result) {
+
+
+	let text = '';
+	console.log(result);
+	result.forEach(info => {
+		text += `
+		<div class="following-box1">
+			<!-- 팔로워 프로필 사진 -->
+			 <div class="following-img">
+		
+			`
+		if(info.userProfileImageSystemName==null){
+			text+=	`
+			<img
+		src="https://www.thechooeok.com/common/img/default_profile.png"
+				alt="${info.userProfileImageSystemName}" class="following-img2" />
+				
+				`
+				
+			}else {
+				text+=	`		
+					<img
+				src="/upload/${info.userProfileImageSystemName}"
+						alt="${info.userProfileImageSystemName}" class="following-img2" />
+						
+						`
+			}
+			
+			text+=	`
+			</div>		
+			<!-- 팔로워 이름, 아이디 -->
+			<div class="following-nickname">
+					<div class="following-nickname-box">
+						<a href="/mypage/mypageOk.my?userNumber=${info.userNumber}">${info.userNickName}</a>
+					</div>
+				<div class="following-realname-box">${info.userName}</div>
+			</div>
+			<!-- 팔로워 취소 버튼 -->
+			<div class="following-cancel">
+								
+			</div>
+		</div>
+		`;
+	});
+
+	$('.main-following').html(text);
+	console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+}
+
 
 
 

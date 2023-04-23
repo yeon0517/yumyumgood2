@@ -293,6 +293,125 @@ function addUserInfo(result) {
 
 
 
+showPostList(userNumber);
+
+function showPostList(userNumber, page) {
+	$.ajax({
+		url: '/mypage/mypageListOk.my',
+		type: 'get',
+		data: {
+			userNumber: userNumber,
+			page : page
+		},
+		dataType: 'json',
+		success: function(result) {
+			postListTable(result);
+			paging(result)
+		}
+	});
+}
+$('.paging').on('click', 'a', function(e){
+	e.preventDefault();
+	let userNumber = $(this).data('number');
+	let page = $(this).data('page');
+	showPostList(userNumber, page);
+});
+//======================================================
+
+function paging(result) {
+	console.log("================");
+	console.log(result);
+	
+	if(result.userPost.length == 0){
+		return;
+	}
+	let page = '';
+
+	
+
+
+	page += `
+	
+						<p class="paging-btn-prev">
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.startPage - 1}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
+									alt="" class="direction"  />
+								</a>
+						</p>`
+	for(let i = result.startPage; i<=result.endPage; i++){
+		
+			if(i == result.page){
+				page += `<p class="paging-num">
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${i} class="active">${i}</a>
+							</p>`
+			}else{
+				page += `<p class="paging-num">
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${i} >${i}</a>
+							</p>`
+			}
+			
+		
+	}
+			page += `	<p class="paging-btn-next">
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.Endpage + 1}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_next.jpg"
+									alt="다음으로"  />
+								</a>
+							</p>
+							<p class="paging-btn" id="paging-last" >
+								<a href="" data-number=${result.userPost[0].userNumber} data-page=${result.realEndPage}> <img
+									src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
+									alt="마지막으로" />
+								</a>
+							</p>`
+		
+		$(".paging").html(page);				
+						
+					
+		
+
+
+}
+
+
+function postListTable(result) {
+
+	let text = '';
+
+		if(result.userPost.length == 0){
+			console.log("@@@@@@@@@@@@@@@");
+			text+= `	<div>
+									<h1>아직 등록된 게시글이 없습니다!</h1>
+								</div>
+			
+			`;
+			
+		}
+		
+	for (let i = 0; i < result.userPost.length; i++) {
+		if (i % 3 == 0) {
+			text += `	<div class="ccc">`;
+		}
+
+		text += `
+						<div class="bbb">
+							<a href="/post/postReadOk.po?postNumber=${result.userPost[i].postNumber}" class="go-post"> <img
+								src="/upload/${result.userPost[i].postThumbnail}"
+								class="thumbnail-img" />
+							</a>
+						</div>
+		`;
+
+		if (i % 3 == 2) {
+			text += `
+				</div>
+			`;
+		}
+
+	}
+	$(".main-bottom").html(text);
+
+}
 
 
 
