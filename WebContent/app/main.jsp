@@ -40,18 +40,21 @@
 								src="${pageContext.request.contextPath}/assets/img/main/trophy.PNG"
 								alt="" style="max-width: 100%; max-height: 100%;">
 						</div>
-						<c:forEach var="rank" begin="1" end="8">
+						<c:forEach var="rank" begin="0" end="8" step="1" items="${rankTotal}" varStatus="status">
 							<c:choose>
 								<c:when test="${not empty rankTotal}">
 									<div class="rank-round">
-										<a href="#" class="rank-a">
+										<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${rank.getPostNumber()}" class="rank-a">
 											<div class="rank-img">
 												<%-- https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300 이미지에 넣는거--%>
-												<img src="${post.getFiles()}"
-													alt="${post.getPostFileSystemName()}">
+												<img src="${rank.getPostThumbnail()}"
+													alt="">
 
 											</div>
-										</a> <span class="number">${rank}</span>
+										</a> 
+										<span class="number">
+										<c:out value = "${status.count}"/>
+										</span>
 									</div>
 
 								</c:when>
@@ -137,23 +140,23 @@
 						<a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=1">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_1_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/rice.png"
+								alt="rice">
 								<p class="category-name">밥요리</p>
 						</a></li>
 						<li class="category-box" data-id="2"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=2">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_2_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/cooking.png"
+								alt="cooking">
 								<p class="category-name">국&탕</p>
 
 						</a></li>
 						<li class="category-box" data-id="3"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=3">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_3_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/soup.png"
+								alt="soup" style="margin-left: 13px;">
 								<p class="category-name">찌개&전골</p>
 
 
@@ -161,105 +164,96 @@
 						<li class="category-box" data-id="5"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=5">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_4_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/kimchi.png"
+								alt="kimchi">
 								<p class="category-name">밑반찬</p>
 
 						</a></li>
 						<li class="category-box" data-id="4"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=4">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_5_off.jpg"
-								alt="" class="category-img" id="category-img1">
+								src="${pageContext.request.contextPath}/assets/img/main/stir.png"
+								alt="stir">
 								<p class="category-name">볶음요리</p>
 
 						</a></li>
 						<li class="category-box" data-id="15"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=15">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_6_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/beefsteak.png"
+								alt="beefsteak" style="margin-left: 22px;">
 								<p class="category-name">구이(고기/생선)</p>
 
 						</a></li>
 						<li class="category-box" data-id="6"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=6">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_7_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/dumplings.png"
+								alt="dumplings" style="margin-left: 5px;">
 								<p class="category-name">찜&조림</p>
 
 						</a></li>
 						<li class="category-box" data-id="11"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=11">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_12_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/fried.png"
+								alt="fried">
 								<p class="category-name">튀김</p>
 
 						</a></li>
 						<br>
 						<li class="category-box" data-id="8"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=8">
-								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_13_off.jpg"
-								alt="" class="category-img">
+								<img alt="noodle" src="${pageContext.request.contextPath}/assets/img/main/noodles.png">
 								<p class="category-name">국수</p>
 
 						</a></li>
 						<li class="category-box" data-id="10"><a class="recipe-category"
-							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=10">
+							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=10">	
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_15_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/sushi.png"
+								alt="sushi" style="margin-left: 17px;">
 								<p class="category-name">김밥&초밥</p>
 
 						</a></li>
 						<li class="category-box" data-id="7"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=7">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_16_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/chicken.png"
+								alt="chicken" style="margin-left: 17px;">
 								<p class="category-name">야식&술안주</p>
 
 						</a></li>
 						<li class="category-box" data-id="12"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=12">
-								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_17_off.jpg"
-								alt="" class="category-img">
+								<img alt="spaghetti" src="${pageContext.request.contextPath}/assets/img/main/spaghetti.png"
+								style="margin-left: 8px;">
 								<p class="category-name">스파게티</p>
 
 						</a></li>
 						<li class="category-box" data-id="13"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=13">
-								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_18_off.jpg"
-								alt="" class="category-img">
+								<img alt="korean" src="${pageContext.request.contextPath}/assets/img/main/korean.png" style="margin-left: 13px;">
 								<p class="category-name">간식&분식</p>
 
 						</a></li>
 						<li class="category-box" data-id="14"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=14">
-								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_21_off.jpg"
-								alt="" class="category-img">
+								<img alt="coffee" src="${pageContext.request.contextPath}/assets/img/main/coffee-mug.png">
 								<p class="category-name">디저트</p>
 
 						</a></li>
 						<li class="category-box" data-id="9"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=9">
-								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_14_off.jpg"
-								alt="" class="category-img">
+								<img alt="salad" src="${pageContext.request.contextPath}/assets/img/main/salad.png">
 								<p class="category-name">샐러드</p>
 
 						</a></li>
 						<li class="category-box" data-id="16"><a class="recipe-category"
 							href="${pageContext.request.contextPath}/mainOk.m?categoryNumber=16">
 								<img
-								src="https://2bob.co.kr/skin/nodskin_argio/images/tag_icon_19_off.jpg"
-								alt="" class="category-img">
+								src="${pageContext.request.contextPath}/assets/img/main/sandwich.png"
+								alt="sandwich" style="margin-left: 29px;">
 								<p class="category-name">토스트&샌드위치</p>
 
 						</a></li>
@@ -286,7 +280,7 @@
 
 									</a>
 									<div class="text-box">
-										<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}" class="text-nick">${post.getUserNickName()}</a><br>
+										<a href="${pageContext.request.contextPath}/user/youPage.us?userNumber=${info.userNumber}" class="text-nick">${post.getUserNickName()}</a><br>
 										<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${post.getPostNumber()}" class="text-title">${post.getPostTitle()}</a>
 									</div>
 								</div>
@@ -380,7 +374,9 @@
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">CookPang</a></li>
+					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">
+						<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
+					</a></li>
 
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
@@ -408,7 +404,7 @@
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
+								<i class="fa-regular fa-bookmark"></i> <a href="  ${pageContext.request.contextPath}/mypage/mypageOk.my ">찜한 레시피</a>
 							</div>
 						</li>
 				<li class="sidebar-li">
@@ -533,18 +529,19 @@
 					</div>
 					<div class="alarm-box">
 						<div class="new-alarm">
-							<div>
+						준비중인 서비스 입니다.
+							<!-- <div>
 								<h4 class="alarm-date">이번주</h4>
 							</div>
 							<div class="boxboxbox">
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -561,12 +558,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -583,12 +580,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -605,12 +602,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -627,12 +624,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -653,12 +650,12 @@
 									<div class="boxboxbox2">
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -675,12 +672,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -697,12 +694,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -719,12 +716,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -741,12 +738,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -762,7 +759,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</article>

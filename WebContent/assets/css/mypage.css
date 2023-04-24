@@ -211,7 +211,7 @@ a {
   width: 830px;
   height: 45px;
   margin: auto;
-  border-top: solid 1px rgb(157, 153, 153);
+  border-top: solid 1px #ffb27e;
   display: flex;
 }
 
@@ -233,7 +233,7 @@ a {
 }
 
 .active-banner {
-  border-top: solid 2px #7f8184;
+  border-top: solid 2px #ffa954;
   font-weight: bold;
 }
 /* .banner-name:hover {
@@ -404,6 +404,7 @@ h1{
 }
 .ok-date {
   /* background-color: #7d8084; */
+  
   width: 170px;
   height: 100%;
   display: flex;
@@ -517,15 +518,7 @@ h1{
     height: 100%;
 }
 
-.sidebar-name {
-   list-style: none;
-   margin-top: 70px;
-   margin-left: 30px;
-   font-size: 30px;
-   display: block;
-   cursor: pointer;
-   font-family: "Josefin Slab", serif;
-}
+
 
 .sidebar-ul {
    list-style: none;
@@ -537,6 +530,7 @@ h1{
 
 .sidebar-ul i {
    margin-right: 21px;
+   margin-left: 15px;
 }
 
 .sidebar-li {
@@ -866,6 +860,21 @@ a {
   padding-top:6px;
   overflow-y: scroll;
 }
+
+.main-following{
+	
+  /* background-color: violet; */
+  width: 418px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border: 1px solid #bcaeae;
+  border-radius: 5px;
+}
+	
+
 
 /* .main-page-box {
   width: 400px;
@@ -1560,3 +1569,18 @@ transition: all 0.1s ease;
 }
 
 /* 사이드바 css수정 & 추가 */
+
+.logo-img{
+	width: 160px;
+    height: 75px;
+}
+
+.sidebar-name {
+	list-style: none;
+	margin-top: 25px;
+	margin-left: 30px;
+	font-size: 30px;
+	display: block;
+	cursor: pointer;
+	font-family: "Josefin Slab", serif;
+}

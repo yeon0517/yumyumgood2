@@ -62,10 +62,10 @@
 						<!--작성창 상단 -->
 						<div class="write-box-header">
 
-							<div class="cancel-btn">
+							<button class="cancel-btn" type="button">
 								<!-- 뒤로가기 화살표 js로 처리-->
 								<i class="fa-solid fa-arrow-left"></i>
-							</div>
+							</button>
 
 							<div class="write-box-header-content">
 								<h3>레시피 등록</h3>
@@ -153,7 +153,19 @@
 								<div class="wirte-box-main-user-info">
 									<div class="write-box-user-profile-img">
 										<!-- 임시 프로필사진 -->
-										<img src="<%-- /upload/${ } --%>" alt="프로필사진" class="profile-img">
+										<c:choose>
+									<c:when test="${empty post.getUserProfileImageSystemName()}">
+										<img
+											src="https://www.thechooeok.com/common/img/default_profile.png"
+											alt="${pageContext.request.contextPath}${post.getUserProfileImageSystemName()}"
+											class="profile-img">
+									</c:when>
+									<c:otherwise>
+										<img src="${pageContext.request.contextPath}/upload/${post.getUserProfileImageSystemName()}"
+											alt="${post.getUserProfileImageSystemName()}"
+											class="profile-img">
+									</c:otherwise>
+								</c:choose>
 									</div>
 									<div class="write-box-user-id">
 

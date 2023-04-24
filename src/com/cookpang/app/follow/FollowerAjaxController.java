@@ -27,7 +27,6 @@ public class FollowerAjaxController implements Execute {
 		FollowDAO followDAO = new FollowDAO();
 //		FollowVO followVO = new FollowVO();
 		HttpSession session = req.getSession();
-//		int myNumber = (int)session.getAttribute("myNumber");
 		int followingNumber = Integer.parseInt(req.getParameter("userNumber"));
 //		int followNumber = Integer.parseInt(req.getParameter("userNumber"));
 //		int followingNumber =Integer.valueOf(req.getParameter("userNumber"));
