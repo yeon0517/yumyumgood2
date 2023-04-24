@@ -607,7 +607,9 @@
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="#">CookPang</a></li>
+					<li class="sidebar-name"><a href="#">
+						<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
+					</a></li>
 
 
 
@@ -726,18 +728,19 @@
 					</div>
 					<div class="alarm-box">
 						<div class="new-alarm">
-							<div>
+						준비중인 서비스 입니다.
+							<!-- <div>
 								<h4 class="alarm-date">이번주</h4>
 							</div>
 							<div class="boxboxbox">
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -760,12 +763,12 @@
                            <div class="boxboxbox2">
                               <div class="search-man">
                                  <div class="man-left2">
-                                    <!-- <a href="#"> -->
+                                    <a href="#">
                                     <a href="#"> <img
                                        src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
                                        alt="#" class="man-img" />
                                     </a>
-                                    <!-- </a> -->
+                                    </a>
                                  </div>
                                  <div class="alarm-right">
                                     <div class="alarm-id">
@@ -782,12 +785,12 @@
 
                               <div class="search-man">
                                  <div class="man-left2">
-                                    <!-- <a href="#"> -->
+                                    <a href="#">
                                     <a href="#"> <img
                                        src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
                                        alt="#" class="man-img" />
                                     </a>
-                                    <!-- </a> -->
+                                    </a>
                                  </div>
                                  <div class="alarm-right">
                                     <div class="alarm-id">
@@ -804,12 +807,12 @@
 
                               <div class="search-man">
                                  <div class="man-left2">
-                                    <!-- <a href="#"> -->
+                                    <a href="#">
                                     <a href="#"> <img
                                        src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
                                        alt="#" class="man-img" />
                                     </a>
-                                    <!-- </a> -->
+                                    </a>
                                  </div>
                                  <div class="alarm-right">
                                     <div class="alarm-id">
@@ -826,12 +829,12 @@
 
                               <div class="search-man">
                                  <div class="man-left2">
-                                    <!-- <a href="#"> -->
+                                    <a href="#">
                                     <a href="#"> <img
                                        src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
                                        alt="#" class="man-img" />
                                     </a>
-                                    <!-- </a> -->
+                                    </a>
                                  </div>
                                  <div class="alarm-right">
                                     <div class="alarm-id">
@@ -848,12 +851,12 @@
 
                               <div class="search-man">
                                  <div class="man-left2">
-                                    <!-- <a href="#"> -->
+                                    <a href="#">
                                     <a href="#"> <img
                                        src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
                                        alt="#" class="man-img" />
                                     </a>
-                                    <!-- </a> -->
+                                    </a>
                                  </div>
                                  <div class="alarm-right">
                                     <div class="alarm-id">
@@ -869,7 +872,7 @@
                               </div>
                            </div>
                         </div>
-                     </div>
+                     </div> -->
                   </div>
                </div>
             </article>

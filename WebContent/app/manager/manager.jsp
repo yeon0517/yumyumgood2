@@ -412,7 +412,9 @@
 			</div>
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="#">CookPang</a></li>
+					<li class="sidebar-name"><a href="#">
+						<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
+					</a></li>
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
 							<div class="li-box">
