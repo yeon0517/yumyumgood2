@@ -17,17 +17,22 @@ import com.cookpang.app.post.read.vo.PostReadVO;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
 public class YouPageListOkController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		HttpSession session = req.getSession();
-		int userNumber = Integer.valueOf(req.getParameter("userNumber"));
-//		int userNumber = 1;
+		req.setCharacterEncoding("utf-8");
 		PostDAO postDAO = new PostDAO();
+//		req.setCharacterEncoding("utf-8");
+		HttpSession session = req.getSession();
+		int userNumber = Integer.parseInt(req.getParameter("userNumber"));
+//		int userNumber = (int)session.getAttribute("userNumber");
+//		int userNumber = 1;
+		 
+		System.out.println(userNumber);
+		System.out.println("ㅇㅇㅇㅇㅇㅇㅇ");
+		
 		int total = postDAO.getUserPost(userNumber);
 		// 처음 게시판 페이지에 진입하면 페이지에 대한 정보가 없다
 		// 그러므로 temp에는 null이 들어가게 된다.
@@ -82,10 +87,10 @@ public class YouPageListOkController implements Execute {
 		List<PostReadVO> posts = postDAO.getPostAll(pageMap);
 		System.out.println(posts);
 
-		boolean checkPosts = posts.isEmpty();
-		System.out.println("*********");
-		System.out.println(checkPosts);
-		System.out.println("*********");
+//		boolean checkPosts = posts.isEmpty();
+//		System.out.println("*********");
+//		System.out.println(checkPosts);
+//		System.out.println("*********");
 		// Gson 객체를 생성하고, 이를 이용해 위에 설정한 리스트를 json 형태로 변환한다.
 		Gson gson = new Gson();
 		
@@ -123,7 +128,7 @@ public class YouPageListOkController implements Execute {
 		result.addProperty("endPage", endPage);
 		result.addProperty("page", page);
 		result.addProperty("realEndPage", realEndPage);
-		result.addProperty("checkPosts", checkPosts);
+//		result.addProperty("checkPosts", checkPosts);
 
 		
 		System.out.println("*******************");

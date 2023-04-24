@@ -127,7 +127,7 @@
 												</div>
 												<div class="close2">&times;</div>
 											</div>
-											<div class="main">
+											<div class="main-following">
 												<div class="main-page-box2">
 													<div class="main-page2">
 														<div class="following-box1">
@@ -748,8 +748,10 @@
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script >
+      
       let userNumber = "${userVO.getUserNumber()}";
       </script>
 	<script src="${pageContext.request.contextPath}/assets/js/youPage.js"></script>
+	
 </body>
 </html>

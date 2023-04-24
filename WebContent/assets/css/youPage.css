@@ -643,6 +643,18 @@ a {
   padding-top:6px;
 }
 
+.main-following{
+	 width: 418px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  border: 1px solid #bcaeae;
+  border-radius: 5px;
+  flex-direction:column;
+  padding-top:6px;
+}
+
 /* .main-page-box {
   width: 400px;
   height: 350px;

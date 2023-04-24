@@ -29,6 +29,7 @@
 		ii.ingredient_number
 		where o.user_number = #{userNumber}
 		order by order_number
+		limit #{startRow}, #{rowCount}
 
 	</select>
 
