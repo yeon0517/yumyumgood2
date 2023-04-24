@@ -49,7 +49,7 @@ SELECT follow_number, tu.*, tupi.user_profile_image_system_name
 from tbl_follow tf 
 join tbl_user tu 
 on following_number = #{followingNumber} and tf.follow_number  = tu.user_number 
-join tbl_user_profile_image tupi 
+left join tbl_user_profile_image tupi 
 on tu.user_number = tupi.user_number
 </select>
 
