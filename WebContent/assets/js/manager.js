@@ -259,24 +259,6 @@ function showOrder(target) {
   }
 }
 
-function showOrderProducts(target) {
-  let productsRow = $(target)
-    .closest("tr")
-    .nextAll("tr.order-itemList")
-    .first();
-  
-  let orderNumber = $(target).data("ordernumber");
-  console.log(orderNumber);
-
-  if (productsRow.css("display") === "none") {
-    productsRow.css("display", "table-row");
-	orderItemAjax(orderNumber);
-
-
-  } else {
-    productsRow.css("display", "none");
-  }
-}
 
 
 
@@ -322,7 +304,7 @@ function updateOrderTable(orderResult) {
 
 	orderResult.orders.forEach((order) => {
 		$(".payment-table tbody").append(`
-		<tr>
+		<tr class="order-list">
 			<td class="order-number">${order.orderNumber}</td>
 			<td class="order-user-id">${order.userId}</td>
 			<td class="order-total-cost">${order.orderTotalCost}</td>
@@ -351,17 +333,15 @@ function updateOrderTable(orderResult) {
 			</td>
 	</tr>
 	
-                          <tr class="order-info" style="display: none ;" >
-                            <td></td>
-                            <td colspan="1">받는사람 : <br> ${order.orderRecipient} </td>
-                            <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
-                            <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
-                         </tr>
- 
-                          <tr class="order-itemList"  style="display: none ;">
-                         
-                        </tr>
-			`);
+             <tr class="order-info" style="display: none ;" >
+               <td></td>
+               <td colspan="1">받는사람 : <br> ${order.orderRecipient} </td>
+               <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
+               <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
+            </tr>
+ 						
+			`
+			);
 	});
 	
 	let orderPageResult = '';
@@ -436,10 +416,38 @@ function orderStatusAjax(orderNumber,orderStatus) {
 		
 		error: (xhr, status, error) => console.log(error),
 	});
+} 
+
+
+
+function showOrderProducts(target) {
+  let productsRow = $(target).closest("tr");
+  let nextProductsRow= productsRow.nextAll('.order-list').first();
+  
+
+  let orderNumber = $(target).data("ordernumber");
+
+	
+	if (!productsRow.nextAll().hasClass("order-itemList")) {
+	$('.order-itemList').remove();
+		orderItemAjax(orderNumber,productsRow);
+	}else{
+	$('.order-itemList').remove();
+	}
+	
+	/*if(nextProductsRow.prev('.order-itemList').length==0){
+		
+	}else{
+		nextProductsRow.prevAll('.order-itemList').remove();
+		productsRow.nextUntil(nextProductsRow).filter(".order-itemList").remove();
+	}*/
+
+
+
 }
 
 
-function orderItemAjax(orderNumber) {
+function orderItemAjax(orderNumber,productsRow) {
 	$.ajax({
 		url: '/manager/orderItemListOk.manager',
 		type: 'get',
@@ -447,29 +455,35 @@ function orderItemAjax(orderNumber) {
 		dataType: 'json',
 		success: function(result){
 			console.log(result);
-			getOrderItems(result);
+			getOrderItems(result,productsRow);
+
 		} ,
 		
 		error: (xhr, status, error) => console.log(error),
 	});
 }
 
-function getOrderItems(result) {
+function getOrderItems(result,productsRow) {
 	let text = '';
+	
+	
 	result.orderItems.forEach((item) => {
-		
-		
-	text +=	`
+	text +=`
+			<tr class="order-itemList">
 			<td></td>
        		<td colspan="1">${item.ingredientName}</td>
        		<td colspan="2">${item.ingredientSmallestUnit}g</td>
        		<td colspan="2">${item.ingredientPrice}원</td>
        		<td colspan="3">${item.orderItemQuantity}개</td>
+            </tr>
 			
-			`
+			`;
 			
-	});
-		$(".order-itemList").html(text);
+	})
+	
+	//productsRow.closest('tr').next().text('');
+	productsRow.closest('tr').next().after(text);
+	
 
 }
 
