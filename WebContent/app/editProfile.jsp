@@ -195,7 +195,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 												<p>비밀번호는 8자 이상이어야 하고 숫자, 영문, 특수기호(!$@%)의 조합을 포함해야 합니다.</p>
 											</div>
 											<div class="now-password-box">
-												<input type="text" class="box1" placeholder="현재 비밀번호" required/>
+												<input type="password" class="box1" placeholder="현재 비밀번호" required/>
 											</div>
 											<span class="pass-msg"></span>
 											<div class="new-password-box">
@@ -236,7 +236,9 @@ String myTextareaValue = request.getParameter("myTextarea");
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">CookPang</a></li>
+					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">
+						<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
+					</a></li>
 
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
@@ -354,18 +356,19 @@ String myTextareaValue = request.getParameter("myTextarea");
 					</div>
 					<div class="alarm-box">
 						<div class="new-alarm">
-							<div>
+						준비중인 서비스 입니다.
+							<!-- <div>
 								<h4 class="alarm-date">이번주</h4>
 							</div>
 							<div class="boxboxbox">
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -382,12 +385,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -404,12 +407,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -426,12 +429,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -448,12 +451,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -474,12 +477,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 									<div class="boxboxbox2">
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -496,12 +499,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -518,12 +521,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -540,12 +543,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -562,12 +565,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -583,7 +586,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</article>

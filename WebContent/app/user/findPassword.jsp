@@ -3,147 +3,78 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>비밀번호 찾기</title>
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+ <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+	href="${pageContext.request.contextPath}/assets/css/findPassword.css">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-	rel="stylesheet">
-
-<style>
-body {
-	background-color: #f9f9f9;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-	margin: 20px auto;
-	padding: 20px;
-	max-width: 400px;
-	text-align: center;
-	margin-top: 120px;
-}
-
-h2 {
-	color: #2d2d2d;
-	font-size: 1.5rem;
-	margin-bottom: 20px;
-}
-
-form {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin-top: 20px;
-}
-
-button, input[type="text"], input[type="tel"], input[type="email"] {
-	border-radius: 5px;
-	border: 1px solid #ccc;
-	padding: 10px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-}
-
-button, input[type="submit"] {
-	background-color: #4caf50;
-	color: white;
-	border-radius: 5px;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-}
-
-button, input[type="submit"]:hover {
-	background-color: #3e8e41;
-}
-
-button {
-	width: 136px;
-	margin-top: 17px;
-}
-
-a {
-	color: #4caf50;
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-.error-msg {
-	color: red;
-}
-
-.error {
-	color: red;
-	margin-bottom: 10px;
-}
-
-.success {
-	color: green;
-	margin-bottom: 10px;
-}
-
-input:focus::placeholder {
-	color: transparent;
-}
-</style>
-
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  
+ 
+  
 </head>
 <body>
-	<div class="container">
-		<h2>비밀번호 찾기</h2>
+  <div class="wrapper">
+    <img src="" alt="">
+    
+    <div class="form-group">
+    <h1>CookPang</h1>
+    <br>
+    <h4>로그인에 문제가 있나요?</h4>
+    <!-- <h5>회원 가입시 입력하신 이메일 주소를 입력하시면</h5><br>
+    <h5>비밀번호 변경 링크를 보내드립니다.</h5> -->
+  </div>
+    <form action="#">
+      <div class="form-group">
+        <label for="user-password">이메일</label>
+        <input type="email" id="email" name="memberEmail" placeholder="이메일을 입력하세요." required />
+          <span class="check-msg" id="check-email-msg"></span>
+          <label for="user-password">핸드폰 번호</label>
+          <input type="phoneNumber" id="phone" name="memberNumber" placeholder="핸드폰 번호를 입력하세요." required />
+          <span class="check-msg" id="check-phone-msg"></span>
+      <!-- 이메일 입려 조건에 어긋나면 메세지가 나타난다. 이건 백엔드 작업에서 바꿔야됨.. -->
+      <button type="submit" id ="password" >비밀번호 찾기</button>
+      
+        <div class="input-group" id="input-line">
+          <div class="line"></div>
+          <div class="or">또는</div>
+          <div class="line"></div>
+        </div>
+        
+        
+        
+        <div class="member">
+          <a href="${pageContext.request.contextPath}/user/join.us">
+            새 계정 만들기
+          </a>
+        </div>
 
-		<form action="#" method="post">
-			<!-- <label for="name">이름</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="ex) 홍길동"
-          required
-        /> -->
 
-			<label for="phone">핸드폰 번호</label> <input type="tel" id="phone"
-				name="userPhoneNumber" placeholder="ex) 010-1234-1234" required />
-			<label for="email">이메일 주소</label> <input type="email" id="email"
-				name="userEmail" placeholder="ex) sbsItAcademy@Academy.com" required />
+      </div>
+      
+    </form>
 
-
-
-			<button type="button" id="password">비밀번호 찾기</button>
-
-		</form>
-
-		<div>
-			<a href="${pageContext.request.contextPath}/user/login.us">로그인</a>
-		</div>
-		<div>
-			<a href="${pageContext.request.contextPath}/user/join.us">회원가입하기</a>
-		</div>
-
-		<p class="success">${user.getUserPassword()}</p>
-	</div>
+    <p class="success">${user.getUserPassword()}</p>
+  </div>
+  <div class="bottom">
+    <div class="returnLogin">
+          <a href="${pageContext.request.contextPath}/user/login.us">
+            로그인으로 돌아가기
+          </a>
+      </div>
+    </div>
+    
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
 	<script>
 		$(document).ready(function() {
-			var $errorMsg = $('#error-msg');
+			var $errorMsg = $('#check-msg');
 			var $successMsg = $('.success');
 			console.log('디버깅 메시지');
 			$('#password').click(function() {

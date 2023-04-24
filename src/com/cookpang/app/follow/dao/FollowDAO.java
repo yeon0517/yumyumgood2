@@ -49,4 +49,10 @@ public class FollowDAO {
 		return sqlSession.selectList("follow.userFollower", followingNumber);
 	}
 	
+	public List<FollowVO> userFollowing(int followNumber) {
+		return sqlSession.selectList("follow.userFollowing", followNumber);
+	}
+	
+	
+	
 }

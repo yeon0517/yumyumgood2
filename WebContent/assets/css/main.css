@@ -81,15 +81,7 @@ a {
 	height: 100%;
 }
 
-.sidebar-name {
-	list-style: none;
-	margin-top: 70px;
-	margin-left: 30px;
-	font-size: 30px;
-	display: block;
-	cursor: pointer;
-	font-family: "Josefin Slab", serif;
-}
+
 
 .sidebar-ul {
 	list-style: none;
@@ -294,8 +286,12 @@ a {
   margin-left: 0px; */
 }
 
+.category-box:hover{
+	background-color : #ffca9680;
+}
+
 .category-box.selected {
-	border: 1px solid red;
+	background-color : #ffca965c;
 }
 
 .category-menu .category-box {
@@ -781,6 +777,10 @@ transition: all 0.1s ease;
 }
 
 /* 사이드바 css수정 & 추가 */
+.logo-img{
+	width: 160px;
+    height: 75px;
+}
 
 /*카테고리 이미지를 위한 css*/
 .category-box {
@@ -788,3 +788,14 @@ transition: all 0.1s ease;
 	align-items: center;
 	justify-content: space-around;
 }
+.sidebar-name {
+	list-style: none;
+	margin-top: 25px;
+	margin-left: 30px;
+	font-size: 30px;
+	display: block;
+	cursor: pointer;
+	font-family: "Josefin Slab", serif;
+}
+
+

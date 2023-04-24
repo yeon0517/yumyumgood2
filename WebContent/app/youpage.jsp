@@ -127,7 +127,7 @@
 												</div>
 												<div class="close2">&times;</div>
 											</div>
-											<div class="main">
+											<div class="main-following">
 												<div class="main-page-box2">
 													<div class="main-page2">
 														<div class="following-box1">
@@ -273,7 +273,7 @@
 					</div>
 
 					<div class="main-bottom">
-						<div class="ccc">
+					<!-- 	<div class="ccc">
 							<div class="bbb">
 								<a href="#" class="go-post"> <img
 									src="https://media.licdn.com/dms/image/C4E03AQGzq62SgXXOmg/profile-displayphoto-shrink_800_800/0/1602751018851?e=2147483647&v=beta&t=XWJ0J8Di9xMxz6pdlZhb_GP_zEp4HDMWVwZcgYQY2Jg"
@@ -326,7 +326,7 @@
 									class="thumbnail-img" />
 								</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="next-page">
@@ -360,7 +360,9 @@
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
 					<li class="sidebar-name"><a
-						href="${pageContext.request.contextPath}/mainOk.m">CookPang</a></li>
+						href="${pageContext.request.contextPath}/mainOk.m">
+							<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
+						</a></li>
 					<ul class="sidebar-ul">
 						<li class="sidebar-li">
 							<div class="li-box">
@@ -480,18 +482,19 @@
 					</div>
 					<div class="alarm-box">
 						<div class="new-alarm">
-							<div>
+						준비중인 서비스 입니다.
+							<!-- <div>
 								<h4 class="alarm-date">이번주</h4>
 							</div>
 							<div class="boxboxbox">
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -508,12 +511,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -530,12 +533,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -552,12 +555,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -574,12 +577,12 @@
 
 								<div class="search-man">
 									<div class="man-left2">
-										<!-- <a href="#"> -->
+										<a href="#">
 										<a href="#"> <img
 											src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 											alt="#" class="man-img" />
 										</a>
-										<!-- </a> -->
+										</a>
 									</div>
 									<div class="alarm-right">
 										<div class="alarm-id">
@@ -600,12 +603,12 @@
 									<div class="boxboxbox2">
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -622,12 +625,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -644,12 +647,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -666,12 +669,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -688,12 +691,12 @@
 
 										<div class="search-man">
 											<div class="man-left2">
-												<!-- <a href="#"> -->
+												<a href="#">
 												<a href="#"> <img
 													src="https://cdn.eyesmag.com/content/uploads/posts/2023/02/01/main-78a4be17-7f32-4801-b67a-90db5b811916.jpg"
 													alt="#" class="man-img" />
 												</a>
-												<!-- </a> -->
+												</a>
 											</div>
 											<div class="alarm-right">
 												<div class="alarm-id">
@@ -709,7 +712,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> -->
 						</div>
 					</div>
 				</article>
@@ -748,8 +751,10 @@
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script >
+      
       let userNumber = "${userVO.getUserNumber()}";
       </script>
 	<script src="${pageContext.request.contextPath}/assets/js/youPage.js"></script>
+	
 </body>
 </html>

@@ -204,7 +204,7 @@ a {
   width: 830px;
   height: 45px;
   margin: auto;
-  border-top: solid 1px rgb(157, 153, 153);
+  border-top: solid 1px  #ffb27e;
 }
 
 .banner-box {
@@ -323,15 +323,6 @@ a {
     height: 100%;
 }
 
-.sidebar-name {
-   list-style: none;
-   margin-top: 70px;
-   margin-left: 30px;
-   font-size: 30px;
-   display: block;
-   cursor: pointer;
-   font-family: "Josefin Slab", serif;
-}
 
 .sidebar-ul {
    list-style: none;
@@ -436,7 +427,7 @@ a {
 .paging .active {
   /* background-color: #333; */
   /* border-color: #333; */
-  color: #fff;
+  color: #937062;
 }
 
 .category-box .recipe-category a:hover {
@@ -634,6 +625,18 @@ a {
 .main {
   /* background-color: violet; */
   width: 418px;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  margin: auto;
+  border: 1px solid #bcaeae;
+  border-radius: 5px;
+  flex-direction:column;
+  padding-top:6px;
+}
+
+.main-following{
+	 width: 418px;
   height: 350px;
   display: flex;
   align-items: center;
@@ -1054,5 +1057,22 @@ a {
 }
 
 /* 사이드바 css수정 & 추가 */
+.logo-img{
+	width: 160px;
+    height: 75px;
+}
 
+.sidebar-name {
+	list-style: none;
+	margin-top: 25px;
+	margin-left: 30px;
+	font-size: 30px;
+	display: block;
+	cursor: pointer;
+	font-family: "Josefin Slab", serif;
+h1{
+	margin-top: 150px;
+	text-align: center;
+	font-size: 10px;
+}
 

@@ -6,6 +6,7 @@ import java.util.Map;
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.manager.vo.ManagerVO;
+import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.order.vo.OrderVO;
 import com.cookpang.app.post.vo.PostVO;
 import com.cookpang.app.user.dto.UserDTO;
@@ -71,6 +72,9 @@ public class ManagerDAO {
 	}
 	public int getOrderTotal() {
 		return sqlSession.selectOne("manager.getOrderTotal");
+	}
+	public void orderStatusUpdate(OrderDTO orderDTO) {
+		sqlSession.update("manager.orderStatusUpdate",orderDTO);
 	}
 	
 	

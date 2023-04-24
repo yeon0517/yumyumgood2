@@ -451,15 +451,7 @@ input[type=file]::file-selector-button {
     height: 100%;
 }
 
-.sidebar-name {
-   list-style: none;
-   margin-top: 70px;
-   margin-left: 30px;
-   font-size: 30px;
-   display: block;
-   cursor: pointer;
-   font-family: "Josefin Slab", serif;
-}
+
 
 .sidebar-ul {
    list-style: none;
@@ -854,4 +846,16 @@ background-color: white;
     font-size: 20px;
     cursor: pointer;
     margin-right: 27px;}
-
+.logo-img{
+	width: 160px;
+    height: 75px;
+}
+.sidebar-name {
+	list-style: none;
+	margin-top: 25px;
+	margin-left: 30px;
+	font-size: 30px;
+	display: block;
+	cursor: pointer;
+	font-family: "Josefin Slab", serif;
+}

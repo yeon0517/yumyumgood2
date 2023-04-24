@@ -51,7 +51,7 @@ public class MainOkController implements Execute {
 		} catch (NumberFormatException e) {
 			categoryNumber = 0;
 		}
-
+		
 //		System.out.println(categoryNumber);
 //		String postTitle;
 
@@ -68,6 +68,7 @@ public class MainOkController implements Execute {
 			postList = mainDAO.categoryList(pageMap);
 			total = mainDAO.categoryTotal(categoryNumber);
 		}
+		System.out.println(postList);
 
 		int realEndPage = (int) Math.ceil(total / (double) rowCount);
 
@@ -79,7 +80,8 @@ public class MainOkController implements Execute {
 //		rank
 		List<PostVO> rankTotal = mainDAO.rankTotal();
 //		System.out.println(rankTotal);
-		
+		System.out.println("ㅗㅜㅑ");
+		System.out.println(rankTotal);
 		req.setAttribute("rankTotal", rankTotal);
 //		rank
 		

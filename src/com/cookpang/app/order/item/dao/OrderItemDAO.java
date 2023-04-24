@@ -1,9 +1,12 @@
 package com.cookpang.app.order.item.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 
 import com.cookpang.app.order.dto.OrderDTO;
 import com.cookpang.app.order.item.dto.OrderItemDTO;
+import com.cookpang.app.order.item.vo.OrderItemVO;
 import com.mybatis.config.MyBatisConfig;
 
 public class OrderItemDAO {
@@ -24,6 +27,9 @@ public class OrderItemDAO {
     public void orderTotalCost(OrderDTO orderDTO) {
 		sqlSession.insert("orderItem.orderTotalCost", orderDTO);
 	}
+    public List<OrderItemVO> getOrderItems(int orderNumber) {
+    	return sqlSession.selectList("orderItem.getOrderItems", orderNumber);
+    }
     
 	
 	

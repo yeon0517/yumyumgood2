@@ -8,6 +8,7 @@ public class OrderVO {
     private String userPhoneNumber;
     private String userEmail;
     private String userAddress;
+    private String orderAddress;
     private String orderMessage;
     private int orderTotalCost;
     private String orderStatus;
@@ -17,6 +18,7 @@ public class OrderVO {
     private String userName;
     private String userId;
     private String orderDate;
+    private String orderRecipient;
 
     public OrderVO() {}
 
@@ -58,6 +60,14 @@ public class OrderVO {
 
 	public void setUserAddress(String userAddress) {
 		this.userAddress = userAddress;
+	}
+
+	public String getOrderAddress() {
+		return orderAddress;
+	}
+
+	public void setOrderAddress(String orderAddress) {
+		this.orderAddress = orderAddress;
 	}
 
 	public String getOrderMessage() {
@@ -132,17 +142,26 @@ public class OrderVO {
 		this.orderDate = orderDate;
 	}
 
+	public String getOrderRecipient() {
+		return orderRecipient;
+	}
+
+	public void setOrderRecipient(String orderRecipient) {
+		this.orderRecipient = orderRecipient;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderVO [orderNumber=" + orderNumber + ", userNumber=" + userNumber + ", userPhoneNumber="
-				+ userPhoneNumber + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", orderMessage="
-				+ orderMessage + ", orderTotalCost=" + orderTotalCost + ", orderStatus=" + orderStatus
-				+ ", ingredientName=" + ingredientName + ", orderItemQuantity=" + orderItemQuantity
-				+ ", ingredientPrice=" + ingredientPrice + ", userName=" + userName + ", userId=" + userId
-				+ ", orderDate=" + orderDate + "]";
+				+ userPhoneNumber + ", userEmail=" + userEmail + ", userAddress=" + userAddress + ", orderAddress="
+				+ orderAddress + ", orderMessage=" + orderMessage + ", orderTotalCost=" + orderTotalCost
+				+ ", orderStatus=" + orderStatus + ", ingredientName=" + ingredientName + ", orderItemQuantity="
+				+ orderItemQuantity + ", ingredientPrice=" + ingredientPrice + ", userName=" + userName + ", userId="
+				+ userId + ", orderDate=" + orderDate + ", orderRecipient=" + orderRecipient + "]";
 	}
 
-	
+    
+		
     
 	
 
