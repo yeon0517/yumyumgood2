@@ -252,7 +252,10 @@ function addUserInfo(result) {
 
 // 검색 & 알림
 
-
+// 뒤로 가기
+$('.cancel-btn').on('click', function(){
+   history.back();
+});
 
 
 

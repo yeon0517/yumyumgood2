@@ -311,3 +311,9 @@ $(document).on('change', '#select', function() {
 	});
 });
 
+
+//-------뒤로가기-------//
+
+$('.cancel-btn').on('click', function(){
+   history.back();
+});
