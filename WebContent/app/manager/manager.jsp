@@ -337,10 +337,12 @@
 								<div class="manage-payment test" id="member-payment">
 									<div class="payment-serch">
 										<input type="text" name="paymentSerch" id="payment-serch"
-											placeholder="회원아이디를 입력하시오" />
-										<button>
-											<a href="#"><i
-												class="fa-solid fa-magnifying-glass"></i></a>
+											placeholder="회원아이디나 주문번호를 입력하시오" />
+										<button type="button" class="order-serch-btn">
+											<span class="btn-span">
+											<i
+													class="fa-solid fa-magnifying-glass "></i>
+											</span>
 										</button>
 									</div>
 									<table class="payment-table">

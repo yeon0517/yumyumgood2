@@ -273,12 +273,12 @@ let orderPage = 1;
 updateOrderPage(orderPage)
 function updateOrderPage(orderPage) {
 	if (orderSearchMode) {
-		let orderTitle = $('#payment-serch').val();
+		let serchKeyword = $('#payment-serch').val();
 		$.ajax({
 			url: '/manager/orderSerchOk.manager',
 			type: 'GET',
-			data: { orderTitle: orderTitle, orderPage: orderPage },
-			dataType: 'json',
+			data: { serchKeyword: serchKeyword, orderPage: orderPage },
+			/*dataType: 'json',*/
 			success: updateOrderTable,
 			error: (xhr, status, error) => console.log(error),
 		});
@@ -377,8 +377,8 @@ $(".order-page a").on("click", function(e) {
 });
 
 $('.order-serch-btn').on('click', function() {
-	let orderSearch = $('#order-search').val();
-	let orderGapCheck = $('#order-search').val().trim();
+	let orderSearch = $('#payment-serch').val();
+	let orderGapCheck = $('#payment-serch').val().trim();
 
 	if (orderGapCheck === '' || orderGapCheck.length === 0) {
 		orderSearchMode = false;

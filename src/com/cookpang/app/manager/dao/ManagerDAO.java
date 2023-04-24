@@ -76,6 +76,13 @@ public class ManagerDAO {
 	public void orderStatusUpdate(OrderDTO orderDTO) {
 		sqlSession.update("manager.orderStatusUpdate",orderDTO);
 	}
+	public List<OrderVO> orderSerch(Map<String, Object> orderPageMap){
+		return sqlSession.selectList("manager.orderSerch", orderPageMap);
+	}
+	
+	public int getOrderSerchTotal(Map<String, Object> orderPageMap) {
+		return sqlSession.selectOne("manager.getOrderSerchTotal",orderPageMap);
+	}
 	
 	
 }
