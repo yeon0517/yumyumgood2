@@ -1065,5 +1065,9 @@ a {
 }
 
 /* 사이드바 css수정 & 추가 */
-
+h1{
+	margin-top: 150px;
+	text-align: center;
+	font-size: 10px;
+}
 
