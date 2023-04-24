@@ -259,23 +259,6 @@ function showOrder(target) {
   }
 }
 
-function showOrderProducts(target) {
-  let productsRow = $(target)
-    .closest("tr")
-    .nextAll("tr.order-itemList")
-    .first();
-  
-  let orderNumber = $(target).data("ordernumber");
-  console.log(orderNumber);
-
-  if (productsRow.css("display") === "none") {
-    productsRow.css("display", "table-row");
-	orderItemAjax(orderNumber,productsRow);
-
-  } else {
-    productsRow.css("display", "none");
-  }
-}
 
 
 
@@ -321,7 +304,7 @@ function updateOrderTable(orderResult) {
 
 	orderResult.orders.forEach((order) => {
 		$(".payment-table tbody").append(`
-		<tr>
+		<tr class="order-list">
 			<td class="order-number">${order.orderNumber}</td>
 			<td class="order-user-id">${order.userId}</td>
 			<td class="order-total-cost">${order.orderTotalCost}</td>
@@ -350,16 +333,15 @@ function updateOrderTable(orderResult) {
 			</td>
 	</tr>
 	
-                          <tr class="order-info" style="display: none ;" >
-                            <td></td>
-                            <td colspan="1">받는사람 : <br> ${order.orderRecipient} </td>
-                            <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
-                            <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
-                         </tr>
- 						<tr class="order-itemList"  style="display: none ;">
-            			/tr>
-                          
-			`);
+             <tr class="order-info" style="display: none ;" >
+               <td></td>
+               <td colspan="1">받는사람 : <br> ${order.orderRecipient} </td>
+               <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
+               <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
+            </tr>
+ 						
+			`
+			);
 	});
 	
 	let orderPageResult = '';
@@ -434,6 +416,34 @@ function orderStatusAjax(orderNumber,orderStatus) {
 		
 		error: (xhr, status, error) => console.log(error),
 	});
+} 
+
+
+
+function showOrderProducts(target) {
+  let productsRow = $(target).closest("tr");
+  let nextProductsRow= productsRow.nextAll('.order-list').first();
+  
+
+  let orderNumber = $(target).data("ordernumber");
+
+	
+	if (!productsRow.nextAll().hasClass("order-itemList")) {
+	$('.order-itemList').remove();
+		orderItemAjax(orderNumber,productsRow);
+	}else{
+	$('.order-itemList').remove();
+	}
+	
+	/*if(nextProductsRow.prev('.order-itemList').length==0){
+		
+	}else{
+		nextProductsRow.prevAll('.order-itemList').remove();
+		productsRow.nextUntil(nextProductsRow).filter(".order-itemList").remove();
+	}*/
+
+
+
 }
 
 
@@ -443,7 +453,7 @@ function orderItemAjax(orderNumber,productsRow) {
 		type: 'get',
 		data: { orderNumber: orderNumber},
 		dataType: 'json',
-		success: function(result,target){
+		success: function(result){
 			console.log(result);
 			getOrderItems(result,productsRow);
 
@@ -455,11 +465,7 @@ function orderItemAjax(orderNumber,productsRow) {
 
 function getOrderItems(result,productsRow) {
 	let text = '';
-	console.log(result);
-	console.log(productsRow);
-	console.log(productsRow.closest('tr'));
 	
-	productsRow.closest('tr').next().remove();
 	
 	result.orderItems.forEach((item) => {
 	text +=`
@@ -475,10 +481,8 @@ function getOrderItems(result,productsRow) {
 			
 	})
 	
-	
-	console.log(productsRow.closest('tr').find('.order-info'));
-	
-	productsRow.closest('tr').find('.order-info').after(text);
+	//productsRow.closest('tr').next().text('');
+	productsRow.closest('tr').next().after(text);
 	
 
 }

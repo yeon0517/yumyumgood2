@@ -255,7 +255,6 @@
 
 														<c:when test="${not empty postList}">
 															<c:forEach var="post" items="${postList}">
-
 																<tr>
 																	<td class="post-number">${post.getPostNumber()}</td>
 																	<td class="post-title">
