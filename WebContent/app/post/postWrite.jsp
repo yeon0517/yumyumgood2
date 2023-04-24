@@ -62,10 +62,10 @@
 						<!--작성창 상단 -->
 						<div class="write-box-header">
 
-							<div class="cancel-btn">
+							<button class="cancel-btn" type="button">
 								<!-- 뒤로가기 화살표 js로 처리-->
 								<i class="fa-solid fa-arrow-left"></i>
-							</div>
+							</button>
 
 							<div class="write-box-header-content">
 								<h3>레시피 등록</h3>

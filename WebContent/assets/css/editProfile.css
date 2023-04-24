@@ -846,4 +846,12 @@ transition: all 0.1s ease;
 
 /* 사이드바 css수정 & 추가 */
 
+.cancel-btn{
+background-color: white;
+    color: rgba(88, 88, 88, 0.789);
+    border-style: none;
+    font-weight: bolder;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 27px;}
 
