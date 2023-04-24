@@ -5,6 +5,7 @@ $('.profile-btn').on('click', '.profile-btn2', function() {
 
 function followAjax() {
 	let userNumber = $('.yourNumber').val();
+	
 	console.log(userNumber);
 	$.ajax({
 		url: '/user/youPageFollow.us',
@@ -236,12 +237,15 @@ function addUserInfo(result) {
 //회원 & 게시물 검색
 
 //팔로워 유저목록 뽑기
+
+
 $('.follower').on('click', function() {
+	console.log(userNumber);
 
 	$.ajax({
 		url: '/follow/followerAjax.fo',
 		type: 'get',
-		/*data : { userNumber:userNumber, },*/
+		data : { userNumber:userNumber },
 		dataType: 'json',
 		success: function(result) {
 			console.log(result);
@@ -272,7 +276,7 @@ function addUserInfo(result) {
 			<!-- 팔로워 이름, 아이디 -->
 			<div class="follower-nickname">
 					<div class="follower-nickname-box">
-						<a href="#">${info.userNickName}</a>
+						<a href="/user/youPage.us?userNumber=${info.userNumber}">${info.userNickName}</a>
 					</div>
 				<div class="follower-realname-box">${info.userName}</div>
 			</div>

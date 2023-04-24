@@ -45,8 +45,8 @@ public class FollowDAO {
 	public void deleteFollowing(FollowDTO followDTO) {
 		sqlSession.delete("follow.deleteFollowing", followDTO);
 	}
-	public List<FollowVO> userFollower(int followNumber) {
-		return sqlSession.selectList("follow.userFollower", followNumber);
+	public List<FollowVO> userFollower(int followingNumber) {
+		return sqlSession.selectList("follow.userFollower", followingNumber);
 	}
 	
 }
