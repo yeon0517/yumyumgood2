@@ -1,3 +1,11 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 *{
   margin: 0;
   padding: 0;
@@ -15,7 +23,7 @@ body{
   background-color: white;
   border-radius: 10px;
   text-align: center;
-  
+
   border: 1px solid #fff;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -26,6 +34,10 @@ body{
   font-size: 2.5rem;
   margin-bottom: 30px;
   text-align: center;
+   font-family: 'Josefin Slab', serif;/*----로고글씨체----*/
+   font-style: italic;
+     font-weight:100;
+
 }
 
 .login-form label {
@@ -86,7 +98,7 @@ form input{
 }
 
 button[type='submit'] {
-  background-color: dodgerblue;
+  background-color: #ffbe7e;
   border: none;
   border-radius: 30px;
   color: #fff;
@@ -100,7 +112,8 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-  background-color: rgb(255, 87, 87);
+  background-color:#ffa954;
+  color:white;
 }
 
 .form-group .check-msg {
@@ -202,7 +215,7 @@ h1{
 }
 
 .member a{
-  color: cornflowerblue;
+  color: #ff530b;
   text-decoration: none;
   font-weight: bold;
 }
@@ -219,7 +232,7 @@ h1{
 }
 
 .recover a{
-  color: cornflowerblue;
+  color:#ff530b;
   text-decoration: none;
 }
 
