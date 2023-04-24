@@ -14,11 +14,13 @@ function closeModal() {
 document.querySelector(".close").addEventListener("click", closeModal);
 
 // 모달 창 외부를 클릭하면 모달 창이 닫히도록 추가
+/* 
 window.addEventListener("click", function(event) {
 	if (event.target == document.getElementById("myModal")) {
 		closeModal();
 	}
 });
+*/
 
 // 팔로잉 모달창
 // 모달 열기 함수
@@ -36,11 +38,13 @@ function closeModal2() {
 document.querySelector(".close2").addEventListener("click", closeModal2);
 
 // 모달 창 외부를 클릭하면 모달 창이 닫히도록 추가
+/*
 window.addEventListener("click", function(event) {
 	if (event.target == document.getElementById("myModal2")) {
 		closeModal();
 	}
 });
+*/
 
 // click 이벤트(게시물)
 let manageMember = document.querySelector("#post1");
@@ -81,7 +85,7 @@ function showPostList(userNumber, page) {
 		}
 	});
 }
-$('.next-page').on('click', 'a', function(e){
+$('.next-page1 .paging').on('click', 'a', function(e){
 	e.preventDefault();
 	let userNumber = $(this).data('number');
 	let page = $(this).data('page');
@@ -223,17 +227,18 @@ showPaymentList(userNumber);
 	});
 }
 
-$('.next-page2').on('click', 'a', function(e){
+$('.next-page2 .paging').on('click', 'a', function(e){
 	e.preventDefault();
 	let userNumber = $(this).data('number');
 	let page = $(this).data('page');
-	postPaymentTable(userNumber, page);
+	showPaymentList(userNumber, page);
 });
 
 
-/*console.log(paymentResult);*/
 
 function postPaymentTable(paymentResult){
+console.log("^^^^^^^^^^^^^^^^^");
+console.log(paymentResult);
 	
 	let pay = '';
 	
@@ -249,9 +254,7 @@ function postPaymentTable(paymentResult){
 	
 	
 	
-
-	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
-		pay = `  <div class="history-name">
+		pay = `<div class="history-name">
                      <div class="history-number">주문번호</div>
                      <div class="history-picture">상품사진</div>
                      <div class="history-name2">상품이름</div>
@@ -260,6 +263,8 @@ function postPaymentTable(paymentResult){
                      <div class="history-price">수량</div>
                      <div class="history-price">주문상태</div>
                   </div>`
+
+	for (let i = 0; i < paymentResult.userPaymentList.length; i++){
 		 
 		pay += `<div class="purchase-ok1">
                      	<div class="ok-number">${paymentResult.userPaymentList[i].orderNumber}</div>
@@ -313,7 +318,7 @@ function postPaymentTable(paymentResult){
 							</p>`
 			}else{
 				pagingPay += `<p class="paging-num">
-								<a href="" data-number=${paymentResultt.userPaymentList[0].userNumber} data-page=${i} >${i}</a>
+								<a href="" data-number=${paymentResult.userPaymentList[0].userNumber} data-page=${i} >${i}</a>
 							</p>`
 			}
 			
@@ -379,7 +384,7 @@ showLikeList(userNumber);
 	});
 }
 
-$('.next-page3').on('click', 'a', function(e){
+$('.pagingLike').on('click', 'a', function(e){
 	e.preventDefault();
 	let userNumber = $(this).data('number');
 	let page = $(this).data('page');
@@ -642,6 +647,77 @@ function addUserInfo(result) {
 
 
 
+
+// myPage 팔로잉 리스트 뽑기
+$('.following').on('click', function() {
+	console.log(userNumber);
+
+	$.ajax({
+		url: '/follow/followingAjax.fo',
+		type: 'get',
+		data : { userNumber:userNumber },
+		dataType: 'json',
+		success: function(result) {
+			console.log(result);
+			addFollowingInfo(result);
+		},
+		error: function(xhr, status, error) {
+			console.log(error);
+		}
+	});
+});
+
+
+
+function addFollowingInfo(result) {
+
+
+	let text = '';
+	console.log(result);
+	result.forEach(info => {
+		text += `
+		<div class="following-box1">
+			<!-- 팔로워 프로필 사진 -->
+			 <div class="following-img">
+		
+			`
+		if(info.userProfileImageSystemName==null){
+			text+=	`
+			<img
+		src="https://www.thechooeok.com/common/img/default_profile.png"
+				alt="${info.userProfileImageSystemName}" class="following-img2" />
+				
+				`
+				
+			}else {
+				text+=	`		
+					<img
+				src="/upload/${info.userProfileImageSystemName}"
+						alt="${info.userProfileImageSystemName}" class="following-img2" />
+						
+						`
+			}
+			
+			text+=	`
+			</div>		
+			<!-- 팔로워 이름, 아이디 -->
+			<div class="following-nickname">
+					<div class="following-nickname-box">
+						<a href="/mypage/mypageOk.my?userNumber=${info.userNumber}">${info.userNickName}</a>
+					</div>
+				<div class="following-realname-box">${info.userName}</div>
+			</div>
+			<!-- 팔로워 취소 버튼 -->
+			<div class="following-cancel">
+								
+			</div>
+		</div>
+		`;
+	});
+
+	$('.main-following').html(text);
+	console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+}
 
 
 

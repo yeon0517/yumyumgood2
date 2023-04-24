@@ -31,6 +31,7 @@
 
 		<typeAlias type="com.cookpang.app.order.vo.OrderVO" alias="OrderVO"/>
 		<typeAlias type="com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO" alias="RecipeIngredientVO"/>
+		<typeAlias type="com.cookpang.app.follow.vo.FollowVO" alias="FollowVO"/>
 
 
 

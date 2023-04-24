@@ -31,6 +31,7 @@
 
 		<typeAlias type="com.cookpang.app.order.vo.OrderVO" alias="OrderVO"/>
 		<typeAlias type="com.cookpang.app.recipe.ingredient.vo.RecipeIngredientVO" alias="RecipeIngredientVO"/>
+		<typeAlias type="com.cookpang.app.follow.vo.FollowVO" alias="FollowVO"/>
 
 
 
@@ -44,6 +45,7 @@
 
 		<typeAlias type="com.cookpang.app.post.save.vo.PostSaveVO" alias="PostSaveVO"/>
 		
+		<typeAlias type="com.cookpang.app.order.item.vo.OrderItemVO" alias="OrderItemVO"/>
 		<typeAlias type="com.cookpang.app.payment.vo.PaymentVO" alias="PaymentVO"/>
 		
 		

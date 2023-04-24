@@ -100,98 +100,10 @@
 															</div>
 															<!-- 팔로워 취소 버튼 -->
 															<div class="follower-cancel">
-																<!-- <button
-                                    type="button"
-                                    value="#"
-                                    class="cancel-button"
-                                  >
-                                    삭제
-                                  </button> -->
+									
 															</div>
 														</div>
-														<div class="follower-box2">
-															<!-- 팔로워 프로필 사진 -->
-															<div class="follower-img">
-																<img
-																	src="http://cso-studio-kr.dn.nexoncdn.co.kr/images/01511608942513017001.vmg"
-																	alt="#" class="follower-img2" />
-															</div>
-															<!-- 팔로워 이름, 아이디 -->
-															<div class="follower-nickname">
-																<div class="follower-nickname-box">
-																	<a href="#">fuck_yury11</a>
-																</div>
-																<div class="follower-realname-box">유리</div>
-															</div>
-															<!-- 팔로워 취소 버튼 -->
-															<div class="follower-cancel">
-																<!-- <button
-                                    type="button"
-                                    value="#"
-                                    class="cancel-button"
-                                  >
-                                    삭제
-                                  </button> -->
-															</div>
-														</div>
-														<div class="follower-box3">
-															<!-- 팔로워 프로필 사진 -->
-															<div class="follower-img">
-																<img
-																	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyOhdZOIR5m6Pd-V9eKT3yCP7Oqa-LCqpbvA&usqp=CAU"
-																	alt="#" class="follower-img2" />
-															</div>
-															<!-- 팔로워 이름, 아이디 -->
-															<div class="follower-nickname">
-																<div class="follower-nickname-box">
-																	<a href="#">stone_gu12</a>
-																</div>
-																<div class="follower-realname-box">맹구</div>
-															</div>
-															<!-- 팔로워 취소 버튼 -->
-															<div class="follower-cancel">
-																<!-- <button
-                                    type="button"
-                                    value="#"
-                                    class="cancel-button"
-                                  >
-                                    삭제
-                                  </button> -->
-															</div>
-														</div>
-														<div class="follower-box4">
-															<!-- 팔로워 프로필 사진 -->
-															<div class="follower-img">
-																<img
-																	src="https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/702/55fffa22a1c20fd069f937c27d6a764e_res.jpeg"
-																	alt="#" class="follower-img2" />
-															</div>
-															<!-- 팔로워 이름, 아이디 -->
-															<div class="follower-nickname">
-																<div class="follower-nickname-box">
-																	<a href="#">stainless_water13</a>
-																</div>
-																<div class="follower-realname-box">철수</div>
-															</div>
-															<!-- 팔로워 취소 버튼 -->
-															<div class="follower-cancel">
-																<!-- <button
-                                    type="button"
-                                    value="#"
-                                    class="cancel-button"
-                                  >
-                                    삭제
-                                  </button> -->
-															</div>
-														</div>
-														<!-- 떡잎마을 방범대는 5명이 최대라 대기 -->
-														<!-- <div class="follower-box5"></div>
-                              <div class="follower-box6"></div>
-                              <div class="follower-box7"></div>
-                              <div class="follower-box1"></div>
-                              <div class="follower-box2"></div>
-                              <div class="follower-box3"></div>
-                              <div class="follower-box4"></div> -->
+								
 													</div>
 												</div>
 											</div>
@@ -215,7 +127,7 @@
 												</div>
 												<div class="close2">&times;</div>
 											</div>
-											<div class="main">
+											<div class="main-following">
 												<div class="main-page-box2">
 													<div class="main-page2">
 														<div class="following-box1">
@@ -361,7 +273,7 @@
 					</div>
 
 					<div class="main-bottom">
-						<div class="ccc">
+					<!-- 	<div class="ccc">
 							<div class="bbb">
 								<a href="#" class="go-post"> <img
 									src="https://media.licdn.com/dms/image/C4E03AQGzq62SgXXOmg/profile-displayphoto-shrink_800_800/0/1602751018851?e=2147483647&v=beta&t=XWJ0J8Di9xMxz6pdlZhb_GP_zEp4HDMWVwZcgYQY2Jg"
@@ -414,7 +326,7 @@
 									class="thumbnail-img" />
 								</a>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="next-page">
@@ -836,7 +748,13 @@
 			</footer>
 		</div>
 	</div>
+	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script >
+      
+      let userNumber = "${userVO.getUserNumber()}";
+      </script>
 	<script src="${pageContext.request.contextPath}/assets/js/youPage.js"></script>
+	
 </body>
 </html>

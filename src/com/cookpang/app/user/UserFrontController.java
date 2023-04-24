@@ -57,6 +57,15 @@ public class UserFrontController extends HttpServlet{
 		case "/user/youPageFollow.us":
 			new YoupageFollowController().execute(req, resp);
 			break;
+		case "/user/youPageFollowing.us":
+			new YoupageFollowingController().execute(req, resp);
+			break;
+		case "/user/youPageFollower.us":
+			new YoupageFollowerController().execute(req, resp);
+			break;
+		case "/user/youPageListOk.us":
+			new YouPageListOkController().execute(req, resp);
+			break;
 	
 		
 		

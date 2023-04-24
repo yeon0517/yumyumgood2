@@ -146,7 +146,7 @@ public class PostWriteOkController implements Execute {
 			postFileDTO.setPostFileSystemName(fileSystemName);
 			postFileDTO.setPostFileOriginalName(fileOriginalName);
 			postFileDTO.setPostNumber(postNumber);
-			postFileDTO.setPostFileIndex(1);
+//			postFileDTO.setPostFileIndex(1);
 
 			if (name.equals("file1")) {
 				postDTO.setPostThumbnail(fileSystemName);

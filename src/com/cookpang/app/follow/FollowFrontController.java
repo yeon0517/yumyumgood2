@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cookpang.app.main.MainAjaxOkController;
+
 public class FollowFrontController extends HttpServlet{
 
 	@Override
@@ -23,7 +25,12 @@ public class FollowFrontController extends HttpServlet{
 		System.out.println(target);
 
 		switch(target) {
-		
+		case "/follow/followerAjax.fo" :
+			new FollowerAjaxController().execute(req, resp);
+			break;
+		case "/follow/followingAjax.fo" :
+			new FollowingAjaxController().execute(req, resp);
+			break;
 		}
 	}
 

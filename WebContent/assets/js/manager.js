@@ -231,7 +231,6 @@ function updatePostTable(postResult) {
 $(".post-page a").on("click", function(e) {
 	e.preventDefault();
 	updatePostPage($(this).data('postpage'));
-	console.log('aaaa')
 });
 
 $('.post-serch-btn').on('click', function() {
@@ -247,32 +246,263 @@ $('.post-serch-btn').on('click', function() {
 	}
 });
 
+// ==========결제 관리 추가정보js======
+
+
+function showOrder(target) {
+  let deliveryRow = $(target).closest("td").parent().next("tr.order-info");
+
+  if (deliveryRow.css("display") === "none") {
+    deliveryRow.css("display", "table-row");
+  } else {
+    deliveryRow.css("display", "none");
+  }
+}
+
+
+
+
+
+
 // ==========결제 관리 js======
 
+let orderSearchMode = false;
+let orderPage = 1;
 
-function showOrder() {
-  let table = $(".order");
-  let button = $('button[onclick="showOrder()"]');
 
-  if (table.is(":hidden")) {
-    table.show();
-    button.html("상세정보숨기기");
-  } else {
-    table.hide();
-    button.html("상세정보보기");
-  }
+updateOrderPage(orderPage)
+function updateOrderPage(orderPage) {
+	if (orderSearchMode) {
+		let orderTitle = $('#payment-serch').val();
+		$.ajax({
+			url: '/manager/orderSerchOk.manager',
+			type: 'GET',
+			data: { orderTitle: orderTitle, orderPage: orderPage },
+			dataType: 'json',
+			success: updateOrderTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	} else {
+		$.ajax({
+			url: "/manager/managerOrderOk.manager",
+			type: "GET",
+			data: { 
+				orderPage: orderPage 
+				},
+			dataType: "json",
+			success: updateOrderTable,
+			error: (xhr, status, error) => console.log(error),
+		});
+	}
 }
 
-function showOrderProducts() {
-  let table = $(".product");
-  let button = $('button[onclick="showOrderProducts()"]');
 
-  if (table.is(":hidden")) {
-    table.show();
-    button.html("주문상품숨기기");
-  } else {
-    table.hide();
-    button.html("주문상품보기");
-  }
+function updateOrderTable(orderResult) {
+	$(".payment-table tbody tr:not(:first)").remove();
+	
+	console.log(orderResult)
+
+	orderResult.orders.forEach((order) => {
+		$(".payment-table tbody").append(`
+		<tr class="order-list">
+			<td class="order-number">${order.orderNumber}</td>
+			<td class="order-user-id">${order.userId}</td>
+			<td class="order-total-cost">${order.orderTotalCost}</td>
+			<td class="order-date">${order.orderDate}</td>
+			<td class="order-status">
+				<select name="orderStatus" class="order-status-select" data-orderNumber="${order.orderNumber}">
+		            <option value="${order.orderStatus}" selected="selected">${order.orderStatus}</option>
+		            <option value="대기중">대기중</option>
+		            <option value="배송중" >배송중</option>
+		            <option value="배송완료">배송완료</option>
+		            <option value="취소됨">취소됨</option>
+				</select>
+			</td>
+			<td class="order-status-edit">
+				<div class="checkbox-c">
+					<button type="button" class="order-check-btn" data-orderNumber="${order.orderNumber}">확인</button>
+					<input type="hidden" name="payment"
+						class="payment-check-box" value="#결제번호" />
+					<input type="hidden" name="orderUserNumber"
+						class="payment-check-box" value="${order.userNumber}" />
+				</div>
+			</td>
+			<td><button onclick="showOrder(this)">상세정보보기</button></td>
+			<td>
+				<button onclick="showOrderProducts(this)" data-orderNumber="${order.orderNumber}">주문상품보기</button>
+			</td>
+	</tr>
+	
+             <tr class="order-info" style="display: none ;" >
+               <td></td>
+               <td colspan="1">받는사람 : <br> ${order.orderRecipient} </td>
+               <td colspan="3"> 주문 주소 : <br>${order.orderAddress}</td>
+               <td colspan="3"> 주문 요청사항 : <br>${order.orderMessage}</td>
+            </tr>
+ 						
+			`
+			);
+	});
+	
+	let orderPageResult = '';
+	orderPageResult += `${orderResult.orderPrev ? `<li><a href="#" data-orderPage="${orderResult.orderStartPage - 1}" class="prev">&lt;</a></li>` : ""}`;
+    
+	for(let i=orderResult.orderStartPage; i<=orderResult.orderEndPage; i++){
+		orderPageResult += `<li><a href="#" data-orderPage="${i}"${i === orderResult.orderPage ? ' class="active"' : ""}>${i}</a></li>`;
+	}
+	
+    orderPageResult +=`${orderResult.orderNext ? `<li><a href="#" data-orderPage="${orderResult.orderEndPage + 1}" class="next">&gt;</a></li>` : ""}`;
+
+	/*`
+    	${postResult.postPrev ? `<li><a href="#" data-postPage="${postResult.postStartPage - 1}" class="prev">&lt;</a></li>` : ""}
+    	${Array.from({ length: postResult.postEndPage - postResult.postStartPage + 1 }, (_, j) => j + postResult.postStartPage).map(j => `<li><a href="#" data-postPage="${j}"${j === postResult.postPage ? ' class="active"' : ""}>${j}</a></li>`).join('')}
+    	${postResult.postNext ? `<li><a href="#" data-postPage="${postResult.postEndPage + 1}" class="next">&gt;</a></li>` : ""}`*/
+
+	$(".order-page ul").html(orderPageResult);
+
+	$(".order-page a").off("click").on("click", function(e) {
+		e.preventDefault();
+		
+		console.log($(this).data("orderpage"))
+		updateOrderPage($(this).data("orderpage"));
+	});
+	
 }
+
+
+$(".order-page a").on("click", function(e) {
+	e.preventDefault();
+	updateOrderPage($(this).data('orderpage'));
+	console.log('aaaa')
+});
+
+$('.order-serch-btn').on('click', function() {
+	let orderSearch = $('#order-search').val();
+	let orderGapCheck = $('#order-search').val().trim();
+
+	if (orderGapCheck === '' || orderGapCheck.length === 0) {
+		orderSearchMode = false;
+		updateOrderPage(1);
+	} else {
+		orderSearchMode = true;
+		updateOrderPage(1);
+	}
+});
+
+
+$('.payment-table').on('click', '.order-check-btn', function() {
+      let clickedButton = $(this); // 클릭한 버튼
+	  let orderNumber = clickedButton.data("ordernumber")
+	  let orderStatus = $(this).closest("tr").find('.order-status-select').val();
+		
+	  orderStatusAjax(orderNumber,orderStatus );
+	/*주문상태변경하는 ajax들어가야함*/
+	
+    });
+
+
+function orderStatusAjax(orderNumber,orderStatus) {
+	$.ajax({
+		url: '/manager/orderStatusUpdateOk.manager',
+		type: 'post',
+		data: { orderNumber: orderNumber,
+					orderStatus: orderStatus 
+					/*orderPage: orderPage*/
+				},
+		success: function(result){
+			console.log('주문상태변경 ajax연결 성공');
+			alert('주문상태가 변경되었습니다.');
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+} 
+
+
+
+function showOrderProducts(target) {
+  let productsRow = $(target).closest("tr");
+  let nextProductsRow= productsRow.nextAll('.order-list').first();
+  
+
+  let orderNumber = $(target).data("ordernumber");
+
+	
+	if (!productsRow.nextAll().hasClass("order-itemList")) {
+	$('.order-itemList').remove();
+		orderItemAjax(orderNumber,productsRow);
+	}else{
+	$('.order-itemList').remove();
+	}
+	
+	/*if(nextProductsRow.prev('.order-itemList').length==0){
+		
+	}else{
+		nextProductsRow.prevAll('.order-itemList').remove();
+		productsRow.nextUntil(nextProductsRow).filter(".order-itemList").remove();
+	}*/
+
+
+
+}
+
+
+function orderItemAjax(orderNumber,productsRow) {
+	$.ajax({
+		url: '/manager/orderItemListOk.manager',
+		type: 'get',
+		data: { orderNumber: orderNumber},
+		dataType: 'json',
+		success: function(result){
+			console.log(result);
+			getOrderItems(result,productsRow);
+
+		} ,
+		
+		error: (xhr, status, error) => console.log(error),
+	});
+}
+
+function getOrderItems(result,productsRow) {
+	let text = '';
+	
+	
+	result.orderItems.forEach((item) => {
+	text +=`
+			<tr class="order-itemList">
+			<td></td>
+       		<td colspan="1">${item.ingredientName}</td>
+       		<td colspan="2">${item.ingredientSmallestUnit}g</td>
+       		<td colspan="2">${item.ingredientPrice}원</td>
+       		<td colspan="3">${item.orderItemQuantity}개</td>
+            </tr>
+			
+			`;
+			
+	})
+	
+	//productsRow.closest('tr').next().text('');
+	productsRow.closest('tr').next().after(text);
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

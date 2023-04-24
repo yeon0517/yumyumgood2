@@ -27,15 +27,18 @@
 		join tbl_ingredient i ON oi.ingredient_number = i.ingredient_number
 		left join tbl_ingredient_image ii ON i.ingredient_number =
 		ii.ingredient_number
-		where o.user_number = #{userNumber};
+		where o.user_number = #{userNumber}
+		order by order_number
+		limit #{startRow}, #{rowCount}
 
 	</select>
 
 
 	<select id="getTotalList" parameterType="_int" resultType="_int">
-		select count(order_number) 
-		from tbl_order
-		where user_number = #{userNumber}
+			select count(o.order_number)
+		from tbl_order o
+		join tbl_order_item toi 
+	on o.order_number = toi.order_number and user_number = #{userNumber}
 		
 	</select>
 

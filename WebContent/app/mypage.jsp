@@ -183,7 +183,7 @@
                                     </div>
                                     <div class="close2">&times;</div>
                                  </div>
-                                 <div class="main">
+                                 <div class="main-following">
                                     <div class="main-page-box2">
                                        <div class="main-page2">
                                           <div class="following-box1">
