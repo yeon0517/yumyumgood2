@@ -1,4 +1,4 @@
-package com.cookpang.app.follow;
+package com.cookpang.app.user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -20,15 +20,15 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-public class FollowerAjaxController implements Execute {
+public class YoupageFollowerController implements Execute {
 
 	@Override
 	public void execute(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		FollowDAO followDAO = new FollowDAO();
 //		FollowVO followVO = new FollowVO();
 		HttpSession session = req.getSession();
-		int followingNumber = (int)session.getAttribute("userNumber");
-//		int followingNumber = Integer.parseInt(req.getParameter("userNumber"));
+//		int followingNumber = (int)session.getAttribute("userNumber");
+		int followingNumber = Integer.parseInt(req.getParameter("userNumber"));
 //		int followNumber = Integer.parseInt(req.getParameter("userNumber"));
 //		int followingNumber =Integer.valueOf(req.getParameter("userNumber"));
 		

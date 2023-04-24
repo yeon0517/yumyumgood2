@@ -388,6 +388,7 @@ a {
 }
 .ok-date {
   /* background-color: #7d8084; */
+  
   width: 170px;
   height: 100%;
   display: flex;
@@ -844,6 +845,21 @@ a {
   border: 1px solid #bcaeae;
   border-radius: 5px;
 }
+
+.main-following{
+	
+  /* background-color: violet; */
+  width: 418px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border: 1px solid #bcaeae;
+  border-radius: 5px;
+}
+	
+
 
 /* .main-page-box {
   width: 400px;
