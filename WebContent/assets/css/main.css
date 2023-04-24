@@ -93,6 +93,7 @@ a {
 
 .sidebar-ul i {
 	margin-right: 21px;
+	margin-left: 15px;
 }
 
 .sidebar-li {
@@ -298,15 +299,14 @@ a {
 	margin-left: 2px;
 }
 
-.category-img {
+/* .category-img {
 	height: 55px;
 	width: 55px;
 	background-color: #937062;
 	margin-left: 25px;
 	margin-top: 7px;
 }
-
-
+ */
 .category-name {
 	text-align: center;
 	font-size: 12px;
@@ -782,6 +782,12 @@ transition: all 0.1s ease;
     height: 75px;
 }
 
+/*카테고리 이미지를 위한 css*/
+.category-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
 .sidebar-name {
 	list-style: none;
 	margin-top: 25px;

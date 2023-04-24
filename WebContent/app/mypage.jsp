@@ -634,12 +634,12 @@
                   </li>
                   <li class="sidebar-li">
                      <div class="li-box">
-                        <i class="fa-regular fa-square-plus"></i> <a href="#">만들기</a>
+                        <i class="fa-regular fa-square-plus"></i> <a href="${pageContext.request.contextPath}/post/postWrite.po">만들기</a>
                      </div>
                   </li>
                   <li class="sidebar-li">
                      <div class="li-box">
-                        <i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
+                        <i class="fa-regular fa-bookmark"></i> <a href="${pageContext.request.contextPath}/mypage/mypageOk.my">찜한 레시피</a>
                      </div>
                   </li>
                   <li class="sidebar-li">

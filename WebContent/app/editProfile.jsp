@@ -83,11 +83,16 @@ String myTextareaValue = request.getParameter("myTextarea");
 									accept=".jpg, .jpeg, .png" /><br />
 
 							</div>
+							<button class="cancel-btn" type="button">
+								<!-- 뒤로가기 화살표 js로 처리-->
+								<i class="fa-solid fa-x"></i>
+							</button>
 
 						</div>
 
 
 						<div class="nickname-box">
+						
 							<div class="nickname-box-left">닉네임</div>
 							<div class="nickname-box-right">
 
@@ -231,7 +236,7 @@ String myTextareaValue = request.getParameter("myTextarea");
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="#">
+					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">
 						<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
 					</a></li>
 
@@ -256,12 +261,12 @@ String myTextareaValue = request.getParameter("myTextarea");
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-square-plus"></i> <a href="#">만들기</a>
+								<i class="fa-regular fa-square-plus"></i> <a href="${pageContext.request.contextPath}/post/postWrite.po">만들기</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
 							<div class="li-box">
-								<i class="fa-regular fa-bookmark"></i> <a href="#">찜한 레시피</a>
+								<i class="fa-regular fa-bookmark"></i> <a href="${pageContext.request.contextPath}/mypage/mypageOk.my">찜한 레시피</a>
 							</div>
 						</li>
 						<li class="sidebar-li">
