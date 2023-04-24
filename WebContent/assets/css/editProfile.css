@@ -451,15 +451,7 @@ input[type=file]::file-selector-button {
     height: 100%;
 }
 
-.sidebar-name {
-   list-style: none;
-   margin-top: 70px;
-   margin-left: 30px;
-   font-size: 30px;
-   display: block;
-   cursor: pointer;
-   font-family: "Josefin Slab", serif;
-}
+
 
 .sidebar-ul {
    list-style: none;
@@ -846,4 +838,17 @@ transition: all 0.1s ease;
 
 /* 사이드바 css수정 & 추가 */
 
+.logo-img{
+	width: 160px;
+    height: 75px;
+}
 
+.sidebar-name {
+	list-style: none;
+	margin-top: 25px;
+	margin-left: 30px;
+	font-size: 30px;
+	display: block;
+	cursor: pointer;
+	font-family: "Josefin Slab", serif;
+}
