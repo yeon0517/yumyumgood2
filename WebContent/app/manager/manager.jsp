@@ -255,7 +255,6 @@
 
 														<c:when test="${not empty postList}">
 															<c:forEach var="post" items="${postList}">
-
 																<tr>
 																	<td class="post-number">${post.getPostNumber()}</td>
 																	<td class="post-title">
@@ -405,7 +404,7 @@
 											<!-- ========== /페이징 처리 예시 ============ -->
 										</ul>
 									</div>
-								</div>
+								</div> 
 							</div>
 						</div>
 					</div>
