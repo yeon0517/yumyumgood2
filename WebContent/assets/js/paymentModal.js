@@ -152,19 +152,19 @@ $('.footer').on('change', function() {
 $('#plus').on('click', function() {
 	let currentVal = parseInt($('#counter-number').text());
 	$('#counter-number').text(currentVal + 1);
-	currentVal +=1;	
+	currentVal += 1;
 	console.log(currentVal);
 	$('.counterNumber').attr('value', currentVal);
 	updateTotalPrice(); // 수량이 변경될 때마다 총 가격을 다시 계산하고 출력함
-	
+
 });
 
 $('#minus').on('click', function() {
 	let currentVal = parseInt($('#counter-number').text());
 	if (currentVal > 1) {
 		$('#counter-number').text(currentVal - 1);
-	currentVal -=1;	
-	console.log(currentVal);
+		currentVal -= 1;
+		console.log(currentVal);
 		$('.counterNumber').attr('value', currentVal);
 		updateTotalPrice();
 	}
