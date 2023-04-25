@@ -68,7 +68,8 @@ String myTextareaValue = request.getParameter("myTextarea");
 						<div class="picture-box">
 
 							<div class="picture-box-left">
-
+								
+								<c:choose></c:choose>
 								<div id="img-box">
 									<img
 										src="/upload/${profileEditVO.getUserProfileImageSystemName()}"

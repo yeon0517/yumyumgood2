@@ -110,7 +110,7 @@ function findPost(keyword) {
 
 function addUserInfo(result) {
 
-
+	
 	let text = '';
 console.log(result);
 	result.forEach(info => {
@@ -121,19 +121,35 @@ console.log(result);
 						src="/upload/${info.userProfileImageSystemName}" alt="${info.userProfileImageSystemName}"
 						class="man-img" />
 					</a>
-				</div>
-				<div class="man-right">
+				</div>`
+				
+		if(info.userNumber == userNumber ){
+			text+=`<div class="man-right">
 					<div class="man-id">
-						<a href="/user/youPage.us?userNumber=${info.userNumber}"> ${info.userNickName} </a>
-						<!-- <a href="#" class="man-id2">hot_boy</a> -->
+						<a href="/mypage/mypageOk.my?userNumber=${info.userNumber}"> ${info.userNickName} </a>
+						
 					</div>
 					<div class="man-name">
 						${info.userName}
 					</div>
 				</div>
 				
-			</div>
-		`;
+				</div>`
+			
+		}	else{	
+			text+=`	<div class="man-right">
+					<div class="man-id">
+						<a href="/user/youPage.us?userNumber=${info.userNumber}"> ${info.userNickName} </a>
+						
+					</div>
+					<div class="man-name">
+						${info.userName}
+					</div>
+				</div>
+				
+				</div>`
+		}
+		
 	});
 
 	$('.recent-searches-box').html(text);

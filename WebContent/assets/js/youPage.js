@@ -106,6 +106,7 @@ $search.click(() => {
 	console.log("click");
 
 	$(".sub-find").toggleClass("sub-find__close");
+	$(".sub-find2").removeClass("sub-find2__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
 });
 
@@ -133,6 +134,7 @@ $search2.click(() => {
 
 	$(".sub-find2").toggleClass("sub-find2__close");
 	// $(".sub-find").stop().animate({ left: "toggle" });
+	$(".sub-find").removeClass("sub-find__close");
 });
 
 $(function() {
@@ -166,7 +168,7 @@ $('.search-btn').on('click', function() {
 			dataType: 'json',
 			success: function(result) {
 				console.log(result);
-				addUserInfo(result);
+				addUserInformation(result);
 				//$('.find-btn').val('');
 			},
 			error: function(a, b, c) {
@@ -199,35 +201,50 @@ function findPost(keyword) {
 
 
 
-function addUserInfo(result) {
+function addUserInformation(result) {
 
 
-	let text = '';
+	let search = '';
 
-	result.forEach(info => {
-		text += `
+	result.forEach(information => {
+	search += `
 			<div class="search-man">
 				<div class="man-left">
 					<a href="#"> <img
-						src="/upload/${info.userProfileImageSystemName}" alt="${info.userProfileImageSystemName}"
-						class="man-img" /> <!-- </a> -->
+						src="/upload/${information.userProfileImageSystemName}" alt="${information.userProfileImageSystemName}"
+						class="man-img" />
 					</a>
-				</div>
-				<div class="man-right">
+				</div>`
+				
+		if(information.userNumber == userNumber ){
+			search +=`<div class="man-right">
 					<div class="man-id">
-						<a href="#"> ${info.userNickName} </a>
-						<!-- <a href="#" class="man-id2">hot_boy</a> -->
+						<a href="/mypage/mypageOk.my?userNumber=${information.userNumber}"> ${information.userNickName} </a>
+						
 					</div>
 					<div class="man-name">
-						${info.userName}
+						${information.userName}
 					</div>
 				</div>
 				
-			</div>
-		`;
+				</div>`
+			
+		}	else{	
+			search+=`	<div class="man-right">
+					<div class="man-id">
+						<a href="/user/youPage.us?userNumber=${information.userNumber}"> ${information.userNickName} </a>
+						
+					</div>
+					<div class="man-name">
+						${information.userName}
+					</div>
+				</div>
+				
+				</div>`
+		}
 	});
 
-	$('.recent-searches-box').html(text);
+	$('.recent-searches-box').html(search);
 }
 
 //회원 & 게시물 검색
@@ -395,7 +412,7 @@ function postListTable(result) {
 		if(result.userPost.length == 0){
 			console.log("@@@@@@@@@@@@@@@");
 			text+= `	<div>
-									<h1>아직 등록된 게시글이 없습니다!</h1>
+									<h1 class="list-none">아직 등록된 게시글이 없습니다!</h1>
 								</div>
 			
 			`;
