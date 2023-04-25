@@ -47,7 +47,7 @@
 										<a href="${pageContext.request.contextPath}/post/postReadOk.po?postNumber=${rank.getPostNumber()}" class="rank-a">
 											<div class="rank-img">
 												<%-- https://cdn-bastani.stunning.kr/prod/users/3dbbdc56-858d-4d0e-b467-1463957476e3/avatar/ZQdoCULUEydS7bnM.image.jpg.small?q=60&t=crop&s=300x300 이미지에 넣는거--%>
-												<img src="${rank.getPostThumbnail()}"
+												<img src="/upload/${rank.getPostThumbnail()}"
 													alt="">
 
 											</div>

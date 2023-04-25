@@ -22,23 +22,15 @@ public class PaymentMoController implements Execute {
 
 		int postNumber = Integer.valueOf(req.getParameter("postNumber"));
 		
-		//이거 지우기
-//		int postNumber = 2;
-
 		
 		PostDTO payPost = paymentDAO.postPayment(postNumber);
 		
 		List<RecipeIngredientVO> recipeIngredientList =paymentDAO.postPaymentIngredient(postNumber);
 		
-		System.out.println("=============================");
-//		System.out.println(recipeIngredientList);
-		System.out.println("=============================");
 		req.setAttribute("ingredient", recipeIngredientList);
-			
 		req.setAttribute("payPost", payPost);
 
 		req.getRequestDispatcher("/app/paymentModal.jsp").forward(req, resp);
-//		resp.sendRedirect(null);
 
 	}
 }
