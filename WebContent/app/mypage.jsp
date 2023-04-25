@@ -540,7 +540,7 @@
 			<!-- 사이드 바 -->
 			<div class="body-side-bar">
 				<div class="sidebar-menu">
-					<li class="sidebar-name"><a href="#">
+					<li class="sidebar-name"><a href="${pageContext.request.contextPath}/mainOk.m">
 						<img alt="!" src="${pageContext.request.contextPath}/assets/img/main/logo3.png" class="logo-img">
 					</a></li>
 
