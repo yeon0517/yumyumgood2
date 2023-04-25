@@ -331,7 +331,7 @@
 				</div>
 				<div class="next-page">
 					<div class="paging">
-						<p class="paging-btn">
+						<!-- <p class="paging-btn">
 							<a href=""> <img
 								src="https://2bob.co.kr/skin/nodskin_argio/images/paging_prev.jpg"
 								alt="" class="direction" />
@@ -352,7 +352,7 @@
 								src="https://2bob.co.kr/skin/nodskin_argio/images/paging_d_next.jpg"
 								alt="마지막으로" />
 							</a>
-						</p>
+						</p> -->
 					</div>
 				</div>
 			</div>

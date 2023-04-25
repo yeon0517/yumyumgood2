@@ -94,7 +94,10 @@ $('.change-picture').on('change',function(){
 	let src = URL.createObjectURL(files[0]);
 	console.log(src);
 	
+	
+	
 	$('#img-box').html(
+		
 		
 		`<img src= ${src} class='img-box-img'  />`
 	)
