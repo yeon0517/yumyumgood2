@@ -62,25 +62,14 @@
 				</div>
 				<div class="ingredients">
 					<ul>
-						<li><a href="#"> <img
-								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/154658128817l0.jpg"
+						<li class="ingredient-imgs">
+							<c:forEach var="ingredient" items="${ingredient}">
+							<div > <img
+								src="/upload/${ingredient.ingredientImageSystemName}"
 								alt="깻잎" class="ingredients-img">
-						</a> <a href="#"> <img
-								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1601354216394l0.jpg"
-								alt="생새우" class="ingredients-img">
-						</a> <a href="#"> <img
-								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/162121775358l0.jpg"
-								alt="연근" class="ingredients-img">
-						</a> <a href="#"> <img
-								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1613444214459l0.jpg"
-								alt="단호박" class="ingredients-img">
-						</a> <a href="#"> <img
-								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1585197140211l0.jpg"
-								alt="김" class="ingredients-img">
-						</a> <a href="#"> <img
-								src="https://img-cf.kurly.com/cdn-cgi/image/quality=85,width=676/shop/data/goods/1637922047806l0.jpg"
-								alt="표고버섯" class="ingredients-img">
-						</a></li>
+							</div> 
+						</c:forEach>
+					</li>
 					</ul>
 				</div>
 
@@ -102,7 +91,7 @@
 	        							 <input type="hidden" name="price" class="price"
 											value="${ingredient.getIngredientPrice()}">
 									</span>
-        							<c:if test="${status.count >= 5}">
+        							<c:if test="${status.count%5 == 0}">
 										<br>
 									</c:if>
 								</c:forEach>
