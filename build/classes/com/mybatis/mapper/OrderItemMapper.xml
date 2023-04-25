@@ -19,7 +19,16 @@
 		select last_insert_id()
 	</select>	
 	
-	
+	<select id="getOrderItems" parameterType="_int" resultType="OrderItemVO">
+		select  o.order_number ,i.ingredient_name , i.ingredient_smallest_unit , i.ingredient_price,oi.order_item_quantity   
+		from tbl_order o
+		join tbl_order_item oi
+		on o.order_number = oi.order_number
+		join tbl_ingredient i
+		on oi.ingredient_number = i.ingredient_number
+		where o.order_number =#{orderNumber}
+		order by order_number
+	</select>
 	
 
 </mapper>

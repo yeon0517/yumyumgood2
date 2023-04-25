@@ -288,6 +288,12 @@ a {
  
 }
 
+.list-none{
+	margin-top:150px;
+	 text-align: center;
+  font-size: 10px;
+}
+
 .main-bottom2 {
   /* background-color: yellow; */
   width: 830px;
