@@ -111,6 +111,23 @@
 		where order_number= #{orderNumber}	
 	</update>
 
+	<select id="orderSerch" parameterType="map" resultType="OrderVO">
+		select order_number, o.user_number,u.user_id , order_date, order_address, order_message, order_total_cost, order_status, order_recipient
+		from tbl_user u 
+		right outer join tbl_order o
+		on u.user_number=o.user_number
+		where u.user_id like concat('%',#{serchKeyword}, '%') or o.order_number like concat('%',#{serchKeyword}, '%') 
+		order by o.order_number desc
+		limit #{orderStartRow}, #{rowCount}
+	</select>
+	
+	<select id="getOrderSerchTotal" parameterType="map" resultType="_int">
+		select count(o.order_number) 
+		from tbl_user u 
+		right outer join tbl_order o
+		on u.user_number=o.user_number
+		where u.user_id like concat('%',#{serchKeyword}, '%') or o.order_number like concat('%',#{serchKeyword}, '%')
+	</select>
 
 
 

@@ -19,6 +19,7 @@ public class OrderVO {
     private String userId;
     private String orderDate;
     private String orderRecipient;
+    private String ingredientImageSystemName;
 
     public OrderVO() {}
 
@@ -150,6 +151,14 @@ public class OrderVO {
 		this.orderRecipient = orderRecipient;
 	}
 
+	public String getIngredientImageSystemName() {
+		return ingredientImageSystemName;
+	}
+
+	public void setIngredientImageSystemName(String ingredientImageSystemName) {
+		this.ingredientImageSystemName = ingredientImageSystemName;
+	}
+
 	@Override
 	public String toString() {
 		return "OrderVO [orderNumber=" + orderNumber + ", userNumber=" + userNumber + ", userPhoneNumber="
@@ -157,8 +166,11 @@ public class OrderVO {
 				+ orderAddress + ", orderMessage=" + orderMessage + ", orderTotalCost=" + orderTotalCost
 				+ ", orderStatus=" + orderStatus + ", ingredientName=" + ingredientName + ", orderItemQuantity="
 				+ orderItemQuantity + ", ingredientPrice=" + ingredientPrice + ", userName=" + userName + ", userId="
-				+ userId + ", orderDate=" + orderDate + ", orderRecipient=" + orderRecipient + "]";
+				+ userId + ", orderDate=" + orderDate + ", orderRecipient=" + orderRecipient
+				+ ", ingredientImageSystemName=" + ingredientImageSystemName + "]";
 	}
+
+	
 
     
 		

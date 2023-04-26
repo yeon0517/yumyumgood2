@@ -57,7 +57,6 @@ public class PostReadOkController implements Execute {
 		PostFileDAO postFileDAO = new PostFileDAO(); 
 		
 		List<PostFileDTO> postFileList = postFileDAO.select(postNumber);
-		System.out.println(postFileList);
 		
 		List<RecipeIngredientVO> ingredients = recipeIngredientDAO.getRecipeIngredients(postNumber);
 		
@@ -73,7 +72,7 @@ public class PostReadOkController implements Execute {
 		
 //		postReadVO.setFiles(files);
 		
-		
+		System.out.println(postReadVO);
 		req.setAttribute("post", postReadVO);
 		req.setAttribute("categoryList", categoryList);
 		req.setAttribute("likeStatus", likeStatus);

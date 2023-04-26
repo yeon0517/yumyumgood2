@@ -155,6 +155,7 @@ a{
   color: black;
   overflow-y: scroll;
   padding: 5px 5px;
+  white-space: pre-line;
 }
 
 .content-choice-box{
@@ -263,6 +264,7 @@ a{
   font-size: 12px;
   display: flex;
   align-items: center;
+  white-space: pre-line;
 }
 
 .read-comment-more{
@@ -306,8 +308,8 @@ a{
   width: 100%;
   height: 95%;
   font-size: 10px;
-  text-align: center;
   margin-top: 5px;
+  white-space: pre-line;
 }
 
 

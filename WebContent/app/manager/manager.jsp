@@ -116,15 +116,15 @@
 							</div>
 
 							<div>
-								<form action="/manager/UserDeleteOk.manager" method="post">
+								<form action="/manager/UserDeleteOk.manager" method="post" class="user-delete-form">
 									<div class="member-main test" id="member-Menu">
 										<div class="member-serch">
-											<input hidden="hidden" /> <input type="text" id="user-serch"
+											<input hidden="hidden" />
+											<input type="text" id="user-serch"
 												name="userIdOrName" placeholder="회원의 아이디나 이름을입력하세요" />
 											<button type="button" class="user-serch-btn">
-												<span class="btn-span"> <i
-													class="fa-solid fa-magnifying-glass "></i></span>
-											</button>
+												<span class="btn-span"> <i class="fa-solid fa-magnifying-glass "></i></span>
+											</button> 
 										</div>
 										<table class="member-table">
 											<tbody>
@@ -226,7 +226,7 @@
 							</div>
 
 							<div>
-								<form action="/manager/postDeleteOk.manager" method="post">
+								<form action="/manager/postDeleteOk.manager" method="post" class="post-delete-form">
 									<div class="manage-post test" id="member-post">
 										<div class="post-serch">
 											<input type="text" name="postSerch" id="post-search"
@@ -337,10 +337,12 @@
 								<div class="manage-payment test" id="member-payment">
 									<div class="payment-serch">
 										<input type="text" name="paymentSerch" id="payment-serch"
-											placeholder="회원아이디를 입력하시오" />
-										<button>
-											<a href="#"><i
-												class="fa-solid fa-magnifying-glass"></i></a>
+											placeholder="회원아이디나 주문번호를 입력하시오" />
+										<button type="button" class="order-serch-btn">
+											<span class="btn-span">
+											<i
+													class="fa-solid fa-magnifying-glass "></i>
+											</span>
 										</button>
 									</div>
 									<table class="payment-table">
@@ -390,7 +392,6 @@
 
 									</table>
 
-									<button class="button">결제 삭제</button>
 									<div class="pagination order-page">
 										<ul>
 											<!-- ========== 페이징 처리 예시 ============ -->

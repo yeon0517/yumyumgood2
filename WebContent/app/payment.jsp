@@ -103,72 +103,57 @@
 						<!--여기까지 배송지입력-->
 
 						<div class="pmt">
-							<span>주문상품</span> <img src="#" alt=""> 
+							<span>주문상품</span> <img src="#" alt="">
 						</div>
 
 						<div class="amt">
 							<div class="checkoutProductMainSection">
-								<!-- <span>
-                      <div class="checkoutProductSection" style="display: flex;">
-                        <img src="#" alt="#">물품사진
-                        <li class="CheckoutProductsSectionstyle">
-                  <span>
-                  <a class="productName" href="#">
-                  <input type="hidden" name="selectedValues">
-                  여기는 모달창에서 선택된 체크박스의 이름을 넣어야함
-                  
-                  </a>
-                    <ul>
-                      <li>
-                        <p name="orderItemNumber">아이템</p>
-                        수량은 버튼수량 갯수를 확인 후 해야함 / 금액도... 
-                        <p name="orderItemQuantity"> 아이템</p>
-                        <p name="ingredientPrice"> 아이템</p>
-                      </li>
-                    </ul>
-                  </span>
-                  </li>
-            </div>
-           </span> -->
 
 								<c:forEach var="test" items="${test}" varStatus="status">
-								<span>
-									<div class="checkoutProductSection" style="display: flex;">
-										<!-- <img src="#" alt="#">
-										물품사진 -->
-										<li class="CheckoutProductsSectionstyle"><span> <a
-												class="productName" href="#"> </a>
-												<ul>
+									<span>
+										<div class="checkoutProductSection" style="display: flex;">
+
+
+											<ul class="paymentLists">
+												<li class="CheckoutProductsSectionstyle"><span>
+														<img src="/upload/${test.getIngredientImageSystemName()}"
+														alt="#"> <a class="productName" href="#"> </a>
+												</span> 
+												</li>
+												
+												<div class="arrangement">
 													<li>
-													
-													 <c:out value="${test.getIngredientName()}"/>
-							 							<c:out value="${test.getOrderItemQuantity()}"/> 개 
-														<!-- <p>본품 금액</p>
-														<p></p>
-														<p>총 금액</p> -->
+														<c:out value="${test.getIngredientName()}" /> 
+														<c:out value="${test.getOrderItemQuantity()}" /> 개
 													</li>
-												</ul>
-										</span></li>
-									</div>
-								</span>
+													<li class="ingredient-price">
+														<c:out value="${test.getOrderItemQuantity()*test.getIngredientPrice()}" /> 원
+													</li>
+												</div>
+												
+											</ul>
+										</div>
+									</span>
 								</c:forEach>
 							</div>
 						</div>
 
 						<!--여기까지 제품목록-->
+				
 				</div>
 				<!--바디툴-->
 				<div class="Payment-body-footer">
 					<div class="amount">
 						<p>결제 금액</p>
-						<strong style="color: red;" > ${cost.getOrderTotalCost()+3000} 원 </strong>
-						 <input type="hidden" name="paymentAmount" value="${cost.getOrderTotalCost()+3000}" />
+						<strong style="color: red;">
+							${cost.getOrderTotalCost()+3000} 원 </strong> <input type="hidden"
+							name="paymentAmount" value="${cost.getOrderTotalCost()+3000}" />
 					</div>
-					
+
 
 					<div class="amount-tag">
 						<p>총 상품금액</p>
-						<p style="text-align: end;"> ${cost.getOrderTotalCost()} 원</p>
+						<p style="text-align: end;">${cost.getOrderTotalCost()} 원</p>
 						<p>총 배송비</p>
 						<p style="text-align: end;">3000원</p>
 						<!-- <p>할인금액</p>
@@ -185,31 +170,30 @@
 					<div class="pay-method-radio-section">
 						<ul class="pay-radio">
 
-							<li>
-									<input type="radio" id="card" name="paymentMethod" value="신용카드"> <label
-										for="card"> <span>신용카드</span>
-									</label>
-							</li>
+							<li><input type="radio" id="card" name="paymentMethod"
+								value="신용카드"> <label for="card"> <span>신용카드</span>
+							</label></li>
 
-							<li><input type="radio" id="phone" name="paymentMethod" value="휴대폰">
-								<label for="phone"> <span>휴대폰</span>
+							<li><input type="radio" id="phone" name="paymentMethod"
+								value="휴대폰"> <label for="phone"> <span>휴대폰</span>
 							</label></li>
 
 
-							<li><input type="radio" id="bank" name="paymentMethod" value="무통장 입금">
-								<label for="bank"> <span>무통장 입금</span>
+							<li><input type="radio" id="bank" name="paymentMethod"
+								value="무통장 입금"> <label for="bank"> <span>무통장
+										입금</span>
 							</label></li>
 
-							<li><input type="radio" id="payco" name="paymentMethod" value="payco">
-								<label for="payco"> <span>payco</span>
+							<li><input type="radio" id="payco" name="paymentMethod"
+								value="payco"> <label for="payco"> <span>payco</span>
 							</label></li>
 
-							<li><input type="radio" id="naverpay" name="paymentMethod" value= "네이버페이">
-								<label for="naverpay"> <span>네이버페이</span>
+							<li><input type="radio" id="naverpay" name="paymentMethod"
+								value="네이버페이"> <label for="naverpay"> <span>네이버페이</span>
 							</label></li>
 
-							<li><input type="radio" id="kakaopay" name="paymentMethod" value= "카카오페이">
-								<label for="kakaopay"> <span>카카오페이</span>
+							<li><input type="radio" id="kakaopay" name="paymentMethod"
+								value="카카오페이"> <label for="kakaopay"> <span>카카오페이</span>
 							</label></li>
 						</ul>
 					</div>
