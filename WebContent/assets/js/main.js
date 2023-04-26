@@ -114,6 +114,18 @@ function addUserInfo(result) {
 	let text = '';
 console.log(result);
 	result.forEach(info => {
+		
+		if(info.userProfileImageSystemName==null){
+					text += `
+			<div class="search-man">
+				<div class="man-left">
+					<a href="#"> <img
+						src="https://www.thechooeok.com/common/img/default_profile.png" alt="${info.userProfileImageSystemName}"
+						class="man-img" />
+					</a>
+				</div>`
+			
+		}else{
 		text += `
 			<div class="search-man">
 				<div class="man-left">
@@ -122,7 +134,8 @@ console.log(result);
 						class="man-img" />
 					</a>
 				</div>`
-				
+			}	
+		
 		if(info.userNumber == userNumber ){
 			text+=`<div class="man-right">
 					<div class="man-id">

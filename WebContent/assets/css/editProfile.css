@@ -50,7 +50,7 @@ a {
 .body-main-body {
   /* background-color: violet; */
   width: 480px;
-  height: 755px;
+  height: 795px;
   margin: auto;
   margin-top: 25px;
   border: solid 1px rgb(186, 177, 177);
@@ -58,9 +58,13 @@ a {
 
 .picture-box {
   /* background-color: white; */
-  width: 100%;
-  height: 80px;
+ height: 100%; 
   display: flex;
+     margin-left: 30px;
+    margin-right: 30px; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+    align-items: center;
 }
 
 .picture-box-left {
@@ -107,6 +111,8 @@ input[type=file]::file-selector-button {
   width: 100%;
   height: 95px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
 }
 
 .nickname-box-left {
@@ -135,6 +141,8 @@ input[type=file]::file-selector-button {
   color:grey;
 }
 .text-box2-text {
+    margin-top: 7px;
+	
   width: 302px;
   font-size: 10px;
   color: #8d949e;
@@ -145,6 +153,10 @@ input[type=file]::file-selector-button {
   width: 100%;
   height: 66px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
+        margin-top: 15px;
+    
 }
 
 .name-box-left {
@@ -177,6 +189,8 @@ input[type=file]::file-selector-button {
 }
 
 .text-box3-text {
+	    margin-top: 7px;
+	
   width: 302px;
   font-size: 10px;
   color: #8d949e;
@@ -185,8 +199,12 @@ input[type=file]::file-selector-button {
 .introduce-box {
   /* background-color: yellow; */
   width: 100%;
-  height: 170px;
+  height: 140px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
+        margin-top: 15px;
+    
 }
 
 .introduce-box-left {
@@ -209,11 +227,12 @@ input[type=file]::file-selector-button {
 
 .text-box4 {
   width: 290px;
-  height: 125px;
+  height: 100px;
   border-radius: 5px;
   border: 2px solid rgb(171, 171, 171);
   padding-left:4px;
   color:grey;
+  resize: none;
   
 }
 
@@ -227,6 +246,10 @@ input[type=file]::file-selector-button {
   width: 100%;
   height: 50px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
+        margin-top: 15px;
+    
 }
 
 .birth-box-left {
@@ -260,6 +283,10 @@ input[type=file]::file-selector-button {
   width: 100%;
   height: 50px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
+      
+    
 }
 
 .phone-box-left {
@@ -294,6 +321,8 @@ input[type=file]::file-selector-button {
   width: 100%;
   height: 50px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
 }
 
 .email-box-left {
@@ -328,6 +357,8 @@ input[type=file]::file-selector-button {
   width: 100%;
   height: 80px;
   display: flex;
+  margin-left: 30px;
+    margin-right: 30px;
 }
 
 .address-box-left {
@@ -353,6 +384,7 @@ input[type=file]::file-selector-button {
   border: 2px solid rgb(171, 171, 171);
   padding-left:4px;
   color:grey;
+  margin-bottom: 7px;
 }
 
 .editok-box {
@@ -859,3 +891,9 @@ background-color: white;
 	cursor: pointer;
 	font-family: "Josefin Slab", serif;
 }
+
+
+
+/* #file-upload{
+	height:20px;
+} */
