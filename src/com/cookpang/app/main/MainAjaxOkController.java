@@ -42,6 +42,8 @@ public class MainAjaxOkController implements Execute {
 //	    .map(gson::toJson)
 //	    .map(JsonParser::parseString)
 //	    .forEach(userList::add);
+		 
+		System.out.println(userList.toString());
 		
 		resp.setContentType("application/json; charSet=utf-8");
 		
