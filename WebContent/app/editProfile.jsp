@@ -69,12 +69,23 @@ String myTextareaValue = request.getParameter("myTextarea");
 
 							<div class="picture-box-left">
 								
+								<c:choose>
+								<c:when test="${empty userProfileImageSystemName}">
+									<div id="img-box">
+									<img
+										src="https://www.thechooeok.com/common/img/default_profile.png"
+										class="img-box-img" />
+									</div>	
+								</c:when>
+								<c:otherwise>
 								<div id="img-box">
 									<img
 										src="/upload/${profileEditVO.getUserProfileImageSystemName()}"
 										class="img-box-img" />
 									<!-- src="/upload/${profileImage.getUserProfileImageSystemName()}"-->
 								</div>
+								</c:otherwise>
+								</c:choose>
 							</div>
 							
 							<div class="picture-box-rigth">

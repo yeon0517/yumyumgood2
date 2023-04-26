@@ -26,11 +26,23 @@
 				<div class="main-page-tbb">
 					<div class="main-top">
 						<div class="profile-picture">
-							<div class="img-box">
-								<img
-									src="https://img.danawa.com/prod_img/500000/017/350/img/13350017_1.jpg?shrink=330:*&_v=20210224095944"
-									alt="profile-img" class="profile-img" />
-							</div>
+							<c:choose>
+								<c:when test="${empty userProfileImageSystemName}">
+									<div id="img-box">
+										<img
+											src="https://www.thechooeok.com/common/img/default_profile.png"
+											class="profile-img" />
+									</div>
+								</c:when>
+								<c:otherwise>
+								<div class="img-box">
+									<img alt=""
+										src="/upload/${userInfo.getUserProfileImageSystemName()}"
+										class="profile-img">
+									<!--    <a href="${profileImage.getUserProfileImageSystemName()}" alt="profile-img" class="profile-img">이미지</a> -->
+								</div>
+								</c:otherwise>
+							</c:choose>
 							<div class="aaa">
 								<div class="name-box">
 									<div class="nickname-box">
