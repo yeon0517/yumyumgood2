@@ -38,7 +38,7 @@
 						<div class="tropy-img">
 							<img
 								src="${pageContext.request.contextPath}/assets/img/main/icons.gif"
-								alt="" style="margin-top: 14px; width:62px ;height:73px;">
+								alt="" style="margin-top: 7px; width:50px ;height:41px;">
 						</div>
 						<c:forEach var="rank" begin="0" end="8" step="1" items="${rankTotal}" varStatus="status">
 							<c:choose>
