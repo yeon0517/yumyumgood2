@@ -157,6 +157,37 @@ $('.user-serch-btn').on('click', function() {
 	}
 });
 
+// 회원삭제 submit버튼의 이벤트제거
+$(".user-delete-form").on("submit", function(event) {
+  event.preventDefault();
+});
+
+//회원검색기능 enter키눌러도 똑같이 실행
+$("#user-serch").on("keyup", function(event) {
+  if (event.which === 13) {
+    let userIdOrName = $('#user-serch').val();
+	let gapCheck = $('#user-serch').val().trim();
+	console.log(userIdOrName);
+
+	if (gapCheck === '' || gapCheck.length === 0) {
+		searchMode = false;
+		updatePage(1);
+	} else {
+		searchMode = true;
+		updatePage(1);
+	}
+ }
+});
+
+
+
+
+
+
+
+
+
+
 
 // 게시물 리스트부분
 let postSearchMode = false;
@@ -246,6 +277,27 @@ $('.post-serch-btn').on('click', function() {
 	}
 });
 
+// 게시글 삭제 submit버튼의 이벤트제거
+$(".post-delete-form").on("submit", function(event) {
+  event.preventDefault();
+});
+
+//게시글 검색기능 enter키눌러도 똑같이 실행
+$("#post-search").on("keyup", function(event) {
+  if (event.which === 13) {
+   let postSearch = $('#post-search').val();
+	let postGapCheck = $('#post-search').val().trim();
+
+	if (postGapCheck === '' || postGapCheck.length === 0) {
+		postSearchMode = false;
+		updatePostPage(1);
+	} else {
+		postSearchMode = true;
+		updatePostPage(1);
+	}
+ }
+});
+
 // ==========결제 관리 추가정보js======
 
 
@@ -273,12 +325,12 @@ let orderPage = 1;
 updateOrderPage(orderPage)
 function updateOrderPage(orderPage) {
 	if (orderSearchMode) {
-		let orderTitle = $('#payment-serch').val();
+		let serchKeyword = $('#payment-serch').val();
 		$.ajax({
 			url: '/manager/orderSerchOk.manager',
 			type: 'GET',
-			data: { orderTitle: orderTitle, orderPage: orderPage },
-			dataType: 'json',
+			data: { serchKeyword: serchKeyword, orderPage: orderPage },
+			/*dataType: 'json',*/
 			success: updateOrderTable,
 			error: (xhr, status, error) => console.log(error),
 		});
@@ -377,8 +429,8 @@ $(".order-page a").on("click", function(e) {
 });
 
 $('.order-serch-btn').on('click', function() {
-	let orderSearch = $('#order-search').val();
-	let orderGapCheck = $('#order-search').val().trim();
+	let orderSearch = $('#payment-serch').val();
+	let orderGapCheck = $('#payment-serch').val().trim();
 
 	if (orderGapCheck === '' || orderGapCheck.length === 0) {
 		orderSearchMode = false;
@@ -388,6 +440,24 @@ $('.order-serch-btn').on('click', function() {
 		updateOrderPage(1);
 	}
 });
+
+$("#payment-serch").on("keyup", function(event) {
+  if (event.which === 13) {
+   let orderSearch = $('#payment-serch').val();
+	let orderGapCheck = $('#payment-serch').val().trim();
+
+	if (orderGapCheck === '' || orderGapCheck.length === 0) {
+		orderSearchMode = false;
+		updateOrderPage(1);
+	} else {
+		orderSearchMode = true;
+		updateOrderPage(1);
+	}
+ }
+});
+
+
+
 
 
 $('.payment-table').on('click', '.order-check-btn', function() {

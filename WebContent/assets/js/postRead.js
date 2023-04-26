@@ -123,6 +123,10 @@ let $comment = $('.comment-input');
 
 //댓글 작성
 $('.comment-post-btn').on('click', function() {
+	let gapCheck = $('#comment-input').val().trim();
+	if (gapCheck === '' || gapCheck.length === 0) {
+		return;
+	}
   $.ajax({
     url: '/comment/commentWriteOk.co',
     type: 'post',
@@ -144,6 +148,41 @@ $('.comment-post-btn').on('click', function() {
     }
   });
 });
+// 엔터키로 댓글 작성
+$("#comment-input").on("keyup", function(event) {
+	event.preventDefault();
+	let gapCheck = $('#comment-input').val().trim();
+if (gapCheck === '' || gapCheck.length === 0) {
+		return;
+	}
+else if (event.which === 13) {
+   $.ajax({
+    url: '/comment/commentWriteOk.co',
+    type: 'post',
+    data: {
+      postNumber: postNumber,
+      userNumber: userNumber,
+      commentContent: $('#comment-input').val()
+    },
+    success: function() {
+      commentAjax().then(() => {
+        // commentAjax 함수가 완료된 후에 실행
+        $('#comment-input').val('');
+
+        $('.js-contents').hide();
+        $('.read-comment-container').show();
+      }).catch((error) => {
+        console.log('commentAjax 에러:', error);
+      });
+    }
+  });
+ }
+});
+
+
+
+
+
 
 
 

@@ -38,8 +38,6 @@ public SqlSession sqlSession;
 		return sqlSession.selectList("postLike.rankTotal");
 		
 	}
-	
-	
 	public List<UserListVO> findUser(String searchUser) {
 		return sqlSession.selectList("user.findUser", searchUser);
 	}
