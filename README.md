@@ -21,24 +21,20 @@
 ⚙️ 개발 환경
 
 
-java 11
+java 11  <br/>
+IDE : Eclipse <br/>
+Database : Oracle DB(11xe) <br/>
+Framework : MyBatis <br/>
+Web : Apach Tomcat <br/>
 
 
-IDE : Eclipse
+📌 주요 기능 <br/>
+로그인 <br/>
+● DB값 검증 <br/>
+● ID찾기, PW찾기 <br/>
+● 로그인 시 쿠키(Cookie) 및 세션(Session) 생성 <br/>
 
-
-Database : Oracle DB(11xe)
-Framework : MyBatis
-Web : Apach Tomcat
-
-📌 주요 기능
-
-로그인
-● DB값 검증
-● ID찾기, PW찾기
-● 로그인 시 쿠키(Cookie) 및 세션(Session) 생성
-
-회원가입
+회원가입 <br/>
 ● ID 중복 체크
 ● 비밀번호 유효성 검사
 ● DB에 값 저장
