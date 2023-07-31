@@ -20,8 +20,10 @@
 
 ⚙️ 개발 환경
 java 11
+IDE : Eclipse
 Database : Oracle DB(11xe)
-Framework : Eclipse
+Framework : MyBatis
+Web : Apach Tomcat
 
 📌 주요 기능
 
@@ -41,7 +43,8 @@ Framework : Eclipse
 
 메인페이지
 ● 등록 게시물 
-●
+● 게시물 선택
+● 카테고리 별 게시물 선택
 
 
 
