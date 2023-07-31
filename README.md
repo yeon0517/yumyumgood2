@@ -34,7 +34,7 @@ Web : Apach Tomcat <br/>
 ● ID찾기, PW찾기 <br/>
 ● 로그인 시 쿠키(Cookie) 및 세션(Session) 생성 <br/>
 
-회원가입 <br/>
+회원가입 [회원가입 기능 바로보기](https://github.com/yeon0517/yumyumgood2/wiki/%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85) <br/>
 ● ID 중복 체크 <br/>
 ● 비밀번호 유효성 검사 <br/>
 ● DB에 값 저장 <br/>
