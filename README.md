@@ -29,7 +29,7 @@ Web : Apach Tomcat <br/>
 
 
 📌 주요 기능 <br/>
-로그인 [로그인 기능 바로보기](https://github.com/yeon0517/yumyumgood2.wiki.git)<br/> 
+로그인 [로그인 기능 바로보기]([https://github.com/yeon0517/yumyumgood2.wiki.git](https://github.com/yeon0517/yumyumgood2/wiki/%EB%A1%9C%EA%B7%B8%EC%9D%B8)) <br/> 
 ● DB값 검증 <br/>
 ● ID찾기, PW찾기 <br/>
 ● 로그인 시 쿠키(Cookie) 및 세션(Session) 생성 <br/>
