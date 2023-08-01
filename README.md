@@ -44,7 +44,7 @@ Web : Apach Tomcat <br/>
 ● 비밀번호 유효성 검사 <br/>
 ● DB에 값 저장 <br/>
 
-### 장바구니 및 결제페이지 <br/>
+### 장바구니 및 결제페이지 [장바구니 WIKI 이동](https://github.com/yeon0517/yumyumgood2/wiki/%EC%9E%A5%EB%B0%94%EA%B5%AC%EB%8B%88-%EB%B0%8F-%EA%B2%B0%EC%A0%9C%ED%8E%98%EC%9D%B4%EC%A7%80)<br/> 
 ● 장바구니 재료 선택 <br/>
 ● 선택한 재료 총 결제 금액 알려주기 <br/>
 
